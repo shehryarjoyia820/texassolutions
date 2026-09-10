@@ -1,8 +1,18 @@
-// Carrier application form: equipment picker, drag/drop file simulation,
-// validation and a success state. Works on every element matching
+// Carrier application form: equipment picker, drag/drop file upload,
+// validation, a real submission to Web3Forms (email delivery, no backend
+// needed) and a success state. Works on every element matching
 // [data-carrier-form] so the same markup can appear on the home page and
 // the contact page.
 (function () {
+  var WEB3FORMS_ACCESS_KEY = 'c66393e0-d742-483a-b9d0-a923d09baa97';
+  var WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+
+  var EQ_LABELS = {
+    dry: 'Dry Van', reefer: 'Reefer', flatbed: 'Flatbed', step: 'Step Deck',
+    power: 'Power Only', hotshot: 'Hotshot', box: 'Box Truck',
+    straight: 'Straight Truck', other: 'Other'
+  };
+
   function initForm(root) {
     var fields = { name: '', phone: '', email: '', mc: '', lanes: '', consent: false, eq: '' };
     var files = [];
@@ -78,7 +88,7 @@
         row.innerHTML =
           '<div><div style="font-size:13px">' + escapeHtml(f.name) + '</div>' +
           '<div class="upload-bar"><span style="width:' + pct + '%"></span></div></div>' +
-          '<span class="upload-status">' + (pct >= 100 ? 'Received' : 'Uploading') + '</span>';
+          '<span class="upload-status">' + (pct >= 100 ? 'Ready' : 'Uploading') + '</span>';
         fileList.appendChild(row);
       });
     }
@@ -90,8 +100,8 @@
     }
 
     function addFiles(list) {
-      var added = Array.prototype.slice.call(list || []).slice(0, 6).map(function (f) {
-        return { name: f.name, pct: 0 };
+      var added = Array.prototype.slice.call(list || []).slice(0, 6 - files.length).map(function (f) {
+        return { name: f.name, pct: 0, file: f };
       });
       if (!added.length) return;
       files = files.concat(added);
@@ -102,7 +112,7 @@
         files = files.map(function (f) {
           if (f.pct >= 100) return f;
           running = true;
-          return { name: f.name, pct: Math.min(100, f.pct + 12 + Math.random() * 16) };
+          return { name: f.name, pct: Math.min(100, f.pct + 12 + Math.random() * 16), file: f.file };
         });
         renderFiles();
         if (!running) clearInterval(uploadTimer);
@@ -127,6 +137,24 @@
       fileInput.addEventListener('change', function () { addFiles(fileInput.files); });
     }
 
+    function buildPayload() {
+      var fd = new FormData();
+      fd.append('access_key', WEB3FORMS_ACCESS_KEY);
+      fd.append('subject', 'New carrier application — ' + fields.name);
+      fd.append('from_name', 'Texas Solutions website');
+      fd.append('name', fields.name);
+      fd.append('phone', fields.phone);
+      fd.append('email', fields.email);
+      fd.append('mc_dot_number', fields.mc || 'Not provided');
+      fd.append('equipment', EQ_LABELS[fields.eq] || 'Not specified');
+      fd.append('preferred_lanes', fields.lanes || 'Not provided');
+      fd.append('sms_consent', fields.consent ? 'Yes' : 'No');
+      fd.append('page', window.location.pathname);
+      fd.append('botcheck', ''); // honeypot — real users never fill this
+      files.forEach(function (f) { if (f.file) fd.append('attachment', f.file); });
+      return fd;
+    }
+
     function submit() {
       if (!fields.name.trim() || !fields.phone.trim() || !fields.email.trim()) {
         errorEl.textContent = 'Name, phone, and email are required.';
@@ -147,12 +175,29 @@
       errorEl.textContent = '';
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
-      setTimeout(function () {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Request a Free Callback';
-        formView.style.display = 'none';
-        doneView.style.display = 'block';
-      }, 1100);
+
+      fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: buildPayload()
+      })
+        .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
+        .then(function (result) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request a Free Callback';
+          if (result.ok && result.json && result.json.success) {
+            formView.style.display = 'none';
+            doneView.style.display = 'block';
+          } else {
+            errorEl.textContent = (result.json && result.json.message) ||
+              'Something went wrong sending your application. Please call (838) 910-3147 instead.';
+          }
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request a Free Callback';
+          errorEl.textContent = 'Could not reach the server. Please check your connection or call (838) 910-3147.';
+        });
     }
 
     if (submitBtn) submitBtn.addEventListener('click', submit);
