@@ -96,10 +96,20 @@
     });
   }
 
+  function initHeroVideo() {
+    var video = document.querySelector('[data-hero-video]');
+    if (!video) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      video.pause();
+      video.removeAttribute('autoplay');
+    }
+  }
+
   function init() {
     initScrollProgress();
     initBoard();
     initChat();
+    initHeroVideo();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
