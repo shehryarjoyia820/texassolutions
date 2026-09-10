@@ -347,11 +347,11 @@ details[open] .faq-answer { animation: wipe .45s cubic-bezier(.16,1,.3,1) both; 
 .hero-stat-strip .stat-label { color: var(--color-neutral-300); }
 @keyframes kenburns { 0% { transform: scale(1.06) translate3d(0,0,0); } 100% { transform: scale(1.16) translate3d(-2.5%,-1.5%,0); } }
 @keyframes gridpan { to { background-position: calc(100% / 6) 0; } }
-.hero-title { font-size: clamp(46px, 9.2vw, 132px); line-height: .92; letter-spacing: -.035em; margin: clamp(20px, 3vw, 36px) 0 0; max-width: 14ch; color: var(--color-bg); }
+.hero-title { font-size: clamp(46px, 9.2vw, 132px); line-height: .92; letter-spacing: -.035em; margin: clamp(20px, 3vw, 36px) 0 0; max-width: 14ch; }
 .hero-title span { display: block; }
 .hero-title .accent { color: var(--color-accent); }
 .hero-sub-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(24px, 4vw, 56px); margin-top: clamp(28px, 4vw, 48px); align-items: end; }
-.hero-lede { font-size: clamp(15px, 1.5vw, 18px); line-height: 1.6; max-width: 52ch; margin: 0; color: var(--color-neutral-200); }
+.hero-lede { font-size: clamp(15px, 1.5vw, 18px); line-height: 1.6; max-width: 52ch; margin: 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .progress-bar-top { position: fixed; top: 0; left: 0; height: 3px; background: var(--color-accent); z-index: 80; width: 0%; }
 
