@@ -177,9 +177,8 @@ def header(current):
     mlinks = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in nav_links())
     msvc = "\n".join(f'      <a href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING)
     return f"""<a class="skip" href="#main">Skip to content</a>
-<div class="topbar"><div class="wrap">
-  <div class="tb-left"><span class="tb-pill"><span class="tb-hide">OTR dispatch: </span>Semis {M['pct'][0]}-{M['pct'][1]}% &middot; small trucks {S['pct'][0]}-{S['pct'][1]}%</span><span class="tb-hide">No flat rate &middot; No setup fee</span></div>
-  <div class="tb-left"><a href="tel:{C.PHONE_E164}">{C.PHONE}</a><a class="tb-hide" href="mailto:{C.EMAIL}">{C.EMAIL}</a></div>
+<div class="topbar"><div class="wrap tb-right">
+  <div class="tb-left"><a href="tel:{C.PHONE_E164}">{C.PHONE}</a><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></div>
 </div></div>
 <header class="header">
   <div class="wrap">
@@ -649,7 +648,7 @@ def build_rates():
 
 def build_contact():
     title = "Contact a Truck Dispatcher | Call or WhatsApp (838) 910-3147 | Texas Solutions"
-    desc = "Talk to a Texas Solutions truck dispatcher. Call or WhatsApp (838) 910-3147, email info@texassolutions.co, or send your details. Office: 401 W Kentucky Ave, Midland, TX."
+    desc = "Talk to a Texas Solutions truck dispatcher. Call or WhatsApp (838) 910-3147, email dispatch@texassolutions.co, or send your details. Office: 401 W Kentucky Ave, Midland, TX."
     body = f"""{phero("Contact", "Talk to a Truck Dispatcher", "Tell us about your truck, authority and lanes. The fastest way to reach us is WhatsApp.", ctas=False)}
 <section class="sec" style="padding-top:56px"><div class="wrap two">
   <div>{lead_form("contactForm", "New dispatch inquiry", "Send My Details")}</div>
