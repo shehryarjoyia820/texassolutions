@@ -416,3 +416,6 @@ a.cbox:hover { border-color: #cfcac6; }
 .header .brand img { filter: brightness(0) invert(1); }
 .topbar .wrap.tb-right { justify-content: flex-end; }
 @media (max-width: 560px) { .topbar .wrap.tb-right { justify-content: center; } }
+.range-row input[type=range] { min-width: 0; }
+.range-row output { flex: none; }
+.est-in .otr { color: #0f6b35; background: #e8f8ee; }
