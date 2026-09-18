@@ -1,0 +1,43 @@
+# Texas Solutions Truck Dispatch
+
+> Texas Solutions provides truck dispatch services directly to owner-operators and small fleets in the United States: load search, rate negotiation, broker communication and paperwork support for dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck carriers. The fee is percentage-based under a signed dispatch agreement, with no upfront cost, no long-term contract and no forced loads. Texas Solutions is not a motor carrier or freight broker and does not guarantee loads, rates or earnings.
+
+- Location: 401 W Kentucky Ave, Midland, TX
+- Phone: (838) 910-3147
+- Email: info@texassolutions.co
+
+## Dispatch services
+- [Box Truck Dispatch](https://dispatch.texassolutions.co/box-truck-dispatch.html): A box truck dispatch service finds and negotiates loads for box trucks and straight trucks, communicates with brokers, handles setup paperwork and keeps rate confirmations organized. Texas Solutions dispatches box trucks for owner-operators and small fleets across the United States, with no upfront cost, a percentage-based fee set in your agreement, and your approval on every load.
+- [Hotshot Dispatch](https://dispatch.texassolutions.co/hotshot-dispatch.html): A hotshot dispatch service finds and negotiates time-sensitive, partial and expedited loads for hotshot rigs, communicates with brokers and handles setup paperwork. Texas Solutions dispatches hotshot trucks for owner-operators across the United States, including Texas and Permian Basin lanes, with no upfront cost and your approval on every load.
+- [Dry Van Dispatch](https://dispatch.texassolutions.co/dry-van-dispatch.html): A dry van dispatch service searches and negotiates freight for 53-foot dry van trailers, plans lanes to reduce deadhead, communicates with brokers and handles paperwork. Texas Solutions dispatches dry vans for owner-operators and small fleets nationwide, with a percentage-based fee set in your agreement and no long-term contract.
+- [Reefer Dispatch](https://dispatch.texassolutions.co/reefer-dispatch.html): A reefer dispatch service finds and negotiates temperature-controlled loads for refrigerated trailers, confirms temperature and appointment requirements with brokers, and keeps rate confirmations organized. Texas Solutions dispatches reefers for owner-operators and small fleets nationwide, with no upfront cost and your approval on every load.
+- [Flatbed & Step Deck Dispatch](https://dispatch.texassolutions.co/flatbed-dispatch.html): A flatbed dispatch service finds and negotiates open-deck loads for flatbed and step deck trailers, confirms dimensions, weights and tarping requirements with brokers, and handles setup paperwork. Texas Solutions dispatches flatbeds and step decks nationwide for owner-operators and small fleets, with no upfront cost and your approval on every load.
+- [Power Only Dispatch](https://dispatch.texassolutions.co/power-only-dispatch.html): Power only dispatch finds loads for a tractor without its own trailer, where the carrier hauls a trailer supplied by the shipper or broker. Texas Solutions searches and negotiates power only freight for owner-operators nationwide, handles broker communication and paperwork, and books nothing without your approval.
+- [Owner-Operator Dispatch](https://dispatch.texassolutions.co/owner-operator-dispatch.html): An owner-operator dispatch service handles load search, rate negotiation, broker communication and paperwork for independent truck owners and small fleets, so the owner can spend more time driving. Texas Solutions provides this directly, with a percentage-based fee set in your agreement, no upfront or setup fee, no long-term contract and no forced loads.
+- [Texas Truck Dispatch](https://dispatch.texassolutions.co/texas-truck-dispatch.html): Yes. Texas Solutions is a truck dispatch service based at 401 W Kentucky Ave, Midland, Texas. It dispatches owner-operators and small fleets on Texas lanes, including the Permian Basin, Houston, Dallas-Fort Worth, San Antonio, Laredo and El Paso, as well as nationwide, with no upfront cost and your approval on every load.
+- [What a Truck Dispatcher Does](https://dispatch.texassolutions.co/what-does-a-truck-dispatcher-do.html): A truck dispatcher finds and books freight for a carrier's trucks. The dispatcher searches load boards and broker contacts, negotiates rates, confirms loads with the driver, completes broker setup paperwork and keeps rate confirmations organized. Independent dispatchers work for the carrier, usually for a percentage of each load's gross, and are different from freight brokers, who work between shippers and carriers.
+
+## Pages
+- [Home](https://dispatch.texassolutions.co/)
+- [About](https://dispatch.texassolutions.co/about.html)
+- [FAQ](https://dispatch.texassolutions.co/faq.html)
+- [Contact](https://dispatch.texassolutions.co/contact.html)
+
+## Questions
+Q: What does a truck dispatcher do?
+A: A truck dispatcher searches load boards and broker networks for freight that fits your truck, negotiates the rate with the broker, confirms the load with you, handles broker setup paperwork and keeps rate confirmations and dispatch details organized, so you can spend your time driving.
+
+Q: Is Texas Solutions a freight broker?
+A: No. Texas Solutions is a truck dispatch service that works for the carrier. We are not a motor carrier or a freight broker. Loads are booked under your own authority, and you approve every load before it is booked.
+
+Q: Which states do you dispatch in?
+A: Texas Solutions supports owner-operators and small fleets throughout the United States. Tell us your home base, preferred lanes and home-time needs and we search freight that fits them.
+
+Q: Can I choose my own lanes and home time?
+A: Yes. You tell us your preferred lanes, destination markets and home-time schedule, and we search around them. You decide which loads, lanes and rates work for your business.
+
+Q: How do I start working with a truck dispatcher?
+A: Apply online or call (838) 910-3147. We review your authority, equipment and lanes, explain the dispatch agreement, collect your carrier documents, and then start searching loads for your truck.
+
+## Related
+- [Texas Solutions software development, AI and QA](https://texassolutions.co/)
