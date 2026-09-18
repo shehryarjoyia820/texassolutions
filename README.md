@@ -3,10 +3,10 @@
 
 ## SEO and AEO
 
-`tools/build_seo.py` owns the search and answer-engine layer. Edit `tools/content.py`, then run:
+`tools/site.py` builds every page (design, pricing, estimate calculator, SEO/AEO). Edit `tools/content.py` (rates, FAQs, landing pages), then run:
 
 ```bash
-python tools/build_seo.py
+python tools/site.py
 ```
 
 It is safe to run repeatedly. It rewrites titles and descriptions, injects canonical, Open Graph and
@@ -20,6 +20,6 @@ regenerates the equipment, Texas and guide landing pages, and writes `sitemap.xm
 
 - **Header codes** (Search Console, Bing, Google Analytics, Tag Manager, AdSense, Meta Pixel, Clarity,
   any other snippet): paste into `head-codes.html` below the "PASTE BELOW THIS LINE" marker, run
-  `python tools/build_seo.py`, commit and push. The codes are copied into the `<head>` of every page.
+  `python tools/site.py`, commit and push. The codes are copied into the `<head>` of every page.
 - **ads.txt**: edit `ads.txt` in the repository root. AdSense reads the root domain's file, which lives
   in the texassolutions_main repo (`src/config/head-codes.ts`).

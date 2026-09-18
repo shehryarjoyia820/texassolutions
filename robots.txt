@@ -4,43 +4,93 @@ Allow: /
 Disallow: /head-codes.html
 Disallow: /tools/
 
-User-agent: GPTBot
+User-agent: Googlebot
 Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
+Disallow: /tools/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /tools/
+
+User-agent: Slurp
+Allow: /
+Disallow: /tools/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /tools/
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /tools/
+
+User-agent: Applebot
+Allow: /
+Disallow: /tools/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /tools/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /tools/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /tools/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /tools/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /tools/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /tools/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /tools/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /tools/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /tools/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /tools/
+
+User-agent: Gemini-Deep-Research
+Allow: /
+Disallow: /tools/
 
 User-agent: CCBot
 Allow: /
+Disallow: /tools/
 
 User-agent: Meta-ExternalAgent
 Allow: /
+Disallow: /tools/
 
+User-agent: Amazonbot
+Allow: /
+Disallow: /tools/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /tools/
+
+User-agent: MistralAI-User
+Allow: /
+Disallow: /tools/
+
+Host: dispatch.texassolutions.co
 Sitemap: https://dispatch.texassolutions.co/sitemap.xml
