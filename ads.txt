@@ -1,0 +1,10 @@
+# ads.txt for dispatch.texassolutions.co
+#
+# Paste one line per authorised ad seller. For Google AdSense, AdSense shows
+# you this line under Sites → ads.txt; it looks like:
+#
+#   google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+#
+# Note: AdSense checks ads.txt on the ROOT domain (texassolutions.co/ads.txt).
+# That file is managed in the texassolutions_main repo, in
+# src/config/head-codes.ts. Keep this file in step with it.

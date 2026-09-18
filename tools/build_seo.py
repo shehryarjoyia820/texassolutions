@@ -176,10 +176,28 @@ def set_title_desc(text, title, description):
     return text
 
 
+HEAD_CODES_MARKER = "<!-- ======= PASTE BELOW THIS LINE ======= -->"
+
+
+def head_codes():
+    """Whatever the user pasted below the marker in head-codes.html."""
+    path = ROOT / "head-codes.html"
+    if not path.exists():
+        return ""
+    raw = path.read_text(encoding="utf-8")
+    return raw.split(HEAD_CODES_MARKER, 1)[1].strip() if HEAD_CODES_MARKER in raw else ""
+
+
+def apply_head_codes(text):
+    codes = head_codes()
+    block = codes if codes else "<!-- no header codes yet: paste them into head-codes.html -->"
+    return put_block(text, "HEAD-CODES", block, anchor="</head>")
+
+
 def apply_head(text, meta, schemas, og_type="website"):
     text = set_title_desc(text, meta["title"], meta["description"])
     block = head_block(meta["title"], meta["description"], meta["path"], meta.get("keywords"), schemas, og_type)
-    return put_block(text, "SEO", block, anchor="</head>")
+    return apply_head_codes(put_block(text, "SEO", block, anchor="</head>"))
 
 
 # --------------------------------------------------------------- fragments
@@ -367,6 +385,9 @@ def page_shell(title, description, head, body, mobile_id, current=None):
 <!-- SEO:START -->
 {head}
 <!-- SEO:END -->
+<!-- HEAD-CODES:START -->
+{head_codes() or "<!-- no header codes yet: paste them into head-codes.html -->"}
+<!-- HEAD-CODES:END -->
 </head>
 <body>
 
@@ -540,7 +561,8 @@ def build_site_files():
 
     bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User",
             "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended", "Bingbot", "CCBot", "Meta-ExternalAgent"]
-    robots = ["# Search engines and AI answer engines are welcome.", "User-agent: *", "Allow: /", ""]
+    robots = ["# Search engines and AI answer engines are welcome.", "User-agent: *", "Allow: /",
+              "Disallow: /head-codes.html", "Disallow: /tools/", ""]
     for b in bots:
         robots += [f"User-agent: {b}", "Allow: /", ""]
     robots.append(f"Sitemap: {C.BASE}/sitemap.xml")
