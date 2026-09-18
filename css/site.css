@@ -339,3 +339,54 @@ a.cbox:hover { border-color: #cfcac6; }
 .board-grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px; }
 @media (max-width: 900px) { .board-grid { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 560px) { .topbar { font-size: 12px; } .topbar a { white-space: nowrap; } .topbar .tb-pill { padding: 3px 8px; } }
+
+/* ---------- mobile + tablet polish ---------- */
+.two > *, .est > *, .band > *, .hero .wrap > *, .cols > * { min-width: 0; }
+.prose, .prose p, .prose li, .answer p, .faq summary { overflow-wrap: anywhere; }
+@media (min-width: 641px) and (max-width: 1040px) {
+  .hero .wrap { gap: 32px; }
+  .hero-card { max-width: 640px; }
+  .two { gap: 32px; }
+}
+@media (min-width: 641px) and (max-width: 900px) {
+  .aside .cside { grid-template-columns: 1fr 1fr; }
+}
+.cbox > span { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .sec { padding: 56px 0; }
+  .sec-head { margin-bottom: 28px; }
+  .sec-head p { font-size: 16px; }
+  .card, .price, .form { padding: 22px; }
+  .price .amt { font-size: 46px; }
+  .answer { padding: 20px; }
+  .answer p { font-size: 16px; }
+  .hero .ctas .btn, .phero .ctas .btn, .band .ctas .btn { width: 100%; }
+  .hero-stats { gap: 8px; }
+  .hero-stats div { padding-left: 10px; }
+  .hero-stats span { font-size: 12px; }
+  .seg { grid-template-columns: 1fr; }
+  .range-row output { min-width: 80px; font-size: 16px; }
+  .est-lines div { font-size: 14px; }
+  .band { border-radius: 20px; }
+  .faq details { padding: 0 16px; }
+  .faq summary { font-size: 16px; padding: 18px 30px 18px 0; }
+  .legal-block { padding: 20px; }
+  .footer { padding: 56px 0 100px; }
+  .rate-guide .rg { padding: 14px; }
+  .rate-guide .rg .v { font-size: 16px; }
+  .phero .wrap { padding-top: 44px; padding-bottom: 44px; }
+  .phero .lede { font-size: 16px; }
+}
+@media (max-width: 380px) {
+  h1 { font-size: 32px; }
+  .phero h1 { font-size: 30px; }
+  .brand span { font-size: 10px; letter-spacing: .1em; }
+  .brand img { height: 34px; }
+  .topbar .tb-pill { font-size: 11px; }
+  .est-big { font-size: 34px; }
+  .price .amt { font-size: 40px; }
+  .board-table { font-size: 13px; }
+  .board-table th, .board-table td { padding: 10px; }
+}
+@media (max-width: 900px) { .topbar .tb-hide { display: none; } }

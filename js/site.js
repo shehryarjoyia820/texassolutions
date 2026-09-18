@@ -37,6 +37,8 @@
     }, { rootMargin: '0px 0px -8% 0px' });
     Array.prototype.forEach.call(rv, function (el) { io.observe(el); });
   } else { Array.prototype.forEach.call(rv, function (el) { el.classList.add('in'); }); }
+  // Safety net: never leave content hidden (slow devices, print, crawlers).
+  setTimeout(function () { Array.prototype.forEach.call(rv, function (el) { el.classList.add('in'); }); }, 2500);
 
   /* rate board: rotate highlighted row so the board feels live */
   var rows = document.querySelectorAll('.board-table tbody tr');

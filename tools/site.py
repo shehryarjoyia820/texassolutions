@@ -178,7 +178,7 @@ def header(current):
     msvc = "\n".join(f'      <a href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING)
     return f"""<a class="skip" href="#main">Skip to content</a>
 <div class="topbar"><div class="wrap">
-  <div class="tb-left"><span class="tb-pill">OTR dispatch: semis {M['pct'][0]}-{M['pct'][1]}% &middot; small trucks {S['pct'][0]}-{S['pct'][1]}%</span><span class="tb-hide">No flat rate &middot; No setup fee</span></div>
+  <div class="tb-left"><span class="tb-pill"><span class="tb-hide">OTR dispatch: </span>Semis {M['pct'][0]}-{M['pct'][1]}% &middot; small trucks {S['pct'][0]}-{S['pct'][1]}%</span><span class="tb-hide">No flat rate &middot; No setup fee</span></div>
   <div class="tb-left"><a href="tel:{C.PHONE_E164}">{C.PHONE}</a><a class="tb-hide" href="mailto:{C.EMAIL}">{C.EMAIL}</a></div>
 </div></div>
 <header class="header">
@@ -373,7 +373,7 @@ def rate_board():
         for eq, rate, note in C.RATE_GUIDE)
     return f"""<div class="grid board-grid" id="board">
   <div class="board rv">
-    <div class="board-head"><b><span class="dot"></span>Sample lane board</b><span>Rough estimate &middot; <span id="boardTime">today</span></span></div>
+    <div class="board-head"><b><span class="dot"></span>Lane Rate Board</b><span>Rough estimate &middot; <span id="boardTime">today</span></span></div>
     <div style="overflow-x:auto"><table class="board-table">
       <thead><tr><th>Lane</th><th>Equipment</th><th class="hide-sm">Miles</th><th>Rate</th></tr></thead>
       <tbody>
