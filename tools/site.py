@@ -369,7 +369,7 @@ def rate_board():
         f'      <tr><td>{o} &rarr; {d}</td><td><span class="eq-badge">{e}</span></td><td class="hide-sm">{mi:,} mi</td><td class="rate">{r}/mi</td></tr>'
         for o, d, e, mi, r in C.LANES)
     guide = "\n".join(
-        f'    <div class="rg{" hi" if eq in ("Flatbed", "Hotshot", "Dry Van") else ""}"><b>{eq}</b><span class="v">{rate}/mi</span><small>{note}</small></div>'
+        f'    <div class="rg{" hi" if eq in ("Flatbed", "Step Deck", "Reefer") else ""}"><b>{eq}</b><span class="v">{rate}/mi</span><small>{note}</small></div>'
         for eq, rate, note in C.RATE_GUIDE)
     return f"""<div class="grid board-grid" id="board">
   <div class="board rv">
@@ -387,7 +387,7 @@ def rate_board():
     <div class="rate-guide">
 {guide}
     </div>
-    <p style="font-size:13px;color:#8a847e;margin-top:12px">Rough estimates. Flatbed and hotshot loads often pay $5-6 a mile; dry van runs about $2-5 a mile depending on local or OTR lanes. Actual rates depend on lane, season and market.</p>
+    <p style="font-size:13px;color:#8a847e;margin-top:12px">Rough estimates. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR. Actual rates depend on lane, season and market.</p>
   </div>
 </div>"""
 
@@ -463,7 +463,7 @@ HOME_KW = ", ".join(C.CORE_KEYWORDS)
 def build_home():
     title = "Truck Dispatch Service for Owner-Operators | 5-6% Semi, 8-10% Small Truck | Texas Solutions"
     desc = (f"Truck dispatch service for owner-operators and small fleets. Semi trucks {M['pct'][0]}-{M['pct'][1]}% and box trucks & hotshots "
-            f"{S['pct'][0]}-{S['pct'][1]}% of weekly gross, OTR. No flat rate, no setup fee. Flatbed & hotshot loads $5-6/mile. Free estimate.")
+            f"{S['pct'][0]}-{S['pct'][1]}% of weekly gross, OTR. No flat rate, no setup fee. Flatbed loads $5-7/mile. Free estimate.")
     qa = ("How much does truck dispatch cost at Texas Solutions?",
           f"Texas Solutions charges {M['pct'][0]}-{M['pct'][1]}% of weekly gross for OTR semi trucks (dry van, reefer, flatbed, step deck, power only) "
           f"and {S['pct'][0]}-{S['pct'][1]}% for OTR small trucks (box truck, straight truck, hotshot). There is no flat rate, no setup fee and no "
@@ -501,7 +501,7 @@ def build_home():
   {pricing_cards()}
 </div></section>
 <section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate board</span><h2>What loads are paying</h2><p>A rough guide to rates per mile on common equipment. Flatbed and hotshot often pay $5-6 a mile. Dry van runs about $2-5 a mile depending on local or OTR.</p></div>
+  <div class="sec-head rv"><span class="eyebrow">Rate board</span><h2>What loads are paying</h2><p>A rough guide to rates per mile on common equipment. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR.</p></div>
   {rate_board()}
 </div></section>
 <section class="sec"><div class="wrap">
@@ -605,11 +605,11 @@ def build_estimate():
 def build_rates():
     title = "Truck Dispatch Rates 2026: 5-6% Semi, 8-10% Box Truck & Hotshot | Texas Solutions"
     desc = ("Truck dispatch rates and rate-per-mile guide: semi trucks 5-6% of weekly gross, box trucks and hotshots 8-10%, OTR, no flat rate. "
-            "Flatbed and hotshot loads often pay $5-6/mile; dry van $2-5/mile depending on local or OTR.")
+            "Flatbed and step deck $5-7/mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, box truck $1.80-3.20.")
     qa = ("What are truck dispatch rates in 2026?",
           f"Independent truck dispatchers usually charge a percentage of weekly gross. Texas Solutions charges {M['pct'][0]}-{M['pct'][1]}% for OTR semi trucks and "
           f"{S['pct'][0]}-{S['pct'][1]}% for OTR box trucks, straight trucks and hotshots, with no flat rate. As a rough guide to freight rates, flatbed "
-          "and hotshot loads often pay $5-6 a mile and dry van about $2-5 a mile depending on local or OTR lanes.")
+          "and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20.")
     rows = "\n".join(f"<tr><td><b>{eq}</b></td><td>{r}/mi</td><td>{n}</td></tr>" for eq, r, n in C.RATE_GUIDE)
     body = f"""{phero("Dispatch Rates", "Truck Dispatch Rates &amp; Rate-per-Mile Guide", "Clear percentage pricing for OTR carriers, plus a rough guide to what loads are paying by equipment type.")}
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>
@@ -629,7 +629,7 @@ def build_rates():
       <tbody style="color:var(--text)">{rows.replace('<td>', '<td style="color:var(--text);border-color:var(--line)">')}</tbody>
     </table></div>
     <h2>Local vs OTR dry van rates</h2>
-    <p>Dry van freight has the widest range, roughly $2 to $5 a mile. Short local and regional loads often pay more per mile because the load is short, while long OTR runs pay less per mile but more per load. Our published dispatch percentages apply to OTR operations.</p>
+    <p>Dry van freight has the widest range, roughly $3 to $5 a mile. Short local and regional loads often pay more per mile because the load is short, while long OTR runs pay less per mile but more per load. Our published dispatch percentages apply to OTR operations.</p>
     <h2>Example: what dispatch costs on a typical week</h2>
     <ul>
       <li>Semi truck grossing {money(M['gross'][0])}-{money(M['gross'][1])}: fee about {SEMI_FEE[0]}-{SEMI_FEE[1]} a week at {M['pct'][0]}-{M['pct'][1]}%.</li>
@@ -825,7 +825,7 @@ def build_site_files():
         f"- Box truck / straight truck / hotshot dispatch fee: {S['pct'][0]}-{S['pct'][1]}% of weekly gross (OTR) - about {SMALL_FEE[0]}-{SMALL_FEE[1]} per week on typical gross",
         f"- Condition: {C.PRICING_CONDITION}",
         "- No flat rate, no setup fee, no monthly subscription, no long-term contract",
-        "- Rough freight rates: flatbed and hotshot about $5-6 per mile; dry van about $2-5 per mile depending on local or OTR",
+        "- Rough freight rates per mile: flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20",
         "- Area served: United States (48 states), with a focus on Texas and the Permian Basin",
         f"- Phone: {C.PHONE} | WhatsApp: +1 838 910 3147 (https://wa.me/{C.WHATSAPP}) | Email: {C.EMAIL}",
         f"- Address: {C.STREET}, {C.CITY}, {C.REGION} {C.POSTAL}", "",

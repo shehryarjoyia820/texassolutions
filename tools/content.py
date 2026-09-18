@@ -48,26 +48,26 @@ PRICING_NOTE = "Rough estimate only. Your final percentage is confirmed in your 
 
 # Rough rate-per-mile guide by equipment (for the rate board and estimate page).
 RATE_GUIDE = [
-    ("Flatbed", "$5.00 - $6.00", "Open-deck OTR freight"),
-    ("Hotshot", "$5.00 - $6.00", "Expedited and partial loads"),
-    ("Dry Van", "$2.00 - $5.00", "Depends on local or OTR lanes"),
-    ("Step Deck", "$2.50 - $3.20", "Taller open-deck freight"),
-    ("Reefer", "$2.40 - $3.00", "Temperature-controlled"),
-    ("Power Only", "$2.00 - $2.60", "Drop-and-hook trailers"),
-    ("Box Truck", "$1.80 - $2.60", "Small-truck freight"),
+    ("Flatbed", "$5.00 - $7.00", "Open-deck OTR freight"),
+    ("Step Deck", "$5.00 - $7.00", "Taller open-deck freight"),
+    ("Reefer", "$4.00 - $6.00", "Temperature-controlled"),
+    ("Hotshot", "$4.00 - $5.00", "Expedited and partial loads"),
+    ("Dry Van", "$3.00 - $5.00", "Depends on local or OTR lanes"),
+    ("Power Only", "$3.00 - $5.00", "Drop-and-hook trailers"),
+    ("Box Truck", "$1.80 - $3.20", "Small-truck freight"),
 ]
 
 # Sample lanes for the animated rate board (illustrative, not live).
 LANES = [
-    ("Midland, TX", "Phoenix, AZ", "Flatbed", 872, "$5.40"),
-    ("Odessa, TX", "Oklahoma City, OK", "Hotshot", 412, "$5.85"),
-    ("Laredo, TX", "Atlanta, GA", "Dry Van", 1142, "$2.65"),
-    ("Dallas, TX", "Denver, CO", "Flatbed", 793, "$5.70"),
+    ("Midland, TX", "Phoenix, AZ", "Flatbed", 872, "$5.60"),
+    ("Odessa, TX", "Oklahoma City, OK", "Hotshot", 412, "$4.85"),
+    ("Laredo, TX", "Atlanta, GA", "Dry Van", 1142, "$3.25"),
+    ("Dallas, TX", "Denver, CO", "Flatbed", 793, "$6.40"),
     ("Houston, TX", "Memphis, TN", "Dry Van", 587, "$3.10"),
-    ("Amarillo, TX", "Salt Lake City, UT", "Hotshot", 906, "$5.20"),
-    ("El Paso, TX", "Los Angeles, CA", "Power Only", 801, "$2.30"),
-    ("San Antonio, TX", "Nashville, TN", "Step Deck", 1024, "$2.85"),
-    ("Fort Worth, TX", "Kansas City, MO", "Reefer", 520, "$2.75"),
+    ("Amarillo, TX", "Salt Lake City, UT", "Hotshot", 906, "$4.40"),
+    ("El Paso, TX", "Los Angeles, CA", "Power Only", 801, "$3.45"),
+    ("San Antonio, TX", "Nashville, TN", "Step Deck", 1024, "$5.90"),
+    ("Fort Worth, TX", "Kansas City, MO", "Reefer", 520, "$4.80"),
     ("Houston, TX", "San Antonio, TX", "Dry Van", 197, "$4.60"),
 ]
 
@@ -171,51 +171,51 @@ LANDING = [
     },
     {
         "file": "hotshot-dispatch.html", "nav": "Hotshot Dispatch", "kind": "small",
-        "title": "Hotshot Dispatch Service | $5-6/Mile Loads, 8-10% | Texas Solutions",
-        "description": "Hotshot dispatch for owner-operators: expedited and partial loads, rate negotiation and broker paperwork. Hotshot loads often pay $5-6 a mile. Dispatch fee 8-10% of weekly gross, OTR.",
+        "title": "Hotshot Dispatch Service | $4-5/Mile Loads, 8-10% | Texas Solutions",
+        "description": "Hotshot dispatch for owner-operators: expedited and partial loads, rate negotiation and broker paperwork. Hotshot loads often pay $4-5 a mile. Dispatch fee 8-10% of weekly gross, OTR.",
         "keywords": "hotshot dispatch, hotshot dispatch service, hotshot dispatcher, hotshot trucking dispatch, hotshot loads, gooseneck dispatch, hotshot dispatch Texas, Permian Basin hotshot",
         "h1": "Hotshot Dispatch Service",
         "lede": "Time-sensitive hotshot freight found, negotiated and confirmed with you before it is booked.",
-        "answer": "Texas Solutions dispatches hotshot trucks for owner-operators across the United States, including Texas and the Permian Basin. Dispatchers find expedited and partial loads, negotiate rates that often run $5-6 a mile, and handle broker paperwork. The dispatch fee is 8-10% of weekly gross for OTR hotshots, with no flat rate.",
+        "answer": "Texas Solutions dispatches hotshot trucks for owner-operators across the United States, including Texas and the Permian Basin. Dispatchers find expedited and partial loads, negotiate rates that often run $4-5 a mile, and handle broker paperwork. The dispatch fee is 8-10% of weekly gross for OTR hotshots, with no flat rate.",
         "body": [
             "Hotshot freight is fast and time-critical: equipment, machinery, construction and oilfield materials that cannot wait for a full truckload. Winning it means answering brokers fast and knowing which lanes pay.",
-            "From our base in Midland, Texas, we see a lot of hotshot freight move through the Permian Basin and across Texas. Rough rates on hotshot loads commonly run $5 to $6 a mile.",
+            "From our base in Midland, Texas, we see a lot of hotshot freight move through the Permian Basin and across Texas. Rough rates on hotshot loads commonly run $4 to $5 a mile.",
         ],
         "faqs": [
-            ("How much do hotshot loads pay per mile?", "As a rough guide, hotshot loads often pay about $5-6 a mile, depending on lane, urgency and season. Rates are not guaranteed."),
+            ("How much do hotshot loads pay per mile?", "As a rough guide, hotshot loads often pay about $4-5 a mile, depending on lane, urgency and season. Rates are not guaranteed."),
             ("What is the dispatch fee for hotshots?", "8-10% of weekly gross for OTR hotshot operations, with no flat rate, no setup fee and no monthly subscription."),
         ],
     },
     {
         "file": "flatbed-dispatch.html", "nav": "Flatbed & Step Deck Dispatch", "kind": "semi",
-        "title": "Flatbed Dispatch Service | $5-6/Mile, 5-6% Fee | Texas Solutions",
-        "description": "Flatbed and step deck dispatch for owner-operators and small fleets. Open-deck loads often pay $5-6 a mile. Dispatch fee 5-6% of weekly gross for OTR semis. No flat rate.",
+        "title": "Flatbed Dispatch Service | $5-7/Mile, 5-6% Fee | Texas Solutions",
+        "description": "Flatbed and step deck dispatch for owner-operators and small fleets. Open-deck loads often pay $5-7 a mile. Dispatch fee 5-6% of weekly gross for OTR semis. No flat rate.",
         "keywords": "flatbed dispatch, flatbed dispatch service, flatbed dispatcher, step deck dispatch, open deck dispatch, flatbed loads per mile, flatbed truck dispatch company",
         "h1": "Flatbed & Step Deck Dispatch",
         "lede": "Open-deck freight searched, sized up and negotiated for your flatbed or step deck.",
-        "answer": "Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets nationwide. Dispatchers find open-deck loads that often pay $5-6 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5-6% of weekly gross for OTR semis, with no flat rate.",
+        "answer": "Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets nationwide. Dispatchers find open-deck loads that often pay $5-7 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5-6% of weekly gross for OTR semis, with no flat rate.",
         "body": [
             "Open-deck freight comes with more questions than a sealed trailer: dimensions, weight, tarps, straps and chains, and whether a step deck is needed for height. We ask those questions before the load reaches you.",
             "Texas and the Permian Basin move a large share of the country's open-deck freight, including steel, building materials, machinery and oilfield equipment.",
         ],
         "faqs": [
-            ("How much do flatbed loads pay per mile?", "As a rough guide, flatbed loads often pay about $5-6 a mile, depending on lane, tarping and season. Rates are not guaranteed."),
+            ("How much do flatbed loads pay per mile?", "As a rough guide, flatbed and step deck loads often pay about $5-7 a mile, depending on lane, tarping and season. Rates are not guaranteed."),
             ("What is the dispatch fee for flatbeds?", "5-6% of weekly gross for OTR flatbed and step deck semis. On $8,000-$10,000 weekly gross that is about $400-$600 a week."),
         ],
     },
     {
         "file": "dry-van-dispatch.html", "nav": "Dry Van Dispatch", "kind": "semi",
         "title": "Dry Van Dispatch Service | 5-6% OTR Fee | Texas Solutions",
-        "description": "Dry van dispatch for owner-operators and small fleets: lane planning, rate negotiation and broker paperwork. Dry van loads run about $2-5 a mile depending on local or OTR. Fee 5-6% of weekly gross.",
+        "description": "Dry van dispatch for owner-operators and small fleets: lane planning, rate negotiation and broker paperwork. Dry van loads run about $3-5 a mile depending on local or OTR. Fee 5-6% of weekly gross.",
         "keywords": "dry van dispatch, dry van dispatch service, dry van dispatcher, dry van loads per mile, 53 ft dry van dispatch, dry van trucking dispatch",
         "h1": "Dry Van Dispatch Service",
         "lede": "Lanes planned, deadhead cut and every load negotiated, with you approving each booking.",
-        "answer": "Texas Solutions provides dry van dispatch for owner-operators and small fleets nationwide. Dispatchers plan lanes to reduce deadhead, negotiate every load and handle broker paperwork. Dry van loads run roughly $2-5 a mile depending on local or OTR lanes, and the dispatch fee is 5-6% of weekly gross for OTR semis.",
+        "answer": "Texas Solutions provides dry van dispatch for owner-operators and small fleets nationwide. Dispatchers plan lanes to reduce deadhead, negotiate every load and handle broker paperwork. Dry van loads run roughly $3-5 a mile depending on local or OTR lanes, and the dispatch fee is 5-6% of weekly gross for OTR semis.",
         "body": [
             "Dry van is the most common trailer on the road, which means the most freight and the most competition for it. Good dry van dispatch is about lanes: booking the next load before this one delivers and avoiding markets that leave you stuck.",
         ],
         "faqs": [
-            ("How much do dry van loads pay per mile?", "Roughly $2-5 a mile. Short local loads can pay more per mile, long OTR runs less per mile but more per load. Rates are not guaranteed."),
+            ("How much do dry van loads pay per mile?", "Roughly $3-5 a mile. Short local loads can pay more per mile, long OTR runs less per mile but more per load. Rates are not guaranteed."),
         ],
     },
     {

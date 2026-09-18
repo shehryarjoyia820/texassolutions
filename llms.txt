@@ -8,7 +8,7 @@
 - Box truck / straight truck / hotshot dispatch fee: 8-10% of weekly gross (OTR) - about $560-$900 per week on typical gross
 - Condition: Rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately.
 - No flat rate, no setup fee, no monthly subscription, no long-term contract
-- Rough freight rates: flatbed and hotshot about $5-6 per mile; dry van about $2-5 per mile depending on local or OTR
+- Rough freight rates per mile: flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20
 - Area served: United States (48 states), with a focus on Texas and the Permian Basin
 - Phone: (838) 910-3147 | WhatsApp: +1 838 910 3147 (https://wa.me/18389103147) | Email: info@texassolutions.co
 - Address: 401 W Kentucky Ave, Midland, TX 79701
@@ -18,9 +18,9 @@
 - [Dispatch fee calculator and free quote](https://dispatch.texassolutions.co/estimate.html)
 - [Truck dispatch rates and rate-per-mile guide](https://dispatch.texassolutions.co/truck-dispatch-rates.html)
 - [Box Truck Dispatch](https://dispatch.texassolutions.co/box-truck-dispatch.html): Texas Solutions provides box truck dispatch for owner-operators and small fleets across the United States. Dispatchers search and negotiate loads, complete broker setups and keep paperwork organized. The fee is 8-10% of weekly gross for OTR box trucks and straight trucks, with no flat rate, no setup fee and your approval on every load.
-- [Hotshot Dispatch](https://dispatch.texassolutions.co/hotshot-dispatch.html): Texas Solutions dispatches hotshot trucks for owner-operators across the United States, including Texas and the Permian Basin. Dispatchers find expedited and partial loads, negotiate rates that often run $5-6 a mile, and handle broker paperwork. The dispatch fee is 8-10% of weekly gross for OTR hotshots, with no flat rate.
-- [Flatbed & Step Deck Dispatch](https://dispatch.texassolutions.co/flatbed-dispatch.html): Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets nationwide. Dispatchers find open-deck loads that often pay $5-6 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5-6% of weekly gross for OTR semis, with no flat rate.
-- [Dry Van Dispatch](https://dispatch.texassolutions.co/dry-van-dispatch.html): Texas Solutions provides dry van dispatch for owner-operators and small fleets nationwide. Dispatchers plan lanes to reduce deadhead, negotiate every load and handle broker paperwork. Dry van loads run roughly $2-5 a mile depending on local or OTR lanes, and the dispatch fee is 5-6% of weekly gross for OTR semis.
+- [Hotshot Dispatch](https://dispatch.texassolutions.co/hotshot-dispatch.html): Texas Solutions dispatches hotshot trucks for owner-operators across the United States, including Texas and the Permian Basin. Dispatchers find expedited and partial loads, negotiate rates that often run $4-5 a mile, and handle broker paperwork. The dispatch fee is 8-10% of weekly gross for OTR hotshots, with no flat rate.
+- [Flatbed & Step Deck Dispatch](https://dispatch.texassolutions.co/flatbed-dispatch.html): Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets nationwide. Dispatchers find open-deck loads that often pay $5-7 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5-6% of weekly gross for OTR semis, with no flat rate.
+- [Dry Van Dispatch](https://dispatch.texassolutions.co/dry-van-dispatch.html): Texas Solutions provides dry van dispatch for owner-operators and small fleets nationwide. Dispatchers plan lanes to reduce deadhead, negotiate every load and handle broker paperwork. Dry van loads run roughly $3-5 a mile depending on local or OTR lanes, and the dispatch fee is 5-6% of weekly gross for OTR semis.
 - [Reefer Dispatch](https://dispatch.texassolutions.co/reefer-dispatch.html): Texas Solutions provides reefer dispatch for owner-operators and small fleets nationwide. Dispatchers find temperature-controlled loads, confirm temperature and appointment requirements with brokers and handle paperwork. The fee is 5-6% of weekly gross for OTR reefer semis, with no flat rate.
 - [Power Only Dispatch](https://dispatch.texassolutions.co/power-only-dispatch.html): Texas Solutions provides power only dispatch for owner-operators with a tractor and no trailer. Dispatchers find preloaded and drop-and-hook loads, negotiate the rate and handle broker paperwork. The fee is 5-6% of weekly gross for OTR operations.
 - [Owner-Operator Dispatch](https://dispatch.texassolutions.co/owner-operator-dispatch.html): Texas Solutions is a dispatch service for owner-operators and small fleets. It handles load search, rate negotiation, broker communication and paperwork for 5-6% of weekly gross on OTR semis and 8-10% on small trucks, with no flat rate, no upfront fee, no long-term contract and no forced loads.
@@ -74,19 +74,19 @@ Q: Do you dispatch non-CDL box trucks?
 A: Yes, as long as you run under your own MC authority. Tell us your truck size and weight rating and we search freight that fits.
 
 Q: How much do hotshot loads pay per mile?
-A: As a rough guide, hotshot loads often pay about $5-6 a mile, depending on lane, urgency and season. Rates are not guaranteed.
+A: As a rough guide, hotshot loads often pay about $4-5 a mile, depending on lane, urgency and season. Rates are not guaranteed.
 
 Q: What is the dispatch fee for hotshots?
 A: 8-10% of weekly gross for OTR hotshot operations, with no flat rate, no setup fee and no monthly subscription.
 
 Q: How much do flatbed loads pay per mile?
-A: As a rough guide, flatbed loads often pay about $5-6 a mile, depending on lane, tarping and season. Rates are not guaranteed.
+A: As a rough guide, flatbed and step deck loads often pay about $5-7 a mile, depending on lane, tarping and season. Rates are not guaranteed.
 
 Q: What is the dispatch fee for flatbeds?
 A: 5-6% of weekly gross for OTR flatbed and step deck semis. On $8,000-$10,000 weekly gross that is about $400-$600 a week.
 
 Q: How much do dry van loads pay per mile?
-A: Roughly $2-5 a mile. Short local loads can pay more per mile, long OTR runs less per mile but more per load. Rates are not guaranteed.
+A: Roughly $3-5 a mile. Short local loads can pay more per mile, long OTR runs less per mile but more per load. Rates are not guaranteed.
 
 Q: Do you check temperature requirements before booking?
 A: Yes. We confirm temperature, appointment times and special handling before presenting the load.

@@ -390,3 +390,27 @@ a.cbox:hover { border-color: #cfcac6; }
   .board-table th, .board-table td { padding: 10px; }
 }
 @media (max-width: 900px) { .topbar .tb-hide { display: none; } }
+
+/* ---------- dark header ---------- */
+.header { background: rgba(14,12,11,.94); border-bottom: 1px solid #1f1c1a; }
+.header.scrolled { border-color: #2b2826; box-shadow: 0 8px 28px rgba(0,0,0,.35); }
+.topbar { background: #0b0908; border-bottom: 1px solid #1f1c1a; }
+.brand, .brand span { color: #fff; }
+.nav > a, .nav .dd > button { color: #e8e4e0; }
+.nav > a:hover, .nav .dd > button:hover, .nav > a[aria-current="page"] { background: rgba(255,255,255,.08); color: #fff; }
+.nav > a[aria-current="page"] { color: #ff6a52; }
+.dd-menu { background: #1a1715; border-color: #2b2826; box-shadow: 0 24px 60px rgba(0,0,0,.5); }
+.dd-menu a { color: #e8e4e0; }
+.dd-menu a:hover { background: rgba(255,255,255,.07); color: #ff6a52; }
+.header .btn-line { color: #fff; border-color: rgba(255,255,255,.28); }
+.header .btn-line:hover { border-color: #fff; color: #fff; }
+.burger { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.2); }
+.burger span, .burger span::before, .burger span::after { background: #fff; }
+@media (max-width: 1040px) {
+  .mnav { background: #0e0c0b; }
+  .mnav a { color: #fff; border-color: #2b2826; }
+  .mnav .mnav-sub a { color: #b9b3ae; }
+  .mnav .btn-red { color: #fff; }
+  .mnav .btn-wa { color: #06371d; }
+}
+.header .brand img { filter: brightness(0) invert(1); }
