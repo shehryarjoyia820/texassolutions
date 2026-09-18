@@ -552,8 +552,7 @@ def build_estimate():
       <div class="range-row"><input type="range" id="estGross" min="3000" max="15000" step="250" value="9000"><output id="estGrossOut" for="estGross">$9,000</output></div>
       <p class="hint">Typical OTR weekly gross for this truck type: <b id="estTypical">$8,000 - $10,000</b></p>
     </div>
-    <span class="otr">&#9650; OTR trucks typically earn more: longer runs, higher weekly gross</span>
-    <p class="hint" style="margin-top:8px">Pricing applies to OTR (over-the-road) operations. No flat rate.</p>
+    <span class="otr">&#9888; OTR trucks make more money &middot; no flat rate</span>
   </div>
   <div class="est-out" aria-live="polite">
     <h3>Estimated dispatch fee</h3>

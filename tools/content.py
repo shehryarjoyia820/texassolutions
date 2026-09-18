@@ -43,7 +43,7 @@ PRICING = {
         "gross": (8000, 10000),
     },
 }
-PRICING_CONDITION = "Rates apply to OTR (over-the-road) operations, where trucks typically earn more thanks to longer runs and higher weekly gross. Local and regional work is quoted separately."
+PRICING_CONDITION = "Rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately."
 PRICING_NOTE = "Rough estimate only. Your final percentage is confirmed in your signed dispatch agreement. No flat rate, no setup fee, no monthly subscription."
 
 # Rough rate-per-mile guide by equipment (for the rate board and estimate page).
