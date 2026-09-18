@@ -55,42 +55,82 @@
     tick(); setInterval(tick, 30000);
   }
 
-  /* estimator */
+  /* estimator: per-truck pricing */
   var est = document.getElementById('estimator');
   var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  var cfg = est ? JSON.parse(est.getAttribute('data-pricing')) : null;
+  function truckById(id) { for (var k = 0; k < cfg.trucks.length; k++) if (cfg.trucks[k].id === id) return cfg.trucks[k]; return cfg.trucks[0]; }
   if (est) {
-    var cfg = JSON.parse(est.getAttribute('data-pricing'));
     var trucks = est.querySelector('#estTrucks'), gross = est.querySelector('#estGross');
     var outT = est.querySelector('#estTrucksOut'), outG = est.querySelector('#estGrossOut');
-    function kind() { var c = est.querySelector('input[name=estType]:checked'); return c ? c.value : 'semi'; }
-    function syncGross(reset) {
-      var p = cfg[kind()];
-      if (reset) gross.value = Math.round((p.gross[0] + p.gross[1]) / 2);
-      est.querySelector('#estTypical').textContent = money(p.gross[0]) + ' - ' + money(p.gross[1]);
+    var custom = est.querySelector('#estCustom');
+    var $ = function (id) { return document.getElementById(id); };
+    function current() { var c = est.querySelector('input[name=estTruck]:checked'); return truckById(c ? c.value : ''); }
+    function pick(reset) {
+      var tr = current();
+      if (reset) gross.value = Math.round((tr.gross[0] + tr.gross[1]) / 2);
+      $('estTypical').textContent = money(tr.gross[0]) + ' - ' + money(tr.gross[1]);
+      $('estTruckName').textContent = tr.name; $('estTruckName2').textContent = tr.name;
+      var wt = $('wqTruck'); if (wt && !wt.dataset.touched) { wt.value = tr.id; wt.dispatchEvent(new Event('sync')); }
     }
     function calc() {
-      var p = cfg[kind()], n = +trucks.value, g = +gross.value;
-      var lo = g * p.pct[0] / 100, hi = g * p.pct[1] / 100;
+      var tr = current(), n = +trucks.value, g = +gross.value;
+      var cp = parseFloat(custom.value), useCustom = cp > 0 && cp <= 100;
+      var pLo = useCustom ? cp : tr.pct[0], pHi = useCustom ? cp : tr.pct[1];
+      var lo = g * pLo / 100, hi = g * pHi / 100;
+      var rng = function (a, b) { return a === b ? money(a) : money(a) + ' - ' + money(b); };
       outT.textContent = n + (n === 1 ? ' truck' : ' trucks');
       outG.textContent = money(g);
-      est.querySelector('#estPct').textContent = p.pct[0] + '-' + p.pct[1] + '%';
-      est.querySelector('#estWeekly').textContent = money(lo * n) + ' - ' + money(hi * n);
-      est.querySelector('#estPerTruck').textContent = money(lo) + ' - ' + money(hi);
-      est.querySelector('#estMonthly').textContent = money(lo * n * 52 / 12) + ' - ' + money(hi * n * 52 / 12);
-      est.querySelector('#estKeep').textContent = money((g - hi) * n) + ' - ' + money((g - lo) * n);
-      est.querySelector('#estBig').innerHTML = money(lo * n) + '<small> - ' + money(hi * n) + ' / week</small>';
-      var summary = p.label + ', ' + n + ' truck(s), ' + money(g) + ' weekly gross per truck, ' + p.pct[0] + '-' + p.pct[1] + '% = ' + money(lo * n) + ' - ' + money(hi * n) + ' per week (OTR)';
-      Array.prototype.forEach.call(document.querySelectorAll('input[name=estimate_summary]'), function (h) { h.value = summary; });
-      var eqSel = document.getElementById('qEquip');
-      if (eqSel && !eqSel.dataset.touched) eqSel.value = p.defaultEq;
-      var qt = document.getElementById('qTrucks'); if (qt && !qt.dataset.touched) qt.value = n;
+      $('estPct').textContent = useCustom ? cp + '% (your rate)' : tr.pct[0] + '-' + tr.pct[1] + '%';
+      $('estRpm').textContent = tr.rpm + ' /mi';
+      $('estWeekly').textContent = rng(lo * n, hi * n);
+      $('estPerTruck').textContent = rng(lo, hi);
+      $('estMonthly').textContent = rng(lo * n * 52 / 12, hi * n * 52 / 12);
+      $('estKeep').textContent = rng((g - hi) * n, (g - lo) * n);
+      $('estBig').innerHTML = useCustom ? money(lo * n) + '<small>per week at ' + cp + '%</small>' : money(lo * n) + '<small> - ' + money(hi * n) + ' / week</small>';
+      var wp = $('wqPct'); if (wp && !wp.dataset.touched) wp.value = useCustom ? cp : '';
+      var wq = $('wqTrucks'); if (wq && !wq.dataset.touched) wq.value = n;
+      var wg = $('wqGross'); if (wg && !wg.dataset.touched) wg.value = g;
     }
-    Array.prototype.forEach.call(est.querySelectorAll('input[name=estType]'), function (r) { r.addEventListener('change', function () { syncGross(true); calc(); }); });
-    trucks.addEventListener('input', calc); gross.addEventListener('input', calc);
-    ['qEquip', 'qTrucks'].forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener('change', function () { el.dataset.touched = '1'; }); });
-    var pre = new URLSearchParams(location.search).get('type');
-    if (pre && cfg[pre]) { var r = est.querySelector('input[value=' + pre + ']'); if (r) r.checked = true; }
-    syncGross(true); calc();
+    Array.prototype.forEach.call(est.querySelectorAll('input[name=estTruck]'), function (r) { r.addEventListener('change', function () { pick(true); calc(); }); });
+    trucks.addEventListener('input', calc); gross.addEventListener('input', calc); custom.addEventListener('input', calc);
+    var qs = new URLSearchParams(location.search), want = qs.get('truck') || { semi: 'dry-van', small: 'box-truck' }[qs.get('type')];
+    if (want) { var r0 = est.querySelector('input[name=estTruck][value="' + want + '"]'); if (r0) r0.checked = true; }
+    pick(true); calc();
+  }
+
+  /* free quote: opens WhatsApp with the carrier's details filled in */
+  var wa = document.getElementById('waQuote');
+  if (wa && cfg) {
+    var wt = document.getElementById('wqTruck'), hint = document.getElementById('wqPctHint');
+    var syncHint = function () { var tr = truckById(wt.value); hint.textContent = 'Our rate for a ' + tr.name + ': ' + tr.pct[0] + '-' + tr.pct[1] + '% of weekly gross (OTR)'; };
+    wt.addEventListener('change', function () { wt.dataset.touched = '1'; syncHint(); });
+    wt.addEventListener('sync', syncHint); syncHint();
+    ['wqTrucks', 'wqGross', 'wqPct'].forEach(function (id) { var el = document.getElementById(id); el.addEventListener('input', function () { el.dataset.touched = '1'; }); });
+    wa.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!wa.checkValidity()) { wa.reportValidity(); return; }
+      var v = function (id) { return document.getElementById(id).value.trim(); };
+      var tr = truckById(wt.value);
+      var lines = [
+        'FREE DISPATCH QUOTE REQUEST',
+        'Name: ' + v('wqName'),
+        'Phone: ' + v('wqPhone'),
+        'Truck type: ' + tr.name,
+        'Number of trucks: ' + (v('wqTrucks') || '1'),
+        'Desired percentage: ' + v('wqPct') + '%',
+        'Weekly gross per truck: ' + (v('wqGross') ? money(+v('wqGross')) : '-'),
+        'MC number: ' + (v('wqMc') || '-'),
+        'Home base / lanes: ' + (v('wqLanes') || '-'),
+        'Message: ' + (v('wqMsg') || '-'),
+        '(Sent from dispatch.texassolutions.co/estimate)'
+      ];
+      var url = 'https://wa.me/' + cfg.wa + '?text=' + encodeURIComponent(lines.join('\n'));
+      var st = wa.querySelector('.form-status');
+      st.className = 'form-status ok';
+      st.innerHTML = 'Opening WhatsApp... If it does not open, <a href="' + url + '" target="_blank" rel="noopener">tap here</a>.';
+      window.open(url, '_blank', 'noopener');
+    });
   }
 
   /* forms: plain written fields only, sent through Web3Forms */

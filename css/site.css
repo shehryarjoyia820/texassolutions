@@ -418,3 +418,15 @@ a.cbox:hover { border-color: #cfcac6; }
 @media (max-width: 560px) { .topbar .wrap.tb-right { justify-content: center; } }
 .range-row input[type=range] { min-width: 0; }
 .range-row output { flex: none; }
+
+/* per-truck selector */
+.seg.trucks { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.seg.trucks label { padding: 12px; }
+.seg.trucks label b { font-size: 15px; }
+.seg.trucks label span { font-size: 12px; display: block; margin-top: 2px; }
+@media (max-width: 1100px) { .seg.trucks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .seg.trucks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+#waQuote .btn-wa { width: 100%; margin-top: 18px; padding: 16px; font-size: 16px; }
+.pct-in { flex: 1; min-width: 0; font: inherit; font-size: 18px; font-weight: 700; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fbfaf9; color: var(--ink); }
+.pct-in:focus { outline: 0; border-color: var(--red); box-shadow: 0 0 0 4px rgba(236,48,19,.12); background: #fff; }
+.range-row .pct-in + output { min-width: 0; font-size: 20px; }

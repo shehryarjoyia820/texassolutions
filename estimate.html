@@ -113,14 +113,20 @@
   
 </div></section>
 <section class="sec" style="padding-top:56px"><div class="wrap">
-  <div class="est rv" id="estimator" data-pricing='{"small": {"label": "Small trucks", "pct": [8, 10], "gross": [7000, 9000], "defaultEq": "Box Truck"}, "semi": {"label": "Semi trucks", "pct": [5, 6], "gross": [8000, 10000], "defaultEq": "Dry Van"}}'>
+  <div class="est rv" id="estimator" data-pricing='{"trucks": [{"id": "dry-van", "name": "Dry Van", "kind": "semi", "label": "Semi trucks", "pct": [5, 6], "gross": [8000, 10000], "rpm": "$3.00 - $5.00"}, {"id": "reefer", "name": "Reefer", "kind": "semi", "label": "Semi trucks", "pct": [5, 6], "gross": [8000, 10000], "rpm": "$4.00 - $6.00"}, {"id": "flatbed", "name": "Flatbed", "kind": "semi", "label": "Semi trucks", "pct": [5, 6], "gross": [8000, 10000], "rpm": "$5.00 - $7.00"}, {"id": "step-deck", "name": "Step Deck", "kind": "semi", "label": "Semi trucks", "pct": [5, 6], "gross": [8000, 10000], "rpm": "$5.00 - $7.00"}, {"id": "power-only", "name": "Power Only", "kind": "semi", "label": "Semi trucks", "pct": [5, 6], "gross": [8000, 10000], "rpm": "$3.00 - $5.00"}, {"id": "box-truck", "name": "Box Truck", "kind": "small", "label": "Small trucks", "pct": [8, 10], "gross": [7000, 9000], "rpm": "$1.80 - $3.20"}, {"id": "straight-truck", "name": "Straight Truck", "kind": "small", "label": "Small trucks", "pct": [8, 10], "gross": [7000, 9000], "rpm": "$1.80 - $3.20"}, {"id": "hotshot", "name": "Hotshot", "kind": "small", "label": "Small trucks", "pct": [8, 10], "gross": [7000, 9000], "rpm": "$4.00 - $5.00"}], "wa": "18389103147"}'>
   <div class="est-in">
     <h2 style="font-size:26px">Dispatch fee calculator</h2>
-    <p style="color:var(--muted);margin-top:8px">Pick your truck type, number of trucks and weekly gross per truck.</p>
-    <div class="field"><span class="flabel">Truck type</span>
-      <div class="seg" role="radiogroup" aria-label="Truck type">
-        <label><input type="radio" name="estType" value="semi" checked><b>Semi truck</b><span>5-6% &middot; dry van, reefer, flatbed, step deck, power only</span></label>
-        <label><input type="radio" name="estType" value="small"><b>Small truck</b><span>8-10% &middot; box truck, straight truck, hotshot</span></label>
+    <p style="color:var(--muted);margin-top:8px">Pick your truck, number of trucks and weekly gross per truck.</p>
+    <div class="field"><span class="flabel">Your truck type</span>
+      <div class="seg trucks" role="radiogroup" aria-label="Truck type">
+        <label><input type="radio" name="estTruck" value="dry-van" checked><b>Dry Van</b><span>5-6% &middot; $3-$5/mi</span></label>
+        <label><input type="radio" name="estTruck" value="reefer"><b>Reefer</b><span>5-6% &middot; $4-$6/mi</span></label>
+        <label><input type="radio" name="estTruck" value="flatbed"><b>Flatbed</b><span>5-6% &middot; $5-$7/mi</span></label>
+        <label><input type="radio" name="estTruck" value="step-deck"><b>Step Deck</b><span>5-6% &middot; $5-$7/mi</span></label>
+        <label><input type="radio" name="estTruck" value="power-only"><b>Power Only</b><span>5-6% &middot; $3-$5/mi</span></label>
+        <label><input type="radio" name="estTruck" value="box-truck"><b>Box Truck</b><span>8-10% &middot; $1.80-$3.20/mi</span></label>
+        <label><input type="radio" name="estTruck" value="straight-truck"><b>Straight Truck</b><span>8-10% &middot; $1.80-$3.20/mi</span></label>
+        <label><input type="radio" name="estTruck" value="hotshot"><b>Hotshot</b><span>8-10% &middot; $4-$5/mi</span></label>
       </div>
     </div>
     <div class="field"><label for="estTrucks">Number of trucks</label>
@@ -128,22 +134,26 @@
     </div>
     <div class="field"><label for="estGross">Weekly gross per truck</label>
       <div class="range-row"><input type="range" id="estGross" min="3000" max="15000" step="250" value="9000"><output id="estGrossOut" for="estGross">$9,000</output></div>
-      <p class="hint">Typical OTR weekly gross for this truck type: <b id="estTypical">$8,000 - $10,000</b></p>
+      <p class="hint">Typical OTR weekly gross for a <b id="estTruckName2">Dry Van</b>: <b id="estTypical">$8,000 - $10,000</b></p>
+    </div>
+    <div class="field"><label for="estCustom">Your own percentage (optional)</label>
+      <div class="range-row"><input type="number" id="estCustom" min="1" max="20" step="0.5" inputmode="decimal" placeholder="e.g. 5" class="pct-in"><output>%</output></div>
+      <p class="hint">Type any percentage to see the dispatch fee at your rate. Leave empty to see our standard range.</p>
     </div>
     <span class="otr">&#9888; OTR trucks make more money &middot; no flat rate</span>
   </div>
   <div class="est-out" aria-live="polite">
-    <h3>Estimated dispatch fee</h3>
+    <h3>Price for your <span id="estTruckName">Dry Van</span></h3>
     <div class="est-big" id="estBig">$450<small> - $540 / week</small></div>
     <div class="est-lines">
       <div><span>Dispatch percentage</span><b id="estPct">5-6%</b></div>
+      <div><span>Rough rate per mile</span><b id="estRpm">-</b></div>
       <div><span>Fee per truck, weekly</span><b id="estPerTruck">-</b></div>
       <div><span>Total fee, weekly</span><b id="estWeekly">-</b></div>
       <div><span>Total fee, monthly (avg)</span><b id="estMonthly">-</b></div>
       <div><span>You keep of gross, weekly</span><b id="estKeep">-</b></div>
     </div>
-    <a class="btn btn-red" href="#quote">Request my free quote</a>
-    <a class="btn btn-wa" href="https://wa.me/18389103147?text=Hi%20Texas%20Solutions%2C%20I%27d%20like%20to%20know%20more%20about%20your%20truck%20dispatch%20service." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.75A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3zm0 23.66c-2 0-3.95-.54-5.65-1.55l-.4-.24-3.97 1.04 1.06-3.86-.26-.4a10.6 10.6 0 0 1-1.63-5.65c0-5.87 4.78-10.65 10.66-10.65 5.87 0 10.63 4.78 10.63 10.65 0 5.88-4.77 10.66-10.44 10.66zm5.84-7.97c-.32-.16-1.9-.94-2.19-1.04-.3-.11-.5-.16-.72.16-.21.32-.83 1.04-1.01 1.25-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67 0 1.57 1.15 3.1 1.31 3.3.16.22 2.26 3.45 5.47 4.84.77.33 1.36.53 1.83.67.77.25 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.52-.08-.14-.29-.22-.61-.38z"/></svg>Send on WhatsApp</a>
+    <a class="btn btn-red" href="#quote">Get my free quote</a>
     <small>Rough estimate only. Your final percentage is confirmed in your signed dispatch agreement. No flat rate, no setup fee, no monthly subscription. Gross, rates and earnings are not guaranteed.</small>
   </div>
 </div>
@@ -184,33 +194,22 @@
 </div></section>
 <section class="sec" id="quote"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Free quote</span><h2>Request your dispatch quote</h2><p>Send your details and a dispatcher will confirm your percentage and next steps. Written details only; no documents needed at this stage.</p></div>
-    <form class="form rv" id="quoteForm" data-web3 data-subject="New dispatch quote request" novalidate>
+    <div class="sec-head rv"><span class="eyebrow">Free quote</span><h2>Name your percentage, get a free quote</h2><p>Tell us your truck and the dispatch percentage you want. Tap the button and your quote request opens in WhatsApp, ready to send.</p></div>
+    <form class="form rv" id="waQuote" novalidate>
   <div class="grid g2">
-    <div><label class="fl" for="quoteForm-name">Full name <i>*</i></label><input type="text" id="quoteForm-name" name="name" autocomplete="name" required></div>
-    <div><label class="fl" for="quoteForm-phone">Phone <i>*</i></label><input type="tel" id="quoteForm-phone" name="phone" autocomplete="tel" required></div>
-    <div><label class="fl" for="quoteForm-email">Email <i>*</i></label><input type="email" id="quoteForm-email" name="email" autocomplete="email" required></div>
-    <div><label class="fl" for="quoteForm-company">Company name</label><input type="text" id="quoteForm-company" name="company" autocomplete="organization"></div>
-    <div><label class="fl" for="quoteForm-mc">MC number</label><input type="text" id="quoteForm-mc" name="mc_number" inputmode="numeric"></div>
-    <div><label class="fl" for="quoteForm-dot">DOT number</label><input type="text" id="quoteForm-dot" name="dot_number" inputmode="numeric"></div>
-    <div><label class="fl" for="qEquip">Equipment <i>*</i></label><select id="qEquip" name="equipment" required><option value="">Select equipment</option><option>Dry Van</option>
-<option>Reefer</option>
-<option>Flatbed</option>
-<option>Step Deck</option>
-<option>Power Only</option>
-<option>Hotshot</option>
-<option>Box Truck</option>
-<option>Straight Truck</option></select></div>
-    <div><label class="fl" for="qTrucks">Number of trucks</label><input type="number" id="qTrucks" name="trucks" min="1" max="500" value="1"></div>
-    <div class="full"><label class="fl" for="quoteForm-lanes">Home base and preferred lanes</label><input type="text" id="quoteForm-lanes" name="lanes" placeholder="e.g. Midland, TX. OTR to the Southeast, home every 2 weeks"></div>
-    <div class="full"><label class="fl" for="quoteForm-msg">Message</label><textarea id="quoteForm-msg" name="message" placeholder="Tell us about your truck, authority age, and what you need from a dispatcher."></textarea></div>
-    <div class="full"><label class="consent"><input type="checkbox" name="sms_consent" value="yes"><span>I agree to receive conversational and service-related SMS messages from Texas Solutions, a brand operated by LeadFlow Marketing Inc. at the phone number provided, including responses to my inquiry and dispatch-related communications. Message frequency varies. Message and data rates may apply. Reply STOP to opt out and HELP for help. SMS consent is optional and is not a condition of receiving dispatch services. See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms &amp; Conditions</a>.</span></label></div>
+    <div><label class="fl" for="wqName">Full name <i>*</i></label><input type="text" id="wqName" autocomplete="name" required></div>
+    <div><label class="fl" for="wqPhone">Phone <i>*</i></label><input type="tel" id="wqPhone" autocomplete="tel" required></div>
+    <div><label class="fl" for="wqTruck">Truck type <i>*</i></label><select id="wqTruck" required><option value="dry-van">Dry Van</option><option value="reefer">Reefer</option><option value="flatbed">Flatbed</option><option value="step-deck">Step Deck</option><option value="power-only">Power Only</option><option value="box-truck">Box Truck</option><option value="straight-truck">Straight Truck</option><option value="hotshot">Hotshot</option></select></div>
+    <div><label class="fl" for="wqTrucks">Number of trucks</label><input type="number" id="wqTrucks" min="1" max="500" value="1"></div>
+    <div><label class="fl" for="wqPct">Your desired percentage (%) <i>*</i></label><input type="number" id="wqPct" min="1" max="20" step="0.5" inputmode="decimal" placeholder="e.g. 5" required><p class="hint" id="wqPctHint" style="font-size:13px;color:var(--muted);margin-top:6px">Our rate for this truck: 5-6%</p></div>
+    <div><label class="fl" for="wqGross">Weekly gross per truck ($)</label><input type="number" id="wqGross" min="0" step="100" inputmode="numeric" placeholder="e.g. 9000"></div>
+    <div><label class="fl" for="wqMc">MC number</label><input type="text" id="wqMc" inputmode="numeric"></div>
+    <div><label class="fl" for="wqLanes">Home base and lanes</label><input type="text" id="wqLanes" placeholder="e.g. Midland, TX. OTR Southeast"></div>
+    <div class="full"><label class="fl" for="wqMsg">Message</label><textarea id="wqMsg" placeholder="Anything else we should know?"></textarea></div>
   </div>
-  <input type="hidden" name="estimate_summary" value="">
-  <label class="hp" aria-hidden="true">Leave empty <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
-  <button class="btn btn-red" type="submit">Request My Free Quote</button>
+  <button class="btn btn-wa" type="submit"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.75A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3zm0 23.66c-2 0-3.95-.54-5.65-1.55l-.4-.24-3.97 1.04 1.06-3.86-.26-.4a10.6 10.6 0 0 1-1.63-5.65c0-5.87 4.78-10.65 10.66-10.65 5.87 0 10.63 4.78 10.63 10.65 0 5.88-4.77 10.66-10.44 10.66zm5.84-7.97c-.32-.16-1.9-.94-2.19-1.04-.3-.11-.5-.16-.72.16-.21.32-.83 1.04-1.01 1.25-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67 0 1.57 1.15 3.1 1.31 3.3.16.22 2.26 3.45 5.47 4.84.77.33 1.36.53 1.83.67.77.25 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.52-.08-.14-.29-.22-.61-.38z"/></svg>Get Free Quote on WhatsApp</button>
   <p class="form-status" role="status" aria-live="polite"></p>
-  <p class="fine">Submitting this form requests contact from Texas Solutions regarding Texas Solutions&#x27;s own dispatch services. Texas Solutions does not sell or transfer mobile opt-in information or SMS consent to third parties for marketing or promotional purposes.</p>
+  <p class="fine">Tapping the button opens WhatsApp with your details filled in, ready to send to Texas Solutions at +1 (838) 910-3147. Nothing is sent until you press send in WhatsApp. Your requested percentage is reviewed by a dispatcher; the final percentage is discussed with each carrier.</p>
 </form>
   </div>
   <div class="aside">

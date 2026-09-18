@@ -529,20 +529,31 @@ def build_estimate():
     title = "Truck Dispatch Fee Calculator & Free Quote | Texas Solutions"
     desc = (f"Estimate your truck dispatch fee: semi trucks {M['pct'][0]}-{M['pct'][1]}% and small trucks {S['pct'][0]}-{S['pct'][1]}% of weekly gross, "
             "OTR only, no flat rate. Enter your trucks and weekly gross, see your weekly and monthly fee, and request a free quote.")
-    cfg = {k: {"label": p["label"], "pct": list(p["pct"]), "gross": list(p["gross"]),
-               "defaultEq": "Dry Van" if k == "semi" else "Box Truck"} for k, p in C.PRICING.items()}
+    rpm = {eq: r for eq, r, _ in C.RATE_GUIDE}
+    trucks_cfg = []
+    for kind in ("semi", "small"):
+        pr = C.PRICING[kind]
+        for eq in pr["equipment"]:
+            trucks_cfg.append({"id": eq.lower().replace(" ", "-"), "name": eq, "kind": kind, "label": pr["label"],
+                               "pct": list(pr["pct"]), "gross": list(pr["gross"]),
+                               "rpm": rpm.get(eq, rpm.get("Box Truck"))})
+    cfg = {"trucks": trucks_cfg, "wa": C.WHATSAPP}
     qa = ("How is the Texas Solutions dispatch fee calculated?",
           f"Multiply your truck's weekly gross by the dispatch percentage: {M['pct'][0]}-{M['pct'][1]}% for OTR semi trucks, {S['pct'][0]}-{S['pct'][1]}% "
           f"for OTR small trucks. Example: a semi grossing $9,000 a week pays about $450-$540 a week. A hotshot grossing $8,000 pays about $640-$800. "
           "There is no flat rate and no setup fee.")
+    truck_btns = "\n".join(
+        f'        <label><input type="radio" name="estTruck" value="{tc["id"]}"{" checked" if i == 0 else ""}>'
+        f'<b>{tc["name"]}</b><span>{tc["pct"][0]}-{tc["pct"][1]}% &middot; {tc["rpm"].replace(" - ", "-").replace(".00", "")}/mi</span></label>'
+        for i, tc in enumerate(trucks_cfg))
+    eq_opts = "".join(f'<option value="{tc["id"]}">{tc["name"]}</option>' for tc in trucks_cfg)
     calc = f"""<div class="est rv" id="estimator" data-pricing='{json.dumps(cfg)}'>
   <div class="est-in">
     <h2 style="font-size:26px">Dispatch fee calculator</h2>
-    <p style="color:var(--muted);margin-top:8px">Pick your truck type, number of trucks and weekly gross per truck.</p>
-    <div class="field"><span class="flabel">Truck type</span>
-      <div class="seg" role="radiogroup" aria-label="Truck type">
-        <label><input type="radio" name="estType" value="semi" checked><b>Semi truck</b><span>{M['pct'][0]}-{M['pct'][1]}% &middot; dry van, reefer, flatbed, step deck, power only</span></label>
-        <label><input type="radio" name="estType" value="small"><b>Small truck</b><span>{S['pct'][0]}-{S['pct'][1]}% &middot; box truck, straight truck, hotshot</span></label>
+    <p style="color:var(--muted);margin-top:8px">Pick your truck, number of trucks and weekly gross per truck.</p>
+    <div class="field"><span class="flabel">Your truck type</span>
+      <div class="seg trucks" role="radiogroup" aria-label="Truck type">
+{truck_btns}
       </div>
     </div>
     <div class="field"><label for="estTrucks">Number of trucks</label>
@@ -550,25 +561,45 @@ def build_estimate():
     </div>
     <div class="field"><label for="estGross">Weekly gross per truck</label>
       <div class="range-row"><input type="range" id="estGross" min="3000" max="15000" step="250" value="9000"><output id="estGrossOut" for="estGross">$9,000</output></div>
-      <p class="hint">Typical OTR weekly gross for this truck type: <b id="estTypical">$8,000 - $10,000</b></p>
+      <p class="hint">Typical OTR weekly gross for a <b id="estTruckName2">Dry Van</b>: <b id="estTypical">$8,000 - $10,000</b></p>
+    </div>
+    <div class="field"><label for="estCustom">Your own percentage (optional)</label>
+      <div class="range-row"><input type="number" id="estCustom" min="1" max="20" step="0.5" inputmode="decimal" placeholder="e.g. 5" class="pct-in"><output>%</output></div>
+      <p class="hint">Type any percentage to see the dispatch fee at your rate. Leave empty to see our standard range.</p>
     </div>
     <span class="otr">&#9888; OTR trucks make more money &middot; no flat rate</span>
   </div>
   <div class="est-out" aria-live="polite">
-    <h3>Estimated dispatch fee</h3>
+    <h3>Price for your <span id="estTruckName">Dry Van</span></h3>
     <div class="est-big" id="estBig">$450<small> - $540 / week</small></div>
     <div class="est-lines">
       <div><span>Dispatch percentage</span><b id="estPct">5-6%</b></div>
+      <div><span>Rough rate per mile</span><b id="estRpm">-</b></div>
       <div><span>Fee per truck, weekly</span><b id="estPerTruck">-</b></div>
       <div><span>Total fee, weekly</span><b id="estWeekly">-</b></div>
       <div><span>Total fee, monthly (avg)</span><b id="estMonthly">-</b></div>
       <div><span>You keep of gross, weekly</span><b id="estKeep">-</b></div>
     </div>
-    <a class="btn btn-red" href="#quote">Request my free quote</a>
-    <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}Send on WhatsApp</a>
+    <a class="btn btn-red" href="#quote">Get my free quote</a>
     <small>{esc(C.PRICING_NOTE)} Gross, rates and earnings are not guaranteed.</small>
   </div>
 </div>"""
+    quote = f"""<form class="form rv" id="waQuote" novalidate>
+  <div class="grid g2">
+    <div><label class="fl" for="wqName">Full name <i>*</i></label><input type="text" id="wqName" autocomplete="name" required></div>
+    <div><label class="fl" for="wqPhone">Phone <i>*</i></label><input type="tel" id="wqPhone" autocomplete="tel" required></div>
+    <div><label class="fl" for="wqTruck">Truck type <i>*</i></label><select id="wqTruck" required>{eq_opts}</select></div>
+    <div><label class="fl" for="wqTrucks">Number of trucks</label><input type="number" id="wqTrucks" min="1" max="500" value="1"></div>
+    <div><label class="fl" for="wqPct">Your desired percentage (%) <i>*</i></label><input type="number" id="wqPct" min="1" max="20" step="0.5" inputmode="decimal" placeholder="e.g. 5" required><p class="hint" id="wqPctHint" style="font-size:13px;color:var(--muted);margin-top:6px">Our rate for this truck: 5-6%</p></div>
+    <div><label class="fl" for="wqGross">Weekly gross per truck ($)</label><input type="number" id="wqGross" min="0" step="100" inputmode="numeric" placeholder="e.g. 9000"></div>
+    <div><label class="fl" for="wqMc">MC number</label><input type="text" id="wqMc" inputmode="numeric"></div>
+    <div><label class="fl" for="wqLanes">Home base and lanes</label><input type="text" id="wqLanes" placeholder="e.g. Midland, TX. OTR Southeast"></div>
+    <div class="full"><label class="fl" for="wqMsg">Message</label><textarea id="wqMsg" placeholder="Anything else we should know?"></textarea></div>
+  </div>
+  <button class="btn btn-wa" type="submit">{ICONS['wa']}Get Free Quote on WhatsApp</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+  <p class="fine">Tapping the button opens WhatsApp with your details filled in, ready to send to Texas Solutions at +1 (838) 910-3147. Nothing is sent until you press send in WhatsApp. Your requested percentage is reviewed by a dispatcher; the final percentage is discussed with each carrier.</p>
+</form>"""
     body = f"""{phero("Estimate", "Truck Dispatch Fee Calculator &amp; Free Quote", f"See what dispatch costs before you sign. Semi trucks {M['pct'][0]}-{M['pct'][1]}%, small trucks {S['pct'][0]}-{S['pct'][1]}% of weekly gross, for OTR carriers. No flat rate.", ctas=False)}
 <section class="sec" style="padding-top:56px"><div class="wrap">
   {calc}
@@ -579,8 +610,8 @@ def build_estimate():
 </div></section>
 <section class="sec" id="quote"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Free quote</span><h2>Request your dispatch quote</h2><p>Send your details and a dispatcher will confirm your percentage and next steps. Written details only; no documents needed at this stage.</p></div>
-    {lead_form("quoteForm", "New dispatch quote request", "Request My Free Quote", quote=True)}
+    <div class="sec-head rv"><span class="eyebrow">Free quote</span><h2>Name your percentage, get a free quote</h2><p>Tell us your truck and the dispatch percentage you want. Tap the button and your quote request opens in WhatsApp, ready to send.</p></div>
+    {quote}
   </div>
   <div class="aside">
     {answer(*qa)}
@@ -724,6 +755,8 @@ def build_legal(name, crumb):
 
 def build_landing(p):
     kind = C.PRICING[p["kind"]]
+    truck_q = {"box-truck-dispatch.html": "truck=box-truck", "hotshot-dispatch.html": "truck=hotshot", "flatbed-dispatch.html": "truck=flatbed",
+               "dry-van-dispatch.html": "truck=dry-van", "reefer-dispatch.html": "truck=reefer", "power-only-dispatch.html": "truck=power-only"}.get(p["file"], "type=" + p["kind"])
     lo, hi = fee_range(p["kind"])
     path = "/" + p["file"]
     body_p = "\n".join(f"    <p>{esc(x)}</p>" for x in p["body"])
@@ -740,7 +773,7 @@ def build_landing(p):
       <li>You approve every load, with no forced dispatch</li>
     </ul>
     <h2>{esc(p['nav'])} pricing</h2>
-    <p>{kind['label']} on OTR pay <b>{kind['pct'][0]}-{kind['pct'][1]}% of weekly gross</b>. With typical weekly gross of {money(kind['gross'][0])}-{money(kind['gross'][1])}, the dispatch fee is about {lo}-{hi} a week. No flat rate, no setup fee and no monthly subscription. <a href="estimate.html?type={p['kind']}">Estimate your fee</a>.</p>"""
+    <p>{kind['label']} on OTR pay <b>{kind['pct'][0]}-{kind['pct'][1]}% of weekly gross</b>. With typical weekly gross of {money(kind['gross'][0])}-{money(kind['gross'][1])}, the dispatch fee is about {lo}-{hi} a week. No flat rate, no setup fee and no monthly subscription. <a href="estimate.html?{truck_q}">Estimate your fee</a>.</p>"""
     faqs = p["faqs"] + [C.FAQS[0], C.FAQS[5]]
     others = "".join(f'<a class="chip" href="{o["file"]}">{esc(o["nav"])}</a>' for o in C.LANDING if o["file"] != p["file"])
     body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), extra=f'<div class="chip-row" style="justify-content:flex-start"><span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)"><b style="color:#ffb3a6">{kind["pct"][0]}-{kind["pct"][1]}%</b> of weekly gross</span><span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">OTR &middot; No flat rate</span></div>')}
@@ -750,7 +783,7 @@ def build_landing(p):
 {body_p}{sections}{what}
   </div>
   <div class="aside">
-    <div class="price feat"><h3>{kind['label']}</h3><div class="amt">{kind['pct'][0]}-{kind['pct'][1]}%<small> of weekly gross</small></div><ul><li>OTR operations</li><li>No flat rate or setup fee</li><li>About {lo}-{hi}/week on typical gross</li></ul><a class="btn btn-red" href="estimate.html?type={p['kind']}">Get a Free Estimate</a></div>
+    <div class="price feat"><h3>{kind['label']}</h3><div class="amt">{kind['pct'][0]}-{kind['pct'][1]}%<small> of weekly gross</small></div><ul><li>OTR operations</li><li>No flat rate or setup fee</li><li>About {lo}-{hi}/week on typical gross</li></ul><a class="btn btn-red" href="estimate.html?{truck_q}">Get a Free Estimate</a></div>
     {contact_side()}
   </div>
 </div></section>
