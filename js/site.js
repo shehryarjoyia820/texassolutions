@@ -194,16 +194,22 @@
     function run() {
       var tr = truck(), w = +weight.value;
       g('fuelWeightOut').textContent = w.toLocaleString('en-US') + ' lbs';
-      var auto = Math.max(tr.min, tr.empty - tr.loss * w / 1000);
+      // gallons per mile rise linearly with cargo weight (calibrated to FHWA / NACFE data)
+      var baseMpg = tr.empty / (1 + tr.k * w / 1000);
+      var over = Math.max(0, num('fuelSpeed') - 62);
+      var auto = Math.max(baseMpg * 0.6, baseMpg - tr.spd * over);
       var mpg = num('fuelMpg') > 0 ? num('fuelMpg') : auto;
       var miles = num('fuelMiles') + num('fuelDead');
+      var driveGal = mpg > 0 ? miles / mpg : 0;
+      var idleGal = num('fuelIdle') * tr.idle;
       var reeferGal = tr.id === 'reefer' ? num('fuelReefer') * F.reeferGph : 0;
-      var gal = (mpg > 0 ? miles / mpg : 0) + reeferGal;
+      var gal = driveGal + idleGal + reeferGal;
       var price = num('fuelPrice');
       var cost = gal * price;
       g('fuelMpgOut').textContent = mpg.toFixed(1) + ' mpg' + (num('fuelMpg') > 0 ? ' (yours)' : '');
       g('fuelTotalMi').textContent = miles.toLocaleString('en-US') + ' mi';
       g('fuelGal').textContent = gal.toLocaleString('en-US', { maximumFractionDigits: 1 }) + ' gal';
+      g('fuelSplit').textContent = [driveGal, idleGal, reeferGal].map(function (x) { return x.toFixed(1); }).join(' / ') + ' gal';
       g('fuelCpm').textContent = miles ? usd(cost / miles, 2) + ' /mi' : '-';
       g('fuelPriceUsed').textContent = usd(price, 3) + ' /gal';
       g('fuelBig').innerHTML = usd(cost) + '<small>for ' + miles.toLocaleString('en-US') + ' miles</small>';
@@ -212,7 +218,7 @@
       if (rate > 0) { g('fuelNet').textContent = usd(rev - cost) + ' of ' + usd(rev); g('fuelShare').textContent = rev ? (cost / rev * 100).toFixed(1) + '%' : '-'; }
     }
     Array.prototype.forEach.call(fc.querySelectorAll('input[name=fuelTruck]'), function (r) { r.addEventListener('change', function () { pickTruck(true); run(); }); });
-    ['fuelWeight', 'fuelMiles', 'fuelDead', 'fuelMpg', 'fuelRate', 'fuelReefer', 'fuelPrice'].forEach(function (id) { g(id).addEventListener('input', run); });
+    ['fuelWeight', 'fuelMiles', 'fuelDead', 'fuelMpg', 'fuelRate', 'fuelReefer', 'fuelPrice', 'fuelSpeed', 'fuelIdle'].forEach(function (id) { g(id).addEventListener('input', run); });
     stateSel.addEventListener('change', function () { fillPrice(); run(); });
     pickTruck(true); fillPrice(); run();
     // Pick up a newer weekly file if the page itself is cached.

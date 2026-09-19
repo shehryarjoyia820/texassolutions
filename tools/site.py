@@ -832,12 +832,12 @@ def build_fuel():
                 f"The U.S. average retail price of on-highway diesel is ${us:.3f} per gallon for the week of {week_h}, according to the U.S. Energy "
                 f"Information Administration. Regional averages: Gulf Coast (including Texas) ${rp('P3'):.3f}, Midwest ${rp('P2'):.3f}, "
                 f"East Coast ${rp('P1'):.3f}, Rocky Mountain ${rp('P4'):.3f}, West Coast ${rp('P5'):.3f} and California ${rp('CA'):.3f}.")
-    trucks = [{"id": i, "name": n, "empty": e, "loss": l, "min": mn, "max": mx, "def": d} for i, n, e, l, mn, mx, d in C.FUEL_TRUCKS]
+    trucks = [{"id": i, "name": n, "empty": e, "k": k, "max": mx, "def": d, "idle": ig, "spd": sp} for i, n, e, k, mx, d, ig, sp in C.FUEL_TRUCKS]
     states = {k: {"name": n, "region": r} for k, (n, r) in C.STATE_REGION.items()}
     cfg = {"trucks": trucks, "states": states, "reeferGph": C.REEFER_GAL_PER_HOUR, "diesel": diesel}
     btns = "\n".join(
         f'        <label><input type="radio" name="fuelTruck" value="{tr["id"]}"{" checked" if i == 0 else ""}><b>{tr["name"]}</b>'
-        f'<span>~{round(tr["empty"] - tr["loss"] * tr["def"] / 1000, 1)} mpg loaded</span></label>'
+        f'<span>~{tr["empty"] / (1 + tr["k"] * tr["def"] / 1000):.1f} mpg loaded</span></label>'
         for i, tr in enumerate(trucks))
     st_opts = "".join(f'<option value="{k}"{" selected" if k == "TX" else ""}>{v[0]}</option>' for k, v in sorted(C.STATE_REGION.items(), key=lambda kv: kv[1][0]))
     rows = ""
@@ -849,7 +849,7 @@ def build_fuel():
         rows += f'<tr><td><b>{esc(v["name"])}</b><small>{esc(sts)}</small></td><td class="rate">${v["price"]:.3f}</td><td class="chg {cls}">{arrow} {abs(chg):.3f}</td></tr>\n'
     qa = ("How do I calculate truck fuel cost per mile?",
           f"Divide the diesel price by your truck's miles per gallon. A loaded semi averaging about 6.3 mpg with diesel at ${us:.2f} a gallon "
-          f"spends about ${us / 6.3:.2f} per mile on fuel. Heavier loads lower MPG: a common rule of thumb is roughly 0.3 mpg less for every 10,000 lbs of cargo on a Class 8 truck.")
+          f"spends about ${us / 6.3:.2f} per mile on fuel. Heavier loads lower MPG: NACFE research puts it at about 0.5-0.6% more fuel for every 1,000 lbs, roughly 0.3-0.4 mpg per 10,000 lbs on a Class 8 truck.")
     calc = f"""<div class="est rv" id="fuelCalc" data-fuel='{json.dumps(cfg).replace("'", "&#39;")}'>
   <div class="est-in">
     <h2 style="font-size:26px">Fuel cost calculator</h2>
@@ -870,6 +870,8 @@ def build_fuel():
       <div><label class="flabel" for="fuelPrice">Diesel price ($/gal)</label><input class="pct-in" type="number" id="fuelPrice" min="0" step="0.001" inputmode="decimal"></div>
       <div><label class="flabel" for="fuelMpg">Your MPG (optional)</label><input class="pct-in" type="number" id="fuelMpg" min="1" max="40" step="0.1" inputmode="decimal" placeholder="auto"></div>
       <div><label class="flabel" for="fuelRate">Load rate per mile (optional)</label><input class="pct-in" type="number" id="fuelRate" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 5.50"></div>
+      <div><label class="flabel" for="fuelSpeed">Average highway speed (mph)</label><input class="pct-in" type="number" id="fuelSpeed" min="40" max="85" step="1" value="62" inputmode="numeric"></div>
+      <div><label class="flabel" for="fuelIdle">Idle hours</label><input class="pct-in" type="number" id="fuelIdle" min="0" step="1" value="0" inputmode="numeric"></div>
       <div id="fuelReeferWrap" hidden><label class="flabel" for="fuelReefer">Reefer unit hours</label><input class="pct-in" type="number" id="fuelReefer" min="0" step="1" value="0" inputmode="numeric"></div>
     </div>
     <p class="hint" id="fuelPriceNote" style="margin-top:12px">Diesel price auto-filled from the latest EIA weekly average for your state's region. Edit it to match your pump price.</p>
@@ -881,6 +883,7 @@ def build_fuel():
       <div><span>Estimated MPG</span><b id="fuelMpgOut">-</b></div>
       <div><span>Total miles</span><b id="fuelTotalMi">-</b></div>
       <div><span>Diesel needed</span><b id="fuelGal">-</b></div>
+      <div><span>Driving / idle / reefer</span><b id="fuelSplit">-</b></div>
       <div><span>Fuel cost per mile</span><b id="fuelCpm">-</b></div>
       <div><span>Diesel price used</span><b id="fuelPriceUsed">-</b></div>
       <div id="fuelRevRow" hidden><span>Revenue after fuel</span><b id="fuelNet">-</b></div>
@@ -918,13 +921,18 @@ def build_fuel():
 <section class="sec"><div class="wrap two">
   <div class="prose rv">
     <h2 style="margin-top:0">How the fuel calculator works</h2>
-    <p>The calculator starts from a typical empty fuel economy for each truck type and lowers it as cargo weight goes up. Gallons equal total miles (loaded plus deadhead) divided by MPG. Reefer unit fuel is added at about {C.REEFER_GAL_PER_HOUR} gallons per hour.</p>
+    <p>Fuel use is calculated per mile and rises with cargo weight: each 1,000 lbs adds about 0.55% fuel on a semi (NACFE), more on smaller trucks where cargo is a bigger share of total weight. The model is calibrated to published averages:</p>
     <ul>
-      <li>Semi trucks (dry van, reefer, flatbed, step deck, power only): about 7 mpg empty, roughly 6 mpg at 45,000 lbs of cargo.</li>
-      <li>Hotshot (1-ton diesel and gooseneck): about 14 mpg empty, roughly 9-10 mpg loaded.</li>
-      <li>Box truck and straight truck: about 9.5-10.5 mpg empty, roughly 7-8 mpg loaded.</li>
+      <li>Semi (dry van, power only): about 7.6 mpg empty, 6.3 mpg at 38,000 lbs, 6.1 mpg at 45,000 lbs. The FHWA national average for combination trucks is 6.3 mpg.</li>
+      <li>Reefer, flatbed and step deck: slightly lower, for heavier trailers or open-deck drag. Reefer units add about {C.REEFER_GAL_PER_HOUR} gallons per hour.</li>
+      <li>Hotshot (1-ton dually and gooseneck): about 13.5 mpg empty, 9.7 mpg at 9,000 lbs, 8 mpg near 16,000 lbs.</li>
+      <li>26 ft box truck: about 11 mpg empty, 8.5 mpg fully loaded. Straight truck: about 9.5 mpg empty, 7.2 mpg loaded.</li>
+      <li>Speed: figures assume 62 mph. Above that, a semi loses about 0.1 mpg per mph. Idling burns about 0.8 gallons per hour on a semi.</li>
     </ul>
-    <p>If you know your real MPG from your ELD or fuel card, type it in for a more accurate number.</p>
+    <p>If you know your real MPG from your ELD or fuel card, type it in and the calculator uses it instead.</p>
+    <h2>Sources</h2>
+    <ul>
+{"".join(f'      <li><a href="{u}" rel="noopener">{esc(n)}</a></li>' + chr(10) for n, u in C.FUEL_SOURCES)}    </ul>
   </div>
   <div class="aside">{answer(*qa)}{contact_side()}</div>
 </div></section>

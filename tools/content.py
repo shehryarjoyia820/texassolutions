@@ -311,19 +311,33 @@ LANDING = [
 ]
 
 # -------------------------------------------------------------- fuel calculator
-# Rough fuel economy model: mpg = empty_mpg - loss_per_1000 * (cargo lbs / 1000),
-# never below min_mpg. Industry rules of thumb, not a guarantee; carriers can
-# override MPG on the page.
+# Fuel model, calibrated to published data (sources shown on the page):
+#   gallons per mile = (1 / empty_mpg) * (1 + k * cargo_lbs / 1000)
+# - Semis: k = 0.0055 from NACFE lightweighting (0.5-0.6% fuel per 1,000 lbs);
+#   empty ~7.6 mpg gives ~6.3 mpg at 38,000 lbs, matching FHWA's 6.3 mpg
+#   national combination-truck average and ATRI's 6-8 mpg range.
+# - Hotshot: ~13.5 mpg empty, ~9.7 mpg at 9,000 lbs, ~8 mpg at 16,000 lbs
+#   (operator-reported figures for 1-ton duallies pulling 40 ft goosenecks).
+# - 26 ft box truck: ~11 mpg empty, ~9.6 at 5,000 lbs, ~8.5 fully loaded
+#   (Penske / Ryder reported averages of 8-10 mpg).
+# Calibration speed is 62 mph; above that, about 0.1 mpg is lost per mph
+# for semis (DOE / industry rule of thumb), scaled by truck size below.
 FUEL_TRUCKS = [
-    # id, name, empty_mpg, mpg loss per 1,000 lbs cargo, min_mpg, max cargo lbs, default cargo lbs
-    ("dry-van", "Dry Van", 7.4, 0.028, 5.5, 45000, 38000),
-    ("reefer", "Reefer", 7.0, 0.028, 5.2, 44000, 38000),
-    ("flatbed", "Flatbed", 7.1, 0.028, 5.3, 48000, 40000),
-    ("step-deck", "Step Deck", 7.0, 0.028, 5.2, 46000, 38000),
-    ("power-only", "Power Only", 7.4, 0.028, 5.5, 45000, 38000),
-    ("hotshot", "Hotshot", 14.0, 0.30, 8.0, 16500, 12000),
-    ("box-truck", "Box Truck", 10.5, 0.30, 7.0, 10000, 7000),
-    ("straight-truck", "Straight Truck", 9.5, 0.25, 6.5, 12000, 8000),
+    # id, name, empty_mpg, k (fuel increase per 1,000 lbs), max cargo lbs, default cargo lbs, idle gal/hr, mpg lost per mph over 62
+    ("dry-van", "Dry Van", 7.6, 0.0055, 45000, 38000, 0.8, 0.10),
+    ("reefer", "Reefer", 7.3, 0.0055, 44000, 38000, 0.8, 0.10),
+    ("flatbed", "Flatbed", 7.5, 0.0060, 48000, 40000, 0.8, 0.10),
+    ("step-deck", "Step Deck", 7.4, 0.0060, 46000, 38000, 0.8, 0.10),
+    ("power-only", "Power Only", 7.6, 0.0055, 45000, 38000, 0.8, 0.10),
+    ("hotshot", "Hotshot", 13.5, 0.043, 16500, 12000, 0.4, 0.15),
+    ("box-truck", "Box Truck", 11.0, 0.0294, 10000, 7000, 0.5, 0.12),
+    ("straight-truck", "Straight Truck", 9.5, 0.0266, 12000, 8000, 0.6, 0.12),
+]
+FUEL_SOURCES = [
+    ("FHWA Highway Statistics, Table VM-1 (via DOE Alternative Fuels Data Center): Class 8 trucks average about 6.3 mpg", "https://afdc.energy.gov/data/10310"),
+    ("NACFE lightweighting research: 0.5-0.6% fuel savings per 1,000 lbs of weight", "https://nacfe.org/research/technology/chassis/lightweighting/"),
+    ("ATRI Operational Costs of Trucking: long-haul tractors average about 7-8 mpg", "https://truckingresearch.org/about-atri/atri-research/operational-costs-of-trucking/"),
+    ("U.S. Energy Information Administration: weekly retail on-highway diesel prices", "https://www.eia.gov/petroleum/gasdiesel/"),
 ]
 REEFER_GAL_PER_HOUR = 0.8
 
