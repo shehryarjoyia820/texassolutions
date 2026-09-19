@@ -167,7 +167,7 @@ def head_codes():
 
 # ------------------------------------------------------------------ chrome
 def nav_links():
-    return [("Rates", "truck-dispatch-rates.html"), ("Estimate", "estimate.html"), ("About", "about.html"),
+    return [("Rates", "truck-dispatch-rates.html"), ("Estimate", "estimate.html"), ("Fuel Calculator", "truck-fuel-cost-calculator.html"), ("About", "about.html"),
             ("FAQ", "faq.html"), ("Contact", "contact.html")]
 
 
@@ -230,6 +230,7 @@ def footer():
         <h4>Company</h4>
       <a href="truck-dispatch-rates.html">Dispatch Rates</a>
       <a href="estimate.html">Free Estimate</a>
+      <a href="truck-fuel-cost-calculator.html">Fuel Cost Calculator</a>
       <a href="about.html">About Us</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
@@ -807,6 +808,153 @@ def build_landing(p):
     write(p["file"], page(path, p["title"], p["description"], p["keywords"] + ", " + ", ".join(C.CORE_KEYWORDS[:8]), schemas, body, og_type=og))
 
 
+
+def load_diesel():
+    p = ROOT / "data" / "diesel-prices.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+
+
+def build_fuel():
+    path = "/truck-fuel-cost-calculator.html"
+    diesel = load_diesel()
+    regions = diesel["regions"] if diesel else {}
+    week = diesel["week"] if diesel else ""
+    us = regions.get("US", {}).get("price", 0)
+    week_h = ""
+    if week:
+        d0 = date.fromisoformat(week)
+        week_h = f"{d0.strftime('%B')} {d0.day}, {d0.year}"
+    title = "Fuel Cost Calculator for Trucks & Diesel Prices Today by State | Texas Solutions"
+    desc = (f"Free truck fuel cost calculator and diesel prices by state, updated weekly. U.S. diesel average ${us:.3f}/gal (week of {week_h}). "
+            "Estimate MPG, gallons, trip fuel cost and fuel cost per mile for semi, reefer, flatbed, hotshot and box trucks by load weight.")
+    rp = lambda k: regions.get(k, {}).get("price", 0)
+    today_qa = ("What is the average price of diesel today?",
+                f"The U.S. average retail price of on-highway diesel is ${us:.3f} per gallon for the week of {week_h}, according to the U.S. Energy "
+                f"Information Administration. Regional averages: Gulf Coast (including Texas) ${rp('P3'):.3f}, Midwest ${rp('P2'):.3f}, "
+                f"East Coast ${rp('P1'):.3f}, Rocky Mountain ${rp('P4'):.3f}, West Coast ${rp('P5'):.3f} and California ${rp('CA'):.3f}.")
+    trucks = [{"id": i, "name": n, "empty": e, "loss": l, "min": mn, "max": mx, "def": d} for i, n, e, l, mn, mx, d in C.FUEL_TRUCKS]
+    states = {k: {"name": n, "region": r} for k, (n, r) in C.STATE_REGION.items()}
+    cfg = {"trucks": trucks, "states": states, "reeferGph": C.REEFER_GAL_PER_HOUR, "diesel": diesel}
+    btns = "\n".join(
+        f'        <label><input type="radio" name="fuelTruck" value="{tr["id"]}"{" checked" if i == 0 else ""}><b>{tr["name"]}</b>'
+        f'<span>~{round(tr["empty"] - tr["loss"] * tr["def"] / 1000, 1)} mpg loaded</span></label>'
+        for i, tr in enumerate(trucks))
+    st_opts = "".join(f'<option value="{k}"{" selected" if k == "TX" else ""}>{v[0]}</option>' for k, v in sorted(C.STATE_REGION.items(), key=lambda kv: kv[1][0]))
+    rows = ""
+    for k, v in regions.items():
+        chg = v["price"] - (v["prev"] or v["price"])
+        arrow = "&#9650;" if chg > 0.0005 else ("&#9660;" if chg < -0.0005 else "&#8212;")
+        cls = "up" if chg > 0.0005 else ("down" if chg < -0.0005 else "")
+        sts = ", ".join(sorted(n for n, r in C.STATE_REGION.values() if r == k)) or ("All states" if k == "US" else "")
+        rows += f'<tr><td><b>{esc(v["name"])}</b><small>{esc(sts)}</small></td><td class="rate">${v["price"]:.3f}</td><td class="chg {cls}">{arrow} {abs(chg):.3f}</td></tr>\n'
+    qa = ("How do I calculate truck fuel cost per mile?",
+          f"Divide the diesel price by your truck's miles per gallon. A loaded semi averaging about 6.3 mpg with diesel at ${us:.2f} a gallon "
+          f"spends about ${us / 6.3:.2f} per mile on fuel. Heavier loads lower MPG: a common rule of thumb is roughly 0.3 mpg less for every 10,000 lbs of cargo on a Class 8 truck.")
+    calc = f"""<div class="est rv" id="fuelCalc" data-fuel='{json.dumps(cfg).replace("'", "&#39;")}'>
+  <div class="est-in">
+    <h2 style="font-size:26px">Fuel cost calculator</h2>
+    <p style="color:var(--muted);margin-top:8px">Choose your truck, load weight, miles and state.</p>
+    <div class="field"><span class="flabel">Truck type</span>
+      <div class="seg trucks" role="radiogroup" aria-label="Truck type">
+{btns}
+      </div>
+    </div>
+    <div class="field"><label for="fuelWeight">Cargo weight</label>
+      <div class="range-row"><input type="range" id="fuelWeight" min="0" max="45000" step="500" value="38000"><output id="fuelWeightOut" for="fuelWeight">38,000 lbs</output></div>
+      <p class="hint">Max for this truck: <b id="fuelMax">45,000 lbs</b></p>
+    </div>
+    <div class="grid g2" style="gap:14px;margin-top:22px">
+      <div><label class="flabel" for="fuelMiles">Loaded miles</label><input class="pct-in" type="number" id="fuelMiles" min="1" step="1" value="1000" inputmode="numeric"></div>
+      <div><label class="flabel" for="fuelDead">Deadhead miles</label><input class="pct-in" type="number" id="fuelDead" min="0" step="1" value="100" inputmode="numeric"></div>
+      <div><label class="flabel" for="fuelState">Fuel up in (state)</label><select class="pct-in" id="fuelState">{st_opts}</select></div>
+      <div><label class="flabel" for="fuelPrice">Diesel price ($/gal)</label><input class="pct-in" type="number" id="fuelPrice" min="0" step="0.001" inputmode="decimal"></div>
+      <div><label class="flabel" for="fuelMpg">Your MPG (optional)</label><input class="pct-in" type="number" id="fuelMpg" min="1" max="40" step="0.1" inputmode="decimal" placeholder="auto"></div>
+      <div><label class="flabel" for="fuelRate">Load rate per mile (optional)</label><input class="pct-in" type="number" id="fuelRate" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 5.50"></div>
+      <div id="fuelReeferWrap" hidden><label class="flabel" for="fuelReefer">Reefer unit hours</label><input class="pct-in" type="number" id="fuelReefer" min="0" step="1" value="0" inputmode="numeric"></div>
+    </div>
+    <p class="hint" id="fuelPriceNote" style="margin-top:12px">Diesel price auto-filled from the latest EIA weekly average for your state's region. Edit it to match your pump price.</p>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Trip fuel cost</h3>
+    <div class="est-big" id="fuelBig">$0<small>for 0 miles</small></div>
+    <div class="est-lines">
+      <div><span>Estimated MPG</span><b id="fuelMpgOut">-</b></div>
+      <div><span>Total miles</span><b id="fuelTotalMi">-</b></div>
+      <div><span>Diesel needed</span><b id="fuelGal">-</b></div>
+      <div><span>Fuel cost per mile</span><b id="fuelCpm">-</b></div>
+      <div><span>Diesel price used</span><b id="fuelPriceUsed">-</b></div>
+      <div id="fuelRevRow" hidden><span>Revenue after fuel</span><b id="fuelNet">-</b></div>
+      <div id="fuelShareRow" hidden><span>Fuel as % of revenue</span><b id="fuelShare">-</b></div>
+    </div>
+    <a class="btn btn-red" href="estimate.html">Estimate my dispatch fee</a>
+    <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}Find better-paying loads</a>
+    <small>Estimates only. Real fuel use depends on speed, terrain, weather, idling, tires and engine. Diesel prices are EIA regional weekly averages, not a specific station.</small>
+  </div>
+</div>"""
+    faqs = [today_qa, qa,
+            ("How many miles per gallon does a semi truck get?", "A loaded Class 8 semi typically gets about 6 to 7 miles per gallon; empty, closer to 7 to 8 mpg. Speed, terrain, weather, aerodynamics and idling all change the number."),
+            ("How much diesel does a semi truck use per mile?", "Roughly 0.14 to 0.17 gallons per mile for a loaded semi averaging 6 to 7 mpg. Multiply by the diesel price to get fuel cost per mile."),
+            ("How much does it cost to fuel a semi truck for 1,000 miles?", f"At about 6.3 mpg a semi burns roughly 159 gallons over 1,000 miles. At ${us:.2f} a gallon that is about ${159 * us:,.0f}. Use the calculator above for your own truck, weight and state."),
+            ("How many miles per gallon does a hotshot truck get?", "A 1-ton diesel pickup pulling a gooseneck typically gets about 12 to 14 mpg empty and about 9 to 11 mpg loaded, depending on cargo weight and trailer."),
+            ("How many miles per gallon does a box truck get?", "A 26-foot diesel box truck typically gets about 8 to 10 mpg, dropping toward 7 to 8 mpg near its maximum payload."),
+            ("Does cargo weight affect fuel mileage?", "Yes. Heavier loads need more power, so MPG drops as weight goes up. The effect is larger on hotshots and box trucks, where cargo is a bigger share of total weight."),
+            ("Why is diesel more expensive in California?", "California has stricter fuel specifications, higher state taxes and fees, and a relatively isolated refining market, so its diesel price is usually the highest in the country."),
+            ("Where do the diesel prices on this page come from?", "From the U.S. Energy Information Administration's weekly retail on-highway diesel survey. EIA reports prices by region, plus California; each state uses its region's average. This page updates automatically every week."),
+            ("How can truckers lower fuel cost per mile?", "Cut deadhead miles, slow down (fuel use rises sharply above about 62 mph), reduce idling, keep tires properly inflated, and book loads that pay enough per mile to cover fuel. A dispatcher who plans lanes can help cut empty miles.")]
+    body = f"""{phero("Fuel Calculator", "Truck Fuel Cost Calculator", f"Estimate diesel cost for your truck, load weight and state. Diesel prices update weekly from the U.S. Energy Information Administration" + (f" (week of {week})." if week else "."), ctas=False)}
+<section class="sec" style="padding-top:48px;padding-bottom:0"><div class="wrap">{answer(*today_qa, label="Diesel price today")}</div></section>
+<section class="sec" style="padding-top:40px"><div class="wrap">
+  {calc}
+</div></section>
+<section class="sec sec-dark" id="diesel-prices"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Diesel prices by state</span><h2>This week's diesel prices</h2><p>On-highway diesel, dollars per gallon including taxes. EIA weekly averages by region{f" for the week of {week}" if week else ""}; each state uses its region's price. Updated automatically every week.</p></div>
+  <div class="board rv"><div style="overflow-x:auto"><table class="board-table diesel-table" id="dieselTable">
+    <thead><tr><th>Region and states</th><th>Diesel $/gal</th><th>Weekly change</th></tr></thead>
+    <tbody>
+{rows}    </tbody>
+  </table></div>
+  <p class="board-foot">Source: <a href="https://www.eia.gov/petroleum/gasdiesel/" rel="noopener" style="color:#d9d5d1">U.S. Energy Information Administration</a>, Gasoline and Diesel Fuel Update. Last updated <span id="dieselWeek">{week}</span>.</p></div>
+</div></section>
+<section class="sec"><div class="wrap two">
+  <div class="prose rv">
+    <h2 style="margin-top:0">How the fuel calculator works</h2>
+    <p>The calculator starts from a typical empty fuel economy for each truck type and lowers it as cargo weight goes up. Gallons equal total miles (loaded plus deadhead) divided by MPG. Reefer unit fuel is added at about {C.REEFER_GAL_PER_HOUR} gallons per hour.</p>
+    <ul>
+      <li>Semi trucks (dry van, reefer, flatbed, step deck, power only): about 7 mpg empty, roughly 6 mpg at 45,000 lbs of cargo.</li>
+      <li>Hotshot (1-ton diesel and gooseneck): about 14 mpg empty, roughly 9-10 mpg loaded.</li>
+      <li>Box truck and straight truck: about 9.5-10.5 mpg empty, roughly 7-8 mpg loaded.</li>
+    </ul>
+    <p>If you know your real MPG from your ELD or fuel card, type it in for a more accurate number.</p>
+  </div>
+  <div class="aside">{answer(*qa)}{contact_side()}</div>
+</div></section>
+<section class="sec sec-soft"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Fuel cost FAQ</span><h2>Diesel and fuel mileage questions</h2></div>
+  {faq_html(faqs)}
+</div></section>
+{band("Fuel is your biggest cost. Better loads cover it.", "Our dispatchers negotiate every rate and plan lanes to cut deadhead miles, the fuel you burn without getting paid.")}"""
+    schemas = [{"@context": "https://schema.org", "@type": "WebApplication", "name": "Truck Fuel Cost Calculator", "url": url(path),
+                "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                "provider": {"@id": BUSINESS_ID}},
+               faq_ld(faqs), crumbs_ld([("Fuel Calculator", path)]), speakable(path, title),
+               {"@context": "https://schema.org", "@type": "HowTo", "name": "How to calculate truck fuel cost for a trip",
+                "step": [{"@type": "HowToStep", "position": 1, "name": "Pick your truck and load weight", "text": "Choose your truck type and enter the cargo weight to estimate miles per gallon."},
+                         {"@type": "HowToStep", "position": 2, "name": "Add total miles", "text": "Enter loaded miles plus deadhead miles."},
+                         {"@type": "HowToStep", "position": 3, "name": "Set the diesel price", "text": "Select the state where you fuel up to use the weekly EIA diesel price, or type your pump price."},
+                         {"@type": "HowToStep", "position": 4, "name": "Calculate", "text": "Gallons equal total miles divided by MPG; fuel cost equals gallons times the diesel price; cost per mile equals fuel cost divided by miles."}]},
+               {"@context": "https://schema.org", "@type": "Dataset", "name": "Weekly U.S. diesel prices by region and state",
+                "description": "Weekly retail on-highway diesel prices (USD per gallon, including taxes) by EIA PADD region and California, mapped to U.S. states.",
+                "url": url(path) + "#diesel-prices", "dateModified": week or TODAY, "temporalCoverage": week or TODAY,
+                "isBasedOn": "https://www.eia.gov/petroleum/gasdiesel/", "license": "https://www.eia.gov/about/copyrights_reuse.php",
+                "creator": {"@type": "GovernmentOrganization", "name": "U.S. Energy Information Administration", "url": "https://www.eia.gov/"},
+                "publisher": {"@id": BUSINESS_ID}, "spatialCoverage": {"@type": "Place", "name": "United States"},
+                "variableMeasured": "Retail diesel price, USD per gallon"}]
+    kw = ("fuel cost calculator, trip fuel cost calculator, diesel prices today, diesel prices by state, diesel price per gallon, average diesel price, "
+          "diesel prices near me, semi truck mpg, how many miles per gallon does a semi get, fuel cost per mile, truck fuel cost calculator, diesel cost calculator, fuel cost per mile calculator, semi truck fuel calculator, hotshot fuel calculator, "
+          "box truck fuel cost, diesel prices by state, diesel price per gallon today, trucking fuel calculator, truck mpg calculator, " + ", ".join(C.CORE_KEYWORDS[:6]))
+    write(path[1:], page(path, title, desc, kw, schemas, body, current=path[1:]))
+
+
 def build_404():
     body = f"""{phero("Not found", "This page took a wrong exit.", "The page you are looking for does not exist. Try one of these instead.", ctas=False)}
 <section class="sec"><div class="wrap"><div class="chip-row" style="justify-content:flex-start">
@@ -819,8 +967,18 @@ def build_404():
     write("404.html", shell)
 
 
+def diesel_lines():
+    d = load_diesel()
+    if not d:
+        return []
+    out = [f"## Diesel prices (EIA weekly, week of {d['week']})"]
+    out += [f"- {v['name']}: ${v['price']:.3f}/gal" for v in d["regions"].values()]
+    out += [f"- Truck fuel cost calculator: {url('/truck-fuel-cost-calculator.html')}", ""]
+    return out
+
+
 def build_site_files():
-    pages = [("/", "1.0", "weekly"), ("/estimate.html", "0.9", "weekly"), ("/truck-dispatch-rates.html", "0.9", "weekly")]
+    pages = [("/", "1.0", "weekly"), ("/estimate.html", "0.9", "weekly"), ("/truck-dispatch-rates.html", "0.9", "weekly"), ("/truck-fuel-cost-calculator.html", "0.9", "weekly")]
     pages += [("/" + p["file"], "0.8", "monthly") for p in C.LANDING]
     pages += [("/faq.html", "0.7", "monthly"), ("/about.html", "0.6", "monthly"), ("/contact.html", "0.6", "monthly"),
               ("/privacy.html", "0.2", "yearly"), ("/terms.html", "0.2", "yearly")]
@@ -861,10 +1019,12 @@ def build_site_files():
         "- Area served: United States (48 states), with a focus on Texas and the Permian Basin",
         f"- Phone: {C.PHONE} | WhatsApp: +1 838 910 3147 (https://wa.me/{C.WHATSAPP}) | Email: {C.EMAIL}",
         f"- Address: {C.STREET}, {C.CITY}, {C.REGION} {C.POSTAL}", "",
+        *diesel_lines(),
         "## Pages",
         f"- [Home]({url('/')}): truck dispatch service overview and pricing",
         f"- [Dispatch fee calculator and free quote]({url('/estimate.html')})",
         f"- [Truck dispatch rates and rate-per-mile guide]({url('/truck-dispatch-rates.html')})",
+        f"- [Truck fuel cost calculator and weekly diesel prices by state]({url('/truck-fuel-cost-calculator.html')})",
         *[f"- [{p['nav']}]({url('/' + p['file'])}): {p['answer']}" for p in C.LANDING],
         f"- [FAQ]({url('/faq.html')})", f"- [About]({url('/about.html')})", f"- [Contact]({url('/contact.html')})", "",
         "## Questions and answers", *q,
@@ -884,6 +1044,7 @@ def main():
     build_legal("terms.html", "Terms & Conditions")
     for p in C.LANDING:
         build_landing(p)
+    build_fuel()
     build_404()
     build_site_files()
     print("built", 7 + len(C.LANDING) + 1, "pages")

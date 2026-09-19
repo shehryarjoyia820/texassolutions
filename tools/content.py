@@ -309,3 +309,37 @@ LANDING = [
         "faqs": [("Can a dispatcher guarantee my weekly gross?", "No. Rates and freight volume change with the market, and a reputable dispatcher will not guarantee earnings.")],
     },
 ]
+
+# -------------------------------------------------------------- fuel calculator
+# Rough fuel economy model: mpg = empty_mpg - loss_per_1000 * (cargo lbs / 1000),
+# never below min_mpg. Industry rules of thumb, not a guarantee; carriers can
+# override MPG on the page.
+FUEL_TRUCKS = [
+    # id, name, empty_mpg, mpg loss per 1,000 lbs cargo, min_mpg, max cargo lbs, default cargo lbs
+    ("dry-van", "Dry Van", 7.4, 0.028, 5.5, 45000, 38000),
+    ("reefer", "Reefer", 7.0, 0.028, 5.2, 44000, 38000),
+    ("flatbed", "Flatbed", 7.1, 0.028, 5.3, 48000, 40000),
+    ("step-deck", "Step Deck", 7.0, 0.028, 5.2, 46000, 38000),
+    ("power-only", "Power Only", 7.4, 0.028, 5.5, 45000, 38000),
+    ("hotshot", "Hotshot", 14.0, 0.30, 8.0, 16500, 12000),
+    ("box-truck", "Box Truck", 10.5, 0.30, 7.0, 10000, 7000),
+    ("straight-truck", "Straight Truck", 9.5, 0.25, 6.5, 12000, 8000),
+]
+REEFER_GAL_PER_HOUR = 0.8
+
+# State -> EIA diesel region (PADD). EIA publishes California on its own.
+STATE_REGION = {
+    "AL": ("Alabama", "P3"), "AK": ("Alaska", "P5X"), "AZ": ("Arizona", "P5X"), "AR": ("Arkansas", "P3"),
+    "CA": ("California", "CA"), "CO": ("Colorado", "P4"), "CT": ("Connecticut", "P1A"), "DE": ("Delaware", "P1B"),
+    "DC": ("District of Columbia", "P1B"), "FL": ("Florida", "P1C"), "GA": ("Georgia", "P1C"), "HI": ("Hawaii", "P5X"),
+    "ID": ("Idaho", "P4"), "IL": ("Illinois", "P2"), "IN": ("Indiana", "P2"), "IA": ("Iowa", "P2"),
+    "KS": ("Kansas", "P2"), "KY": ("Kentucky", "P2"), "LA": ("Louisiana", "P3"), "ME": ("Maine", "P1A"),
+    "MD": ("Maryland", "P1B"), "MA": ("Massachusetts", "P1A"), "MI": ("Michigan", "P2"), "MN": ("Minnesota", "P2"),
+    "MS": ("Mississippi", "P3"), "MO": ("Missouri", "P2"), "MT": ("Montana", "P4"), "NE": ("Nebraska", "P2"),
+    "NV": ("Nevada", "P5X"), "NH": ("New Hampshire", "P1A"), "NJ": ("New Jersey", "P1B"), "NM": ("New Mexico", "P3"),
+    "NY": ("New York", "P1B"), "NC": ("North Carolina", "P1C"), "ND": ("North Dakota", "P2"), "OH": ("Ohio", "P2"),
+    "OK": ("Oklahoma", "P2"), "OR": ("Oregon", "P5X"), "PA": ("Pennsylvania", "P1B"), "RI": ("Rhode Island", "P1A"),
+    "SC": ("South Carolina", "P1C"), "SD": ("South Dakota", "P2"), "TN": ("Tennessee", "P2"), "TX": ("Texas", "P3"),
+    "UT": ("Utah", "P4"), "VT": ("Vermont", "P1A"), "VA": ("Virginia", "P1C"), "WA": ("Washington", "P5X"),
+    "WV": ("West Virginia", "P1C"), "WI": ("Wisconsin", "P2"), "WY": ("Wyoming", "P4"),
+}

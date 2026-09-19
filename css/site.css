@@ -430,3 +430,14 @@ a.cbox:hover { border-color: #cfcac6; }
 .pct-in { flex: 1; min-width: 0; font: inherit; font-size: 18px; font-weight: 700; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fbfaf9; color: var(--ink); }
 .pct-in:focus { outline: 0; border-color: var(--red); box-shadow: 0 0 0 4px rgba(236,48,19,.12); background: #fff; }
 .range-row .pct-in + output { min-width: 0; font-size: 20px; }
+
+/* fuel calculator */
+#fuelCalc select.pct-in { font-size: 16px; font-weight: 600; }
+#fuelCalc .flabel { font-size: 13px; }
+.diesel-table td small { display: block; color: #8a847e; font-size: 12px; margin-top: 3px; font-weight: 400; }
+.diesel-table td.chg { font-variant-numeric: tabular-nums; color: #b9b3ae; white-space: nowrap; }
+.diesel-table td.chg.up { color: #ff8a73; }
+.diesel-table td.chg.down { color: #4ade80; }
+@media (min-width: 1041px) and (max-width: 1240px) { .nav > a, .nav .dd > button { padding: 10px 8px; font-size: 14px; } }
+.nav > a, .nav .dd > button { white-space: nowrap; }
+@media (min-width: 1041px) and (max-width: 1240px) { .nav-cta .btn-line { display: none; } .header .wrap { gap: 12px; } }

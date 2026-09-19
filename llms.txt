@@ -13,10 +13,25 @@
 - Phone: (838) 910-3147 | WhatsApp: +1 838 910 3147 (https://wa.me/18389103147) | Email: dispatch@texassolutions.co
 - Address: 401 W Kentucky Ave, Midland, TX 79701
 
+## Diesel prices (EIA weekly, week of 2026-09-14)
+- U.S. average: $6.285/gal
+- East Coast: $6.158/gal
+- New England: $6.202/gal
+- Central Atlantic: $6.312/gal
+- Lower Atlantic: $6.096/gal
+- Midwest: $6.250/gal
+- Gulf Coast: $6.027/gal
+- Rocky Mountain: $6.066/gal
+- West Coast: $7.250/gal
+- West Coast (excl. California): $6.566/gal
+- California: $8.039/gal
+- Truck fuel cost calculator: https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html
+
 ## Pages
 - [Home](https://dispatch.texassolutions.co/): truck dispatch service overview and pricing
 - [Dispatch fee calculator and free quote](https://dispatch.texassolutions.co/estimate.html)
 - [Truck dispatch rates and rate-per-mile guide](https://dispatch.texassolutions.co/truck-dispatch-rates.html)
+- [Truck fuel cost calculator and weekly diesel prices by state](https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html)
 - [Box Truck Dispatch](https://dispatch.texassolutions.co/box-truck-dispatch.html): Texas Solutions provides box truck dispatch for owner-operators and small fleets across the United States. Dispatchers search and negotiate loads, complete broker setups and keep paperwork organized. The fee is 8-10% of weekly gross for OTR box trucks and straight trucks, with no flat rate, no setup fee and your approval on every load.
 - [Hotshot Dispatch](https://dispatch.texassolutions.co/hotshot-dispatch.html): Texas Solutions dispatches hotshot trucks for owner-operators across the United States, including Texas and the Permian Basin. Dispatchers find expedited and partial loads, negotiate rates that often run $4-5 a mile, and handle broker paperwork. The dispatch fee is 8-10% of weekly gross for OTR hotshots, with no flat rate.
 - [Flatbed & Step Deck Dispatch](https://dispatch.texassolutions.co/flatbed-dispatch.html): Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets nationwide. Dispatchers find open-deck loads that often pay $5-7 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5-6% of weekly gross for OTR semis, with no flat rate.

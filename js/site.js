@@ -162,5 +162,67 @@
     });
   });
 
+
+  /* fuel cost calculator */
+  var fc = document.getElementById('fuelCalc');
+  if (fc) {
+    var F = JSON.parse(fc.getAttribute('data-fuel'));
+    var g = function (id) { return document.getElementById(id); };
+    var usd = function (n, d) { return '$' + n.toLocaleString('en-US', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); };
+    var num = function (id) { var x = parseFloat(g(id).value); return isFinite(x) ? x : 0; };
+    var weight = g('fuelWeight'), priceIn = g('fuelPrice'), stateSel = g('fuelState');
+    var diesel = F.diesel;
+    function truck() { var c = fc.querySelector('input[name=fuelTruck]:checked'); for (var i = 0; i < F.trucks.length; i++) if (c && F.trucks[i].id === c.value) return F.trucks[i]; return F.trucks[0]; }
+    function statePrice() {
+      if (!diesel) return null;
+      var st = F.states[stateSel.value], r = st && diesel.regions[st.region];
+      return r ? { price: r.price, region: r.name, state: st.name } : (diesel.regions.US ? { price: diesel.regions.US.price, region: 'U.S. average', state: st ? st.name : '' } : null);
+    }
+    function fillPrice() {
+      var sp = statePrice();
+      if (sp) {
+        priceIn.value = sp.price.toFixed(3); priceIn.dataset.auto = '1';
+        g('fuelPriceNote').textContent = sp.state + ': $' + sp.price.toFixed(3) + '/gal, EIA ' + sp.region + ' average, week of ' + diesel.week + '. Edit it to match your pump price.';
+      }
+    }
+    function pickTruck(reset) {
+      var tr = truck();
+      weight.max = tr.max; if (reset) weight.value = tr.def;
+      g('fuelMax').textContent = tr.max.toLocaleString('en-US') + ' lbs';
+      g('fuelReeferWrap').hidden = tr.id !== 'reefer';
+    }
+    function run() {
+      var tr = truck(), w = +weight.value;
+      g('fuelWeightOut').textContent = w.toLocaleString('en-US') + ' lbs';
+      var auto = Math.max(tr.min, tr.empty - tr.loss * w / 1000);
+      var mpg = num('fuelMpg') > 0 ? num('fuelMpg') : auto;
+      var miles = num('fuelMiles') + num('fuelDead');
+      var reeferGal = tr.id === 'reefer' ? num('fuelReefer') * F.reeferGph : 0;
+      var gal = (mpg > 0 ? miles / mpg : 0) + reeferGal;
+      var price = num('fuelPrice');
+      var cost = gal * price;
+      g('fuelMpgOut').textContent = mpg.toFixed(1) + ' mpg' + (num('fuelMpg') > 0 ? ' (yours)' : '');
+      g('fuelTotalMi').textContent = miles.toLocaleString('en-US') + ' mi';
+      g('fuelGal').textContent = gal.toLocaleString('en-US', { maximumFractionDigits: 1 }) + ' gal';
+      g('fuelCpm').textContent = miles ? usd(cost / miles, 2) + ' /mi' : '-';
+      g('fuelPriceUsed').textContent = usd(price, 3) + ' /gal';
+      g('fuelBig').innerHTML = usd(cost) + '<small>for ' + miles.toLocaleString('en-US') + ' miles</small>';
+      var rate = num('fuelRate'), rev = rate * num('fuelMiles');
+      g('fuelRevRow').hidden = g('fuelShareRow').hidden = !(rate > 0);
+      if (rate > 0) { g('fuelNet').textContent = usd(rev - cost) + ' of ' + usd(rev); g('fuelShare').textContent = rev ? (cost / rev * 100).toFixed(1) + '%' : '-'; }
+    }
+    Array.prototype.forEach.call(fc.querySelectorAll('input[name=fuelTruck]'), function (r) { r.addEventListener('change', function () { pickTruck(true); run(); }); });
+    ['fuelWeight', 'fuelMiles', 'fuelDead', 'fuelMpg', 'fuelRate', 'fuelReefer', 'fuelPrice'].forEach(function (id) { g(id).addEventListener('input', run); });
+    stateSel.addEventListener('change', function () { fillPrice(); run(); });
+    pickTruck(true); fillPrice(); run();
+    // Pick up a newer weekly file if the page itself is cached.
+    fetch('data/diesel-prices.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.regions && (!diesel || d.week !== diesel.week || d.fetched !== diesel.fetched)) {
+        diesel = d; if (priceIn.dataset.auto) fillPrice(); run();
+        var wk = g('dieselWeek'); if (wk) wk.textContent = d.week;
+      }
+    }).catch(function () {});
+  }
+
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 })();

@@ -1,0 +1,64 @@
+{
+  "week": "2026-09-14",
+  "fetched": "2026-09-18T23:57:44Z",
+  "source": "U.S. Energy Information Administration, weekly retail on-highway diesel prices",
+  "sourceUrl": "https://www.eia.gov/dnav/pet/pet_pri_gnd_a_epd2d_pte_dpgal_w.htm",
+  "unit": "USD per gallon, including taxes",
+  "regions": {
+    "US": {
+      "name": "U.S. average",
+      "price": 6.285,
+      "prev": 5.967
+    },
+    "P1": {
+      "name": "East Coast",
+      "price": 6.158,
+      "prev": 5.744
+    },
+    "P1A": {
+      "name": "New England",
+      "price": 6.202,
+      "prev": 5.99
+    },
+    "P1B": {
+      "name": "Central Atlantic",
+      "price": 6.312,
+      "prev": 6.051
+    },
+    "P1C": {
+      "name": "Lower Atlantic",
+      "price": 6.096,
+      "prev": 5.605
+    },
+    "P2": {
+      "name": "Midwest",
+      "price": 6.25,
+      "prev": 5.946
+    },
+    "P3": {
+      "name": "Gulf Coast",
+      "price": 6.027,
+      "prev": 5.754
+    },
+    "P4": {
+      "name": "Rocky Mountain",
+      "price": 6.066,
+      "prev": 5.805
+    },
+    "P5": {
+      "name": "West Coast",
+      "price": 7.25,
+      "prev": 6.987
+    },
+    "P5X": {
+      "name": "West Coast (excl. California)",
+      "price": 6.566,
+      "prev": 6.314
+    },
+    "CA": {
+      "name": "California",
+      "price": 8.039,
+      "prev": 7.764
+    }
+  }
+}
