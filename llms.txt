@@ -13,18 +13,58 @@
 - Phone: (838) 910-3147 | WhatsApp: +1 838 910 3147 (https://wa.me/18389103147) | Email: dispatch@texassolutions.co
 - Address: 401 W Kentucky Ave, Midland, TX 79701
 
-## Diesel prices (EIA weekly, week of 2026-09-14)
-- U.S. average: $6.285/gal
-- East Coast: $6.158/gal
-- New England: $6.202/gal
-- Central Atlantic: $6.312/gal
-- Lower Atlantic: $6.096/gal
-- Midwest: $6.250/gal
-- Gulf Coast: $6.027/gal
-- Rocky Mountain: $6.066/gal
-- West Coast: $7.250/gal
-- West Coast (excl. California): $6.566/gal
-- California: $8.039/gal
+## Diesel prices by state (daily, 2026-09-18; EIA U.S. weekly average $6.285)
+- Alabama: $6.137/gal
+- Alaska: $6.608/gal
+- Arizona: $6.425/gal
+- Arkansas: $6.142/gal
+- California: $8.395/gal
+- Colorado: $6.121/gal
+- Connecticut: $6.402/gal
+- Delaware: $6.386/gal
+- District of Columbia: $6.518/gal
+- Florida: $6.349/gal
+- Georgia: $6.352/gal
+- Hawaii: $7.112/gal
+- Idaho: $6.409/gal
+- Illinois: $6.500/gal
+- Indiana: $6.530/gal
+- Iowa: $6.195/gal
+- Kansas: $6.161/gal
+- Kentucky: $6.209/gal
+- Louisiana: $6.021/gal
+- Maine: $6.449/gal
+- Maryland: $6.456/gal
+- Massachusetts: $6.322/gal
+- Michigan: $6.677/gal
+- Minnesota: $6.262/gal
+- Mississippi: $6.046/gal
+- Missouri: $6.171/gal
+- Montana: $6.223/gal
+- Nebraska: $6.146/gal
+- Nevada: $6.711/gal
+- New Hampshire: $6.348/gal
+- New Jersey: $6.432/gal
+- New Mexico: $6.362/gal
+- New York: $6.421/gal
+- North Carolina: $6.232/gal
+- North Dakota: $6.197/gal
+- Ohio: $6.546/gal
+- Oklahoma: $5.982/gal
+- Oregon: $6.833/gal
+- Pennsylvania: $6.552/gal
+- Rhode Island: $6.274/gal
+- South Carolina: $6.166/gal
+- South Dakota: $6.189/gal
+- Tennessee: $6.170/gal
+- Texas: $5.979/gal
+- Utah: $6.330/gal
+- Vermont: $6.390/gal
+- Virginia: $6.352/gal
+- Washington: $7.411/gal
+- West Virginia: $6.264/gal
+- Wisconsin: $6.238/gal
+- Wyoming: $6.053/gal
 - Truck fuel cost calculator: https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html
 
 ## Pages

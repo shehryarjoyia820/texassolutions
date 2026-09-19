@@ -175,14 +175,16 @@
     function truck() { var c = fc.querySelector('input[name=fuelTruck]:checked'); for (var i = 0; i < F.trucks.length; i++) if (c && F.trucks[i].id === c.value) return F.trucks[i]; return F.trucks[0]; }
     function statePrice() {
       if (!diesel) return null;
-      var st = F.states[stateSel.value], r = st && diesel.regions[st.region];
-      return r ? { price: r.price, region: r.name, state: st.name } : (diesel.regions.US ? { price: diesel.regions.US.price, region: 'U.S. average', state: st ? st.name : '' } : null);
+      var code = stateSel.value, st = F.states[code];
+      if (diesel.states && diesel.states[code]) return { price: diesel.states[code], src: 'AAA daily average, ' + diesel.day, state: st.name };
+      var r = st && diesel.regions[st.region];
+      return r ? { price: r.price, src: 'EIA ' + r.name + ' weekly average, ' + diesel.week, state: st.name } : null;
     }
     function fillPrice() {
       var sp = statePrice();
       if (sp) {
         priceIn.value = sp.price.toFixed(3); priceIn.dataset.auto = '1';
-        g('fuelPriceNote').textContent = sp.state + ': $' + sp.price.toFixed(3) + '/gal, EIA ' + sp.region + ' average, week of ' + diesel.week + '. Edit it to match your pump price.';
+        g('fuelPriceNote').textContent = sp.state + ' diesel today: $' + sp.price.toFixed(3) + '/gal (' + sp.src + '). Edit it to match your pump price.';
       }
     }
     function pickTruck(reset) {
@@ -220,10 +222,12 @@
     Array.prototype.forEach.call(fc.querySelectorAll('input[name=fuelTruck]'), function (r) { r.addEventListener('change', function () { pickTruck(true); run(); }); });
     ['fuelWeight', 'fuelMiles', 'fuelDead', 'fuelMpg', 'fuelRate', 'fuelReefer', 'fuelPrice', 'fuelSpeed', 'fuelIdle'].forEach(function (id) { g(id).addEventListener('input', run); });
     stateSel.addEventListener('change', function () { fillPrice(); run(); });
+    var wantT = new URLSearchParams(location.search).get('truck');
+    if (wantT) { var rt = fc.querySelector('input[name=fuelTruck][value="' + wantT + '"]'); if (rt) rt.checked = true; }
     pickTruck(true); fillPrice(); run();
     // Pick up a newer weekly file if the page itself is cached.
     fetch('data/diesel-prices.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (d && d.regions && (!diesel || d.week !== diesel.week || d.fetched !== diesel.fetched)) {
+      if (d && d.regions && (!diesel || d.day !== diesel.day || d.week !== diesel.week)) {
         diesel = d; if (priceIn.dataset.auto) fillPrice(); run();
         var wk = g('dieselWeek'); if (wk) wk.textContent = d.week;
       }

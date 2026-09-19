@@ -824,14 +824,24 @@ def build_fuel():
     if week:
         d0 = date.fromisoformat(week)
         week_h = f"{d0.strftime('%B')} {d0.day}, {d0.year}"
-    title = "Fuel Cost Calculator for Trucks & Diesel Prices Today by State | Texas Solutions"
-    desc = (f"Free truck fuel cost calculator and diesel prices by state, updated weekly. U.S. diesel average ${us:.3f}/gal (week of {week_h}). "
-            "Estimate MPG, gallons, trip fuel cost and fuel cost per mile for semi, reefer, flatbed, hotshot and box trucks by load weight.")
-    rp = lambda k: regions.get(k, {}).get("price", 0)
-    today_qa = ("What is the average price of diesel today?",
-                f"The U.S. average retail price of on-highway diesel is ${us:.3f} per gallon for the week of {week_h}, according to the U.S. Energy "
-                f"Information Administration. Regional averages: Gulf Coast (including Texas) ${rp('P3'):.3f}, Midwest ${rp('P2'):.3f}, "
-                f"East Coast ${rp('P1'):.3f}, Rocky Mountain ${rp('P4'):.3f}, West Coast ${rp('P5'):.3f} and California ${rp('CA'):.3f}.")
+    states_p = diesel.get("states", {}) if diesel else {}
+    day = diesel.get("day") if diesel else None
+    day_h = ""
+    if day:
+        d1 = date.fromisoformat(day)
+        day_h = f"{d1.strftime('%B')} {d1.day}, {d1.year}"
+    sp = lambda code: states_p.get(code) or regions.get(C.STATE_REGION[code][1], {}).get("price", 0)
+    ranked = sorted(C.STATE_REGION, key=sp)
+    cheap, dear = ranked[:3], ranked[-3:][::-1]
+    nm = lambda code: C.STATE_REGION[code][0]
+    title = "Fuel Price Calculator for Trucks & Diesel Prices Today by State (USA) | Texas Solutions"
+    desc = (f"Free truck fuel price calculator with diesel prices for all 50 states, updated daily. Diesel today: Texas ${sp('TX'):.2f}, "
+            f"California ${sp('CA'):.2f}, U.S. average ${us:.2f}. Calculate fuel cost for dry van, reefer, flatbed, step deck, hotshot and box trucks.")
+    today_qa = ("What is the price of diesel today?",
+                f"Diesel prices today ({day_h or week_h}): Texas ${sp('TX'):.3f}, California ${sp('CA'):.3f}, Florida ${sp('FL'):.3f}, "
+                f"Illinois ${sp('IL'):.3f}, New York ${sp('NY'):.3f} and Georgia ${sp('GA'):.3f} per gallon. The cheapest diesel is in "
+                f"{nm(cheap[0])} (${sp(cheap[0]):.3f}), {nm(cheap[1])} and {nm(cheap[2])}; the most expensive is in {nm(dear[0])} "
+                f"(${sp(dear[0]):.3f}), {nm(dear[1])} and {nm(dear[2])}. The EIA U.S. weekly average is ${us:.3f}.")
     trucks = [{"id": i, "name": n, "empty": e, "k": k, "max": mx, "def": d, "idle": ig, "spd": sp} for i, n, e, k, mx, d, ig, sp in C.FUEL_TRUCKS]
     states = {k: {"name": n, "region": r} for k, (n, r) in C.STATE_REGION.items()}
     cfg = {"trucks": trucks, "states": states, "reeferGph": C.REEFER_GAL_PER_HOUR, "diesel": diesel}
@@ -841,12 +851,23 @@ def build_fuel():
         for i, tr in enumerate(trucks))
     st_opts = "".join(f'<option value="{k}"{" selected" if k == "TX" else ""}>{v[0]}</option>' for k, v in sorted(C.STATE_REGION.items(), key=lambda kv: kv[1][0]))
     rows = ""
-    for k, v in regions.items():
-        chg = v["price"] - (v["prev"] or v["price"])
-        arrow = "&#9650;" if chg > 0.0005 else ("&#9660;" if chg < -0.0005 else "&#8212;")
-        cls = "up" if chg > 0.0005 else ("down" if chg < -0.0005 else "")
-        sts = ", ".join(sorted(n for n, r in C.STATE_REGION.values() if r == k)) or ("All states" if k == "US" else "")
-        rows += f'<tr><td><b>{esc(v["name"])}</b><small>{esc(sts)}</small></td><td class="rate">${v["price"]:.3f}</td><td class="chg {cls}">{arrow} {abs(chg):.3f}</td></tr>\n'
+    for code in sorted(C.STATE_REGION, key=nm):
+        price = sp(code)
+        diff = price - us
+        cls = "up" if diff > 0.0005 else ("down" if diff < -0.0005 else "")
+        src = "" if states_p.get(code) else " <small>EIA regional</small>"
+        rows += (f'<tr id="diesel-{code.lower()}"><td><b>{nm(code)}</b>{src}</td><td class="rate">${price:.3f}</td>'
+                 f'<td class="chg {cls}">{"+" if diff >= 0 else "-"}${abs(diff):.3f}</td></tr>\n')
+    truck_secs = ""
+    for tid, tname, emp, k, mx, dflt, idle, spd in C.FUEL_TRUCKS:
+        mpg = emp / (1 + k * dflt / 1000)
+        gal = 1000 / mpg
+        truck_secs += f"""  <div class="card rv" id="{tid}-fuel-calculator">
+    <h3>{tname} fuel cost calculator</h3>
+    <p>A {tname.lower()} averages about <b>{emp:.1f} mpg empty</b> and <b>{mpg:.1f} mpg with {dflt:,} lbs</b> of cargo. Over 1,000 miles that is about {gal:.0f} gallons, or <b>${gal * us:,.0f}</b> at the U.S. average diesel price (${gal * us / 1000:.2f} per mile).</p>
+    <a class="more" href="truck-fuel-cost-calculator.html?truck={tid}#fuelCalc">Calculate {tname.lower()} fuel cost &rarr;</a>
+  </div>
+"""
     qa = ("How do I calculate truck fuel cost per mile?",
           f"Divide the diesel price by your truck's miles per gallon. A loaded semi averaging about 6.3 mpg with diesel at ${us:.2f} a gallon "
           f"spends about ${us / 6.3:.2f} per mile on fuel. Heavier loads lower MPG: NACFE research puts it at about 0.5-0.6% more fuel for every 1,000 lbs, roughly 0.3-0.4 mpg per 10,000 lbs on a Class 8 truck.")
@@ -894,7 +915,10 @@ def build_fuel():
     <small>Estimates only. Real fuel use depends on speed, terrain, weather, idling, tires and engine. Diesel prices are EIA regional weekly averages, not a specific station.</small>
   </div>
 </div>"""
-    faqs = [today_qa, qa,
+    faqs = [today_qa,
+            ("What is the price of diesel in Texas today?", f"Diesel in Texas averages ${sp('TX'):.3f} per gallon today ({day_h or week_h}), compared with the U.S. average of ${us:.3f}."),
+            ("Which state has the cheapest diesel?", f"Today the cheapest diesel is in {nm(cheap[0])} at ${sp(cheap[0]):.3f} a gallon, then {nm(cheap[1])} and {nm(cheap[2])}. The most expensive is {nm(dear[0])} at ${sp(dear[0]):.3f}."),
+            qa,
             ("How many miles per gallon does a semi truck get?", "A loaded Class 8 semi typically gets about 6 to 7 miles per gallon; empty, closer to 7 to 8 mpg. Speed, terrain, weather, aerodynamics and idling all change the number."),
             ("How much diesel does a semi truck use per mile?", "Roughly 0.14 to 0.17 gallons per mile for a loaded semi averaging 6 to 7 mpg. Multiply by the diesel price to get fuel cost per mile."),
             ("How much does it cost to fuel a semi truck for 1,000 miles?", f"At about 6.3 mpg a semi burns roughly 159 gallons over 1,000 miles. At ${us:.2f} a gallon that is about ${159 * us:,.0f}. Use the calculator above for your own truck, weight and state."),
@@ -902,21 +926,44 @@ def build_fuel():
             ("How many miles per gallon does a box truck get?", "A 26-foot diesel box truck typically gets about 8 to 10 mpg, dropping toward 7 to 8 mpg near its maximum payload."),
             ("Does cargo weight affect fuel mileage?", "Yes. Heavier loads need more power, so MPG drops as weight goes up. The effect is larger on hotshots and box trucks, where cargo is a bigger share of total weight."),
             ("Why is diesel more expensive in California?", "California has stricter fuel specifications, higher state taxes and fees, and a relatively isolated refining market, so its diesel price is usually the highest in the country."),
-            ("Where do the diesel prices on this page come from?", "From the U.S. Energy Information Administration's weekly retail on-highway diesel survey. EIA reports prices by region, plus California; each state uses its region's average. This page updates automatically every week."),
+            ("Where do the diesel prices on this page come from?", "State prices are AAA's daily state averages, refreshed every day. The U.S. average comes from the U.S. Energy Information Administration's weekly diesel survey, which is also used as a backup for any state without a daily price."),
+            ("How much does it cost to fuel a dry van, reefer or step deck?", f"A loaded dry van or step deck averages about 6.0-6.3 mpg, a reefer about 6.0 mpg plus reefer unit fuel. At ${us:.2f} a gallon, that is roughly ${us / 6.3:.2f}-${us / 6.0:.2f} of diesel per mile."),
+            ("How much does it cost to fuel a box truck per mile?", f"A 26 ft diesel box truck averages about 8.5-11 mpg depending on load, so fuel costs about ${us / 11:.2f}-${us / 8.5:.2f} per mile at ${us:.2f} a gallon."),
             ("How can truckers lower fuel cost per mile?", "Cut deadhead miles, slow down (fuel use rises sharply above about 62 mph), reduce idling, keep tires properly inflated, and book loads that pay enough per mile to cover fuel. A dispatcher who plans lanes can help cut empty miles.")]
-    body = f"""{phero("Fuel Calculator", "Truck Fuel Cost Calculator", f"Estimate diesel cost for your truck, load weight and state. Diesel prices update weekly from the U.S. Energy Information Administration" + (f" (week of {week})." if week else "."), ctas=False)}
+    body = f"""{phero("Fuel Calculator", "Truck Fuel Cost Calculator", f"Calculate fuel cost for your truck, load weight and state, with today's diesel prices for all 50 states. Updated daily.", ctas=False)}
 <section class="sec" style="padding-top:48px;padding-bottom:0"><div class="wrap">{answer(*today_qa, label="Diesel price today")}</div></section>
 <section class="sec" style="padding-top:40px"><div class="wrap">
   {calc}
 </div></section>
 <section class="sec sec-dark" id="diesel-prices"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Diesel prices by state</span><h2>This week's diesel prices</h2><p>On-highway diesel, dollars per gallon including taxes. EIA weekly averages by region{f" for the week of {week}" if week else ""}; each state uses its region's price. Updated automatically every week.</p></div>
+  <div class="sec-head rv"><span class="eyebrow">Fuel prices today</span><h2>Diesel prices by state today</h2><p>Average on-highway diesel price per gallon in all 50 states and Washington, DC{f", {day_h}" if day_h else ""}, compared with the U.S. average of ${us:.3f}. Updated every day.</p></div>
   <div class="board rv"><div style="overflow-x:auto"><table class="board-table diesel-table" id="dieselTable">
-    <thead><tr><th>Region and states</th><th>Diesel $/gal</th><th>Weekly change</th></tr></thead>
+    <thead><tr><th>State</th><th>Diesel $/gal</th><th>vs U.S. avg</th></tr></thead>
     <tbody>
 {rows}    </tbody>
   </table></div>
-  <p class="board-foot">Source: <a href="https://www.eia.gov/petroleum/gasdiesel/" rel="noopener" style="color:#d9d5d1">U.S. Energy Information Administration</a>, Gasoline and Diesel Fuel Update. Last updated <span id="dieselWeek">{week}</span>.</p></div>
+  <p class="board-foot">Daily state averages: <a href="https://gasprices.aaa.com/state-gas-price-averages/" rel="noopener" style="color:#d9d5d1">AAA</a>, as of <span id="dieselDay">{day_h or "-"}</span>. U.S. average and fallback regional prices: <a href="https://www.eia.gov/petroleum/gasdiesel/" rel="noopener" style="color:#d9d5d1">U.S. Energy Information Administration</a>, week of <span id="dieselWeek">{week_h}</span>.</p></div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Fuel calculator by truck type</span><h2>Fuel price calculator for every truck</h2><p>Fuel cost for dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, based on published fuel economy data and today's diesel prices.</p></div>
+  <div class="grid g4">
+{truck_secs}  </div>
+</div></section>
+<section class="sec sec-soft"><div class="wrap two">
+  <div class="prose rv">
+    <h2 style="margin-top:0">Why fuel prices matter for truckers</h2>
+    <p>Fuel is the second-largest operating cost in trucking after driver pay. At ${us:.2f} a gallon, a semi averaging 6.3 mpg spends about ${us / 6.3:.2f} on diesel for every mile, loaded or empty. On a 2,500-mile week that is roughly ${2500 / 6.3 * us:,.0f}.</p>
+    <p>Diesel prices can differ by more than ${sp(dear[0]) - sp(cheap[0]):.2f} a gallon between states. Fuelling in {nm(cheap[0])} instead of {nm(dear[0])} saves about ${(sp(dear[0]) - sp(cheap[0])) * 150:,.0f} on a 150-gallon fill. Planning fuel stops by state is one of the easiest ways to cut cost per mile.</p>
+    <h2>How to use the fuel price calculator</h2>
+    <ul>
+      <li>Pick your truck type: dry van, reefer, flatbed, step deck, power only, hotshot, box truck or straight truck.</li>
+      <li>Set the cargo weight; heavier loads burn more fuel.</li>
+      <li>Enter loaded and deadhead miles, your average speed and any idle hours.</li>
+      <li>Choose the state where you fuel up. Today's diesel price fills in automatically, or type your own pump price.</li>
+      <li>Add your rate per mile to see revenue left after fuel.</li>
+    </ul>
+  </div>
+  <div class="aside">{answer("Which state has the cheapest diesel today?", f"{nm(cheap[0])} has the cheapest diesel today at ${sp(cheap[0]):.3f} a gallon, followed by {nm(cheap[1])} (${sp(cheap[1]):.3f}) and {nm(cheap[2])} (${sp(cheap[2]):.3f}). {nm(dear[0])} is the most expensive at ${sp(dear[0]):.3f}.", "Cheapest diesel")}</div>
 </div></section>
 <section class="sec"><div class="wrap two">
   <div class="prose rv">
@@ -950,14 +997,17 @@ def build_fuel():
                          {"@type": "HowToStep", "position": 2, "name": "Add total miles", "text": "Enter loaded miles plus deadhead miles."},
                          {"@type": "HowToStep", "position": 3, "name": "Set the diesel price", "text": "Select the state where you fuel up to use the weekly EIA diesel price, or type your pump price."},
                          {"@type": "HowToStep", "position": 4, "name": "Calculate", "text": "Gallons equal total miles divided by MPG; fuel cost equals gallons times the diesel price; cost per mile equals fuel cost divided by miles."}]},
-               {"@context": "https://schema.org", "@type": "Dataset", "name": "Weekly U.S. diesel prices by region and state",
-                "description": "Weekly retail on-highway diesel prices (USD per gallon, including taxes) by EIA PADD region and California, mapped to U.S. states.",
-                "url": url(path) + "#diesel-prices", "dateModified": week or TODAY, "temporalCoverage": week or TODAY,
+               {"@context": "https://schema.org", "@type": "Dataset", "name": "Daily U.S. diesel prices by state",
+                "description": "Average on-highway diesel prices (USD per gallon) for all 50 U.S. states and DC, updated daily, with the EIA weekly U.S. average.",
+                "url": url(path) + "#diesel-prices", "dateModified": day or week or TODAY, "temporalCoverage": day or week or TODAY,
                 "isBasedOn": "https://www.eia.gov/petroleum/gasdiesel/", "license": "https://www.eia.gov/about/copyrights_reuse.php",
                 "creator": {"@type": "GovernmentOrganization", "name": "U.S. Energy Information Administration", "url": "https://www.eia.gov/"},
                 "publisher": {"@id": BUSINESS_ID}, "spatialCoverage": {"@type": "Place", "name": "United States"},
                 "variableMeasured": "Retail diesel price, USD per gallon"}]
-    kw = ("fuel cost calculator, trip fuel cost calculator, diesel prices today, diesel prices by state, diesel price per gallon, average diesel price, "
+    kw = ("fuel prices, fuel price calculator, fuel cost calculator, diesel prices today, diesel prices by state, diesel price per gallon, "
+          "dry van fuel price calculator, step deck fuel price calculator, box truck fuel price calculator, reefer fuel cost calculator, "
+          "flatbed fuel cost calculator, hotshot fuel calculator, power only fuel cost, straight truck fuel cost, fuel prices near me, "
+          "cheapest diesel by state, diesel price Texas, diesel price California, trucking fuel cost per mile, trip fuel cost calculator, average diesel price, "
           "diesel prices near me, semi truck mpg, how many miles per gallon does a semi get, fuel cost per mile, truck fuel cost calculator, diesel cost calculator, fuel cost per mile calculator, semi truck fuel calculator, hotshot fuel calculator, "
           "box truck fuel cost, diesel prices by state, diesel price per gallon today, trucking fuel calculator, truck mpg calculator, " + ", ".join(C.CORE_KEYWORDS[:6]))
     write(path[1:], page(path, title, desc, kw, schemas, body, current=path[1:]))
@@ -979,8 +1029,8 @@ def diesel_lines():
     d = load_diesel()
     if not d:
         return []
-    out = [f"## Diesel prices (EIA weekly, week of {d['week']})"]
-    out += [f"- {v['name']}: ${v['price']:.3f}/gal" for v in d["regions"].values()]
+    out = [f"## Diesel prices by state (daily, {d.get('day')}; EIA U.S. weekly average ${d['regions']['US']['price']:.3f})"]
+    out += [f"- {C.STATE_REGION[c][0]}: ${v:.3f}/gal" for c, v in sorted(d.get("states", {}).items(), key=lambda kv: C.STATE_REGION[kv[0]][0])]
     out += [f"- Truck fuel cost calculator: {url('/truck-fuel-cost-calculator.html')}", ""]
     return out
 

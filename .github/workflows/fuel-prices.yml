@@ -1,10 +1,11 @@
-name: Update diesel prices
+name: Update diesel prices (daily)
 
-# EIA publishes weekly diesel prices on Monday afternoons (Tuesday after a
-# holiday). Check daily; commit only when the numbers change.
+# Daily state diesel averages (AAA) refresh overnight; EIA weekly on Mondays.
+# Runs every morning and midday (US Eastern); commits only when prices change.
 on:
   schedule:
-    - cron: "30 12 * * *"
+    - cron: "15 11 * * *"
+    - cron: "15 17 * * *"
   workflow_dispatch:
 
 permissions:
@@ -41,7 +42,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Update weekly diesel prices"
+          git commit -m "Update daily diesel prices"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
 

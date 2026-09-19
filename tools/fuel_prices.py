@@ -1,12 +1,14 @@
 """
-Fetches the latest weekly on-highway diesel prices from the U.S. Energy
-Information Administration (EIA, public domain) and writes data/diesel-prices.json.
+Fetches diesel prices and writes data/diesel-prices.json:
+- daily state averages from AAA (gasprices.aaa.com), and
+- weekly regional averages from the U.S. Energy Information Administration
+  (EIA, public domain), used as a fallback when a state price is missing.
 
     python tools/fuel_prices.py
 
-EIA publishes diesel by PADD region (plus California) every Monday; the
-GitHub Action in .github/workflows/fuel-prices.yml runs this weekly and
-commits the result, so the fuel calculator always shows the current week.
+The GitHub Action in .github/workflows/fuel-prices.yml runs this every
+morning and commits the result when prices change. If a source fails, the
+last good prices are kept.
 """
 
 import html
@@ -19,6 +21,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = "https://www.eia.gov/dnav/pet/pet_pri_gnd_a_epd2d_pte_dpgal_w.htm"
+AAA_SOURCE = "https://gasprices.aaa.com/state-gas-price-averages/"
+UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128 Safari/537.36"
 OUT = ROOT / "data" / "diesel-prices.json"
 
 # EIA row label -> short key
@@ -42,10 +46,33 @@ NAMES = {
 }
 
 
-def fetch():
-    req = urllib.request.Request(SOURCE, headers={"User-Agent": "Mozilla/5.0 (fuel price updater; dispatch.texassolutions.co)"})
+def fetch(url=SOURCE):
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=60) as r:
         return r.read().decode("utf-8", "ignore")
+
+
+def parse_aaa(page):
+    """State name -> diesel price, plus the 'Price as of' date."""
+    sys.path.insert(0, str(Path(__file__).parent))
+    import content as C
+    by_name = {n: code for code, (n, _) in C.STATE_REGION.items()}
+    by_name["Washington DC"] = by_name["District of Columbia"] = "DC"
+    i = page.find("<table")
+    table = page[i:page.find("</table>", i)]
+    states = {}
+    for row in re.findall(r"<tr[^>]*>(.*?)</tr>", table, re.S):
+        cells = [html.unescape(re.sub(r"<[^>]+>", "", c)).strip() for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", row, re.S)]
+        if len(cells) >= 5 and cells[0] in by_name:
+            m = re.search(r"[\d.]+", cells[4])
+            if m:
+                states[by_name[cells[0]]] = round(float(m.group(0)), 3)
+    m = re.search(r"Price as of\s*(\d{1,2}/\d{1,2}/\d{2,4})", page)
+    day = None
+    if m:
+        fmt = "%m/%d/%y" if len(m.group(1).split("/")[-1]) == 2 else "%m/%d/%Y"
+        day = datetime.strptime(m.group(1), fmt).date().isoformat()
+    return day, states
 
 
 def parse(page):
@@ -70,16 +97,33 @@ def parse(page):
 
 
 def main():
-    week, prices = parse(fetch())
+    old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+    try:
+        week, prices = parse(fetch())
+    except Exception as e:  # keep last good EIA data
+        print("EIA fetch failed:", e, file=sys.stderr)
+        week, prices = old.get("week"), old.get("regions", {})
     if "US" not in prices or len(prices) < 8:
-        print("EIA page format changed; keeping the previous file.", file=sys.stderr)
-        sys.exit(0 if OUT.exists() else 1)
-    if OUT.exists():
-        old = json.loads(OUT.read_text(encoding="utf-8"))
-        if old.get("week") == week and old.get("regions") == prices:
-            print(f"diesel prices unchanged (week {week})")
-            return
+        print("EIA data unavailable; keeping the previous regional prices.", file=sys.stderr)
+        week, prices = old.get("week"), old.get("regions", {})
+    try:
+        day, states = parse_aaa(fetch(AAA_SOURCE))
+    except Exception as e:
+        print("AAA fetch failed:", e, file=sys.stderr)
+        day, states = None, {}
+    if len(states) < 45:  # page changed or blocked: keep the last good daily prices
+        print(f"AAA returned {len(states)} states; keeping previous daily prices.", file=sys.stderr)
+        day, states = old.get("day"), old.get("states", {})
+    if not prices and not states:
+        sys.exit(1)
+    if old.get("week") == week and old.get("regions") == prices and old.get("day") == day and old.get("states") == states:
+        print(f"diesel prices unchanged (day {day}, week {week})")
+        return
     data = {
+        "day": day,
+        "states": states,
+        "statesSource": "AAA daily state averages (gasprices.aaa.com)",
+        "statesSourceUrl": AAA_SOURCE,
         "week": week,
         "fetched": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "source": "U.S. Energy Information Administration, weekly retail on-highway diesel prices",
@@ -89,7 +133,7 @@ def main():
     }
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8", newline="\n")
-    print(f"diesel prices for week {week}: US ${prices['US']['price']}")
+    print(f"diesel: {len(states)} states for {day}; EIA week {week} US ${prices.get('US', {}).get('price')}")
 
 
 if __name__ == "__main__":
