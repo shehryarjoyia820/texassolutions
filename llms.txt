@@ -13,58 +13,58 @@
 - Phone: (838) 910-3147 | WhatsApp: +1 838 910 3147 (https://wa.me/18389103147) | Email: dispatch@texassolutions.co
 - Address: 401 W Kentucky Ave, Midland, TX 79701
 
-## Diesel prices by state (daily, 2026-09-19; EIA U.S. weekly average $6.285)
-- Alabama: $6.154/gal
-- Alaska: $6.621/gal
-- Arizona: $6.441/gal
-- Arkansas: $6.185/gal
-- California: $8.416/gal
-- Colorado: $6.143/gal
-- Connecticut: $6.445/gal
-- Delaware: $6.409/gal
-- District of Columbia: $6.505/gal
-- Florida: $6.332/gal
-- Georgia: $6.355/gal
-- Hawaii: $7.136/gal
-- Idaho: $6.463/gal
-- Illinois: $6.665/gal
-- Indiana: $6.711/gal
-- Iowa: $6.212/gal
-- Kansas: $6.204/gal
-- Kentucky: $6.321/gal
-- Louisiana: $6.030/gal
-- Maine: $6.486/gal
-- Maryland: $6.480/gal
-- Massachusetts: $6.354/gal
-- Michigan: $6.768/gal
-- Minnesota: $6.282/gal
-- Mississippi: $6.060/gal
-- Missouri: $6.242/gal
-- Montana: $6.271/gal
-- Nebraska: $6.200/gal
-- Nevada: $6.797/gal
-- New Hampshire: $6.371/gal
-- New Jersey: $6.453/gal
-- New Mexico: $6.360/gal
-- New York: $6.460/gal
+## Diesel prices by state (daily, 2026-09-20; EIA U.S. weekly average $6.285)
+- Alabama: $6.160/gal
+- Alaska: $6.650/gal
+- Arizona: $6.442/gal
+- Arkansas: $6.191/gal
+- California: $8.424/gal
+- Colorado: $6.144/gal
+- Connecticut: $6.454/gal
+- Delaware: $6.415/gal
+- District of Columbia: $6.548/gal
+- Florida: $6.312/gal
+- Georgia: $6.351/gal
+- Hawaii: $7.120/gal
+- Idaho: $6.475/gal
+- Illinois: $6.740/gal
+- Indiana: $6.776/gal
+- Iowa: $6.286/gal
+- Kansas: $6.228/gal
+- Kentucky: $6.352/gal
+- Louisiana: $6.033/gal
+- Maine: $6.508/gal
+- Maryland: $6.486/gal
+- Massachusetts: $6.370/gal
+- Michigan: $6.798/gal
+- Minnesota: $6.320/gal
+- Mississippi: $6.058/gal
+- Missouri: $6.273/gal
+- Montana: $6.279/gal
+- Nebraska: $6.213/gal
+- Nevada: $6.820/gal
+- New Hampshire: $6.391/gal
+- New Jersey: $6.459/gal
+- New Mexico: $6.346/gal
+- New York: $6.481/gal
 - North Carolina: $6.247/gal
-- North Dakota: $6.233/gal
-- Ohio: $6.668/gal
-- Oklahoma: $6.006/gal
-- Oregon: $6.862/gal
-- Pennsylvania: $6.582/gal
-- Rhode Island: $6.338/gal
-- South Carolina: $6.169/gal
-- South Dakota: $6.235/gal
-- Tennessee: $6.200/gal
-- Texas: $5.980/gal
-- Utah: $6.381/gal
-- Vermont: $6.408/gal
-- Virginia: $6.369/gal
-- Washington: $7.437/gal
-- West Virginia: $6.328/gal
-- Wisconsin: $6.295/gal
-- Wyoming: $6.124/gal
+- North Dakota: $6.231/gal
+- Ohio: $6.725/gal
+- Oklahoma: $6.017/gal
+- Oregon: $6.867/gal
+- Pennsylvania: $6.593/gal
+- Rhode Island: $6.351/gal
+- South Carolina: $6.162/gal
+- South Dakota: $6.258/gal
+- Tennessee: $6.204/gal
+- Texas: $5.978/gal
+- Utah: $6.402/gal
+- Vermont: $6.439/gal
+- Virginia: $6.381/gal
+- Washington: $7.445/gal
+- West Virginia: $6.350/gal
+- Wisconsin: $6.471/gal
+- Wyoming: $6.142/gal
 - Truck fuel cost calculator: https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html
 
 ## Pages
