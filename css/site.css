@@ -441,3 +441,52 @@ a.cbox:hover { border-color: #cfcac6; }
 @media (min-width: 1041px) and (max-width: 1240px) { .nav > a, .nav .dd > button { padding: 10px 8px; font-size: 14px; } }
 .nav > a, .nav .dd > button { white-space: nowrap; }
 @media (min-width: 1041px) and (max-width: 1240px) { .nav-cta .btn-line { display: none; } .header .wrap { gap: 12px; } }
+
+/* blog */
+.post-card { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+.post-card > *:not(.post-cover) { margin-left: 24px; margin-right: 24px; }
+.post-card .more { margin-bottom: 24px; }
+.post-cover { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin: 0 0 18px; }
+.post-cover-ph { background: radial-gradient(420px 200px at 85% 0%, rgba(236,48,19,.55), transparent 65%), linear-gradient(135deg, #1c1917, #2b2826); position: relative; }
+.post-cover-ph::after { content: ''; position: absolute; inset: 0; background: url("../assets/logo/texas-solutions-icon.png") center / 64px no-repeat; opacity: .25; filter: brightness(0) invert(1); }
+.post-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.post-meta .tag { background: var(--red-50); color: var(--red-600); font-weight: 700; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; }
+.post-card h3 { font-size: 19px; }
+.post-body .answer { margin: 0 0 12px; }
+.post-body h2 { margin-top: 36px; }
+.post-body h3 { margin-top: 26px; font-size: 20px; }
+.post-body img { border-radius: 14px; margin: 18px 0; }
+.post-hero-img { width: 100%; border-radius: 18px; margin: 0 0 24px; }
+.prose ol { margin: 16px 0 0; padding-left: 22px; font-size: 17px; }
+.prose ol li { margin-top: 8px; }
+.tbl { overflow-x: auto; margin-top: 18px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.tbl table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 480px; }
+.tbl th { text-align: left; background: var(--soft); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 12px 14px; }
+.tbl td { padding: 12px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+.tbl td small { display: block; color: var(--muted); font-size: 12px; }
+.prose .faq { margin-top: 16px; }
+
+/* tools */
+.tools-sec { background: radial-gradient(900px 400px at 100% 0%, rgba(236,48,19,.22), transparent 60%), var(--ink); }
+.tool-card { display: block; text-decoration: none; background: rgba(255,255,255,.04); border: 1px solid #2b2826; border-radius: 20px; padding: 28px; color: #d9d5d1; transition: transform .2s, border-color .2s, background .2s; }
+.tool-card:hover { transform: translateY(-3px); border-color: rgba(236,48,19,.6); background: rgba(255,255,255,.06); }
+.tool-card h3 { color: #fff; }
+.tool-card p { color: #b9b3ae; margin-top: 10px; }
+.tool-card .icon { background: rgba(236,48,19,.16); }
+.tool-card .more { color: #ff8a73; }
+.tool-mini { display: flex; gap: 14px; align-items: center; padding: 18px; text-decoration: none; color: inherit; }
+.tool-mini .icon { margin: 0; flex: none; }
+.tool-mini p { margin-top: 4px; font-size: 14px; }
+
+/* state stats */
+.stat-row .card { padding: 22px; }
+.stat { font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; color: var(--ink); letter-spacing: -.02em; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.stat.up { color: var(--red-600); }
+.stat.down { color: #0f7a3d; }
+.stat-row .card p { margin-top: 4px; font-size: 14px; }
+.price-grid .price { padding: 28px; }
+.price-grid .price .amt { font-size: 52px; }
+@media (max-width: 1100px) and (min-width: 641px) { .price-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .price-grid .price.feat { grid-column: 1 / -1; } }
+.post-card:nth-child(3n+2) .post-cover-ph { background: radial-gradient(420px 200px at 15% 0%, rgba(37,211,102,.35), transparent 65%), linear-gradient(135deg, #1c1917, #2b2826); }
+.post-card:nth-child(3n) .post-cover-ph { background: radial-gradient(420px 220px at 50% 110%, rgba(236,48,19,.5), transparent 65%), linear-gradient(135deg, #2b2826, #14110f); }
+.hero-card .row .pct { color: var(--red); font-weight: 800; font-size: 24px; white-space: nowrap; }

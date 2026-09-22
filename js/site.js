@@ -58,6 +58,7 @@
   /* estimator: per-truck pricing */
   var est = document.getElementById('estimator');
   var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  var pctTxt = function (p) { return p[0] === p[1] ? p[0] + '%' : p[0] + '-' + p[1] + '%'; };
   var cfg = est ? JSON.parse(est.getAttribute('data-pricing')) : null;
   function truckById(id) { for (var k = 0; k < cfg.trucks.length; k++) if (cfg.trucks[k].id === id) return cfg.trucks[k]; return cfg.trucks[0]; }
   if (est) {
@@ -81,13 +82,13 @@
       var rng = function (a, b) { return a === b ? money(a) : money(a) + ' - ' + money(b); };
       outT.textContent = n + (n === 1 ? ' truck' : ' trucks');
       outG.textContent = money(g);
-      $('estPct').textContent = useCustom ? cp + '% (your rate)' : tr.pct[0] + '-' + tr.pct[1] + '%';
+      $('estPct').textContent = useCustom ? cp + '% (your rate)' : pctTxt(tr.pct);
       $('estRpm').textContent = tr.rpm + ' /mi';
       $('estWeekly').textContent = rng(lo * n, hi * n);
       $('estPerTruck').textContent = rng(lo, hi);
       $('estMonthly').textContent = rng(lo * n * 52 / 12, hi * n * 52 / 12);
       $('estKeep').textContent = rng((g - hi) * n, (g - lo) * n);
-      $('estBig').innerHTML = useCustom ? money(lo * n) + '<small>per week at ' + cp + '%</small>' : money(lo * n) + '<small> - ' + money(hi * n) + ' / week</small>';
+      $('estBig').innerHTML = (useCustom || lo === hi) ? money(lo * n) + '<small>per week at ' + (useCustom ? cp : pLo) + '%</small>' : money(lo * n) + '<small> - ' + money(hi * n) + ' / week</small>';
       var wp = $('wqPct'); if (wp && !wp.dataset.touched) wp.value = useCustom ? cp : '';
       var wq = $('wqTrucks'); if (wq && !wq.dataset.touched) wq.value = n;
       var wg = $('wqGross'); if (wg && !wg.dataset.touched) wg.value = g;
@@ -103,7 +104,7 @@
   var wa = document.getElementById('waQuote');
   if (wa && cfg) {
     var wt = document.getElementById('wqTruck'), hint = document.getElementById('wqPctHint');
-    var syncHint = function () { var tr = truckById(wt.value); hint.textContent = 'Our rate for a ' + tr.name + ': ' + tr.pct[0] + '-' + tr.pct[1] + '% of weekly gross (OTR)'; };
+    var syncHint = function () { var tr = truckById(wt.value); hint.textContent = 'Our rate for a ' + tr.name + ': ' + pctTxt(tr.pct) + ' of weekly gross (OTR)'; };
     wt.addEventListener('change', function () { wt.dataset.touched = '1'; syncHint(); });
     wt.addEventListener('sync', syncHint); syncHint();
     ['wqTrucks', 'wqGross', 'wqPct'].forEach(function (id) { var el = document.getElementById(id); el.addEventListener('input', function () { el.dataset.touched = '1'; }); });
@@ -222,7 +223,8 @@
     Array.prototype.forEach.call(fc.querySelectorAll('input[name=fuelTruck]'), function (r) { r.addEventListener('change', function () { pickTruck(true); run(); }); });
     ['fuelWeight', 'fuelMiles', 'fuelDead', 'fuelMpg', 'fuelRate', 'fuelReefer', 'fuelPrice', 'fuelSpeed', 'fuelIdle'].forEach(function (id) { g(id).addEventListener('input', run); });
     stateSel.addEventListener('change', function () { fillPrice(); run(); });
-    var wantT = new URLSearchParams(location.search).get('truck');
+    var qsF = new URLSearchParams(location.search), wantT = qsF.get('truck'), wantS = (qsF.get('state') || '').toUpperCase();
+    if (wantS && F.states[wantS]) stateSel.value = wantS;
     if (wantT) { var rt = fc.querySelector('input[name=fuelTruck][value="' + wantT + '"]'); if (rt) rt.checked = true; }
     pickTruck(true); fillPrice(); run();
     // Pick up a newer weekly file if the page itself is cached.

@@ -1,0 +1,50 @@
+# Blog admin (Sveltia CMS) for dispatch.texassolutions.co
+# Open https://dispatch.texassolutions.co/admin/ and choose "Sign In with Token".
+backend:
+  name: github
+  repo: shehryarjoyia820/texassolutions
+  branch: Main
+  commit_messages:
+    create: "Blog: add {{slug}}"
+    update: "Blog: update {{slug}}"
+    delete: "Blog: delete {{slug}}"
+    uploadMedia: "Blog: upload {{path}}"
+    deleteMedia: "Blog: delete {{path}}"
+
+site_url: https://dispatch.texassolutions.co
+display_url: https://dispatch.texassolutions.co/blog.html
+logo_url: /assets/logo/texas-solutions-icon.png
+
+media_folder: assets/blog
+public_folder: /assets/blog
+
+collections:
+  - name: blog
+    label: Blog posts
+    label_singular: Blog post
+    folder: content/blog
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}} ({{date}})"
+    sortable_fields: [date, title]
+    preview_path: "blog/{{slug}}.html"
+    fields:
+      - { name: title, label: "Title (60 characters or less works best on Google)", widget: string }
+      - { name: description, label: "Meta description (about 150 characters, shown on Google)", widget: text }
+      - { name: date, label: Publish date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { name: author, label: Author, widget: string, default: "Texas Solutions Dispatch Team" }
+      - { name: tags, label: Tags, widget: list, required: false }
+      - { name: keywords, label: "Target keywords (comma separated)", widget: string, required: false }
+      - { name: cover, label: "Cover image (optional)", widget: image, required: false }
+      - { name: answer, label: "Quick answer (2-3 sentences; shown at the top and used by Google AI Overview / ChatGPT)", widget: text, required: false }
+      - name: faq
+        label: "FAQ (optional; each question becomes rich-result FAQ markup)"
+        widget: list
+        required: false
+        fields:
+          - { name: q, label: Question, widget: string }
+          - { name: a, label: Answer, widget: text }
+      - { name: body, label: Post, widget: markdown }

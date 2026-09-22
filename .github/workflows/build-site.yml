@@ -1,0 +1,52 @@
+name: Build site (blog posts)
+
+# Rebuilds every page when a blog post is added or edited (for example from
+# /admin/), then commits the generated HTML so GitHub Pages publishes it.
+on:
+  push:
+    branches: [Main]
+    paths:
+      - "content/**"
+      - "assets/blog/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build tools
+        run: pip install markdown pyyaml
+
+      - name: Build pages
+        run: python tools/site.py
+
+      - name: Commit generated pages
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing to publish."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish blog changes"
+          git pull --rebase
+          git push
+
+      - name: Notify Bing and Yandex (IndexNow)
+        run: |
+          body='{"host":"dispatch.texassolutions.co","key":"7c1f4e2a9b8d4c6e8f0a1b2c3d4e5f60","keyLocation":"https://dispatch.texassolutions.co/7c1f4e2a9b8d4c6e8f0a1b2c3d4e5f60.txt","urlList":["https://dispatch.texassolutions.co/blog.html","https://dispatch.texassolutions.co/sitemap.xml"]}'
+          curl -s -o /dev/null -w "IndexNow %{http_code}\n" -H "Content-Type: application/json" -d "$body" https://api.indexnow.org/indexnow || true

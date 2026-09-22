@@ -25,7 +25,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch EIA diesel prices
+      - name: Install build tools
+        run: pip install markdown pyyaml
+
+      - name: Fetch diesel prices
         run: python tools/fuel_prices.py
 
       - name: Rebuild pages

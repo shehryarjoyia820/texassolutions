@@ -3,6 +3,8 @@ User-agent: *
 Allow: /
 Disallow: /head-codes.html
 Disallow: /tools/
+Disallow: /admin/
+Disallow: /content/
 
 User-agent: Googlebot
 Allow: /

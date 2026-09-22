@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import content as C  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
+POSTS, STATE_PAGES = [], []
 TODAY = date.today().isoformat()
 OG_IMAGE = f"{C.BASE}/assets/og-image.png"
 LOGO = f"{C.BASE}/assets/logo/texas-solutions-logo.png"
@@ -38,6 +39,25 @@ def url(path):
 
 def money(n):
     return f"${n:,.0f}"
+
+
+def pl(p):
+    """'5%' or '8-10%' for a pricing group (or a (lo, hi) tuple)."""
+    lo, hi = p["pct"] if isinstance(p, dict) else p
+    return f"{lo}%" if lo == hi else f"{lo}-{hi}%"
+
+
+SMALL_TXT = "box trucks and straight trucks 10%, hotshots 8%"
+LANDING_PCT = {"box-truck-dispatch.html": (10, 10), "hotshot-dispatch.html": (8, 8)}
+
+
+def landing_pricing(p):
+    """Pricing group for a landing page, with the page's own truck percentage."""
+    kind = dict(C.PRICING[p["kind"]])
+    if p["file"] in LANDING_PCT:
+        kind["pct"] = LANDING_PCT[p["file"]]
+        kind["label"] = {"box-truck-dispatch.html": "Box trucks", "hotshot-dispatch.html": "Hotshots"}[p["file"]]
+    return kind
 
 
 def fee_range(kind):
@@ -71,20 +91,16 @@ def ld(obj):
 
 
 def offers():
-    out = []
-    for k in ("semi", "small"):
-        p = C.PRICING[k]
-        out.append({
-            "@type": "Offer",
-            "name": f"{p['label']} OTR dispatch",
-            "description": f"{p['pct'][0]}-{p['pct'][1]}% of weekly gross for OTR {', '.join(p['equipment']).lower()}. "
-                           f"Typical weekly gross {money(p['gross'][0])}-{money(p['gross'][1])}. No flat rate, no setup fee.",
-            "priceCurrency": "USD",
-            "priceSpecification": {"@type": "UnitPriceSpecification", "name": f"{p['pct'][0]}-{p['pct'][1]}% of weekly gross",
-                                   "priceCurrency": "USD", "minPrice": round(p["gross"][0] * p["pct"][0] / 100),
-                                   "maxPrice": round(p["gross"][1] * p["pct"][1] / 100), "unitText": "WEEK"},
-        })
-    return out
+    groups = [("Semi truck OTR dispatch", "dry van, reefer, flatbed, step deck and power only semi trucks", 5, (8000, 10000)),
+              ("Hotshot OTR dispatch", "hotshot trucks", 8, (7000, 9000)),
+              ("Box truck OTR dispatch", "box trucks and straight trucks", 10, (7000, 9000))]
+    return [{
+        "@type": "Offer", "name": n,
+        "description": f"{pct}% of weekly gross for OTR {what}. Typical weekly gross {money(g[0])}-{money(g[1])}. No flat rate, no setup fee.",
+        "priceCurrency": "USD",
+        "priceSpecification": {"@type": "UnitPriceSpecification", "name": f"{pct}% of weekly gross", "priceCurrency": "USD",
+                               "minPrice": round(g[0] * pct / 100), "maxPrice": round(g[1] * pct / 100), "unitText": "WEEK"},
+    } for n, what, pct, g in groups]
 
 
 def business():
@@ -96,7 +112,7 @@ def business():
         "alternateName": C.BRAND,
         "slogan": "Truck dispatch for owner-operators and small fleets",
         "description": f"Truck dispatch service for owner-operators and small fleets in the United States. Semi trucks pay "
-                       f"{M['pct'][0]}-{M['pct'][1]}% of weekly gross and small trucks {S['pct'][0]}-{S['pct'][1]}%, for OTR operations, "
+                       f"{pl(M)} of weekly gross, hotshots 8% and box trucks 10%, for OTR operations, "
                        "with no flat rate and no setup fee.",
         "url": url("/"),
         "logo": LOGO,
@@ -167,8 +183,8 @@ def head_codes():
 
 # ------------------------------------------------------------------ chrome
 def nav_links():
-    return [("Rates", "truck-dispatch-rates.html"), ("Estimate", "estimate.html"), ("Fuel Calculator", "truck-fuel-cost-calculator.html"), ("About", "about.html"),
-            ("FAQ", "faq.html"), ("Contact", "contact.html")]
+    return [("Rates", "truck-dispatch-rates.html"), ("Estimate", "estimate.html"), ("Fuel Calculator", "truck-fuel-cost-calculator.html"), ("Blog", "blog.html"), ("About", "about.html"),
+            ("Contact", "contact.html")]
 
 
 def header(current):
@@ -220,7 +236,7 @@ def footer():
     <div class="cols">
       <div class="fbrand">
         <img src="assets/logo/texas-solutions-logo.png" alt="Texas Solutions" width="127" height="44" loading="lazy">
-        <p>Truck dispatch service for owner-operators and small fleets across the United States. Semi trucks {M['pct'][0]}-{M['pct'][1]}% and small trucks {S['pct'][0]}-{S['pct'][1]}% of weekly gross, OTR. No flat rate.</p>
+        <p>Truck dispatch service for owner-operators and small fleets across the United States. Semi trucks {pl(M)}, hotshots 8% and box trucks 10% of weekly gross, OTR. No flat rate.</p>
       </div>
       <div>
         <h4>Dispatch Services</h4>
@@ -231,6 +247,8 @@ def footer():
       <a href="truck-dispatch-rates.html">Dispatch Rates</a>
       <a href="estimate.html">Free Estimate</a>
       <a href="truck-fuel-cost-calculator.html">Fuel Cost Calculator</a>
+      <a href="diesel-prices/texas.html">Diesel Prices by State</a>
+      <a href="blog.html">Blog</a>
       <a href="about.html">About Us</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
@@ -336,30 +354,36 @@ def phero(crumb_name, h1, lede, ctas=True, extra=""):
 </div></section>"""
 
 
+PRICE_GROUPS = [
+    # key, label, equipment, pct, gross, truck query, featured
+    ("semi", "Semi trucks", ["Dry Van", "Reefer", "Flatbed", "Step Deck", "Power Only"], 5, (8000, 10000), "dry-van", True),
+    ("hotshot", "Hotshot", ["Hotshot trucks", "Gooseneck and flatbed trailers"], 8, (7000, 9000), "hotshot", False),
+    ("box", "Box trucks", ["Box Truck", "Straight Truck"], 10, (7000, 9000), "box-truck", False),
+]
+
+
 def pricing_cards(cta=True):
-    def card(k, feat):
-        p = C.PRICING[k]
-        lo, hi = fee_range(k)
-        items = [f"For {', '.join(p['equipment'][:-1]).lower()} and {p['equipment'][-1].lower()}",
-                 f"Typical weekly gross {money(p['gross'][0])} - {money(p['gross'][1])}",
+    def card(key, label, eq, pct, gross, tq, feat):
+        lo, hi = money(gross[0] * pct / 100), money(gross[1] * pct / 100)
+        items = [f"Typical weekly gross {money(gross[0])} - {money(gross[1])}",
                  f"About {lo} - {hi} per week on typical gross",
                  "OTR (over-the-road) operations", "No flat rate, no setup fee, no subscription",
                  "You approve every load"]
         li = "\n".join(f"      <li>{esc(i)}</li>" for i in items)
-        btn = f'<a class="btn {"btn-red" if feat else "btn-dark"}" href="estimate.html?type={k}">Estimate my fee</a>' if cta else ""
+        btn = f'<a class="btn {"btn-red" if feat else "btn-dark"}" href="estimate.html?truck={tq}">Estimate my fee</a>' if cta else ""
         tag = '<span class="tag">Most popular</span>' if feat else ""
         return f"""<div class="price{' feat' if feat else ''} rv">
-    {tag}<h3>{p['label']}</h3>
-    <p class="eq">{', '.join(p['equipment'])}</p>
-    <div class="amt">{p['pct'][0]}-{p['pct'][1]}%<small> of weekly gross</small></div>
+    {tag}<h3>{label}</h3>
+    <p class="eq">{', '.join(eq)}</p>
+    <div class="amt">{pct}%<small> of weekly gross</small></div>
     <ul>
 {li}
     </ul>
     {btn}
   </div>"""
-    return f"""<div class="grid g2">
-  {card('semi', True)}
-  {card('small', False)}
+    cards = "\n  ".join(card(*g) for g in PRICE_GROUPS)
+    return f"""<div class="grid g3 price-grid">
+  {cards}
 </div>
 <p class="note center">{esc(C.PRICING_CONDITION)} {esc(C.PRICING_NOTE)}</p>"""
 
@@ -395,7 +419,7 @@ def rate_board():
 def equip_cards():
     icons = "truck"
     return '<div class="grid g3">\n' + "\n".join(
-        f"""  <a class="card rv" href="{p['file']}"><div class="icon">{ICONS[icons]}</div><h3>{esc(p['nav'])}</h3><p>{esc(p['description'][:150].rsplit(' ', 1)[0])}...</p><span class="more">{C.PRICING[p['kind']]['pct'][0]}-{C.PRICING[p['kind']]['pct'][1]}% &middot; Learn more &rarr;</span></a>"""
+        f"""  <a class="card rv" href="{p['file']}"><div class="icon">{ICONS[icons]}</div><h3>{esc(p['nav'])}</h3><p>{esc(p['description'][:150].rsplit(' ', 1)[0])}...</p><span class="more">{pl(landing_pricing(p))} &middot; Learn more &rarr;</span></a>"""
         for p in C.LANDING if not p.get("guide")) + "\n</div>"
 
 
@@ -411,7 +435,7 @@ def steps(dark=False):
 
 
 def band(title="Ready to keep your truck loaded?", text=None):
-    text = text or f"Semi trucks {M['pct'][0]}-{M['pct'][1]}%, small trucks {S['pct'][0]}-{S['pct'][1]}% of weekly gross. OTR. No flat rate, no setup fee."
+    text = text or f"Semi trucks {pl(M)}, hotshots 8%, box trucks 10% of weekly gross. OTR. No flat rate, no setup fee."
     return f"""<section class="sec"><div class="wrap"><div class="band rv">
   <div><h2>{esc(title)}</h2><p>{esc(text)}</p></div>
   <div class="ctas"><a class="btn btn-dark" href="estimate.html">Get a Free Estimate</a><a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp</a></div>
@@ -460,13 +484,26 @@ def contact_side():
 HOME_KW = ", ".join(C.CORE_KEYWORDS)
 
 
+def blog_teaser():
+    if not POSTS:
+        return ""
+    cards = "\n".join(post_card(po) for po in POSTS[:3])
+    return f"""<section class="sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">From the blog</span><h2>Guides for owner-operators</h2></div>
+  <div class="grid g3">
+{cards}
+  </div>
+  <p class="mt-l"><a class="btn btn-line" href="blog.html">All articles</a></p>
+</div></section>"""
+
+
 def build_home():
-    title = "Truck Dispatch Service for Owner-Operators | 5-6% Semi, 8-10% Small Truck | Texas Solutions"
-    desc = (f"Truck dispatch service for owner-operators and small fleets. Semi trucks {M['pct'][0]}-{M['pct'][1]}% and box trucks & hotshots "
-            f"{S['pct'][0]}-{S['pct'][1]}% of weekly gross, OTR. No flat rate, no setup fee. Flatbed loads $5-7/mile. Free estimate.")
+    title = "Truck Dispatch Service for Owner-Operators | 5% Semi, 8% Hotshot, 10% Box Truck | Texas Solutions"
+    desc = (f"Truck dispatch service for owner-operators and small fleets. Semi trucks {pl(M)} and box trucks & hotshots "
+            f"10% of weekly gross (hotshots 8%), OTR. No flat rate, no setup fee. Flatbed loads $5-7/mile. Free estimate.")
     qa = ("How much does truck dispatch cost at Texas Solutions?",
-          f"Texas Solutions charges {M['pct'][0]}-{M['pct'][1]}% of weekly gross for OTR semi trucks (dry van, reefer, flatbed, step deck, power only) "
-          f"and {S['pct'][0]}-{S['pct'][1]}% for OTR small trucks (box truck, straight truck, hotshot). There is no flat rate, no setup fee and no "
+          f"Texas Solutions charges {pl(M)} of weekly gross for OTR semi trucks (dry van, reefer, flatbed, step deck, power only) "
+          f"8% for OTR hotshots and 10% for OTR box trucks and straight trucks. There is no flat rate, no setup fee and no "
           f"monthly subscription. On a typical semi grossing {money(M['gross'][0])}-{money(M['gross'][1])} a week, the fee is about {SEMI_FEE[0]}-{SEMI_FEE[1]} a week.")
     hero = f"""<section class="hero">
   <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/video/hero-background.mp4" type="video/mp4"></video>
@@ -480,15 +517,16 @@ def build_home():
         <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp a Dispatcher</a>
       </div>
       <div class="hero-stats">
-        <div><b>{M['pct'][0]}-{M['pct'][1]}%</b><span>Semi trucks, OTR</span></div>
-        <div><b>{S['pct'][0]}-{S['pct'][1]}%</b><span>Box truck &amp; hotshot</span></div>
+        <div><b>{pl(M)}</b><span>Semi trucks, OTR</span></div>
+        <div><b>8-10%</b><span>Hotshot 8%, box truck 10%</span></div>
         <div><b>$0</b><span>Setup fee or flat rate</span></div>
       </div>
     </div>
     <aside class="hero-card" aria-label="Dispatch pricing">
       <h2>Simple percentage pricing</h2>
-      <div class="row"><div><b>Semi trucks</b><br><span>Dry van, reefer, flatbed, step deck, power only &middot; gross {money(M['gross'][0])}-{money(M['gross'][1])}/wk</span></div><span class="pct">{M['pct'][0]}-{M['pct'][1]}%</span></div>
-      <div class="row"><div><b>Small trucks</b><br><span>Box truck, straight truck, hotshot &middot; gross {money(S['gross'][0])}-{money(S['gross'][1])}/wk</span></div><span class="pct">{S['pct'][0]}-{S['pct'][1]}%</span></div>
+      <div class="row"><div><b>Semi trucks</b><br><span>Dry van, reefer, flatbed, step deck, power only &middot; gross {money(M['gross'][0])}-{money(M['gross'][1])}/wk</span></div><span class="pct">{pl(M)}</span></div>
+      <div class="row"><div><b>Hotshot</b><br><span>Gooseneck &amp; flatbed trailers &middot; gross $7,000-$9,000/wk</span></div><span class="pct">8%</span></div>
+      <div class="row"><div><b>Box &amp; straight trucks</b><br><span>Gross $7,000-$9,000/wk</span></div><span class="pct">10%</span></div>
       <a class="btn btn-red" href="estimate.html">Calculate my dispatch fee</a>
       <small>OTR operations. Rough estimate; final percentage set in your dispatch agreement. Earnings not guaranteed.</small>
     </aside>
@@ -516,6 +554,15 @@ def build_home():
   <div class="sec-head rv"><span class="eyebrow">How it works</span><h2>Start dispatching in four steps</h2></div>
   {steps()}
 </div></section>
+<section class="sec sec-dark tools-sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Free trucking tools</span><h2>Know your numbers before you book</h2><p>Free calculators built for owner-operators, with diesel prices for all 50 states updated every day.</p></div>
+  <div class="grid g3">
+    <a class="tool-card rv" href="truck-fuel-cost-calculator.html"><div class="icon">{ICONS['truck']}</div><h3>Truck fuel cost calculator</h3><p>MPG by truck type and load weight, trip fuel cost and cost per mile, with today's diesel price for your state.</p><span class="more">Calculate fuel cost &rarr;</span></a>
+    <a class="tool-card rv" href="estimate.html"><div class="icon">{ICONS['calc']}</div><h3>Dispatch fee calculator</h3><p>See your weekly and monthly dispatch fee for your truck: semi 5%, hotshot 8%, box truck 10%.</p><span class="more">Estimate my fee &rarr;</span></a>
+    <a class="tool-card rv" href="diesel-prices/texas.html"><div class="icon">{ICONS['pin']}</div><h3>Diesel prices by state</h3><p>Today's diesel price in every state, compared with the U.S. average, with fuel cost per mile for your truck.</p><span class="more">See diesel prices &rarr;</span></a>
+  </div>
+</div></section>
+{blog_teaser()}
 <section class="sec sec-soft"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Truck dispatch FAQ</span><h2>Questions owner-operators ask</h2></div>
   {faq_html(C.FAQS[:8])}
@@ -528,7 +575,7 @@ def build_home():
 
 def build_estimate():
     title = "Truck Dispatch Fee Calculator & Free Quote | Texas Solutions"
-    desc = (f"Estimate your truck dispatch fee: semi trucks {M['pct'][0]}-{M['pct'][1]}% and small trucks {S['pct'][0]}-{S['pct'][1]}% of weekly gross, "
+    desc = (f"Estimate your truck dispatch fee: semi trucks {pl(M)}, hotshots 8% and box trucks 10% of weekly gross, "
             "OTR only, no flat rate. Enter your trucks and weekly gross, see your weekly and monthly fee, and request a free quote.")
     rpm = {eq: r for eq, r, _ in C.RATE_GUIDE}
     trucks_cfg = []
@@ -536,16 +583,16 @@ def build_estimate():
         pr = C.PRICING[kind]
         for eq in pr["equipment"]:
             trucks_cfg.append({"id": eq.lower().replace(" ", "-"), "name": eq, "kind": kind, "label": pr["label"],
-                               "pct": list(pr["pct"]), "gross": list(pr["gross"]),
+                               "pct": [C.EQ_PCT[eq], C.EQ_PCT[eq]], "gross": list(pr["gross"]),
                                "rpm": rpm.get(eq, rpm.get("Box Truck"))})
     cfg = {"trucks": trucks_cfg, "wa": C.WHATSAPP}
     qa = ("How is the Texas Solutions dispatch fee calculated?",
-          f"Multiply your truck's weekly gross by the dispatch percentage: {M['pct'][0]}-{M['pct'][1]}% for OTR semi trucks, {S['pct'][0]}-{S['pct'][1]}% "
-          f"for OTR small trucks. Example: a semi grossing $9,000 a week pays about $450-$540 a week. A hotshot grossing $8,000 pays about $640-$800. "
+          f"Multiply your truck's weekly gross by the dispatch percentage: {pl(M)} for OTR semi trucks, 8% "
+          f"for hotshots and 10% for box trucks. Example: a semi grossing $9,000 a week pays $450 a week. A hotshot grossing $8,000 pays $640; a box truck grossing $8,000 pays $800. "
           "There is no flat rate and no setup fee.")
     truck_btns = "\n".join(
         f'        <label><input type="radio" name="estTruck" value="{tc["id"]}"{" checked" if i == 0 else ""}>'
-        f'<b>{tc["name"]}</b><span>{tc["pct"][0]}-{tc["pct"][1]}% &middot; {tc["rpm"].replace(" - ", "-").replace(".00", "")}/mi</span></label>'
+        f'<b>{tc["name"]}</b><span>{pl(tc)} &middot; {tc["rpm"].replace(" - ", "-").replace(".00", "")}/mi</span></label>'
         for i, tc in enumerate(trucks_cfg))
     eq_opts = "".join(f'<option value="{tc["id"]}">{tc["name"]}</option>' for tc in trucks_cfg)
     calc = f"""<div class="est rv" id="estimator" data-pricing='{json.dumps(cfg)}'>
@@ -572,9 +619,9 @@ def build_estimate():
   </div>
   <div class="est-out" aria-live="polite">
     <h3>Price for your <span id="estTruckName">Dry Van</span></h3>
-    <div class="est-big" id="estBig">$450<small> - $540 / week</small></div>
+    <div class="est-big" id="estBig">$450<small>per week at 5%</small></div>
     <div class="est-lines">
-      <div><span>Dispatch percentage</span><b id="estPct">5-6%</b></div>
+      <div><span>Dispatch percentage</span><b id="estPct">5%</b></div>
       <div><span>Rough rate per mile</span><b id="estRpm">-</b></div>
       <div><span>Fee per truck, weekly</span><b id="estPerTruck">-</b></div>
       <div><span>Total fee, weekly</span><b id="estWeekly">-</b></div>
@@ -601,7 +648,7 @@ def build_estimate():
   <p class="form-status" role="status" aria-live="polite"></p>
   <p class="fine">Tapping the button opens WhatsApp with your details filled in, ready to send to Texas Solutions at +1 (838) 910-3147. Nothing is sent until you press send in WhatsApp. Your requested percentage is reviewed by a dispatcher; the final percentage is discussed with each carrier.</p>
 </form>"""
-    body = f"""{phero("Estimate", "Truck Dispatch Fee Calculator &amp; Free Quote", f"See what dispatch costs before you sign. Semi trucks {M['pct'][0]}-{M['pct'][1]}%, small trucks {S['pct'][0]}-{S['pct'][1]}% of weekly gross, for OTR carriers. No flat rate.", ctas=False)}
+    body = f"""{phero("Estimate", "Truck Dispatch Fee Calculator &amp; Free Quote", f"See what dispatch costs before you sign. Semi trucks {pl(M)}, hotshots 8%, box trucks 10% of weekly gross, for OTR carriers. No flat rate.", ctas=False)}
 <section class="sec" style="padding-top:56px"><div class="wrap">
   {calc}
 </div></section>
@@ -634,12 +681,12 @@ def build_estimate():
 
 
 def build_rates():
-    title = "Truck Dispatch Rates 2026: 5-6% Semi, 8-10% Box Truck & Hotshot | Texas Solutions"
-    desc = ("Truck dispatch rates and rate-per-mile guide: semi trucks 5-6% of weekly gross, box trucks and hotshots 8-10%, OTR, no flat rate. "
+    title = "Truck Dispatch Rates 2026: 5% Semi, 8% Hotshot, 10% Box Truck | Texas Solutions"
+    desc = ("Truck dispatch rates and rate-per-mile guide: semi trucks 5% of weekly gross, hotshots 8%, box trucks 10%, OTR, no flat rate. "
             "Flatbed and step deck $5-7/mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, box truck $1.80-3.20.")
     qa = ("What are truck dispatch rates in 2026?",
-          f"Independent truck dispatchers usually charge a percentage of weekly gross. Texas Solutions charges {M['pct'][0]}-{M['pct'][1]}% for OTR semi trucks and "
-          f"{S['pct'][0]}-{S['pct'][1]}% for OTR box trucks, straight trucks and hotshots, with no flat rate. As a rough guide to freight rates, flatbed "
+          f"Independent truck dispatchers usually charge a percentage of weekly gross. Texas Solutions charges {pl(M)} for OTR semi trucks and "
+          f"8% for hotshots and 10% for OTR box trucks and straight trucks, with no flat rate. As a rough guide to freight rates, flatbed "
           "and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20.")
     rows = "\n".join(f"<tr><td><b>{eq}</b></td><td>{r}/mi</td><td>{n}</td></tr>" for eq, r, n in C.RATE_GUIDE)
     body = f"""{phero("Dispatch Rates", "Truck Dispatch Rates &amp; Rate-per-Mile Guide", "Clear percentage pricing for OTR carriers, plus a rough guide to what loads are paying by equipment type.")}
@@ -663,8 +710,8 @@ def build_rates():
     <p>Dry van freight has the widest range, roughly $3 to $5 a mile. Short local and regional loads often pay more per mile because the load is short, while long OTR runs pay less per mile but more per load. Our published dispatch percentages apply to OTR operations.</p>
     <h2>Example: what dispatch costs on a typical week</h2>
     <ul>
-      <li>Semi truck grossing {money(M['gross'][0])}-{money(M['gross'][1])}: fee about {SEMI_FEE[0]}-{SEMI_FEE[1]} a week at {M['pct'][0]}-{M['pct'][1]}%.</li>
-      <li>Box truck or hotshot grossing {money(S['gross'][0])}-{money(S['gross'][1])}: fee about {SMALL_FEE[0]}-{SMALL_FEE[1]} a week at {S['pct'][0]}-{S['pct'][1]}%.</li>
+      <li>Semi truck grossing {money(M['gross'][0])}-{money(M['gross'][1])}: fee about {SEMI_FEE[0]}-{SEMI_FEE[1]} a week at {pl(M)}.</li>
+      <li>Box truck or hotshot grossing {money(S['gross'][0])}-{money(S['gross'][1])}: fee about $560-$720 a week for a hotshot at 8%, $700-$900 for a box truck at 10%.</li>
       <li>No setup fee, no monthly subscription, no flat weekly charge.</li>
     </ul>
   </div>
@@ -685,7 +732,7 @@ def build_contact():
 <section class="sec" style="padding-top:56px"><div class="wrap two">
   <div>{lead_form("contactForm", "New dispatch inquiry", "Send My Details")}</div>
   <div class="aside">{contact_side()}
-    {answer("Is there a fee to talk to a dispatcher?", f"No. The first call is free. Paid dispatch is {M['pct'][0]}-{M['pct'][1]}% of weekly gross for OTR semis and {S['pct'][0]}-{S['pct'][1]}% for small trucks, with no flat rate or setup fee.", "Good to know")}
+    {answer("Is there a fee to talk to a dispatcher?", f"No. The first call is free. Paid dispatch is {pl(M)} of weekly gross for OTR semis, 8% for hotshots and 10% for box trucks, with no flat rate or setup fee.", "Good to know")}
   </div>
 </div></section>"""
     schemas = [{"@context": "https://schema.org", "@type": "ContactPage", "name": title, "url": url("/contact.html"), "about": {"@id": BUSINESS_ID}},
@@ -698,7 +745,7 @@ def build_about():
     title = "About Texas Solutions | Truck Dispatch Company in Midland, Texas"
     desc = "Texas Solutions is a truck dispatch company in Midland, Texas, working for owner-operators and small fleets: load search, rate negotiation and paperwork. Not a broker. No flat rate."
     holds = [("You approve everything", "No load, lane or rate is committed without your say-so. There is no forced dispatch here."),
-             ("Plain pricing", f"{M['pct'][0]}-{M['pct'][1]}% of weekly gross for OTR semis, {S['pct'][0]}-{S['pct'][1]}% for small trucks. No setup charge, no flat rate, no monthly subscription."),
+             ("Plain pricing", f"{pl(M)} of weekly gross for OTR semis, 8% for hotshots, 10% for box trucks. No setup charge, no flat rate, no monthly subscription."),
              ("No promises on rates", "Markets move. We commit to the search, the comparison and the negotiation, never to a number."),
              ("Your data stays here", "Applications are for our own dispatch service. We do not sell or transfer your inquiry to lead buyers.")]
     cards = "\n".join(f'  <div class="card rv"><div class="icon">{ICONS["check"]}</div><h3>{esc(t)}</h3><p>{esc(d)}</p></div>' for t, d in holds)
@@ -728,7 +775,7 @@ def build_about():
 
 def build_faq():
     title = "Truck Dispatch FAQ: Cost, Percentage, OTR & How It Works | Texas Solutions"
-    desc = f"Answers about truck dispatch: how much a dispatcher costs ({M['pct'][0]}-{M['pct'][1]}% semi, {S['pct'][0]}-{S['pct'][1]}% small trucks), OTR vs local, contracts, paperwork and getting started."
+    desc = f"Answers about truck dispatch: how much a dispatcher costs ({pl(M)} semi, 8% hotshot, 10% box truck), OTR vs local, contracts, paperwork and getting started."
     extra = [(q, a) for p in C.LANDING for q, a in p["faqs"]]
     items = C.FAQS + extra
     body = f"""{phero("FAQ", "Truck Dispatch FAQ", "Straight answers on cost, contracts, loads and getting started.")}
@@ -755,10 +802,10 @@ def build_legal(name, crumb):
 
 
 def build_landing(p):
-    kind = C.PRICING[p["kind"]]
+    kind = landing_pricing(p)
     truck_q = {"box-truck-dispatch.html": "truck=box-truck", "hotshot-dispatch.html": "truck=hotshot", "flatbed-dispatch.html": "truck=flatbed",
                "dry-van-dispatch.html": "truck=dry-van", "reefer-dispatch.html": "truck=reefer", "power-only-dispatch.html": "truck=power-only"}.get(p["file"], "type=" + p["kind"])
-    lo, hi = fee_range(p["kind"])
+    lo, hi = money(kind["gross"][0] * kind["pct"][0] / 100), money(kind["gross"][1] * kind["pct"][1] / 100)
     path = "/" + p["file"]
     body_p = "\n".join(f"    <p>{esc(x)}</p>" for x in p["body"])
     sections = ""
@@ -774,17 +821,18 @@ def build_landing(p):
       <li>You approve every load, with no forced dispatch</li>
     </ul>
     <h2>{esc(p['nav'])} pricing</h2>
-    <p>{kind['label']} on OTR pay <b>{kind['pct'][0]}-{kind['pct'][1]}% of weekly gross</b>. With typical weekly gross of {money(kind['gross'][0])}-{money(kind['gross'][1])}, the dispatch fee is about {lo}-{hi} a week. No flat rate, no setup fee and no monthly subscription. <a href="estimate.html?{truck_q}">Estimate your fee</a>.</p>"""
+    <p>{kind['label']} on OTR pay <b>{pl(kind)} of weekly gross</b>. With typical weekly gross of {money(kind['gross'][0])}-{money(kind['gross'][1])}, the dispatch fee is about {lo}-{hi} a week. No flat rate, no setup fee and no monthly subscription. <a href="estimate.html?{truck_q}">Estimate your fee</a>.</p>"""
     faqs = p["faqs"] + [C.FAQS[0], C.FAQS[5]]
     others = "".join(f'<a class="chip" href="{o["file"]}">{esc(o["nav"])}</a>' for o in C.LANDING if o["file"] != p["file"])
-    body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), extra=f'<div class="chip-row" style="justify-content:flex-start"><span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)"><b style="color:#ffb3a6">{kind["pct"][0]}-{kind["pct"][1]}%</b> of weekly gross</span><span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">OTR &middot; No flat rate</span></div>')}
+    body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), extra=f'<div class="chip-row" style="justify-content:flex-start"><span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)"><b style="color:#ffb3a6">{pl(kind)}</b> of weekly gross</span><span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">OTR &middot; No flat rate</span></div>')}
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(p['h1'] if p.get('guide') else f"What is {p['nav'].lower()} from Texas Solutions?", p['answer'])}</div></section>
 <section class="sec"><div class="wrap two">
   <div class="prose rv">
 {body_p}{sections}{what}
   </div>
   <div class="aside">
-    <div class="price feat"><h3>{kind['label']}</h3><div class="amt">{kind['pct'][0]}-{kind['pct'][1]}%<small> of weekly gross</small></div><ul><li>OTR operations</li><li>No flat rate or setup fee</li><li>About {lo}-{hi}/week on typical gross</li></ul><a class="btn btn-red" href="estimate.html?{truck_q}">Get a Free Estimate</a></div>
+    <div class="price feat"><h3>{kind['label']}</h3><div class="amt">{pl(kind)}<small> of weekly gross</small></div><ul><li>OTR operations</li><li>No flat rate or setup fee</li><li>About {lo}-{hi}/week on typical gross</li></ul><a class="btn btn-red" href="estimate.html?{truck_q}">Get a Free Estimate</a></div>
+    <a class="card tool-mini" href="truck-fuel-cost-calculator.html?{truck_q if truck_q.startswith('truck=') else ''}#fuelCalc"><div class="icon">{ICONS['truck']}</div><div><b>Fuel cost for this truck</b><p>MPG, fuel per mile and today's diesel price by state.</p></div></a>
     {contact_side()}
   </div>
 </div></section>
@@ -856,7 +904,7 @@ def build_fuel():
         diff = price - us
         cls = "up" if diff > 0.0005 else ("down" if diff < -0.0005 else "")
         src = "" if states_p.get(code) else " <small>EIA regional</small>"
-        rows += (f'<tr id="diesel-{code.lower()}"><td><b>{nm(code)}</b>{src}</td><td class="rate">${price:.3f}</td>'
+        rows += (f'<tr id="diesel-{code.lower()}"><td><b><a href="diesel-prices/{slugify(nm(code))}.html" style="color:#fff">{nm(code)}</a></b>{src}</td><td class="rate">${price:.3f}</td>'
                  f'<td class="chg {cls}">{"+" if diff >= 0 else "-"}${abs(diff):.3f}</td></tr>\n')
     truck_secs = ""
     for tid, tname, emp, k, mx, dflt, idle, spd in C.FUEL_TRUCKS:
@@ -1013,6 +1061,213 @@ def build_fuel():
     write(path[1:], page(path, title, desc, kw, schemas, body, current=path[1:]))
 
 
+
+def abs_links(shell):
+    """Pages in sub-folders: make relative links root-absolute."""
+    return re.sub(r'(href|src)="(?!https?:|/|#|tel:|mailto:|data:)', r'\1="/', shell)
+
+
+def slugify(s):
+    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+
+
+def load_posts():
+    import yaml
+    import markdown as md
+    posts = []
+    for f in sorted((ROOT / "content" / "blog").glob("*.md")):
+        raw = f.read_text(encoding="utf-8")
+        m = re.match(r"^---\s*\n(.*?)\n---\s*\n(.*)$", raw, re.S)
+        if not m:
+            continue
+        meta = yaml.safe_load(m.group(1)) or {}
+        if meta.get("draft"):
+            continue
+        d = meta.get("date")
+        d = d if isinstance(d, date) else date.fromisoformat(str(d)[:10]) if d else date.today()
+        html_body = md.markdown(m.group(2), extensions=["tables", "fenced_code", "sane_lists", "toc"])
+        html_body = re.sub(r"<h1([^>]*)>", r"<h2\1>", html_body).replace("</h1>", "</h2>")
+        html_body = html_body.replace("<table>", '<div class="tbl"><table>').replace("</table>", "</table></div>")
+        text = re.sub(r"<[^>]+>", " ", html_body)
+        posts.append({
+            "slug": f.stem, "title": str(meta.get("title", f.stem)), "description": str(meta.get("description", "")),
+            "date": d, "author": str(meta.get("author") or "Texas Solutions Dispatch Team"),
+            "tags": [str(x) for x in (meta.get("tags") or [])], "keywords": str(meta.get("keywords") or ""),
+            "cover": meta.get("cover") or "", "answer": str(meta.get("answer") or ""), "question": str(meta.get("question") or ""),
+            "faq": [(str(x.get("q", "")), str(x.get("a", ""))) for x in (meta.get("faq") or []) if x.get("q")],
+            "html": html_body, "words": len(text.split()),
+        })
+    posts.sort(key=lambda x: x["date"], reverse=True)
+    return posts
+
+
+def post_card(po, prefix=""):
+    cover = f'<img src="{esc(po["cover"])}" alt="" loading="lazy" class="post-cover">' if po["cover"] else '<div class="post-cover post-cover-ph" aria-hidden="true"></div>'
+    tags = "".join(f'<span class="tag">{esc(x)}</span>' for x in po["tags"][:2])
+    return f"""  <a class="card post-card rv" href="{prefix}blog/{po['slug']}.html">
+    {cover}
+    <div class="post-meta">{tags}<span>{po['date'].strftime('%b')} {po['date'].day}, {po['date'].year} &middot; {max(1, round(po['words'] / 220))} min read</span></div>
+    <h3>{esc(po['title'])}</h3>
+    <p>{esc(po['description'][:160])}</p>
+    <span class="more">Read article &rarr;</span>
+  </a>"""
+
+
+def build_blog():
+    posts = load_posts()
+    title = "Trucking Blog: Dispatch, Rates, Diesel Prices & Fuel Tips | Texas Solutions"
+    desc = "Practical guides for owner-operators and small fleets: truck dispatch costs, rates per mile, diesel prices by state, fuel cost per mile, hotshot and box truck trucking."
+    cards = "\n".join(post_card(po) for po in posts) or '<p>New articles are on the way.</p>'
+    body = f"""{phero("Blog", "Trucking Blog", "Straight answers for owner-operators on dispatch costs, rates per mile, diesel prices and fuel savings.", ctas=False)}
+<section class="sec"><div class="wrap">
+  <div class="grid g3">
+{cards}
+  </div>
+</div></section>
+{band("Want loads that pay after fuel?", "Our dispatchers negotiate every rate and plan lanes to cut empty miles.")}"""
+    schemas = [{"@context": "https://schema.org", "@type": "Blog", "name": "Texas Solutions Trucking Blog", "url": url("/blog.html"),
+                "publisher": {"@id": BUSINESS_ID},
+                "blogPost": [{"@type": "BlogPosting", "headline": po["title"], "url": url(f"/blog/{po['slug']}.html"),
+                              "datePublished": po["date"].isoformat()} for po in posts]},
+               crumbs_ld([("Blog", "/blog.html")])]
+    kw = "trucking blog, truck dispatch blog, owner operator tips, diesel prices, fuel cost per mile, hotshot trucking, box truck loads"
+    write("blog.html", page("/blog.html", title, desc, kw, schemas, body, current="blog.html"))
+
+    (ROOT / "blog").mkdir(exist_ok=True)
+    keep = set()
+    for i, po in enumerate(posts):
+        path = f"/blog/{po['slug']}.html"
+        keep.add(po["slug"] + ".html")
+        related = [x for x in posts if x["slug"] != po["slug"]][:3]
+        rel = "\n".join(post_card(x) for x in related)
+        ans = answer(po.get("question") or "The short answer", po["answer"], "Quick answer") if po["answer"] else ""
+        faq_block = f'<h2>Frequently asked questions</h2>\n{faq_html(po["faq"])}' if po["faq"] else ""
+        cover = f'<img src="{esc(po["cover"])}" alt="" class="post-hero-img">' if po["cover"] else ""
+        tags = " ".join(f'<span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">{esc(x)}</span>' for x in po["tags"])
+        meta_line = f'<p class="lede" style="font-size:15px">{esc(po["author"])} &middot; {po["date"].strftime("%B")} {po["date"].day}, {po["date"].year} &middot; {max(1, round(po["words"] / 220))} min read</p>'
+        body = f"""<section class="phero"><div class="wrap">
+  <div class="crumbs"><a href="index.html">Home</a> / <a href="blog.html">Blog</a></div>
+  <h1>{esc(po['title'])}</h1>
+  {meta_line}
+  <div class="chip-row" style="justify-content:flex-start">{tags}</div>
+</div></section>
+<section class="sec" style="padding-top:48px"><div class="wrap two">
+  <article class="prose post-body">
+    {cover}
+    {ans}
+    {po['html']}
+    {faq_block}
+  </article>
+  <div class="aside">
+    <div class="card"><h3>Free trucking tools</h3><p>Work out your numbers in seconds.</p>
+      <a class="btn btn-red" style="width:100%;margin-top:14px" href="truck-fuel-cost-calculator.html">Fuel cost calculator</a>
+      <a class="btn btn-dark" style="width:100%;margin-top:10px" href="estimate.html">Dispatch fee calculator</a></div>
+    {contact_side()}
+  </div>
+</div></section>
+<section class="sec sec-soft"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Keep reading</span><h2>More from the blog</h2></div>
+  <div class="grid g3">
+{rel}
+  </div>
+</div></section>"""
+        art = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": po["title"], "description": po["description"],
+               "datePublished": po["date"].isoformat(), "dateModified": po["date"].isoformat(), "author": {"@type": "Organization", "name": po["author"], "url": url("/")},
+               "publisher": {"@id": BUSINESS_ID}, "mainEntityOfPage": url(path), "image": url(po["cover"]) if str(po["cover"]).startswith("/") else (po["cover"] or OG_IMAGE),
+               "keywords": po["keywords"], "wordCount": po["words"], "inLanguage": "en-US"}
+        schemas = [art, crumbs_ld([("Blog", "/blog.html"), (po["title"], path)]), speakable(path, po["title"])]
+        if po["faq"]:
+            schemas.append(faq_ld(po["faq"]))
+        shell = page(path, po["title"] + " | Texas Solutions", po["description"], po["keywords"] or "truck dispatch", schemas, body, current="blog.html", og_type="article")
+        write(f"blog/{po['slug']}.html", abs_links(shell))
+    for old in (ROOT / "blog").glob("*.html"):
+        if old.name not in keep:
+            old.unlink()
+    return posts
+
+
+def build_state_pages():
+    diesel = load_diesel()
+    if not diesel:
+        return []
+    regions, states_p = diesel["regions"], diesel.get("states", {})
+    us = regions.get("US", {}).get("price", 0)
+    day = diesel.get("day") or diesel.get("week")
+    d1 = date.fromisoformat(day)
+    day_h = f"{d1.strftime('%B')} {d1.day}, {d1.year}"
+    sp = lambda c: states_p.get(c) or regions.get(C.STATE_REGION[c][1], {}).get("price", 0)
+    ranked = sorted(C.STATE_REGION, key=sp)
+    (ROOT / "diesel-prices").mkdir(exist_ok=True)
+    trucks = {tid: (n, e / (1 + k * dflt / 1000), dflt) for tid, n, e, k, mx, dflt, ig, spd in C.FUEL_TRUCKS}
+    out = []
+    for code, (name, reg) in C.STATE_REGION.items():
+        slug = slugify(name)
+        path = f"/diesel-prices/{slug}.html"
+        out.append((name, path))
+        price = sp(code)
+        rank = ranked.index(code) + 1
+        diff = price - us
+        neighbours = sorted([c for c, (_, r) in C.STATE_REGION.items() if r == reg and c != code], key=sp)[:6]
+        nb_rows = "".join(f'<tr><td><a href="diesel-prices/{slugify(C.STATE_REGION[c][0])}.html" style="color:#fff">{C.STATE_REGION[c][0]}</a></td><td class="rate">${sp(c):.3f}</td></tr>' for c in neighbours)
+        ex = ""
+        for tid in ("dry-van", "reefer", "flatbed", "hotshot", "box-truck"):
+            n, mpg, w = trucks[tid]
+            ex += f"<tr><td><b>{n}</b><small>{w:,} lbs, ~{mpg:.1f} mpg</small></td><td>${price / mpg:.2f}</td><td>${1000 / mpg * price:,.0f}</td></tr>"
+        src = "AAA daily state average" if states_p.get(code) else "EIA regional weekly average"
+        title = f"Diesel Prices in {name} Today (${price:.2f}/gal) | Fuel Cost Calculator"
+        desc = (f"Diesel price in {name} today: ${price:.3f} per gallon ({day_h}), {'above' if diff > 0 else 'below'} the U.S. average of ${us:.3f}. "
+                f"Fuel cost per mile for semi, reefer, flatbed, hotshot and box trucks in {name}, updated daily.")
+        qa = (f"What is the price of diesel in {name} today?",
+              f"Diesel in {name} averages ${price:.3f} per gallon today ({day_h}), ${abs(diff):.3f} {'more' if diff > 0 else 'less'} than the U.S. average of ${us:.3f}. "
+              f"{name} ranks #{rank} of 51 for cheapest diesel (1 = cheapest). A loaded semi at about 6.3 mpg spends about ${price / 6.3:.2f} per mile on fuel in {name}.")
+        faqs = [qa,
+                (f"How much does it cost to fill a semi truck in {name}?", f"At ${price:.2f} a gallon, 150 gallons of diesel costs about ${150 * price:,.0f} and 200 gallons about ${200 * price:,.0f} in {name} today."),
+                (f"Is diesel cheaper in {name} than nearby states?", (f"Among nearby states in the same region, the cheapest today is {C.STATE_REGION[neighbours[0]][0]} at ${sp(neighbours[0]):.3f} a gallon." if neighbours else f"{name} is priced on its own regional market.") + f" {name} is ${price:.3f}."),
+                (f"How often are {name} diesel prices updated?", "Every day. This page refreshes each morning from daily state averages, with the EIA weekly survey as a backup.")]
+        body = f"""<section class="phero"><div class="wrap">
+  <div class="crumbs"><a href="index.html">Home</a> / <a href="truck-fuel-cost-calculator.html">Fuel Calculator</a> / Diesel prices</div>
+  <h1>Diesel Prices in {name} Today</h1>
+  <p class="lede">Average diesel price in {name}: <b style="color:#fff">${price:.3f} per gallon</b> on {day_h}. U.S. average ${us:.3f}. Updated daily.</p>
+  <div class="ctas"><a class="btn btn-red" href="truck-fuel-cost-calculator.html?state={code}#fuelCalc">Calculate fuel cost in {name}</a><a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}Talk to a dispatcher</a></div>
+</div></section>
+<section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa, label=f"Diesel price in {name}")}</div></section>
+<section class="sec"><div class="wrap">
+  <div class="grid g4 stat-row">
+    <div class="card"><span class="eyebrow">{name} diesel</span><div class="stat">${price:.3f}</div><p>per gallon today</p></div>
+    <div class="card"><span class="eyebrow">vs U.S. average</span><div class="stat {'up' if diff > 0 else 'down'}">{'+' if diff >= 0 else '-'}${abs(diff):.3f}</div><p>U.S. average ${us:.3f}</p></div>
+    <div class="card"><span class="eyebrow">Rank</span><div class="stat">#{rank}</div><p>of 51 (1 = cheapest)</p></div>
+    <div class="card"><span class="eyebrow">150-gallon fill</span><div class="stat">${150 * price:,.0f}</div><p>semi truck, today</p></div>
+  </div>
+</div></section>
+<section class="sec sec-soft"><div class="wrap two">
+  <div class="prose rv">
+    <h2 style="margin-top:0">Fuel cost per mile in {name}</h2>
+    <p>Estimated diesel cost at today's {name} price of ${price:.3f} a gallon, using fuel economy calibrated to FHWA and NACFE data.</p>
+    <div class="tbl"><table><thead><tr><th>Truck</th><th>Fuel per mile</th><th>Fuel per 1,000 miles</th></tr></thead><tbody>{ex}</tbody></table></div>
+    <p>Your numbers depend on load weight, speed, terrain and idling. Enter them in the <a href="truck-fuel-cost-calculator.html?state={code}#fuelCalc">truck fuel cost calculator</a> for an exact estimate.</p>
+    <h2>Frequently asked questions</h2>
+    {faq_html(faqs)}
+  </div>
+  <div class="aside">
+    <div class="board"><div class="board-head"><b>Nearby states</b><span>$/gal today</span></div>
+      <table class="board-table"><tbody>{nb_rows}</tbody></table>
+      <p class="board-foot">Source: {src}, {day_h}. <a href="truck-fuel-cost-calculator.html#diesel-prices" style="color:#d9d5d1">All 50 states</a></p></div>
+    {contact_side()}
+  </div>
+</div></section>
+{band(f"Running freight through {name}?", "Texas Solutions dispatches semis for 5%, hotshots for 8% and box trucks for 10% of weekly gross. We plan lanes to cut empty miles and fuel.")}"""
+        schemas = [faq_ld(faqs), crumbs_ld([("Fuel Calculator", "/truck-fuel-cost-calculator.html"), (f"Diesel prices in {name}", path)]),
+                   speakable(path, title),
+                   {"@context": "https://schema.org", "@type": "Dataset", "name": f"Diesel prices in {name}",
+                    "description": f"Daily average retail diesel price per gallon in {name}.", "url": url(path),
+                    "dateModified": day, "temporalCoverage": day, "spatialCoverage": {"@type": "State", "name": name},
+                    "variableMeasured": "Retail diesel price, USD per gallon", "publisher": {"@id": BUSINESS_ID}}]
+        kw = (f"diesel prices {name.lower()}, diesel price in {name.lower()} today, {name.lower()} diesel price per gallon, "
+              f"cheapest diesel {name.lower()}, {name.lower()} fuel prices, truck fuel cost {name.lower()}, fuel prices near me")
+        write(f"diesel-prices/{slug}.html", abs_links(page(path, title, desc, kw, schemas, body, current="truck-fuel-cost-calculator.html")))
+    return out
+
+
 def build_404():
     body = f"""{phero("Not found", "This page took a wrong exit.", "The page you are looking for does not exist. Try one of these instead.", ctas=False)}
 <section class="sec"><div class="wrap"><div class="chip-row" style="justify-content:flex-start">
@@ -1038,6 +1293,8 @@ def diesel_lines():
 def build_site_files():
     pages = [("/", "1.0", "weekly"), ("/estimate.html", "0.9", "weekly"), ("/truck-dispatch-rates.html", "0.9", "weekly"), ("/truck-fuel-cost-calculator.html", "0.9", "weekly")]
     pages += [("/" + p["file"], "0.8", "monthly") for p in C.LANDING]
+    pages += [("/blog.html", "0.8", "weekly")] + [(f"/blog/{po['slug']}.html", "0.7", "monthly") for po in POSTS]
+    pages += [(pth, "0.7", "daily") for _, pth in STATE_PAGES]
     pages += [("/faq.html", "0.7", "monthly"), ("/about.html", "0.6", "monthly"), ("/contact.html", "0.6", "monthly"),
               ("/privacy.html", "0.2", "yearly"), ("/terms.html", "0.2", "yearly")]
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -1050,7 +1307,7 @@ def build_site_files():
             "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Perplexity-User", "Google-Extended",
             "Gemini-Deep-Research", "CCBot", "Meta-ExternalAgent", "Amazonbot", "cohere-ai", "MistralAI-User"]
     robots = ["# Search engines and AI answer engines are welcome.", "User-agent: *", "Allow: /",
-              "Disallow: /head-codes.html", "Disallow: /tools/", ""]
+              "Disallow: /head-codes.html", "Disallow: /tools/", "Disallow: /admin/", "Disallow: /content/", ""]
     for b in bots:
         robots += [f"User-agent: {b}", "Allow: /", "Disallow: /tools/", ""]
     robots += [f"Host: {C.BASE.replace('https://', '')}", f"Sitemap: {C.BASE}/sitemap.xml"]
@@ -1063,14 +1320,15 @@ def build_site_files():
     llms = [
         f"# {C.BRAND}", "",
         f"> Texas Solutions is a US truck dispatch service for owner-operators and small fleets, based in {C.CITY}, Texas. "
-        f"Pricing: {M['pct'][0]}-{M['pct'][1]}% of weekly gross for OTR semi trucks (dry van, reefer, flatbed, step deck, power only; typical weekly gross "
-        f"{money(M['gross'][0])}-{money(M['gross'][1])}) and {S['pct'][0]}-{S['pct'][1]}% for OTR small trucks (box truck, straight truck, hotshot; typical weekly gross "
+        f"Pricing: {pl(M)} of weekly gross for OTR semi trucks (dry van, reefer, flatbed, step deck, power only; typical weekly gross "
+        f"{money(M['gross'][0])}-{money(M['gross'][1])}) and, for OTR small trucks, 8% for hotshots and 10% for box trucks and straight trucks (typical weekly gross "
         f"{money(S['gross'][0])}-{money(S['gross'][1])}). No flat rate, no setup fee, no monthly subscription, no forced loads. "
         "Texas Solutions is not a motor carrier or freight broker and does not guarantee loads, rates or earnings.", "",
         "## Key facts",
         f"- Service: truck dispatch (load search, rate negotiation, broker setup packets, rate confirmations, lane planning)",
-        f"- Semi truck dispatch fee: {M['pct'][0]}-{M['pct'][1]}% of weekly gross (OTR) - about {SEMI_FEE[0]}-{SEMI_FEE[1]} per week on typical gross",
-        f"- Box truck / straight truck / hotshot dispatch fee: {S['pct'][0]}-{S['pct'][1]}% of weekly gross (OTR) - about {SMALL_FEE[0]}-{SMALL_FEE[1]} per week on typical gross",
+        f"- Semi truck dispatch fee: {pl(M)} of weekly gross (OTR) - about {SEMI_FEE[0]}-{SEMI_FEE[1]} per week on typical gross",
+        f"- Box truck / straight truck dispatch fee: 10% of weekly gross (OTR) - about $700-$900 per week on typical gross",
+        f"- Hotshot dispatch fee: 8% of weekly gross (OTR) - about $560-$720 per week on typical gross",
         f"- Condition: {C.PRICING_CONDITION}",
         "- No flat rate, no setup fee, no monthly subscription, no long-term contract",
         "- Rough freight rates per mile: flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20",
@@ -1085,6 +1343,12 @@ def build_site_files():
         f"- [Truck fuel cost calculator and weekly diesel prices by state]({url('/truck-fuel-cost-calculator.html')})",
         *[f"- [{p['nav']}]({url('/' + p['file'])}): {p['answer']}" for p in C.LANDING],
         f"- [FAQ]({url('/faq.html')})", f"- [About]({url('/about.html')})", f"- [Contact]({url('/contact.html')})", "",
+        "## Blog",
+        *[f"- [{po['title']}]({url('/blog/' + po['slug'] + '.html')}): {po['answer'] or po['description']}" for po in POSTS],
+        "",
+        "## Diesel prices by state (daily pages)",
+        *[f"- [Diesel prices in {n}]({url(pth)})" for n, pth in STATE_PAGES],
+        "",
         "## Questions and answers", *q,
         "## Related", f"- [Texas Solutions software development, AI and QA]({C.MAIN_SITE}/)", "",
     ]
@@ -1092,6 +1356,9 @@ def build_site_files():
 
 
 def main():
+    global POSTS, STATE_PAGES
+    POSTS = build_blog()
+    STATE_PAGES = build_state_pages()
     build_home()
     build_estimate()
     build_rates()
@@ -1105,7 +1372,7 @@ def main():
     build_fuel()
     build_404()
     build_site_files()
-    print("built", 7 + len(C.LANDING) + 1, "pages")
+    print("built", 18 + len(C.LANDING) + len(POSTS) + len(STATE_PAGES), "pages")
 
 
 if __name__ == "__main__":

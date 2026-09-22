@@ -2,11 +2,11 @@
 All words and numbers for dispatch.texassolutions.co.
 Edit here, then run:  python tools/site.py
 
-Pricing (rough estimate, OTR only, no flat rate):
-  Small trucks (box truck, straight truck, hotshot): 8-10% of weekly gross,
+Pricing (OTR only, no flat rate, % of weekly gross):
+  Semi trucks (dry van, reefer, flatbed, step deck, power only): 5%,
+      typical weekly gross $8,000-$10,000
+  Box truck and straight truck: 10%; hotshot: 8%;
       typical weekly gross $7,000-$9,000
-  Semi trucks (dry van, reefer, flatbed, step deck, power only): 5-6% of
-      weekly gross, typical weekly gross $8,000-$10,000
 """
 
 BASE = "https://dispatch.texassolutions.co"
@@ -33,16 +33,19 @@ PRICING = {
     "small": {
         "label": "Small trucks",
         "equipment": ["Box Truck", "Straight Truck", "Hotshot"],
-        "pct": (8, 10),
+        "pct": (8, 10),  # hotshot 8%, box and straight truck 10% (see EQ_PCT)
         "gross": (7000, 9000),
     },
     "semi": {
         "label": "Semi trucks",
         "equipment": ["Dry Van", "Reefer", "Flatbed", "Step Deck", "Power Only"],
-        "pct": (5, 6),
+        "pct": (5, 5),
         "gross": (8000, 10000),
     },
 }
+# Dispatch percentage for each truck type.
+EQ_PCT = {"Dry Van": 5, "Reefer": 5, "Flatbed": 5, "Step Deck": 5, "Power Only": 5,
+          "Box Truck": 10, "Straight Truck": 10, "Hotshot": 8}
 PRICING_CONDITION = "Rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately."
 PRICING_NOTE = "Rough estimate only. Your final percentage is confirmed in your signed dispatch agreement. No flat rate, no setup fee, no monthly subscription."
 
@@ -104,7 +107,7 @@ CORE_KEYWORDS = [
 # -------------------------------------------------------------- FAQs (site-wide)
 FAQS = [
     ("How much does a truck dispatcher cost?",
-     "At Texas Solutions, semi trucks pay 5-6% of weekly gross and small trucks (box trucks, straight trucks and hotshots) pay 8-10% of weekly gross, for OTR operations. There is no flat rate, no setup fee and no monthly subscription. On a typical semi grossing $8,000-$10,000 a week, that is about $400-$600 a week."),
+     "At Texas Solutions, semi trucks pay 5% of weekly gross, hotshots 8%, and box trucks and straight trucks 10%, for OTR operations. There is no flat rate, no setup fee and no monthly subscription. On a typical semi grossing $8,000-$10,000 a week, that is about $400-$500 a week."),
     ("What does a truck dispatcher do?",
      "A truck dispatcher searches load boards and broker networks for freight that fits your truck, negotiates the rate, confirms the load with you, completes broker setup paperwork and keeps rate confirmations organized, so you can spend your time driving."),
     ("Do you dispatch local routes or only OTR?",
@@ -154,63 +157,63 @@ def fee_line(kind):
 LANDING = [
     {
         "file": "box-truck-dispatch.html", "nav": "Box Truck Dispatch", "kind": "small",
-        "title": "Box Truck Dispatch Service | 8-10% OTR Dispatch | Texas Solutions",
-        "description": "Box truck dispatch for owner-operators and small fleets: load search, rate negotiation and broker paperwork for box trucks and straight trucks. 8-10% of weekly gross, OTR, no flat fee.",
+        "title": "Box Truck Dispatch Service | 10% OTR Dispatch Fee | Texas Solutions",
+        "description": "Box truck dispatch for owner-operators and small fleets: load search, rate negotiation and broker paperwork for box trucks and straight trucks. 10% of weekly gross, OTR, no flat fee.",
         "keywords": "box truck dispatch, box truck dispatch service, box truck dispatcher, straight truck dispatch, 26 ft box truck loads, box truck dispatch company, non CDL box truck dispatch",
         "h1": "Box Truck Dispatch Service",
         "lede": "We find, negotiate and book freight for box trucks and straight trucks, while you drive.",
-        "answer": "Texas Solutions provides box truck dispatch for owner-operators and small fleets across the United States. Dispatchers search and negotiate loads, complete broker setups and keep paperwork organized. The fee is 8-10% of weekly gross for OTR box trucks and straight trucks, with no flat rate, no setup fee and your approval on every load.",
+        "answer": "Texas Solutions provides box truck dispatch for owner-operators and small fleets across the United States. Dispatchers search and negotiate loads, complete broker setups and keep paperwork organized. The fee is 10% of weekly gross for OTR box trucks and straight trucks, with no flat rate, no setup fee and your approval on every load.",
         "body": [
             "Box truck freight moves in smaller, more frequent loads, which means more calls, more broker setups and more paperwork for every dollar your truck earns. Our dispatchers work the box truck side of the load boards every day.",
             "We match freight to your box length, liftgate and payload, plan around your home time, and negotiate before anything reaches you. Typical OTR box trucks on our desk gross $7,000 to $9,000 a week.",
         ],
         "faqs": [
-            ("How much is box truck dispatch?", "8-10% of weekly gross for OTR box trucks and straight trucks. On $7,000-$9,000 weekly gross that is about $560-$900 a week. No flat rate and no setup fee."),
+            ("How much is box truck dispatch?", "10% of weekly gross for OTR box trucks and straight trucks. On $7,000-$9,000 weekly gross that is about $700-$900 a week. No flat rate and no setup fee."),
             ("Do you dispatch non-CDL box trucks?", "Yes, as long as you run under your own MC authority. Tell us your truck size and weight rating and we search freight that fits."),
         ],
     },
     {
         "file": "hotshot-dispatch.html", "nav": "Hotshot Dispatch", "kind": "small",
-        "title": "Hotshot Dispatch Service | $4-5/Mile Loads, 8-10% | Texas Solutions",
-        "description": "Hotshot dispatch for owner-operators: expedited and partial loads, rate negotiation and broker paperwork. Hotshot loads often pay $4-5 a mile. Dispatch fee 8-10% of weekly gross, OTR.",
+        "title": "Hotshot Dispatch Service | 8% Dispatch Fee, $4-5/Mile Loads | Texas Solutions",
+        "description": "Hotshot dispatch for owner-operators: expedited and partial loads, rate negotiation and broker paperwork. Hotshot loads often pay $4-5 a mile. Dispatch fee 8% of weekly gross, OTR.",
         "keywords": "hotshot dispatch, hotshot dispatch service, hotshot dispatcher, hotshot trucking dispatch, hotshot loads, gooseneck dispatch, hotshot dispatch Texas, Permian Basin hotshot",
         "h1": "Hotshot Dispatch Service",
         "lede": "Time-sensitive hotshot freight found, negotiated and confirmed with you before it is booked.",
-        "answer": "Texas Solutions dispatches hotshot trucks for owner-operators across the United States, including Texas and the Permian Basin. Dispatchers find expedited and partial loads, negotiate rates that often run $4-5 a mile, and handle broker paperwork. The dispatch fee is 8-10% of weekly gross for OTR hotshots, with no flat rate.",
+        "answer": "Texas Solutions dispatches hotshot trucks for owner-operators across the United States, including Texas and the Permian Basin. Dispatchers find expedited and partial loads, negotiate rates that often run $4-5 a mile, and handle broker paperwork. The dispatch fee is 8% of weekly gross for OTR hotshots, with no flat rate.",
         "body": [
             "Hotshot freight is fast and time-critical: equipment, machinery, construction and oilfield materials that cannot wait for a full truckload. Winning it means answering brokers fast and knowing which lanes pay.",
             "From our base in Midland, Texas, we see a lot of hotshot freight move through the Permian Basin and across Texas. Rough rates on hotshot loads commonly run $4 to $5 a mile.",
         ],
         "faqs": [
             ("How much do hotshot loads pay per mile?", "As a rough guide, hotshot loads often pay about $4-5 a mile, depending on lane, urgency and season. Rates are not guaranteed."),
-            ("What is the dispatch fee for hotshots?", "8-10% of weekly gross for OTR hotshot operations, with no flat rate, no setup fee and no monthly subscription."),
+            ("What is the dispatch fee for hotshots?", "8% of weekly gross for OTR hotshot operations, with no flat rate, no setup fee and no monthly subscription. On $7,000-$9,000 weekly gross that is about $560-$720 a week."),
         ],
     },
     {
         "file": "flatbed-dispatch.html", "nav": "Flatbed & Step Deck Dispatch", "kind": "semi",
-        "title": "Flatbed Dispatch Service | $5-7/Mile, 5-6% Fee | Texas Solutions",
-        "description": "Flatbed and step deck dispatch for owner-operators and small fleets. Open-deck loads often pay $5-7 a mile. Dispatch fee 5-6% of weekly gross for OTR semis. No flat rate.",
+        "title": "Flatbed Dispatch Service | 5% Fee, $5-7/Mile Loads | Texas Solutions",
+        "description": "Flatbed and step deck dispatch for owner-operators and small fleets. Open-deck loads often pay $5-7 a mile. Dispatch fee 5% of weekly gross for OTR semis. No flat rate.",
         "keywords": "flatbed dispatch, flatbed dispatch service, flatbed dispatcher, step deck dispatch, open deck dispatch, flatbed loads per mile, flatbed truck dispatch company",
         "h1": "Flatbed & Step Deck Dispatch",
         "lede": "Open-deck freight searched, sized up and negotiated for your flatbed or step deck.",
-        "answer": "Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets nationwide. Dispatchers find open-deck loads that often pay $5-7 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5-6% of weekly gross for OTR semis, with no flat rate.",
+        "answer": "Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets nationwide. Dispatchers find open-deck loads that often pay $5-7 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5% of weekly gross for OTR semis, with no flat rate.",
         "body": [
             "Open-deck freight comes with more questions than a sealed trailer: dimensions, weight, tarps, straps and chains, and whether a step deck is needed for height. We ask those questions before the load reaches you.",
             "Texas and the Permian Basin move a large share of the country's open-deck freight, including steel, building materials, machinery and oilfield equipment.",
         ],
         "faqs": [
             ("How much do flatbed loads pay per mile?", "As a rough guide, flatbed and step deck loads often pay about $5-7 a mile, depending on lane, tarping and season. Rates are not guaranteed."),
-            ("What is the dispatch fee for flatbeds?", "5-6% of weekly gross for OTR flatbed and step deck semis. On $8,000-$10,000 weekly gross that is about $400-$600 a week."),
+            ("What is the dispatch fee for flatbeds?", "5% of weekly gross for OTR flatbed and step deck semis. On $8,000-$10,000 weekly gross that is about $400-$500 a week."),
         ],
     },
     {
         "file": "dry-van-dispatch.html", "nav": "Dry Van Dispatch", "kind": "semi",
-        "title": "Dry Van Dispatch Service | 5-6% OTR Fee | Texas Solutions",
-        "description": "Dry van dispatch for owner-operators and small fleets: lane planning, rate negotiation and broker paperwork. Dry van loads run about $3-5 a mile depending on local or OTR. Fee 5-6% of weekly gross.",
+        "title": "Dry Van Dispatch Service | 5% OTR Dispatch Fee | Texas Solutions",
+        "description": "Dry van dispatch for owner-operators and small fleets: lane planning, rate negotiation and broker paperwork. Dry van loads run about $3-5 a mile depending on local or OTR. Fee 5% of weekly gross.",
         "keywords": "dry van dispatch, dry van dispatch service, dry van dispatcher, dry van loads per mile, 53 ft dry van dispatch, dry van trucking dispatch",
         "h1": "Dry Van Dispatch Service",
         "lede": "Lanes planned, deadhead cut and every load negotiated, with you approving each booking.",
-        "answer": "Texas Solutions provides dry van dispatch for owner-operators and small fleets nationwide. Dispatchers plan lanes to reduce deadhead, negotiate every load and handle broker paperwork. Dry van loads run roughly $3-5 a mile depending on local or OTR lanes, and the dispatch fee is 5-6% of weekly gross for OTR semis.",
+        "answer": "Texas Solutions provides dry van dispatch for owner-operators and small fleets nationwide. Dispatchers plan lanes to reduce deadhead, negotiate every load and handle broker paperwork. Dry van loads run roughly $3-5 a mile depending on local or OTR lanes, and the dispatch fee is 5% of weekly gross for OTR semis.",
         "body": [
             "Dry van is the most common trailer on the road, which means the most freight and the most competition for it. Good dry van dispatch is about lanes: booking the next load before this one delivers and avoiding markets that leave you stuck.",
         ],
@@ -221,33 +224,33 @@ LANDING = [
     {
         "file": "reefer-dispatch.html", "nav": "Reefer Dispatch", "kind": "semi",
         "title": "Reefer Dispatch Service | Refrigerated Truck Dispatch | Texas Solutions",
-        "description": "Reefer dispatch for owner-operators and small fleets: temperature-controlled loads, appointment coordination, rate negotiation and paperwork. 5-6% of weekly gross for OTR semis.",
+        "description": "Reefer dispatch for owner-operators and small fleets: temperature-controlled loads, appointment coordination, rate negotiation and paperwork. 5% of weekly gross for OTR semis.",
         "keywords": "reefer dispatch, reefer dispatch service, refrigerated truck dispatch, reefer loads, reefer dispatcher",
         "h1": "Reefer Dispatch Service",
         "lede": "Temperature-controlled freight negotiated for your reefer, with appointments confirmed before you commit.",
-        "answer": "Texas Solutions provides reefer dispatch for owner-operators and small fleets nationwide. Dispatchers find temperature-controlled loads, confirm temperature and appointment requirements with brokers and handle paperwork. The fee is 5-6% of weekly gross for OTR reefer semis, with no flat rate.",
+        "answer": "Texas Solutions provides reefer dispatch for owner-operators and small fleets nationwide. Dispatchers find temperature-controlled loads, confirm temperature and appointment requirements with brokers and handle paperwork. The fee is 5% of weekly gross for OTR reefer semis, with no flat rate.",
         "body": ["Reefer freight pays for precision: set temperatures and tight appointments. We confirm both with the broker before a load reaches you."],
         "faqs": [("Do you check temperature requirements before booking?", "Yes. We confirm temperature, appointment times and special handling before presenting the load.")],
     },
     {
         "file": "power-only-dispatch.html", "nav": "Power Only Dispatch", "kind": "semi",
         "title": "Power Only Dispatch Service | Texas Solutions",
-        "description": "Power only dispatch for tractors without trailers: preloaded and drop-and-hook freight, rate negotiation and paperwork. 5-6% of weekly gross for OTR.",
+        "description": "Power only dispatch for tractors without trailers: preloaded and drop-and-hook freight, rate negotiation and paperwork. 5% of weekly gross for OTR.",
         "keywords": "power only dispatch, power only dispatch service, power only loads, power only trucking dispatch",
         "h1": "Power Only Dispatch Service",
         "lede": "Preloaded trailers and drop-and-hook freight found and negotiated for your tractor.",
-        "answer": "Texas Solutions provides power only dispatch for owner-operators with a tractor and no trailer. Dispatchers find preloaded and drop-and-hook loads, negotiate the rate and handle broker paperwork. The fee is 5-6% of weekly gross for OTR operations.",
+        "answer": "Texas Solutions provides power only dispatch for owner-operators with a tractor and no trailer. Dispatchers find preloaded and drop-and-hook loads, negotiate the rate and handle broker paperwork. The fee is 5% of weekly gross for OTR operations.",
         "body": ["Power only lets a tractor earn without the cost of a trailer. The work is finding enough of those loads in the right places, which is what we do."],
         "faqs": [("Do I need a trailer for power only?", "No. The trailer is supplied by the shipper, broker or a carrier program. You provide the tractor and authority.")],
     },
     {
         "file": "owner-operator-dispatch.html", "nav": "Owner-Operator Dispatch", "kind": "semi",
-        "title": "Owner-Operator Dispatch Service | 5-6% Semi, 8-10% Small Truck | Texas Solutions",
-        "description": "Dispatch service for owner-operators and small fleets: load search, rate negotiation and paperwork. 5-6% of weekly gross for semis, 8-10% for small trucks, OTR. No flat rate or upfront fee.",
+        "title": "Owner-Operator Dispatch Service | 5% Semi, 8% Hotshot, 10% Box Truck | Texas Solutions",
+        "description": "Dispatch service for owner-operators and small fleets: load search, rate negotiation and paperwork. 5% of weekly gross for semis, 8% for hotshots, 10% for box trucks, OTR. No flat rate or upfront fee.",
         "keywords": "owner operator dispatch service, dispatch service for owner operators, small fleet dispatch, dispatcher for owner operators, independent truck dispatch, owner operator dispatcher cost",
         "h1": "Dispatch for Owner-Operators",
         "lede": "You run the truck. We handle the boards, the brokers and the paperwork, and you approve every load.",
-        "answer": "Texas Solutions is a dispatch service for owner-operators and small fleets. It handles load search, rate negotiation, broker communication and paperwork for 5-6% of weekly gross on OTR semis and 8-10% on small trucks, with no flat rate, no upfront fee, no long-term contract and no forced loads.",
+        "answer": "Texas Solutions is a dispatch service for owner-operators and small fleets. It handles load search, rate negotiation, broker communication and paperwork for 5% of weekly gross on OTR semis, 8% on hotshots and 10% on box trucks, with no flat rate, no upfront fee, no long-term contract and no forced loads.",
         "body": [
             "Owner-operators lose hours every day to load boards and broker calls. A dispatcher takes that work on without taking control: you set the lanes, the home time and your minimum, and you approve every load.",
             "Small fleets get the same service per truck, with each truck's equipment and lanes handled separately.",
@@ -261,7 +264,7 @@ LANDING = [
         "keywords": "truck dispatch Texas, truck dispatch service Texas, Midland TX truck dispatch, Permian Basin dispatch, Houston truck dispatch, Dallas truck dispatch, San Antonio truck dispatch, Texas hotshot dispatch",
         "h1": "Texas Truck Dispatch Service",
         "lede": "A Texas dispatch team for carriers who run Texas, and everywhere those loads lead.",
-        "answer": "Texas Solutions is a truck dispatch company based at 401 W Kentucky Ave, Midland, Texas. It dispatches owner-operators and small fleets on Texas lanes, including the Permian Basin, Houston, Dallas-Fort Worth, San Antonio, Laredo and El Paso, and nationwide OTR, for 5-6% of weekly gross on semis and 8-10% on small trucks.",
+        "answer": "Texas Solutions is a truck dispatch company based at 401 W Kentucky Ave, Midland, Texas. It dispatches owner-operators and small fleets on Texas lanes, including the Permian Basin, Houston, Dallas-Fort Worth, San Antonio, Laredo and El Paso, and nationwide OTR, for 5% of weekly gross on semis, 8% on hotshots and 10% on box trucks.",
         "body": [
             "Texas is one of the largest freight markets in the country, with energy, manufacturing, cross-border and port freight moving through it every day.",
             "Our team is based in Midland, in the heart of the Permian Basin, and works with carriers running flatbed, hotshot, dry van, reefer and box trucks across Texas and beyond.",
@@ -271,11 +274,11 @@ LANDING = [
     {
         "file": "what-does-a-truck-dispatcher-do.html", "nav": "What a Truck Dispatcher Does", "kind": "semi", "guide": True,
         "title": "What Does a Truck Dispatcher Do? Duties & Cost (2026 Guide) | Texas Solutions",
-        "description": "What a truck dispatcher does, how much truck dispatch costs (5-6% for semis, 8-10% for small trucks at Texas Solutions), dispatcher vs broker, and how to choose a dispatch service.",
+        "description": "What a truck dispatcher does, how much truck dispatch costs (5% for semis, 8% for hotshots, 10% for box trucks at Texas Solutions), dispatcher vs broker, and how to choose a dispatch service.",
         "keywords": "what does a truck dispatcher do, how much does a truck dispatcher cost, truck dispatcher fees, truck dispatcher percentage, dispatcher vs broker, how to choose a truck dispatch service",
         "h1": "What Does a Truck Dispatcher Do?",
         "lede": "The job, the usual fees, the difference from a broker, and what to check before you sign.",
-        "answer": "A truck dispatcher finds and books freight for a carrier's trucks: searching load boards and brokers, negotiating rates, confirming loads with the driver, completing broker setup paperwork and organizing rate confirmations. Independent dispatchers usually charge a percentage of weekly gross; Texas Solutions charges 5-6% for OTR semis and 8-10% for small trucks.",
+        "answer": "A truck dispatcher finds and books freight for a carrier's trucks: searching load boards and brokers, negotiating rates, confirming loads with the driver, completing broker setup paperwork and organizing rate confirmations. Independent dispatchers usually charge a percentage of weekly gross; Texas Solutions charges 5% for OTR semis, 8% for hotshots and 10% for box trucks.",
         "body": [
             "Most owner-operators start by dispatching themselves. It works until the hours on the phone start competing with the hours behind the wheel.",
         ],
@@ -289,8 +292,8 @@ LANDING = [
             ]),
             ("How much does a truck dispatcher cost?", [
                 "Most independent dispatchers charge a percentage of the truck's weekly gross rather than a salary.",
-                "Texas Solutions: 5-6% of weekly gross for OTR semi trucks, 8-10% for OTR small trucks (box truck, straight truck, hotshot).",
-                "On a semi grossing $8,000-$10,000 a week, 5-6% is about $400-$600 a week.",
+                "Texas Solutions: 5% of weekly gross for OTR semi trucks, 8% for hotshots, 10% for box trucks and straight trucks.",
+                "On a semi grossing $8,000-$10,000 a week, 5% is about $400-$500 a week.",
                 "No flat rate, no setup fee and no monthly subscription.",
             ]),
             ("Truck dispatcher vs freight broker", [
