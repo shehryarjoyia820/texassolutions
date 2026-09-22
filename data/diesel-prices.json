@@ -1,120 +1,120 @@
 {
-  "day": "2026-09-21",
+  "day": "2026-09-22",
   "states": {
-    "AK": 6.665,
-    "AL": 6.149,
-    "AR": 6.206,
-    "AZ": 6.441,
-    "CA": 8.421,
-    "CO": 6.133,
-    "CT": 6.448,
-    "DC": 6.562,
-    "DE": 6.414,
-    "FL": 6.285,
-    "GA": 6.342,
-    "HI": 7.079,
-    "IA": 6.316,
-    "ID": 6.478,
-    "IL": 6.782,
-    "IN": 6.816,
-    "KS": 6.236,
-    "KY": 6.381,
-    "LA": 6.034,
-    "MA": 6.381,
-    "MD": 6.491,
-    "ME": 6.51,
-    "MI": 6.813,
-    "MN": 6.328,
-    "MO": 6.303,
-    "MS": 6.052,
-    "MT": 6.3,
-    "NC": 6.246,
-    "ND": 6.247,
-    "NE": 6.224,
-    "NH": 6.396,
-    "NJ": 6.463,
-    "NM": 6.34,
-    "NV": 6.821,
-    "NY": 6.492,
-    "OH": 6.768,
-    "OK": 6.025,
-    "OR": 6.866,
-    "PA": 6.6,
-    "RI": 6.368,
-    "SC": 6.147,
-    "SD": 6.286,
-    "TN": 6.208,
-    "TX": 5.971,
-    "UT": 6.411,
-    "VA": 6.387,
+    "AK": 6.663,
+    "AL": 6.159,
+    "AR": 6.193,
+    "AZ": 6.445,
+    "CA": 8.439,
+    "CO": 6.22,
+    "CT": 6.474,
+    "DC": 6.506,
+    "DE": 6.427,
+    "FL": 6.258,
+    "GA": 6.344,
+    "HI": 7.136,
+    "IA": 6.314,
+    "ID": 6.59,
+    "IL": 6.828,
+    "IN": 6.914,
+    "KS": 6.249,
+    "KY": 6.383,
+    "LA": 6.027,
+    "MA": 6.39,
+    "MD": 6.494,
+    "ME": 6.516,
+    "MI": 6.881,
+    "MN": 6.349,
+    "MO": 6.348,
+    "MS": 6.058,
+    "MT": 6.313,
+    "NC": 6.234,
+    "ND": 6.239,
+    "NE": 6.231,
+    "NH": 6.406,
+    "NJ": 6.465,
+    "NM": 6.325,
+    "NV": 6.843,
+    "NY": 6.504,
+    "OH": 6.817,
+    "OK": 6.029,
+    "OR": 6.872,
+    "PA": 6.61,
+    "RI": 6.355,
+    "SC": 6.124,
+    "SD": 6.277,
+    "TN": 6.215,
+    "TX": 5.965,
+    "UT": 6.564,
+    "VA": 6.388,
     "VT": 6.459,
-    "WA": 7.432,
-    "WI": 6.566,
-    "WV": 6.393,
-    "WY": 6.141
+    "WA": 7.463,
+    "WI": 6.619,
+    "WV": 6.457,
+    "WY": 6.215
   },
   "statesSource": "AAA daily state averages (gasprices.aaa.com)",
   "statesSourceUrl": "https://gasprices.aaa.com/state-gas-price-averages/",
-  "week": "2026-09-14",
-  "fetched": "2026-09-21T17:01:01Z",
+  "week": "2026-09-21",
+  "fetched": "2026-09-22T15:30:47Z",
   "source": "U.S. Energy Information Administration, weekly retail on-highway diesel prices",
   "sourceUrl": "https://www.eia.gov/dnav/pet/pet_pri_gnd_a_epd2d_pte_dpgal_w.htm",
   "unit": "USD per gallon, including taxes",
   "regions": {
     "US": {
       "name": "U.S. average",
-      "price": 6.285,
-      "prev": 5.967
+      "price": 6.529,
+      "prev": 6.285
     },
     "P1": {
       "name": "East Coast",
-      "price": 6.158,
-      "prev": 5.744
+      "price": 6.268,
+      "prev": 6.158
     },
     "P1A": {
       "name": "New England",
-      "price": 6.202,
-      "prev": 5.99
+      "price": 6.517,
+      "prev": 6.202
     },
     "P1B": {
       "name": "Central Atlantic",
-      "price": 6.312,
-      "prev": 6.051
+      "price": 6.546,
+      "prev": 6.312
     },
     "P1C": {
       "name": "Lower Atlantic",
-      "price": 6.096,
-      "prev": 5.605
+      "price": 6.139,
+      "prev": 6.096
     },
     "P2": {
       "name": "Midwest",
-      "price": 6.25,
-      "prev": 5.946
+      "price": 6.68,
+      "prev": 6.25
     },
     "P3": {
       "name": "Gulf Coast",
-      "price": 6.027,
-      "prev": 5.754
+      "price": 6.177,
+      "prev": 6.027
     },
     "P4": {
       "name": "Rocky Mountain",
-      "price": 6.066,
-      "prev": 5.805
+      "price": 6.34,
+      "prev": 6.066
     },
     "P5": {
       "name": "West Coast",
-      "price": 7.25,
-      "prev": 6.987
+      "price": 7.456,
+      "prev": 7.25
     },
     "P5X": {
       "name": "West Coast (excl. California)",
-      "price": 6.566,
-      "prev": 6.314
+      "price": 6.791,
+      "prev": 6.566
     },
     "CA": {
       "name": "California",
-      "price": 8.039,
-      "prev": 7.764
+      "price": 8.246,
+      "prev": 8.039
     }
   }
 }
