@@ -62,7 +62,7 @@
 - [Truck dispatch rates and rate-per-mile guide](https://dispatch.texassolutions.co/truck-dispatch-rates.html)
 
 ## Diesel prices
-- As of 2026-09-22: U.S. average $6.529/gal (EIA), Texas $5.965, California $8.439, Florida $6.258, Georgia $6.344, Illinois $6.828, New York $6.504, Ohio $6.817, Pennsylvania $6.610, Oklahoma $6.029, Tennessee $6.215
+- As of 2026-09-23: U.S. average $6.529/gal (EIA), Texas $5.954, California $8.438, Florida $6.226, Georgia $6.342, Illinois $6.832, New York $6.508, Ohio $6.817, Pennsylvania $6.606, Oklahoma $6.020, Tennessee $6.205
 - Daily prices for all 50 states and DC: https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html#diesel-prices; one page per state at https://dispatch.texassolutions.co/diesel-prices/texas.html (replace texas with the state name)
 
 ## Company
