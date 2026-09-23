@@ -1,12 +1,13 @@
 ---
 title: "Box Truck Dispatch: How to Find Loads and What It Really Costs"
-description: "How box truck owner-operators find loads, what box trucks earn and spend on fuel, and what box truck dispatch costs (10% of weekly gross at Texas Solutions)."
+description: "How box truck owner-operators find loads, what they spend on fuel, and what box truck dispatch costs: 10% of weekly gross at Texas Solutions."
 date: 2026-09-22
 author: "Texas Solutions Dispatch Team"
 tags:
   - Box truck
   - Dispatch
 keywords: "box truck dispatch, box truck loads, how to find box truck loads, box truck dispatcher cost, 26 ft box truck mpg, box truck fuel cost per mile, non CDL box truck dispatch"
+question: "How do box truck owner-operators find loads?"
 answer: "Box truck owner-operators find loads through load boards, direct broker relationships and dispatch services. A 26 ft diesel box truck typically gets about 8.5-11 mpg. Texas Solutions dispatches box trucks and straight trucks for 10% of weekly gross, OTR, with no flat rate."
 faq:
   - q: "How do box truck owner-operators find loads?"
@@ -16,7 +17,6 @@ faq:
   - q: "How much does box truck dispatch cost?"
     a: "Texas Solutions charges 10% of weekly gross for OTR box trucks and straight trucks. On $7,000-$9,000 weekly gross that is about $700-$900 a week."
 ---
-
 Box trucks are one of the easiest ways into owner-operator trucking, but the freight works differently from semi loads: smaller, more frequent, and often with tighter delivery windows. Here is how to keep a box truck loaded and what it costs to run.
 
 ## Where box truck loads come from

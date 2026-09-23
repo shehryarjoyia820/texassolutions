@@ -8,6 +8,7 @@ so change words and numbers in tools/content.py, header codes in
 head-codes.html, and legal text in tools/legal/*.html.
 """
 
+import hashlib
 import html
 import json
 import re
@@ -18,8 +19,16 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import content as C  # noqa: E402
 
+try:
+    import covers  # noqa: E402
+except Exception:  # Pillow missing: posts fall back to the default image
+    covers = None
+
 ROOT = Path(__file__).resolve().parent.parent
 POSTS, STATE_PAGES = [], []
+PAGE_HASH = {}
+WEBSITE_ID = f"{C.BASE}/#website"
+LOGO_ID = f"{C.BASE}/#logo"
 TODAY = date.today().isoformat()
 OG_IMAGE = f"{C.BASE}/assets/og-image.png"
 LOGO = f"{C.BASE}/assets/logo/texas-solutions-logo.png"
@@ -30,6 +39,8 @@ S, M = C.PRICING["small"], C.PRICING["semi"]
 
 
 def write(name, text):
+    if name.endswith(".html"):
+        PAGE_HASH[name] = hashlib.sha1(text.encode("utf-8")).hexdigest()
     (ROOT / name).write_text(text, encoding="utf-8", newline="\n")
 
 
@@ -90,17 +101,13 @@ def ld(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
 
 
-def offers():
-    groups = [("Semi truck OTR dispatch", "dry van, reefer, flatbed, step deck and power only semi trucks", 5, (8000, 10000)),
-              ("Hotshot OTR dispatch", "hotshot trucks", 8, (7000, 9000)),
-              ("Box truck OTR dispatch", "box trucks and straight trucks", 10, (7000, 9000))]
-    return [{
-        "@type": "Offer", "name": n,
-        "description": f"{pct}% of weekly gross for OTR {what}. Typical weekly gross {money(g[0])}-{money(g[1])}. No flat rate, no setup fee.",
-        "priceCurrency": "USD",
-        "priceSpecification": {"@type": "UnitPriceSpecification", "name": f"{pct}% of weekly gross", "priceCurrency": "USD",
-                               "minPrice": round(g[0] * pct / 100), "maxPrice": round(g[1] * pct / 100), "unitText": "WEEK"},
-    } for n, what, pct, g in groups]
+def pricing_props():
+    return [
+        {"@type": "PropertyValue", "name": "Semi truck dispatch fee", "value": "5% of weekly gross (OTR)"},
+        {"@type": "PropertyValue", "name": "Hotshot dispatch fee", "value": "8% of weekly gross (OTR)"},
+        {"@type": "PropertyValue", "name": "Box truck and straight truck dispatch fee", "value": "10% of weekly gross (OTR)"},
+        {"@type": "PropertyValue", "name": "Flat rate, setup fee or subscription", "value": "None"},
+    ]
 
 
 def business():
@@ -115,27 +122,30 @@ def business():
                        f"{pl(M)} of weekly gross, hotshots 8% and box trucks 10%, for OTR operations, "
                        "with no flat rate and no setup fee.",
         "url": url("/"),
-        "logo": LOGO,
-        "image": OG_IMAGE,
+        "logo": {"@type": "ImageObject", "@id": LOGO_ID, "url": LOGO, "contentUrl": LOGO, "width": 1364, "height": 471},
+        "image": [OG_IMAGE],
         "telephone": C.PHONE_E164,
         "email": C.EMAIL,
-        "priceRange": f"{M['pct'][0]}-{S['pct'][1]}% of weekly gross",
+        "priceRange": "5-10% of weekly gross",
         "address": {"@type": "PostalAddress", "streetAddress": C.STREET, "addressLocality": C.CITY,
                     "addressRegion": C.REGION, "postalCode": C.POSTAL, "addressCountry": C.COUNTRY},
+        "geo": {"@type": "GeoCoordinates", "latitude": 31.9973, "longitude": -102.0779},
         "areaServed": {"@type": "Country", "name": "United States"},
+        "founder": {"@type": "Person", "name": "Shehryar Joyia", "jobTitle": "Owner and CEO"},
         "contactPoint": [
             {"@type": "ContactPoint", "telephone": C.PHONE_E164, "contactType": "sales", "areaServed": "US", "availableLanguage": "English"},
-            {"@type": "ContactPoint", "url": f"https://wa.me/{C.WHATSAPP}", "contactType": "customer support", "name": "WhatsApp"},
+            {"@type": "ContactPoint", "url": f"https://wa.me/{C.WHATSAPP}", "contactType": "customer support", "areaServed": "US", "availableLanguage": "English"},
         ],
         "sameAs": [C.MAIN_SITE + "/"],
         "knowsAbout": ["Truck dispatch", "Freight dispatch", "OTR dispatch", "Load boards", "Rate negotiation",
                        "Broker setup packets", "Owner-operator trucking"] + [f"{e} dispatch" for e in C.EQUIPMENT],
-        "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Truck dispatch pricing", "itemListElement": offers()},
+        "additionalProperty": pricing_props(),
     }
 
 
 def website():
-    return {"@context": "https://schema.org", "@type": "WebSite", "name": C.BRAND, "url": url("/"), "publisher": {"@id": BUSINESS_ID}}
+    return {"@context": "https://schema.org", "@type": "WebSite", "@id": WEBSITE_ID, "name": C.BRAND, "url": url("/"),
+            "inLanguage": "en-US", "publisher": {"@id": BUSINESS_ID}}
 
 
 def service(name, description, path, stype):
@@ -144,7 +154,6 @@ def service(name, description, path, stype):
         "description": description, "url": url(path), "provider": {"@id": BUSINESS_ID},
         "areaServed": {"@type": "Country", "name": "United States"},
         "audience": {"@type": "BusinessAudience", "audienceType": "Owner-operators and small trucking fleets"},
-        "offers": offers(),
     }
 
 
@@ -160,7 +169,7 @@ def crumbs_ld(trail):
 
 
 def speakable(path, name):
-    return {"@context": "https://schema.org", "@type": "WebPage", "name": name, "url": url(path), "dateModified": TODAY,
+    return {"@context": "https://schema.org", "@type": "WebPage", "name": name, "url": url(path),
             "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["[data-speakable]"]}}
 
 
@@ -298,9 +307,73 @@ def footer():
 <script src="js/calc-tools.js" defer></script>"""
 
 
-def page(path, title, description, keywords, schemas, body, current=None, og_type="website", preload_video=False):
+def graph_script(path, title, description, schemas, body, img, img_alt, page_type, published, modified):
+    """One @graph per page: business, website, the page itself, image, breadcrumbs, FAQ and any extras."""
+    page_url = url(path)
+    wp_id = page_url + "#webpage"
+
+    def strip(n):
+        n = dict(n)
+        n.pop("@context", None)
+        return n
+
+    wp = {"@type": page_type, "@id": wp_id, "url": page_url, "name": title, "description": description,
+          "isPartOf": {"@id": WEBSITE_ID}, "inLanguage": "en-US",
+          "primaryImageOfPage": {"@id": page_url + "#primaryimage"}}
+    wp["about"] = {"@id": BUSINESS_ID}
+    if published:
+        wp["datePublished"] = published
+    if modified:
+        wp["dateModified"] = modified
+    extra = []
+    for s in schemas:
+        n = strip(s)
+        ty = n.get("@type")
+        if ty == "BreadcrumbList":
+            n["@id"] = page_url + "#breadcrumb"
+            wp["breadcrumb"] = {"@id": n["@id"]}
+            extra.append(n)
+        elif ty == "WebPage" and "speakable" in n:
+            if "data-speakable" in body:
+                wp["speakable"] = n["speakable"]
+        elif ty in ("ContactPage", "AboutPage", "CollectionPage"):
+            wp["@type"] = ty
+        elif ty == "FAQPage":
+            n["@id"] = page_url + "#faq"
+            n["isPartOf"] = {"@id": wp_id}
+            extra.append(n)
+        elif ty in ("BlogPosting", "Article"):
+            n["@id"] = page_url + "#article"
+            n["isPartOf"] = {"@id": wp_id}
+            wp["mainEntity"] = {"@id": n["@id"]}
+            wp.pop("about", None)
+            extra.append(n)
+        else:
+            extra.append(n)
+    image_node = {"@type": "ImageObject", "@id": page_url + "#primaryimage", "url": img, "contentUrl": img,
+                  "width": 1200, "height": 630, "caption": img_alt or title, "inLanguage": "en-US"}
+    graph = [strip(business()), strip(website()), wp, image_node] + extra
+    return ld({"@context": "https://schema.org", "@graph": graph})
+
+
+def page(path, title, description, keywords, schemas, body, current=None, og_type="website", preload_video=False,
+         image=None, image_alt="", published=None, modified=None, tags=(), page_type="WebPage"):
+    ov = C.SEO.get(path)
+    if ov:
+        title, description = ov
+    img = image or OG_IMAGE
+    alt = image_alt or "Texas Solutions Truck Dispatch: dispatch for owner-operators and small fleets"
+    art_meta = ""
+    if og_type == "article":
+        art_meta = "\n".join(filter(None, [
+            f'<meta property="article:published_time" content="{published}">' if published else "",
+            f'<meta property="article:modified_time" content="{modified or published}">' if (modified or published) else "",
+            f'<meta property="article:author" content="Texas Solutions">',
+            f'<meta property="article:section" content="{esc(tags[0])}">' if tags else "",
+            *[f'<meta property="article:tag" content="{esc(x)}">' for x in tags],
+        ]))
     codes = head_codes() or "<!-- no header codes yet: paste them into head-codes.html -->"
-    lds = "\n".join(ld(s) for s in (business(), website(), *schemas))
+    lds = graph_script(path, title, description, schemas, body, img, alt, page_type, published, modified)
     return f"""<!DOCTYPE html>
 <html lang="en-US" class="no-js">
 <head>
@@ -310,6 +383,8 @@ def page(path, title, description, keywords, schemas, body, current=None, og_typ
 <meta name="description" content="{esc(description)}">
 <meta name="keywords" content="{esc(keywords)}">
 <link rel="canonical" href="{url(path)}">
+<link rel="alternate" hreflang="en-us" href="{url(path)}">
+<link rel="alternate" hreflang="x-default" href="{url(path)}">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="bingbot" content="index, follow">
 <meta name="author" content="Texas Solutions">
@@ -321,14 +396,17 @@ def page(path, title, description, keywords, schemas, body, current=None, og_typ
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{url(path)}">
-<meta property="og:image" content="{OG_IMAGE}">
+<meta property="og:image" content="{img}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{esc(alt)}">
+{art_meta}
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(description)}">
-<meta name="twitter:image" content="{OG_IMAGE}">
+<meta name="twitter:image" content="{img}">
+<meta name="twitter:image:alt" content="{esc(alt)}">
 <link rel="icon" type="image/png" href="assets/logo/favicon.png">
 <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -691,15 +769,16 @@ def build_estimate():
     {contact_side()}
   </div>
 </div></section>
+<section class="sec sec-soft"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">FAQ</span><h2>Dispatch fee questions</h2></div>
+  {faq_html([C.FAQS[0], C.FAQS[2], C.FAQS[3]])}
+</div></section>
 <section class="sec sec-dark"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Rate board</span><h2>Rough rates per mile</h2></div>
   {rate_board()}
 </div></section>"""
     items = [qa] + [C.FAQS[0], C.FAQS[2], C.FAQS[3]]
     schemas = [service("Truck Dispatch Fee Estimate", desc, "/estimate.html", "Truck dispatch"),
-               {"@context": "https://schema.org", "@type": "WebApplication", "name": "Truck Dispatch Fee Calculator",
-                "url": url("/estimate.html"), "applicationCategory": "BusinessApplication", "operatingSystem": "Any",
-                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}},
                faq_ld(items), crumbs_ld([("Estimate", "/estimate.html")]), speakable("/estimate.html", title)]
     kw = "truck dispatch calculator, dispatch fee calculator, truck dispatch quote, how much does a truck dispatcher cost, truck dispatcher percentage, dispatch fee per week, owner operator dispatch cost, " + HOME_KW
     write("estimate.html", page("/estimate.html", title, desc, kw, schemas, body, current="estimate.html"))
@@ -741,6 +820,10 @@ def build_rates():
     </ul>
   </div>
   <div class="aside">{contact_side()}</div>
+</div></section>
+<section class="sec sec-soft"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">FAQ</span><h2>Dispatch rate questions</h2></div>
+  {faq_html([C.FAQS[0], C.FAQS[3], C.FAQS[2], C.FAQS[7]])}
 </div></section>
 {band()}"""
     items = [qa, C.FAQS[0], C.FAQS[3], C.FAQS[2], C.FAQS[7]]
@@ -823,7 +906,7 @@ def build_legal(name, crumb):
 <section class="sec" style="padding-top:48px"><div class="wrap">
 {inner}
 </div></section>"""
-    write(name, page("/" + name, title, desc, "Texas Solutions dispatch " + crumb.lower(), [crumbs_ld([(crumb, "/" + name)])], body))
+    write(name, page("/" + name, title, desc, "Texas Solutions dispatch " + crumb.lower(), [crumbs_ld([(html.unescape(crumb), "/" + name)])], body))
 
 
 def build_landing(p):
@@ -876,7 +959,7 @@ def build_landing(p):
     og = "article" if p.get("guide") else "website"
     if p.get("guide"):
         schemas.append({"@context": "https://schema.org", "@type": "Article", "headline": p["h1"], "description": p["description"],
-                        "datePublished": "2026-09-01", "dateModified": TODAY, "author": {"@id": BUSINESS_ID},
+                        "datePublished": "2026-09-01", "dateModified": "2026-09-23", "author": {"@id": BUSINESS_ID},
                         "publisher": {"@id": BUSINESS_ID}, "mainEntityOfPage": url(path), "image": OG_IMAGE})
     write(p["file"], page(path, p["title"], p["description"], p["keywords"] + ", " + ", ".join(C.CORE_KEYWORDS[:8]), schemas, body, og_type=og))
 
@@ -1061,21 +1144,18 @@ def build_fuel():
   {faq_html(faqs)}
 </div></section>
 {band("Fuel is your biggest cost. Better loads cover it.", "Our dispatchers negotiate every rate and plan lanes to cut deadhead miles, the fuel you burn without getting paid.")}"""
-    schemas = [{"@context": "https://schema.org", "@type": "WebApplication", "name": "Truck Fuel Cost Calculator", "url": url(path),
-                "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-                "provider": {"@id": BUSINESS_ID}},
-               faq_ld(faqs), crumbs_ld([("Fuel Calculator", path)]), speakable(path, title),
+    schemas = [faq_ld(faqs), crumbs_ld([("Fuel Calculator", path)]), speakable(path, title),
                {"@context": "https://schema.org", "@type": "HowTo", "name": "How to calculate truck fuel cost for a trip",
                 "step": [{"@type": "HowToStep", "position": 1, "name": "Pick your truck and load weight", "text": "Choose your truck type and enter the cargo weight to estimate miles per gallon."},
                          {"@type": "HowToStep", "position": 2, "name": "Add total miles", "text": "Enter loaded miles plus deadhead miles."},
-                         {"@type": "HowToStep", "position": 3, "name": "Set the diesel price", "text": "Select the state where you fuel up to use the weekly EIA diesel price, or type your pump price."},
+                         {"@type": "HowToStep", "position": 3, "name": "Set the diesel price", "text": "Select the state where you fuel up to use today's diesel price, or type your pump price."},
                          {"@type": "HowToStep", "position": 4, "name": "Calculate", "text": "Gallons equal total miles divided by MPG; fuel cost equals gallons times the diesel price; cost per mile equals fuel cost divided by miles."}]},
                {"@context": "https://schema.org", "@type": "Dataset", "name": "Daily U.S. diesel prices by state",
                 "description": "Average on-highway diesel prices (USD per gallon) for all 50 U.S. states and DC, updated daily, with the EIA weekly U.S. average.",
                 "url": url(path) + "#diesel-prices", "dateModified": day or week or TODAY, "temporalCoverage": day or week or TODAY,
-                "isBasedOn": "https://www.eia.gov/petroleum/gasdiesel/", "license": "https://www.eia.gov/about/copyrights_reuse.php",
-                "creator": {"@type": "GovernmentOrganization", "name": "U.S. Energy Information Administration", "url": "https://www.eia.gov/"},
-                "publisher": {"@id": BUSINESS_ID}, "spatialCoverage": {"@type": "Place", "name": "United States"},
+                "isBasedOn": ["https://gasprices.aaa.com/state-gas-price-averages/", "https://www.eia.gov/petroleum/gasdiesel/"],
+                "isAccessibleForFree": True, "inLanguage": "en-US",
+                "creator": {"@id": BUSINESS_ID}, "publisher": {"@id": BUSINESS_ID}, "spatialCoverage": {"@type": "Place", "name": "United States"},
                 "variableMeasured": "Retail diesel price, USD per gallon"}]
     kw = ("fuel prices, fuel price calculator, fuel cost calculator, diesel prices today, diesel prices by state, diesel price per gallon, "
           "dry van fuel price calculator, step deck fuel price calculator, box truck fuel price calculator, reefer fuel cost calculator, "
@@ -1100,6 +1180,8 @@ def load_posts():
     import yaml
     import markdown as md
     posts = []
+    cache_file = ROOT / "assets" / "blog" / "covers.json"
+    cache = json.loads(cache_file.read_text(encoding="utf-8")) if cache_file.exists() else {}
     for f in sorted((ROOT / "content" / "blog").glob("*.md")):
         raw = f.read_text(encoding="utf-8")
         m = re.match(r"^---\s*\n(.*?)\n---\s*\n(.*)$", raw, re.S)
@@ -1108,26 +1190,47 @@ def load_posts():
         meta = yaml.safe_load(m.group(1)) or {}
         if meta.get("draft"):
             continue
-        d = meta.get("date")
-        d = d if isinstance(d, date) else date.fromisoformat(str(d)[:10]) if d else date.today()
+
+        def as_date(v, default):
+            return v if isinstance(v, date) else date.fromisoformat(str(v)[:10]) if v else default
+
+        d = as_date(meta.get("date"), date.today())
+        updated = as_date(meta.get("updated"), d)
         html_body = md.markdown(m.group(2), extensions=["tables", "fenced_code", "sane_lists", "toc"])
         html_body = re.sub(r"<h1([^>]*)>", r"<h2\1>", html_body).replace("</h1>", "</h2>")
         html_body = html_body.replace("<table>", '<div class="tbl"><table>').replace("</table>", "</table></div>")
         text = re.sub(r"<[^>]+>", " ", html_body)
+        toc = [(hid, re.sub(r"<[^>]+>", "", h)) for hid, h in re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', html_body, re.S)]
+        title = str(meta.get("title", f.stem))
+        tags = [str(x) for x in (meta.get("tags") or [])]
+        cover = meta.get("cover") or ""
+        if not cover and covers is not None:
+            sig = hashlib.sha1(("v2|" + title + "|" + "|".join(tags)).encode()).hexdigest()
+            out = ROOT / "assets" / "blog" / f"{f.stem}.jpg"
+            if not out.exists() or cache.get(f.stem) != sig:
+                covers.make_cover(f.stem, title, tags, out)
+                cache[f.stem] = sig
+            cover = f"/assets/blog/{f.stem}.jpg"
+        cover_abs = cover if str(cover).startswith("http") else (C.BASE + cover if cover else OG_IMAGE)
         posts.append({
-            "slug": f.stem, "title": str(meta.get("title", f.stem)), "description": str(meta.get("description", "")),
-            "date": d, "author": str(meta.get("author") or "Texas Solutions Dispatch Team"),
-            "tags": [str(x) for x in (meta.get("tags") or [])], "keywords": str(meta.get("keywords") or ""),
-            "cover": meta.get("cover") or "", "answer": str(meta.get("answer") or ""), "question": str(meta.get("question") or ""),
+            "slug": f.stem, "title": title, "seo_title": str(meta.get("seo_title") or ""), "description": str(meta.get("description", "")),
+            "date": d, "updated": updated, "author": str(meta.get("author") or "Texas Solutions Dispatch Team"),
+            "tags": tags, "keywords": str(meta.get("keywords") or ""),
+            "cover": cover, "cover_abs": cover_abs, "cover_alt": str(meta.get("cover_alt") or title),
+            "answer": str(meta.get("answer") or ""), "question": str(meta.get("question") or ""),
             "faq": [(str(x.get("q", "")), str(x.get("a", ""))) for x in (meta.get("faq") or []) if x.get("q")],
-            "html": html_body, "words": len(text.split()),
+            "html": html_body, "md": m.group(2).strip(), "toc": toc, "words": len(text.split()),
         })
-    posts.sort(key=lambda x: x["date"], reverse=True)
+    if covers is not None:
+        (ROOT / "assets" / "blog").mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(json.dumps(cache, indent=1, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    posts.sort(key=lambda x: (x["date"], x["slug"]), reverse=True)
     return posts
 
 
 def post_card(po, prefix=""):
-    cover = f'<img src="{esc(po["cover"])}" alt="" loading="lazy" class="post-cover">' if po["cover"] else '<div class="post-cover post-cover-ph" aria-hidden="true"></div>'
+    cover = (f'<img src="{esc(po["cover"])}" alt="" width="1200" height="630" loading="lazy" decoding="async" class="post-cover">'
+             if po["cover"] else '<div class="post-cover post-cover-ph" aria-hidden="true"></div>')
     tags = "".join(f'<span class="tag">{esc(x)}</span>' for x in po["tags"][:2])
     return f"""  <a class="card post-card rv" href="{prefix}blog/{po['slug']}.html">
     {cover}
@@ -1138,38 +1241,66 @@ def post_card(po, prefix=""):
   </a>"""
 
 
+def post_title_tag(po):
+    if po["seo_title"]:
+        return po["seo_title"]
+    return po["title"] + " | Texas Solutions" if len(po["title"]) + 17 <= 64 else po["title"]
+
+
 def build_blog():
     posts = load_posts()
-    title = "Trucking Blog: Dispatch, Rates, Diesel Prices & Fuel Tips | Texas Solutions"
-    desc = "Practical guides for owner-operators and small fleets: truck dispatch costs, rates per mile, diesel prices by state, fuel cost per mile, hotshot and box truck trucking."
-    cards = "\n".join(post_card(po) for po in posts) or '<p>New articles are on the way.</p>'
-    body = f"""{phero("Blog", "Trucking Blog", "Straight answers for owner-operators on dispatch costs, rates per mile, diesel prices and fuel savings.", ctas=False)}
+    title = "Trucking Blog: Dispatch, Rates, Fuel & Compliance Guides"
+    desc = "Practical trucking guides for owner-operators: dispatch costs, rates per mile, diesel prices, fuel cost, MC authority, IFTA, HOS, deadhead and more."
+    lead = posts[0] if posts else None
+    rest = posts[1:]
+    feature = ""
+    if lead:
+        feature = f"""<a class="post-feature rv" href="blog/{lead['slug']}.html">
+    <img src="{esc(lead['cover'])}" alt="" width="1200" height="630" fetchpriority="high" decoding="async">
+    <div><span class="tag">{esc(lead['tags'][0]) if lead['tags'] else 'Trucking'}</span><h2>{esc(lead['title'])}</h2>
+    <p>{esc(lead['description'])}</p><span class="more">Read the guide &rarr;</span></div></a>"""
+    cards = "\n".join(post_card(po) for po in rest) or ""
+    body = f"""{phero("Blog", "Trucking Blog", "Straight answers for owner-operators on dispatch costs, rates per mile, diesel prices, compliance and fuel savings.", ctas=False)}
 <section class="sec"><div class="wrap">
-  <div class="grid g3">
+  {feature}
+  <div class="grid g3" style="margin-top:28px">
 {cards}
   </div>
 </div></section>
 {band("Want loads that pay after fuel?", "Our dispatchers negotiate every rate and plan lanes to cut empty miles.")}"""
     schemas = [{"@context": "https://schema.org", "@type": "Blog", "name": "Texas Solutions Trucking Blog", "url": url("/blog.html"),
-                "publisher": {"@id": BUSINESS_ID},
+                "publisher": {"@id": BUSINESS_ID}, "inLanguage": "en-US", "description": desc,
                 "blogPost": [{"@type": "BlogPosting", "headline": po["title"], "url": url(f"/blog/{po['slug']}.html"),
-                              "datePublished": po["date"].isoformat()} for po in posts]},
+                              "datePublished": po["date"].isoformat(), "image": po["cover_abs"],
+                              "author": {"@type": "Organization", "name": po["author"]}} for po in posts]},
+               {"@context": "https://schema.org", "@type": "CollectionPage"},
                crumbs_ld([("Blog", "/blog.html")])]
-    kw = "trucking blog, truck dispatch blog, owner operator tips, diesel prices, fuel cost per mile, hotshot trucking, box truck loads"
-    write("blog.html", page("/blog.html", title, desc, kw, schemas, body, current="blog.html"))
+    kw = "trucking blog, truck dispatch blog, owner operator tips, diesel prices, fuel cost per mile, hotshot trucking, box truck loads, MC number, IFTA, hours of service, freight factoring"
+    write("blog.html", page("/blog.html", title, desc, kw, schemas, body, current="blog.html",
+                            image=posts[0]["cover_abs"] if posts else None, image_alt="Texas Solutions trucking blog"))
 
     (ROOT / "blog").mkdir(exist_ok=True)
     keep = set()
-    for i, po in enumerate(posts):
+    for po in posts:
         path = f"/blog/{po['slug']}.html"
         keep.add(po["slug"] + ".html")
-        related = [x for x in posts if x["slug"] != po["slug"]][:3]
-        rel = "\n".join(post_card(x) for x in related)
+        mine = set(po["tags"])
+        others = [x for x in posts if x["slug"] != po["slug"]]
+        others.sort(key=lambda x: (-len(mine & set(x["tags"])), -x["date"].toordinal(), x["slug"]))
+        rel = "\n".join(post_card(x) for x in others[:3])
         ans = answer(po.get("question") or "The short answer", po["answer"], "Quick answer") if po["answer"] else ""
         faq_block = f'<h2>Frequently asked questions</h2>\n{faq_html(po["faq"])}' if po["faq"] else ""
-        cover = f'<img src="{esc(po["cover"])}" alt="" class="post-hero-img">' if po["cover"] else ""
+        hero = (f'<img src="{esc(po["cover"])}" alt="{esc(po["cover_alt"])}" width="1200" height="630" class="post-hero-img" fetchpriority="high" decoding="async">'
+                if po["cover"] else "")
+        toc = ""
+        if len(po["toc"]) >= 4:
+            toc = ('<nav class="toc" aria-label="In this article"><b>In this article</b><ol>' +
+                   "".join(f'<li><a href="#{hid}">{esc(h)}</a></li>' for hid, h in po["toc"]) + "</ol></nav>")
         tags = " ".join(f'<span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">{esc(x)}</span>' for x in po["tags"])
-        meta_line = f'<p class="lede" style="font-size:15px">{esc(po["author"])} &middot; {po["date"].strftime("%B")} {po["date"].day}, {po["date"].year} &middot; {max(1, round(po["words"] / 220))} min read</p>'
+        upd = f' &middot; Updated {po["updated"].strftime("%B")} {po["updated"].day}, {po["updated"].year}' if po["updated"] != po["date"] else ""
+        meta_line = (f'<p class="lede" style="font-size:15px">By {esc(po["author"])} &middot; '
+                     f'<time datetime="{po["date"].isoformat()}">{po["date"].strftime("%B")} {po["date"].day}, {po["date"].year}</time>{upd} '
+                     f'&middot; {max(1, round(po["words"] / 220))} min read</p>')
         body = f"""<section class="phero"><div class="wrap">
   <div class="crumbs"><a href="index.html">Home</a> / <a href="blog.html">Blog</a></div>
   <h1>{esc(po['title'])}</h1>
@@ -1178,15 +1309,18 @@ def build_blog():
 </div></section>
 <section class="sec" style="padding-top:48px"><div class="wrap two">
   <article class="prose post-body">
-    {cover}
+    {hero}
     {ans}
+    {toc}
     {po['html']}
     {faq_block}
+    <div class="author-box"><b>About the author</b><p>{esc(po['author'])} at Texas Solutions, a truck dispatch service for owner-operators and small fleets based in {C.CITY}, Texas. We negotiate loads, plan lanes and handle broker paperwork for a percentage of weekly gross: 5% for semis, 8% for hotshots, 10% for box trucks. Rates, fees and rules change, so confirm current figures with the relevant agency or provider before you act.</p></div>
   </article>
   <div class="aside">
     <div class="card"><h3>Free trucking tools</h3><p>Work out your numbers in seconds.</p>
       <a class="btn btn-red" style="width:100%;margin-top:14px" href="truck-fuel-cost-calculator.html">Fuel cost calculator</a>
-      <a class="btn btn-dark" style="width:100%;margin-top:10px" href="estimate.html">Dispatch fee calculator</a></div>
+      <a class="btn btn-dark" style="width:100%;margin-top:10px" href="cost-per-mile-calculator.html">Cost per mile calculator</a>
+      <a class="btn btn-line" style="width:100%;margin-top:10px" href="tools.html">All free tools</a></div>
     {contact_side()}
   </div>
 </div></section>
@@ -1196,14 +1330,18 @@ def build_blog():
 {rel}
   </div>
 </div></section>"""
-        art = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": po["title"], "description": po["description"],
-               "datePublished": po["date"].isoformat(), "dateModified": po["date"].isoformat(), "author": {"@type": "Organization", "name": po["author"], "url": url("/")},
-               "publisher": {"@id": BUSINESS_ID}, "mainEntityOfPage": url(path), "image": url(po["cover"]) if str(po["cover"]).startswith("/") else (po["cover"] or OG_IMAGE),
-               "keywords": po["keywords"], "wordCount": po["words"], "inLanguage": "en-US"}
+        art = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": po["title"][:110], "description": po["description"],
+               "image": [po["cover_abs"]], "datePublished": po["date"].isoformat(), "dateModified": po["updated"].isoformat(),
+               "author": {"@type": "Organization", "name": po["author"], "url": url("/")},
+               "publisher": {"@id": BUSINESS_ID}, "mainEntityOfPage": {"@id": url(path) + "#webpage"},
+               "articleSection": po["tags"][0] if po["tags"] else "Trucking", "keywords": po["keywords"], "wordCount": po["words"],
+               "inLanguage": "en-US", "isAccessibleForFree": True}
         schemas = [art, crumbs_ld([("Blog", "/blog.html"), (po["title"], path)]), speakable(path, po["title"])]
         if po["faq"]:
             schemas.append(faq_ld(po["faq"]))
-        shell = page(path, po["title"] + " | Texas Solutions", po["description"], po["keywords"] or "truck dispatch", schemas, body, current="blog.html", og_type="article")
+        shell = page(path, post_title_tag(po), po["description"], po["keywords"] or "truck dispatch", schemas, body, current="blog.html",
+                     og_type="article", image=po["cover_abs"], image_alt=po["cover_alt"], published=po["date"].isoformat(),
+                     modified=po["updated"].isoformat(), tags=po["tags"])
         write(f"blog/{po['slug']}.html", abs_links(shell))
     for old in (ROOT / "blog").glob("*.html"):
         if old.name not in keep:
@@ -1239,9 +1377,11 @@ def build_state_pages():
             n, mpg, w = trucks[tid]
             ex += f"<tr><td><b>{n}</b><small>{w:,} lbs, ~{mpg:.1f} mpg</small></td><td>${price / mpg:.2f}</td><td>${1000 / mpg * price:,.0f}</td></tr>"
         src = "AAA daily state average" if states_p.get(code) else "EIA regional weekly average"
-        title = f"Diesel Prices in {name} Today (${price:.2f}/gal) | Fuel Cost Calculator"
-        desc = (f"Diesel price in {name} today: ${price:.3f} per gallon ({day_h}), {'above' if diff > 0 else 'below'} the U.S. average of ${us:.3f}. "
-                f"Fuel cost per mile for semi, reefer, flatbed, hotshot and box trucks in {name}, updated daily.")
+        title = f"Diesel Prices in {name} Today (${price:.2f}/gal)"
+        if len(title) <= 42:
+            title += " | Fuel Calculator"
+        desc = (f"{name} diesel today: ${price:.3f}/gal, ${abs(diff):.3f} {'above' if diff > 0 else 'below'} the ${us:.3f} U.S. average. "
+                f"Fuel cost per mile for semi, hotshot and box trucks. Updated daily.")
         qa = (f"What is the price of diesel in {name} today?",
               f"Diesel in {name} averages ${price:.3f} per gallon today ({day_h}), ${abs(diff):.3f} {'more' if diff > 0 else 'less'} than the U.S. average of ${us:.3f}. "
               f"{name} ranks #{rank} of 51 for cheapest diesel (1 = cheapest). A loaded semi at about 6.3 mpg spends about ${price / 6.3:.2f} per mile on fuel in {name}.")
@@ -1284,9 +1424,10 @@ def build_state_pages():
         schemas = [faq_ld(faqs), crumbs_ld([("Fuel Calculator", "/truck-fuel-cost-calculator.html"), (f"Diesel prices in {name}", path)]),
                    speakable(path, title),
                    {"@context": "https://schema.org", "@type": "Dataset", "name": f"Diesel prices in {name}",
-                    "description": f"Daily average retail diesel price per gallon in {name}.", "url": url(path),
-                    "dateModified": day, "temporalCoverage": day, "spatialCoverage": {"@type": "State", "name": name},
-                    "variableMeasured": "Retail diesel price, USD per gallon", "publisher": {"@id": BUSINESS_ID}}]
+                    "description": f"Daily average retail diesel price per gallon in {name}, in US dollars, updated every day.", "url": url(path),
+                    "dateModified": day, "temporalCoverage": day, "spatialCoverage": {"@type": "Place", "name": f"{name}, United States"},
+                    "isBasedOn": "https://gasprices.aaa.com/state-gas-price-averages/", "isAccessibleForFree": True, "inLanguage": "en-US",
+                    "variableMeasured": "Retail diesel price, USD per gallon", "creator": {"@id": BUSINESS_ID}, "publisher": {"@id": BUSINESS_ID}}]
         kw = (f"diesel prices {name.lower()}, diesel price in {name.lower()} today, {name.lower()} diesel price per gallon, "
               f"cheapest diesel {name.lower()}, {name.lower()} fuel prices, truck fuel cost {name.lower()}, fuel prices near me")
         write(f"diesel-prices/{slug}.html", abs_links(page(path, title, desc, kw, schemas, body, current="truck-fuel-cost-calculator.html")))
@@ -1345,6 +1486,7 @@ def tool_wrap(t):
 </div></section>
 <section class="sec sec-soft"><div class="wrap two">
   <div class="prose rv">
+    {answer("What does the " + t["hub_title"] + " do?", t["desc"])}
 {t["article_html"]}
     <h2>Frequently asked questions</h2>
     {faq_html(faqs)}
@@ -1360,10 +1502,6 @@ def tool_wrap(t):
 {band()}"""
     path = "/" + t["slug"] + ".html"
     schemas = [
-        {"@context": "https://schema.org", "@type": "WebApplication", "name": t["h1"], "url": url(path),
-         "applicationCategory": "BusinessApplication", "operatingSystem": "Any",
-         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "provider": {"@id": BUSINESS_ID},
-         "description": t["desc"]},
         faq_ld(faqs), crumbs_ld([("Tools", "/tools.html"), (t["hub_title"], path)]), speakable(path, t["meta_title"]),
     ]
     kw = t["keywords"] + ", free trucking calculator, owner operator tools"
@@ -1398,11 +1536,11 @@ def build_tools_hub():
 </div></section>
 {band("Want a dispatcher who knows these numbers too?", "We negotiate every rate and plan lanes with your cost per mile in mind, not just the headline rate.")}"""
     schemas = [{"@context": "https://schema.org", "@type": "ItemList", "name": "Free trucking calculators", "url": url("/tools.html"),
-                "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": url("/" + (existing[i][0] if i < 2 else TOOLS[i - 2]["slug"] + ".html"))}
+                "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": (existing[i][1] if i < 2 else TOOLS[i - 2]["hub_title"]), "url": url("/" + (existing[i][0] if i < 2 else TOOLS[i - 2]["slug"] + ".html"))}
                                      for i in range(len(existing) + len(TOOLS))]},
                crumbs_ld([("Tools", "/tools.html")])]
     kw = "trucking calculators, owner operator calculators, free trucking tools, IFTA calculator, HOS calculator, cost per mile calculator, truck loan calculator, per diem calculator, freight class calculator"
-    write("tools.html", page("/tools.html", title, desc, kw, schemas, body, current="tools.html"))
+    write("tools.html", page("/tools.html", title, desc, kw, schemas, body, current="tools.html", page_type="CollectionPage"))
 
 
 TOOLS = [
@@ -1985,73 +2123,152 @@ def diesel_lines():
     return out
 
 
-def build_site_files():
-    pages = [("/", "1.0", "weekly"), ("/estimate.html", "0.9", "weekly"), ("/truck-dispatch-rates.html", "0.9", "weekly"), ("/truck-fuel-cost-calculator.html", "0.9", "weekly")]
-    pages += [("/" + p["file"], "0.8", "monthly") for p in C.LANDING]
-    pages += [("/tools.html", "0.9", "weekly")] + [("/" + t["slug"] + ".html", "0.8", "monthly") for t in TOOLS]
-    pages += [("/blog.html", "0.8", "weekly")] + [(f"/blog/{po['slug']}.html", "0.7", "monthly") for po in POSTS]
-    pages += [(pth, "0.7", "daily") for _, pth in STATE_PAGES]
-    pages += [("/faq.html", "0.7", "monthly"), ("/about.html", "0.6", "monthly"), ("/contact.html", "0.6", "monthly"),
-              ("/privacy.html", "0.2", "yearly"), ("/terms.html", "0.2", "yearly")]
-    xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    xml += [f"  <url><loc>{url(p)}</loc><lastmod>{TODAY}</lastmod><changefreq>{f}</changefreq><priority>{pr}</priority></url>" for p, pr, f in pages]
-    xml.append("</urlset>")
-    write("sitemap.xml", "\n".join(xml) + "\n")
-    write("urls.txt", "\n".join(url(p) for p, _, _ in pages) + "\n")
+def strip_tags(s):
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", s))).strip()
 
-    bots = ["Googlebot", "Bingbot", "Slurp", "YandexBot", "DuckDuckBot", "Applebot", "Applebot-Extended", "GPTBot", "OAI-SearchBot",
-            "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Perplexity-User", "Google-Extended",
-            "Gemini-Deep-Research", "CCBot", "Meta-ExternalAgent", "Amazonbot", "cohere-ai", "MistralAI-User"]
-    robots = ["# Search engines and AI answer engines are welcome.", "User-agent: *", "Allow: /",
-              "Disallow: /head-codes.html", "Disallow: /tools/", "Disallow: /admin/", "Disallow: /content/", ""]
-    for b in bots:
-        robots += [f"User-agent: {b}", "Allow: /", "Disallow: /tools/", ""]
-    robots += [f"Host: {C.BASE.replace('https://', '')}", f"Sitemap: {C.BASE}/sitemap.xml"]
+
+def lastmods():
+    """Sitemap lastmod per page: the date only moves when that page's HTML actually changes."""
+    mf = ROOT / "data" / "lastmod.json"
+    old = json.loads(mf.read_text(encoding="utf-8")) if mf.exists() else {}
+    new = {}
+    for name, h in sorted(PAGE_HASH.items()):
+        prev = old.get(name)
+        new[name] = {"hash": h, "date": prev["date"] if prev and prev.get("hash") == h else TODAY}
+    mf.parent.mkdir(exist_ok=True)
+    mf.write_text(json.dumps(new, indent=1, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    return {k: v["date"] for k, v in new.items()}
+
+
+def sm_urlset(entries, images=False):
+    ns = 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'
+    if images:
+        ns += ' xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
+    out = ['<?xml version="1.0" encoding="UTF-8"?>', f"<urlset {ns}>"]
+    for e in entries:
+        s = f"  <url><loc>{esc(e['loc'])}</loc><lastmod>{e['lastmod']}</lastmod>"
+        if e.get("image"):
+            s += f"<image:image><image:loc>{esc(e['image'])}</image:loc><image:title>{esc(e['title'])}</image:title></image:image>"
+        out.append(s + "</url>")
+    out.append("</urlset>")
+    return "\n".join(out) + "\n"
+
+
+def llms_facts():
+    return [
+        f"- Service: truck dispatch (load search, rate negotiation, broker setup packets, rate confirmations, lane planning)",
+        f"- Semi truck dispatch fee (dry van, reefer, flatbed, step deck, power only): {pl(M)} of weekly gross, OTR - about {SEMI_FEE[0]}-{SEMI_FEE[1]} per week on typical gross of {money(M['gross'][0])}-{money(M['gross'][1])}",
+        "- Hotshot dispatch fee: 8% of weekly gross, OTR - about $560-$720 per week on typical gross of $7,000-$9,000",
+        "- Box truck and straight truck dispatch fee: 10% of weekly gross, OTR - about $700-$900 per week on typical gross of $7,000-$9,000",
+        "- The fee is a percentage of weekly gross (what the truck earns hauling loads that week). No flat rate, no setup fee, no monthly subscription, no long-term contract, no forced loads",
+        f"- Condition: {C.PRICING_CONDITION}",
+        "- Rough freight rates per mile (not guaranteed): flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20",
+        "- Area served: United States (48 states), with a focus on Texas and the Permian Basin",
+        "- Texas Solutions is a dispatch service. It is not a motor carrier or freight broker and does not guarantee loads, rates or earnings",
+        f"- Phone: {C.PHONE} | WhatsApp: +1 838 910 3147 (https://wa.me/{C.WHATSAPP}) | Email: {C.EMAIL}",
+        f"- Address: {C.STREET}, {C.CITY}, {C.REGION} {C.POSTAL}",
+        "- Owner and CEO: Shehryar Joyia",
+    ]
+
+
+def build_site_files():
+    lm = lastmods()
+
+    def entry(path):
+        f = "index.html" if path == "/" else path.lstrip("/")
+        return {"loc": url(path), "lastmod": lm.get(f, TODAY)}
+
+    core = ["/", "/estimate.html", "/truck-dispatch-rates.html", "/truck-fuel-cost-calculator.html"] + ["/" + p["file"] for p in C.LANDING] + \
+           ["/faq.html", "/about.html", "/contact.html", "/privacy.html", "/terms.html"]
+    tool_paths = ["/tools.html"] + ["/" + tl["slug"] + ".html" for tl in TOOLS]
+    blog_entries = [entry("/blog.html")] + [dict(entry(f"/blog/{po['slug']}.html"), image=po["cover_abs"], title=po["title"]) for po in POSTS]
+    groups = {
+        "sitemap-pages.xml": [entry(x) for x in core],
+        "sitemap-tools.xml": [entry(x) for x in tool_paths],
+        "sitemap-blog.xml": blog_entries,
+        "sitemap-diesel.xml": [entry(pth) for _, pth in STATE_PAGES],
+    }
+    for name, ents in groups.items():
+        write(name, sm_urlset(ents, images=(name == "sitemap-blog.xml")))
+    idx = ['<?xml version="1.0" encoding="UTF-8"?>', '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for name, ents in groups.items():
+        idx.append(f"  <sitemap><loc>{url('/' + name)}</loc><lastmod>{max(e['lastmod'] for e in ents)}</lastmod></sitemap>")
+    idx.append("</sitemapindex>")
+    write("sitemap.xml", "\n".join(idx) + "\n")
+    all_locs = [e["loc"] for ents in groups.values() for e in ents]
+    write("urls.txt", "\n".join(all_locs) + "\n")
+
+    # ---------------------------------------------------------- robots.txt
+    bots = ["Googlebot", "Googlebot-Image", "Bingbot", "Slurp", "YandexBot", "DuckDuckBot", "Applebot", "Applebot-Extended",
+            "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "anthropic-ai",
+            "PerplexityBot", "Perplexity-User", "Google-Extended", "GoogleOther", "Gemini-Deep-Research", "DuckAssistBot",
+            "CCBot", "Meta-ExternalAgent", "Meta-ExternalFetcher", "Amazonbot", "cohere-ai", "MistralAI-User", "YouBot"]
+    block = ["Allow: /", "Disallow: /admin/", "Disallow: /content/", "Disallow: /tools/", "Disallow: /head-codes.html"]
+    robots = ["# dispatch.texassolutions.co: search engines and AI answer engines are welcome.",
+              f"# Plain-text summary for AI tools: {C.BASE}/llms.txt (full text: {C.BASE}/llms-full.txt)",
+              f"# Blog RSS feed: {C.BASE}/feed.xml", "",
+              "User-agent: *", *block, ""]
+    robots += [f"User-agent: {b}" for b in bots] + block + [""]
+    robots += [f"Sitemap: {C.BASE}/sitemap.xml"] + [f"Sitemap: {C.BASE}/{n}" for n in groups]
     write("robots.txt", "\n".join(robots) + "\n")
     write(f"{INDEXNOW_KEY}.txt", INDEXNOW_KEY)
 
-    q = []
-    for a, b in C.FAQS + [(x, y) for p in C.LANDING for x, y in p["faqs"]]:
-        q += [f"Q: {a}", f"A: {b}", ""]
-    llms = [
-        f"# {C.BRAND}", "",
-        f"> Texas Solutions is a US truck dispatch service for owner-operators and small fleets, based in {C.CITY}, Texas. "
-        f"Pricing: {pl(M)} of weekly gross for OTR semi trucks (dry van, reefer, flatbed, step deck, power only; typical weekly gross "
-        f"{money(M['gross'][0])}-{money(M['gross'][1])}) and, for OTR small trucks, 8% for hotshots and 10% for box trucks and straight trucks (typical weekly gross "
-        f"{money(S['gross'][0])}-{money(S['gross'][1])}). No flat rate, no setup fee, no monthly subscription, no forced loads. "
-        "Texas Solutions is not a motor carrier or freight broker and does not guarantee loads, rates or earnings.", "",
-        "## Key facts",
-        f"- Service: truck dispatch (load search, rate negotiation, broker setup packets, rate confirmations, lane planning)",
-        f"- Semi truck dispatch fee: {pl(M)} of weekly gross (OTR) - about {SEMI_FEE[0]}-{SEMI_FEE[1]} per week on typical gross",
-        f"- Box truck / straight truck dispatch fee: 10% of weekly gross (OTR) - about $700-$900 per week on typical gross",
-        f"- Hotshot dispatch fee: 8% of weekly gross (OTR) - about $560-$720 per week on typical gross",
-        f"- Condition: {C.PRICING_CONDITION}",
-        "- No flat rate, no setup fee, no monthly subscription, no long-term contract",
-        "- Rough freight rates per mile: flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20",
-        "- Area served: United States (48 states), with a focus on Texas and the Permian Basin",
-        f"- Phone: {C.PHONE} | WhatsApp: +1 838 910 3147 (https://wa.me/{C.WHATSAPP}) | Email: {C.EMAIL}",
-        f"- Address: {C.STREET}, {C.CITY}, {C.REGION} {C.POSTAL}", "",
-        *diesel_lines(),
-        "## Pages",
-        f"- [Home]({url('/')}): truck dispatch service overview and pricing",
-        f"- [Dispatch fee calculator and free quote]({url('/estimate.html')})",
-        f"- [Truck dispatch rates and rate-per-mile guide]({url('/truck-dispatch-rates.html')})",
-        f"- [Truck fuel cost calculator and weekly diesel prices by state]({url('/truck-fuel-cost-calculator.html')})",
-        f"- [Free trucking calculators]({url('/tools.html')})",
-        *[f"  - [{t['hub_title']}]({url('/' + t['slug'] + '.html')}): {t['desc']}" for t in TOOLS],
-        f"- [Blog RSS feed]({url('/feed.xml')})",
-        *[f"- [{p['nav']}]({url('/' + p['file'])}): {p['answer']}" for p in C.LANDING],
-        f"- [FAQ]({url('/faq.html')})", f"- [About]({url('/about.html')})", f"- [Contact]({url('/contact.html')})", "",
-        "## Blog",
-        *[f"- [{po['title']}]({url('/blog/' + po['slug'] + '.html')}): {po['answer'] or po['description']}" for po in POSTS],
-        "",
-        "## Diesel prices by state (daily pages)",
-        *[f"- [Diesel prices in {n}]({url(pth)})" for n, pth in STATE_PAGES],
-        "",
-        "## Questions and answers", *q,
-        "## Related", f"- [Texas Solutions software development, AI and QA]({C.MAIN_SITE}/)", "",
-    ]
+    # ---------------------------------------------------------- llms.txt (short) and llms-full.txt (everything)
+    diesel = load_diesel()
+    key_states = ["TX", "CA", "FL", "GA", "IL", "NY", "OH", "PA", "OK", "TN"]
+    diesel_short = []
+    if diesel:
+        us_p = diesel["regions"]["US"]["price"]
+        diesel_short = [f"- As of {diesel.get('day') or diesel.get('week')}: U.S. average ${us_p:.3f}/gal (EIA), "
+                        + ", ".join(f"{C.STATE_REGION[c][0]} ${diesel['states'][c]:.3f}" for c in key_states if c in diesel.get("states", {})),
+                        f"- Daily prices for all 50 states and DC: {url('/truck-fuel-cost-calculator.html')}#diesel-prices; one page per state at {url('/diesel-prices/texas.html')} (replace texas with the state name)"]
+    summary = (f"> Texas Solutions is a US truck dispatch service for owner-operators and small fleets, based in {C.CITY}, Texas. "
+               f"Dispatch fee: {pl(M)} of weekly gross for OTR semi trucks, 8% for hotshots, 10% for box trucks and straight trucks. "
+               "No flat rate, no setup fee, no monthly subscription, no forced loads. Also free trucking calculators (fuel cost, cost per mile, IFTA, HOS, "
+               "load profitability and more), daily diesel prices by state, and a trucking blog. Texas Solutions is not a motor carrier or freight broker "
+               "and does not guarantee loads, rates or earnings.")
+    llms = [f"# {C.BRAND}", "", summary, "", "## Key facts", *llms_facts(), "",
+            "## Free trucking calculators",
+            f"- [Tools hub]({url('/tools.html')}): all calculators in one place",
+            f"- [Dispatch fee calculator and free quote]({url('/estimate.html')}): dispatch fee by truck type, plus a quote request via WhatsApp",
+            f"- [Truck fuel cost calculator]({url('/truck-fuel-cost-calculator.html')}): MPG by truck type and load weight, trip fuel cost, cost per mile, daily diesel price by state",
+            *[f"- [{tl['hub_title']}]({url('/' + tl['slug'] + '.html')}): {tl['desc']}" for tl in TOOLS], "",
+            "## Guides (blog)",
+            *[f"- [{po['title']}]({url('/blog/' + po['slug'] + '.html')}): {po['answer'] or po['description']}" for po in POSTS],
+            f"- [Blog RSS feed]({url('/feed.xml')})", "",
+            "## Dispatch services",
+            *[f"- [{pg['nav']}]({url('/' + pg['file'])}): {pg['answer']}" for pg in C.LANDING],
+            f"- [Truck dispatch rates and rate-per-mile guide]({url('/truck-dispatch-rates.html')})", "",
+            "## Diesel prices", *diesel_short, "",
+            "## Company",
+            f"- [Home]({url('/')})", f"- [About]({url('/about.html')})", f"- [Contact]({url('/contact.html')})", f"- [FAQ]({url('/faq.html')})",
+            f"- [Privacy]({url('/privacy.html')})", f"- [Terms]({url('/terms.html')})", "",
+            "## Optional",
+            f"- [Full text of this site for LLMs]({url('/llms-full.txt')}): guides, tool explanations, FAQs and diesel prices in one file",
+            f"- [Sitemap]({url('/sitemap.xml')})",
+            f"- [Texas Solutions software development, AI and QA]({C.MAIN_SITE}/)", ""]
     write("llms.txt", "\n".join(llms))
+
+    full = [f"# {C.BRAND}: full text", "", summary, "", "## Key facts", *llms_facts(), ""]
+    full += ["## Frequently asked questions"]
+    seen = set()
+    for q, a in C.FAQS + [(x, y) for pg in C.LANDING for x, y in pg["faqs"]]:
+        if q not in seen:
+            seen.add(q)
+            full += [f"### {q}", a, ""]
+    full += ["## Free trucking calculators", ""]
+    for tl in TOOLS:
+        full += [f"### {tl['hub_title']}", f"URL: {url('/' + tl['slug'] + '.html')}", tl["desc"], strip_tags(tl["article_html"]), ""]
+        for q, a in tl["faqs"]:
+            full += [f"Q: {q}", f"A: {a}", ""]
+    full += ["## Blog posts", ""]
+    for po in POSTS:
+        full += [f"### {po['title']}", f"URL: {url('/blog/' + po['slug'] + '.html')}", f"Published: {po['date'].isoformat()}", "", po["md"], ""]
+    if diesel:
+        full += [f"## Diesel prices by state (daily, {diesel.get('day')}; EIA U.S. weekly average ${diesel['regions']['US']['price']:.3f}/gal)"]
+        full += [f"- {C.STATE_REGION[c][0]}: ${v:.3f}/gal" for c, v in sorted(diesel.get("states", {}).items(), key=lambda kv: C.STATE_REGION[kv[0]][0])]
+        full += [""]
+    write("llms-full.txt", "\n".join(full))
 
 
 def main():

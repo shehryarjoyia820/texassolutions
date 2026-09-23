@@ -360,3 +360,82 @@ STATE_REGION = {
     "UT": ("Utah", "P4"), "VT": ("Vermont", "P1A"), "VA": ("Virginia", "P1C"), "WA": ("Washington", "P5X"),
     "WV": ("West Virginia", "P1C"), "WI": ("Wisconsin", "P2"), "WY": ("Wyoming", "P4"),
 }
+
+# SERP-length titles/descriptions per path, applied by page() (title <= ~60, description <= ~155 characters).
+SEO = {
+    '/': (
+        'Truck Dispatch Service for Owner-Operators | Texas Solutions',
+        'Truck dispatch for owner-operators and small fleets: semi 5%, hotshot 8%, box truck 10% of weekly gross, OTR. No flat rate or setup fee. Get a free estimate.'),
+    '/estimate.html': (
+        'Truck Dispatch Fee Calculator & Free Quote | Texas Solutions',
+        'Calculate your truck dispatch fee: semi 5%, hotshot 8%, box truck 10% of weekly gross, OTR. Pick your truck, set your own percentage, get a free quote.'),
+    '/truck-dispatch-rates.html': (
+        'Truck Dispatch Rates & Rate Per Mile Guide | Texas Solutions',
+        'Truck dispatch rates: 5% semi, 8% hotshot, 10% box truck of weekly gross, OTR. Plus rough rates per mile for flatbed, reefer, dry van, hotshot and box truck.'),
+    '/truck-fuel-cost-calculator.html': (
+        'Truck Fuel Price Calculator & Diesel Prices Today',
+        'Free truck fuel price calculator with diesel prices for all 50 states, updated daily. Estimate MPG, trip fuel cost and cost per mile for any truck type.'),
+    '/tools.html': (
+        'Free Trucking Calculators for Owner-Operators | Texas Solutions',
+        'Free trucking calculators: dispatch fee, fuel cost, cost per mile, load profit, break-even, deadhead, driver pay, IFTA, per diem, truck loan, HOS and more.'),
+    '/break-even-calculator.html': (
+        'Truck Break-Even Calculator (Miles & Rate) | Texas Solutions',
+        'Free truck break-even calculator: enter fixed costs, cost per mile and rate to see the miles per month you need to break even and your profit at planned miles.'),
+    '/cost-per-mile-calculator.html': (
+        'Cost Per Mile Calculator for Trucking (CPM) | Texas Solutions',
+        'Free cost per mile (CPM) calculator for owner-operators: combine truck payment, insurance, fuel, maintenance and driver pay into your true cost per mile.'),
+    '/deadhead-miles-calculator.html': (
+        'Deadhead Miles Calculator (Effective Rate) | Texas Solutions',
+        "Free deadhead miles calculator: see your deadhead percentage and effective rate per mile once empty miles are counted against a load's revenue."),
+    '/driver-pay-calculator.html': (
+        'Truck Driver Pay Calculator (Per Mile, Load, %) | Texas Solutions',
+        'Free truck driver pay calculator: weekly, monthly and annual pay for per-mile, per-load, percentage of gross or hourly pay models.'),
+    '/freight-class-calculator.html': (
+        'Freight Class Calculator (NMFC Density) | Texas Solutions',
+        'Free freight class calculator: estimate NMFC class from length, width, height and weight using the density table. Estimate only; confirm with your carrier.'),
+    '/hours-of-service-calculator.html': (
+        'Hours of Service Calculator: 11, 14 & 70-Hour Rules',
+        'Free HOS calculator: estimate remaining drive time under the FMCSA 11-hour, 14-hour and 60/70-hour limits. Planning tool only, not a legal record.'),
+    '/ifta-mileage-calculator.html': (
+        'IFTA Mileage Calculator: Miles & Fuel by State | Texas Solutions',
+        'Free IFTA mileage calculator: log miles and fuel by state, see gallons used and net taxable gallons for your own IFTA records.'),
+    '/load-profitability-calculator.html': (
+        'Is This Load Worth Taking? Load Profit Calculator',
+        'Free load profitability calculator: enter rate, miles, deadhead and cost per mile to see net profit, margin and effective rate per mile before you book.'),
+    '/truck-loan-calculator.html': (
+        'Truck Loan Calculator: Monthly Payment | Texas Solutions',
+        'Free truck loan calculator: enter the truck price, down payment, interest rate and term to see your monthly payment, total interest and total cost.'),
+    '/box-truck-dispatch.html': (
+        'Box Truck Dispatch Service: 10% of Weekly Gross | Texas Solutions',
+        'Box truck dispatch for owner-operators: load search, rate negotiation and broker paperwork for box and straight trucks. 10% of weekly gross, OTR, no flat fee.'),
+    '/hotshot-dispatch.html': (
+        'Hotshot Dispatch Service: 8% of Weekly Gross | Texas Solutions',
+        'Hotshot dispatch for owner-operators: expedited and partial loads, rate negotiation and paperwork. Loads often pay $4-5 a mile. 8% of weekly gross, OTR.'),
+    '/flatbed-dispatch.html': (
+        'Flatbed Dispatch Service: 5% of Weekly Gross | Texas Solutions',
+        'Flatbed and step deck dispatch for owner-operators. Open-deck loads often pay $5-7 a mile. 5% of weekly gross for OTR semis, no flat rate.'),
+    '/dry-van-dispatch.html': (
+        'Dry Van Dispatch Service: 5% of Weekly Gross | Texas Solutions',
+        'Dry van dispatch for owner-operators and small fleets: lane planning, rate negotiation and paperwork. Loads run about $3-5 a mile. 5% of weekly gross, OTR.'),
+    '/reefer-dispatch.html': (
+        'Reefer Dispatch Service: 5% of Weekly Gross | Texas Solutions',
+        'Reefer dispatch for owner-operators and small fleets: temperature-controlled loads, appointments, rate negotiation and paperwork. 5% of weekly gross, OTR.'),
+    '/owner-operator-dispatch.html': (
+        'Owner-Operator Dispatch: 5% Semi, 8% Hotshot, 10% Box',
+        'Dispatch for owner-operators and small fleets: load search, rate negotiation and paperwork. 5% semi, 8% hotshot, 10% box truck of weekly gross, OTR.'),
+    '/texas-truck-dispatch.html': (
+        'Texas Truck Dispatch Service | Midland, TX',
+        'Truck dispatch based in Midland, Texas: Permian Basin, Houston, Dallas-Fort Worth, San Antonio, Laredo and El Paso lanes plus nationwide OTR.'),
+    '/what-does-a-truck-dispatcher-do.html': (
+        'What Does a Truck Dispatcher Do? Duties & Cost | Texas Solutions',
+        'What a truck dispatcher does, how much dispatch costs (5% semi, 8% hotshot, 10% box truck at Texas Solutions), dispatcher vs broker, and how to choose one.'),
+    '/about.html': (
+        'About Texas Solutions | Truck Dispatch, Midland TX',
+        'Texas Solutions is a truck dispatch company in Midland, Texas working for owner-operators and small fleets. Not a broker. No flat rate, no forced loads.'),
+    '/contact.html': (
+        'Contact a Truck Dispatcher | Call or WhatsApp | Texas Solutions',
+        'Talk to a Texas Solutions truck dispatcher: call or WhatsApp (838) 910-3147, email dispatch@texassolutions.co, or send your details. Midland, TX.'),
+    '/faq.html': (
+        'Truck Dispatch FAQ: Cost, OTR & How It Works | Texas Solutions',
+        'Answers about truck dispatch: what a dispatcher costs (5% semi, 8% hotshot, 10% box truck), OTR vs local, contracts, paperwork and getting started.'),
+}

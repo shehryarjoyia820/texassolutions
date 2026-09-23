@@ -1,91 +1,55 @@
 # Texas Solutions Truck Dispatch
 
-> Texas Solutions is a US truck dispatch service for owner-operators and small fleets, based in Midland, Texas. Pricing: 5% of weekly gross for OTR semi trucks (dry van, reefer, flatbed, step deck, power only; typical weekly gross $8,000-$10,000) and, for OTR small trucks, 8% for hotshots and 10% for box trucks and straight trucks (typical weekly gross $7,000-$9,000). No flat rate, no setup fee, no monthly subscription, no forced loads. Texas Solutions is not a motor carrier or freight broker and does not guarantee loads, rates or earnings.
+> Texas Solutions is a US truck dispatch service for owner-operators and small fleets, based in Midland, Texas. Dispatch fee: 5% of weekly gross for OTR semi trucks, 8% for hotshots, 10% for box trucks and straight trucks. No flat rate, no setup fee, no monthly subscription, no forced loads. Also free trucking calculators (fuel cost, cost per mile, IFTA, HOS, load profitability and more), daily diesel prices by state, and a trucking blog. Texas Solutions is not a motor carrier or freight broker and does not guarantee loads, rates or earnings.
 
 ## Key facts
 - Service: truck dispatch (load search, rate negotiation, broker setup packets, rate confirmations, lane planning)
-- Semi truck dispatch fee: 5% of weekly gross (OTR) - about $400-$500 per week on typical gross
-- Box truck / straight truck dispatch fee: 10% of weekly gross (OTR) - about $700-$900 per week on typical gross
-- Hotshot dispatch fee: 8% of weekly gross (OTR) - about $560-$720 per week on typical gross
+- Semi truck dispatch fee (dry van, reefer, flatbed, step deck, power only): 5% of weekly gross, OTR - about $400-$500 per week on typical gross of $8,000-$10,000
+- Hotshot dispatch fee: 8% of weekly gross, OTR - about $560-$720 per week on typical gross of $7,000-$9,000
+- Box truck and straight truck dispatch fee: 10% of weekly gross, OTR - about $700-$900 per week on typical gross of $7,000-$9,000
+- The fee is a percentage of weekly gross (what the truck earns hauling loads that week). No flat rate, no setup fee, no monthly subscription, no long-term contract, no forced loads
 - Condition: Rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately.
-- No flat rate, no setup fee, no monthly subscription, no long-term contract
-- Rough freight rates per mile: flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20
+- Rough freight rates per mile (not guaranteed): flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20
 - Area served: United States (48 states), with a focus on Texas and the Permian Basin
+- Texas Solutions is a dispatch service. It is not a motor carrier or freight broker and does not guarantee loads, rates or earnings
 - Phone: (838) 910-3147 | WhatsApp: +1 838 910 3147 (https://wa.me/18389103147) | Email: dispatch@texassolutions.co
 - Address: 401 W Kentucky Ave, Midland, TX 79701
+- Owner and CEO: Shehryar Joyia
 
-## Diesel prices by state (daily, 2026-09-22; EIA U.S. weekly average $6.529)
-- Alabama: $6.159/gal
-- Alaska: $6.663/gal
-- Arizona: $6.445/gal
-- Arkansas: $6.193/gal
-- California: $8.439/gal
-- Colorado: $6.220/gal
-- Connecticut: $6.474/gal
-- Delaware: $6.427/gal
-- District of Columbia: $6.506/gal
-- Florida: $6.258/gal
-- Georgia: $6.344/gal
-- Hawaii: $7.136/gal
-- Idaho: $6.590/gal
-- Illinois: $6.828/gal
-- Indiana: $6.914/gal
-- Iowa: $6.314/gal
-- Kansas: $6.249/gal
-- Kentucky: $6.383/gal
-- Louisiana: $6.027/gal
-- Maine: $6.516/gal
-- Maryland: $6.494/gal
-- Massachusetts: $6.390/gal
-- Michigan: $6.881/gal
-- Minnesota: $6.349/gal
-- Mississippi: $6.058/gal
-- Missouri: $6.348/gal
-- Montana: $6.313/gal
-- Nebraska: $6.231/gal
-- Nevada: $6.843/gal
-- New Hampshire: $6.406/gal
-- New Jersey: $6.465/gal
-- New Mexico: $6.325/gal
-- New York: $6.504/gal
-- North Carolina: $6.234/gal
-- North Dakota: $6.239/gal
-- Ohio: $6.817/gal
-- Oklahoma: $6.029/gal
-- Oregon: $6.872/gal
-- Pennsylvania: $6.610/gal
-- Rhode Island: $6.355/gal
-- South Carolina: $6.124/gal
-- South Dakota: $6.277/gal
-- Tennessee: $6.215/gal
-- Texas: $5.965/gal
-- Utah: $6.564/gal
-- Vermont: $6.459/gal
-- Virginia: $6.388/gal
-- Washington: $7.463/gal
-- West Virginia: $6.457/gal
-- Wisconsin: $6.619/gal
-- Wyoming: $6.215/gal
-- Truck fuel cost calculator: https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html
+## Free trucking calculators
+- [Tools hub](https://dispatch.texassolutions.co/tools.html): all calculators in one place
+- [Dispatch fee calculator and free quote](https://dispatch.texassolutions.co/estimate.html): dispatch fee by truck type, plus a quote request via WhatsApp
+- [Truck fuel cost calculator](https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html): MPG by truck type and load weight, trip fuel cost, cost per mile, daily diesel price by state
+- [Cost Per Mile (CPM) Calculator](https://dispatch.texassolutions.co/cost-per-mile-calculator.html): Free cost per mile (CPM) calculator for owner-operators: combine truck payment, insurance, permits, fuel, maintenance and driver pay into your true cost per mile.
+- [Load Profitability Calculator](https://dispatch.texassolutions.co/load-profitability-calculator.html): Free load profitability calculator: enter the rate, miles, deadhead and your cost per mile to see net profit, margin and effective rate per mile before you book a load.
+- [Break-Even Calculator](https://dispatch.texassolutions.co/break-even-calculator.html): Free break-even calculator for owner-operators: enter fixed costs, variable cost per mile and your freight rate to see the miles per month you need to break even, and your profit at your planned miles.
+- [Deadhead Miles Calculator](https://dispatch.texassolutions.co/deadhead-miles-calculator.html): Free deadhead miles calculator: see your deadhead percentage and effective rate per mile once empty miles are counted against a load's revenue.
+- [Driver Pay Calculator](https://dispatch.texassolutions.co/driver-pay-calculator.html): Free truck driver pay calculator: work out weekly, monthly and annual pay for per-mile, per-load, percentage of gross, or hourly pay models.
+- [IFTA Mileage Calculator](https://dispatch.texassolutions.co/ifta-mileage-calculator.html): Free IFTA mileage calculator: log miles driven and fuel purchased by state, see gallons consumed per jurisdiction, and estimate net taxable gallons for your own IFTA records.
+- [Per Diem Calculator](https://dispatch.texassolutions.co/per-diem-calculator.html): Free per diem calculator for truck drivers: estimate your annual per diem deduction and potential tax savings based on days on the road. Not tax advice.
+- [Truck Loan Calculator](https://dispatch.texassolutions.co/truck-loan-calculator.html): Free truck loan calculator: enter the truck price, down payment, interest rate and term to see your monthly payment, total interest and total cost.
+- [Maintenance Budget Calculator](https://dispatch.texassolutions.co/maintenance-budget-calculator.html): Free truck maintenance budget calculator: estimate a yearly and monthly repair reserve based on your truck's age and annual mileage.
+- [Hours of Service (HOS) Calculator](https://dispatch.texassolutions.co/hours-of-service-calculator.html): Free HOS calculator: estimate remaining drive time under the FMCSA 11-hour driving limit, 14-hour on-duty window and 60/7 or 70/8-day cycle limits. Planning tool only, not a legal record.
+- [Freight Class Calculator](https://dispatch.texassolutions.co/freight-class-calculator.html): Free freight class calculator: estimate NMFC freight class from length, width, height and weight using the standard density table. Estimate only, confirm with your carrier.
 
-## Pages
-- [Home](https://dispatch.texassolutions.co/): truck dispatch service overview and pricing
-- [Dispatch fee calculator and free quote](https://dispatch.texassolutions.co/estimate.html)
-- [Truck dispatch rates and rate-per-mile guide](https://dispatch.texassolutions.co/truck-dispatch-rates.html)
-- [Truck fuel cost calculator and weekly diesel prices by state](https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html)
-- [Free trucking calculators](https://dispatch.texassolutions.co/tools.html)
-  - [Cost Per Mile (CPM) Calculator](https://dispatch.texassolutions.co/cost-per-mile-calculator.html): Free cost per mile (CPM) calculator for owner-operators: combine truck payment, insurance, permits, fuel, maintenance and driver pay into your true cost per mile.
-  - [Load Profitability Calculator](https://dispatch.texassolutions.co/load-profitability-calculator.html): Free load profitability calculator: enter the rate, miles, deadhead and your cost per mile to see net profit, margin and effective rate per mile before you book a load.
-  - [Break-Even Calculator](https://dispatch.texassolutions.co/break-even-calculator.html): Free break-even calculator for owner-operators: enter fixed costs, variable cost per mile and your freight rate to see the miles per month you need to break even, and your profit at your planned miles.
-  - [Deadhead Miles Calculator](https://dispatch.texassolutions.co/deadhead-miles-calculator.html): Free deadhead miles calculator: see your deadhead percentage and effective rate per mile once empty miles are counted against a load's revenue.
-  - [Driver Pay Calculator](https://dispatch.texassolutions.co/driver-pay-calculator.html): Free truck driver pay calculator: work out weekly, monthly and annual pay for per-mile, per-load, percentage of gross, or hourly pay models.
-  - [IFTA Mileage Calculator](https://dispatch.texassolutions.co/ifta-mileage-calculator.html): Free IFTA mileage calculator: log miles driven and fuel purchased by state, see gallons consumed per jurisdiction, and estimate net taxable gallons for your own IFTA records.
-  - [Per Diem Calculator](https://dispatch.texassolutions.co/per-diem-calculator.html): Free per diem calculator for truck drivers: estimate your annual per diem deduction and potential tax savings based on days on the road. Not tax advice.
-  - [Truck Loan Calculator](https://dispatch.texassolutions.co/truck-loan-calculator.html): Free truck loan calculator: enter the truck price, down payment, interest rate and term to see your monthly payment, total interest and total cost.
-  - [Maintenance Budget Calculator](https://dispatch.texassolutions.co/maintenance-budget-calculator.html): Free truck maintenance budget calculator: estimate a yearly and monthly repair reserve based on your truck's age and annual mileage.
-  - [Hours of Service (HOS) Calculator](https://dispatch.texassolutions.co/hours-of-service-calculator.html): Free HOS calculator: estimate remaining drive time under the FMCSA 11-hour driving limit, 14-hour on-duty window and 60/7 or 70/8-day cycle limits. Planning tool only, not a legal record.
-  - [Freight Class Calculator](https://dispatch.texassolutions.co/freight-class-calculator.html): Free freight class calculator: estimate NMFC freight class from length, width, height and weight using the standard density table. Estimate only, confirm with your carrier.
+## Guides (blog)
+- [What Is Deadhead in Trucking and How to Reduce It](https://dispatch.texassolutions.co/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html): Deadhead is driving a truck empty, without paid freight, usually to reach a pickup or return from a delivery. Deadhead miles burn fuel and use up legal driving hours while earning nothing, so they lower your effective rate per mile. You can cut them by planning the next load before you deliver, and by choosing lanes with strong return freight.
+- [What Is a Good Rate Per Mile in Trucking in 2026?](https://dispatch.texassolutions.co/blog/what-is-a-good-rate-per-mile-trucking-2026.html): A good rate per mile is one that covers your total cost per mile, including deadhead, and leaves profit. As a rough guide in 2026, flatbed and step deck often pay about $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and market.
+- [Truck Dispatcher vs Freight Broker: The Real Difference](https://dispatch.texassolutions.co/blog/truck-dispatcher-vs-freight-broker.html): A truck dispatcher works for the carrier: they find and negotiate loads for the carrier's trucks and are paid by the carrier, usually a percentage of gross. A freight broker works between shippers and carriers: they need their own FMCSA broker authority and a surety bond, and earn the margin between what the shipper pays and what the carrier is paid.
+- [IFTA for Owner-Operators: How to File Quarterly Returns](https://dispatch.texassolutions.co/blog/ifta-for-owner-operators-how-to-file.html): The International Fuel Tax Agreement (IFTA) lets carriers running across US states and Canadian provinces file one quarterly fuel tax return with their base jurisdiction. Returns are due the last day of the month after each quarter ends: April 30, July 31, October 31 and January 31.
+- [How to Get Your MC Number and Trucking Authority](https://dispatch.texassolutions.co/blog/how-to-get-mc-number-authority-owner-operator.html): To get an MC number you register with FMCSA for a USDOT number, apply for for-hire operating authority (the MC number), file a BOC-3 process agent, and have your insurer file proof of at least $750,000 liability coverage for general freight. Authority typically goes active a few weeks after everything is on file.
+- [Hours of Service Rules Explained: 11, 14 and 70-Hour](https://dispatch.texassolutions.co/blog/hours-of-service-rules-explained-11-14-70-hour.html): Property-carrying drivers may drive up to 11 hours after 10 consecutive hours off duty, may not drive beyond the 14th hour after coming on duty, must take a 30-minute break after 8 cumulative hours of driving, and cannot drive after 60 hours in 7 days or 70 hours in 8 days. A 34-hour off-duty restart resets the weekly cycle.
+- [Freight Factoring for Owner-Operators: How It Works](https://dispatch.texassolutions.co/blog/freight-factoring-for-owner-operators-explained.html): In freight factoring, you sell your unpaid invoices to a factoring company, which advances you most of the invoice value right away, often 80-95%, and pays the rest, minus its fee, when the broker pays. Fees commonly run from about 1% to 5% of the invoice, depending on volume, terms and whether the deal is recourse or non-recourse.
+- [Dry Van vs Reefer vs Flatbed: Which Trailer Pays Best?](https://dispatch.texassolutions.co/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html): As a rough guide, flatbed and step deck loads often pay about $5-7 a mile, reefer about $4-6, and dry van about $3-5, depending on lane, season and whether the run is local or OTR. Higher rates come with more work: tarping and securement on flatbed, temperature and appointment rules on reefer. Dry van has the most freight and the most competition.
+- [Cost of Running a Semi Truck Per Mile (2026 Breakdown)](https://dispatch.texassolutions.co/blog/cost-of-running-a-semi-truck-per-mile.html): The American Transportation Research Institute (ATRI) found the industry-average cost to operate a truck in 2025 was $2.336 per mile, or $1.854 per mile excluding fuel. Your own cost depends on your truck payment, insurance, fuel, maintenance and how many miles you run, so calculate it yourself before accepting rates.
+- [Best Load Boards for Owner-Operators and How to Use Them](https://dispatch.texassolutions.co/blog/best-load-boards-for-owner-operators.html): Popular load boards include DAT One, Truckstop and 123Loadboard, plus specialty boards for hotshot, flatbed and power only. The best one depends on your equipment and lanes: look for fresh postings, rate data, broker credit information, and easy filtering. Many carriers use two boards and vet every broker before booking.
+- [How Much Does a Truck Dispatcher Cost in 2026?](https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html): Most independent truck dispatchers charge a percentage of the truck's weekly gross, usually somewhere between 3% and 10%. Texas Solutions charges 5% for OTR semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no flat rate, no setup fee and no monthly subscription.
+- [Hotshot Trucking Rates Per Mile, Fuel and Dispatch (2026)](https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html): Hotshot loads often pay roughly $4 to $5 a mile, depending on lane, urgency and season. A 1-ton diesel pulling a gooseneck typically gets about 13-14 mpg empty and 8-10 mpg loaded. Texas Solutions dispatches hotshots for 8% of weekly gross, OTR, with no flat rate.
+- [Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile](https://dispatch.texassolutions.co/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html): Fuel cost per mile equals the diesel price divided by your miles per gallon. A loaded semi averaging about 6.3 mpg with diesel at $6.00 a gallon spends about $0.95 per mile on fuel. Diesel can differ by more than $2 a gallon between the cheapest and most expensive states, so where you fuel up matters.
+- [Box Truck Dispatch: How to Find Loads and What It Really Costs](https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html): Box truck owner-operators find loads through load boards, direct broker relationships and dispatch services. A 26 ft diesel box truck typically gets about 8.5-11 mpg. Texas Solutions dispatches box trucks and straight trucks for 10% of weekly gross, OTR, with no flat rate.
 - [Blog RSS feed](https://dispatch.texassolutions.co/feed.xml)
+
+## Dispatch services
 - [Box Truck Dispatch](https://dispatch.texassolutions.co/box-truck-dispatch.html): Texas Solutions provides box truck dispatch for owner-operators and small fleets across the United States. Dispatchers search and negotiate loads, complete broker setups and keep paperwork organized. The fee is 10% of weekly gross for OTR box trucks and straight trucks, with no flat rate, no setup fee and your approval on every load.
 - [Hotshot Dispatch](https://dispatch.texassolutions.co/hotshot-dispatch.html): Texas Solutions dispatches hotshot trucks for owner-operators across the United States, including Texas and the Permian Basin. Dispatchers find expedited and partial loads, negotiate rates that often run $4-5 a mile, and handle broker paperwork. The dispatch fee is 8% of weekly gross for OTR hotshots, with no flat rate.
 - [Flatbed & Step Deck Dispatch](https://dispatch.texassolutions.co/flatbed-dispatch.html): Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets nationwide. Dispatchers find open-deck loads that often pay $5-7 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5% of weekly gross for OTR semis, with no flat rate.
@@ -95,141 +59,21 @@
 - [Owner-Operator Dispatch](https://dispatch.texassolutions.co/owner-operator-dispatch.html): Texas Solutions is a dispatch service for owner-operators and small fleets. It handles load search, rate negotiation, broker communication and paperwork for 5% of weekly gross on OTR semis, 8% on hotshots and 10% on box trucks, with no flat rate, no upfront fee, no long-term contract and no forced loads.
 - [Texas Truck Dispatch](https://dispatch.texassolutions.co/texas-truck-dispatch.html): Texas Solutions is a truck dispatch company based at 401 W Kentucky Ave, Midland, Texas. It dispatches owner-operators and small fleets on Texas lanes, including the Permian Basin, Houston, Dallas-Fort Worth, San Antonio, Laredo and El Paso, and nationwide OTR, for 5% of weekly gross on semis, 8% on hotshots and 10% on box trucks.
 - [What a Truck Dispatcher Does](https://dispatch.texassolutions.co/what-does-a-truck-dispatcher-do.html): A truck dispatcher finds and books freight for a carrier's trucks: searching load boards and brokers, negotiating rates, confirming loads with the driver, completing broker setup paperwork and organizing rate confirmations. Independent dispatchers usually charge a percentage of weekly gross; Texas Solutions charges 5% for OTR semis, 8% for hotshots and 10% for box trucks.
-- [FAQ](https://dispatch.texassolutions.co/faq.html)
+- [Truck dispatch rates and rate-per-mile guide](https://dispatch.texassolutions.co/truck-dispatch-rates.html)
+
+## Diesel prices
+- As of 2026-09-22: U.S. average $6.529/gal (EIA), Texas $5.965, California $8.439, Florida $6.258, Georgia $6.344, Illinois $6.828, New York $6.504, Ohio $6.817, Pennsylvania $6.610, Oklahoma $6.029, Tennessee $6.215
+- Daily prices for all 50 states and DC: https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html#diesel-prices; one page per state at https://dispatch.texassolutions.co/diesel-prices/texas.html (replace texas with the state name)
+
+## Company
+- [Home](https://dispatch.texassolutions.co/)
 - [About](https://dispatch.texassolutions.co/about.html)
 - [Contact](https://dispatch.texassolutions.co/contact.html)
+- [FAQ](https://dispatch.texassolutions.co/faq.html)
+- [Privacy](https://dispatch.texassolutions.co/privacy.html)
+- [Terms](https://dispatch.texassolutions.co/terms.html)
 
-## Blog
-- [Box Truck Dispatch: How to Find Loads and What It Really Costs](https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html): Box truck owner-operators find loads through load boards, direct broker relationships and dispatch services. A 26 ft diesel box truck typically gets about 8.5-11 mpg. Texas Solutions dispatches box trucks and straight trucks for 10% of weekly gross, OTR, with no flat rate.
-- [Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile](https://dispatch.texassolutions.co/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html): Fuel cost per mile equals the diesel price divided by your miles per gallon. A loaded semi averaging about 6.3 mpg with diesel at $6.00 a gallon spends about $0.95 per mile on fuel. Diesel can differ by more than $2 a gallon between the cheapest and most expensive states, so where you fuel up matters.
-- [Hotshot Trucking in 2026: Rates Per Mile, Fuel Mileage and Dispatch](https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html): Hotshot loads often pay roughly $4 to $5 a mile, depending on lane, urgency and season. A 1-ton diesel pulling a gooseneck typically gets about 13-14 mpg empty and 8-10 mpg loaded. Texas Solutions dispatches hotshots for 8% of weekly gross, OTR, with no flat rate.
-- [How Much Does a Truck Dispatcher Cost in 2026? Percentages Explained](https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html): Most independent truck dispatchers charge a percentage of the truck's weekly gross, usually somewhere between 3% and 10%. Texas Solutions charges 5% for OTR semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no flat rate, no setup fee and no monthly subscription.
-
-## Diesel prices by state (daily pages)
-- [Diesel prices in Alabama](https://dispatch.texassolutions.co/diesel-prices/alabama.html)
-- [Diesel prices in Alaska](https://dispatch.texassolutions.co/diesel-prices/alaska.html)
-- [Diesel prices in Arizona](https://dispatch.texassolutions.co/diesel-prices/arizona.html)
-- [Diesel prices in Arkansas](https://dispatch.texassolutions.co/diesel-prices/arkansas.html)
-- [Diesel prices in California](https://dispatch.texassolutions.co/diesel-prices/california.html)
-- [Diesel prices in Colorado](https://dispatch.texassolutions.co/diesel-prices/colorado.html)
-- [Diesel prices in Connecticut](https://dispatch.texassolutions.co/diesel-prices/connecticut.html)
-- [Diesel prices in Delaware](https://dispatch.texassolutions.co/diesel-prices/delaware.html)
-- [Diesel prices in District of Columbia](https://dispatch.texassolutions.co/diesel-prices/district-of-columbia.html)
-- [Diesel prices in Florida](https://dispatch.texassolutions.co/diesel-prices/florida.html)
-- [Diesel prices in Georgia](https://dispatch.texassolutions.co/diesel-prices/georgia.html)
-- [Diesel prices in Hawaii](https://dispatch.texassolutions.co/diesel-prices/hawaii.html)
-- [Diesel prices in Idaho](https://dispatch.texassolutions.co/diesel-prices/idaho.html)
-- [Diesel prices in Illinois](https://dispatch.texassolutions.co/diesel-prices/illinois.html)
-- [Diesel prices in Indiana](https://dispatch.texassolutions.co/diesel-prices/indiana.html)
-- [Diesel prices in Iowa](https://dispatch.texassolutions.co/diesel-prices/iowa.html)
-- [Diesel prices in Kansas](https://dispatch.texassolutions.co/diesel-prices/kansas.html)
-- [Diesel prices in Kentucky](https://dispatch.texassolutions.co/diesel-prices/kentucky.html)
-- [Diesel prices in Louisiana](https://dispatch.texassolutions.co/diesel-prices/louisiana.html)
-- [Diesel prices in Maine](https://dispatch.texassolutions.co/diesel-prices/maine.html)
-- [Diesel prices in Maryland](https://dispatch.texassolutions.co/diesel-prices/maryland.html)
-- [Diesel prices in Massachusetts](https://dispatch.texassolutions.co/diesel-prices/massachusetts.html)
-- [Diesel prices in Michigan](https://dispatch.texassolutions.co/diesel-prices/michigan.html)
-- [Diesel prices in Minnesota](https://dispatch.texassolutions.co/diesel-prices/minnesota.html)
-- [Diesel prices in Mississippi](https://dispatch.texassolutions.co/diesel-prices/mississippi.html)
-- [Diesel prices in Missouri](https://dispatch.texassolutions.co/diesel-prices/missouri.html)
-- [Diesel prices in Montana](https://dispatch.texassolutions.co/diesel-prices/montana.html)
-- [Diesel prices in Nebraska](https://dispatch.texassolutions.co/diesel-prices/nebraska.html)
-- [Diesel prices in Nevada](https://dispatch.texassolutions.co/diesel-prices/nevada.html)
-- [Diesel prices in New Hampshire](https://dispatch.texassolutions.co/diesel-prices/new-hampshire.html)
-- [Diesel prices in New Jersey](https://dispatch.texassolutions.co/diesel-prices/new-jersey.html)
-- [Diesel prices in New Mexico](https://dispatch.texassolutions.co/diesel-prices/new-mexico.html)
-- [Diesel prices in New York](https://dispatch.texassolutions.co/diesel-prices/new-york.html)
-- [Diesel prices in North Carolina](https://dispatch.texassolutions.co/diesel-prices/north-carolina.html)
-- [Diesel prices in North Dakota](https://dispatch.texassolutions.co/diesel-prices/north-dakota.html)
-- [Diesel prices in Ohio](https://dispatch.texassolutions.co/diesel-prices/ohio.html)
-- [Diesel prices in Oklahoma](https://dispatch.texassolutions.co/diesel-prices/oklahoma.html)
-- [Diesel prices in Oregon](https://dispatch.texassolutions.co/diesel-prices/oregon.html)
-- [Diesel prices in Pennsylvania](https://dispatch.texassolutions.co/diesel-prices/pennsylvania.html)
-- [Diesel prices in Rhode Island](https://dispatch.texassolutions.co/diesel-prices/rhode-island.html)
-- [Diesel prices in South Carolina](https://dispatch.texassolutions.co/diesel-prices/south-carolina.html)
-- [Diesel prices in South Dakota](https://dispatch.texassolutions.co/diesel-prices/south-dakota.html)
-- [Diesel prices in Tennessee](https://dispatch.texassolutions.co/diesel-prices/tennessee.html)
-- [Diesel prices in Texas](https://dispatch.texassolutions.co/diesel-prices/texas.html)
-- [Diesel prices in Utah](https://dispatch.texassolutions.co/diesel-prices/utah.html)
-- [Diesel prices in Vermont](https://dispatch.texassolutions.co/diesel-prices/vermont.html)
-- [Diesel prices in Virginia](https://dispatch.texassolutions.co/diesel-prices/virginia.html)
-- [Diesel prices in Washington](https://dispatch.texassolutions.co/diesel-prices/washington.html)
-- [Diesel prices in West Virginia](https://dispatch.texassolutions.co/diesel-prices/west-virginia.html)
-- [Diesel prices in Wisconsin](https://dispatch.texassolutions.co/diesel-prices/wisconsin.html)
-- [Diesel prices in Wyoming](https://dispatch.texassolutions.co/diesel-prices/wyoming.html)
-
-## Questions and answers
-Q: How much does a truck dispatcher cost?
-A: At Texas Solutions, semi trucks pay 5% of weekly gross, hotshots 8%, and box trucks and straight trucks 10%, for OTR operations. There is no flat rate, no setup fee and no monthly subscription. On a typical semi grossing $8,000-$10,000 a week, that is about $400-$500 a week.
-
-Q: What does a truck dispatcher do?
-A: A truck dispatcher searches load boards and broker networks for freight that fits your truck, negotiates the rate, confirms the load with you, completes broker setup paperwork and keeps rate confirmations organized, so you can spend your time driving.
-
-Q: Do you dispatch local routes or only OTR?
-A: Our published rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately, so call or message us with your lanes.
-
-Q: Is there a flat weekly fee?
-A: No. Texas Solutions charges a percentage of weekly gross only. There is no flat rate, no setup fee and no monthly subscription.
-
-Q: What equipment do you dispatch?
-A: Dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, for owner-operators and small fleets across the United States.
-
-Q: Is Texas Solutions a freight broker?
-A: No. Texas Solutions is a truck dispatch service that works for the carrier. We are not a motor carrier or freight broker. Loads are booked under your own authority, and you approve every load before it is booked.
-
-Q: Will I be forced to accept loads?
-A: No. You decide which loads, lanes and rates work for your business. Nothing is booked without your approval.
-
-Q: Do you guarantee rates or earnings?
-A: No. Freight volume, rates, operating costs and market conditions vary. Texas Solutions does not guarantee any specific load volume, rate, revenue or earnings.
-
-Q: Is there a long-term contract?
-A: No. The dispatch agreement sets the service terms and your percentage, and the notice period for ending service is stated in that agreement.
-
-Q: What do I need to get started?
-A: Your MC and DOT numbers, equipment type and preferred lanes. After the first call we collect your W-9, certificate of insurance and, if you factor, a notice of assignment.
-
-Q: How fast can I start dispatching?
-A: Most carriers start soon after the first call: we review your authority and lanes, sign the agreement, collect documents, and begin searching loads for your truck.
-
-Q: Can I talk to a dispatcher on WhatsApp?
-A: Yes. Tap the WhatsApp button on any page or message +1 (838) 910-3147 on WhatsApp.
-
-Q: How much is box truck dispatch?
-A: 10% of weekly gross for OTR box trucks and straight trucks. On $7,000-$9,000 weekly gross that is about $700-$900 a week. No flat rate and no setup fee.
-
-Q: Do you dispatch non-CDL box trucks?
-A: Yes, as long as you run under your own MC authority. Tell us your truck size and weight rating and we search freight that fits.
-
-Q: How much do hotshot loads pay per mile?
-A: As a rough guide, hotshot loads often pay about $4-5 a mile, depending on lane, urgency and season. Rates are not guaranteed.
-
-Q: What is the dispatch fee for hotshots?
-A: 8% of weekly gross for OTR hotshot operations, with no flat rate, no setup fee and no monthly subscription. On $7,000-$9,000 weekly gross that is about $560-$720 a week.
-
-Q: How much do flatbed loads pay per mile?
-A: As a rough guide, flatbed and step deck loads often pay about $5-7 a mile, depending on lane, tarping and season. Rates are not guaranteed.
-
-Q: What is the dispatch fee for flatbeds?
-A: 5% of weekly gross for OTR flatbed and step deck semis. On $8,000-$10,000 weekly gross that is about $400-$500 a week.
-
-Q: How much do dry van loads pay per mile?
-A: Roughly $3-5 a mile. Short local loads can pay more per mile, long OTR runs less per mile but more per load. Rates are not guaranteed.
-
-Q: Do you check temperature requirements before booking?
-A: Yes. We confirm temperature, appointment times and special handling before presenting the load.
-
-Q: Do I need a trailer for power only?
-A: No. The trailer is supplied by the shipper, broker or a carrier program. You provide the tractor and authority.
-
-Q: Is a dispatcher worth it for an owner-operator?
-A: For many, yes, when the dispatcher saves time, cuts deadhead and negotiates better loads by more than the fee. Results vary and no dispatcher can guarantee earnings.
-
-Q: Where is Texas Solutions located?
-A: 401 W Kentucky Ave, Midland, Texas. We dispatch carriers throughout the United States.
-
-Q: Can a dispatcher guarantee my weekly gross?
-A: No. Rates and freight volume change with the market, and a reputable dispatcher will not guarantee earnings.
-
-## Related
+## Optional
+- [Full text of this site for LLMs](https://dispatch.texassolutions.co/llms-full.txt): guides, tool explanations, FAQs and diesel prices in one file
+- [Sitemap](https://dispatch.texassolutions.co/sitemap.xml)
 - [Texas Solutions software development, AI and QA](https://texassolutions.co/)

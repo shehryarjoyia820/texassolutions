@@ -38,7 +38,11 @@ collections:
       - { name: author, label: Author, widget: string, default: "Texas Solutions Dispatch Team" }
       - { name: tags, label: Tags, widget: list, required: false }
       - { name: keywords, label: "Target keywords (comma separated)", widget: string, required: false }
-      - { name: cover, label: "Cover image (optional)", widget: image, required: false }
+      - { name: cover, label: "Cover image (optional: leave empty and a branded 1200x630 image is generated automatically)", widget: image, required: false }
+      - { name: cover_alt, label: "Cover image alt text (optional, describes the image for Google Images)", widget: string, required: false }
+      - { name: updated, label: "Last updated (optional, shown as 'Updated' and sent to Google)", widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { name: seo_title, label: "Search title override (optional, 60 characters or less)", widget: string, required: false }
+      - { name: question, label: "Quick-answer question (e.g. 'How much does X cost?'; shown above the quick answer)", widget: string, required: false }
       - { name: answer, label: "Quick answer (2-3 sentences; shown at the top and used by Google AI Overview / ChatGPT)", widget: text, required: false }
       - name: faq
         label: "FAQ (optional; each question becomes rich-result FAQ markup)"

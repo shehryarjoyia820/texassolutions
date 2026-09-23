@@ -1,10 +1,10 @@
 # ads.txt for dispatch.texassolutions.co
 #
-# Paste one line per authorised ad seller. For Google AdSense, AdSense shows
-# you this line under Sites → ads.txt; it looks like:
+# Authorised digital sellers, one per line: domain, publisher ID, relationship, certification authority ID.
+# The Google AdSense line below uses the same publisher account as texassolutions.co.
 #
-#   google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
-#
-# Note: AdSense checks ads.txt on the ROOT domain (texassolutions.co/ads.txt).
-# That file is managed in the texassolutions_main repo, in
-# src/config/head-codes.ts. Keep this file in step with it.
+# The root domain file (https://texassolutions.co/ads.txt) is managed in the texassolutions_main repo
+# (src/config/head-codes.ts) and declares this subdomain with SUBDOMAIN=dispatch.texassolutions.co.
+# Keep both files in step. Add other ad networks below, one line each.
+
+google.com, pub-4507418978047945, DIRECT, f08c47fec0942fa0

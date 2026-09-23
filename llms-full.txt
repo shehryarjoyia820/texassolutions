@@ -1,0 +1,928 @@
+# Texas Solutions Truck Dispatch: full text
+
+> Texas Solutions is a US truck dispatch service for owner-operators and small fleets, based in Midland, Texas. Dispatch fee: 5% of weekly gross for OTR semi trucks, 8% for hotshots, 10% for box trucks and straight trucks. No flat rate, no setup fee, no monthly subscription, no forced loads. Also free trucking calculators (fuel cost, cost per mile, IFTA, HOS, load profitability and more), daily diesel prices by state, and a trucking blog. Texas Solutions is not a motor carrier or freight broker and does not guarantee loads, rates or earnings.
+
+## Key facts
+- Service: truck dispatch (load search, rate negotiation, broker setup packets, rate confirmations, lane planning)
+- Semi truck dispatch fee (dry van, reefer, flatbed, step deck, power only): 5% of weekly gross, OTR - about $400-$500 per week on typical gross of $8,000-$10,000
+- Hotshot dispatch fee: 8% of weekly gross, OTR - about $560-$720 per week on typical gross of $7,000-$9,000
+- Box truck and straight truck dispatch fee: 10% of weekly gross, OTR - about $700-$900 per week on typical gross of $7,000-$9,000
+- The fee is a percentage of weekly gross (what the truck earns hauling loads that week). No flat rate, no setup fee, no monthly subscription, no long-term contract, no forced loads
+- Condition: Rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately.
+- Rough freight rates per mile (not guaranteed): flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20
+- Area served: United States (48 states), with a focus on Texas and the Permian Basin
+- Texas Solutions is a dispatch service. It is not a motor carrier or freight broker and does not guarantee loads, rates or earnings
+- Phone: (838) 910-3147 | WhatsApp: +1 838 910 3147 (https://wa.me/18389103147) | Email: dispatch@texassolutions.co
+- Address: 401 W Kentucky Ave, Midland, TX 79701
+- Owner and CEO: Shehryar Joyia
+
+## Frequently asked questions
+### How much does a truck dispatcher cost?
+At Texas Solutions, semi trucks pay 5% of weekly gross, hotshots 8%, and box trucks and straight trucks 10%, for OTR operations. There is no flat rate, no setup fee and no monthly subscription. On a typical semi grossing $8,000-$10,000 a week, that is about $400-$500 a week.
+
+### What does a truck dispatcher do?
+A truck dispatcher searches load boards and broker networks for freight that fits your truck, negotiates the rate, confirms the load with you, completes broker setup paperwork and keeps rate confirmations organized, so you can spend your time driving.
+
+### Do you dispatch local routes or only OTR?
+Our published rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately, so call or message us with your lanes.
+
+### Is there a flat weekly fee?
+No. Texas Solutions charges a percentage of weekly gross only. There is no flat rate, no setup fee and no monthly subscription.
+
+### What equipment do you dispatch?
+Dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, for owner-operators and small fleets across the United States.
+
+### Is Texas Solutions a freight broker?
+No. Texas Solutions is a truck dispatch service that works for the carrier. We are not a motor carrier or freight broker. Loads are booked under your own authority, and you approve every load before it is booked.
+
+### Will I be forced to accept loads?
+No. You decide which loads, lanes and rates work for your business. Nothing is booked without your approval.
+
+### Do you guarantee rates or earnings?
+No. Freight volume, rates, operating costs and market conditions vary. Texas Solutions does not guarantee any specific load volume, rate, revenue or earnings.
+
+### Is there a long-term contract?
+No. The dispatch agreement sets the service terms and your percentage, and the notice period for ending service is stated in that agreement.
+
+### What do I need to get started?
+Your MC and DOT numbers, equipment type and preferred lanes. After the first call we collect your W-9, certificate of insurance and, if you factor, a notice of assignment.
+
+### How fast can I start dispatching?
+Most carriers start soon after the first call: we review your authority and lanes, sign the agreement, collect documents, and begin searching loads for your truck.
+
+### Can I talk to a dispatcher on WhatsApp?
+Yes. Tap the WhatsApp button on any page or message +1 (838) 910-3147 on WhatsApp.
+
+### How much is box truck dispatch?
+10% of weekly gross for OTR box trucks and straight trucks. On $7,000-$9,000 weekly gross that is about $700-$900 a week. No flat rate and no setup fee.
+
+### Do you dispatch non-CDL box trucks?
+Yes, as long as you run under your own MC authority. Tell us your truck size and weight rating and we search freight that fits.
+
+### How much do hotshot loads pay per mile?
+As a rough guide, hotshot loads often pay about $4-5 a mile, depending on lane, urgency and season. Rates are not guaranteed.
+
+### What is the dispatch fee for hotshots?
+8% of weekly gross for OTR hotshot operations, with no flat rate, no setup fee and no monthly subscription. On $7,000-$9,000 weekly gross that is about $560-$720 a week.
+
+### How much do flatbed loads pay per mile?
+As a rough guide, flatbed and step deck loads often pay about $5-7 a mile, depending on lane, tarping and season. Rates are not guaranteed.
+
+### What is the dispatch fee for flatbeds?
+5% of weekly gross for OTR flatbed and step deck semis. On $8,000-$10,000 weekly gross that is about $400-$500 a week.
+
+### How much do dry van loads pay per mile?
+Roughly $3-5 a mile. Short local loads can pay more per mile, long OTR runs less per mile but more per load. Rates are not guaranteed.
+
+### Do you check temperature requirements before booking?
+Yes. We confirm temperature, appointment times and special handling before presenting the load.
+
+### Do I need a trailer for power only?
+No. The trailer is supplied by the shipper, broker or a carrier program. You provide the tractor and authority.
+
+### Is a dispatcher worth it for an owner-operator?
+For many, yes, when the dispatcher saves time, cuts deadhead and negotiates better loads by more than the fee. Results vary and no dispatcher can guarantee earnings.
+
+### Where is Texas Solutions located?
+401 W Kentucky Ave, Midland, Texas. We dispatch carriers throughout the United States.
+
+### Can a dispatcher guarantee my weekly gross?
+No. Rates and freight volume change with the market, and a reputable dispatcher will not guarantee earnings.
+
+## Free trucking calculators
+
+### Cost Per Mile (CPM) Calculator
+URL: https://dispatch.texassolutions.co/cost-per-mile-calculator.html
+Free cost per mile (CPM) calculator for owner-operators: combine truck payment, insurance, permits, fuel, maintenance and driver pay into your true cost per mile.
+How cost per mile is calculated Split your costs into two groups. Fixed costs happen whether you drive 500 miles or 15,000 miles that month: your truck payment, insurance, permits and ELD subscription. Variable costs scale with miles driven: fuel, maintenance, tires and driver pay. Fixed cost per mile = total monthly fixed costs ÷ miles driven that month Variable cost per mile = fuel + maintenance + driver pay, all per mile Cost per mile (CPM) = fixed cost per mile + variable cost per mile Fixed cost per mile falls as you drive more miles in a month, since the same truck payment is spread over more miles. That is why a truck sitting idle costs more per mile than a truck running hard.
+
+Q: What is cost per mile (CPM) in trucking?
+A: Cost per mile is your total operating cost divided by miles driven: fixed costs (truck payment, insurance, permits) divided by monthly miles, plus variable costs (fuel, maintenance, driver pay) per mile. It is the number you compare against a load's rate per mile to see if it is worth running.
+
+Q: What is a good cost per mile for an owner-operator?
+A: It depends heavily on the truck, lane and driver pay structure. Many owner-operators run somewhere between $1.50 and $2.00 all-in cost per mile. Use your own numbers in the calculator rather than a rule of thumb, since fuel, insurance and payment amounts vary widely.
+
+Q: Does cost per mile include driver pay?
+A: It should if you want your true break-even rate. If you are an owner-operator driving your own truck, either include a driver-pay line for your own labor or track it separately and make sure you are not comparing rates against a number that ignores your own time.
+
+### Load Profitability Calculator
+URL: https://dispatch.texassolutions.co/load-profitability-calculator.html
+Free load profitability calculator: enter the rate, miles, deadhead and your cost per mile to see net profit, margin and effective rate per mile before you book a load.
+How load profit is calculated Total miles = loaded miles + deadhead miles Total cost = (cost per mile × total miles) + tolls, lumper and scale fees Net profit = load rate − total cost Profit margin = net profit ÷ load rate × 100 Two rates matter more than the headline number: rate per loaded mile , which is what brokers usually quote, and rate per total mile , which includes the deadhead it took to get there. A load that looks good per loaded mile can be mediocre once deadhead is counted.
+
+Q: How do I know if a load is profitable?
+A: Add up the total cost to run the load (your cost per mile times total miles, plus tolls, lumper or scale fees) and subtract it from the rate. If the result is positive and the margin looks reasonable after accounting for time, the load is profitable; if it is thin or negative, it likely is not worth it unless it repositions you for a better load.
+
+Q: Should deadhead miles count against a load's profit?
+A: Yes. Deadhead miles cost fuel and time just like loaded miles, so they should be included in your total miles when working out true cost and effective rate per mile.
+
+Q: What profit margin should I target per load?
+A: There is no universal number; it depends on your fixed costs, how often you run, and what alternative loads are available. Compare the margin here against your other options rather than a fixed target.
+
+### Break-Even Calculator
+URL: https://dispatch.texassolutions.co/break-even-calculator.html
+Free break-even calculator for owner-operators: enter fixed costs, variable cost per mile and your freight rate to see the miles per month you need to break even, and your profit at your planned miles.
+How break-even is calculated Contribution per mile = freight rate − variable cost per mile Break-even miles per month = fixed costs ÷ contribution per mile Profit at your planned miles = (contribution per mile × planned miles) − fixed costs Below break-even miles, you are still losing money on fixed costs even though each mile driven brings in more than it costs. Above break-even, every extra mile is profit at your current rate.
+
+Q: How many miles does an owner-operator need to break even?
+A: It depends on fixed costs and the gap between your freight rate and variable cost per mile. Divide fixed costs by (rate minus variable cost per mile) to get break-even miles for the month. Enter your own numbers above for your figure.
+
+Q: What is the minimum rate per mile to break even?
+A: The minimum rate equals your variable cost per mile plus fixed costs divided by the miles you plan to run. Running more miles lowers the minimum rate needed, because fixed costs are spread over more miles.
+
+Q: What if my variable cost is higher than my rate?
+A: Then every mile loses money before fixed costs are even considered, and driving more miles makes the loss bigger, not smaller. The fix is a higher rate or lower variable costs (fuel, maintenance), not more miles.
+
+### Deadhead Miles Calculator
+URL: https://dispatch.texassolutions.co/deadhead-miles-calculator.html
+Free deadhead miles calculator: see your deadhead percentage and effective rate per mile once empty miles are counted against a load's revenue.
+How deadhead impact is calculated Deadhead % = deadhead miles ÷ total miles × 100 Quoted rate = revenue ÷ loaded miles Effective rate = revenue ÷ total miles (loaded + deadhead) Lost to deadhead = quoted rate − effective rate, per mile A load that pays $3.00 a loaded mile can drop well below $2.50 once 80 empty miles are added in. Always compare loads on effective rate, not the quoted rate alone.
+
+Q: What is a good deadhead percentage for trucking?
+A: Many fleets target under 10-15% deadhead, though it varies by lane and equipment type. The lower the better, since deadhead miles burn fuel and time with no revenue.
+
+Q: What is the difference between quoted rate and effective rate?
+A: The quoted rate is revenue divided by loaded miles only, which is how brokers usually post a load. The effective rate is revenue divided by total miles including deadhead, which is what you actually earn per mile driven.
+
+Q: How can I reduce deadhead miles?
+A: Plan your next load before the current one delivers, work with a dispatcher who plans lanes around your position, and avoid areas with little return freight unless the rate accounts for it.
+
+### Driver Pay Calculator
+URL: https://dispatch.texassolutions.co/driver-pay-calculator.html
+Free truck driver pay calculator: work out weekly, monthly and annual pay for per-mile, per-load, percentage of gross, or hourly pay models.
+How driver pay is calculated Per mile: rate per mile × miles per week Per load: pay per load × loads per week Percentage: gross revenue per week × your percentage Hourly: hourly rate × hours per week Monthly pay uses a 4.33-week average month; annual pay multiplies weekly pay by the weeks you actually plan to work, not all 52, so time off is reflected in the yearly number.
+
+Q: What is the difference between per-mile and percentage pay?
+A: Per-mile pay is a fixed rate for every mile driven, so it does not change with freight rates. Percentage pay is a share of what the load actually earns, so it moves with the market: higher in strong freight, lower when rates soften.
+
+Q: How much do truck drivers make per year?
+A: It depends heavily on pay model, miles or loads run, and weeks worked. Use your own numbers above rather than a national average, since regional pay, equipment type and experience all change the figure.
+
+Q: Is percentage pay or per-mile pay better?
+A: Neither is universally better. Percentage pay can pay more when freight rates are strong and less when they are weak; per-mile pay is steadier. Compare both against your own typical gross revenue and miles.
+
+### IFTA Mileage Calculator
+URL: https://dispatch.texassolutions.co/ifta-mileage-calculator.html
+Free IFTA mileage calculator: log miles driven and fuel purchased by state, see gallons consumed per jurisdiction, and estimate net taxable gallons for your own IFTA records.
+How this calculator works Add a row for every state you drove in during the quarter, with the miles driven there. Gallons consumed per state is calculated from your average fleet MPG. If you also log gallons purchased in that state, the tool shows net taxable gallons: positive means you burned more fuel there than you bought, negative means you bought more than you burned. Tax rates are not built in because they are set per jurisdiction and change quarterly. If you want a dollar estimate, type in the rate you actually paid or your jurisdiction's current rate for that row.
+
+Q: What is IFTA?
+A: The International Fuel Tax Agreement (IFTA) is how most US states and Canadian provinces share fuel tax collected from carriers that operate across state lines. Carriers file a quarterly return reporting miles driven and fuel purchased in each jurisdiction.
+
+Q: How is net taxable gallons calculated?
+A: For each state: gallons consumed = miles driven in that state divided by your fleet's average MPG. Net taxable gallons = gallons consumed minus gallons purchased in that state. A positive number means you owe tax there; a negative number is typically a credit.
+
+Q: Does this calculator use current IFTA tax rates?
+A: No. IFTA tax rates are set per jurisdiction and change every quarter, so this tool does not hardcode them. Enter your own current rate per state (from your IFTA quarterly rate matrix) if you want a dollar estimate, or use the tool for mileage and gallons only.
+
+Q: Does this replace my IFTA filing?
+A: No. This is a planning and record-keeping aid only. File your official IFTA return using your base jurisdiction's forms and current rates.
+
+### Per Diem Calculator
+URL: https://dispatch.texassolutions.co/per-diem-calculator.html
+Free per diem calculator for truck drivers: estimate your annual per diem deduction and potential tax savings based on days on the road. Not tax advice.
+How this estimate is calculated Total per diem = days on the road × per diem rate per day Deductible amount = total per diem × deductible percentage Estimated tax savings = deductible amount × your marginal tax rate All three inputs (rate, deductible percentage and your tax bracket) are editable because they depend on current IRS rules and your own situation. This tool is a planning aid, not a tax filing.
+
+Q: What is per diem for truck drivers?
+A: Per diem is a daily allowance the IRS publishes for meals and incidental expenses while traveling for work. Drivers away from home overnight for work can generally use it to estimate a meal and incidental expense deduction instead of tracking every receipt.
+
+Q: How much can truck drivers deduct for per diem?
+A: It is generally the per diem rate times the number of days on the road, multiplied by the deductible percentage the IRS allows for transportation workers. Rates and percentages are set by the IRS and can change, so confirm the current figures before filing.
+
+Q: Is this per diem calculator tax advice?
+A: No. It gives a rough estimate only. Talk to a tax professional about your specific situation, current IRS rates, and how per diem interacts with your pay structure (company driver vs. owner-operator).
+
+### Truck Loan Calculator
+URL: https://dispatch.texassolutions.co/truck-loan-calculator.html
+Free truck loan calculator: enter the truck price, down payment, interest rate and term to see your monthly payment, total interest and total cost.
+How the payment is calculated This uses the standard loan amortization formula: M = P × r(1+r) n ÷ ((1+r) n − 1) , where P is the amount financed, r is the monthly interest rate (APR ÷ 12), and n is the number of monthly payments. At 0% interest, the payment is simply the amount financed divided by the term.
+
+Q: How is a truck loan payment calculated?
+A: Using a standard amortization formula on the amount financed (price minus down payment), the monthly interest rate (APR divided by 12), and the loan term in months. The result is the fixed monthly payment that pays off the loan by the end of the term.
+
+Q: How much down payment do I need for a truck loan?
+A: It varies by lender, credit and whether the truck is new or used. A larger down payment lowers the amount financed, which lowers both the monthly payment and total interest paid.
+
+Q: What interest rate should I expect on a truck loan?
+A: Commercial truck loan rates vary with credit, time in business, and the lender, and change with broader interest rate conditions. Get quotes from a few lenders rather than assuming a rate; use this calculator to compare offers side by side.
+
+### Maintenance Budget Calculator
+URL: https://dispatch.texassolutions.co/maintenance-budget-calculator.html
+Free truck maintenance budget calculator: estimate a yearly and monthly repair reserve based on your truck's age and annual mileage.
+How the reserve is estimated This uses simple age-based rule-of-thumb rates as a starting point, editable if you have your own numbers: 0-2 years: about $0.12 per mile 3-5 years: about $0.18 per mile 6-8 years: about $0.25 per mile 9+ years: about $0.35 per mile Yearly reserve = rate per mile × annual miles. These are rough planning figures, not a quote or a guarantee; your own repair history is always the better number once you have a few years of it.
+
+Q: How much should I budget for truck maintenance?
+A: As a rough rule of thumb, older trucks cost more per mile to maintain. This calculator uses editable age brackets as a starting point; once you have your own repair history, use your own cost per mile instead.
+
+Q: Why does maintenance cost more on an older truck?
+A: Wear parts, hoses, seals and major components (engine, transmission, aftertreatment) become more likely to need repair as a truck ages and accumulates miles, so the average cost per mile for upkeep tends to rise.
+
+Q: Should I set aside money for maintenance every month?
+A: Many owner-operators keep a maintenance reserve so a large repair does not become a cash-flow crisis. Setting aside a per-mile or monthly amount, even a rough estimate, is better than budgeting nothing.
+
+### Hours of Service (HOS) Calculator
+URL: https://dispatch.texassolutions.co/hours-of-service-calculator.html
+Free HOS calculator: estimate remaining drive time under the FMCSA 11-hour driving limit, 14-hour on-duty window and 60/7 or 70/8-day cycle limits. Planning tool only, not a legal record.
+How remaining hours are estimated Drive-time limit remaining = 11 − hours driven today On-duty window remaining = 14 − hours elapsed since starting today's shift Cycle limit remaining = cycle limit (60 or 70) − cycle hours already used − today's on-duty hours You can drive up to the smallest (binding) of the three This models the core rules only. It does not account for adverse driving conditions, the short-haul exemption, sleeper-berth split options, or other FMCSA exceptions in 49 CFR Part 395. Always confirm against your ELD and current regulations.
+
+Q: What is the 11-hour driving limit?
+A: Under core FMCSA rules, a property-carrying driver may drive up to 11 hours after 10 consecutive hours off duty.
+
+Q: What is the 14-hour rule?
+A: A driver may not drive after the 14th hour since coming on duty, following 10 consecutive hours off duty. The 14-hour window keeps running during on-duty time and most breaks; it is not paused, with limited exceptions such as qualifying sleeper-berth splits.
+
+Q: What is the 70-hour/8-day rule?
+A: A driver may not drive after 70 hours on duty in 8 consecutive days (or 60 hours in 7 days for carriers on that cycle). The cycle resets with 34 consecutive hours off duty.
+
+Q: Does this calculator replace my ELD?
+A: No. This is a rough planning aid for estimating remaining hours. Your electronic logging device is your official hours-of-service record. This tool does not model every FMCSA exception.
+
+### Freight Class Calculator
+URL: https://dispatch.texassolutions.co/freight-class-calculator.html
+Free freight class calculator: estimate NMFC freight class from length, width, height and weight using the standard density table. Estimate only, confirm with your carrier.
+The density table used Density (PCF) Estimated class 50 and over 50 35 to under 50 55 30 to under 35 60 22.5 to under 30 65 15 to under 22.5 70 12 to under 15 77.5 10 to under 12 85 8 to under 10 92.5 6 to under 8 100 4 to under 6 125 2 to under 4 150 1 to under 2 175 under 1 250+ This is the widely used general density-to-class guideline. Some commodities carry their own NMFC item number regardless of density (electronics, hazardous materials, automotive parts and more), which overrides a pure density estimate. When in doubt, ask your carrier or dispatcher.
+
+Q: How is freight class determined?
+A: Officially, freight class comes from the National Motor Freight Classification (NMFC), which assigns a specific item number to each commodity based on density, stowability, handling and liability. Density-based calculators like this one give a reasonable estimate for commodities without unusual handling or liability factors.
+
+Q: What is freight density and how is it calculated?
+A: Density is weight divided by volume, in pounds per cubic foot (PCF). Cubic feet = (length &times; width &times; height in inches) &divide; 1728. Density = total weight &divide; total cubic feet.
+
+Q: Why did my carrier reclassify my shipment?
+A: Carriers may reclassify a shipment if the class booked does not match the commodity's actual NMFC item, or if the measured density does not match what was declared. Confirming the correct class before booking avoids reclassification fees.
+
+## Blog posts
+
+### What Is Deadhead in Trucking and How to Reduce It
+URL: https://dispatch.texassolutions.co/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html
+Published: 2026-09-23
+
+**Deadhead** means moving your truck without paid freight: driving empty to a pickup, or heading home after a delivery with no return load. It is one of the biggest silent drains on an owner-operator's income.
+
+## Why deadhead costs more than it looks
+
+Brokers quote rates per **loaded** mile. But you pay for every mile: fuel, tires, wear, and your limited legal driving hours. So the number that matters is your **effective rate per total mile**.
+
+**Example:** a load pays $1,900 for 550 loaded miles, which sounds like **$3.45 per mile**. But you drove 80 empty miles to reach it, so you covered 630 miles. Your effective rate is **$3.02 per mile**, about 43 cents lower. Try your own numbers in the [deadhead miles calculator](/deadhead-miles-calculator.html).
+
+Then add fuel: at about 6.3 mpg and $6 diesel, those 80 empty miles burn roughly **$76 of fuel** for nothing. See the [truck fuel cost calculator](/truck-fuel-cost-calculator.html).
+
+## 7 ways to reduce deadhead
+
+1. **Book the next load before you deliver.** The best time to find a load out of a market is while you are still hauling into it.
+2. **Check outbound rates before you accept an inbound load.** A high-paying load into a dead market can cost more in deadhead than it earns.
+3. **Learn strong and weak markets.** Freight-heavy areas tend to have more return options; remote areas may require a premium rate.
+4. **Use load-board filters** for pickup radius, and set alerts for lanes you run.
+5. **Build broker relationships** for repeat lanes so you get a call before loads hit the board.
+6. **Consider triangle routes** that return you near home with paid miles on every leg.
+7. **Use a dispatcher who plans lanes,** not just the next load. Lane planning is exactly where dispatch earns its fee.
+
+## Decide when deadhead is worth it
+
+Sometimes a longer empty run to a strong market pays off. Test it: compare the profit of the load *including* deadhead against your alternatives with the [load profitability calculator](/load-profitability-calculator.html), and know the miles you need each month with the [break-even calculator](/break-even-calculator.html).
+
+## How Texas Solutions helps
+
+We negotiate every rate against your real cost per mile and plan the next load before the current one delivers. Dispatch is 5% of weekly gross for semis, 8% for hotshots and 10% for box trucks, OTR, with no flat rate. [Get a free estimate](/estimate.html).
+
+### What Is a Good Rate Per Mile in Trucking in 2026?
+URL: https://dispatch.texassolutions.co/blog/what-is-a-good-rate-per-mile-trucking-2026.html
+Published: 2026-09-23
+
+There is no single "good" rate. A rate is good if it **covers your cost per mile with profit after deadhead.** But you still need a sense of the market, so here are rough figures and a way to calculate your own line.
+
+## Rough rates per mile
+
+These are rough estimates that shift with lane, season, fuel and market. Actual loads can be higher or lower, and no rate is guaranteed.
+
+| Equipment | Rough rate per mile |
+|---|---|
+| Flatbed | $5.00 - $7.00 |
+| Step deck | $5.00 - $7.00 |
+| Reefer | $4.00 - $6.00 |
+| Hotshot | $4.00 - $5.00 |
+| Dry van | $3.00 - $5.00 |
+| Power only | $3.00 - $5.00 |
+| Box truck | $1.80 - $3.20 |
+
+Dry van varies the most: short local and regional loads often pay more per mile because the load is short, while long OTR runs pay less per mile but more per load. See the full [rate-per-mile guide](/truck-dispatch-rates.html).
+
+## Work out your own minimum rate
+
+1. **Find your cost per mile.** Add fixed costs (truck payment, insurance, permits) divided by miles, plus fuel, maintenance and driver pay per mile. The industry-wide average from ATRI was about $2.34 a mile in 2025, but yours will differ. Use the [cost per mile calculator](/cost-per-mile-calculator.html).
+2. **Add deadhead.** Empty miles to pickup are part of the trip. Use the [deadhead miles calculator](/deadhead-miles-calculator.html).
+3. **Add profit.** Decide what per-mile margin you need.
+
+**Example:** CPM $1.67, profit target $0.40 per mile, so you need roughly **$2.07 per total mile**. If a load has 550 loaded and 80 deadhead miles, the total rate needed is 630 x $2.07 = about **$1,304**, or **$2.37 per loaded mile**.
+
+## Other things that change the true rate
+
+- **Fuel surcharge:** included in the rate or paid separately?
+- **Detention and layover:** are they paid, and after how many hours?
+- **Lumper and tolls:** who covers them?
+- **Payment terms:** a higher rate paid in 45 days may be worse than a lower one paid quickly. See [freight factoring](/blog/freight-factoring-for-owner-operators-explained.html).
+- **Return freight:** a great rate into a dead market can cost more in deadhead than it earns.
+
+## Spot vs contract
+
+Spot rates move daily with supply and demand. Contract rates are steadier but may lag the market. Many owner-operators mix them, using contracts for a base and spot loads when the market is strong.
+
+## Check any load in seconds
+
+Use the [load profitability calculator](/load-profitability-calculator.html) to see net profit, margin, rate per loaded mile and rate per total mile, and the [break-even calculator](/break-even-calculator.html) to see your monthly miles target.
+
+## Let someone negotiate for you
+
+A dispatcher negotiates against your real numbers. Texas Solutions charges **5% of weekly gross for semis, 8% for hotshots and 10% for box trucks**, OTR, with no flat rate, and you approve every load. [Get a free estimate](/estimate.html).
+
+### Truck Dispatcher vs Freight Broker: The Real Difference
+URL: https://dispatch.texassolutions.co/blog/truck-dispatcher-vs-freight-broker.html
+Published: 2026-09-23
+
+The two jobs sound similar because both involve finding freight, but they work for **opposite sides** of the deal. Knowing the difference protects your rate and your authority.
+
+## Side-by-side
+
+| | Truck dispatcher | Freight broker |
+|---|---|---|
+| Works for | The carrier (you) | The shipper, and their own margin |
+| Paid by | The carrier, often a percentage of weekly gross | Shipper pays the broker; broker pays the carrier less a margin |
+| Needs FMCSA authority | No, uses the carrier's MC | Yes, broker authority |
+| Financial requirement | None from FMCSA | Surety bond or trust of $75,000 |
+| Main job | Find, negotiate and book loads for your truck | Match shipper freight to available carriers |
+| Legal responsibility for freight | Carrier's authority is on the load | Contracts with the shipper |
+
+## What a dispatcher actually does
+
+- Searches load boards and broker networks for freight that fits your equipment and lanes
+- Negotiates the rate before the load reaches you
+- Plans your next load to cut deadhead miles
+- Completes broker setup packets and keeps rate confirmations organized
+
+You approve every load. Nothing is booked under your authority without your say-so.
+
+## What a broker actually does
+
+A broker is a middleman: the shipper hires them to find a truck, and they hire you. Their profit is the gap between what the shipper pays and what you are paid, so their interest in your rate is different from yours. Good brokers build long relationships; that is not the same as being on your side of a negotiation.
+
+## Why the difference matters
+
+- **Rate negotiation:** A dispatcher's income rises when your gross rises. A broker's margin can shrink if you negotiate higher.
+- **Paperwork:** A dispatcher books under *your* authority, so your MC, insurance and W-9 go on the rate confirmation.
+- **Trust:** Check any broker on FMCSA before you haul: active authority, bond on file, and payment history.
+
+## How to choose a dispatcher
+
+Look for a **clear percentage of weekly gross**, no forced dispatch, no long contract, and no hidden setup fees. At Texas Solutions, dispatch is 5% for semis, 8% for hotshots and 10% for box trucks, OTR, with no flat rate. We are a dispatch service and **not a broker or motor carrier**.
+
+Read more about [what a truck dispatcher does](/what-does-a-truck-dispatcher-do.html) or see [how much dispatch costs](/blog/how-much-does-a-truck-dispatcher-cost.html).
+
+### IFTA for Owner-Operators: How to File Quarterly Returns
+URL: https://dispatch.texassolutions.co/blog/ifta-for-owner-operators-how-to-file.html
+Published: 2026-09-23
+
+If your truck crosses state lines, you deal with fuel tax in every state you drive through, not just where you fill up. **IFTA** simplifies that into one return per quarter. Here is how it works in practice. Rules are set by IFTA and your base jurisdiction, so verify details with them.
+
+## Who needs IFTA
+
+Carriers running **qualified motor vehicles** across IFTA jurisdictions, usually meaning:
+
+- Two axles and a gross vehicle weight over 26,000 lbs, or
+- Three or more axles regardless of weight, or
+- A combination vehicle over 26,000 lbs
+
+Many hotshots and box trucks under 26,001 lbs with two axles fall **below** the threshold. Semis clearly qualify.
+
+## Quarterly due dates
+
+| Quarter | Months | Return due |
+|---|---|---|
+| Q1 | Jan-Mar | April 30 |
+| Q2 | Apr-Jun | July 31 |
+| Q3 | Jul-Sep | October 31 |
+| Q4 | Oct-Dec | January 31 |
+
+## What to record
+
+For each truck, keep:
+
+1. **Miles driven in each jurisdiction**, from your ELD or trip records
+2. **Fuel purchased**: date, seller name and location, gallons, fuel type, price per gallon, and which vehicle
+3. **Total miles and total gallons** for the quarter
+
+Keep receipts and records for **about four years**. Also display your IFTA decals on the truck as required.
+
+## How the math works
+
+1. **Fleet MPG** = total miles divided by total gallons purchased
+2. **Gallons used in a state** = miles driven in that state divided by fleet MPG
+3. **Net taxable gallons** = gallons used minus gallons purchased there
+4. Multiply net taxable gallons by that state's **current tax rate**; positive means you owe, negative is a credit
+
+Tax rates change by jurisdiction, usually each quarter, so use the current rate table from your base jurisdiction.
+
+Use the [IFTA mileage calculator](/ifta-mileage-calculator.html) to organize miles and gallons by state. It does not include tax rates, so you can plug in the current rate for each state. It is a planning aid, not a substitute for your official return.
+
+## Tips to make filing painless
+
+- Log fuel receipts the day you buy, or use a fuel card that exports IFTA data
+- Reconcile miles from your ELD each month, not at quarter end
+- Watch for **fuel bought outside your route** and cash purchases without receipts
+- File on time even if you owe nothing; late filings carry penalties
+
+## Fuel planning saves money too
+
+Because tax is due where you burn fuel, buying in a cheaper state does not always mean a cheaper gallon after tax. Compare pump prices with the [diesel price in each state](/truck-fuel-cost-calculator.html#diesel-prices), and estimate trip fuel with the [fuel cost calculator](/truck-fuel-cost-calculator.html).
+
+### How to Get Your MC Number and Trucking Authority
+URL: https://dispatch.texassolutions.co/blog/how-to-get-mc-number-authority-owner-operator.html
+Published: 2026-09-23
+
+Almost every owner-operator hauling freight for other companies across state lines needs **their own operating authority**. Here is the process in the order that saves the most time, and what each piece is for. Rules and fees change, so confirm current requirements on the FMCSA website before you file.
+
+## USDOT number vs MC number
+
+| | USDOT number | MC number (operating authority) |
+|---|---|---|
+| What it is | Company identifier for safety records | Permission to haul regulated freight for hire |
+| Who needs it | Most commercial vehicles over 10,000 lbs in interstate commerce | For-hire carriers hauling for others across state lines |
+| Issued by | FMCSA | FMCSA |
+
+If you are a for-hire hotshot, box truck or semi operator crossing state lines, plan on getting **both**.
+
+## The steps
+
+1. **Set up your business.** Form an LLC or corporation, get an EIN, and open a business bank account. Keeping trucking finances separate makes taxes and factoring easier.
+2. **Register with FMCSA and get a USDOT number.** This is done online through FMCSA's registration system.
+3. **Apply for operating authority (MC).** Choose the for-hire carrier authority type that matches what you haul.
+4. **File a BOC-3.** This designates a process agent in each state where you operate. Process agent companies file it for a small fee.
+5. **Get insurance and have it filed.** For-hire carriers hauling non-hazardous general freight are required to carry at least **$750,000** in public liability coverage, and your insurer files the proof with FMCSA. Most brokers also want cargo coverage, commonly $100,000.
+6. **Complete other registrations:** UCR (Unified Carrier Registration), IFTA and IRP if you run a qualifying vehicle, and Form 2290 for heavy vehicles.
+7. **Wait for authority to go active.** Once filings are on record and the protest period has passed, your MC status turns active.
+
+## What to prepare for brokers
+
+Brokers will ask for a **carrier packet**: your MC authority letter, W-9, certificate of insurance, and payment details (or a factoring notice of assignment). Have these ready as PDFs so you can onboard with new brokers in minutes.
+
+## Costs to budget for
+
+- FMCSA operating authority application fee (about $300 at the time of writing)
+- Insurance down payment and monthly premiums, usually the largest startup cost
+- BOC-3, UCR, IFTA decals, IRP plates, and 2290 tax
+- ELD device and load board subscription
+
+Work out your monthly fixed costs with the [cost per mile calculator](/cost-per-mile-calculator.html) and see how many miles you need to cover them in the [break-even calculator](/break-even-calculator.html).
+
+## After your authority goes active
+
+New authorities face a **new entrant safety period** and a safety audit within about the first year. Keep driver qualification files, logs, and maintenance records in order from day one.
+
+A dispatcher can take load searching, rate negotiation and broker paperwork off your plate once you are active. At Texas Solutions, dispatch is **5% of weekly gross for semis, 8% for hotshots and 10% for box trucks**, OTR, with no flat rate. [Get a free estimate](/estimate.html).
+
+### Hours of Service Rules Explained: 11, 14 and 70-Hour
+URL: https://dispatch.texassolutions.co/blog/hours-of-service-rules-explained-11-14-70-hour.html
+Published: 2026-09-23
+
+Hours-of-service (HOS) rules keep tired drivers off the road, and they also set how many miles a truck can legally run in a day and week. Here is a plain-English summary for **property-carrying drivers** under FMCSA rules (49 CFR Part 395). Always confirm current rules and your own exemptions with FMCSA and your ELD provider.
+
+## The core limits
+
+| Rule | What it means |
+|---|---|
+| **11-hour driving limit** | You may drive a maximum of 11 hours after 10 consecutive hours off duty. |
+| **14-hour on-duty window** | You may not drive after the 14th consecutive hour after coming on duty. Breaks do not stop the clock. |
+| **30-minute break** | After 8 cumulative hours of driving without at least a 30-minute interruption, you must take a 30-minute break. |
+| **60/70-hour limit** | You may not drive after 60 hours on duty in 7 days, or 70 hours in 8 days, depending on your carrier's schedule. |
+| **34-hour restart** | 34 consecutive hours off duty resets your 60/70-hour cycle. |
+
+## Sleeper berth splits
+
+Drivers with a sleeper berth can split the 10-hour off-duty requirement, commonly into a 7/3 or 8/2 pattern, with one period of at least 7 or 8 hours in the sleeper and a second period of at least 2 or 3 hours off duty or in the berth. Done correctly, the paired periods can pause the 14-hour window. This is where many violations happen, so follow your ELD's guidance.
+
+## Common exceptions
+
+- **Adverse driving conditions** can extend the driving limit by up to two hours in specific cases.
+- **Short-haul exception:** drivers who stay within 150 air miles of their reporting location and return within 14 hours may qualify for relief from some logging requirements.
+- **Personal conveyance** and yard moves have their own rules.
+
+The exceptions have detailed conditions. Do not rely on a summary for compliance decisions.
+
+## How HOS affects your money
+
+HOS caps the miles you can run. A truck averaging 55 mph over 11 driving hours covers a bit over 600 miles in a day; weekly, the 70-hour cycle is the real limit. That is why **deadhead and waiting time cost you legal hours**, not just fuel. Use the [hours of service calculator](/hours-of-service-calculator.html) to estimate how many driving hours you have left, and the [deadhead miles calculator](/deadhead-miles-calculator.html) to see how empty miles cut your effective rate.
+
+## Planning around HOS with a dispatcher
+
+A good dispatcher plans loads so your delivery windows fit your remaining hours and your 34-hour restart lands where you want home time. At Texas Solutions you approve every load, and we book with your hours in mind. [Talk to a dispatcher](/contact.html).
+
+*The [HOS calculator](/hours-of-service-calculator.html) is a planning aid, not a legal record. Your ELD is your official log.*
+
+### Freight Factoring for Owner-Operators: How It Works
+URL: https://dispatch.texassolutions.co/blog/freight-factoring-for-owner-operators-explained.html
+Published: 2026-09-23
+
+Brokers commonly pay carriers **30 days or more after delivery**, while diesel, insurance and truck payments are due now. **Freight factoring** bridges that gap.
+
+## How factoring works
+
+1. You deliver the load and send the **invoice and proof of delivery** (plus rate confirmation) to your factor.
+2. The factor **advances** a percentage of the invoice, often within about a day. Advance rates commonly fall between 80% and 95%.
+3. The broker pays the factor, usually on the original terms.
+4. The factor releases the **remaining balance minus its fee**.
+
+## Cost example
+
+Invoice: **$3,000**. Factor fee: **3%** = $90. If the advance is 90%, you receive **$2,700 now**, then about **$210** when the broker pays ($3,000 minus the $2,700 advance minus the $90 fee).
+
+Whether that is worth it depends on how much faster cash lets you run: paying for fuel, avoiding a costly credit line, or taking better loads instead of waiting.
+
+## Recourse vs non-recourse
+
+| | Recourse | Non-recourse |
+|---|---|---|
+| If broker does not pay | You must repay the advance | Factor may absorb some credit loss |
+| Fees | Usually lower | Usually higher |
+| Watch for | Chargebacks and disputes | Exclusions and strict rules on what qualifies |
+
+## What to compare
+
+- **Total cost**, including monthly minimums, ACH or wire fees, and termination fees
+- **Contract length** and whether you must factor every invoice
+- **Advance rate and speed** of funding
+- **Broker credit checks** before you book, so you avoid slow payers
+- **Reserve terms** and how disputes are handled
+
+Ask for a **sample statement** and calculate the total on a real invoice.
+
+## Factoring vs quick pay
+
+Some brokers offer **quick pay**, where the broker pays you faster for a fee (often a percentage). It can be cheaper for occasional use, while factoring suits carriers who need cash flow on every load.
+
+## Factoring and dispatch
+
+A dispatcher can build your factoring company's notice of assignment into every broker packet so payment goes to the right place from the start. At Texas Solutions, we handle broker setups and paperwork for a percentage of weekly gross: 5% for semis, 8% for hotshots, 10% for box trucks. See [what dispatch costs](/estimate.html).
+
+Include factoring costs in your numbers with the [cost per mile calculator](/cost-per-mile-calculator.html) and check the impact on a load with the [load profitability calculator](/load-profitability-calculator.html).
+
+### Dry Van vs Reefer vs Flatbed: Which Trailer Pays Best?
+URL: https://dispatch.texassolutions.co/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html
+Published: 2026-09-23
+
+Choosing a trailer is one of the biggest decisions an owner-operator makes. It sets your rate range, your workload, your startup cost and the lanes you can run. Here is how the three most common truckload trailers compare.
+
+## Rough rate per mile
+
+These are rough estimates that move with lane, season and market. Rates are never guaranteed.
+
+| Trailer | Rough rate per mile | Notes |
+|---|---|---|
+| Flatbed | $5.00 - $7.00 | Open-deck freight: steel, lumber, machinery |
+| Step deck | $5.00 - $7.00 | Taller loads that exceed flatbed height limits |
+| Reefer | $4.00 - $6.00 | Temperature-controlled food and pharma |
+| Dry van | $3.00 - $5.00 | Most general freight; varies by local vs OTR |
+
+See the full [rate-per-mile guide](/truck-dispatch-rates.html) and compare with your own [cost per mile](/cost-per-mile-calculator.html).
+
+## Dry van
+
+**Pros:** the most freight available, easy loading, no tarping, simpler and cheaper equipment.
+**Cons:** the most competition, so rates are often lowest of the three; lots of drop-and-hook and detention at big shippers.
+**Best for:** new owner-operators who want steady freight and a simple operation.
+
+## Reefer
+
+**Pros:** often higher rates than dry van, steady demand for food and pharma.
+**Cons:** the reefer unit adds cost and fuel burn, temperature and appointment rules are strict, cleaning and pre-cooling take time, and rejected loads can cost you.
+**Best for:** carriers who want higher rates and can manage the extra planning.
+
+## Flatbed
+
+**Pros:** strong rates per mile, less competition in some lanes, good freight in construction, energy and manufacturing.
+**Cons:** physical work (tarping, straps, chains), securement rules, more injury risk, weather sensitivity.
+**Best for:** drivers comfortable with hands-on loading and securement who want higher rates.
+
+## Step deck
+
+A step deck is a flatbed variant with a lower main deck for taller freight. It handles cargo a standard flatbed cannot, which can mean fewer competing trucks and higher rates on oversized loads, but it also needs more knowledge of permits and dimensions.
+
+## How to decide
+
+1. **Price your CPM.** A high rate only helps if it beats your cost per mile after deadhead.
+2. **Look at your lanes.** Some regions are flatbed-heavy (Texas and the Permian Basin have lots of open-deck freight); others are dry-van markets.
+3. **Count fuel.** Reefer units add fuel; check trip cost in the [fuel cost calculator](/truck-fuel-cost-calculator.html).
+4. **Think about your body and lifestyle.** Flatbed is physical; reefer is schedule-tight; dry van is simpler.
+
+Texas Solutions dispatches all three: **5% of weekly gross for semis (dry van, reefer, flatbed, step deck, power only)**, OTR, no flat rate. See [dry van dispatch](/dry-van-dispatch.html), [reefer dispatch](/reefer-dispatch.html) and [flatbed dispatch](/flatbed-dispatch.html).
+
+### Cost of Running a Semi Truck Per Mile (2026 Breakdown)
+URL: https://dispatch.texassolutions.co/blog/cost-of-running-a-semi-truck-per-mile.html
+Published: 2026-09-23
+
+Before you accept any load, you need one number: **what it costs you to move your truck one mile.** Everything else, from rate negotiation to choosing lanes, depends on it.
+
+## The industry benchmark
+
+The American Transportation Research Institute's *Operational Costs of Trucking* study found the industry-average cost to operate a truck in **2025 was $2.336 per mile**, up 3.4% from the previous year and the highest in the report's history. Excluding fuel, the average was **$1.854 per mile**. Costs rose in every major category, with the biggest percentage jumps in tolls, repair and maintenance, driver benefits and tires.
+
+Treat that as a benchmark, not your number. It covers fleets with company drivers and varying equipment. Yours depends on your own truck and lanes.
+
+## Fixed vs variable costs
+
+| Fixed (per month) | Variable (per mile) |
+|---|---|
+| Truck and trailer payment | Fuel |
+| Insurance | Maintenance and repairs |
+| Permits, licensing, ELD | Tires |
+| Accounting, software, misc. | Tolls, and driver pay if you employ drivers |
+
+**Fixed cost per mile** = monthly fixed costs divided by miles driven. It falls as you run more miles.
+**Variable cost per mile** = fuel + maintenance + tires + other per-mile costs.
+**Cost per mile (CPM)** = fixed per mile + variable per mile.
+
+## Worked example
+
+Say your fixed costs are **$2,650 a month** and you run **9,000 miles**. Fixed cost is about $0.29 per mile. Add fuel at $0.65, maintenance and tires at $0.18, and driver pay or your own pay target at $0.55, for $1.38 variable. Your all-in cost is roughly **$1.67 per mile**.
+
+Plug in your own numbers with the [cost per mile calculator](/cost-per-mile-calculator.html). Fuel is the most volatile line: see [today's diesel price in your state](/diesel-prices/texas.html) and estimate trip fuel with the [fuel cost calculator](/truck-fuel-cost-calculator.html).
+
+## From cost per mile to a rate you can accept
+
+1. Work out your CPM.
+2. Add your profit target per mile.
+3. Compare against the load's **rate per total mile**, including deadhead, not just per loaded mile.
+
+The [load profitability calculator](/load-profitability-calculator.html) does this for any load, and the [break-even calculator](/break-even-calculator.html) shows the miles you need each month to cover your costs.
+
+## Ways to bring your cost per mile down
+
+- **Cut deadhead.** Empty miles burn fuel with no revenue. Plan your next load before this one delivers.
+- **Buy diesel smart.** Prices can differ by more than $2 a gallon between states.
+- **Stay ahead of maintenance.** A repair reserve avoids a surprise bill; use the [maintenance budget calculator](/maintenance-budget-calculator.html).
+- **Run enough miles** to spread fixed costs, but only on loads that clear your CPM.
+
+A dispatcher can help with the first and last: planning lanes to reduce empty miles and negotiating rates against your real numbers. [See what dispatch costs](/estimate.html).
+
+*Source: [ATRI, Operational Costs of Trucking](https://truckingresearch.org/about-atri/atri-research/operational-costs-of-trucking/).*
+
+### Best Load Boards for Owner-Operators and How to Use Them
+URL: https://dispatch.texassolutions.co/blog/best-load-boards-for-owner-operators.html
+Published: 2026-09-23
+
+A load board is a marketplace where brokers and shippers post freight and carriers search for it. For most owner-operators it is the main source of spot loads, so choosing and using one well matters.
+
+## Common load boards
+
+| Board | Known for |
+|---|---|
+| **DAT One** | One of the largest general boards; rate data and market tools |
+| **Truckstop** | Large general board with broker credit and payment tools |
+| **123Loadboard** | Lower-cost option, popular with newer carriers and small fleets |
+| **Direct Freight** and others | Additional volume; specialty and regional boards |
+
+Features and pricing change often, so use free trials where offered and test with your own lanes before committing.
+
+## What to look for
+
+- **Fresh postings.** Old loads waste time. Look for posted-time stamps and real-time updates.
+- **Filters that fit your equipment:** dry van, reefer, flatbed, step deck, power only, hotshot.
+- **Rate data.** Market averages help you tell a good rate from a bad one.
+- **Broker credit and days-to-pay.** Getting paid late costs as much as a low rate.
+- **Mobile app and load alerts** for your lanes.
+- **Integrations** with your ELD, TMS or factoring company.
+
+## How to vet a broker before you book
+
+Freight fraud, including fake brokers and double brokering, costs carriers real money. Before you accept:
+
+1. Confirm **active broker authority and bond** on FMCSA's website.
+2. Check the **company's payment history** and reviews.
+3. Make sure the **phone number and email match** their official record.
+4. Get a **signed rate confirmation** with the agreed rate, pickup and delivery details, and payment terms.
+5. Be wary of rates far above market, pressure to rush, or requests to change payment details.
+
+## Find loads that actually pay
+
+Do not chase the highest rate per mile alone. Compare each load on its **rate per total mile, including deadhead** and against your cost per mile. Use the [load profitability calculator](/load-profitability-calculator.html) and the [deadhead miles calculator](/deadhead-miles-calculator.html), and know your number with the [cost per mile calculator](/cost-per-mile-calculator.html).
+
+## When a dispatcher makes sense
+
+Searching boards, calling brokers and negotiating takes hours every day. A dispatcher does that for a percentage of your weekly gross: at Texas Solutions it is 5% for semis, 8% for hotshots and 10% for box trucks, OTR, with no flat rate. You approve every load. [Get a free estimate](/estimate.html).
+
+### How Much Does a Truck Dispatcher Cost in 2026?
+URL: https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html
+Published: 2026-09-22
+
+If you run your own authority, the question is not only *whether* to hire a dispatcher but *what it really costs*. Here is how truck dispatch pricing works in 2026, what you should get for the fee, and how to check whether it pays for itself.
+
+## How truck dispatchers charge
+
+Almost every independent dispatcher charges one of two ways:
+
+- **A percentage of weekly gross.** The fee rises and falls with what the truck earns. A slow week costs less.
+- **A flat weekly fee per truck.** Predictable, but you pay the same in a bad week as in a good one.
+
+Percentages across the US market usually fall between **3% and 10%** of gross. Semi trucks tend to be at the lower end. Box trucks and hotshots are at the higher end, because their loads are smaller and more frequent, so each dollar of gross takes more broker calls, setups and paperwork.
+
+## Texas Solutions dispatch rates
+
+We charge a percentage of weekly gross only, for carriers running OTR:
+
+| Truck type | Dispatch fee | Typical weekly gross | Fee per week |
+|---|---|---|---|
+| Semi truck (dry van, reefer, flatbed, step deck, power only) | **5%** | $8,000 - $10,000 | about $400 - $500 |
+| Hotshot | **8%** | $7,000 - $9,000 | about $560 - $720 |
+| Box truck and straight truck | **10%** | $7,000 - $9,000 | about $700 - $900 |
+
+There is no flat rate, no setup fee and no monthly subscription. Local and regional work is quoted separately, and your final percentage is discussed with you before service starts. Use the [dispatch fee calculator](/estimate.html) to see the fee on your own numbers.
+
+## What the fee should cover
+
+A dispatch fee should buy more than someone forwarding loads from a board. Ask whether it includes:
+
+- Searching load boards and broker networks for freight that fits your truck and lanes
+- Negotiating the rate before a load reaches you
+- Planning the next load to cut deadhead miles
+- Broker setup packets, W-9 and insurance certificates
+- Keeping rate confirmations and paperwork organized
+
+And one rule that should never bend: **you approve every load.** No forced dispatch.
+
+## Does a dispatcher pay for itself?
+
+Do the maths on your own truck. If a dispatcher at 5% saves you three hours a day on the boards, negotiates even a few cents a mile more, and plans lanes that cut empty miles, the fee is often covered. Fuel is where deadhead really hurts: at today's diesel prices a semi burns roughly a dollar of fuel for every mile, loaded or empty. Check your own number with the [truck fuel cost calculator](/truck-fuel-cost-calculator.html).
+
+## Red flags when choosing a dispatcher
+
+- Long contracts with termination fees
+- Guaranteed earnings or "guaranteed $X per week" promises
+- Being pushed to take loads you did not approve
+- Fees charged on things you were not told about up front
+
+Ready to see your number? [Get a free estimate](/estimate.html) or message a dispatcher on WhatsApp.
+
+### Hotshot Trucking Rates Per Mile, Fuel and Dispatch (2026)
+URL: https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html
+Published: 2026-09-22
+
+Hotshot trucking moves time-sensitive and partial loads with a heavy-duty pickup and a flatbed or gooseneck trailer. It is fast, flexible, and popular in Texas and the Permian Basin, where equipment and oilfield freight cannot wait for a full truckload.
+
+## Hotshot rates per mile
+
+As a rough guide, hotshot loads often pay about **$4 to $5 a mile**. What moves the number:
+
+- **Urgency.** Same-day and next-morning freight pays more.
+- **Lane.** Loads into areas with little return freight need a higher rate to cover the trip home.
+- **Season and region.** Energy and construction activity swing demand.
+
+Compare that with other equipment on our [rate-per-mile guide](/truck-dispatch-rates.html). Rates are market-driven and never guaranteed.
+
+## Hotshot fuel mileage by load weight
+
+Weight matters more on a hotshot than on a semi, because the cargo is a large share of the total weight. Typical figures for a 1-ton diesel dually and 40 ft gooseneck:
+
+| Load on trailer | Typical mpg |
+|---|---|
+| Empty | about 13-14 mpg |
+| About 9,000 lbs | about 10 mpg |
+| About 16,000 lbs | about 7-9 mpg |
+
+At $6.00 a gallon, a loaded hotshot averaging 9 mpg spends about **$0.67 per mile** on diesel. Enter your own weight, miles and fuel state in the [hotshot fuel calculator](/truck-fuel-cost-calculator.html?truck=hotshot#fuelCalc).
+
+## What a hotshot dispatcher does
+
+- Finds expedited and partial loads that fit your trailer, weight rating and permits
+- Negotiates the rate and confirms dimensions and securement needs
+- Plans the next load so you are not driving home empty
+- Handles broker setups, packets and rate confirmations
+
+You approve every load before it is booked.
+
+## What hotshot dispatch costs
+
+Texas Solutions charges **8% of weekly gross** for OTR hotshot dispatch, with no flat rate and no setup fee. On typical weekly gross of $7,000-$9,000, that is about **$560-$720 a week**. [Calculate your fee](/estimate.html?truck=hotshot) or read more about our [hotshot dispatch service](/hotshot-dispatch.html).
+
+### Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile
+URL: https://dispatch.texassolutions.co/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html
+Published: 2026-09-22
+
+Fuel is one of the biggest bills an owner-operator pays, and it changes every day. Two numbers decide what it costs you: **the price per gallon** and **your miles per gallon**. You control more of both than you might think.
+
+## Your fuel cost per mile
+
+The formula is simple:
+
+**Fuel cost per mile = diesel price per gallon / miles per gallon**
+
+A loaded semi averaging about 6.3 mpg (the FHWA national average for combination trucks) with diesel at $6.00 a gallon spends about **$0.95 per mile** on fuel. On a 2,500-mile week that is close to $2,400.
+
+Smaller trucks do better per mile but carry less. A hotshot averaging around 9-10 mpg loaded, or a 26 ft box truck at 8.5-11 mpg, spends roughly half as much per mile as a semi.
+
+Try your own truck, weight and state in the [truck fuel cost calculator](/truck-fuel-cost-calculator.html).
+
+## Why diesel prices differ by state
+
+Diesel can differ by **more than $2 a gallon** between the cheapest and most expensive states. The main reasons:
+
+- **State fuel taxes.** These vary widely and are built into the pump price.
+- **Distance from refineries and pipelines.** Gulf Coast states such as Texas, Louisiana and Mississippi are close to refining capacity.
+- **Fuel specifications.** California requires its own cleaner blend and has additional fees, which is why it is usually the most expensive.
+- **Local competition** at truck stops along major corridors.
+
+See [today's diesel prices for all 50 states](/truck-fuel-cost-calculator.html#diesel-prices), updated every day, or look up a single state such as [diesel prices in Texas](/diesel-prices/texas.html).
+
+## Seven ways to cut fuel cost per mile
+
+1. **Plan fuel stops by state.** Filling 150 gallons where diesel is $1 cheaper saves $150 on one stop.
+2. **Cut deadhead miles.** Empty miles burn fuel with no revenue. Planning the next load before this one delivers is the single biggest lever.
+3. **Slow down.** Above about 62 mph, a semi loses roughly 0.1 mpg for every extra mph.
+4. **Idle less.** A semi burns about 0.8 gallons per hour at idle.
+5. **Keep tires properly inflated** and check alignment.
+6. **Know your load weight.** NACFE research puts the fuel penalty at about 0.5-0.6% for every extra 1,000 lbs.
+7. **Book loads that cover fuel.** Know your fuel cost per mile before accepting a rate.
+
+## How a dispatcher helps
+
+A good dispatcher plans lanes to reduce empty miles and negotiates rates that leave room after fuel. At Texas Solutions, semi truck dispatch is 5% of weekly gross, hotshot dispatch 8% and box truck dispatch 10%. [See what it would cost you](/estimate.html).
+
+### Box Truck Dispatch: How to Find Loads and What It Really Costs
+URL: https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html
+Published: 2026-09-22
+
+Box trucks are one of the easiest ways into owner-operator trucking, but the freight works differently from semi loads: smaller, more frequent, and often with tighter delivery windows. Here is how to keep a box truck loaded and what it costs to run.
+
+## Where box truck loads come from
+
+- **Load boards.** The biggest source of spot freight, and the most competitive.
+- **Direct broker relationships.** Brokers who know your truck, liftgate and service will call you first.
+- **Dispatch services.** A dispatcher searches the boards, calls brokers and negotiates for you, so your time goes into driving.
+
+Match loads to your box length, liftgate and payload before you book, and ask about lumper, appointment and detention terms.
+
+## Box truck fuel cost
+
+A 26 ft diesel box truck typically gets about **11 mpg empty and 8.5 mpg fully loaded**. At $6.00 a gallon that is roughly **$0.55-$0.70 per mile** in diesel. Box truck rates per mile run about $1.80-$3.20 on our [rate guide](/truck-dispatch-rates.html), so fuel is a big share of every load.
+
+Check your own numbers with the [box truck fuel calculator](/truck-fuel-cost-calculator.html?truck=box-truck#fuelCalc).
+
+## What box truck dispatch costs
+
+Texas Solutions charges **10% of weekly gross** for OTR box trucks and straight trucks. On typical weekly gross of $7,000-$9,000 that is about **$700-$900 a week**, with no flat rate, no setup fee and no monthly subscription.
+
+Box truck dispatch costs a higher percentage than semi dispatch (5%) because each dollar of box truck gross takes more loads, more broker setups and more paperwork.
+
+## Getting started
+
+You will need your own MC and DOT numbers, insurance and a W-9. Then [get a free estimate](/estimate.html?truck=box-truck), read about our [box truck dispatch service](/box-truck-dispatch.html), or message us on WhatsApp.
+
+## Diesel prices by state (daily, 2026-09-22; EIA U.S. weekly average $6.529/gal)
+- Alabama: $6.159/gal
+- Alaska: $6.663/gal
+- Arizona: $6.445/gal
+- Arkansas: $6.193/gal
+- California: $8.439/gal
+- Colorado: $6.220/gal
+- Connecticut: $6.474/gal
+- Delaware: $6.427/gal
+- District of Columbia: $6.506/gal
+- Florida: $6.258/gal
+- Georgia: $6.344/gal
+- Hawaii: $7.136/gal
+- Idaho: $6.590/gal
+- Illinois: $6.828/gal
+- Indiana: $6.914/gal
+- Iowa: $6.314/gal
+- Kansas: $6.249/gal
+- Kentucky: $6.383/gal
+- Louisiana: $6.027/gal
+- Maine: $6.516/gal
+- Maryland: $6.494/gal
+- Massachusetts: $6.390/gal
+- Michigan: $6.881/gal
+- Minnesota: $6.349/gal
+- Mississippi: $6.058/gal
+- Missouri: $6.348/gal
+- Montana: $6.313/gal
+- Nebraska: $6.231/gal
+- Nevada: $6.843/gal
+- New Hampshire: $6.406/gal
+- New Jersey: $6.465/gal
+- New Mexico: $6.325/gal
+- New York: $6.504/gal
+- North Carolina: $6.234/gal
+- North Dakota: $6.239/gal
+- Ohio: $6.817/gal
+- Oklahoma: $6.029/gal
+- Oregon: $6.872/gal
+- Pennsylvania: $6.610/gal
+- Rhode Island: $6.355/gal
+- South Carolina: $6.124/gal
+- South Dakota: $6.277/gal
+- Tennessee: $6.215/gal
+- Texas: $5.965/gal
+- Utah: $6.564/gal
+- Vermont: $6.459/gal
+- Virginia: $6.388/gal
+- Washington: $7.463/gal
+- West Virginia: $6.457/gal
+- Wisconsin: $6.619/gal
+- Wyoming: $6.215/gal

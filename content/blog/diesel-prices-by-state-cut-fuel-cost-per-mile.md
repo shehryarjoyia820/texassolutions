@@ -1,12 +1,13 @@
 ---
 title: "Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile"
-description: "Why diesel prices differ so much between states, how to work out your fuel cost per mile, and practical ways owner-operators cut fuel spend, with a free truck fuel calculator and daily state prices."
+description: "Why diesel prices differ by state, how to work out fuel cost per mile, and 7 ways truckers cut fuel spend. Free fuel calculator and daily state prices."
 date: 2026-09-22
 author: "Texas Solutions Dispatch Team"
 tags:
   - Fuel
   - Operating costs
 keywords: "diesel prices by state, cheapest diesel by state, fuel cost per mile, truck fuel cost calculator, diesel price today, how to save fuel trucking, semi truck mpg"
+question: "How do you calculate fuel cost per mile for a truck?"
 answer: "Fuel cost per mile equals the diesel price divided by your miles per gallon. A loaded semi averaging about 6.3 mpg with diesel at $6.00 a gallon spends about $0.95 per mile on fuel. Diesel can differ by more than $2 a gallon between the cheapest and most expensive states, so where you fuel up matters."
 faq:
   - q: "Why is diesel cheaper in some states?"
@@ -16,7 +17,6 @@ faq:
   - q: "What mpg does a loaded semi get?"
     a: "The FHWA national average for combination trucks is about 6.3 mpg. Heavier loads, higher speeds and idling lower it; lighter loads and slower highway speeds raise it."
 ---
-
 Fuel is one of the biggest bills an owner-operator pays, and it changes every day. Two numbers decide what it costs you: **the price per gallon** and **your miles per gallon**. You control more of both than you might think.
 
 ## Your fuel cost per mile

@@ -1,12 +1,13 @@
 ---
-title: "How Much Does a Truck Dispatcher Cost in 2026? Percentages Explained"
-description: "What owner-operators pay for truck dispatch in 2026: typical percentages, what the fee covers, flat vs percentage, and Texas Solutions rates of 5% for semis, 8% for hotshots and 10% for box trucks."
+title: "How Much Does a Truck Dispatcher Cost in 2026?"
+description: "Truck dispatch fees explained: typical 3-10% of weekly gross, what the fee covers, and Texas Solutions rates of 5% semi, 8% hotshot and 10% box truck."
 date: 2026-09-22
 author: "Texas Solutions Dispatch Team"
 tags:
   - Dispatch pricing
   - Owner-operators
 keywords: "how much does a truck dispatcher cost, truck dispatcher percentage, truck dispatch fee, dispatch fee for owner operators, 5 percent truck dispatch, hotshot dispatch fee, box truck dispatch fee"
+question: "How much does a truck dispatcher cost?"
 answer: "Most independent truck dispatchers charge a percentage of the truck's weekly gross, usually somewhere between 3% and 10%. Texas Solutions charges 5% for OTR semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no flat rate, no setup fee and no monthly subscription."
 faq:
   - q: "What percentage do truck dispatchers take?"
@@ -16,7 +17,6 @@ faq:
   - q: "Is a 5% dispatcher worth it?"
     a: "For many owner-operators, yes, if the dispatcher saves hours on load boards, negotiates better rates and cuts deadhead miles by more than the fee. Results vary, and no dispatcher can guarantee earnings."
 ---
-
 If you run your own authority, the question is not only *whether* to hire a dispatcher but *what it really costs*. Here is how truck dispatch pricing works in 2026, what you should get for the fee, and how to check whether it pays for itself.
 
 ## How truck dispatchers charge

@@ -1,98 +1,50 @@
-# Search engines and AI answer engines are welcome.
+# dispatch.texassolutions.co: search engines and AI answer engines are welcome.
+# Plain-text summary for AI tools: https://dispatch.texassolutions.co/llms.txt (full text: https://dispatch.texassolutions.co/llms-full.txt)
+# Blog RSS feed: https://dispatch.texassolutions.co/feed.xml
+
 User-agent: *
 Allow: /
-Disallow: /head-codes.html
-Disallow: /tools/
 Disallow: /admin/
 Disallow: /content/
+Disallow: /tools/
+Disallow: /head-codes.html
 
 User-agent: Googlebot
-Allow: /
-Disallow: /tools/
-
+User-agent: Googlebot-Image
 User-agent: Bingbot
-Allow: /
-Disallow: /tools/
-
 User-agent: Slurp
-Allow: /
-Disallow: /tools/
-
 User-agent: YandexBot
-Allow: /
-Disallow: /tools/
-
 User-agent: DuckDuckBot
-Allow: /
-Disallow: /tools/
-
 User-agent: Applebot
-Allow: /
-Disallow: /tools/
-
 User-agent: Applebot-Extended
-Allow: /
-Disallow: /tools/
-
 User-agent: GPTBot
-Allow: /
-Disallow: /tools/
-
 User-agent: OAI-SearchBot
-Allow: /
-Disallow: /tools/
-
 User-agent: ChatGPT-User
-Allow: /
-Disallow: /tools/
-
 User-agent: ClaudeBot
-Allow: /
-Disallow: /tools/
-
 User-agent: Claude-SearchBot
-Allow: /
-Disallow: /tools/
-
 User-agent: Claude-User
-Allow: /
-Disallow: /tools/
-
+User-agent: anthropic-ai
 User-agent: PerplexityBot
-Allow: /
-Disallow: /tools/
-
 User-agent: Perplexity-User
-Allow: /
-Disallow: /tools/
-
 User-agent: Google-Extended
-Allow: /
-Disallow: /tools/
-
+User-agent: GoogleOther
 User-agent: Gemini-Deep-Research
-Allow: /
-Disallow: /tools/
-
+User-agent: DuckAssistBot
 User-agent: CCBot
-Allow: /
-Disallow: /tools/
-
 User-agent: Meta-ExternalAgent
-Allow: /
-Disallow: /tools/
-
+User-agent: Meta-ExternalFetcher
 User-agent: Amazonbot
-Allow: /
-Disallow: /tools/
-
 User-agent: cohere-ai
-Allow: /
-Disallow: /tools/
-
 User-agent: MistralAI-User
+User-agent: YouBot
 Allow: /
+Disallow: /admin/
+Disallow: /content/
 Disallow: /tools/
+Disallow: /head-codes.html
 
-Host: dispatch.texassolutions.co
 Sitemap: https://dispatch.texassolutions.co/sitemap.xml
+Sitemap: https://dispatch.texassolutions.co/sitemap-pages.xml
+Sitemap: https://dispatch.texassolutions.co/sitemap-tools.xml
+Sitemap: https://dispatch.texassolutions.co/sitemap-blog.xml
+Sitemap: https://dispatch.texassolutions.co/sitemap-diesel.xml

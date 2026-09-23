@@ -6,38 +6,118 @@
     <atom:link href="https://dispatch.texassolutions.co/feed.xml" rel="self" type="application/rss+xml" />
     <description>Truck dispatch, rates, diesel prices and fuel-saving guides for owner-operators and small fleets.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2026 00:42:39 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 14:52:14 +0000</lastBuildDate>
     <item>
-      <title>Box Truck Dispatch: How to Find Loads and What It Really Costs</title>
-      <link>https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html</guid>
+      <title>What Is Deadhead in Trucking and How to Reduce It</title>
+      <link>https://dispatch.texassolutions.co/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Deadhead miles are empty miles with no paid freight. See how they cut your effective rate per mile and 7 practical ways owner-operators reduce them.</description>
+      <category>Deadhead</category>
+    </item>
+    <item>
+      <title>What Is a Good Rate Per Mile in Trucking in 2026?</title>
+      <link>https://dispatch.texassolutions.co/blog/what-is-a-good-rate-per-mile-trucking-2026.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/what-is-a-good-rate-per-mile-trucking-2026.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A good rate per mile beats your cost per mile with profit left over. See rough 2026 rates for dry van, reefer, flatbed, hotshot and box truck, and find yours.</description>
+      <category>Rates</category>
+    </item>
+    <item>
+      <title>Truck Dispatcher vs Freight Broker: The Real Difference</title>
+      <link>https://dispatch.texassolutions.co/blog/truck-dispatcher-vs-freight-broker.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/truck-dispatcher-vs-freight-broker.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A truck dispatcher works for the carrier; a freight broker connects shippers and carriers. Compare who they work for, pay and authority.</description>
+      <category>Dispatch</category>
+    </item>
+    <item>
+      <title>IFTA for Owner-Operators: How to File Quarterly Returns</title>
+      <link>https://dispatch.texassolutions.co/blog/ifta-for-owner-operators-how-to-file.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/ifta-for-owner-operators-how-to-file.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>IFTA explained for owner-operators: who needs it, what records to keep, quarterly due dates, and how net taxable gallons are calculated by state.</description>
+      <category>Fuel taxes</category>
+    </item>
+    <item>
+      <title>How to Get Your MC Number and Trucking Authority</title>
+      <link>https://dispatch.texassolutions.co/blog/how-to-get-mc-number-authority-owner-operator.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-get-mc-number-authority-owner-operator.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Step-by-step guide for new owner-operators: USDOT number, MC operating authority, BOC-3, insurance filing, UCR, and what to set up before you haul.</description>
+      <category>Getting started</category>
+    </item>
+    <item>
+      <title>Hours of Service Rules Explained: 11, 14 and 70-Hour</title>
+      <link>https://dispatch.texassolutions.co/blog/hours-of-service-rules-explained-11-14-70-hour.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/hours-of-service-rules-explained-11-14-70-hour.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>FMCSA hours-of-service rules in plain English: 11-hour driving limit, 14-hour window, 30-minute break, 60/70-hour cycle and the 34-hour restart.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>Freight Factoring for Owner-Operators: How It Works</title>
+      <link>https://dispatch.texassolutions.co/blog/freight-factoring-for-owner-operators-explained.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/freight-factoring-for-owner-operators-explained.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>How freight factoring works for truckers: advances, fees, recourse vs non-recourse, notice of assignment, and how to compare factoring companies.</description>
+      <category>Cash flow</category>
+    </item>
+    <item>
+      <title>Dry Van vs Reefer vs Flatbed: Which Trailer Pays Best?</title>
+      <link>https://dispatch.texassolutions.co/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Compare dry van, reefer and flatbed for owner-operators: rates per mile, demand, extra work and costs, so you can choose the trailer that fits your goals.</description>
+      <category>Equipment</category>
+    </item>
+    <item>
+      <title>Cost of Running a Semi Truck Per Mile (2026 Breakdown)</title>
+      <link>https://dispatch.texassolutions.co/blog/cost-of-running-a-semi-truck-per-mile.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/cost-of-running-a-semi-truck-per-mile.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>What it costs to run a semi per mile: the ATRI industry average, fixed vs variable costs, and how to calculate your own cost per mile before you book.</description>
+      <category>Operating costs</category>
+    </item>
+    <item>
+      <title>Best Load Boards for Owner-Operators and How to Use Them</title>
+      <link>https://dispatch.texassolutions.co/blog/best-load-boards-for-owner-operators.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/best-load-boards-for-owner-operators.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>How to choose a load board: DAT, Truckstop, 123Loadboard and others compared by features, plus tips to vet brokers and avoid freight scams.</description>
+      <category>Load boards</category>
+    </item>
+    <item>
+      <title>How Much Does a Truck Dispatcher Cost in 2026?</title>
+      <link>https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-      <description>How box truck owner-operators find loads, what box trucks earn and spend on fuel, and what box truck dispatch costs (10% of weekly gross at Texas Solutions).</description>
-      <category>Box truck</category>
+      <description>Truck dispatch fees explained: typical 3-10% of weekly gross, what the fee covers, and Texas Solutions rates of 5% semi, 8% hotshot and 10% box truck.</description>
+      <category>Dispatch pricing</category>
+    </item>
+    <item>
+      <title>Hotshot Trucking Rates Per Mile, Fuel and Dispatch (2026)</title>
+      <link>https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Hotshot rates per mile, fuel mileage by load weight, what a hotshot dispatcher does, and what dispatch costs: 8% of weekly gross at Texas Solutions.</description>
+      <category>Hotshot</category>
     </item>
     <item>
       <title>Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile</title>
       <link>https://dispatch.texassolutions.co/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html</link>
       <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Why diesel prices differ so much between states, how to work out your fuel cost per mile, and practical ways owner-operators cut fuel spend, with a free truck fuel calculator and daily state prices.</description>
+      <description>Why diesel prices differ by state, how to work out fuel cost per mile, and 7 ways truckers cut fuel spend. Free fuel calculator and daily state prices.</description>
       <category>Fuel</category>
     </item>
     <item>
-      <title>Hotshot Trucking in 2026: Rates Per Mile, Fuel Mileage and Dispatch</title>
-      <link>https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html</guid>
+      <title>Box Truck Dispatch: How to Find Loads and What It Really Costs</title>
+      <link>https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-      <description>A practical guide to hotshot trucking: typical rates per mile, how load weight affects fuel mileage, what a hotshot dispatcher does, and what dispatch costs (8% of weekly gross at Texas Solutions).</description>
-      <category>Hotshot</category>
-    </item>
-    <item>
-      <title>How Much Does a Truck Dispatcher Cost in 2026? Percentages Explained</title>
-      <link>https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html</guid>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-      <description>What owner-operators pay for truck dispatch in 2026: typical percentages, what the fee covers, flat vs percentage, and Texas Solutions rates of 5% for semis, 8% for hotshots and 10% for box trucks.</description>
-      <category>Dispatch pricing</category>
+      <description>How box truck owner-operators find loads, what they spend on fuel, and what box truck dispatch costs: 10% of weekly gross at Texas Solutions.</description>
+      <category>Box truck</category>
     </item>
   </channel>
 </rss>

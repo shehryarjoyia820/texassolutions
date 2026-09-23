@@ -1,12 +1,13 @@
 ---
-title: "Hotshot Trucking in 2026: Rates Per Mile, Fuel Mileage and Dispatch"
-description: "A practical guide to hotshot trucking: typical rates per mile, how load weight affects fuel mileage, what a hotshot dispatcher does, and what dispatch costs (8% of weekly gross at Texas Solutions)."
+title: "Hotshot Trucking Rates Per Mile, Fuel and Dispatch (2026)"
+description: "Hotshot rates per mile, fuel mileage by load weight, what a hotshot dispatcher does, and what dispatch costs: 8% of weekly gross at Texas Solutions."
 date: 2026-09-22
 author: "Texas Solutions Dispatch Team"
 tags:
   - Hotshot
   - Rates
 keywords: "hotshot trucking rates per mile, hotshot dispatch, hotshot fuel mileage, hotshot mpg loaded, hotshot trucking Texas, hotshot dispatcher cost, gooseneck hotshot loads"
+question: "How much does hotshot trucking pay per mile?"
 answer: "Hotshot loads often pay roughly $4 to $5 a mile, depending on lane, urgency and season. A 1-ton diesel pulling a gooseneck typically gets about 13-14 mpg empty and 8-10 mpg loaded. Texas Solutions dispatches hotshots for 8% of weekly gross, OTR, with no flat rate."
 faq:
   - q: "How much does hotshot trucking pay per mile?"
@@ -16,7 +17,6 @@ faq:
   - q: "How much is hotshot dispatch?"
     a: "Texas Solutions charges 8% of weekly gross for OTR hotshot dispatch. On $7,000-$9,000 weekly gross that is about $560-$720 a week."
 ---
-
 Hotshot trucking moves time-sensitive and partial loads with a heavy-duty pickup and a flatbed or gooseneck trailer. It is fast, flexible, and popular in Texas and the Permian Basin, where equipment and oilfield freight cannot wait for a full truckload.
 
 ## Hotshot rates per mile
