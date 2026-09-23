@@ -732,3 +732,9 @@ h1 { font-size: clamp(34px, 5vw, 60px); }
 .footer a:hover { color: #ff8a73; }
 .footer p { color: #c9c5c1; }
 .footer .legal { border-top: 1px solid rgba(255,255,255,.14); color: #9d968f; }
+
+.faq[hidden] { display: none; }
+.faq-more { margin-top: 10px; }
+
+/* footer: black at 90% */
+.footer { background: #1a1a1a; }

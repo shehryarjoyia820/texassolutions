@@ -648,13 +648,16 @@ def build_home():
   <div class="sec-head rv"><span class="eyebrow">Why carriers choose us</span><h2>A dispatch team that works for the carrier</h2><p>Load boards, broker calls, rate negotiation and paperwork, handled by real dispatchers while you drive.</p></div>
   {features()}
 </div></section>
-<section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Dispatch services</span><h2>Truck dispatch for every trailer type</h2><p>Dedicated dispatch for dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck carriers nationwide.</p></div>
-  {equip_cards()}
-</div></section>
 <section class="sec"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">How it works</span><h2>Start dispatching in four steps</h2></div>
   {steps()}
+</div></section>
+<section class="sec sec-soft" id="contact"><div class="wrap two">
+  <div>
+    <div class="sec-head rv"><span class="eyebrow">Contact us</span><h2>Talk to a dispatcher</h2><p>Tell us about your truck, authority and lanes. Prefer to chat? WhatsApp is the fastest way to reach us.</p></div>
+    {lead_form("homeForm", "New dispatch inquiry (home page)", "Send My Details")}
+  </div>
+  <div class="aside">{contact_side()}</div>
 </div></section>
 <section class="sec sec-dark tools-sec"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Free trucking tools</span><h2>Know your numbers before you book</h2><p>Free calculators built for owner-operators, with diesel prices for all 50 states updated every day.</p></div>
@@ -665,14 +668,16 @@ def build_home():
   </div>
   <p class="mt-l center"><a class="btn btn-line" href="tools.html">See all free tools</a></p>
 </div></section>
-{blog_teaser()}
 <section class="sec sec-soft"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Truck dispatch FAQ</span><h2>Questions owner-operators ask</h2></div>
-  {faq_html(C.FAQS[:8])}
-  <p class="mt-l"><a class="btn btn-line" href="faq.html">See all FAQs</a></p>
+  {faq_html(C.FAQS[:4])}
+  <div class="faq faq-more" id="moreFaqs" hidden>
+{chr(10).join(f'    <details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in C.FAQS[4:])}
+  </div>
+  <p class="mt-l"><button class="btn btn-line" type="button" data-expand="moreFaqs" data-more="See all FAQs" data-less="Show fewer FAQs" aria-expanded="false" aria-controls="moreFaqs">See all FAQs</button></p>
 </div></section>
 {band()}"""
-    schemas = [service("Truck Dispatch Service", desc, "/", "Truck dispatch"), faq_ld([qa] + C.FAQS[:8]), howto(), speakable("/", title)]
+    schemas = [service("Truck Dispatch Service", desc, "/", "Truck dispatch"), faq_ld([qa] + C.FAQS[:4]), howto(), speakable("/", title)]
     write("index.html", page("/", title, desc, HOME_KW, schemas, body, current="index.html"))
 
 

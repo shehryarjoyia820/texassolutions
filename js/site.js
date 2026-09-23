@@ -236,5 +236,18 @@
     }).catch(function () {});
   }
 
+  /* expandable lists (home FAQ: "See all FAQs") */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-expand]'), function (b) {
+    b.addEventListener('click', function () {
+      var box = document.getElementById(b.getAttribute('data-expand'));
+      if (!box) return;
+      var opening = box.hasAttribute('hidden');
+      if (opening) { box.removeAttribute('hidden'); Array.prototype.forEach.call(box.querySelectorAll('.rv'), function (el) { el.classList.add('in'); }); }
+      else box.setAttribute('hidden', '');
+      b.setAttribute('aria-expanded', opening ? 'true' : 'false');
+      b.textContent = b.getAttribute(opening ? 'data-less' : 'data-more');
+    });
+  });
+
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 })();
