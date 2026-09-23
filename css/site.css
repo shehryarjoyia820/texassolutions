@@ -645,13 +645,14 @@ a.cbox:hover { border-color: #cfcac6; }
 .otr { background: var(--red-50); color: var(--red-600); }
 .class-badge { background: #fff; color: var(--ink); border: 2px solid var(--grey-2); }
 
-/* footer */
-.footer { background: var(--grey); color: var(--muted); border-top: 1px solid var(--grey-2); }
-.footer h4 { color: var(--ink); }
-.footer a { color: var(--ink-soft); }
-.footer a:hover { color: var(--red-600); }
-.footer .fbrand img { filter: none; opacity: 1; }
-.footer .legal { border-top: 1px solid var(--grey-2); color: var(--muted); }
+/* footer: black at 70% (soft charcoal) with light type */
+.footer { background: #4d4d4d; color: #d9d9d9; border-top: 0; }
+.footer h4 { color: #ffffff; }
+.footer a { color: #f2f2f2; }
+.footer a:hover { color: #ffb3a6; }
+.footer p { color: #d9d9d9; }
+.footer .fbrand img { filter: brightness(0) invert(1); opacity: .95; }
+.footer .legal { border-top: 1px solid rgba(255,255,255,.2); color: #bdbdbd; }
 
 /* misc */
 .kw a, .kw span { border: 1px solid var(--grey-2); color: var(--ink-soft); }
@@ -659,3 +660,65 @@ a.cbox:hover { border-color: #cfcac6; }
 .post-cover-ph { background: radial-gradient(420px 200px at 85% 0%, rgba(236,48,19,.16), transparent 65%), var(--grey); }
 .post-cover-ph::after { filter: none; opacity: .35; }
 .wa-float .wa-tip { border: 1px solid var(--grey-2); }
+
+/* ==================================================================
+   SPACING + TYPE POLISH: tighter, more even vertical rhythm
+   ================================================================== */
+.sec { padding: clamp(48px, 6vw, 84px) 0; }
+.sec-head { margin-bottom: clamp(24px, 3.4vw, 40px); }
+.sec-head p { font-size: clamp(16px, 1.6vw, 18px); }
+/* two plain sections in a row: don't double the gap */
+.sec:not(.sec-soft):not(.sec-dark) + .sec:not(.sec-soft):not(.sec-dark) { padding-top: clamp(8px, 2vw, 24px); }
+.sec + .sec > .wrap > .band { margin-top: 0; }
+h2 { font-size: clamp(26px, 3.4vw, 40px); }
+h1 { font-size: clamp(34px, 5vw, 60px); }
+
+/* heroes */
+.hero .wrap { padding-top: clamp(48px, 6vw, 76px); padding-bottom: clamp(52px, 6vw, 84px); gap: clamp(28px, 4vw, 48px); }
+.hero-stats { margin-top: 32px; }
+.phero .wrap { padding-top: clamp(36px, 4.6vw, 56px); padding-bottom: clamp(36px, 4.6vw, 56px); }
+.phero h1 { font-size: clamp(30px, 4.4vw, 50px); max-width: 24ch; }
+.phero .lede { font-size: clamp(16px, 1.7vw, 18px); margin-top: 14px; }
+.crumbs { margin-bottom: 14px; }
+.phero .ctas { margin-top: 22px; }
+
+/* rate board: no blank area under the table */
+.board-grid { align-items: start; }
+
+/* cards and panels */
+.card { padding: clamp(20px, 2.4vw, 28px); }
+.grid { gap: clamp(16px, 2vw, 24px); }
+.price { padding: clamp(22px, 2.6vw, 30px); }
+.est-in, .est-out { padding: clamp(22px, 3.4vw, 36px); }
+.form { padding: clamp(20px, 3vw, 32px); }
+.faq { gap: 10px; }
+.answer { padding: clamp(18px, 2.4vw, 24px) clamp(18px, 2.6vw, 26px); }
+.band { padding: clamp(28px, 4vw, 48px); }
+.prose h2 { margin-top: clamp(30px, 4vw, 40px); }
+.prose p, .prose ul, .prose ol { margin-top: 14px; }
+.prose > h2:first-child, .prose > .answer + h2 { margin-top: 28px; }
+.post-body .answer { margin-bottom: 20px; }
+.tbl { margin: 18px 0; }
+
+/* footer */
+.footer { padding: clamp(44px, 5vw, 64px) 0 clamp(88px, 8vw, 100px); }
+.footer .legal { margin-top: 36px; padding-top: 20px; }
+.footer a { padding: 3px 0; }
+
+@media (max-width: 640px) {
+  .sec { padding: 40px 0; }
+  .sec:not(.sec-soft):not(.sec-dark) + .sec:not(.sec-soft):not(.sec-dark) { padding-top: 8px; }
+  .hero .wrap { padding-top: 36px; padding-bottom: 44px; }
+  .hero-card { padding: 20px; }
+  .card, .price, .form { padding: 20px; }
+  .est-in, .est-out { padding: 20px; }
+  .band { padding: 26px 20px; border-radius: 20px; }
+  .footer { padding: 40px 0 92px; }
+  .footer .cols { gap: 28px; }
+}
+@media (max-width: 640px) {
+  .board-table { font-size: 13px; }
+  .board-table th, .board-table td { padding: 10px 10px; }
+  .board-head, .board-foot { padding-left: 14px; padding-right: 14px; }
+  .eq-badge { font-size: 11px; padding: 2px 7px; }
+}
