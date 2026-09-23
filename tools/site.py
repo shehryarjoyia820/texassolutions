@@ -12,7 +12,7 @@ import html
 import json
 import re
 import sys
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -183,8 +183,15 @@ def head_codes():
 
 # ------------------------------------------------------------------ chrome
 def nav_links():
-    return [("Rates", "truck-dispatch-rates.html"), ("Estimate", "estimate.html"), ("Fuel Calculator", "truck-fuel-cost-calculator.html"), ("Blog", "blog.html"), ("About", "about.html"),
+    return [("Rates", "truck-dispatch-rates.html"), ("Blog", "blog.html"), ("About", "about.html"),
             ("Contact", "contact.html")]
+
+
+def tools_nav_items():
+    """(name, file) for every calculator, dispatch fee and fuel cost first."""
+    items = [("Dispatch Fee Calculator", "estimate.html"), ("Truck Fuel Cost Calculator", "truck-fuel-cost-calculator.html")]
+    items += [(t["hub_title"], t["slug"] + ".html") for t in TOOLS]
+    return items
 
 
 def header(current):
@@ -192,6 +199,9 @@ def header(current):
     links = "\n".join(f'      <a href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for t, h in nav_links())
     mlinks = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in nav_links())
     msvc = "\n".join(f'      <a href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING)
+    tnav = tools_nav_items()
+    tools_dd = "\n".join(f'          <a href="{f}">{esc(n)}</a>' for n, f in tnav)
+    mtools = "\n".join(f'      <a href="{f}">{esc(n)}</a>' for n, f in tnav)
     return f"""<a class="skip" href="#main">Skip to content</a>
 <div class="topbar"><div class="wrap tb-right">
   <div class="tb-left"><a href="tel:{C.PHONE_E164}">{C.PHONE}</a><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></div>
@@ -209,6 +219,12 @@ def header(current):
 {svc}
         </div>
       </div>
+      <div class="dd">
+        <button type="button" aria-expanded="false">Tools &#9662;</button>
+        <div class="dd-menu wide">
+{tools_dd}
+        </div>
+      </div>
 {links}
     </nav>
     <div class="nav-cta">
@@ -221,8 +237,13 @@ def header(current):
 <nav class="mnav" id="mnav" aria-label="Mobile">
     <a href="index.html">Home</a>
 {mlinks}
+    <span class="mnav-label">Dispatch Services</span>
     <div class="mnav-sub">
 {msvc}
+    </div>
+    <span class="mnav-label">Free Tools</span>
+    <div class="mnav-sub">
+{mtools}
     </div>
     <a class="btn btn-red" href="estimate.html">Get a Free Estimate</a>
     <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp a Dispatcher</a>
@@ -246,6 +267,7 @@ def footer():
         <h4>Company</h4>
       <a href="truck-dispatch-rates.html">Dispatch Rates</a>
       <a href="estimate.html">Free Estimate</a>
+      <a href="tools.html">All Free Tools</a>
       <a href="truck-fuel-cost-calculator.html">Fuel Cost Calculator</a>
       <a href="diesel-prices/texas.html">Diesel Prices by State</a>
       <a href="blog.html">Blog</a>
@@ -272,7 +294,8 @@ def footer():
   <span class="wa-tip">Chat on WhatsApp<small>+1 (838) 910-3147</small></span>
   <span class="wa-btn">{ICONS['wa']}</span>
 </a>
-<script src="js/site.js" defer></script>"""
+<script src="js/site.js" defer></script>
+<script src="js/calc-tools.js" defer></script>"""
 
 
 def page(path, title, description, keywords, schemas, body, current=None, og_type="website", preload_video=False):
@@ -313,6 +336,7 @@ def page(path, title, description, keywords, schemas, body, current=None, og_typ
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="css/site.css">
 <link rel="alternate" type="text/plain" href="{C.BASE}/llms.txt" title="LLM summary">
+<link rel="alternate" type="application/rss+xml" title="{esc(C.BRAND)} Blog" href="{C.BASE}/feed.xml">
 <script>document.documentElement.classList.remove('no-js')</script>
 {lds}
 <!-- HEAD-CODES:START -->
@@ -559,8 +583,9 @@ def build_home():
   <div class="grid g3">
     <a class="tool-card rv" href="truck-fuel-cost-calculator.html"><div class="icon">{ICONS['truck']}</div><h3>Truck fuel cost calculator</h3><p>MPG by truck type and load weight, trip fuel cost and cost per mile, with today's diesel price for your state.</p><span class="more">Calculate fuel cost &rarr;</span></a>
     <a class="tool-card rv" href="estimate.html"><div class="icon">{ICONS['calc']}</div><h3>Dispatch fee calculator</h3><p>See your weekly and monthly dispatch fee for your truck: semi 5%, hotshot 8%, box truck 10%.</p><span class="more">Estimate my fee &rarr;</span></a>
-    <a class="tool-card rv" href="diesel-prices/texas.html"><div class="icon">{ICONS['pin']}</div><h3>Diesel prices by state</h3><p>Today's diesel price in every state, compared with the U.S. average, with fuel cost per mile for your truck.</p><span class="more">See diesel prices &rarr;</span></a>
+    <a class="tool-card rv" href="cost-per-mile-calculator.html"><div class="icon">{ICONS['cash']}</div><h3>Cost per mile calculator</h3><p>Your true operating cost per mile, from truck payment and insurance to fuel and driver pay.</p><span class="more">Find my CPM &rarr;</span></a>
   </div>
+  <p class="mt-l center"><a class="btn btn-line" href="tools.html">See all free tools</a></p>
 </div></section>
 {blog_teaser()}
 <section class="sec sec-soft"><div class="wrap">
@@ -1268,6 +1293,676 @@ def build_state_pages():
     return out
 
 
+# ==================================================================
+# Free trucking tools (calculators): hub + 11 individual pages.
+# Two more tools (dispatch fee, fuel cost) already exist as their own
+# pages (estimate.html, truck-fuel-cost-calculator.html) and are listed
+# on the hub alongside these.
+# ==================================================================
+
+TOOL_ICONS = {
+    "cpm": "calc", "lp": "cash", "be": "route", "dh": "route", "dp": "cash",
+    "ifta": "doc", "pd": "doc", "tl": "cash", "mb": "clock", "hos": "clock", "fc": "doc",
+}
+
+
+def related_tools(current):
+    others = [t for t in TOOLS if t["slug"] != current]
+    # A short, fixed rotation so links stay stable and relevant.
+    pick = {
+        "cost-per-mile-calculator": ["load-profitability-calculator", "break-even-calculator", "truck-fuel-cost-calculator"],
+        "load-profitability-calculator": ["cost-per-mile-calculator", "deadhead-miles-calculator", "estimate"],
+        "break-even-calculator": ["cost-per-mile-calculator", "load-profitability-calculator", "driver-pay-calculator"],
+        "deadhead-miles-calculator": ["load-profitability-calculator", "cost-per-mile-calculator", "truck-fuel-cost-calculator"],
+        "driver-pay-calculator": ["cost-per-mile-calculator", "break-even-calculator", "per-diem-calculator"],
+        "ifta-mileage-calculator": ["truck-fuel-cost-calculator", "cost-per-mile-calculator", "deadhead-miles-calculator"],
+        "per-diem-calculator": ["driver-pay-calculator", "truck-loan-calculator", "cost-per-mile-calculator"],
+        "truck-loan-calculator": ["cost-per-mile-calculator", "break-even-calculator", "per-diem-calculator"],
+        "maintenance-budget-calculator": ["cost-per-mile-calculator", "break-even-calculator", "truck-loan-calculator"],
+        "hours-of-service-calculator": ["driver-pay-calculator", "deadhead-miles-calculator", "estimate"],
+        "freight-class-calculator": ["load-profitability-calculator", "cost-per-mile-calculator", "estimate"],
+    }.get(current, [t["slug"] for t in others[:3]])
+    cards = []
+    special = {"estimate": ("Dispatch Fee Calculator", "See your weekly dispatch fee by truck type.", "calc"),
+               "truck-fuel-cost-calculator": ("Truck Fuel Cost Calculator", "MPG, fuel cost per mile and diesel prices by state.", "truck")}
+    for slug in pick:
+        if slug in special:
+            name, desc, icon = special[slug]
+            file = slug + ".html"
+        else:
+            t = next(x for x in TOOLS if x["slug"] == slug)
+            name, desc, icon, file = t["hub_title"], t["hub_desc"], TOOL_ICONS[t["prefix"]], t["slug"] + ".html"
+        cards.append(f"""  <a class="card tool-mini rv" href="{file}"><div class="icon">{ICONS[icon]}</div><div><b>{esc(name)}</b><p>{esc(desc)}</p></div></a>""")
+    return "\n".join(cards)
+
+
+def tool_wrap(t):
+    calc = t["calc_html"]
+    faqs = t["faqs"]
+    body = f"""{phero("Tools", t["h1"], t["lede"], ctas=False)}
+<section class="sec" style="padding-top:48px"><div class="wrap">
+  {calc}
+</div></section>
+<section class="sec sec-soft"><div class="wrap two">
+  <div class="prose rv">
+{t["article_html"]}
+    <h2>Frequently asked questions</h2>
+    {faq_html(faqs)}
+  </div>
+  <div class="aside">{contact_side()}</div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">More free tools</span><h2>Related calculators</h2></div>
+  <div class="grid g3">
+{related_tools(t["slug"])}
+  </div>
+</div></section>
+{band()}"""
+    path = "/" + t["slug"] + ".html"
+    schemas = [
+        {"@context": "https://schema.org", "@type": "WebApplication", "name": t["h1"], "url": url(path),
+         "applicationCategory": "BusinessApplication", "operatingSystem": "Any",
+         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "provider": {"@id": BUSINESS_ID},
+         "description": t["desc"]},
+        faq_ld(faqs), crumbs_ld([("Tools", "/tools.html"), (t["hub_title"], path)]), speakable(path, t["meta_title"]),
+    ]
+    kw = t["keywords"] + ", free trucking calculator, owner operator tools"
+    write(t["slug"] + ".html", page(path, t["meta_title"], t["desc"], kw, schemas, body, current="tools.html"))
+
+
+def build_tools():
+    for t in TOOLS:
+        tool_wrap(t)
+
+
+def build_tools_hub():
+    existing = [
+        ("estimate.html", "Dispatch Fee Calculator", "See your weekly dispatch fee by truck type: semi 5%, hotshot 8%, box truck 10%.", "calc"),
+        ("truck-fuel-cost-calculator.html", "Truck Fuel Cost Calculator", "MPG by truck type and load weight, trip fuel cost, and diesel prices for all 50 states.", "truck"),
+    ]
+    cards = []
+    n = 1
+    for file, name, desc, icon in existing:
+        cards.append(f"""  <a class="tool-num-card rv" href="{file}"><span class="tool-num">TOOL.{n:02d}</span><div class="icon">{ICONS[icon]}</div><h3>{esc(name)}</h3><p>{esc(desc)}</p><span class="more">Open tool &rarr;</span></a>""")
+        n += 1
+    for t in TOOLS:
+        cards.append(f"""  <a class="tool-num-card rv" href="{t['slug']}.html"><span class="tool-num">TOOL.{n:02d}</span><div class="icon">{ICONS[TOOL_ICONS[t['prefix']]]}</div><h3>{esc(t['hub_title'])}</h3><p>{esc(t['hub_desc'])}</p><span class="more">Open tool &rarr;</span></a>""")
+        n += 1
+    title = "Free Trucking Calculators: Dispatch, Fuel, CPM, IFTA, HOS & More | Texas Solutions"
+    desc = "Free calculators for owner-operators and small fleets: dispatch fee, fuel cost, cost per mile, load profitability, break-even, deadhead miles, driver pay, IFTA mileage, per diem, truck loan, maintenance budget, HOS and freight class."
+    body = f"""{phero("Tools", "Free Trucking Calculators", "Work out your numbers before you book: dispatch fees, fuel cost, cost per mile, IFTA mileage, HOS hours and more. Nothing is stored, nothing is emailed.", ctas=False)}
+<section class="sec"><div class="wrap">
+  <div class="grid g3">
+{chr(10).join(cards)}
+  </div>
+</div></section>
+{band("Want a dispatcher who knows these numbers too?", "We negotiate every rate and plan lanes with your cost per mile in mind, not just the headline rate.")}"""
+    schemas = [{"@context": "https://schema.org", "@type": "ItemList", "name": "Free trucking calculators", "url": url("/tools.html"),
+                "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": url("/" + (existing[i][0] if i < 2 else TOOLS[i - 2]["slug"] + ".html"))}
+                                     for i in range(len(existing) + len(TOOLS))]},
+               crumbs_ld([("Tools", "/tools.html")])]
+    kw = "trucking calculators, owner operator calculators, free trucking tools, IFTA calculator, HOS calculator, cost per mile calculator, truck loan calculator, per diem calculator, freight class calculator"
+    write("tools.html", page("/tools.html", title, desc, kw, schemas, body, current="tools.html"))
+
+
+TOOLS = [
+    # -------------------------------------------------- Cost Per Mile
+    {
+        "slug": "cost-per-mile-calculator", "prefix": "cpm",
+        "hub_title": "Cost Per Mile (CPM) Calculator", "hub_desc": "Your true operating cost per mile from fixed and variable costs.",
+        "meta_title": "Cost Per Mile Calculator for Trucking (CPM) | Texas Solutions",
+        "desc": "Free cost per mile (CPM) calculator for owner-operators: combine truck payment, insurance, permits, fuel, maintenance and driver pay into your true cost per mile.",
+        "keywords": "cost per mile calculator, trucking cost per mile, CPM calculator, operating cost per mile, owner operator cost per mile",
+        "h1": "Cost Per Mile (CPM) Calculator",
+        "lede": "Your true cost to run one mile: fixed costs plus fuel, maintenance and driver pay. Know this before you accept a rate.",
+        "calc_html": """<div class="est rv" id="cpmCalc">
+  <div class="est-in">
+    <h2 style="font-size:26px">Monthly fixed costs</h2>
+    <div class="grid g2" style="gap:14px;margin-top:16px">
+      <div><label class="flabel" for="cpmPayment">Truck/trailer payment ($/mo)</label><input class="pct-in" type="number" id="cpmPayment" min="0" step="10" value="1800" inputmode="numeric"></div>
+      <div><label class="flabel" for="cpmInsurance">Insurance ($/mo)</label><input class="pct-in" type="number" id="cpmInsurance" min="0" step="10" value="600" inputmode="numeric"></div>
+      <div><label class="flabel" for="cpmPermits">Permits, licensing &amp; ELD ($/mo)</label><input class="pct-in" type="number" id="cpmPermits" min="0" step="10" value="150" inputmode="numeric"></div>
+      <div><label class="flabel" for="cpmOtherFixed">Other fixed costs ($/mo)</label><input class="pct-in" type="number" id="cpmOtherFixed" min="0" step="10" value="100" inputmode="numeric"></div>
+    </div>
+    <h2 style="font-size:26px;margin-top:28px">Variable costs (per mile)</h2>
+    <div class="grid g2" style="gap:14px;margin-top:16px">
+      <div><label class="flabel" for="cpmFuel">Fuel cost ($/mi)</label><input class="pct-in" type="number" id="cpmFuel" min="0" step="0.01" value="0.65" inputmode="decimal"><p class="hint">From the <a href="truck-fuel-cost-calculator.html">fuel cost calculator</a>, or your own number.</p></div>
+      <div><label class="flabel" for="cpmMaint">Maintenance &amp; tires ($/mi)</label><input class="pct-in" type="number" id="cpmMaint" min="0" step="0.01" value="0.18" inputmode="decimal"></div>
+      <div><label class="flabel" for="cpmDriverPay">Driver pay ($/mi)</label><input class="pct-in" type="number" id="cpmDriverPay" min="0" step="0.01" value="0.55" inputmode="decimal"><p class="hint">0 if you are the only driver and count your own pay separately.</p></div>
+      <div><label class="flabel" for="cpmMiles">Miles per month</label><input class="pct-in" type="number" id="cpmMiles" min="1" step="100" value="9000" inputmode="numeric"></div>
+    </div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Your cost per mile</h3>
+    <div class="est-big" id="cpmBig">$0.00<small>per mile, all-in</small></div>
+    <div class="est-lines">
+      <div><span>Fixed costs, monthly</span><b id="cpmFixedTotal">-</b></div>
+      <div><span>Fixed cost per mile</span><b id="cpmFixedPerMi">-</b></div>
+      <div><span>Variable cost per mile</span><b id="cpmVarPerMi">-</b></div>
+      <div><span>Total operating cost, monthly</span><b id="cpmMonthlyTotal">-</b></div>
+    </div>
+    <a class="btn btn-red" href="load-profitability-calculator.html">Check a load's profit</a>
+    <a class="btn btn-dark" href="break-even-calculator.html">Find my break-even rate</a>
+    <small>Rough estimate. Add your own numbers for an exact figure; costs vary by truck, lane and season.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("What is cost per mile (CPM) in trucking?", "Cost per mile is your total operating cost divided by miles driven: fixed costs (truck payment, insurance, permits) divided by monthly miles, plus variable costs (fuel, maintenance, driver pay) per mile. It is the number you compare against a load's rate per mile to see if it is worth running."),
+            ("What is a good cost per mile for an owner-operator?", "It depends heavily on the truck, lane and driver pay structure. Many owner-operators run somewhere between $1.50 and $2.00 all-in cost per mile. Use your own numbers in the calculator rather than a rule of thumb, since fuel, insurance and payment amounts vary widely."),
+            ("Does cost per mile include driver pay?", "It should if you want your true break-even rate. If you are an owner-operator driving your own truck, either include a driver-pay line for your own labor or track it separately and make sure you are not comparing rates against a number that ignores your own time."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How cost per mile is calculated</h2>
+    <p>Split your costs into two groups. <b>Fixed costs</b> happen whether you drive 500 miles or 15,000 miles that month: your truck payment, insurance, permits and ELD subscription. <b>Variable costs</b> scale with miles driven: fuel, maintenance, tires and driver pay.</p>
+    <ul>
+      <li>Fixed cost per mile = total monthly fixed costs &divide; miles driven that month</li>
+      <li>Variable cost per mile = fuel + maintenance + driver pay, all per mile</li>
+      <li>Cost per mile (CPM) = fixed cost per mile + variable cost per mile</li>
+    </ul>
+    <p>Fixed cost per mile falls as you drive more miles in a month, since the same truck payment is spread over more miles. That is why a truck sitting idle costs more per mile than a truck running hard.</p>""",
+    },
+    # -------------------------------------------------- Load Profitability
+    {
+        "slug": "load-profitability-calculator", "prefix": "lp",
+        "hub_title": "Load Profitability Calculator", "hub_desc": "Weigh the rate against fuel, driver pay and other costs before you book.",
+        "meta_title": "Load Profitability Calculator: Is This Load Worth Taking? | Texas Solutions",
+        "desc": "Free load profitability calculator: enter the rate, miles, deadhead and your cost per mile to see net profit, margin and effective rate per mile before you book a load.",
+        "keywords": "load profitability calculator, is this load worth taking, trucking profit calculator, net profit per load, effective rate per mile",
+        "h1": "Load Profitability Calculator",
+        "lede": "Rate, miles, deadhead and cost per mile in; net profit and margin out. Know before you book, not after you deliver.",
+        "calc_html": """<div class="est rv" id="lpCalc">
+  <div class="est-in">
+    <h2 style="font-size:26px">This load</h2>
+    <div class="grid g2" style="gap:14px;margin-top:16px">
+      <div><label class="flabel" for="lpRate">Load rate / total pay ($)</label><input class="pct-in" type="number" id="lpRate" min="0" step="10" value="3000" inputmode="numeric"></div>
+      <div><label class="flabel" for="lpLoaded">Loaded miles</label><input class="pct-in" type="number" id="lpLoaded" min="1" step="1" value="600" inputmode="numeric"></div>
+      <div><label class="flabel" for="lpDeadhead">Deadhead miles (to pickup)</label><input class="pct-in" type="number" id="lpDeadhead" min="0" step="1" value="50" inputmode="numeric"></div>
+      <div><label class="flabel" for="lpOther">Tolls, lumper, scale fees ($)</label><input class="pct-in" type="number" id="lpOther" min="0" step="5" value="0" inputmode="numeric"></div>
+      <div class="full"><label class="flabel" for="lpCpm">Your cost per mile ($/mi, all-in)</label><input class="pct-in" type="number" id="lpCpm" min="0" step="0.01" value="1.85" inputmode="decimal"><p class="hint">Get this from the <a href="cost-per-mile-calculator.html">cost per mile calculator</a>.</p></div>
+    </div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Net profit on this load</h3>
+    <div class="est-big" id="lpBig">$0<small>net profit</small></div>
+    <div class="est-lines">
+      <div><span>Total miles (loaded + deadhead)</span><b id="lpTotalMi">-</b></div>
+      <div><span>Total cost for this load</span><b id="lpTotalCost">-</b></div>
+      <div><span>Profit margin</span><b id="lpMargin">-</b></div>
+      <div><span>Rate per loaded mile</span><b id="lpRatePerLoaded">-</b></div>
+      <div><span>Rate per total mile</span><b id="lpRatePerTotal">-</b></div>
+    </div>
+    <a class="btn btn-red" href="deadhead-miles-calculator.html">Check deadhead impact</a>
+    <a class="btn btn-wa" href="__WA__" target="_blank" rel="noopener">__WA_ICON__Ask a dispatcher</a>
+    <small>Rough estimate. Actual profit depends on fuel prices, detention, and costs not entered here.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("How do I know if a load is profitable?", "Add up the total cost to run the load (your cost per mile times total miles, plus tolls, lumper or scale fees) and subtract it from the rate. If the result is positive and the margin looks reasonable after accounting for time, the load is profitable; if it is thin or negative, it likely is not worth it unless it repositions you for a better load."),
+            ("Should deadhead miles count against a load's profit?", "Yes. Deadhead miles cost fuel and time just like loaded miles, so they should be included in your total miles when working out true cost and effective rate per mile."),
+            ("What profit margin should I target per load?", "There is no universal number; it depends on your fixed costs, how often you run, and what alternative loads are available. Compare the margin here against your other options rather than a fixed target."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How load profit is calculated</h2>
+    <ul>
+      <li>Total miles = loaded miles + deadhead miles</li>
+      <li>Total cost = (cost per mile &times; total miles) + tolls, lumper and scale fees</li>
+      <li>Net profit = load rate &minus; total cost</li>
+      <li>Profit margin = net profit &divide; load rate &times; 100</li>
+    </ul>
+    <p>Two rates matter more than the headline number: <b>rate per loaded mile</b>, which is what brokers usually quote, and <b>rate per total mile</b>, which includes the deadhead it took to get there. A load that looks good per loaded mile can be mediocre once deadhead is counted.</p>""",
+    },
+    # -------------------------------------------------- Break-Even
+    {
+        "slug": "break-even-calculator", "prefix": "be",
+        "hub_title": "Break-Even Calculator", "hub_desc": "How many miles a month you need to cover costs, and the rate that gets you there.",
+        "meta_title": "Truck Break-Even Calculator: Miles & Rate to Cover Costs | Texas Solutions",
+        "desc": "Free break-even calculator for owner-operators: enter fixed costs, variable cost per mile and your freight rate to see the miles per month you need to break even, and your profit at your planned miles.",
+        "keywords": "break even calculator trucking, break even miles per month, owner operator break even rate, minimum rate per mile",
+        "h1": "Break-Even Calculator",
+        "lede": "The miles you need to run each month just to cover your costs, and the rate that gets you there.",
+        "calc_html": """<div class="est rv" id="beCalc">
+  <div class="est-in">
+    <h2 style="font-size:26px">Your costs and rate</h2>
+    <div class="field"><label class="flabel" for="beFixed">Fixed costs per month ($)</label><input class="pct-in" type="number" id="beFixed" min="0" step="10" value="2650" inputmode="numeric"><p class="hint">Truck payment, insurance, permits. From the <a href="cost-per-mile-calculator.html">CPM calculator</a>.</p></div>
+    <div class="field"><label class="flabel" for="beVar">Variable cost per mile ($/mi)</label><input class="pct-in" type="number" id="beVar" min="0" step="0.01" value="0.73" inputmode="decimal"><p class="hint">Fuel, maintenance and driver pay per mile.</p></div>
+    <div class="field"><label class="flabel" for="beRate">Average freight rate ($/mi)</label><input class="pct-in" type="number" id="beRate" min="0" step="0.01" value="1.85" inputmode="decimal"></div>
+    <div class="field"><label class="flabel" for="beMiles">Your planned miles per month</label><input class="pct-in" type="number" id="beMiles" min="0" step="100" value="9000" inputmode="numeric"></div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Break-even miles per month</h3>
+    <div class="est-big" id="beBig">0<small>miles / month</small></div>
+    <div class="est-lines">
+      <div><span>Break-even miles per week</span><b id="beWeekly">-</b></div>
+      <div><span>Profit per mile above break-even</span><b id="beMargin">-</b></div>
+      <div><span>Profit at your planned miles</span><b id="bePlannedProfit">-</b></div>
+    </div>
+    <p class="form-status err" id="beWarn" style="display:none">At this rate, your variable cost per mile is the same or more than what you are paid per mile. You cannot break even by driving more; raise your rate or cut costs.</p>
+    <a class="btn btn-red" href="load-profitability-calculator.html">Check a single load</a>
+    <small>Rough estimate based on the numbers you enter.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("How many miles does an owner-operator need to break even?", "It depends on fixed costs and the gap between your freight rate and variable cost per mile. Divide fixed costs by (rate minus variable cost per mile) to get break-even miles for the month. Enter your own numbers above for your figure."),
+            ("What is the minimum rate per mile to break even?", "The minimum rate equals your variable cost per mile plus fixed costs divided by the miles you plan to run. Running more miles lowers the minimum rate needed, because fixed costs are spread over more miles."),
+            ("What if my variable cost is higher than my rate?", "Then every mile loses money before fixed costs are even considered, and driving more miles makes the loss bigger, not smaller. The fix is a higher rate or lower variable costs (fuel, maintenance), not more miles."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How break-even is calculated</h2>
+    <ul>
+      <li>Contribution per mile = freight rate &minus; variable cost per mile</li>
+      <li>Break-even miles per month = fixed costs &divide; contribution per mile</li>
+      <li>Profit at your planned miles = (contribution per mile &times; planned miles) &minus; fixed costs</li>
+    </ul>
+    <p>Below break-even miles, you are still losing money on fixed costs even though each mile driven brings in more than it costs. Above break-even, every extra mile is profit at your current rate.</p>""",
+    },
+    # -------------------------------------------------- Deadhead Miles
+    {
+        "slug": "deadhead-miles-calculator", "prefix": "dh",
+        "hub_title": "Deadhead Miles Calculator", "hub_desc": "See how empty miles drag down your real rate per mile.",
+        "meta_title": "Deadhead Miles Calculator: Effective Rate Per Mile | Texas Solutions",
+        "desc": "Free deadhead miles calculator: see your deadhead percentage and effective rate per mile once empty miles are counted against a load's revenue.",
+        "keywords": "deadhead miles calculator, empty miles trucking, effective rate per mile, deadhead percentage",
+        "h1": "Deadhead Miles Calculator",
+        "lede": "The rate a broker quotes is per loaded mile. Here is what you actually earn once deadhead is counted.",
+        "calc_html": """<div class="est rv" id="dhCalc">
+  <div class="est-in">
+    <h2 style="font-size:26px">Loaded vs. deadhead</h2>
+    <div class="field"><label class="flabel" for="dhLoaded">Loaded miles</label><input class="pct-in" type="number" id="dhLoaded" min="1" step="1" value="550" inputmode="numeric"></div>
+    <div class="field"><label class="flabel" for="dhDead">Deadhead (empty) miles</label><input class="pct-in" type="number" id="dhDead" min="0" step="1" value="80" inputmode="numeric"></div>
+    <div class="field"><label class="flabel" for="dhRevenue">Load revenue ($)</label><input class="pct-in" type="number" id="dhRevenue" min="0" step="10" value="1900" inputmode="numeric"></div>
+    <div class="field"><label class="flabel" for="dhCpm">Your operating cost per mile ($/mi, optional)</label><input class="pct-in" type="number" id="dhCpm" min="0" step="0.01" placeholder="e.g. 1.85" inputmode="decimal"></div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Deadhead impact</h3>
+    <div class="est-big" id="dhBig">0%<small>deadhead miles</small></div>
+    <div class="est-lines">
+      <div><span>Total miles</span><b id="dhTotalMi">-</b></div>
+      <div><span>Quoted rate (per loaded mile)</span><b id="dhQuoted">-</b></div>
+      <div><span>Effective rate (all miles)</span><b id="dhEffective">-</b></div>
+      <div><span>Lost to deadhead</span><b id="dhLost">-</b></div>
+      <div id="dhProfitRow" style="display:none"><span>Profit after costs</span><b id="dhProfit">-</b></div>
+    </div>
+    <a class="btn btn-red" href="load-profitability-calculator.html">Full load profit calculator</a>
+    <small>Rough estimate. Planning your next load before this one delivers is the main way to cut deadhead.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("What is a good deadhead percentage for trucking?", "Many fleets target under 10-15% deadhead, though it varies by lane and equipment type. The lower the better, since deadhead miles burn fuel and time with no revenue."),
+            ("What is the difference between quoted rate and effective rate?", "The quoted rate is revenue divided by loaded miles only, which is how brokers usually post a load. The effective rate is revenue divided by total miles including deadhead, which is what you actually earn per mile driven."),
+            ("How can I reduce deadhead miles?", "Plan your next load before the current one delivers, work with a dispatcher who plans lanes around your position, and avoid areas with little return freight unless the rate accounts for it."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How deadhead impact is calculated</h2>
+    <ul>
+      <li>Deadhead % = deadhead miles &divide; total miles &times; 100</li>
+      <li>Quoted rate = revenue &divide; loaded miles</li>
+      <li>Effective rate = revenue &divide; total miles (loaded + deadhead)</li>
+      <li>Lost to deadhead = quoted rate &minus; effective rate, per mile</li>
+    </ul>
+    <p>A load that pays $3.00 a loaded mile can drop well below $2.50 once 80 empty miles are added in. Always compare loads on effective rate, not the quoted rate alone.</p>""",
+    },
+    # -------------------------------------------------- Driver Pay
+    {
+        "slug": "driver-pay-calculator", "prefix": "dp",
+        "hub_title": "Driver Pay Calculator", "hub_desc": "Weekly, monthly and annual pay across per-mile, per-load, percentage or hourly.",
+        "meta_title": "Truck Driver Pay Calculator: Per-Mile, Per-Load, % or Hourly | Texas Solutions",
+        "desc": "Free truck driver pay calculator: work out weekly, monthly and annual pay for per-mile, per-load, percentage of gross, or hourly pay models.",
+        "keywords": "truck driver pay calculator, per mile pay calculator, driver percentage pay calculator, trucking salary calculator",
+        "h1": "Driver Pay Calculator",
+        "lede": "Compare what a driving job actually pays across per-mile, per-load, percentage or hourly pay, weekly, monthly and for the year.",
+        "calc_html": """<div class="est rv" id="dpCalc">
+  <div class="est-in">
+    <h2 style="font-size:26px">Pay model</h2>
+    <div class="seg seg-4" role="radiogroup" aria-label="Pay model">
+      <label><input type="radio" name="dpModel" value="mile" checked><b>Per mile</b><span>Cents per mile</span></label>
+      <label><input type="radio" name="dpModel" value="load"><b>Per load</b><span>Flat pay per load</span></label>
+      <label><input type="radio" name="dpModel" value="pct"><b>Percentage</b><span>% of gross revenue</span></label>
+      <label><input type="radio" name="dpModel" value="hour"><b>Hourly</b><span>Hourly rate</span></label>
+    </div>
+    <div class="grid g2 dp-group" data-model="mile" style="gap:14px;margin-top:20px">
+      <div><label class="flabel" for="dpRateMile">Rate per mile ($)</label><input class="pct-in" type="number" id="dpRateMile" min="0" step="0.01" value="0.60" inputmode="decimal"></div>
+      <div><label class="flabel" for="dpMilesWk">Miles per week</label><input class="pct-in" type="number" id="dpMilesWk" min="0" step="10" value="2400" inputmode="numeric"></div>
+    </div>
+    <div class="grid g2 dp-group" data-model="load" style="gap:14px;margin-top:20px;display:none">
+      <div><label class="flabel" for="dpPayLoad">Pay per load ($)</label><input class="pct-in" type="number" id="dpPayLoad" min="0" step="5" value="350" inputmode="numeric"></div>
+      <div><label class="flabel" for="dpLoadsWk">Loads per week</label><input class="pct-in" type="number" id="dpLoadsWk" min="0" step="1" value="4" inputmode="numeric"></div>
+    </div>
+    <div class="grid g2 dp-group" data-model="pct" style="gap:14px;margin-top:20px;display:none">
+      <div><label class="flabel" for="dpGrossWk">Gross revenue per week ($)</label><input class="pct-in" type="number" id="dpGrossWk" min="0" step="50" value="4000" inputmode="numeric"></div>
+      <div><label class="flabel" for="dpPct">Your percentage (%)</label><input class="pct-in" type="number" id="dpPct" min="0" max="100" step="0.5" value="25" inputmode="decimal"></div>
+    </div>
+    <div class="grid g2 dp-group" data-model="hour" style="gap:14px;margin-top:20px;display:none">
+      <div><label class="flabel" for="dpHourly">Hourly rate ($)</label><input class="pct-in" type="number" id="dpHourly" min="0" step="0.5" value="22" inputmode="decimal"></div>
+      <div><label class="flabel" for="dpHoursWk">Hours per week</label><input class="pct-in" type="number" id="dpHoursWk" min="0" step="1" value="55" inputmode="numeric"></div>
+    </div>
+    <div class="field"><label class="flabel" for="dpWeeks">Weeks worked per year</label><input class="pct-in" type="number" id="dpWeeks" min="1" max="52" step="1" value="50" inputmode="numeric"><p class="hint">52 minus time off for home, holidays or downtime.</p></div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Estimated pay</h3>
+    <div class="est-big" id="dpBig">$0<small>per week</small></div>
+    <div class="est-lines">
+      <div><span>Monthly (average)</span><b id="dpMonthly">-</b></div>
+      <div><span>Annual, at your weeks worked</span><b id="dpAnnual">-</b></div>
+    </div>
+    <a class="btn btn-red" href="cost-per-mile-calculator.html">See operating cost per mile</a>
+    <small>Estimate only. Actual pay varies with freight availability, breakdowns and home time.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("What is the difference between per-mile and percentage pay?", "Per-mile pay is a fixed rate for every mile driven, so it does not change with freight rates. Percentage pay is a share of what the load actually earns, so it moves with the market: higher in strong freight, lower when rates soften."),
+            ("How much do truck drivers make per year?", "It depends heavily on pay model, miles or loads run, and weeks worked. Use your own numbers above rather than a national average, since regional pay, equipment type and experience all change the figure."),
+            ("Is percentage pay or per-mile pay better?", "Neither is universally better. Percentage pay can pay more when freight rates are strong and less when they are weak; per-mile pay is steadier. Compare both against your own typical gross revenue and miles."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How driver pay is calculated</h2>
+    <ul>
+      <li>Per mile: rate per mile &times; miles per week</li>
+      <li>Per load: pay per load &times; loads per week</li>
+      <li>Percentage: gross revenue per week &times; your percentage</li>
+      <li>Hourly: hourly rate &times; hours per week</li>
+    </ul>
+    <p>Monthly pay uses a 4.33-week average month; annual pay multiplies weekly pay by the weeks you actually plan to work, not all 52, so time off is reflected in the yearly number.</p>""",
+    },
+    # -------------------------------------------------- IFTA
+    {
+        "slug": "ifta-mileage-calculator", "prefix": "ifta",
+        "hub_title": "IFTA Mileage Calculator", "hub_desc": "Miles and fuel by state for your own IFTA records.",
+        "meta_title": "IFTA Mileage Calculator: Miles & Fuel by State | Texas Solutions",
+        "desc": "Free IFTA mileage calculator: log miles driven and fuel purchased by state, see gallons consumed per jurisdiction, and estimate net taxable gallons for your own IFTA records.",
+        "keywords": "IFTA calculator, IFTA mileage calculator, IFTA fuel tax calculator, IFTA miles by state",
+        "h1": "IFTA Mileage Calculator",
+        "lede": "Log miles driven and fuel bought by state to see gallons consumed, net taxable gallons and a quarter's worth of totals in one place.",
+        "calc_html": """<div class="est rv" id="iftaCalc" data-states='__STATES__'>
+  <div class="est-in" style="max-width:none">
+    <h2 style="font-size:26px">Miles and fuel by state</h2>
+    <div class="field" style="max-width:280px"><label class="flabel" for="iftaMpg">Average fleet MPG</label><input class="pct-in" type="number" id="iftaMpg" min="1" step="0.1" value="6.3" inputmode="decimal"><p class="hint">From the <a href="truck-fuel-cost-calculator.html">fuel cost calculator</a>, or your own average.</p></div>
+    <div style="overflow-x:auto;margin-top:18px"><table class="tbl ifta-table" id="iftaTable">
+      <thead><tr><th>State</th><th>Miles driven</th><th>Gallons purchased</th><th>Tax rate paid ($/gal, optional)</th><th></th></tr></thead>
+      <tbody id="iftaRows"></tbody>
+      <tfoot><tr class="ifta-total"><td>Total</td><td id="iftaTotalMiles">0</td><td id="iftaTotalPurchased">0</td><td></td><td></td></tr></tfoot>
+    </table></div>
+    <button class="btn btn-line" type="button" id="iftaAddRow" style="margin-top:14px">+ Add a state</button>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Fleet totals</h3>
+    <div class="est-big" id="iftaBig">0<small>net taxable gallons</small></div>
+    <div class="est-lines">
+      <div><span>Total miles</span><b id="iftaMi">-</b></div>
+      <div><span>Gallons consumed (from MPG)</span><b id="iftaConsumed">-</b></div>
+      <div><span>Gallons purchased</span><b id="iftaPurchased">-</b></div>
+      <div><span>Estimated net tax / credit</span><b id="iftaTax">-</b></div>
+    </div>
+    <small>For your own mileage records only. IFTA tax rates change every quarter by jurisdiction. Enter your own current rate per state if you want a dollar estimate, or leave it blank to just see mileage and gallons. This is not a substitute for your official IFTA return.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("What is IFTA?", "The International Fuel Tax Agreement (IFTA) is how most US states and Canadian provinces share fuel tax collected from carriers that operate across state lines. Carriers file a quarterly return reporting miles driven and fuel purchased in each jurisdiction."),
+            ("How is net taxable gallons calculated?", "For each state: gallons consumed = miles driven in that state divided by your fleet's average MPG. Net taxable gallons = gallons consumed minus gallons purchased in that state. A positive number means you owe tax there; a negative number is typically a credit."),
+            ("Does this calculator use current IFTA tax rates?", "No. IFTA tax rates are set per jurisdiction and change every quarter, so this tool does not hardcode them. Enter your own current rate per state (from your IFTA quarterly rate matrix) if you want a dollar estimate, or use the tool for mileage and gallons only."),
+            ("Does this replace my IFTA filing?", "No. This is a planning and record-keeping aid only. File your official IFTA return using your base jurisdiction's forms and current rates."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How this calculator works</h2>
+    <p>Add a row for every state you drove in during the quarter, with the miles driven there. Gallons consumed per state is calculated from your average fleet MPG. If you also log gallons purchased in that state, the tool shows net taxable gallons: positive means you burned more fuel there than you bought, negative means you bought more than you burned.</p>
+    <p>Tax rates are not built in because they are set per jurisdiction and change quarterly. If you want a dollar estimate, type in the rate you actually paid or your jurisdiction's current rate for that row.</p>""",
+    },
+    # -------------------------------------------------- Per Diem
+    {
+        "slug": "per-diem-calculator", "prefix": "pd",
+        "hub_title": "Per Diem Calculator", "hub_desc": "Estimate your annual per diem deduction and tax savings.",
+        "meta_title": "Truck Driver Per Diem Calculator | Texas Solutions",
+        "desc": "Free per diem calculator for truck drivers: estimate your annual per diem deduction and potential tax savings based on days on the road. Not tax advice.",
+        "keywords": "truck driver per diem calculator, per diem deduction trucking, owner operator per diem",
+        "h1": "Per Diem Calculator",
+        "lede": "A rough estimate of your annual per diem deduction and potential tax savings, based on days on the road.",
+        "calc_html": """<div class="est rv" id="pdCalc">
+  <div class="est-in">
+    <h2 style="font-size:26px">Your year on the road</h2>
+    <div class="field"><label class="flabel" for="pdDays">Days on the road per year</label><input class="pct-in" type="number" id="pdDays" min="0" max="365" step="1" value="300" inputmode="numeric"></div>
+    <div class="field"><label class="flabel" for="pdRate">Per diem rate per day ($)</label><input class="pct-in" type="number" id="pdRate" min="0" step="1" value="69" inputmode="numeric"><p class="hint">Check the current IRS special per diem rate for transportation workers before filing; this default may be out of date.</p></div>
+    <div class="field"><label class="flabel" for="pdDeductPct">Deductible percentage (%)</label><input class="pct-in" type="number" id="pdDeductPct" min="0" max="100" step="1" value="80" inputmode="numeric"><p class="hint">Transportation workers subject to DOT hours of service can typically deduct a higher share of meal costs than the general rule; confirm with a tax professional.</p></div>
+    <div class="field"><label class="flabel" for="pdTaxRate">Your marginal tax rate (%)</label><input class="pct-in" type="number" id="pdTaxRate" min="0" max="60" step="1" value="22" inputmode="numeric"></div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Estimated per diem</h3>
+    <div class="est-big" id="pdBig">$0<small>total per diem, per year</small></div>
+    <div class="est-lines">
+      <div><span>Deductible amount</span><b id="pdDeductible">-</b></div>
+      <div><span>Estimated tax savings</span><b id="pdSavings">-</b></div>
+    </div>
+    <small><b>Not tax advice.</b> Per diem rates, deductible percentages and your bracket are set by the IRS and your own situation, and can change. Confirm current figures with a tax professional before filing.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("What is per diem for truck drivers?", "Per diem is a daily allowance the IRS publishes for meals and incidental expenses while traveling for work. Drivers away from home overnight for work can generally use it to estimate a meal and incidental expense deduction instead of tracking every receipt."),
+            ("How much can truck drivers deduct for per diem?", "It is generally the per diem rate times the number of days on the road, multiplied by the deductible percentage the IRS allows for transportation workers. Rates and percentages are set by the IRS and can change, so confirm the current figures before filing."),
+            ("Is this per diem calculator tax advice?", "No. It gives a rough estimate only. Talk to a tax professional about your specific situation, current IRS rates, and how per diem interacts with your pay structure (company driver vs. owner-operator)."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How this estimate is calculated</h2>
+    <ul>
+      <li>Total per diem = days on the road &times; per diem rate per day</li>
+      <li>Deductible amount = total per diem &times; deductible percentage</li>
+      <li>Estimated tax savings = deductible amount &times; your marginal tax rate</li>
+    </ul>
+    <p>All three inputs (rate, deductible percentage and your tax bracket) are editable because they depend on current IRS rules and your own situation. This tool is a planning aid, not a tax filing.</p>""",
+    },
+    # -------------------------------------------------- Truck Loan
+    {
+        "slug": "truck-loan-calculator", "prefix": "tl",
+        "hub_title": "Truck Loan Calculator", "hub_desc": "Monthly payment, total interest and total cost for a truck loan.",
+        "meta_title": "Truck Loan Calculator: Monthly Payment & Total Interest | Texas Solutions",
+        "desc": "Free truck loan calculator: enter the truck price, down payment, interest rate and term to see your monthly payment, total interest and total cost.",
+        "keywords": "truck loan calculator, semi truck financing calculator, commercial truck loan payment calculator",
+        "h1": "Truck Loan Calculator",
+        "lede": "Monthly payment, total interest and total cost for a truck or trailer loan.",
+        "calc_html": """<div class="est rv" id="tlCalc">
+  <div class="est-in">
+    <h2 style="font-size:26px">Loan details</h2>
+    <div class="field"><label class="flabel" for="tlPrice">Truck price ($)</label><input class="pct-in" type="number" id="tlPrice" min="0" step="1000" value="145000" inputmode="numeric"></div>
+    <div class="field"><label class="flabel" for="tlDown">Down payment ($)</label><input class="pct-in" type="number" id="tlDown" min="0" step="500" value="15000" inputmode="numeric"></div>
+    <div class="field"><label class="flabel" for="tlRate">Interest rate, APR (%)</label><input class="pct-in" type="number" id="tlRate" min="0" step="0.1" value="9.5" inputmode="decimal"></div>
+    <div class="field"><label class="flabel" for="tlTerm">Loan term (months)</label><input class="pct-in" type="number" id="tlTerm" min="1" max="120" step="1" value="60" inputmode="numeric"></div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Monthly payment</h3>
+    <div class="est-big" id="tlBig">$0<small>per month</small></div>
+    <div class="est-lines">
+      <div><span>Amount financed</span><b id="tlFinanced">-</b></div>
+      <div><span>Total of all payments</span><b id="tlTotal">-</b></div>
+      <div><span>Total interest paid</span><b id="tlInterest">-</b></div>
+    </div>
+    <small>Estimate only. Your actual rate and payment depend on the lender, your credit, and any fees not entered here.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("How is a truck loan payment calculated?", "Using a standard amortization formula on the amount financed (price minus down payment), the monthly interest rate (APR divided by 12), and the loan term in months. The result is the fixed monthly payment that pays off the loan by the end of the term."),
+            ("How much down payment do I need for a truck loan?", "It varies by lender, credit and whether the truck is new or used. A larger down payment lowers the amount financed, which lowers both the monthly payment and total interest paid."),
+            ("What interest rate should I expect on a truck loan?", "Commercial truck loan rates vary with credit, time in business, and the lender, and change with broader interest rate conditions. Get quotes from a few lenders rather than assuming a rate; use this calculator to compare offers side by side."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How the payment is calculated</h2>
+    <p>This uses the standard loan amortization formula: <i>M = P &times; r(1+r)<sup>n</sup> &divide; ((1+r)<sup>n</sup> &minus; 1)</i>, where P is the amount financed, r is the monthly interest rate (APR &divide; 12), and n is the number of monthly payments. At 0% interest, the payment is simply the amount financed divided by the term.</p>""",
+    },
+    # -------------------------------------------------- Maintenance Budget
+    {
+        "slug": "maintenance-budget-calculator", "prefix": "mb",
+        "hub_title": "Maintenance Budget Calculator", "hub_desc": "A yearly repair reserve based on your truck's age and mileage.",
+        "meta_title": "Truck Maintenance Budget Calculator | Texas Solutions",
+        "desc": "Free truck maintenance budget calculator: estimate a yearly and monthly repair reserve based on your truck's age and annual mileage.",
+        "keywords": "truck maintenance budget calculator, trucking repair reserve, maintenance cost per mile trucking",
+        "h1": "Maintenance Budget Calculator",
+        "lede": "A rough yearly repair reserve based on your truck's age and how many miles you run, so a big repair does not catch you flat.",
+        "calc_html": """<div class="est rv" id="mbCalc">
+  <div class="est-in">
+    <h2 style="font-size:26px">Your truck</h2>
+    <div class="field"><label class="flabel" for="mbAge">Truck age (years)</label><input class="pct-in" type="number" id="mbAge" min="0" max="25" step="1" value="3" inputmode="numeric"></div>
+    <div class="field"><label class="flabel" for="mbMiles">Annual miles driven</label><input class="pct-in" type="number" id="mbMiles" min="0" step="1000" value="110000" inputmode="numeric"></div>
+    <div class="field"><label class="flabel" for="mbCustom">Your own rate ($/mi, optional)</label><input class="pct-in" type="number" id="mbCustom" min="0" step="0.01" placeholder="overrides the age-based rate" inputmode="decimal"></div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Suggested yearly reserve</h3>
+    <div class="est-big" id="mbBig">$0<small>per year</small></div>
+    <div class="est-lines">
+      <div><span>Rate used</span><b id="mbRate">-</b></div>
+      <div><span>Monthly reserve</span><b id="mbMonthly">-</b></div>
+      <div><span>Weekly reserve</span><b id="mbWeekly">-</b></div>
+    </div>
+    <small>Rough rule-of-thumb rates, not a quote. Actual maintenance cost depends heavily on make, model, duty cycle and how well the truck has been maintained; use your own repair history when you have it.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("How much should I budget for truck maintenance?", "As a rough rule of thumb, older trucks cost more per mile to maintain. This calculator uses editable age brackets as a starting point; once you have your own repair history, use your own cost per mile instead."),
+            ("Why does maintenance cost more on an older truck?", "Wear parts, hoses, seals and major components (engine, transmission, aftertreatment) become more likely to need repair as a truck ages and accumulates miles, so the average cost per mile for upkeep tends to rise."),
+            ("Should I set aside money for maintenance every month?", "Many owner-operators keep a maintenance reserve so a large repair does not become a cash-flow crisis. Setting aside a per-mile or monthly amount, even a rough estimate, is better than budgeting nothing."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How the reserve is estimated</h2>
+    <p>This uses simple age-based rule-of-thumb rates as a starting point, editable if you have your own numbers:</p>
+    <ul>
+      <li>0-2 years: about $0.12 per mile</li>
+      <li>3-5 years: about $0.18 per mile</li>
+      <li>6-8 years: about $0.25 per mile</li>
+      <li>9+ years: about $0.35 per mile</li>
+    </ul>
+    <p>Yearly reserve = rate per mile &times; annual miles. These are rough planning figures, not a quote or a guarantee; your own repair history is always the better number once you have a few years of it.</p>""",
+    },
+    # -------------------------------------------------- HOS
+    {
+        "slug": "hours-of-service-calculator", "prefix": "hos",
+        "hub_title": "Hours of Service (HOS) Calculator", "hub_desc": "Remaining drive time under the 11-hour, 14-hour and 60/70-hour limits.",
+        "meta_title": "Hours of Service (HOS) Calculator: 11, 14 & 70-Hour Limits | Texas Solutions",
+        "desc": "Free HOS calculator: estimate remaining drive time under the FMCSA 11-hour driving limit, 14-hour on-duty window and 60/7 or 70/8-day cycle limits. Planning tool only, not a legal record.",
+        "keywords": "HOS calculator, hours of service calculator, 14 hour rule trucking, 70 hour rule, 11 hour driving limit",
+        "h1": "Hours of Service (HOS) Calculator",
+        "lede": "A quick planning check against the core FMCSA drive-time limits. This is not your ELD record.",
+        "calc_html": """<div class="est rv" id="hosCalc">
+  <div class="est-in">
+    <h2 style="font-size:26px">Today so far</h2>
+    <div class="field"><label class="flabel" for="hosDriven">Hours driven today</label><input class="pct-in" type="number" id="hosDriven" min="0" max="11" step="0.25" value="0" inputmode="decimal"></div>
+    <div class="field"><label class="flabel" for="hosOnDuty">Other on-duty hours today (not driving)</label><input class="pct-in" type="number" id="hosOnDuty" min="0" max="14" step="0.25" value="0" inputmode="decimal"></div>
+    <div class="field"><label class="flabel" for="hosElapsed">Hours elapsed since you started today's shift</label><input class="pct-in" type="number" id="hosElapsed" min="0" max="24" step="0.25" value="0" inputmode="decimal"><p class="hint">Clock time since coming on duty, including any breaks.</p></div>
+    <div class="grid g2" style="gap:14px;margin-top:14px">
+      <div><label class="flabel" for="hosCycleType">Cycle limit</label><select class="pct-in" id="hosCycleType"><option value="70">70 hours / 8 days</option><option value="60">60 hours / 7 days</option></select></div>
+      <div><label class="flabel" for="hosCycleUsed">Cycle hours used (before today)</label><input class="pct-in" type="number" id="hosCycleUsed" min="0" step="0.25" value="45" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>You can drive up to</h3>
+    <div class="est-big" id="hosBig">0.0<small>more hours today</small></div>
+    <div class="est-lines">
+      <div><span>Drive-time limit (11 hr)</span><b id="hosDriveLeft">-</b></div>
+      <div><span>On-duty window (14 hr)</span><b id="hosWindowLeft">-</b></div>
+      <div><span>Cycle limit</span><b id="hosCycleLeft">-</b></div>
+      <div><span>Binding limit</span><b id="hosBinding">-</b></div>
+    </div>
+    <small><b>Planning tool only, not a legal record.</b> Does not cover every FMCSA exception (adverse conditions, short-haul, sleeper-berth splits, agricultural exemptions and more). Use your ELD as your official record and refer to 49 CFR Part 395.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("What is the 11-hour driving limit?", "Under core FMCSA rules, a property-carrying driver may drive up to 11 hours after 10 consecutive hours off duty."),
+            ("What is the 14-hour rule?", "A driver may not drive after the 14th hour since coming on duty, following 10 consecutive hours off duty. The 14-hour window keeps running during on-duty time and most breaks; it is not paused, with limited exceptions such as qualifying sleeper-berth splits."),
+            ("What is the 70-hour/8-day rule?", "A driver may not drive after 70 hours on duty in 8 consecutive days (or 60 hours in 7 days for carriers on that cycle). The cycle resets with 34 consecutive hours off duty."),
+            ("Does this calculator replace my ELD?", "No. This is a rough planning aid for estimating remaining hours. Your electronic logging device is your official hours-of-service record. This tool does not model every FMCSA exception."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How remaining hours are estimated</h2>
+    <ul>
+      <li>Drive-time limit remaining = 11 &minus; hours driven today</li>
+      <li>On-duty window remaining = 14 &minus; hours elapsed since starting today's shift</li>
+      <li>Cycle limit remaining = cycle limit (60 or 70) &minus; cycle hours already used &minus; today's on-duty hours</li>
+      <li>You can drive up to the smallest (binding) of the three</li>
+    </ul>
+    <p>This models the core rules only. It does not account for adverse driving conditions, the short-haul exemption, sleeper-berth split options, or other FMCSA exceptions in 49 CFR Part 395. Always confirm against your ELD and current regulations.</p>""",
+    },
+    # -------------------------------------------------- Freight Class
+    {
+        "slug": "freight-class-calculator", "prefix": "fc",
+        "hub_title": "Freight Class Calculator", "hub_desc": "A density-based NMFC freight class estimate from dimensions and weight.",
+        "meta_title": "Freight Class Calculator (NMFC Density-Based) | Texas Solutions",
+        "desc": "Free freight class calculator: estimate NMFC freight class from length, width, height and weight using the standard density table. Estimate only, confirm with your carrier.",
+        "keywords": "freight class calculator, NMFC freight class, freight density calculator, LTL freight class lookup",
+        "h1": "Freight Class Calculator",
+        "lede": "A density-based estimate of NMFC freight class from your shipment's dimensions and weight.",
+        "calc_html": """<div class="est rv" id="fcCalc">
+  <div class="est-in">
+    <h2 style="font-size:26px">Shipment dimensions</h2>
+    <div class="grid g2" style="gap:14px;margin-top:16px">
+      <div><label class="flabel" for="fcL">Length (in)</label><input class="pct-in" type="number" id="fcL" min="1" step="1" value="48" inputmode="numeric"></div>
+      <div><label class="flabel" for="fcW">Width (in)</label><input class="pct-in" type="number" id="fcW" min="1" step="1" value="40" inputmode="numeric"></div>
+      <div><label class="flabel" for="fcH">Height (in)</label><input class="pct-in" type="number" id="fcH" min="1" step="1" value="48" inputmode="numeric"></div>
+      <div><label class="flabel" for="fcWeight">Weight per unit (lbs)</label><input class="pct-in" type="number" id="fcWeight" min="1" step="1" value="500" inputmode="numeric"></div>
+      <div class="full"><label class="flabel" for="fcUnits">Number of identical units</label><input class="pct-in" type="number" id="fcUnits" min="1" step="1" value="1" inputmode="numeric"></div>
+    </div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Estimated freight class</h3>
+    <div style="margin-top:6px"><span class="class-badge" id="fcClass">-</span></div>
+    <div class="est-lines" style="margin-top:22px">
+      <div><span>Density</span><b id="fcDensity">-</b></div>
+      <div><span>Total cubic feet</span><b id="fcCube">-</b></div>
+      <div><span>Total weight</span><b id="fcTotalWeight">-</b></div>
+    </div>
+    <small><b>Estimate only.</b> Actual NMFC freight class depends on the specific commodity's NMFC item number, packaging, stowability and liability, not density alone. Confirm your class with your carrier or an official NMFC lookup before booking; getting it wrong can mean reclassification fees.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("How is freight class determined?", "Officially, freight class comes from the National Motor Freight Classification (NMFC), which assigns a specific item number to each commodity based on density, stowability, handling and liability. Density-based calculators like this one give a reasonable estimate for commodities without unusual handling or liability factors."),
+            ("What is freight density and how is it calculated?", "Density is weight divided by volume, in pounds per cubic foot (PCF). Cubic feet = (length &times; width &times; height in inches) &divide; 1728. Density = total weight &divide; total cubic feet."),
+            ("Why did my carrier reclassify my shipment?", "Carriers may reclassify a shipment if the class booked does not match the commodity's actual NMFC item, or if the measured density does not match what was declared. Confirming the correct class before booking avoids reclassification fees."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">The density table used</h2>
+    <div class="tbl"><table><thead><tr><th>Density (PCF)</th><th>Estimated class</th></tr></thead><tbody>
+      <tr><td>50 and over</td><td>50</td></tr>
+      <tr><td>35 to under 50</td><td>55</td></tr>
+      <tr><td>30 to under 35</td><td>60</td></tr>
+      <tr><td>22.5 to under 30</td><td>65</td></tr>
+      <tr><td>15 to under 22.5</td><td>70</td></tr>
+      <tr><td>12 to under 15</td><td>77.5</td></tr>
+      <tr><td>10 to under 12</td><td>85</td></tr>
+      <tr><td>8 to under 10</td><td>92.5</td></tr>
+      <tr><td>6 to under 8</td><td>100</td></tr>
+      <tr><td>4 to under 6</td><td>125</td></tr>
+      <tr><td>2 to under 4</td><td>150</td></tr>
+      <tr><td>1 to under 2</td><td>175</td></tr>
+      <tr><td>under 1</td><td>250+</td></tr>
+    </tbody></table></div>
+    <p>This is the widely used general density-to-class guideline. Some commodities carry their own NMFC item number regardless of density (electronics, hazardous materials, automotive parts and more), which overrides a pure density estimate. When in doubt, ask your carrier or dispatcher.</p>""",
+    },
+]
+
+
+# Fill placeholders that need runtime values (WA_URL/ICONS/C are defined
+# earlier in site.py, by the time this module-level code runs).
+for _t in TOOLS:
+    if "__WA__" in _t["calc_html"]:
+        _t["calc_html"] = _t["calc_html"].replace("__WA__", WA_URL).replace("__WA_ICON__", ICONS["wa"])
+    if "__STATES__" in _t["calc_html"]:
+        _states_json = json.dumps([n for n, _ in C.STATE_REGION.values()]).replace("'", "&#39;")
+        _t["calc_html"] = _t["calc_html"].replace("__STATES__", _states_json)
+
+
+def build_rss():
+    """RSS 2.0 feed of blog posts, for feed readers, news aggregators and AI crawlers."""
+    items = []
+    for po in POSTS:
+        link = url(f"/blog/{po['slug']}.html")
+        pub = po["date"].strftime("%a, %d %b %Y 00:00:00 +0000")
+        cat = esc(po["tags"][0]) if po["tags"] else "Trucking"
+        items.append(f"""    <item>
+      <title>{esc(po['title'])}</title>
+      <link>{link}</link>
+      <guid isPermaLink="true">{link}</guid>
+      <pubDate>{pub}</pubDate>
+      <description>{esc(po['description'])}</description>
+      <category>{cat}</category>
+    </item>""")
+    build_date = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
+    rss = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{esc(C.BRAND)} Blog</title>
+    <link>{url('/blog.html')}</link>
+    <atom:link href="{url('/feed.xml')}" rel="self" type="application/rss+xml" />
+    <description>Truck dispatch, rates, diesel prices and fuel-saving guides for owner-operators and small fleets.</description>
+    <language>en-us</language>
+    <lastBuildDate>{build_date}</lastBuildDate>
+{chr(10).join(items)}
+  </channel>
+</rss>
+"""
+    write("feed.xml", rss)
+
 def build_404():
     body = f"""{phero("Not found", "This page took a wrong exit.", "The page you are looking for does not exist. Try one of these instead.", ctas=False)}
 <section class="sec"><div class="wrap"><div class="chip-row" style="justify-content:flex-start">
@@ -1293,6 +1988,7 @@ def diesel_lines():
 def build_site_files():
     pages = [("/", "1.0", "weekly"), ("/estimate.html", "0.9", "weekly"), ("/truck-dispatch-rates.html", "0.9", "weekly"), ("/truck-fuel-cost-calculator.html", "0.9", "weekly")]
     pages += [("/" + p["file"], "0.8", "monthly") for p in C.LANDING]
+    pages += [("/tools.html", "0.9", "weekly")] + [("/" + t["slug"] + ".html", "0.8", "monthly") for t in TOOLS]
     pages += [("/blog.html", "0.8", "weekly")] + [(f"/blog/{po['slug']}.html", "0.7", "monthly") for po in POSTS]
     pages += [(pth, "0.7", "daily") for _, pth in STATE_PAGES]
     pages += [("/faq.html", "0.7", "monthly"), ("/about.html", "0.6", "monthly"), ("/contact.html", "0.6", "monthly"),
@@ -1341,6 +2037,9 @@ def build_site_files():
         f"- [Dispatch fee calculator and free quote]({url('/estimate.html')})",
         f"- [Truck dispatch rates and rate-per-mile guide]({url('/truck-dispatch-rates.html')})",
         f"- [Truck fuel cost calculator and weekly diesel prices by state]({url('/truck-fuel-cost-calculator.html')})",
+        f"- [Free trucking calculators]({url('/tools.html')})",
+        *[f"  - [{t['hub_title']}]({url('/' + t['slug'] + '.html')}): {t['desc']}" for t in TOOLS],
+        f"- [Blog RSS feed]({url('/feed.xml')})",
         *[f"- [{p['nav']}]({url('/' + p['file'])}): {p['answer']}" for p in C.LANDING],
         f"- [FAQ]({url('/faq.html')})", f"- [About]({url('/about.html')})", f"- [Contact]({url('/contact.html')})", "",
         "## Blog",
@@ -1370,9 +2069,12 @@ def main():
     for p in C.LANDING:
         build_landing(p)
     build_fuel()
+    build_tools()
+    build_tools_hub()
+    build_rss()
     build_404()
     build_site_files()
-    print("built", 18 + len(C.LANDING) + len(POSTS) + len(STATE_PAGES), "pages")
+    print("built", 19 + len(C.LANDING) + len(POSTS) + len(STATE_PAGES) + len(TOOLS), "pages, plus feed.xml")
 
 
 if __name__ == "__main__":

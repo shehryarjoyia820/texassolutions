@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Texas Solutions Truck Dispatch Blog</title>
+    <link>https://dispatch.texassolutions.co/blog.html</link>
+    <atom:link href="https://dispatch.texassolutions.co/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Truck dispatch, rates, diesel prices and fuel-saving guides for owner-operators and small fleets.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Sep 2026 00:42:39 +0000</lastBuildDate>
+    <item>
+      <title>Box Truck Dispatch: How to Find Loads and What It Really Costs</title>
+      <link>https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description>How box truck owner-operators find loads, what box trucks earn and spend on fuel, and what box truck dispatch costs (10% of weekly gross at Texas Solutions).</description>
+      <category>Box truck</category>
+    </item>
+    <item>
+      <title>Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile</title>
+      <link>https://dispatch.texassolutions.co/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Why diesel prices differ so much between states, how to work out your fuel cost per mile, and practical ways owner-operators cut fuel spend, with a free truck fuel calculator and daily state prices.</description>
+      <category>Fuel</category>
+    </item>
+    <item>
+      <title>Hotshot Trucking in 2026: Rates Per Mile, Fuel Mileage and Dispatch</title>
+      <link>https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A practical guide to hotshot trucking: typical rates per mile, how load weight affects fuel mileage, what a hotshot dispatcher does, and what dispatch costs (8% of weekly gross at Texas Solutions).</description>
+      <category>Hotshot</category>
+    </item>
+    <item>
+      <title>How Much Does a Truck Dispatcher Cost in 2026? Percentages Explained</title>
+      <link>https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description>What owner-operators pay for truck dispatch in 2026: typical percentages, what the fee covers, flat vs percentage, and Texas Solutions rates of 5% for semis, 8% for hotshots and 10% for box trucks.</description>
+      <category>Dispatch pricing</category>
+    </item>
+  </channel>
+</rss>

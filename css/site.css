@@ -427,7 +427,7 @@ a.cbox:hover { border-color: #cfcac6; }
 @media (max-width: 1100px) { .seg.trucks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .seg.trucks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 #waQuote .btn-wa { width: 100%; margin-top: 18px; padding: 16px; font-size: 16px; }
-.pct-in { flex: 1; min-width: 0; font: inherit; font-size: 18px; font-weight: 700; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fbfaf9; color: var(--ink); }
+.pct-in { width: 100%; flex: 1; min-width: 0; font: inherit; font-size: 18px; font-weight: 700; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fbfaf9; color: var(--ink); }
 .pct-in:focus { outline: 0; border-color: var(--red); box-shadow: 0 0 0 4px rgba(236,48,19,.12); background: #fff; }
 .range-row .pct-in + output { min-width: 0; font-size: 20px; }
 
@@ -490,3 +490,36 @@ a.cbox:hover { border-color: #cfcac6; }
 .post-card:nth-child(3n+2) .post-cover-ph { background: radial-gradient(420px 200px at 15% 0%, rgba(37,211,102,.35), transparent 65%), linear-gradient(135deg, #1c1917, #2b2826); }
 .post-card:nth-child(3n) .post-cover-ph { background: radial-gradient(420px 220px at 50% 110%, rgba(236,48,19,.5), transparent 65%), linear-gradient(135deg, #2b2826, #14110f); }
 .hero-card .row .pct { color: var(--red); font-weight: 800; font-size: 24px; white-space: nowrap; }
+
+/* ---------- 13-tools hub + calculator extras ---------- */
+.seg-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.seg-4 label { padding: 12px; }
+.seg-4 label b { font-size: 14px; }
+.seg-4 label span { font-size: 12px; display: block; margin-top: 2px; }
+@media (max-width: 1100px) { .seg-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.tool-num-card { position: relative; display: block; text-decoration: none; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 26px; box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.tool-num-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: #d8d3cf; }
+.tool-num { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: .12em; color: var(--red-600); background: var(--red-50); padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
+.tool-num-card h3 { font-size: 19px; margin-top: 14px; }
+.tool-num-card p { color: var(--muted); margin-top: 8px; font-size: 14.5px; }
+.tool-num-card .more { display: inline-block; margin-top: 14px; font-weight: 700; font-size: 14px; color: var(--red-600); }
+.tool-num-card:hover h3 { color: var(--red-600); }
+
+.ifta-table th, .ifta-table td { white-space: nowrap; }
+.ifta-table td { padding: 8px 10px; }
+.ifta-table input, .ifta-table select { width: 100%; min-width: 90px; font: inherit; font-size: 14px; padding: 8px 10px; border: 1.5px solid var(--line); border-radius: 8px; background: #fbfaf9; color: var(--ink); }
+.ifta-table select { min-width: 150px; }
+.ifta-table input:focus, .ifta-table select:focus { outline: 0; border-color: var(--red); background: #fff; }
+.ifta-table .ifta-rm { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: 20px; line-height: 1; padding: 4px 8px; }
+.ifta-table .ifta-rm:hover { color: var(--red-600); }
+.ifta-table tr.ifta-total td { font-weight: 800; background: var(--soft); border-top: 2px solid var(--line); }
+#iftaCalc .est-in { max-width: none; }
+
+.class-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 120px; padding: 16px 26px; border-radius: 16px; background: var(--ink); color: #fff; font-size: 36px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+
+/* Tools dropdown (wider, two columns) + mobile group labels */
+.dd-menu.wide { width: 460px; max-height: 70vh; overflow-y: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 8px; }
+@media (max-width: 1240px) { .dd-menu.wide { width: 400px; } }
+.mnav-label { display: block; padding: 16px 4px 4px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border: 0 !important; }
+.mnav .mnav-label { border-bottom: 0; }
