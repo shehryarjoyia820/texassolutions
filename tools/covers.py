@@ -91,60 +91,54 @@ def wrap(draw, text, fnt, max_w, max_lines=4):
     return lines
 
 
-def make_cover(slug, title, tags=(), out=None):
+def make_cover(slug, title, tags=(), out=None, label=None, sub=None):
+    """Light brand cover: off-white background, dark-grey type, red accent."""
     seed = int(hashlib.sha1(slug.encode()).hexdigest(), 16)
-    accent = ACCENTS[seed % len(ACCENTS)]
+    accent = ACCENTS[seed % len(ACCENTS)] if label is None else RED
     kind = glyph_for(tags, title)
-    # background: vertical gradient + accent glow
-    img = Image.new("RGB", (W, H), INK)
-    px = img.load()
-    for y in range(H):
-        t = y / H
-        c = (int(20 + 14 * t), int(17 + 11 * t), int(15 + 9 * t))
-        for x in range(W):
-            px[x, y] = c
-    glow = Image.new("RGB", (W, H), (0, 0, 0))
-    gd = ImageDraw.Draw(glow)
+    # background: soft vertical gradient (white to warm grey)
+    top, bottom = (252, 251, 249), (236, 233, 229)
+    grad = Image.linear_gradient("L").resize((W, H))
+    img = Image.merge("RGB", [grad.point(lambda v, a=top[i], b=bottom[i]: int(a + (b - a) * v / 255)) for i in range(3)])
+    # accent glow (soft red/orange in the upper right)
+    mask = Image.new("L", (W, H), 0)
     gx, gy = (W - 130 - (seed % 120), 40 + (seed // 7) % 90)
-    gd.ellipse([gx - 420, gy - 340, gx + 420, gy + 340], fill=tuple(int(c * 0.55) for c in accent))
-    glow = glow.filter(ImageFilter.GaussianBlur(120))
-    img = ImageChops.add(img, glow)
+    ImageDraw.Draw(mask).ellipse([gx - 420, gy - 340, gx + 420, gy + 340], fill=70)
+    mask = mask.filter(ImageFilter.GaussianBlur(120))
+    img.paste(Image.new("RGB", (W, H), accent), (0, 0), mask)
 
     d = ImageDraw.Draw(img, "RGBA")
-    for i in range(-2, 9):  # road lines
+    for i in range(-2, 9):  # faint road lines
         x0 = i * 190
-        d.line([(x0, H), (x0 + 330, 0)], fill=(255, 255, 255, 12), width=2)
+        d.line([(x0, H), (x0 + 330, 0)], fill=(20, 17, 15, 14), width=2)
 
-    # large glyph
+    # large glyph, drawn on its own layer so overlaps do not show
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     draw_glyph(ImageDraw.Draw(layer), kind, W - 250, H // 2 + 10, 42, accent + (255,))
-    layer.putalpha(layer.split()[3].point(lambda v: int(v * 0.38)))
+    layer.putalpha(layer.split()[3].point(lambda v: int(v * 0.22)))
     img.paste(layer, (0, 0), layer)
-    d.ellipse([W - 420, H // 2 - 170, W - 80, H // 2 + 190], outline=accent + (60,), width=3)
+    d.ellipse([W - 420, H // 2 - 170, W - 80, H // 2 + 190], outline=accent + (70,), width=3)
 
-    # brand mark
+    # brand mark (original grey chevrons) + wordmark
     try:
         mark = Image.open(ICON).convert("RGBA")
         mh = 54
         mark = mark.resize((int(mark.width * mh / mark.height), mh))
-        white = Image.new("RGBA", mark.size, (255, 255, 255, 255))
-        white.putalpha(mark.split()[3])
-        img.paste(white, (64, 54), white)
-        d.text((64 + white.width + 16, 52), "TEXAS SOLUTIONS", font=font(22, 800), fill=(255, 255, 255, 255))
-        d.text((64 + white.width + 16, 80), "TRUCK DISPATCH", font=font(18, 700), fill=accent + (255,))
+        img.paste(mark, (64, 54), mark)
+        d.text((64 + mark.width + 16, 52), "TEXAS SOLUTIONS", font=font(22, 800), fill=INK + (255,))
+        d.text((64 + mark.width + 16, 80), "TRUCK DISPATCH", font=font(18, 700), fill=accent + (255,))
     except Exception:
-        d.text((64, 60), "TEXAS SOLUTIONS", font=font(24, 800), fill=(255, 255, 255, 255))
+        d.text((64, 60), "TEXAS SOLUTIONS", font=font(24, 800), fill=INK + (255,))
 
     # tag pill
-    label = (tags[0] if tags else "Trucking").upper()
+    label = (label or (tags[0] if tags else "Trucking")).upper()
     tf = font(22, 800)
     tw = d.textlength(label, font=tf)
     d.rounded_rectangle([64, 170, 64 + tw + 40, 214], 22, fill=accent + (255,))
     d.text((84, 178), label, font=tf, fill=(255, 255, 255, 255))
 
     # title
-    size = 64
-    max_w = 700
+    size, max_w = 64, 700
     while True:
         tfnt = font(size, 800)
         lines = wrap(d, title, tfnt, max_w, 4)
@@ -153,16 +147,21 @@ def make_cover(slug, title, tags=(), out=None):
         size -= 4
     y = 244
     for ln in lines:
-        d.text((64, y), ln, font=tfnt, fill=(255, 255, 255, 255))
+        d.text((64, y), ln, font=tfnt, fill=INK + (255,))
         y += int(size * 1.14)
+    if sub:
+        d.text((64, y + 8), sub, font=font(28, 600), fill=(92, 87, 82, 255))
 
     # footer
     d.rectangle([0, H - 12, W, H], fill=accent + (255,))
-    d.text((64, H - 62), "dispatch.texassolutions.co", font=font(24, 700), fill=(200, 194, 188, 255))
+    d.text((64, H - 62), "dispatch.texassolutions.co", font=font(24, 700), fill=(92, 87, 82, 255))
 
     out = Path(out) if out else ROOT / "assets" / "blog" / f"{slug}.jpg"
     out.parent.mkdir(parents=True, exist_ok=True)
-    img.convert("RGB").save(out, "JPEG", quality=86, optimize=True, progressive=True)
+    if str(out).lower().endswith(".png"):
+        img.convert("RGB").save(out, "PNG", optimize=True)
+    else:
+        img.convert("RGB").save(out, "JPEG", quality=88, optimize=True, progressive=True)
     return out
 
 
@@ -176,3 +175,7 @@ if __name__ == "__main__":
         meta = yaml.safe_load(m.group(1)) if m else {}
         p = make_cover(f.stem, str(meta.get("title", f.stem)), meta.get("tags") or [])
         print("cover", p.name, p.stat().st_size // 1024, "KB")
+    # default social-share image
+    make_cover("og-default", "Truck Dispatch for Owner-Operators", (), ROOT / "assets" / "og-image.png", label="Dispatch",
+               sub="Semi 5%  |  Hotshot 8%  |  Box truck 10% of weekly gross")
+    print("og-image.png")

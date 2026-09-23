@@ -509,11 +509,11 @@ def rate_board():
     <p class="board-foot">Illustrative sample lanes shown for demonstration. Texas Solutions does not guarantee any specific load volume, rate, revenue, or earnings.</p>
   </div>
   <div class="rv">
-    <h3 style="color:#fff;margin-bottom:14px">Rough rate per mile by equipment</h3>
+    <h3 style="margin-bottom:14px">Rough rate per mile by equipment</h3>
     <div class="rate-guide">
 {guide}
     </div>
-    <p style="font-size:13px;color:#8a847e;margin-top:12px">Rough estimates. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR. Actual rates depend on lane, season and market.</p>
+    <p style="font-size:13px;color:var(--muted);margin-top:12px">Rough estimates. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR. Actual rates depend on lane, season and market.</p>
   </div>
 </div>"""
 
@@ -932,7 +932,7 @@ def build_landing(p):
     <p>{kind['label']} on OTR pay <b>{pl(kind)} of weekly gross</b>. With typical weekly gross of {money(kind['gross'][0])}-{money(kind['gross'][1])}, the dispatch fee is about {lo}-{hi} a week. No flat rate, no setup fee and no monthly subscription. <a href="estimate.html?{truck_q}">Estimate your fee</a>.</p>"""
     faqs = p["faqs"] + [C.FAQS[0], C.FAQS[5]]
     others = "".join(f'<a class="chip" href="{o["file"]}">{esc(o["nav"])}</a>' for o in C.LANDING if o["file"] != p["file"])
-    body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), extra=f'<div class="chip-row" style="justify-content:flex-start"><span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)"><b style="color:#ffb3a6">{pl(kind)}</b> of weekly gross</span><span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">OTR &middot; No flat rate</span></div>')}
+    body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), extra=f'<div class="chip-row" style="justify-content:flex-start"><span class="chip" ><b>{pl(kind)}</b> of weekly gross</span><span class="chip" >OTR &middot; No flat rate</span></div>')}
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(p['h1'] if p.get('guide') else f"What is {p['nav'].lower()} from Texas Solutions?", p['answer'])}</div></section>
 <section class="sec"><div class="wrap two">
   <div class="prose rv">
@@ -1012,7 +1012,7 @@ def build_fuel():
         diff = price - us
         cls = "up" if diff > 0.0005 else ("down" if diff < -0.0005 else "")
         src = "" if states_p.get(code) else " <small>EIA regional</small>"
-        rows += (f'<tr id="diesel-{code.lower()}"><td><b><a href="diesel-prices/{slugify(nm(code))}.html" style="color:#fff">{nm(code)}</a></b>{src}</td><td class="rate">${price:.3f}</td>'
+        rows += (f'<tr id="diesel-{code.lower()}"><td><b><a href="diesel-prices/{slugify(nm(code))}.html" style="color:var(--ink)">{nm(code)}</a></b>{src}</td><td class="rate">${price:.3f}</td>'
                  f'<td class="chg {cls}">{"+" if diff >= 0 else "-"}${abs(diff):.3f}</td></tr>\n')
     truck_secs = ""
     for tid, tname, emp, k, mx, dflt, idle, spd in C.FUEL_TRUCKS:
@@ -1098,7 +1098,7 @@ def build_fuel():
     <tbody>
 {rows}    </tbody>
   </table></div>
-  <p class="board-foot">Daily state averages: <a href="https://gasprices.aaa.com/state-gas-price-averages/" rel="noopener" style="color:#d9d5d1">AAA</a>, as of <span id="dieselDay">{day_h or "-"}</span>. U.S. average and fallback regional prices: <a href="https://www.eia.gov/petroleum/gasdiesel/" rel="noopener" style="color:#d9d5d1">U.S. Energy Information Administration</a>, week of <span id="dieselWeek">{week_h}</span>.</p></div>
+  <p class="board-foot">Daily state averages: <a href="https://gasprices.aaa.com/state-gas-price-averages/" rel="noopener" style="color:var(--red-600)">AAA</a>, as of <span id="dieselDay">{day_h or "-"}</span>. U.S. average and fallback regional prices: <a href="https://www.eia.gov/petroleum/gasdiesel/" rel="noopener" style="color:var(--red-600)">U.S. Energy Information Administration</a>, week of <span id="dieselWeek">{week_h}</span>.</p></div>
 </div></section>
 <section class="sec"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Fuel calculator by truck type</span><h2>Fuel price calculator for every truck</h2><p>Fuel cost for dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, based on published fuel economy data and today's diesel prices.</p></div>
@@ -1205,7 +1205,7 @@ def load_posts():
         tags = [str(x) for x in (meta.get("tags") or [])]
         cover = meta.get("cover") or ""
         if not cover and covers is not None:
-            sig = hashlib.sha1(("v2|" + title + "|" + "|".join(tags)).encode()).hexdigest()
+            sig = hashlib.sha1(("v3-light|" + title + "|" + "|".join(tags)).encode()).hexdigest()
             out = ROOT / "assets" / "blog" / f"{f.stem}.jpg"
             if not out.exists() or cache.get(f.stem) != sig:
                 covers.make_cover(f.stem, title, tags, out)
@@ -1296,7 +1296,7 @@ def build_blog():
         if len(po["toc"]) >= 4:
             toc = ('<nav class="toc" aria-label="In this article"><b>In this article</b><ol>' +
                    "".join(f'<li><a href="#{hid}">{esc(h)}</a></li>' for hid, h in po["toc"]) + "</ol></nav>")
-        tags = " ".join(f'<span class="chip" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">{esc(x)}</span>' for x in po["tags"])
+        tags = " ".join(f'<span class="chip" >{esc(x)}</span>' for x in po["tags"])
         upd = f' &middot; Updated {po["updated"].strftime("%B")} {po["updated"].day}, {po["updated"].year}' if po["updated"] != po["date"] else ""
         meta_line = (f'<p class="lede" style="font-size:15px">By {esc(po["author"])} &middot; '
                      f'<time datetime="{po["date"].isoformat()}">{po["date"].strftime("%B")} {po["date"].day}, {po["date"].year}</time>{upd} '
@@ -1371,7 +1371,7 @@ def build_state_pages():
         rank = ranked.index(code) + 1
         diff = price - us
         neighbours = sorted([c for c, (_, r) in C.STATE_REGION.items() if r == reg and c != code], key=sp)[:6]
-        nb_rows = "".join(f'<tr><td><a href="diesel-prices/{slugify(C.STATE_REGION[c][0])}.html" style="color:#fff">{C.STATE_REGION[c][0]}</a></td><td class="rate">${sp(c):.3f}</td></tr>' for c in neighbours)
+        nb_rows = "".join(f'<tr><td><a href="diesel-prices/{slugify(C.STATE_REGION[c][0])}.html" style="color:var(--ink)">{C.STATE_REGION[c][0]}</a></td><td class="rate">${sp(c):.3f}</td></tr>' for c in neighbours)
         ex = ""
         for tid in ("dry-van", "reefer", "flatbed", "hotshot", "box-truck"):
             n, mpg, w = trucks[tid]
@@ -1392,7 +1392,7 @@ def build_state_pages():
         body = f"""<section class="phero"><div class="wrap">
   <div class="crumbs"><a href="index.html">Home</a> / <a href="truck-fuel-cost-calculator.html">Fuel Calculator</a> / Diesel prices</div>
   <h1>Diesel Prices in {name} Today</h1>
-  <p class="lede">Average diesel price in {name}: <b style="color:#fff">${price:.3f} per gallon</b> on {day_h}. U.S. average ${us:.3f}. Updated daily.</p>
+  <p class="lede">Average diesel price in {name}: <b style="color:var(--ink)">${price:.3f} per gallon</b> on {day_h}. U.S. average ${us:.3f}. Updated daily.</p>
   <div class="ctas"><a class="btn btn-red" href="truck-fuel-cost-calculator.html?state={code}#fuelCalc">Calculate fuel cost in {name}</a><a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}Talk to a dispatcher</a></div>
 </div></section>
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa, label=f"Diesel price in {name}")}</div></section>
@@ -1416,7 +1416,7 @@ def build_state_pages():
   <div class="aside">
     <div class="board"><div class="board-head"><b>Nearby states</b><span>$/gal today</span></div>
       <table class="board-table"><tbody>{nb_rows}</tbody></table>
-      <p class="board-foot">Source: {src}, {day_h}. <a href="truck-fuel-cost-calculator.html#diesel-prices" style="color:#d9d5d1">All 50 states</a></p></div>
+      <p class="board-foot">Source: {src}, {day_h}. <a href="truck-fuel-cost-calculator.html#diesel-prices" style="color:var(--red-600)">All 50 states</a></p></div>
     {contact_side()}
   </div>
 </div></section>
