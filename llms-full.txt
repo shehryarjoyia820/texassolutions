@@ -874,55 +874,55 @@ Box truck dispatch costs a higher percentage than semi dispatch (5%) because eac
 
 You will need your own MC and DOT numbers, insurance and a W-9. Then [get a free estimate](/estimate.html?truck=box-truck), read about our [box truck dispatch service](/box-truck-dispatch.html), or message us on WhatsApp.
 
-## Diesel prices by state (daily, 2026-10-01; EIA U.S. weekly average $6.382/gal)
-- Alabama: $6.031/gal
-- Alaska: $6.604/gal
-- Arizona: $6.311/gal
-- Arkansas: $6.030/gal
-- California: $8.383/gal
-- Colorado: $6.038/gal
-- Connecticut: $6.472/gal
-- Delaware: $6.428/gal
-- District of Columbia: $6.490/gal
-- Florida: $5.954/gal
-- Georgia: $5.987/gal
-- Hawaii: $7.215/gal
-- Idaho: $6.559/gal
-- Illinois: $6.735/gal
-- Indiana: $6.817/gal
-- Iowa: $6.108/gal
-- Kansas: $6.102/gal
-- Kentucky: $6.243/gal
-- Louisiana: $5.898/gal
-- Maine: $6.476/gal
-- Maryland: $6.436/gal
-- Massachusetts: $6.359/gal
-- Michigan: $6.684/gal
-- Minnesota: $6.229/gal
-- Mississippi: $5.959/gal
-- Missouri: $6.153/gal
-- Montana: $6.236/gal
-- Nebraska: $6.072/gal
-- Nevada: $6.788/gal
-- New Hampshire: $6.383/gal
-- New Jersey: $6.383/gal
-- New Mexico: $6.110/gal
-- New York: $6.524/gal
-- North Carolina: $6.077/gal
-- North Dakota: $6.108/gal
-- Ohio: $6.655/gal
-- Oklahoma: $5.871/gal
-- Oregon: $6.830/gal
-- Pennsylvania: $6.574/gal
-- Rhode Island: $6.323/gal
-- South Carolina: $5.940/gal
-- South Dakota: $6.048/gal
-- Tennessee: $6.090/gal
-- Texas: $5.805/gal
-- Utah: $6.522/gal
-- Vermont: $6.420/gal
-- Virginia: $6.302/gal
-- Washington: $7.388/gal
-- West Virginia: $6.452/gal
-- Wisconsin: $6.399/gal
-- Wyoming: $6.218/gal
+## Diesel prices by state (daily, 2026-10-02; EIA U.S. weekly average $6.382/gal)
+- Alabama: $6.020/gal
+- Alaska: $6.600/gal
+- Arizona: $6.283/gal
+- Arkansas: $6.009/gal
+- California: $8.379/gal
+- Colorado: $6.061/gal
+- Connecticut: $6.478/gal
+- Delaware: $6.425/gal
+- District of Columbia: $6.506/gal
+- Florida: $5.915/gal
+- Georgia: $5.916/gal
+- Hawaii: $7.190/gal
+- Idaho: $6.534/gal
+- Illinois: $6.719/gal
+- Indiana: $6.802/gal
+- Iowa: $6.092/gal
+- Kansas: $6.080/gal
+- Kentucky: $6.231/gal
+- Louisiana: $5.885/gal
+- Maine: $6.471/gal
+- Maryland: $6.427/gal
+- Massachusetts: $6.361/gal
+- Michigan: $6.658/gal
+- Minnesota: $6.210/gal
+- Mississippi: $5.949/gal
+- Missouri: $6.134/gal
+- Montana: $6.229/gal
+- Nebraska: $6.046/gal
+- Nevada: $6.787/gal
+- New Hampshire: $6.385/gal
+- New Jersey: $6.378/gal
+- New Mexico: $6.085/gal
+- New York: $6.526/gal
+- North Carolina: $6.054/gal
+- North Dakota: $6.089/gal
+- Ohio: $6.630/gal
+- Oklahoma: $5.857/gal
+- Oregon: $6.816/gal
+- Pennsylvania: $6.572/gal
+- Rhode Island: $6.314/gal
+- South Carolina: $5.912/gal
+- South Dakota: $6.028/gal
+- Tennessee: $6.072/gal
+- Texas: $5.793/gal
+- Utah: $6.492/gal
+- Vermont: $6.414/gal
+- Virginia: $6.287/gal
+- Washington: $7.374/gal
+- West Virginia: $6.441/gal
+- Wisconsin: $6.370/gal
+- Wyoming: $6.212/gal
