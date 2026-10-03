@@ -7,6 +7,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /content/
 Disallow: /tools/
+Disallow: /docs/
 Disallow: /head-codes.html
 
 User-agent: Googlebot
@@ -41,6 +42,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /content/
 Disallow: /tools/
+Disallow: /docs/
 Disallow: /head-codes.html
 
 Sitemap: https://dispatch.texassolutions.co/sitemap.xml

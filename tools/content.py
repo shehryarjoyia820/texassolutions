@@ -60,7 +60,9 @@ RATE_GUIDE = [
     ("Box Truck", "$1.80 - $3.20", "Small-truck freight"),
 ]
 
-# Sample lanes for the animated rate board (illustrative, not live).
+# Example lanes for the rate board. These are illustrative examples of how
+# loads are quoted, not live or current market rates, and are labelled so on
+# every page. Each service page shows only its own equipment's examples.
 LANES = [
     ("Midland, TX", "Phoenix, AZ", "Flatbed", 872, "$5.60"),
     ("Odessa, TX", "Oklahoma City, OK", "Hotshot", 412, "$4.85"),
@@ -72,7 +74,22 @@ LANES = [
     ("San Antonio, TX", "Nashville, TN", "Step Deck", 1024, "$5.90"),
     ("Fort Worth, TX", "Kansas City, MO", "Reefer", 520, "$4.80"),
     ("Houston, TX", "San Antonio, TX", "Dry Van", 197, "$4.60"),
+    ("San Antonio, TX", "Shreveport, LA", "Hotshot", 392, "$4.30"),
+    ("Dallas, TX", "Houston, TX", "Box Truck", 239, "$2.90"),
+    ("Midland, TX", "San Antonio, TX", "Box Truck", 320, "$2.60"),
+    ("Fort Worth, TX", "Oklahoma City, OK", "Box Truck", 205, "$3.10"),
+    ("Houston, TX", "New Orleans, LA", "Box Truck", 348, "$2.40"),
+    ("El Paso, TX", "Phoenix, AZ", "Box Truck", 430, "$2.20"),
 ]
+# Equipment shown in the rate board on each service page (others show every lane).
+BOARD_EQUIPMENT = {
+    "box-truck-dispatch.html": ["Box Truck"],
+    "hotshot-dispatch.html": ["Hotshot"],
+    "flatbed-dispatch.html": ["Flatbed", "Step Deck"],
+    "dry-van-dispatch.html": ["Dry Van"],
+    "reefer-dispatch.html": ["Reefer"],
+    "power-only-dispatch.html": ["Power Only"],
+}
 
 EQUIPMENT = ["Dry Van", "Reefer", "Flatbed", "Step Deck", "Power Only", "Hotshot", "Box Truck", "Straight Truck"]
 
@@ -84,6 +101,15 @@ SMS_CONSENT = (
     'help. SMS consent is optional and is not a condition of receiving dispatch services. See our '
     '<a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms &amp; Conditions</a>.'
 )
+# Stored with every lead that ticks the box, so the exact wording agreed to is on record.
+# Change SMS_CONSENT_VERSION whenever the wording above changes.
+SMS_CONSENT_VERSION = "sms-consent-v1 (wording live since September 2026)"
+
+# Short first-contact form (documents are collected after the first call).
+MC_STATUS = ["Active MC authority", "New authority (under 6 months)", "Applying for authority", "No authority yet / leased on"]
+CONTACT_METHODS = ["Phone call", "Text message", "WhatsApp", "Email"]
+CALLBACK_TIMES = ["Any time", "Morning", "Afternoon", "Evening"]  # the carrier's preference, not our hours
+
 FORM_DISCLAIMER = (
     "Submitting this form requests contact from Texas Solutions regarding Texas Solutions's own dispatch services. "
     "Texas Solutions does not sell or transfer mobile opt-in information or SMS consent to third parties for "
@@ -365,7 +391,7 @@ STATE_REGION = {
 SEO = {
     '/': (
         'Truck Dispatch Service for Owner-Operators | Texas Solutions',
-        'Truck dispatch for owner-operators and small fleets: semi 5%, hotshot 8%, box truck 10% of weekly gross, OTR. No flat rate or setup fee. Get a free estimate.'),
+        'USA truck dispatch for owner-operators and small fleets: semi 5%, hotshot 8%, box truck 10% of weekly gross, OTR. Plus free fuel, CPM and load-profit tools.'),
     '/estimate.html': (
         'Truck Dispatch Fee Calculator & Free Quote | Texas Solutions',
         'Calculate your truck dispatch fee: semi 5%, hotshot 8%, box truck 10% of weekly gross, OTR. Pick your truck, set your own percentage, get a free quote.'),
@@ -377,13 +403,19 @@ SEO = {
         'Free truck fuel price calculator with diesel prices for all 50 states, updated daily. Estimate MPG, trip fuel cost and cost per mile for any truck type.'),
     '/tools.html': (
         'Free Trucking Calculators for Owner-Operators | Texas Solutions',
-        'Free trucking calculators: dispatch fee, fuel cost, cost per mile, load profit, break-even, deadhead, driver pay, IFTA, per diem, truck loan, HOS and more.'),
+        'Free trucking calculators: dispatch fee, fuel cost, fuel surcharge, detention, cost per mile, load profit, break-even, deadhead, IFTA, HOS and more.'),
+    '/fuel-surcharge-calculator.html': (
+        'Fuel Surcharge Calculator for Trucking | Texas Solutions',
+        "Free trucking fuel surcharge calculator: surcharge per mile and per trip from base price, current diesel price and MPG, or your contract's step table."),
+    '/detention-pay-calculator.html': (
+        'Truck Detention Pay Calculator | Texas Solutions',
+        'Free detention pay calculator for truckers: arrival, release, free time, hourly rate and billing increment give eligible detention hours and estimated pay.'),
     '/break-even-calculator.html': (
         'Truck Break-Even Calculator (Miles & Rate) | Texas Solutions',
         'Free truck break-even calculator: enter fixed costs, cost per mile and rate to see the miles per month you need to break even and your profit at planned miles.'),
     '/cost-per-mile-calculator.html': (
-        'Cost Per Mile Calculator for Trucking (CPM) | Texas Solutions',
-        'Free cost per mile (CPM) calculator for owner-operators: combine truck payment, insurance, fuel, maintenance and driver pay into your true cost per mile.'),
+        'Trucking Cost Per Mile Calculator (CPM) | Texas Solutions',
+        'Free owner-operator cost per mile calculator: fixed and variable costs, your own pay shown separately, and cost per total mile and per loaded mile.'),
     '/deadhead-miles-calculator.html': (
         'Deadhead Miles Calculator (Effective Rate) | Texas Solutions',
         "Free deadhead miles calculator: see your deadhead percentage and effective rate per mile once empty miles are counted against a load's revenue."),
@@ -401,7 +433,7 @@ SEO = {
         'Free IFTA mileage calculator: log miles and fuel by state, see gallons used and net taxable gallons for your own IFTA records.'),
     '/load-profitability-calculator.html': (
         'Is This Load Worth Taking? Load Profit Calculator',
-        'Free load profitability calculator: enter rate, miles, deadhead and cost per mile to see net profit, margin and effective rate per mile before you book.'),
+        'Free load profitability calculator: dispatch and factoring fees, deadhead and return miles, CPM and expenses give estimated profit and the rate you need.'),
     '/truck-loan-calculator.html': (
         'Truck Loan Calculator: Monthly Payment | Texas Solutions',
         'Free truck loan calculator: enter the truck price, down payment, interest rate and term to see your monthly payment, total interest and total cost.'),

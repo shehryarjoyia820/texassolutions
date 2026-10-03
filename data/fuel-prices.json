@@ -1,0 +1,706 @@
+{
+ "fuels": {
+  "diesel": {
+   "regions": {
+    "CA": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "California",
+     "observed": "2026-09-28",
+     "prev": 8.246,
+     "price": 8.181
+    },
+    "P1": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "East Coast",
+     "observed": "2026-09-28",
+     "prev": 6.268,
+     "price": 6.137
+    },
+    "P1A": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "New England",
+     "observed": "2026-09-28",
+     "prev": 6.517,
+     "price": 6.51
+    },
+    "P1B": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "Central Atlantic",
+     "observed": "2026-09-28",
+     "prev": 6.546,
+     "price": 6.531
+    },
+    "P1C": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "Lower Atlantic",
+     "observed": "2026-09-28",
+     "prev": 6.139,
+     "price": 5.953
+    },
+    "P2": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "Midwest",
+     "observed": "2026-09-28",
+     "prev": 6.68,
+     "price": 6.526
+    },
+    "P3": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "Gulf Coast",
+     "observed": "2026-09-28",
+     "prev": 6.177,
+     "price": 5.955
+    },
+    "P4": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "Rocky Mountain",
+     "observed": "2026-09-28",
+     "prev": 6.34,
+     "price": 6.407
+    },
+    "P5": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "West Coast",
+     "observed": "2026-09-28",
+     "prev": 7.456,
+     "price": 7.357
+    },
+    "P5X": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "West Coast (excl. California)",
+     "observed": "2026-09-28",
+     "prev": 6.791,
+     "price": 6.643
+    },
+    "US": {
+     "fetched": "2026-10-02T16:37:17Z",
+     "name": "U.S. average",
+     "observed": "2026-09-28",
+     "prev": 6.529,
+     "price": 6.382
+    }
+   },
+   "sources": {
+    "region": {
+     "cadence": "weekly",
+     "name": "U.S. Energy Information Administration (EIA) weekly on-highway diesel price",
+     "url": "https://www.eia.gov/petroleum/gasdiesel/"
+    },
+    "state": {
+     "cadence": "daily",
+     "name": "AAA daily state average",
+     "url": "https://gasprices.aaa.com/state-gas-price-averages/"
+    }
+   },
+   "states": {
+    "AK": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.593
+    },
+    "AL": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.003
+    },
+    "AR": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.993
+    },
+    "AZ": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.268
+    },
+    "CA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 8.379
+    },
+    "CO": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.086
+    },
+    "CT": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.474
+    },
+    "DC": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.502
+    },
+    "DE": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.414
+    },
+    "FL": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.876
+    },
+    "GA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.877
+    },
+    "HI": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 7.209
+    },
+    "IA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.073
+    },
+    "ID": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.507
+    },
+    "IL": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.706
+    },
+    "IN": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.776
+    },
+    "KS": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.067
+    },
+    "KY": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.216
+    },
+    "LA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.869
+    },
+    "MA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.357
+    },
+    "MD": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.42
+    },
+    "ME": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.467
+    },
+    "MI": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.641
+    },
+    "MN": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.191
+    },
+    "MO": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.106
+    },
+    "MS": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.933
+    },
+    "MT": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.218
+    },
+    "NC": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.038
+    },
+    "ND": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.079
+    },
+    "NE": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.03
+    },
+    "NH": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.384
+    },
+    "NJ": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.373
+    },
+    "NM": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.056
+    },
+    "NV": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.783
+    },
+    "NY": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.52
+    },
+    "OH": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.528
+    },
+    "OK": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.844
+    },
+    "OR": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.814
+    },
+    "PA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.566
+    },
+    "RI": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.321
+    },
+    "SC": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.885
+    },
+    "SD": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.012
+    },
+    "TN": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.059
+    },
+    "TX": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.777
+    },
+    "UT": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.463
+    },
+    "VA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.276
+    },
+    "VT": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.411
+    },
+    "WA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 7.363
+    },
+    "WI": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.347
+    },
+    "WV": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.432
+    },
+    "WY": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.216
+    }
+   }
+  },
+  "gasoline": {
+   "regions": {
+    "CA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "California",
+     "observed": "2026-09-28",
+     "prev": 6.003,
+     "price": 6.189
+    },
+    "P1": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "East Coast",
+     "observed": "2026-09-28",
+     "prev": 4.285,
+     "price": 4.29
+    },
+    "P1A": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "New England",
+     "observed": "2026-09-28",
+     "prev": 4.382,
+     "price": 4.369
+    },
+    "P1B": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "Central Atlantic",
+     "observed": "2026-09-28",
+     "prev": 4.438,
+     "price": 4.411
+    },
+    "P1C": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "Lower Atlantic",
+     "observed": "2026-09-28",
+     "prev": 4.163,
+     "price": 4.195
+    },
+    "P2": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "Midwest",
+     "observed": "2026-09-28",
+     "prev": 4.386,
+     "price": 4.291
+    },
+    "P3": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "Gulf Coast",
+     "observed": "2026-09-28",
+     "prev": 3.972,
+     "price": 3.924
+    },
+    "P4": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "Rocky Mountain",
+     "observed": "2026-09-28",
+     "prev": 4.51,
+     "price": 4.486
+    },
+    "P5": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "West Coast",
+     "observed": "2026-09-28",
+     "prev": 5.6,
+     "price": 5.724
+    },
+    "P5X": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "West Coast (excl. California)",
+     "observed": "2026-09-28",
+     "prev": 5.106,
+     "price": 5.153
+    },
+    "US": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "name": "U.S. average",
+     "observed": "2026-09-28",
+     "prev": 4.478,
+     "price": 4.465
+    }
+   },
+   "sources": {
+    "region": {
+     "cadence": "weekly",
+     "name": "U.S. Energy Information Administration (EIA) weekly regular gasoline price",
+     "url": "https://www.eia.gov/petroleum/gasdiesel/"
+    },
+    "state": {
+     "cadence": "daily",
+     "name": "AAA daily state average (regular)",
+     "url": "https://gasprices.aaa.com/state-gas-price-averages/"
+    }
+   },
+   "states": {
+    "AK": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.039
+    },
+    "AL": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 3.997
+    },
+    "AR": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 3.974
+    },
+    "AZ": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.761
+    },
+    "CA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 6.394
+    },
+    "CO": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.121
+    },
+    "CT": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.461
+    },
+    "DC": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.453
+    },
+    "DE": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.262
+    },
+    "FL": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.105
+    },
+    "GA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 3.883
+    },
+    "HI": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.638
+    },
+    "IA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.144
+    },
+    "ID": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.957
+    },
+    "IL": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.682
+    },
+    "IN": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 3.767
+    },
+    "KS": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.071
+    },
+    "KY": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.018
+    },
+    "LA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 3.948
+    },
+    "MA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.354
+    },
+    "MD": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.255
+    },
+    "ME": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.402
+    },
+    "MI": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.481
+    },
+    "MN": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.226
+    },
+    "MO": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.053
+    },
+    "MS": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 3.956
+    },
+    "MT": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.523
+    },
+    "NC": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.038
+    },
+    "ND": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.178
+    },
+    "NE": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.263
+    },
+    "NH": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.342
+    },
+    "NJ": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.314
+    },
+    "NM": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.371
+    },
+    "NV": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.488
+    },
+    "NY": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.476
+    },
+    "OH": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.079
+    },
+    "OK": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.019
+    },
+    "OR": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.042
+    },
+    "PA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.492
+    },
+    "RI": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.339
+    },
+    "SC": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 3.944
+    },
+    "SD": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.246
+    },
+    "TN": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 3.946
+    },
+    "TX": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 3.925
+    },
+    "UT": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.942
+    },
+    "VA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.141
+    },
+    "VT": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.433
+    },
+    "WA": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 5.488
+    },
+    "WI": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.175
+    },
+    "WV": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.301
+    },
+    "WY": {
+     "fetched": "2026-10-03T10:19:29Z",
+     "observed": "2026-10-03",
+     "price": 4.478
+    }
+   }
+  }
+ },
+ "schema": 1,
+ "unit": "USD per gallon, including taxes"
+}

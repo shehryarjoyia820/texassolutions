@@ -2,6 +2,7 @@
 title: "Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile"
 description: "Why diesel prices differ by state, how to work out fuel cost per mile, and 7 ways truckers cut fuel spend. Free fuel calculator and daily state prices."
 date: 2026-09-22
+updated: 2026-10-03
 author: "Texas Solutions Dispatch Team"
 tags:
   - Fuel
@@ -29,7 +30,9 @@ A loaded semi averaging about 6.3 mpg (the FHWA national average for combination
 
 Smaller trucks do better per mile but carry less. A hotshot averaging around 9-10 mpg loaded, or a 26 ft box truck at 8.5-11 mpg, spends roughly half as much per mile as a semi.
 
-Try your own truck, weight and state in the [truck fuel cost calculator](/truck-fuel-cost-calculator.html).
+**Trip example.** A dry van on a 1,100-mile trip (1,000 loaded, 100 deadhead) at about 6.3 mpg burns roughly 175 gallons. At $6.00 a gallon that is about **$1,050** of diesel. Fuelling where diesel is 50 cents cheaper saves about $88 on the same trip.
+
+Try your own truck, weight and state in the [truck fuel cost calculator](/truck-fuel-cost-calculator.html); it shows the date and source of every state price. If your contract pays a fuel surcharge, check it with the [fuel surcharge calculator](/fuel-surcharge-calculator.html).
 
 ## Why diesel prices differ by state
 
@@ -54,4 +57,4 @@ See [today's diesel prices for all 50 states](/truck-fuel-cost-calculator.html#d
 
 ## How a dispatcher helps
 
-A good dispatcher plans lanes to reduce empty miles and negotiates rates that leave room after fuel. At Texas Solutions, semi truck dispatch is 5% of weekly gross, hotshot dispatch 8% and box truck dispatch 10%. [See what it would cost you](/estimate.html).
+A good dispatcher plans lanes to reduce empty miles and negotiates rates that leave room after fuel. At Texas Solutions, semi truck dispatch is 5% of weekly gross, hotshot dispatch 8% and box truck dispatch 10%. Read about our [owner-operator dispatch service](/owner-operator-dispatch.html) or [see what it would cost you](/estimate.html).

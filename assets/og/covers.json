@@ -1,0 +1,16 @@
+{
+ "break-even-calculator": "756aabc2e3888fde054cf7455cc53b0187af351b",
+ "cost-per-mile-calculator": "41e74f1a809f4427f17c97d9ad11fa6fbebd22b2",
+ "deadhead-miles-calculator": "55c8c59a8465177382534bf0be0808f5b2b8f48c",
+ "detention-pay-calculator": "ba7eb50106415bf79a522c16ac652d3fc941b41d",
+ "driver-pay-calculator": "77aaa9044612b7d1b2eea0ad2303d680606ac802",
+ "freight-class-calculator": "ad5dae5307a6e05d31e90d549cac03a8ff61d2b4",
+ "fuel-surcharge-calculator": "6bc8cd6eb670a70bd71eb1d49c89dcab0632c058",
+ "hours-of-service-calculator": "984a213b07b9efc2aaf96825c517e212e8d6cbd2",
+ "ifta-mileage-calculator": "492fb6853d5b4cbbbad305a2abf100258349a995",
+ "load-profitability-calculator": "de49d5343a0e6ce5e61bc597530572e94794cf5a",
+ "maintenance-budget-calculator": "2959bff82ddff64af1c064ef85bd6381eaf2dc2f",
+ "per-diem-calculator": "9f815d165b72c8855bc15b9bf327c3982bfc07b2",
+ "truck-fuel-cost-calculator": "2b1781d19b24557435d29b6b970351f9dfeede73",
+ "truck-loan-calculator": "274c15620c523c5dcd7c6dd3f52b28838d0d0c45"
+}

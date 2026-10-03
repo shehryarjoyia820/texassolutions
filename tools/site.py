@@ -18,6 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import content as C  # noqa: E402
+import fuel_data as FD  # noqa: E402
 
 try:
     import covers  # noqa: E402
@@ -91,6 +92,7 @@ ICONS = {
     "doc": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>',
     "check": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4 12 14l-3-3"/></svg>',
     "clock": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+    "chat": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
     "truck": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>',
 }
 FEATURE_ICONS = ["cash", "route", "doc", "check", "calc", "clock"]
@@ -289,8 +291,10 @@ def footer():
       </div>
       <div>
         <h4>Contact</h4>
-      <a href="tel:{C.PHONE_E164}">{C.PHONE}</a>
+      <a href="tel:{C.PHONE_E164}">Call {C.PHONE}</a>
+      <a href="sms:{C.PHONE_E164}">Text {C.PHONE}</a>
       <a href="{WA_URL}" target="_blank" rel="noopener">WhatsApp +1 838 910 3147</a>
+      <a href="contact.html#callback">Request a callback</a>
       <a href="mailto:{C.EMAIL}">{C.EMAIL}</a>
       <p style="margin-top:8px">{C.STREET}<br>{C.CITY}, {C.REGION} {C.POSTAL}</p>
       <p style="margin-top:8px">{C.HOURS}</p>
@@ -303,6 +307,7 @@ def footer():
   <span class="wa-tip">Chat on WhatsApp<small>+1 (838) 910-3147</small></span>
   <span class="wa-btn">{ICONS['wa']}</span>
 </a>
+{mobile_bar()}
 <script src="js/site.js" defer></script>
 <script src="js/calc-tools.js" defer></script>"""
 
@@ -373,6 +378,10 @@ def page(path, title, description, keywords, schemas, body, current=None, og_typ
             *[f'<meta property="article:tag" content="{esc(x)}">' for x in tags],
         ]))
     codes = head_codes() or "<!-- no header codes yet: paste them into head-codes.html -->"
+    ga_ids = sorted(set(re.findall(r"\bG-[A-Z0-9]{6,}\b", codes)))
+    if ga_ids:  # keep local and staging test traffic out of GA4
+        codes = ("<script>if(!/(^|\\.)texassolutions\\.co$/.test(location.hostname)){" +
+                 "".join(f"window['ga-disable-{g}']=true;" for g in ga_ids) + "window.TS_DEBUG=true}</script>\n" + codes)
     lds = graph_script(path, title, description, schemas, body, img, alt, page_type, published, modified)
     return f"""<!DOCTYPE html>
 <html lang="en-US" class="no-js">
@@ -490,30 +499,37 @@ def pricing_cards(cta=True):
 <p class="note center">{esc(C.PRICING_CONDITION)} {esc(C.PRICING_NOTE)}</p>"""
 
 
-def rate_board():
-    rows = "\n".join(
+def rate_board(equip=None):
+    """Example lanes and the rough rate guide. equip limits both to one page's equipment."""
+    lanes = [x for x in C.LANES if not equip or x[2] in equip]
+    guide_rows = [x for x in C.RATE_GUIDE if not equip or x[0] in equip]
+    rows = chr(10).join(
         f'      <tr><td>{o} &rarr; {d}</td><td><span class="eq-badge">{e}</span></td><td class="hide-sm">{mi:,} mi</td><td class="rate">{r}/mi</td></tr>'
-        for o, d, e, mi, r in C.LANES)
-    guide = "\n".join(
+        for o, d, e, mi, r in lanes)
+    guide = chr(10).join(
         f'    <div class="rg{" hi" if eq in ("Flatbed", "Step Deck", "Reefer") else ""}"><b>{eq}</b><span class="v">{rate}/mi</span><small>{note}</small></div>'
-        for eq, rate, note in C.RATE_GUIDE)
-    return f"""<div class="grid board-grid" id="board">
-  <div class="board rv">
-    <div class="board-head"><b><span class="dot"></span>Lane Rate Board</b><span>Rough estimate &middot; <span id="boardTime">today</span></span></div>
+        for eq, rate, note in guide_rows)
+    board = ""
+    if len(lanes) >= 3:
+        board = f"""  <div class="board rv">
+    <div class="board-head"><b>Example lanes</b><span>Illustrative examples, not live rates</span></div>
     <div style="overflow-x:auto"><table class="board-table">
-      <thead><tr><th>Lane</th><th>Equipment</th><th class="hide-sm">Miles</th><th>Rate</th></tr></thead>
+      <thead><tr><th>Lane</th><th>Equipment</th><th class="hide-sm">Miles</th><th>Example rate</th></tr></thead>
       <tbody>
 {rows}
       </tbody>
     </table></div>
-    <p class="board-foot">Illustrative sample lanes shown for demonstration. Texas Solutions does not guarantee any specific load volume, rate, revenue, or earnings.</p>
-  </div>
+    <p class="board-foot">Example lanes showing how {"these" if equip else ""} loads are quoted per mile. They are not current market rates or offers of freight. Texas Solutions does not guarantee any specific load volume, rate, revenue, or earnings.</p>
+  </div>"""
+    names = " and ".join(equip) if equip else "common equipment"
+    return f"""<div class="grid board-grid{' board-solo' if not board else ''}" id="board">
+{board}
   <div class="rv">
-    <h3 style="margin-bottom:14px">Rough rate per mile by equipment</h3>
+    <h3 style="margin-bottom:14px">Rough rate per mile{' for ' + names.lower() if equip else ' by equipment'}</h3>
     <div class="rate-guide">
 {guide}
     </div>
-    <p style="font-size:13px;color:var(--muted);margin-top:12px">Rough estimates. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR. Actual rates depend on lane, season and market.</p>
+    <p style="font-size:13px;color:var(--muted);margin-top:12px">Rough ranges, not quotes. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR. Actual rates depend on lane, season and market.</p>
   </div>
 </div>"""
 
@@ -548,35 +564,78 @@ def equip_options(selected=""):
     return "\n".join(f'<option{" selected" if e == selected else ""}>{e}</option>' for e in C.EQUIPMENT)
 
 
-def lead_form(fid, subject, button, quote=False):
-    """Written fields only. No file uploads."""
-    extra = '<input type="hidden" name="estimate_summary" value="">' if quote else ""
-    return f"""<form class="form rv" id="{fid}" data-web3 data-subject="{esc(subject)}" novalidate>
-  <div class="grid g2">
-    <div><label class="fl" for="{fid}-name">Full name <i>*</i></label><input type="text" id="{fid}-name" name="name" autocomplete="name" required></div>
-    <div><label class="fl" for="{fid}-phone">Phone <i>*</i></label><input type="tel" id="{fid}-phone" name="phone" autocomplete="tel" required></div>
-    <div><label class="fl" for="{fid}-email">Email <i>*</i></label><input type="email" id="{fid}-email" name="email" autocomplete="email" required></div>
-    <div><label class="fl" for="{fid}-company">Company name</label><input type="text" id="{fid}-company" name="company" autocomplete="organization"></div>
-    <div><label class="fl" for="{fid}-mc">MC number</label><input type="text" id="{fid}-mc" name="mc_number" inputmode="numeric"></div>
-    <div><label class="fl" for="{fid}-dot">DOT number</label><input type="text" id="{fid}-dot" name="dot_number" inputmode="numeric"></div>
-    <div><label class="fl" for="{'qEquip' if quote else fid + '-eq'}">Equipment <i>*</i></label><select id="{'qEquip' if quote else fid + '-eq'}" name="equipment" required><option value="">Select equipment</option>{equip_options()}</select></div>
-    <div><label class="fl" for="{'qTrucks' if quote else fid + '-trucks'}">Number of trucks</label><input type="number" id="{'qTrucks' if quote else fid + '-trucks'}" name="trucks" min="1" max="500" value="1"></div>
-    <div class="full"><label class="fl" for="{fid}-lanes">Home base and preferred lanes</label><input type="text" id="{fid}-lanes" name="lanes" placeholder="e.g. Midland, TX. OTR to the Southeast, home every 2 weeks"></div>
-    <div class="full"><label class="fl" for="{fid}-msg">Message</label><textarea id="{fid}-msg" name="message" placeholder="Tell us about your truck, authority age, and what you need from a dispatcher."></textarea></div>
-    <div class="full"><label class="consent"><input type="checkbox" name="sms_consent" value="yes"><span>{C.SMS_CONSENT}</span></label></div>
-  </div>
-  {extra}
-  <label class="hp" aria-hidden="true">Leave empty <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+def opts(items, placeholder=None):
+    first = f'<option value="">{placeholder}</option>' if placeholder else ""
+    return first + "".join(f"<option>{esc(x)}</option>" for x in items)
+
+
+def state_opts():
+    return opts(sorted(n for n, _ in C.STATE_REGION.values()), "Select state")
+
+
+SMS_TEXT = re.sub(r"<[^>]+>", "", html.unescape(C.SMS_CONSENT))
+
+
+def consent_box(fid):
+    return f"""<div class="full"><label class="consent"><input type="checkbox" name="sms_consent" value="yes"><span>{C.SMS_CONSENT}</span></label>
+      <input type="hidden" name="sms_consent_text" value="{esc(SMS_TEXT)}"><input type="hidden" name="sms_consent_version" value="{esc(C.SMS_CONSENT_VERSION)}"></div>"""
+
+
+def form_tail(button):
+    return f"""<label class="hp" aria-hidden="true">Leave empty <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
   <button class="btn btn-red" type="submit">{esc(button)}</button>
   <p class="form-status" role="status" aria-live="polite"></p>
-  <p class="fine">{esc(C.FORM_DISCLAIMER)}</p>
+  <p class="fine">{esc(C.FORM_DISCLAIMER)}</p>"""
+
+
+def lead_form(fid, subject, button):
+    """Short first-contact form. Documents (MC, W-9, insurance) are collected after the first call."""
+    return f"""<form class="form rv" id="{fid}" data-web3 data-kind="lead" data-subject="{esc(subject)}" novalidate>
+  <div class="grid g2">
+    <div class="full"><label class="fl" for="{fid}-name">Your name <i>*</i></label><input type="text" id="{fid}-name" name="name" autocomplete="name" required></div>
+    <div><label class="fl" for="{fid}-phone">Phone</label><input type="tel" id="{fid}-phone" name="phone" autocomplete="tel" data-oneof="contact"></div>
+    <div><label class="fl" for="{fid}-email">Email</label><input type="email" id="{fid}-email" name="email" autocomplete="email" data-oneof="contact"></div>
+    <p class="full hint oneof-hint">Phone or email, whichever you prefer. <i>*</i></p>
+    <div><label class="fl" for="{fid}-eq">Equipment <i>*</i></label><select id="{fid}-eq" name="equipment" required>{opts(C.EQUIPMENT, "Select equipment")}</select></div>
+    <div><label class="fl" for="{fid}-state">Home state <i>*</i></label><select id="{fid}-state" name="home_state" required>{state_opts()}</select></div>
+    <div><label class="fl" for="{fid}-trucks">Number of trucks <i>*</i></label><input type="number" id="{fid}-trucks" name="trucks" min="1" max="500" value="1" required></div>
+    <div><label class="fl" for="{fid}-mc">MC authority status <i>*</i></label><select id="{fid}-mc" name="mc_status" required>{opts(C.MC_STATUS, "Select status")}</select></div>
+    <div class="full"><label class="fl" for="{fid}-method">Preferred contact method <i>*</i></label><select id="{fid}-method" name="contact_method" required>{opts(C.CONTACT_METHODS, "Select one")}</select></div>
+    <div class="full"><label class="fl" for="{fid}-msg">Anything else? (optional)</label><textarea id="{fid}-msg" name="message" rows="3" placeholder="Lanes, home time, questions. We collect documents after the first call."></textarea></div>
+    {consent_box(fid)}
+  </div>
+  {form_tail(button)}
 </form>"""
+
+
+def callback_form(fid="callbackForm"):
+    return f"""<form class="form rv" id="{fid}" data-web3 data-kind="callback" data-subject="Callback request" novalidate>
+  <div class="grid g2">
+    <div><label class="fl" for="{fid}-name">Your name <i>*</i></label><input type="text" id="{fid}-name" name="name" autocomplete="name" required></div>
+    <div><label class="fl" for="{fid}-phone">Phone <i>*</i></label><input type="tel" id="{fid}-phone" name="phone" autocomplete="tel" required></div>
+    <div><label class="fl" for="{fid}-time">Best time to call</label><select id="{fid}-time" name="best_time">{opts(C.CALLBACK_TIMES)}</select></div>
+    <div><label class="fl" for="{fid}-eq">Equipment</label><select id="{fid}-eq" name="equipment">{opts(C.EQUIPMENT, "Not sure yet")}</select></div>
+    {consent_box(fid)}
+  </div>
+  {form_tail("Request a Callback")}
+</form>"""
+
+
+def mobile_bar():
+    return f"""<nav class="mbar" aria-label="Contact a dispatcher">
+  <a href="tel:{C.PHONE_E164}">{ICONS['phone']}<span>Call</span></a>
+  <a href="sms:{C.PHONE_E164}">{ICONS['chat']}<span>Text</span></a>
+  <a href="{WA_URL}" target="_blank" rel="noopener" class="mbar-wa">{ICONS['wa']}<span>WhatsApp</span></a>
+  <a href="contact.html#callback">{ICONS['clock']}<span>Callback</span></a>
+</nav>"""
 
 
 def contact_side():
     return f"""<div class="cside">
   <a class="cbox wa" href="{WA_URL}" target="_blank" rel="noopener"><span class="icon">{ICONS['wa'].replace('viewBox', 'fill="currentColor" viewBox')}</span><span><b>WhatsApp</b><span>+1 (838) 910-3147 &middot; fastest reply</span></span></a>
   <a class="cbox" href="tel:{C.PHONE_E164}"><span class="icon">{ICONS['phone']}</span><span><b>Call a dispatcher</b><span>{C.PHONE}</span></span></a>
+  <a class="cbox" href="sms:{C.PHONE_E164}"><span class="icon">{ICONS['chat']}</span><span><b>Text us</b><span>{C.PHONE}</span></span></a>
+  <a class="cbox" href="contact.html#callback"><span class="icon">{ICONS['clock']}</span><span><b>Request a callback</b><span>Leave your number, we call you</span></span></a>
   <a class="cbox" href="mailto:{C.EMAIL}"><span class="icon">{ICONS['mail']}</span><span><b>Email</b><span>{C.EMAIL}</span></span></a>
   <div class="cbox"><span class="icon">{ICONS['pin']}</span><span><b>Office</b><span>{C.STREET}, {C.CITY}, {C.REGION} {C.POSTAL}</span></span></div>
 </div>"""
@@ -611,13 +670,14 @@ def build_home():
   <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/video/hero-background.mp4" type="video/mp4"></video>
   <div class="wrap">
     <div>
-      <span class="eyebrow"><span class="dot"></span>Truck dispatch for owner-operators &amp; small fleets</span>
-      <h1>Truck Dispatch Service that keeps your <em>truck loaded.</em></h1>
-      <p class="lede">We find, negotiate and book high-paying freight for owner-operators and small fleets across the USA. Dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load.</p>
+      <span class="eyebrow"><span class="dot"></span>Truck dispatch services &amp; free trucking tools for USA owner-operators</span>
+      <h1>USA Truck Dispatch Service that keeps your <em>truck loaded.</em></h1>
+      <p class="lede">We find, negotiate and book freight for owner-operators and small fleets in all 48 lower states. Dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load.</p>
       <div class="ctas">
         <a class="btn btn-red" href="estimate.html">{ICONS['calc']}Get a Free Estimate</a>
         <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp a Dispatcher</a>
       </div>
+      <p class="hero-tools">Free tools, no signup: <a href="truck-fuel-cost-calculator.html">Fuel cost</a> <a href="cost-per-mile-calculator.html">Cost per mile</a> <a href="load-profitability-calculator.html">Load profit</a> <a href="tools.html">All tools &rarr;</a></p>
       <div class="hero-stats">
         <div><b>{pl(M)}</b><span>Semi trucks, OTR</span></div>
         <div><b>8-10%</b><span>Hotshot 8%, box truck 10%</span></div>
@@ -641,7 +701,7 @@ def build_home():
   {pricing_cards()}
 </div></section>
 <section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate board</span><h2>What loads are paying</h2><p>A rough guide to rates per mile on common equipment. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR.</p></div>
+  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>What loads typically pay</h2><p>A rough guide to rates per mile on common equipment. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR.</p></div>
   {rate_board()}
 </div></section>
 <section class="sec"><div class="wrap">
@@ -660,11 +720,14 @@ def build_home():
   <div class="aside">{contact_side()}</div>
 </div></section>
 <section class="sec sec-dark tools-sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Free trucking tools</span><h2>Know your numbers before you book</h2><p>Free calculators built for owner-operators, with diesel prices for all 50 states updated every day.</p></div>
+  <div class="sec-head rv"><span class="eyebrow">Free trucking tools</span><h2>Know your numbers before you book</h2><p>Free calculators built for owner-operators, with daily diesel prices for all 50 states. No signup; calculations run in your browser.</p></div>
   <div class="grid g3">
     <a class="tool-card rv" href="truck-fuel-cost-calculator.html"><div class="icon">{ICONS['truck']}</div><h3>Truck fuel cost calculator</h3><p>MPG by truck type and load weight, trip fuel cost and cost per mile, with today's diesel price for your state.</p><span class="more">Calculate fuel cost &rarr;</span></a>
     <a class="tool-card rv" href="estimate.html"><div class="icon">{ICONS['calc']}</div><h3>Dispatch fee calculator</h3><p>See your weekly and monthly dispatch fee for your truck: semi 5%, hotshot 8%, box truck 10%.</p><span class="more">Estimate my fee &rarr;</span></a>
-    <a class="tool-card rv" href="cost-per-mile-calculator.html"><div class="icon">{ICONS['cash']}</div><h3>Cost per mile calculator</h3><p>Your true operating cost per mile, from truck payment and insurance to fuel and driver pay.</p><span class="more">Find my CPM &rarr;</span></a>
+    <a class="tool-card rv" href="cost-per-mile-calculator.html"><div class="icon">{ICONS['cash']}</div><h3>Cost per mile calculator</h3><p>Fixed and variable costs, your own labor shown separately, and cost per total and per loaded mile.</p><span class="more">Find my CPM &rarr;</span></a>
+    <a class="tool-card rv" href="load-profitability-calculator.html"><div class="icon">{ICONS['route']}</div><h3>Load profitability calculator</h3><p>Dispatch and factoring fees, deadhead and return miles, estimated profit and the rate you need.</p><span class="more">Check a load &rarr;</span></a>
+    <a class="tool-card rv" href="fuel-surcharge-calculator.html"><div class="icon">{ICONS['truck']}</div><h3>Fuel surcharge calculator</h3><p>Surcharge per mile and per trip by your contract's method: per-mile, percentage or step table.</p><span class="more">Work out my FSC &rarr;</span></a>
+    <a class="tool-card rv" href="detention-pay-calculator.html"><div class="icon">{ICONS['clock']}</div><h3>Detention pay calculator</h3><p>Eligible detention hours and estimated pay from arrival, release, free time and your agreed rate.</p><span class="more">Calculate detention &rarr;</span></a>
   </div>
   <p class="mt-l center"><a class="btn btn-line" href="tools.html">See all free tools</a></p>
 </div></section>
@@ -779,7 +842,7 @@ def build_estimate():
   {faq_html([C.FAQS[0], C.FAQS[2], C.FAQS[3]])}
 </div></section>
 <section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate board</span><h2>Rough rates per mile</h2></div>
+  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Rough rates per mile</h2></div>
   {rate_board()}
 </div></section>"""
     items = [qa] + [C.FAQS[0], C.FAQS[2], C.FAQS[3]]
@@ -805,7 +868,7 @@ def build_rates():
   {pricing_cards()}
 </div></section>
 <section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate board</span><h2>Rough freight rates per mile</h2><p>Rates move with lane, season, fuel and market. These are rough estimates, not offers of freight.</p></div>
+  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Rough freight rates per mile</h2><p>Rates move with lane, season, fuel and market. These are rough estimates, not offers of freight.</p></div>
   {rate_board()}
 </div></section>
 <section class="sec"><div class="wrap two">
@@ -843,10 +906,20 @@ def build_contact():
     desc = "Talk to a Texas Solutions truck dispatcher. Call or WhatsApp (838) 910-3147, email dispatch@texassolutions.co, or send your details. Office: 401 W Kentucky Ave, Midland, TX."
     body = f"""{phero("Contact", "Talk to a Truck Dispatcher", "Tell us about your truck, authority and lanes. The fastest way to reach us is WhatsApp.", ctas=False)}
 <section class="sec" style="padding-top:56px"><div class="wrap two">
-  <div>{lead_form("contactForm", "New dispatch inquiry", "Send My Details")}</div>
+  <div>
+    <div class="sec-head rv"><span class="eyebrow">Carrier inquiry</span><h2>Tell us about your truck</h2><p>Seven quick questions. We collect your documents after the first conversation, not before.</p></div>
+    {lead_form("contactForm", "New dispatch inquiry", "Send My Details")}
+  </div>
   <div class="aside">{contact_side()}
     {answer("Is there a fee to talk to a dispatcher?", f"No. The first call is free. Paid dispatch is {pl(M)} of weekly gross for OTR semis, 8% for hotshots and 10% for box trucks, with no flat rate or setup fee.", "Good to know")}
   </div>
+</div></section>
+<section class="sec sec-soft" id="callback"><div class="wrap two">
+  <div>
+    <div class="sec-head rv"><span class="eyebrow">Request a callback</span><h2>Rather we call you?</h2><p>Leave your name and number and the best time to reach you. A dispatcher calls you back.</p></div>
+    {callback_form()}
+  </div>
+  <div class="aside">{answer("What happens after I send my details?", "A dispatcher contacts you by the method you chose to talk through your truck, authority and lanes. If you decide to start, we then collect your MC authority, W-9, insurance certificate and, if you factor, a notice of assignment.", "Next steps")}</div>
 </div></section>"""
     schemas = [{"@context": "https://schema.org", "@type": "ContactPage", "name": title, "url": url("/contact.html"), "about": {"@id": BUSINESS_ID}},
                crumbs_ld([("Contact", "/contact.html")])]
@@ -945,13 +1018,15 @@ def build_landing(p):
   </div>
   <div class="aside">
     <div class="price feat"><h3>{kind['label']}</h3><div class="amt">{pl(kind)}<small> of weekly gross</small></div><ul><li>OTR operations</li><li>No flat rate or setup fee</li><li>About {lo}-{hi}/week on typical gross</li></ul><a class="btn btn-red" href="estimate.html?{truck_q}">Get a Free Estimate</a></div>
-    <a class="card tool-mini" href="truck-fuel-cost-calculator.html?{truck_q if truck_q.startswith('truck=') else ''}#fuelCalc"><div class="icon">{ICONS['truck']}</div><div><b>Fuel cost for this truck</b><p>MPG, fuel per mile and today's diesel price by state.</p></div></a>
+    <a class="card tool-mini" href="truck-fuel-cost-calculator.html?{truck_q if truck_q.startswith('truck=') else ''}#fuelCalc"><div class="icon">{ICONS['truck']}</div><div><b>Fuel cost for this truck</b><p>MPG, fuel per mile and the latest diesel price by state.</p></div></a>
+    <a class="card tool-mini" href="cost-per-mile-calculator.html"><div class="icon">{ICONS['cash']}</div><div><b>Your cost per mile</b><p>Fixed and variable costs and your own pay, per total and loaded mile.</p></div></a>
+    <a class="card tool-mini" href="load-profitability-calculator.html"><div class="icon">{ICONS['route']}</div><div><b>Is this load worth it?</b><p>Profit after dispatch and factoring fees, deadhead and your CPM.</p></div></a>
     {contact_side()}
   </div>
 </div></section>
 <section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate board</span><h2>Rough rates per mile</h2></div>
-  {rate_board()}
+  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Rough rates per mile{f" for {esc(p['nav'].replace(' Dispatch', '').lower())}" if p["file"] in C.BOARD_EQUIPMENT else ""}</h2></div>
+  {rate_board(C.BOARD_EQUIPMENT.get(p["file"]))}
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">FAQ</span><h2>{esc(p['nav'])} questions</h2></div>
@@ -970,42 +1045,53 @@ def build_landing(p):
 
 
 
-def load_diesel():
-    p = ROOT / "data" / "diesel-prices.json"
-    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+class Fuel:
+    """Diesel (or gasoline) figures for the static pages, all from tools/fuel_data.py records."""
+
+    def __init__(self, fuel="diesel"):
+        self.data = FD.load()
+        self.fuel = fuel
+        self.rec = {c: FD.resolve(self.data, c, fuel) for c in C.STATE_REGION}
+        self.us_rec = FD.national(self.data, fuel)
+        self.us = self.us_rec["price"] or 0
+        daily = [r["observed"] for r in self.rec.values() if r["level"] == "state" and r["observed"]]
+        self.day = max(daily) if daily else None
+        self.day_h = FD.human(self.day)
+        self.week = self.us_rec["observed"]
+        self.week_h = FD.human(self.week)
+        self.fresh = FD.status(self.day, "daily") == "fresh" if self.day else False
+        # Only say "today" when the daily data really is current.
+        self.today = "today" if self.fresh else "latest"
+        self.Today = self.today.capitalize()
+        priced = [c for c in C.STATE_REGION if self.p(c)]
+        self.ranked = sorted(priced, key=self.p)
+
+    def p(self, code):
+        return self.rec[code]["price"]
+
+    def asof(self):
+        return self.day_h or self.week_h
 
 
 def build_fuel():
     path = "/truck-fuel-cost-calculator.html"
-    diesel = load_diesel()
-    regions = diesel["regions"] if diesel else {}
-    week = diesel["week"] if diesel else ""
-    us = regions.get("US", {}).get("price", 0)
-    week_h = ""
-    if week:
-        d0 = date.fromisoformat(week)
-        week_h = f"{d0.strftime('%B')} {d0.day}, {d0.year}"
-    states_p = diesel.get("states", {}) if diesel else {}
-    day = diesel.get("day") if diesel else None
-    day_h = ""
-    if day:
-        d1 = date.fromisoformat(day)
-        day_h = f"{d1.strftime('%B')} {d1.day}, {d1.year}"
-    sp = lambda code: states_p.get(code) or regions.get(C.STATE_REGION[code][1], {}).get("price", 0)
-    ranked = sorted(C.STATE_REGION, key=sp)
+    F = Fuel()
+    diesel, us, day, day_h, week, week_h, sp = F.data, F.us, F.day, F.day_h, F.week, F.week_h, F.p
+    ranked = F.ranked
     cheap, dear = ranked[:3], ranked[-3:][::-1]
     nm = lambda code: C.STATE_REGION[code][0]
     title = "Fuel Price Calculator for Trucks & Diesel Prices Today by State (USA) | Texas Solutions"
-    desc = (f"Free truck fuel price calculator with diesel prices for all 50 states, updated daily. Diesel today: Texas ${sp('TX'):.2f}, "
+    desc = (f"Free truck fuel price calculator with diesel prices for all 50 states, updated daily. Diesel {F.today}: Texas ${sp('TX'):.2f}, "
             f"California ${sp('CA'):.2f}, U.S. average ${us:.2f}. Calculate fuel cost for dry van, reefer, flatbed, step deck, hotshot and box trucks.")
-    today_qa = ("What is the price of diesel today?",
-                f"Diesel prices today ({day_h or week_h}): Texas ${sp('TX'):.3f}, California ${sp('CA'):.3f}, Florida ${sp('FL'):.3f}, "
+    today_qa = (f"What is the price of diesel {F.today}?",
+                f"Diesel prices {F.today} ({F.asof()}, AAA daily state averages): Texas ${sp('TX'):.3f}, California ${sp('CA'):.3f}, Florida ${sp('FL'):.3f}, "
                 f"Illinois ${sp('IL'):.3f}, New York ${sp('NY'):.3f} and Georgia ${sp('GA'):.3f} per gallon. The cheapest diesel is in "
                 f"{nm(cheap[0])} (${sp(cheap[0]):.3f}), {nm(cheap[1])} and {nm(cheap[2])}; the most expensive is in {nm(dear[0])} "
-                f"(${sp(dear[0]):.3f}), {nm(dear[1])} and {nm(dear[2])}. The EIA U.S. weekly average is ${us:.3f}.")
-    trucks = [{"id": i, "name": n, "empty": e, "k": k, "max": mx, "def": d, "idle": ig, "spd": sp} for i, n, e, k, mx, d, ig, sp in C.FUEL_TRUCKS]
+                f"(${sp(dear[0]):.3f}), {nm(dear[1])} and {nm(dear[2])}. The EIA U.S. weekly average (week of {week_h}) is ${us:.3f}.")
+    trucks = [{"id": i, "name": n, "empty": e, "k": k, "max": mx, "def": d, "idle": ig, "spd": sp_} for i, n, e, k, mx, d, ig, sp_ in C.FUEL_TRUCKS]
     states = {k: {"name": n, "region": r} for k, (n, r) in C.STATE_REGION.items()}
-    cfg = {"trucks": trucks, "states": states, "reeferGph": C.REEFER_GAL_PER_HOUR, "diesel": diesel}
+    cfg = {"trucks": trucks, "states": states, "reeferGph": C.REEFER_GAL_PER_HOUR, "fuel": diesel,
+           "maxAge": FD.MAX_AGE, "gasTrucks": ["hotshot", "box-truck", "straight-truck"]}
     btns = "\n".join(
         f'        <label><input type="radio" name="fuelTruck" value="{tr["id"]}"{" checked" if i == 0 else ""}><b>{tr["name"]}</b>'
         f'<span>~{tr["empty"] / (1 + tr["k"] * tr["def"] / 1000):.1f} mpg loaded</span></label>'
@@ -1013,10 +1099,14 @@ def build_fuel():
     st_opts = "".join(f'<option value="{k}"{" selected" if k == "TX" else ""}>{v[0]}</option>' for k, v in sorted(C.STATE_REGION.items(), key=lambda kv: kv[1][0]))
     rows = ""
     for code in sorted(C.STATE_REGION, key=nm):
+        r = F.rec[code]
+        if r["price"] is None:
+            rows += f'<tr id="diesel-{code.lower()}"><td><b>{nm(code)}</b> <small>no current price</small></td><td class="rate">-</td><td>-</td></tr>\n'
+            continue
         price = sp(code)
         diff = price - us
         cls = "up" if diff > 0.0005 else ("down" if diff < -0.0005 else "")
-        src = "" if states_p.get(code) else " <small>EIA regional</small>"
+        src = (" <small>EIA weekly regional</small>" if r["fallback"] else "") + (" <small>stale</small>" if r["status"] == "stale" else "")
         rows += (f'<tr id="diesel-{code.lower()}"><td><b><a href="diesel-prices/{slugify(nm(code))}.html" style="color:var(--ink)">{nm(code)}</a></b>{src}</td><td class="rate">${price:.3f}</td>'
                  f'<td class="chg {cls}">{"+" if diff >= 0 else "-"}${abs(diff):.3f}</td></tr>\n')
     truck_secs = ""
@@ -1032,10 +1122,10 @@ def build_fuel():
     qa = ("How do I calculate truck fuel cost per mile?",
           f"Divide the diesel price by your truck's miles per gallon. A loaded semi averaging about 6.3 mpg with diesel at ${us:.2f} a gallon "
           f"spends about ${us / 6.3:.2f} per mile on fuel. Heavier loads lower MPG: NACFE research puts it at about 0.5-0.6% more fuel for every 1,000 lbs, roughly 0.3-0.4 mpg per 10,000 lbs on a Class 8 truck.")
-    calc = f"""<div class="est rv" id="fuelCalc" data-fuel='{json.dumps(cfg).replace("'", "&#39;")}'>
+    calc = f"""<div class="est rv" id="fuelCalc" data-tool="fuel_cost" data-fuel='{json.dumps(cfg).replace("'", "&#39;")}'>
   <div class="est-in">
     <h2 style="font-size:26px">Fuel cost calculator</h2>
-    <p style="color:var(--muted);margin-top:8px">Choose your truck, load weight, miles and state.</p>
+    <p style="color:var(--muted);margin-top:8px">Choose your truck, load weight, miles and state. The numbers filled in are an example; replace them with yours.</p>
     <div class="field"><span class="flabel">Truck type</span>
       <div class="seg trucks" role="radiogroup" aria-label="Truck type">
 {btns}
@@ -1048,37 +1138,39 @@ def build_fuel():
     <div class="grid g2" style="gap:14px;margin-top:22px">
       <div><label class="flabel" for="fuelMiles">Loaded miles</label><input class="pct-in" type="number" id="fuelMiles" min="1" step="1" value="1000" inputmode="numeric"></div>
       <div><label class="flabel" for="fuelDead">Deadhead miles</label><input class="pct-in" type="number" id="fuelDead" min="0" step="1" value="100" inputmode="numeric"></div>
+      <div id="fuelTypeWrap" hidden><label class="flabel" for="fuelType">Fuel type</label><select class="pct-in" id="fuelType"><option value="diesel">Diesel</option><option value="gasoline">Gasoline (regular)</option></select></div>
       <div><label class="flabel" for="fuelState">Fuel up in (state)</label><select class="pct-in" id="fuelState">{st_opts}</select></div>
-      <div><label class="flabel" for="fuelPrice">Diesel price ($/gal)</label><input class="pct-in" type="number" id="fuelPrice" min="0" step="0.001" inputmode="decimal"></div>
+      <div><label class="flabel" for="fuelPrice"><span id="fuelPriceLabel">Diesel</span> price ($/gal)</label><input class="pct-in" type="number" id="fuelPrice" min="0" step="0.001" inputmode="decimal" required></div>
       <div><label class="flabel" for="fuelMpg">Your MPG (optional)</label><input class="pct-in" type="number" id="fuelMpg" min="1" max="40" step="0.1" inputmode="decimal" placeholder="auto"></div>
       <div><label class="flabel" for="fuelRate">Load rate per mile (optional)</label><input class="pct-in" type="number" id="fuelRate" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 5.50"></div>
       <div><label class="flabel" for="fuelSpeed">Average highway speed (mph)</label><input class="pct-in" type="number" id="fuelSpeed" min="40" max="85" step="1" value="62" inputmode="numeric"></div>
       <div><label class="flabel" for="fuelIdle">Idle hours</label><input class="pct-in" type="number" id="fuelIdle" min="0" step="1" value="0" inputmode="numeric"></div>
       <div id="fuelReeferWrap" hidden><label class="flabel" for="fuelReefer">Reefer unit hours</label><input class="pct-in" type="number" id="fuelReefer" min="0" step="1" value="0" inputmode="numeric"></div>
     </div>
-    <p class="hint" id="fuelPriceNote" style="margin-top:12px">Diesel price auto-filled from the latest EIA weekly average for your state's region. Edit it to match your pump price.</p>
+    <p class="hint" id="fuelPriceNote" style="margin-top:12px">The price fills in from the latest state average for the state you pick ({esc(FD.label(F.rec['TX']))} for Texas). Type your pump price to override it.</p>
   </div>
   <div class="est-out" aria-live="polite">
     <h3>Trip fuel cost</h3>
-    <div class="est-big" id="fuelBig">$0<small>for 0 miles</small></div>
+    <div class="est-big" id="fuelBig">Enter your details<small>miles, truck and fuel price</small></div>
     <div class="est-lines">
       <div><span>Estimated MPG</span><b id="fuelMpgOut">-</b></div>
       <div><span>Total miles</span><b id="fuelTotalMi">-</b></div>
       <div><span>Diesel needed</span><b id="fuelGal">-</b></div>
       <div><span>Driving / idle / reefer</span><b id="fuelSplit">-</b></div>
       <div><span>Fuel cost per mile</span><b id="fuelCpm">-</b></div>
-      <div><span>Diesel price used</span><b id="fuelPriceUsed">-</b></div>
+      <div><span>Fuel price used</span><b id="fuelPriceUsed">-</b></div>
+      <div><span>Price source</span><b id="fuelPriceSrc" class="src-line">-</b></div>
       <div id="fuelRevRow" hidden><span>Revenue after fuel</span><b id="fuelNet">-</b></div>
       <div id="fuelShareRow" hidden><span>Fuel as % of revenue</span><b id="fuelShare">-</b></div>
     </div>
     <a class="btn btn-red" href="estimate.html">Estimate my dispatch fee</a>
     <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}Find better-paying loads</a>
-    <small>Estimates only. Real fuel use depends on speed, terrain, weather, idling, tires and engine. Diesel prices are EIA regional weekly averages, not a specific station.</small>
+    <small>Estimates only. Real fuel use depends on speed, terrain, weather, idling, tires and engine. Prices are state averages (AAA daily, or the EIA weekly regional average where a state has no daily value), not a specific station; your pump price may differ.</small>
   </div>
 </div>"""
     faqs = [today_qa,
-            ("What is the price of diesel in Texas today?", f"Diesel in Texas averages ${sp('TX'):.3f} per gallon today ({day_h or week_h}), compared with the U.S. average of ${us:.3f}."),
-            ("Which state has the cheapest diesel?", f"Today the cheapest diesel is in {nm(cheap[0])} at ${sp(cheap[0]):.3f} a gallon, then {nm(cheap[1])} and {nm(cheap[2])}. The most expensive is {nm(dear[0])} at ${sp(dear[0]):.3f}."),
+            (f"What is the price of diesel in Texas {F.today}?", f"Diesel in Texas averages ${sp('TX'):.3f} per gallon ({FD.label(F.rec['TX'])}), compared with the EIA U.S. weekly average of ${us:.3f}."),
+            ("Which state has the cheapest diesel?", f"As of {F.asof()} the cheapest diesel is in {nm(cheap[0])} at ${sp(cheap[0]):.3f} a gallon, then {nm(cheap[1])} and {nm(cheap[2])}. The most expensive is {nm(dear[0])} at ${sp(dear[0]):.3f}."),
             qa,
             ("How many miles per gallon does a semi truck get?", "A loaded Class 8 semi typically gets about 6 to 7 miles per gallon; empty, closer to 7 to 8 mpg. Speed, terrain, weather, aerodynamics and idling all change the number."),
             ("How much diesel does a semi truck use per mile?", "Roughly 0.14 to 0.17 gallons per mile for a loaded semi averaging 6 to 7 mpg. Multiply by the diesel price to get fuel cost per mile."),
@@ -1087,26 +1179,27 @@ def build_fuel():
             ("How many miles per gallon does a box truck get?", "A 26-foot diesel box truck typically gets about 8 to 10 mpg, dropping toward 7 to 8 mpg near its maximum payload."),
             ("Does cargo weight affect fuel mileage?", "Yes. Heavier loads need more power, so MPG drops as weight goes up. The effect is larger on hotshots and box trucks, where cargo is a bigger share of total weight."),
             ("Why is diesel more expensive in California?", "California has stricter fuel specifications, higher state taxes and fees, and a relatively isolated refining market, so its diesel price is usually the highest in the country."),
-            ("Where do the diesel prices on this page come from?", "State prices are AAA's daily state averages, refreshed every day. The U.S. average comes from the U.S. Energy Information Administration's weekly diesel survey, which is also used as a backup for any state without a daily price."),
+            ("Where do the diesel prices on this page come from?", "State prices are AAA's daily state averages, checked twice a day. The U.S. average comes from the U.S. Energy Information Administration's weekly diesel survey; its regional weekly average is shown only for a state with no daily value, and is labelled that way. If a source stops updating, the last value stays on the page with its real date and a stale label; prices are never estimated or filled in."),
             ("How much does it cost to fuel a dry van, reefer or step deck?", f"A loaded dry van or step deck averages about 6.0-6.3 mpg, a reefer about 6.0 mpg plus reefer unit fuel. At ${us:.2f} a gallon, that is roughly ${us / 6.3:.2f}-${us / 6.0:.2f} of diesel per mile."),
             ("How much does it cost to fuel a box truck per mile?", f"A 26 ft diesel box truck averages about 8.5-11 mpg depending on load, so fuel costs about ${us / 11:.2f}-${us / 8.5:.2f} per mile at ${us:.2f} a gallon."),
             ("How can truckers lower fuel cost per mile?", "Cut deadhead miles, slow down (fuel use rises sharply above about 62 mph), reduce idling, keep tires properly inflated, and book loads that pay enough per mile to cover fuel. A dispatcher who plans lanes can help cut empty miles.")]
-    body = f"""{phero("Fuel Calculator", "Truck Fuel Cost Calculator", f"Calculate fuel cost for your truck, load weight and state, with today's diesel prices for all 50 states. Updated daily.", ctas=False)}
-<section class="sec" style="padding-top:48px;padding-bottom:0"><div class="wrap">{answer(*today_qa, label="Diesel price today")}</div></section>
+    body = f"""{phero("Fuel Calculator", "Truck Fuel Cost Calculator", f"Calculate fuel cost for your truck, load weight and state, with daily diesel prices for all 50 states (as of {F.asof()}).", ctas=False)}
+<section class="sec" style="padding-top:48px;padding-bottom:0"><div class="wrap">{answer(*today_qa, label=f"Diesel price {F.today}")}</div></section>
 <section class="sec" style="padding-top:40px"><div class="wrap">
   {calc}
+  {calc_cta()}
 </div></section>
 <section class="sec sec-dark" id="diesel-prices"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Fuel prices today</span><h2>Diesel prices by state today</h2><p>Average on-highway diesel price per gallon in all 50 states and Washington, DC{f", {day_h}" if day_h else ""}, compared with the U.S. average of ${us:.3f}. Updated every day.</p></div>
+  <div class="sec-head rv"><span class="eyebrow">Fuel prices {F.today}</span><h2>Diesel prices by state {F.today}</h2><p>Average retail diesel price per gallon in all 50 states and Washington, DC{f", {day_h}" if day_h else ""} (AAA daily state averages), compared with the EIA U.S. weekly average of ${us:.3f} (week of {week_h}). Checked twice a day.{"" if F.fresh else " The daily source has not updated recently, so these are the last values received."}</p></div>
   <div class="board rv"><div style="overflow-x:auto"><table class="board-table diesel-table" id="dieselTable">
     <thead><tr><th>State</th><th>Diesel $/gal</th><th>vs U.S. avg</th></tr></thead>
     <tbody>
 {rows}    </tbody>
   </table></div>
-  <p class="board-foot">Daily state averages: <a href="https://gasprices.aaa.com/state-gas-price-averages/" rel="noopener" style="color:var(--red-600)">AAA</a>, as of <span id="dieselDay">{day_h or "-"}</span>. U.S. average and fallback regional prices: <a href="https://www.eia.gov/petroleum/gasdiesel/" rel="noopener" style="color:var(--red-600)">U.S. Energy Information Administration</a>, week of <span id="dieselWeek">{week_h}</span>.</p></div>
+  <p class="board-foot">Daily state averages: <a href="https://gasprices.aaa.com/state-gas-price-averages/" rel="noopener" style="color:var(--red-600)">AAA</a>, as of <span id="dieselDay">{day_h or "-"}</span>. U.S. average, and the weekly regional average used only for a state marked &ldquo;EIA weekly regional&rdquo;: <a href="https://www.eia.gov/petroleum/gasdiesel/" rel="noopener" style="color:var(--red-600)">U.S. Energy Information Administration</a>, week of <span id="dieselWeek">{week_h}</span>. A state marked &ldquo;stale&rdquo; shows its last value because the source has not updated since.</p></div>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Fuel calculator by truck type</span><h2>Fuel price calculator for every truck</h2><p>Fuel cost for dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, based on published fuel economy data and today's diesel prices.</p></div>
+  <div class="sec-head rv"><span class="eyebrow">Fuel calculator by truck type</span><h2>Fuel price calculator for every truck</h2><p>Fuel cost for dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, based on published fuel economy data and the latest daily diesel prices.</p></div>
   <div class="grid g4">
 {truck_secs}  </div>
 </div></section>
@@ -1120,11 +1213,11 @@ def build_fuel():
       <li>Pick your truck type: dry van, reefer, flatbed, step deck, power only, hotshot, box truck or straight truck.</li>
       <li>Set the cargo weight; heavier loads burn more fuel.</li>
       <li>Enter loaded and deadhead miles, your average speed and any idle hours.</li>
-      <li>Choose the state where you fuel up. Today's diesel price fills in automatically, or type your own pump price.</li>
+      <li>Choose the state where you fuel up. The latest state average fills in automatically with its date and source, or type your own pump price.</li>
       <li>Add your rate per mile to see revenue left after fuel.</li>
     </ul>
   </div>
-  <div class="aside">{answer("Which state has the cheapest diesel today?", f"{nm(cheap[0])} has the cheapest diesel today at ${sp(cheap[0]):.3f} a gallon, followed by {nm(cheap[1])} (${sp(cheap[1]):.3f}) and {nm(cheap[2])} (${sp(cheap[2]):.3f}). {nm(dear[0])} is the most expensive at ${sp(dear[0]):.3f}.", "Cheapest diesel")}</div>
+  <div class="aside">{answer(f"Which state has the cheapest diesel {F.today}?", f"{nm(cheap[0])} has the cheapest diesel ({F.asof()}) at ${sp(cheap[0]):.3f} a gallon, followed by {nm(cheap[1])} (${sp(cheap[1]):.3f}) and {nm(cheap[2])} (${sp(cheap[2]):.3f}). {nm(dear[0])} is the most expensive at ${sp(dear[0]):.3f}.", "Cheapest diesel")}</div>
 </div></section>
 <section class="sec"><div class="wrap two">
   <div class="prose rv">
@@ -1138,6 +1231,13 @@ def build_fuel():
       <li>Speed: figures assume 62 mph. Above that, a semi loses about 0.1 mpg per mph. Idling burns about 0.8 gallons per hour on a semi.</li>
     </ul>
     <p>If you know your real MPG from your ELD or fuel card, type it in and the calculator uses it instead.</p>
+    <ul>
+      <li>MPG = empty MPG &divide; (1 + k &times; cargo lbs &divide; 1,000), minus the speed penalty above 62 mph</li>
+      <li>Gallons = (loaded + deadhead miles) &divide; MPG + idle hours &times; idle gal/hr + reefer hours &times; {C.REEFER_GAL_PER_HOUR} gal/hr</li>
+      <li>Trip fuel cost = gallons &times; fuel price; fuel cost per mile = trip fuel cost &divide; total miles</li>
+    </ul>
+    <p>The model is calibrated for diesel engines. For a gasoline box truck or pickup, choose gasoline for the price and type your own MPG; gasoline engines usually get fewer miles per gallon than the diesel figures above.</p>
+    {example_block(f"<p>A dry van carries 38,000 lbs over 1,000 loaded miles plus 100 deadhead at 62 mph, fuelling in Texas at ${sp('TX'):.3f} a gallon ({esc(FD.label(F.rec['TX']))}).</p><ul><li>MPG = 7.6 &divide; (1 + 0.0055 &times; 38) = 6.29</li><li>Gallons = 1,100 &divide; 6.29 = 175.0</li><li>Trip fuel cost = 175.0 &times; ${sp('TX'):.3f} = <b>${175.0 * sp('TX'):,.0f}</b>, or ${175.0 * sp('TX') / 1100:.2f} a mile</li></ul>")}
     <h2>Sources</h2>
     <ul>
 {"".join(f'      <li><a href="{u}" rel="noopener">{esc(n)}</a></li>' + chr(10) for n, u in C.FUEL_SOURCES)}    </ul>
@@ -1153,7 +1253,7 @@ def build_fuel():
                {"@context": "https://schema.org", "@type": "HowTo", "name": "How to calculate truck fuel cost for a trip",
                 "step": [{"@type": "HowToStep", "position": 1, "name": "Pick your truck and load weight", "text": "Choose your truck type and enter the cargo weight to estimate miles per gallon."},
                          {"@type": "HowToStep", "position": 2, "name": "Add total miles", "text": "Enter loaded miles plus deadhead miles."},
-                         {"@type": "HowToStep", "position": 3, "name": "Set the diesel price", "text": "Select the state where you fuel up to use today's diesel price, or type your pump price."},
+                         {"@type": "HowToStep", "position": 3, "name": "Set the diesel price", "text": "Select the state where you fuel up to use the latest state average price, or type your pump price."},
                          {"@type": "HowToStep", "position": 4, "name": "Calculate", "text": "Gallons equal total miles divided by MPG; fuel cost equals gallons times the diesel price; cost per mile equals fuel cost divided by miles."}]},
                {"@context": "https://schema.org", "@type": "Dataset", "name": "Daily U.S. diesel prices by state",
                 "description": "Average on-highway diesel prices (USD per gallon) for all 50 U.S. states and DC, updated daily, with the EIA weekly U.S. average.",
@@ -1168,7 +1268,9 @@ def build_fuel():
           "cheapest diesel by state, diesel price Texas, diesel price California, trucking fuel cost per mile, trip fuel cost calculator, average diesel price, "
           "diesel prices near me, semi truck mpg, how many miles per gallon does a semi get, fuel cost per mile, truck fuel cost calculator, diesel cost calculator, fuel cost per mile calculator, semi truck fuel calculator, hotshot fuel calculator, "
           "box truck fuel cost, diesel prices by state, diesel price per gallon today, trucking fuel calculator, truck mpg calculator, " + ", ".join(C.CORE_KEYWORDS[:6]))
-    write(path[1:], page(path, title, desc, kw, schemas, body, current=path[1:]))
+    write(path[1:], page(path, title, desc, kw, schemas, body, current=path[1:],
+                         image=og_image("truck-fuel-cost-calculator", "Truck Fuel Cost Calculator", ["fuel"]),
+                         image_alt="Truck fuel cost calculator with daily diesel prices by state"))
 
 
 
@@ -1355,16 +1457,10 @@ def build_blog():
 
 
 def build_state_pages():
-    diesel = load_diesel()
-    if not diesel:
+    F = Fuel()
+    if not F.data:
         return []
-    regions, states_p = diesel["regions"], diesel.get("states", {})
-    us = regions.get("US", {}).get("price", 0)
-    day = diesel.get("day") or diesel.get("week")
-    d1 = date.fromisoformat(day)
-    day_h = f"{d1.strftime('%B')} {d1.day}, {d1.year}"
-    sp = lambda c: states_p.get(c) or regions.get(C.STATE_REGION[c][1], {}).get("price", 0)
-    ranked = sorted(C.STATE_REGION, key=sp)
+    us, sp, ranked = F.us, F.p, F.ranked
     (ROOT / "diesel-prices").mkdir(exist_ok=True)
     trucks = {tid: (n, e / (1 + k * dflt / 1000), dflt) for tid, n, e, k, mx, dflt, ig, spd in C.FUEL_TRUCKS}
     out = []
@@ -1372,56 +1468,62 @@ def build_state_pages():
         slug = slugify(name)
         path = f"/diesel-prices/{slug}.html"
         out.append((name, path))
-        price = sp(code)
-        rank = ranked.index(code) + 1
+        R = F.rec[code]
+        if R["price"] is None:  # no state or regional value: show the labelled U.S. average, never an invented price
+            R = dict(F.us_rec, name=name, fallback=True, regionName="U.S.")
+        price = R["price"]
+        day = R["observed"] or F.week
+        day_h = FD.human(day)
+        today = "today" if R["status"] == "fresh" else "latest"
+        rank = ranked.index(code) + 1 if code in ranked else len(ranked)
         diff = price - us
-        neighbours = sorted([c for c, (_, r) in C.STATE_REGION.items() if r == reg and c != code], key=sp)[:6]
+        neighbours = sorted([c for c, (_, r) in C.STATE_REGION.items() if r == reg and c != code and sp(c)], key=sp)[:6]
         nb_rows = "".join(f'<tr><td><a href="diesel-prices/{slugify(C.STATE_REGION[c][0])}.html" style="color:var(--ink)">{C.STATE_REGION[c][0]}</a></td><td class="rate">${sp(c):.3f}</td></tr>' for c in neighbours)
         ex = ""
         for tid in ("dry-van", "reefer", "flatbed", "hotshot", "box-truck"):
             n, mpg, w = trucks[tid]
             ex += f"<tr><td><b>{n}</b><small>{w:,} lbs, ~{mpg:.1f} mpg</small></td><td>${price / mpg:.2f}</td><td>${1000 / mpg * price:,.0f}</td></tr>"
-        src = "AAA daily state average" if states_p.get(code) else "EIA regional weekly average"
-        title = f"Diesel Prices in {name} Today (${price:.2f}/gal)"
+        src = FD.label(R)
+        title = f"Diesel Prices in {name} {today.capitalize()} (${price:.2f}/gal)"
         if len(title) <= 42:
             title += " | Fuel Calculator"
-        desc = (f"{name} diesel today: ${price:.3f}/gal, ${abs(diff):.3f} {'above' if diff > 0 else 'below'} the ${us:.3f} U.S. average. "
-                f"Fuel cost per mile for semi, hotshot and box trucks. Updated daily.")
-        qa = (f"What is the price of diesel in {name} today?",
-              f"Diesel in {name} averages ${price:.3f} per gallon today ({day_h}), ${abs(diff):.3f} {'more' if diff > 0 else 'less'} than the U.S. average of ${us:.3f}. "
+        desc = (f"{name} diesel {today}: ${price:.3f}/gal, ${abs(diff):.3f} {'above' if diff > 0 else 'below'} the ${us:.3f} U.S. average. "
+                f"Fuel cost per mile for semi, hotshot and box trucks. Checked daily.")
+        qa = (f"What is the price of diesel in {name} {today}?",
+              f"Diesel in {name} averages ${price:.3f} per gallon ({src}), ${abs(diff):.3f} {'more' if diff > 0 else 'less'} than the U.S. average of ${us:.3f}. "
               f"{name} ranks #{rank} of 51 for cheapest diesel (1 = cheapest). A loaded semi at about 6.3 mpg spends about ${price / 6.3:.2f} per mile on fuel in {name}.")
         faqs = [qa,
-                (f"How much does it cost to fill a semi truck in {name}?", f"At ${price:.2f} a gallon, 150 gallons of diesel costs about ${150 * price:,.0f} and 200 gallons about ${200 * price:,.0f} in {name} today."),
-                (f"Is diesel cheaper in {name} than nearby states?", (f"Among nearby states in the same region, the cheapest today is {C.STATE_REGION[neighbours[0]][0]} at ${sp(neighbours[0]):.3f} a gallon." if neighbours else f"{name} is priced on its own regional market.") + f" {name} is ${price:.3f}."),
-                (f"How often are {name} diesel prices updated?", "Every day. This page refreshes each morning from daily state averages, with the EIA weekly survey as a backup.")]
+                (f"How much does it cost to fill a semi truck in {name}?", f"At ${price:.2f} a gallon, 150 gallons of diesel costs about ${150 * price:,.0f} and 200 gallons about ${200 * price:,.0f} in {name} at the {today} average."),
+                (f"Is diesel cheaper in {name} than nearby states?", (f"Among nearby states in the same region, the cheapest {today} is {C.STATE_REGION[neighbours[0]][0]} at ${sp(neighbours[0]):.3f} a gallon." if neighbours else f"{name} is priced on its own regional market.") + f" {name} is ${price:.3f}."),
+                (f"How often are {name} diesel prices updated?", "The page checks for new prices twice a day. AAA publishes daily state averages; the EIA weekly regional average is shown only if a state has no daily value. If a source stops updating, the last value stays with its real date and a stale label.")]
         body = f"""<section class="phero"><div class="wrap">
   <div class="crumbs"><a href="index.html">Home</a> / <a href="truck-fuel-cost-calculator.html">Fuel Calculator</a> / Diesel prices</div>
-  <h1>Diesel Prices in {name} Today</h1>
-  <p class="lede">Average diesel price in {name}: <b style="color:var(--ink)">${price:.3f} per gallon</b> on {day_h}. U.S. average ${us:.3f}. Updated daily.</p>
+  <h1>Diesel Prices in {name} {today.capitalize()}</h1>
+  <p class="lede">Average diesel price in {name}: <b style="color:var(--ink)">${price:.3f} per gallon</b> on {day_h}. EIA U.S. weekly average ${us:.3f}. <span class="src-badge {R['status']}">{"Current" if R['status'] == "fresh" else "Stale: source not updated"}</span></p>
   <div class="ctas"><a class="btn btn-red" href="truck-fuel-cost-calculator.html?state={code}#fuelCalc">Calculate fuel cost in {name}</a><a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}Talk to a dispatcher</a></div>
 </div></section>
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa, label=f"Diesel price in {name}")}</div></section>
 <section class="sec"><div class="wrap">
   <div class="grid g4 stat-row">
-    <div class="card"><span class="eyebrow">{name} diesel</span><div class="stat">${price:.3f}</div><p>per gallon today</p></div>
+    <div class="card"><span class="eyebrow">{name} diesel</span><div class="stat">${price:.3f}</div><p>per gallon, {day_h}</p></div>
     <div class="card"><span class="eyebrow">vs U.S. average</span><div class="stat {'up' if diff > 0 else 'down'}">{'+' if diff >= 0 else '-'}${abs(diff):.3f}</div><p>U.S. average ${us:.3f}</p></div>
     <div class="card"><span class="eyebrow">Rank</span><div class="stat">#{rank}</div><p>of 51 (1 = cheapest)</p></div>
-    <div class="card"><span class="eyebrow">150-gallon fill</span><div class="stat">${150 * price:,.0f}</div><p>semi truck, today</p></div>
+    <div class="card"><span class="eyebrow">150-gallon fill</span><div class="stat">${150 * price:,.0f}</div><p>semi truck, {today} price</p></div>
   </div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap two">
   <div class="prose rv">
     <h2 style="margin-top:0">Fuel cost per mile in {name}</h2>
-    <p>Estimated diesel cost at today's {name} price of ${price:.3f} a gallon, using fuel economy calibrated to FHWA and NACFE data.</p>
+    <p>Estimated diesel cost at the {today} {name} price of ${price:.3f} a gallon, using fuel economy calibrated to FHWA and NACFE data.</p>
     <div class="tbl"><table><thead><tr><th>Truck</th><th>Fuel per mile</th><th>Fuel per 1,000 miles</th></tr></thead><tbody>{ex}</tbody></table></div>
     <p>Your numbers depend on load weight, speed, terrain and idling. Enter them in the <a href="truck-fuel-cost-calculator.html?state={code}#fuelCalc">truck fuel cost calculator</a> for an exact estimate.</p>
     <h2>Frequently asked questions</h2>
     {faq_html(faqs)}
   </div>
   <div class="aside">
-    <div class="board"><div class="board-head"><b>Nearby states</b><span>$/gal today</span></div>
+    <div class="board"><div class="board-head"><b>Nearby states</b><span>$/gal, latest</span></div>
       <table class="board-table"><tbody>{nb_rows}</tbody></table>
-      <p class="board-foot">Source: {src}, {day_h}. <a href="truck-fuel-cost-calculator.html#diesel-prices" style="color:var(--red-600)">All 50 states</a></p></div>
+      <p class="board-foot">Source: {src}. <a href="truck-fuel-cost-calculator.html#diesel-prices" style="color:var(--red-600)">All 50 states</a></p></div>
     {contact_side()}
   </div>
 </div></section>
@@ -1431,7 +1533,7 @@ def build_state_pages():
                    {"@context": "https://schema.org", "@type": "Dataset", "name": f"Diesel prices in {name}",
                     "description": f"Daily average retail diesel price per gallon in {name}, in US dollars, updated every day.", "url": url(path),
                     "dateModified": day, "temporalCoverage": day, "spatialCoverage": {"@type": "Place", "name": f"{name}, United States"},
-                    "isBasedOn": "https://gasprices.aaa.com/state-gas-price-averages/", "isAccessibleForFree": True, "inLanguage": "en-US",
+                    "isBasedOn": R["sourceUrl"], "isAccessibleForFree": True, "inLanguage": "en-US",
                     "variableMeasured": "Retail diesel price, USD per gallon", "creator": {"@id": BUSINESS_ID}, "publisher": {"@id": BUSINESS_ID}}]
         kw = (f"diesel prices {name.lower()}, diesel price in {name.lower()} today, {name.lower()} diesel price per gallon, "
               f"cheapest diesel {name.lower()}, {name.lower()} fuel prices, truck fuel cost {name.lower()}, fuel prices near me")
@@ -1448,7 +1550,7 @@ def build_state_pages():
 
 TOOL_ICONS = {
     "cpm": "calc", "lp": "cash", "be": "route", "dh": "route", "dp": "cash",
-    "ifta": "doc", "pd": "doc", "tl": "cash", "mb": "clock", "hos": "clock", "fc": "doc",
+    "ifta": "doc", "pd": "doc", "tl": "cash", "mb": "clock", "hos": "clock", "fc": "doc", "fsc": "truck", "det": "clock",
 }
 
 
@@ -1457,7 +1559,7 @@ def related_tools(current):
     # A short, fixed rotation so links stay stable and relevant.
     pick = {
         "cost-per-mile-calculator": ["load-profitability-calculator", "break-even-calculator", "truck-fuel-cost-calculator"],
-        "load-profitability-calculator": ["cost-per-mile-calculator", "deadhead-miles-calculator", "estimate"],
+        "load-profitability-calculator": ["cost-per-mile-calculator", "fuel-surcharge-calculator", "detention-pay-calculator"],
         "break-even-calculator": ["cost-per-mile-calculator", "load-profitability-calculator", "driver-pay-calculator"],
         "deadhead-miles-calculator": ["load-profitability-calculator", "cost-per-mile-calculator", "truck-fuel-cost-calculator"],
         "driver-pay-calculator": ["cost-per-mile-calculator", "break-even-calculator", "per-diem-calculator"],
@@ -1467,6 +1569,8 @@ def related_tools(current):
         "maintenance-budget-calculator": ["cost-per-mile-calculator", "break-even-calculator", "truck-loan-calculator"],
         "hours-of-service-calculator": ["driver-pay-calculator", "deadhead-miles-calculator", "estimate"],
         "freight-class-calculator": ["load-profitability-calculator", "cost-per-mile-calculator", "estimate"],
+        "fuel-surcharge-calculator": ["truck-fuel-cost-calculator", "load-profitability-calculator", "detention-pay-calculator"],
+        "detention-pay-calculator": ["load-profitability-calculator", "hours-of-service-calculator", "fuel-surcharge-calculator"],
     }.get(current, [t["slug"] for t in others[:3]])
     cards = []
     special = {"estimate": ("Dispatch Fee Calculator", "See your weekly dispatch fee by truck type.", "calc"),
@@ -1482,17 +1586,45 @@ def related_tools(current):
     return "\n".join(cards)
 
 
+def og_image(slug, title, tags):
+    """Per-page social preview (1200x630), regenerated only when the title changes."""
+    if covers is None:
+        return None
+    out = ROOT / "assets" / "og" / f"{slug}.jpg"
+    cache_file = ROOT / "assets" / "og" / "covers.json"
+    cache = json.loads(cache_file.read_text(encoding="utf-8")) if cache_file.exists() else {}
+    sig = hashlib.sha1(("v1|" + title).encode()).hexdigest()
+    if not out.exists() or cache.get(slug) != sig:
+        covers.make_cover(slug, title, tags, out, label="Free tool", sub="No signup. Runs in your browser.")
+        cache[slug] = sig
+        cache_file.write_text(json.dumps(cache, indent=1, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    return f"{C.BASE}/assets/og/{slug}.jpg"
+
+
+def calc_cta(service_file="owner-operator-dispatch.html", service_name="owner-operator dispatch"):
+    return f"""<div class="calc-cta rv">
+  <div><b>Want loads that beat these numbers?</b><p>A Texas Solutions dispatcher negotiates every rate and plans lanes around your cost per mile. Semi trucks {pl(M)}, hotshots 8%, box trucks 10% of weekly gross. You approve every load.</p></div>
+  <div class="ctas"><a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}Talk to a dispatcher</a><a class="btn btn-line" href="{service_file}">See {esc(service_name)}</a></div>
+</div>"""
+
+
+def example_block(html_):
+    return f"""<div class="example rv"><span class="label">Worked example</span>{html_}</div>""" if html_ else ""
+
+
 def tool_wrap(t):
     calc = t["calc_html"]
     faqs = t["faqs"]
     body = f"""{phero("Tools", t["h1"], t["lede"], ctas=False)}
 <section class="sec" style="padding-top:48px"><div class="wrap">
   {calc}
+  {calc_cta()}
 </div></section>
 <section class="sec sec-soft"><div class="wrap two">
   <div class="prose rv">
     {answer("What does the " + t["hub_title"] + " do?", t["desc"])}
 {t["article_html"]}
+    {example_block(EXAMPLES.get(t["slug"], ""))}
     <h2>Frequently asked questions</h2>
     {faq_html(faqs)}
   </div>
@@ -1510,7 +1642,9 @@ def tool_wrap(t):
         faq_ld(faqs), crumbs_ld([("Tools", "/tools.html"), (t["hub_title"], path)]), speakable(path, t["meta_title"]),
     ]
     kw = t["keywords"] + ", free trucking calculator, owner operator tools"
-    write(t["slug"] + ".html", page(path, t["meta_title"], t["desc"], kw, schemas, body, current="tools.html"))
+    img = og_image(t["slug"], t["hub_title"], [t["hub_title"]])
+    write(t["slug"] + ".html", page(path, t["meta_title"], t["desc"], kw, schemas, body, current="tools.html",
+                                    image=img, image_alt=f"{t['hub_title']}: free trucking calculator from Texas Solutions"))
 
 
 def build_tools():
@@ -1532,8 +1666,10 @@ def build_tools_hub():
         cards.append(f"""  <a class="tool-num-card rv" href="{t['slug']}.html"><span class="tool-num">TOOL.{n:02d}</span><div class="icon">{ICONS[TOOL_ICONS[t['prefix']]]}</div><h3>{esc(t['hub_title'])}</h3><p>{esc(t['hub_desc'])}</p><span class="more">Open tool &rarr;</span></a>""")
         n += 1
     title = "Free Trucking Calculators: Dispatch, Fuel, CPM, IFTA, HOS & More | Texas Solutions"
-    desc = "Free calculators for owner-operators and small fleets: dispatch fee, fuel cost, cost per mile, load profitability, break-even, deadhead miles, driver pay, IFTA mileage, per diem, truck loan, maintenance budget, HOS and freight class."
-    body = f"""{phero("Tools", "Free Trucking Calculators", "Work out your numbers before you book: dispatch fees, fuel cost, cost per mile, IFTA mileage, HOS hours and more. Nothing is stored, nothing is emailed.", ctas=False)}
+    n_tools = len(existing) + len(TOOLS)
+    desc = "Free calculators for owner-operators and small fleets: dispatch fee, fuel cost, fuel surcharge, detention pay, cost per mile, load profitability, break-even, deadhead miles, driver pay, IFTA mileage, per diem, truck loan, maintenance budget, HOS and freight class."
+    body = f"""{phero("Tools", "Free Trucking Calculators", f"{n_tools} free calculators: dispatch fees, fuel cost and surcharge, detention, cost per mile, load profit, IFTA mileage, HOS hours and more. No signup.", ctas=False)}
+<section class="sec" style="padding-bottom:0"><div class="wrap"><div class="privacy-note rv"><b>Your numbers stay with you.</b> Calculations run in your browser and nothing you type is sent to us. If you tap <i>Save on this device</i>, your inputs are kept only in this browser's local storage on this device, never on our servers, and you can clear them with <i>Reset</i>. We use Google Analytics to count tool use (which tool, not what you typed). Forms are different: when you send an inquiry, the details you enter are emailed to our dispatch team.</div></div></section>
 <section class="sec"><div class="wrap">
   <div class="grid g3">
 {chr(10).join(cards)}
@@ -1548,109 +1684,193 @@ def build_tools_hub():
     write("tools.html", page("/tools.html", title, desc, kw, schemas, body, current="tools.html", page_type="CollectionPage"))
 
 
+# Worked examples shown on each tool page. They use the example values the
+# calculator opens with, so a visitor can check the tool against the text.
+# Figures were computed in Python; if you change a default, recompute here.
+EXAMPLES = {
+    "cost-per-mile-calculator": """<p>An owner-operator pays $1,800 a month for the truck, $600 insurance, $150 permits and ELD and $150 other fixed costs: <b>$2,700 fixed</b>. Fuel is $0.65 a mile and maintenance $0.18, with no hired driver: <b>$0.83 variable</b>. They run 10,000 total miles a month, 8,800 of them loaded, and want $4,000 a month for their own labor.</p>
+<ul><li>Fixed per mile: $2,700 &divide; 10,000 = $0.27</li><li>Operating CPM before own pay: $0.27 + $0.83 = <b>$1.10</b></li><li>Own pay per mile: $4,000 &divide; 10,000 = $0.40, so all-in <b>$1.50 per mile</b></li><li>All-in cost per loaded mile: $15,000 &divide; 8,800 = <b>$1.70</b>, with 12% deadhead</li></ul>
+<p>So this truck needs loads averaging at least about $1.70 per loaded mile to cover every cost and the owner's pay.</p>""",
+    "load-profitability-calculator": """<p>A load pays $2,400 linehaul for 600 loaded miles, with 50 deadhead miles to the pickup and no return trip. The carrier's cost per mile is $1.50, tolls are $60 (not in the CPM), dispatch is 5% and factoring 3% of the same revenue.</p>
+<ul><li>Total trip miles M = 650; mileage cost = 650 &times; $1.50 = $975</li><li>Fees = $2,400 &times; (0.05 + 0.03) = $192</li><li>Estimated profit = $2,400 &times; 0.92 &minus; $975 &minus; $60 = <b>$1,173</b> (48.9% margin)</li><li>Effective rate = $2,400 &divide; 650 = $3.69 a mile, against $4.00 per loaded mile</li><li>For an $800 profit: required revenue = ($975 + $60 + $800) &divide; 0.92 = <b>$1,995</b> ($3.32 per loaded mile); break-even is $1,125</li></ul>""",
+    "break-even-calculator": """<p>Fixed costs are $2,650 a month, variable cost is $0.73 a mile and freight averages $1.85 a mile, with 9,000 miles planned.</p>
+<ul><li>Contribution per mile = $1.85 &minus; $0.73 = $1.12</li><li>Break-even = $2,650 &divide; $1.12 = <b>2,366 miles a month</b> (about 546 a week)</li><li>Profit at 9,000 miles = $1.12 &times; 9,000 &minus; $2,650 = <b>$7,430</b></li></ul>""",
+    "deadhead-miles-calculator": """<p>A load pays $1,900 for 550 loaded miles, and the truck drives 80 empty miles to reach it.</p>
+<ul><li>Total miles = 630; deadhead = 80 &divide; 630 = <b>12.7%</b></li><li>Quoted rate = $1,900 &divide; 550 = $3.45 per loaded mile</li><li>Effective rate = $1,900 &divide; 630 = <b>$3.02 per mile driven</b>, so deadhead costs $0.44 a mile in rate</li></ul>""",
+    "driver-pay-calculator": """<p>A driver earns $0.60 a mile and runs 2,400 miles a week for 50 weeks.</p>
+<ul><li>Weekly: $0.60 &times; 2,400 = <b>$1,440</b></li><li>Monthly average: $1,440 &times; 4.33 = $6,235</li><li>Annual: $1,440 &times; 50 = <b>$72,000</b></li></ul>""",
+    "ifta-mileage-calculator": """<p>A truck averaging 6.3 mpg drives 1,260 miles in Texas during the quarter and buys 150 gallons there.</p>
+<ul><li>Gallons consumed in Texas = 1,260 &divide; 6.3 = 200</li><li>Net taxable gallons = 200 &minus; 150 = <b>50</b> (you burned more there than you bought)</li><li>If you enter a rate of $0.20 a gallon (an example, not a current rate), the estimate is $10 owed for that state</li></ul>""",
+    "per-diem-calculator": """<p>A driver is on the road 300 days at an example rate of $69 a day, 80% deductible, in a 22% bracket.</p>
+<ul><li>Total per diem = 300 &times; $69 = $20,700</li><li>Deductible = $20,700 &times; 80% = $16,560</li><li>Estimated tax savings = $16,560 &times; 22% = <b>$3,643</b></li></ul><p>Check the current IRS rate before filing; this is not tax advice.</p>""",
+    "truck-loan-calculator": """<p>A $145,000 truck with $15,000 down, financed at 9.5% APR for 60 months.</p>
+<ul><li>Amount financed = $130,000; monthly rate r = 0.095 &divide; 12</li><li>Payment = <b>$2,730.24 a month</b></li><li>Total of payments = $163,815, so total interest = <b>$33,815</b></li></ul>""",
+    "maintenance-budget-calculator": """<p>A 3-year-old truck running 110,000 miles a year uses the $0.18 a mile bracket.</p>
+<ul><li>Yearly reserve = $0.18 &times; 110,000 = <b>$19,800</b></li><li>Monthly = $1,650; weekly = $381</li></ul>""",
+    "hours-of-service-calculator": """<p>A driver has driven 6 hours, worked 1.5 other on-duty hours, started the shift 9.5 hours ago and used 45 of a 70-hour cycle.</p>
+<ul><li>11-hour limit: 11 &minus; 6 = 5 hours</li><li>14-hour window: 14 &minus; 9.5 = <b>4.5 hours</b></li><li>Cycle: 70 &minus; 45 &minus; 6 &minus; 1.5 = 17.5 hours</li><li>The driver can drive up to 4.5 more hours; the 14-hour window is the binding limit</li></ul>""",
+    "freight-class-calculator": """<p>One pallet measures 48 &times; 40 &times; 48 inches and weighs 500 lbs.</p>
+<ul><li>Cubic feet = 48 &times; 40 &times; 48 &divide; 1,728 = 53.3</li><li>Density = 500 &divide; 53.3 = 9.4 lbs per cubic foot</li><li>Estimated class: <b>92.5</b> (8 to under 10 PCF)</li></ul>""",
+    "fuel-surcharge-calculator": """<p>A contract uses a $4.00 base price and 6 MPG. This week's index price is $5.20, and the load has 1,000 loaded miles.</p>
+<ul><li>Per-mile method: ($5.20 &minus; $4.00) &divide; 6 = <b>$0.20 a mile</b>, or <b>$200</b> for the trip</li><li>A step table paying 1 cent a mile for every $0.06 above base gives the same: $1.20 &divide; $0.06 = 20 steps &times; $0.01 = $0.20 a mile</li><li>On a $2.50 a mile linehaul, $0.20 is 8% of linehaul</li></ul>""",
+    "detention-pay-calculator": """<p>A driver checks in at 8:00 for an 8:00 appointment and is released at 13:10. The agreement gives 2 hours free and pays $50 an hour in completed 15-minute increments.</p>
+<ul><li>Time on site: 5 hours 10 minutes</li><li>Past free time: 3 hours 10 minutes</li><li>Billable: 3 hours (12 completed 15-minute increments)</li><li>Estimated detention pay: 3 &times; $50 = <b>$150</b></li></ul>""",
+}
+
+
 TOOLS = [
     # -------------------------------------------------- Cost Per Mile
     {
         "slug": "cost-per-mile-calculator", "prefix": "cpm",
-        "hub_title": "Cost Per Mile (CPM) Calculator", "hub_desc": "Your true operating cost per mile from fixed and variable costs.",
+        "hub_title": "Cost Per Mile (CPM) Calculator", "hub_desc": "Fixed and variable costs, your own pay shown separately, per total and per loaded mile.",
         "meta_title": "Cost Per Mile Calculator for Trucking (CPM) | Texas Solutions",
-        "desc": "Free cost per mile (CPM) calculator for owner-operators: combine truck payment, insurance, permits, fuel, maintenance and driver pay into your true cost per mile.",
-        "keywords": "cost per mile calculator, trucking cost per mile, CPM calculator, operating cost per mile, owner operator cost per mile",
-        "h1": "Cost Per Mile (CPM) Calculator",
-        "lede": "Your true cost to run one mile: fixed costs plus fuel, maintenance and driver pay. Know this before you accept a rate.",
-        "calc_html": """<div class="est rv" id="cpmCalc">
+        "desc": "Free trucking cost per mile calculator for owner-operators: fixed and variable costs, your own driver pay shown separately, and cost per total mile and per loaded mile.",
+        "keywords": "cost per mile calculator, trucking cost per mile calculator, owner operator cost per mile calculator, CPM calculator, operating cost per mile",
+        "h1": "Trucking Cost Per Mile (CPM) Calculator",
+        "lede": "Your true cost to run one mile: fixed costs, variable costs and your own pay, per total mile and per loaded mile. Know this before you accept a rate.",
+        "calc_html": """<div class="est rv" id="cpmCalc" data-tool="cost_per_mile">
   <div class="est-in">
-    <h2 style="font-size:26px">Monthly fixed costs</h2>
-    <div class="grid g2" style="gap:14px;margin-top:16px">
-      <div><label class="flabel" for="cpmPayment">Truck/trailer payment ($/mo)</label><input class="pct-in" type="number" id="cpmPayment" min="0" step="10" value="1800" inputmode="numeric"></div>
-      <div><label class="flabel" for="cpmInsurance">Insurance ($/mo)</label><input class="pct-in" type="number" id="cpmInsurance" min="0" step="10" value="600" inputmode="numeric"></div>
-      <div><label class="flabel" for="cpmPermits">Permits, licensing &amp; ELD ($/mo)</label><input class="pct-in" type="number" id="cpmPermits" min="0" step="10" value="150" inputmode="numeric"></div>
-      <div><label class="flabel" for="cpmOtherFixed">Other fixed costs ($/mo)</label><input class="pct-in" type="number" id="cpmOtherFixed" min="0" step="10" value="100" inputmode="numeric"></div>
+    <p class="ex-note">The numbers filled in are a worked example. Replace them with yours.</p>
+    <h2 style="font-size:24px">Fixed costs (per month)</h2>
+    <p class="hint">You pay these whether the truck runs or not.</p>
+    <div class="grid g2" style="gap:14px;margin-top:12px">
+      <div><label class="flabel" for="cpmPayment">Truck/trailer payment ($/mo)</label><input class="pct-in" type="number" id="cpmPayment" min="0" step="10" value="1800" inputmode="decimal" required></div>
+      <div><label class="flabel" for="cpmInsurance">Insurance ($/mo)</label><input class="pct-in" type="number" id="cpmInsurance" min="0" step="10" value="600" inputmode="decimal" required></div>
+      <div><label class="flabel" for="cpmPermits">Permits, licensing &amp; ELD ($/mo)</label><input class="pct-in" type="number" id="cpmPermits" min="0" step="10" value="150" inputmode="decimal" required></div>
+      <div><label class="flabel" for="cpmOtherFixed">Other fixed costs ($/mo)</label><input class="pct-in" type="number" id="cpmOtherFixed" min="0" step="10" value="150" inputmode="decimal" required><p class="hint">Parking, phone, accounting, load board subscriptions.</p></div>
     </div>
-    <h2 style="font-size:26px;margin-top:28px">Variable costs (per mile)</h2>
-    <div class="grid g2" style="gap:14px;margin-top:16px">
-      <div><label class="flabel" for="cpmFuel">Fuel cost ($/mi)</label><input class="pct-in" type="number" id="cpmFuel" min="0" step="0.01" value="0.65" inputmode="decimal"><p class="hint">From the <a href="truck-fuel-cost-calculator.html">fuel cost calculator</a>, or your own number.</p></div>
-      <div><label class="flabel" for="cpmMaint">Maintenance &amp; tires ($/mi)</label><input class="pct-in" type="number" id="cpmMaint" min="0" step="0.01" value="0.18" inputmode="decimal"></div>
-      <div><label class="flabel" for="cpmDriverPay">Driver pay ($/mi)</label><input class="pct-in" type="number" id="cpmDriverPay" min="0" step="0.01" value="0.55" inputmode="decimal"><p class="hint">0 if you are the only driver and count your own pay separately.</p></div>
-      <div><label class="flabel" for="cpmMiles">Miles per month</label><input class="pct-in" type="number" id="cpmMiles" min="1" step="100" value="9000" inputmode="numeric"></div>
+    <h2 style="font-size:24px;margin-top:26px">Variable costs (per mile driven)</h2>
+    <div class="grid g2" style="gap:14px;margin-top:12px">
+      <div><label class="flabel" for="cpmFuel">Fuel ($/mi)</label><input class="pct-in" type="number" id="cpmFuel" min="0" step="0.01" value="0.65" inputmode="decimal" required><p class="hint">From the <a href="truck-fuel-cost-calculator.html">fuel cost calculator</a>.</p></div>
+      <div><label class="flabel" for="cpmMaint">Maintenance &amp; tires ($/mi)</label><input class="pct-in" type="number" id="cpmMaint" min="0" step="0.01" value="0.18" inputmode="decimal" required></div>
+      <div class="full"><label class="flabel" for="cpmDriverPay">Hired driver pay ($/mi)</label><input class="pct-in" type="number" id="cpmDriverPay" min="0" step="0.01" value="0" inputmode="decimal" required><p class="hint">0 if you drive the truck yourself; your own pay goes below.</p></div>
+    </div>
+    <h2 style="font-size:24px;margin-top:26px">Your pay and your miles</h2>
+    <div class="grid g2" style="gap:14px;margin-top:12px">
+      <div class="full"><label class="flabel" for="cpmOwner">Your own pay as owner-driver ($/mo)</label><input class="pct-in" type="number" id="cpmOwner" min="0" step="100" value="4000" inputmode="decimal" required><p class="hint">What you need to take home for your labor. Shown on its own line so you can see CPM with and without it.</p></div>
+      <div><label class="flabel" for="cpmMiles">Total miles per month</label><input class="pct-in" type="number" id="cpmMiles" min="1" step="100" value="10000" inputmode="numeric" required data-positive><p class="hint">Loaded plus empty (deadhead).</p></div>
+      <div><label class="flabel" for="cpmLoaded">Loaded (paid) miles per month</label><input class="pct-in" type="number" id="cpmLoaded" min="1" step="100" value="8800" inputmode="numeric" required data-positive></div>
     </div>
   </div>
   <div class="est-out" aria-live="polite">
     <h3>Your cost per mile</h3>
-    <div class="est-big" id="cpmBig">$0.00<small>per mile, all-in</small></div>
+    <div class="est-big" id="cpmBig">Enter your details<small>costs and miles</small></div>
     <div class="est-lines">
       <div><span>Fixed costs, monthly</span><b id="cpmFixedTotal">-</b></div>
       <div><span>Fixed cost per mile</span><b id="cpmFixedPerMi">-</b></div>
       <div><span>Variable cost per mile</span><b id="cpmVarPerMi">-</b></div>
-      <div><span>Total operating cost, monthly</span><b id="cpmMonthlyTotal">-</b></div>
+      <div><span>Operating CPM, before your pay</span><b id="cpmOp">-</b></div>
+      <div><span>Your pay per mile</span><b id="cpmOwnerPerMi">-</b></div>
+      <div><span>All-in cost per loaded mile</span><b id="cpmLoadedMi">-</b></div>
+      <div><span>Deadhead share of miles</span><b id="cpmDead">-</b></div>
+      <div><span>Total cost, monthly (incl. your pay)</span><b id="cpmMonthlyTotal">-</b></div>
     </div>
-    <a class="btn btn-red" href="load-profitability-calculator.html">Check a load's profit</a>
+    <a class="btn btn-red" href="load-profitability-calculator.html" id="cpmToLp">Check a load's profit with this CPM</a>
     <a class="btn btn-dark" href="break-even-calculator.html">Find my break-even rate</a>
-    <small>Rough estimate. Add your own numbers for an exact figure; costs vary by truck, lane and season.</small>
+    <small>Estimate based on the costs you enter. Costs vary by truck, lane and season.</small>
   </div>
 </div>""",
         "faqs": [
             ("What is cost per mile (CPM) in trucking?", "Cost per mile is your total operating cost divided by miles driven: fixed costs (truck payment, insurance, permits) divided by monthly miles, plus variable costs (fuel, maintenance, driver pay) per mile. It is the number you compare against a load's rate per mile to see if it is worth running."),
             ("What is a good cost per mile for an owner-operator?", "It depends heavily on the truck, lane and driver pay structure. Many owner-operators run somewhere between $1.50 and $2.00 all-in cost per mile. Use your own numbers in the calculator rather than a rule of thumb, since fuel, insurance and payment amounts vary widely."),
-            ("Does cost per mile include driver pay?", "It should if you want your true break-even rate. If you are an owner-operator driving your own truck, either include a driver-pay line for your own labor or track it separately and make sure you are not comparing rates against a number that ignores your own time."),
+            ("Does cost per mile include driver pay?", "It should if you want your true break-even rate. This calculator shows hired driver pay as a variable cost and your own pay as an owner-driver on its own line, so you can see your operating CPM before your pay and your all-in cost after it."),
+            ("Should I divide by total miles or loaded miles?", "Both numbers matter. Cost per total mile is what each mile driven costs, loaded or empty. Cost per loaded mile divides the same monthly cost by paid miles only, so it is the minimum average rate per loaded mile you need to cover costs and your pay."),
         ],
         "article_html": """    <h2 style="margin-top:0">How cost per mile is calculated</h2>
-    <p>Split your costs into two groups. <b>Fixed costs</b> happen whether you drive 500 miles or 15,000 miles that month: your truck payment, insurance, permits and ELD subscription. <b>Variable costs</b> scale with miles driven: fuel, maintenance, tires and driver pay.</p>
+    <p>Split your costs into two groups. <b>Fixed costs</b> happen whether you drive 500 miles or 15,000 miles that month: your truck payment, insurance, permits and ELD subscription. <b>Variable costs</b> scale with miles driven: fuel, maintenance, tires and hired driver pay. Your own pay as an owner-driver is kept separate so it is never hidden inside another number.</p>
     <ul>
-      <li>Fixed cost per mile = total monthly fixed costs &divide; miles driven that month</li>
-      <li>Variable cost per mile = fuel + maintenance + driver pay, all per mile</li>
-      <li>Cost per mile (CPM) = fixed cost per mile + variable cost per mile</li>
+      <li>Fixed cost per mile = monthly fixed costs &divide; total miles</li>
+      <li>Variable cost per mile = fuel + maintenance and tires + hired driver pay</li>
+      <li>Operating CPM = fixed cost per mile + variable cost per mile</li>
+      <li>Your pay per mile = your monthly pay &divide; total miles</li>
+      <li>All-in cost per loaded mile = (operating CPM + your pay per mile) &times; total miles &divide; loaded miles</li>
     </ul>
-    <p>Fixed cost per mile falls as you drive more miles in a month, since the same truck payment is spread over more miles. That is why a truck sitting idle costs more per mile than a truck running hard.</p>""",
+    <p>Units: dollars per month for fixed costs and your pay, dollars per mile for variable costs, miles per month for miles. Fixed cost per mile falls as you drive more miles in a month, since the same truck payment is spread over more miles. That is why a truck sitting idle costs more per mile than a truck running hard.</p>""",
     },
     # -------------------------------------------------- Load Profitability
     {
         "slug": "load-profitability-calculator", "prefix": "lp",
-        "hub_title": "Load Profitability Calculator", "hub_desc": "Weigh the rate against fuel, driver pay and other costs before you book.",
+        "hub_title": "Load Profitability Calculator", "hub_desc": "Dispatch and factoring fees, deadhead and return miles, estimated profit and the rate you need.",
         "meta_title": "Load Profitability Calculator: Is This Load Worth Taking? | Texas Solutions",
-        "desc": "Free load profitability calculator: enter the rate, miles, deadhead and your cost per mile to see net profit, margin and effective rate per mile before you book a load.",
-        "keywords": "load profitability calculator, is this load worth taking, trucking profit calculator, net profit per load, effective rate per mile",
+        "desc": "Free load profitability calculator: revenue, dispatch and factoring fees, deadhead and return miles, your cost per mile and trip expenses give estimated profit, effective rate per mile and the rate you need.",
+        "keywords": "load profitability calculator, trucking profit calculator, is this load profitable, is this load worth taking, effective rate per mile, compare two loads",
         "h1": "Load Profitability Calculator",
-        "lede": "Rate, miles, deadhead and cost per mile in; net profit and margin out. Know before you book, not after you deliver.",
-        "calc_html": """<div class="est rv" id="lpCalc">
+        "lede": "Revenue, fees, every mile and your cost per mile in; estimated profit, effective rate and the rate you need out. Know before you book, not after you deliver.",
+        "calc_html": """<div class="est rv" id="lpCalc" data-tool="load_profit">
   <div class="est-in">
-    <h2 style="font-size:26px">This load</h2>
+    <p class="ex-note">The numbers filled in are a worked example. Replace them with yours.</p>
+    <h2 style="font-size:24px">Revenue</h2>
+    <div class="grid g2" style="gap:14px;margin-top:12px">
+      <div><label class="flabel" for="lpRate">Linehaul pay for the load ($)</label><input class="pct-in" type="number" id="lpRate" min="0" step="10" value="2400" inputmode="decimal" required data-positive></div>
+      <div><label class="flabel" for="lpOtherPay">Other pay: fuel surcharge, accessorials ($)</label><input class="pct-in" type="number" id="lpOtherPay" min="0" step="10" value="0" inputmode="decimal" required></div>
+    </div>
+    <h2 style="font-size:24px;margin-top:24px">Miles</h2>
+    <div class="grid g2" style="gap:14px;margin-top:12px">
+      <div><label class="flabel" for="lpLoaded">Loaded miles</label><input class="pct-in" type="number" id="lpLoaded" min="1" step="1" value="600" inputmode="numeric" required data-positive></div>
+      <div><label class="flabel" for="lpDeadhead">Deadhead to pickup (miles)</label><input class="pct-in" type="number" id="lpDeadhead" min="0" step="1" value="50" inputmode="numeric" required></div>
+      <div class="full"><label class="flabel" for="lpReturn">Return or repositioning miles (optional)</label><input class="pct-in" type="number" id="lpReturn" min="0" step="1" value="0" inputmode="numeric" data-optional><p class="hint">Empty miles after delivery that this load forces, for example back to a better freight market. Leave 0 if your next load picks up nearby.</p></div>
+    </div>
+    <h2 style="font-size:24px;margin-top:24px">Costs and fees</h2>
+    <div class="grid g2" style="gap:14px;margin-top:12px">
+      <div><label class="flabel" for="lpCpm">Your cost per mile ($/mi)</label><input class="pct-in" type="number" id="lpCpm" min="0" step="0.01" value="1.50" inputmode="decimal" required><p class="hint">From the <a href="cost-per-mile-calculator.html">cost per mile calculator</a>.</p></div>
+      <div><label class="flabel" for="lpOther">Extra trip expenses ($)</label><input class="pct-in" type="number" id="lpOther" min="0" step="5" value="60" inputmode="decimal" required><p class="hint">Tolls, lumper, scale. Only costs <b>not</b> already in your CPM.</p></div>
+      <div><label class="flabel" for="lpDispatch">Dispatch fee (%)</label><input class="pct-in" type="number" id="lpDispatch" min="0" max="50" step="0.5" value="5" inputmode="decimal" required></div>
+      <div><label class="flabel" for="lpFactor">Factoring fee (%)</label><input class="pct-in" type="number" id="lpFactor" min="0" max="50" step="0.25" value="3" inputmode="decimal" required></div>
+    </div>
+    <fieldset class="fee-basis">
+      <legend>Which revenue do the fees apply to?</legend>
+      <label><input type="checkbox" id="lpDispOther" checked> Dispatch fee also applies to other pay</label>
+      <label><input type="checkbox" id="lpFactOther" checked> Factoring fee also applies to other pay</label>
+      <label><input type="checkbox" id="lpFeesInCpm"> My CPM already includes my dispatch and factoring fees, so do not count them again</label>
+      <p class="hint">Linehaul pay is subject to both fees. If your agreement uses a different basis, set these boxes to match it.</p>
+    </fieldset>
     <div class="grid g2" style="gap:14px;margin-top:16px">
-      <div><label class="flabel" for="lpRate">Load rate / total pay ($)</label><input class="pct-in" type="number" id="lpRate" min="0" step="10" value="3000" inputmode="numeric"></div>
-      <div><label class="flabel" for="lpLoaded">Loaded miles</label><input class="pct-in" type="number" id="lpLoaded" min="1" step="1" value="600" inputmode="numeric"></div>
-      <div><label class="flabel" for="lpDeadhead">Deadhead miles (to pickup)</label><input class="pct-in" type="number" id="lpDeadhead" min="0" step="1" value="50" inputmode="numeric"></div>
-      <div><label class="flabel" for="lpOther">Tolls, lumper, scale fees ($)</label><input class="pct-in" type="number" id="lpOther" min="0" step="5" value="0" inputmode="numeric"></div>
-      <div class="full"><label class="flabel" for="lpCpm">Your cost per mile ($/mi, all-in)</label><input class="pct-in" type="number" id="lpCpm" min="0" step="0.01" value="1.85" inputmode="decimal"><p class="hint">Get this from the <a href="cost-per-mile-calculator.html">cost per mile calculator</a>.</p></div>
+      <div><label class="flabel" for="lpTarget">Profit you want from this load ($)</label><input class="pct-in" type="number" id="lpTarget" min="0" step="50" value="800" inputmode="decimal" required></div>
+      <div><label class="flabel" for="lpSpeed">Average speed incl. stops (mph)</label><input class="pct-in" type="number" id="lpSpeed" min="1" max="80" step="1" value="50" inputmode="numeric" required data-positive><p class="hint">Only used for the time estimate.</p></div>
     </div>
   </div>
   <div class="est-out" aria-live="polite">
-    <h3>Net profit on this load</h3>
-    <div class="est-big" id="lpBig">$0<small>net profit</small></div>
+    <h3>Estimated profit on this load</h3>
+    <div class="est-big" id="lpBig">Enter your details<small>revenue, miles and costs</small></div>
     <div class="est-lines">
-      <div><span>Total miles (loaded + deadhead)</span><b id="lpTotalMi">-</b></div>
-      <div><span>Total cost for this load</span><b id="lpTotalCost">-</b></div>
+      <div><span>Total revenue</span><b id="lpRev">-</b></div>
+      <div><span>Dispatch fee / factoring fee</span><b id="lpFees">-</b></div>
+      <div><span>Total trip miles</span><b id="lpTotalMi">-</b></div>
+      <div><span>Mileage cost (miles &times; CPM)</span><b id="lpTotalCost">-</b></div>
       <div><span>Profit margin</span><b id="lpMargin">-</b></div>
       <div><span>Rate per loaded mile</span><b id="lpRatePerLoaded">-</b></div>
-      <div><span>Rate per total mile</span><b id="lpRatePerTotal">-</b></div>
+      <div><span>Effective rate (all miles)</span><b id="lpRatePerTotal">-</b></div>
+      <div><span>Profit per mile</span><b id="lpProfitMi">-</b></div>
+      <div><span>Estimated driving time</span><b id="lpHours">-</b></div>
+      <div><span>Break-even linehaul</span><b id="lpBreakEven">-</b></div>
+      <div class="hl"><span>Linehaul needed for your target</span><b id="lpRequired">-</b></div>
     </div>
+    <div class="compare" id="lpCompare" hidden>
+      <h4>Compare two loads</h4>
+      <div style="overflow-x:auto"><table><thead><tr><th></th><th>Load A (saved)</th><th>This load</th></tr></thead><tbody id="lpCompareRows"></tbody></table></div>
+      <p class="hint">Time is driving time at your average speed only. It does not predict loading time, detention or how soon you will find the next load.</p>
+    </div>
+    <div class="btn-row"><button class="btn btn-line" type="button" id="lpSaveA">Save as Load A to compare</button><button class="btn btn-line" type="button" id="lpClearA" hidden>Clear Load A</button></div>
     <a class="btn btn-red" href="deadhead-miles-calculator.html">Check deadhead impact</a>
-    <a class="btn btn-wa" href="__WA__" target="_blank" rel="noopener">__WA_ICON__Ask a dispatcher</a>
-    <small>Rough estimate. Actual profit depends on fuel prices, detention, and costs not entered here.</small>
+    <small>Estimated profit based on the costs you entered. Actual profit depends on fuel prices, detention and costs not entered here.</small>
   </div>
 </div>""",
         "faqs": [
-            ("How do I know if a load is profitable?", "Add up the total cost to run the load (your cost per mile times total miles, plus tolls, lumper or scale fees) and subtract it from the rate. If the result is positive and the margin looks reasonable after accounting for time, the load is profitable; if it is thin or negative, it likely is not worth it unless it repositions you for a better load."),
-            ("Should deadhead miles count against a load's profit?", "Yes. Deadhead miles cost fuel and time just like loaded miles, so they should be included in your total miles when working out true cost and effective rate per mile."),
-            ("What profit margin should I target per load?", "There is no universal number; it depends on your fixed costs, how often you run, and what alternative loads are available. Compare the margin here against your other options rather than a fixed target."),
+            ("How do I know if a load is profitable?", "Take the total revenue, subtract the dispatch and factoring fees, your cost per mile times every mile the load takes (deadhead, loaded and any return trip) and any extra trip expenses. If the estimated profit is positive and worth the time, the load is profitable; if it is thin or negative, it is likely not worth it unless it repositions you for a better load."),
+            ("Should deadhead miles count against a load's profit?", "Yes. Deadhead miles cost fuel and time just like loaded miles, so they are included in total trip miles when working out true cost and effective rate per mile. So are return or repositioning miles the load forces on you."),
+            ("How do dispatch and factoring fees affect a load's profit?", "Both are a percentage of revenue, so they come off the top before your costs. With a 5% dispatch fee and a 3% factoring fee on the same revenue, you keep 92 cents of every revenue dollar. The calculator lets you choose whether each fee applies to other pay such as fuel surcharge, to match your agreements."),
+            ("What rate do I need to make a set profit on a load?", "Required revenue = (total miles x cost per mile + extra expenses + the profit you want) / (1 - dispatch fraction - factoring fraction). The calculator shows this as the linehaul you need, and the break-even linehaul when your target profit is zero."),
         ],
         "article_html": """    <h2 style="margin-top:0">How load profit is calculated</h2>
+    <p>The inputs: revenue <b>R</b>, total trip miles <b>M</b> (deadhead + loaded + return), operating cost per mile <b>C</b>, extra trip expenses <b>A</b>, dispatch fraction <b>d</b> and factoring fraction <b>f</b> (5% = 0.05).</p>
     <ul>
-      <li>Total miles = loaded miles + deadhead miles</li>
-      <li>Total cost = (cost per mile &times; total miles) + tolls, lumper and scale fees</li>
-      <li>Net profit = load rate &minus; total cost</li>
-      <li>Profit margin = net profit &divide; load rate &times; 100</li>
+      <li>When both fees apply to the same revenue: <b>Estimated profit = R &times; (1 &minus; d &minus; f) &minus; M &times; C &minus; A</b></li>
+      <li>For a profit target P: <b>Required revenue = (M &times; C + A + P) &divide; (1 &minus; d &minus; f)</b></li>
+      <li>Effective rate per mile = total revenue &divide; total trip miles</li>
+      <li>Profit margin = estimated profit &divide; total revenue &times; 100</li>
     </ul>
-    <p>Two rates matter more than the headline number: <b>rate per loaded mile</b>, which is what brokers usually quote, and <b>rate per total mile</b>, which includes the deadhead it took to get there. A load that looks good per loaded mile can be mediocre once deadhead is counted.</p>""",
+    <p>When other pay (fuel surcharge, detention, accessorials) is not subject to a fee, that fee is applied to the linehaul only: profit = linehaul + other pay &minus; d &times; (dispatch base) &minus; f &times; (factoring base) &minus; M &times; C &minus; A, and the required linehaul is solved the same way.</p>
+    <p><b>Avoid counting a cost twice.</b> If your cost per mile already includes tolls, lumpers or your dispatch and factoring fees, leave them out here (or tick the box). The result is an estimated profit based on the costs you entered, not a guarantee.</p>""",
     },
     # -------------------------------------------------- Break-Even
     {
@@ -2062,6 +2282,119 @@ TOOLS = [
     </tbody></table></div>
     <p>This is the widely used general density-to-class guideline. Some commodities carry their own NMFC item number regardless of density (electronics, hazardous materials, automotive parts and more), which overrides a pure density estimate. When in doubt, ask your carrier or dispatcher.</p>""",
     },
+    # -------------------------------------------------- Fuel Surcharge
+    {
+        "slug": "fuel-surcharge-calculator", "prefix": "fsc",
+        "hub_title": "Fuel Surcharge Calculator", "hub_desc": "Surcharge per mile and per trip by your contract's method: per-mile, step table or percentage.",
+        "meta_title": "Fuel Surcharge Calculator for Trucking | Texas Solutions",
+        "desc": "Free trucking fuel surcharge calculator: base and current fuel price, agreed MPG and miles give surcharge per mile and total, using the per-mile, step-table or percentage method in your contract.",
+        "keywords": "fuel surcharge calculator, trucking fuel surcharge calculator, how to calculate fuel surcharge, FSC per mile, DOE fuel surcharge",
+        "h1": "Fuel Surcharge Calculator",
+        "lede": "Work out a fuel surcharge the way your contract does: per-mile from price and MPG, or a step table in cents per mile or percent of linehaul.",
+        "calc_html": """<div class="est rv" id="fscCalc" data-tool="fuel_surcharge" data-fuel='__FUEL__'>
+  <div class="est-in">
+    <p class="ex-note">The numbers filled in are an example, with today's EIA U.S. diesel average as the current price. Replace them with your contract's terms.</p>
+    <div class="field"><label class="flabel" for="fscMethod">Your contract's method</label>
+      <select class="pct-in" id="fscMethod">
+        <option value="mpg">Price above base &divide; agreed MPG (per mile)</option>
+        <option value="stepcpm">Step table: cents per mile for each price step</option>
+        <option value="steppct">Step table: % of linehaul for each price step</option>
+      </select>
+      <p class="hint">Fuel surcharge formulas are set by each shipper, broker or contract. Pick the one your rate confirmation or agreement uses.</p></div>
+    <div class="grid g2" style="gap:14px;margin-top:14px">
+      <div><label class="flabel" for="fscBase">Base fuel price ($/gal)</label><input class="pct-in" type="number" id="fscBase" min="0" step="0.001" value="4.000" inputmode="decimal" required></div>
+      <div><label class="flabel" for="fscCurrent">Current fuel price ($/gal)</label><input class="pct-in" type="number" id="fscCurrent" min="0" step="0.001" inputmode="decimal" required><p class="hint" id="fscCurrentNote">Most contracts use the weekly DOE/EIA diesel average named in the agreement.</p></div>
+      <div class="fsc-m" data-m="mpg"><label class="flabel" for="fscMpg">Agreed MPG</label><input class="pct-in" type="number" id="fscMpg" min="0.1" step="0.1" value="6" inputmode="decimal" required data-positive></div>
+      <div class="fsc-m" data-m="stepcpm steppct" hidden><label class="flabel" for="fscStep">Price step ($/gal)</label><input class="pct-in" type="number" id="fscStep" min="0.001" step="0.01" value="0.06" inputmode="decimal" required data-positive></div>
+      <div class="fsc-m" data-m="stepcpm" hidden><label class="flabel" for="fscCents">Cents per mile per step</label><input class="pct-in" type="number" id="fscCents" min="0" step="0.1" value="1" inputmode="decimal" required></div>
+      <div class="fsc-m" data-m="steppct" hidden><label class="flabel" for="fscPctStep">% of linehaul per step</label><input class="pct-in" type="number" id="fscPctStep" min="0" step="0.1" value="1" inputmode="decimal" required></div>
+      <div><label class="flabel" for="fscMiles">Applicable miles</label><input class="pct-in" type="number" id="fscMiles" min="0" step="1" value="1000" inputmode="numeric" required><p class="hint">Usually loaded miles, as your contract defines them.</p></div>
+      <div><label class="flabel" for="fscLinehaul">Linehaul rate ($/mi, optional)</label><input class="pct-in" type="number" id="fscLinehaul" min="0" step="0.01" placeholder="e.g. 2.50" inputmode="decimal"><p class="hint">Needed for the % method; otherwise shows the surcharge as a % of linehaul.</p></div>
+      <div class="fsc-m" data-m="stepcpm steppct" hidden><label class="flabel" for="fscRound">Partial steps</label><select class="pct-in" id="fscRound"><option value="down">Count completed steps only</option><option value="up">Round partial steps up</option></select></div>
+      <div><label class="flabel" for="fscBelow">If fuel is below base</label><select class="pct-in" id="fscBelow"><option value="zero">No surcharge</option><option value="neg">Negative surcharge (credit)</option></select></div>
+    </div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Fuel surcharge</h3>
+    <div class="est-big" id="fscBig">Enter your details<small>base price, current price and terms</small></div>
+    <div class="est-lines">
+      <div><span>Price above base</span><b id="fscDiff">-</b></div>
+      <div><span>Steps counted</span><b id="fscSteps">-</b></div>
+      <div><span>Surcharge per mile</span><b id="fscPerMile">-</b></div>
+      <div><span>Surcharge as % of linehaul</span><b id="fscPct">-</b></div>
+      <div><span>Total surcharge for these miles</span><b id="fscTotal">-</b></div>
+    </div>
+    <a class="btn btn-red" href="load-profitability-calculator.html">Add it to a load's profit</a>
+    <small>Estimate. The surcharge you are paid is set by your contract or rate confirmation, including which price index, which week and which miles count.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("How is a trucking fuel surcharge calculated?", "The most common method takes the current fuel price minus the base price in the contract, divides it by an agreed MPG, and pays the result per mile. With a $4.00 base, a $5.20 current price and 6 MPG, the surcharge is $0.20 a mile. Other contracts use a step table in cents per mile or a percentage of linehaul for each price step."),
+            ("Which fuel price does a fuel surcharge use?", "Whatever the contract names. Many use the U.S. Energy Information Administration (DOE/EIA) weekly on-highway diesel average, national or regional, for a set day of the week. This calculator fills in the latest EIA U.S. average with its date, and you can type the exact figure your contract uses."),
+            ("Is there one standard fuel surcharge formula?", "No. Base price, MPG, price index, step size and which miles count all vary by shipper, broker and agreement. Use the method in your own contract; this tool supports the common per-mile and step-table methods so you can check what you are paid."),
+            ("Is the fuel surcharge subject to my dispatch or factoring fee?", "That depends on your agreements. In the load profitability calculator you can choose whether each fee applies to other pay such as fuel surcharge."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How the fuel surcharge is calculated</h2>
+    <ul>
+      <li><b>Per-mile method:</b> surcharge per mile = (current price &minus; base price) &divide; agreed MPG</li>
+      <li><b>Step table, cents per mile:</b> steps = (current &minus; base) &divide; step size, counted per your contract; surcharge per mile = steps &times; cents per step</li>
+      <li><b>Step table, percent:</b> surcharge % = steps &times; % per step; surcharge per mile = linehaul rate &times; surcharge %</li>
+      <li>Total surcharge = surcharge per mile &times; applicable miles</li>
+    </ul>
+    <p>Units: prices in dollars per gallon, MPG in miles per gallon, miles as defined by your contract (often loaded miles). The current price fills in from the latest U.S. Energy Information Administration weekly U.S. on-highway diesel average, with its week shown. Your contract may name a regional average or a different day, so type the figure it uses. If fuel is below base, most contracts pay no surcharge; some apply a credit.</p>""",
+    },
+    # -------------------------------------------------- Detention Pay
+    {
+        "slug": "detention-pay-calculator", "prefix": "det",
+        "hub_title": "Detention Pay Calculator", "hub_desc": "Eligible detention hours and estimated pay from arrival, release, free time and your agreed rate.",
+        "meta_title": "Truck Detention Pay Calculator | Texas Solutions",
+        "desc": "Free truck detention pay calculator: enter arrival, appointment and release times, free time, hourly rate and billing increment to see eligible detention hours and estimated detention pay.",
+        "keywords": "detention pay calculator, truck detention calculator, trucking detention time, detention pay per hour, how to calculate detention",
+        "h1": "Detention Pay Calculator",
+        "lede": "How long you were held past free time, and what that should pay at your agreed rate and billing increment.",
+        "calc_html": """<div class="est rv" id="detCalc" data-tool="detention_pay">
+  <div class="est-in">
+    <p class="ex-note">The times filled in are an example. Replace them with yours.</p>
+    <div class="grid g2" style="gap:14px">
+      <div><label class="flabel" for="detAppt">Appointment time (optional)</label><input class="pct-in" type="datetime-local" id="detAppt"><p class="hint">Many agreements start the clock at the appointment if you arrive early, and do not pay detention if you arrive late.</p></div>
+      <div><label class="flabel" for="detArrive">Arrival (check-in) time</label><input class="pct-in" type="datetime-local" id="detArrive" required></div>
+      <div class="full"><label class="flabel" for="detRelease">Release time (signed out / departed)</label><input class="pct-in" type="datetime-local" id="detRelease" required></div>
+      <div><label class="flabel" for="detFree">Free time (hours)</label><input class="pct-in" type="number" id="detFree" min="0" step="0.25" value="2" inputmode="decimal" required></div>
+      <div><label class="flabel" for="detRate">Agreed detention rate ($/hour)</label><input class="pct-in" type="number" id="detRate" min="0" step="1" value="50" inputmode="decimal" required></div>
+      <div><label class="flabel" for="detInc">Billing increment</label><select class="pct-in" id="detInc"><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="60">1 hour</option><option value="1">Exact minutes</option></select></div>
+      <div><label class="flabel" for="detRound">Partial increments</label><select class="pct-in" id="detRound"><option value="down">Completed increments only</option><option value="up">Round up</option><option value="near">Round to nearest</option></select></div>
+      <div class="full"><label class="flabel" for="detCap">Maximum payable hours (optional)</label><input class="pct-in" type="number" id="detCap" min="0" step="0.5" placeholder="no cap" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="est-out" aria-live="polite">
+    <h3>Estimated detention pay</h3>
+    <div class="est-big" id="detBig">Enter your details<small>arrival, release and rate</small></div>
+    <div class="est-lines">
+      <div><span>Clock started</span><b id="detStart">-</b></div>
+      <div><span>Time on site</span><b id="detOnSite">-</b></div>
+      <div><span>Past free time</span><b id="detEligible">-</b></div>
+      <div><span>Billable hours</span><b id="detBillable">-</b></div>
+    </div>
+    <p class="form-status err" id="detWarn" hidden></p>
+    <a class="btn btn-red" href="load-profitability-calculator.html">Add it to a load's profit</a>
+    <small>Estimate. Payment depends on your agreed terms with the broker or shipper and on supporting documents: check-in and check-out times on the bill of lading, gate logs or ELD records, and notice given while you waited.</small>
+  </div>
+</div>""",
+        "faqs": [
+            ("How is truck detention pay calculated?", "Start the clock at arrival (or at the appointment time if you arrived early and your agreement says so), subtract the free time, usually two hours, then bill the remaining time in your agreed increment at the agreed hourly rate. Five hours ten minutes on site with two hours free is three hours ten minutes; in 15-minute increments that bills as 3 hours, or $150 at $50 an hour."),
+            ("How much free time do brokers usually give?", "Two hours at each pickup and delivery is common, but free time, the hourly rate, the increment and any cap are set by your rate confirmation or carrier agreement. Check those terms before you invoice."),
+            ("What do I need to get paid for detention?", "Usually: arrival and departure times written and signed on the bill of lading, notice to the broker while you are waiting (often before free time runs out), and a detention request on the invoice. ELD and gate records help. Without documentation, detention is often refused."),
+            ("Do I get detention if I arrive late?", "Often not. Many agreements only pay detention when the truck arrived on time for its appointment. This calculator warns you when the arrival is after the appointment; your agreement decides."),
+        ],
+        "article_html": """    <h2 style="margin-top:0">How detention is calculated</h2>
+    <ul>
+      <li>Clock start = arrival time, or the appointment time if you arrived before it</li>
+      <li>Time past free time = release time &minus; clock start &minus; free time (never below zero)</li>
+      <li>Billable hours = time past free time in your billing increment (completed increments, rounded up, or nearest), capped at any maximum</li>
+      <li>Estimated detention pay = billable hours &times; agreed hourly rate</li>
+    </ul>
+    <p>Releases after midnight work: enter the date and time for each. Units: times as date and clock time, free time and cap in hours, rate in dollars per hour. Payment depends on the agreed terms and supporting documentation, so keep signed in and out times on the bill of lading.</p>""",
+    },
 ]
 
 
@@ -2070,6 +2403,9 @@ TOOLS = [
 for _t in TOOLS:
     if "__WA__" in _t["calc_html"]:
         _t["calc_html"] = _t["calc_html"].replace("__WA__", WA_URL).replace("__WA_ICON__", ICONS["wa"])
+    if "__FUEL__" in _t["calc_html"]:
+        _fd = FD.load()
+        _t["calc_html"] = _t["calc_html"].replace("__FUEL__", json.dumps({"us": FD.national(_fd, "diesel"), "maxAge": FD.MAX_AGE}).replace("'", "&#39;"))
     if "__STATES__" in _t["calc_html"]:
         _states_json = json.dumps([n for n, _ in C.STATE_REGION.values()]).replace("'", "&#39;")
         _t["calc_html"] = _t["calc_html"].replace("__STATES__", _states_json)
@@ -2116,16 +2452,6 @@ def build_404():
     shell = shell.replace('content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"', 'content="noindex"')
     shell = re.sub(r'(href|src)="(?!https?:|/|#|tel:|mailto:|data:)', r'\1="/', shell)
     write("404.html", shell)
-
-
-def diesel_lines():
-    d = load_diesel()
-    if not d:
-        return []
-    out = [f"## Diesel prices by state (daily, {d.get('day')}; EIA U.S. weekly average ${d['regions']['US']['price']:.3f})"]
-    out += [f"- {C.STATE_REGION[c][0]}: ${v:.3f}/gal" for c, v in sorted(d.get("states", {}).items(), key=lambda kv: C.STATE_REGION[kv[0]][0])]
-    out += [f"- Truck fuel cost calculator: {url('/truck-fuel-cost-calculator.html')}", ""]
-    return out
 
 
 def strip_tags(s):
@@ -2208,7 +2534,7 @@ def build_site_files():
             "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "anthropic-ai",
             "PerplexityBot", "Perplexity-User", "Google-Extended", "GoogleOther", "Gemini-Deep-Research", "DuckAssistBot",
             "CCBot", "Meta-ExternalAgent", "Meta-ExternalFetcher", "Amazonbot", "cohere-ai", "MistralAI-User", "YouBot"]
-    block = ["Allow: /", "Disallow: /admin/", "Disallow: /content/", "Disallow: /tools/", "Disallow: /head-codes.html"]
+    block = ["Allow: /", "Disallow: /admin/", "Disallow: /content/", "Disallow: /tools/", "Disallow: /docs/", "Disallow: /head-codes.html"]
     robots = ["# dispatch.texassolutions.co: search engines and AI answer engines are welcome.",
               f"# Plain-text summary for AI tools: {C.BASE}/llms.txt (full text: {C.BASE}/llms-full.txt)",
               f"# Blog RSS feed: {C.BASE}/feed.xml", "",
@@ -2219,13 +2545,13 @@ def build_site_files():
     write(f"{INDEXNOW_KEY}.txt", INDEXNOW_KEY)
 
     # ---------------------------------------------------------- llms.txt (short) and llms-full.txt (everything)
-    diesel = load_diesel()
+    F = Fuel()
+    diesel = F.data
     key_states = ["TX", "CA", "FL", "GA", "IL", "NY", "OH", "PA", "OK", "TN"]
     diesel_short = []
     if diesel:
-        us_p = diesel["regions"]["US"]["price"]
-        diesel_short = [f"- As of {diesel.get('day') or diesel.get('week')}: U.S. average ${us_p:.3f}/gal (EIA), "
-                        + ", ".join(f"{C.STATE_REGION[c][0]} ${diesel['states'][c]:.3f}" for c in key_states if c in diesel.get("states", {})),
+        diesel_short = [f"- AAA daily state averages as of {F.day}; EIA U.S. weekly average ${F.us:.3f}/gal (week of {F.week}): "
+                        + ", ".join(f"{C.STATE_REGION[c][0]} ${F.p(c):.3f}" for c in key_states if F.p(c)),
                         f"- Daily prices for all 50 states and DC: {url('/truck-fuel-cost-calculator.html')}#diesel-prices; one page per state at {url('/diesel-prices/texas.html')} (replace texas with the state name)"]
     summary = (f"> Texas Solutions is a US truck dispatch service for owner-operators and small fleets, based in {C.CITY}, Texas. "
                f"Dispatch fee: {pl(M)} of weekly gross for OTR semi trucks, 8% for hotshots, 10% for box trucks and straight trucks. "
@@ -2270,8 +2596,8 @@ def build_site_files():
     for po in POSTS:
         full += [f"### {po['title']}", f"URL: {url('/blog/' + po['slug'] + '.html')}", f"Published: {po['date'].isoformat()}", "", po["md"], ""]
     if diesel:
-        full += [f"## Diesel prices by state (daily, {diesel.get('day')}; EIA U.S. weekly average ${diesel['regions']['US']['price']:.3f}/gal)"]
-        full += [f"- {C.STATE_REGION[c][0]}: ${v:.3f}/gal" for c, v in sorted(diesel.get("states", {}).items(), key=lambda kv: C.STATE_REGION[kv[0]][0])]
+        full += [f"## Diesel prices by state (AAA daily state averages, {F.day}; EIA U.S. weekly average ${F.us:.3f}/gal, week of {F.week})"]
+        full += [f"- {C.STATE_REGION[c][0]}: ${F.p(c):.3f}/gal ({FD.label(F.rec[c])})" for c in sorted(C.STATE_REGION, key=lambda c: C.STATE_REGION[c][0]) if F.p(c)]
         full += [""]
     write("llms-full.txt", "\n".join(full))
 

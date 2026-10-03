@@ -2,6 +2,7 @@
 title: "How Much Does a Truck Dispatcher Cost in 2026?"
 description: "Truck dispatch fees explained: typical 3-10% of weekly gross, what the fee covers, and Texas Solutions rates of 5% semi, 8% hotshot and 10% box truck."
 date: 2026-09-22
+updated: 2026-10-03
 author: "Texas Solutions Dispatch Team"
 tags:
   - Dispatch pricing
@@ -55,6 +56,10 @@ And one rule that should never bend: **you approve every load.** No forced dispa
 ## Does a dispatcher pay for itself?
 
 Do the maths on your own truck. If a dispatcher at 5% saves you three hours a day on the boards, negotiates even a few cents a mile more, and plans lanes that cut empty miles, the fee is often covered. Fuel is where deadhead really hurts: at today's diesel prices a semi burns roughly a dollar of fuel for every mile, loaded or empty. Check your own number with the [truck fuel cost calculator](/truck-fuel-cost-calculator.html).
+
+**Worked example.** A semi grosses $9,000 in a week, so a 5% dispatch fee is **$450**. Suppose, as an illustration, the dispatcher's lane planning avoids 150 empty miles that week and negotiation adds 10 cents a mile on 2,500 loaded miles. At an all-in cost of $1.50 a mile, the avoided empty miles save about $225 and the better rates add $250: **$475**, a little more than the fee. If neither happens, the fee is simply a cost. Results vary and nobody can guarantee them, so test real loads: the [load profitability calculator](/load-profitability-calculator.html) takes the dispatch percentage, factoring fee and every mile into account.
+
+See how our [owner-operator dispatch service](/owner-operator-dispatch.html) works, or [estimate your fee](/estimate.html).
 
 ## Red flags when choosing a dispatcher
 

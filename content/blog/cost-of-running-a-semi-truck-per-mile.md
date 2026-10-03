@@ -2,6 +2,7 @@
 title: "Cost of Running a Semi Truck Per Mile (2026 Breakdown)"
 description: "What it costs to run a semi per mile: the ATRI industry average, fixed vs variable costs, and how to calculate your own cost per mile before you book."
 date: 2026-09-23
+updated: 2026-10-03
 author: "Texas Solutions Dispatch Team"
 tags:
   - Operating costs
@@ -43,7 +44,9 @@ Treat that as a benchmark, not your number. It covers fleets with company driver
 
 Say your fixed costs are **$2,650 a month** and you run **9,000 miles**. Fixed cost is about $0.29 per mile. Add fuel at $0.65, maintenance and tires at $0.18, and driver pay or your own pay target at $0.55, for $1.38 variable. Your all-in cost is roughly **$1.67 per mile**.
 
-Plug in your own numbers with the [cost per mile calculator](/cost-per-mile-calculator.html). Fuel is the most volatile line: see [today's diesel price in your state](/diesel-prices/texas.html) and estimate trip fuel with the [fuel cost calculator](/truck-fuel-cost-calculator.html).
+Keep your own pay on its own line so you can see both numbers: here, operating cost before the $0.55 for driver pay is about $1.12 a mile. And divide by loaded miles too: if 1,000 of those 9,000 miles are empty, the all-in cost per loaded mile is about $1.67 x 9,000 / 8,000 = **$1.88**, which is the minimum average rate per loaded mile this truck needs.
+
+Plug in your own numbers with the [cost per mile calculator](/cost-per-mile-calculator.html), which shows fixed and variable costs, your own pay, and cost per total and per loaded mile. Fuel is the most volatile line: see [today's diesel price in your state](/diesel-prices/texas.html) and estimate trip fuel with the [fuel cost calculator](/truck-fuel-cost-calculator.html).
 
 ## From cost per mile to a rate you can accept
 
@@ -60,6 +63,6 @@ The [load profitability calculator](/load-profitability-calculator.html) does th
 - **Stay ahead of maintenance.** A repair reserve avoids a surprise bill; use the [maintenance budget calculator](/maintenance-budget-calculator.html).
 - **Run enough miles** to spread fixed costs, but only on loads that clear your CPM.
 
-A dispatcher can help with the first and last: planning lanes to reduce empty miles and negotiating rates against your real numbers. [See what dispatch costs](/estimate.html).
+A dispatcher can help with the first and last: planning lanes to reduce empty miles and negotiating rates against your real numbers. Read about our [owner-operator dispatch service](/owner-operator-dispatch.html) or [see what dispatch costs](/estimate.html).
 
 *Source: [ATRI, Operational Costs of Trucking](https://truckingresearch.org/about-atri/atri-research/operational-costs-of-trucking/).*

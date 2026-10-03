@@ -20,8 +20,8 @@
 - [Tools hub](https://dispatch.texassolutions.co/tools.html): all calculators in one place
 - [Dispatch fee calculator and free quote](https://dispatch.texassolutions.co/estimate.html): dispatch fee by truck type, plus a quote request via WhatsApp
 - [Truck fuel cost calculator](https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html): MPG by truck type and load weight, trip fuel cost, cost per mile, daily diesel price by state
-- [Cost Per Mile (CPM) Calculator](https://dispatch.texassolutions.co/cost-per-mile-calculator.html): Free cost per mile (CPM) calculator for owner-operators: combine truck payment, insurance, permits, fuel, maintenance and driver pay into your true cost per mile.
-- [Load Profitability Calculator](https://dispatch.texassolutions.co/load-profitability-calculator.html): Free load profitability calculator: enter the rate, miles, deadhead and your cost per mile to see net profit, margin and effective rate per mile before you book a load.
+- [Cost Per Mile (CPM) Calculator](https://dispatch.texassolutions.co/cost-per-mile-calculator.html): Free trucking cost per mile calculator for owner-operators: fixed and variable costs, your own driver pay shown separately, and cost per total mile and per loaded mile.
+- [Load Profitability Calculator](https://dispatch.texassolutions.co/load-profitability-calculator.html): Free load profitability calculator: revenue, dispatch and factoring fees, deadhead and return miles, your cost per mile and trip expenses give estimated profit, effective rate per mile and the rate you need.
 - [Break-Even Calculator](https://dispatch.texassolutions.co/break-even-calculator.html): Free break-even calculator for owner-operators: enter fixed costs, variable cost per mile and your freight rate to see the miles per month you need to break even, and your profit at your planned miles.
 - [Deadhead Miles Calculator](https://dispatch.texassolutions.co/deadhead-miles-calculator.html): Free deadhead miles calculator: see your deadhead percentage and effective rate per mile once empty miles are counted against a load's revenue.
 - [Driver Pay Calculator](https://dispatch.texassolutions.co/driver-pay-calculator.html): Free truck driver pay calculator: work out weekly, monthly and annual pay for per-mile, per-load, percentage of gross, or hourly pay models.
@@ -31,6 +31,8 @@
 - [Maintenance Budget Calculator](https://dispatch.texassolutions.co/maintenance-budget-calculator.html): Free truck maintenance budget calculator: estimate a yearly and monthly repair reserve based on your truck's age and annual mileage.
 - [Hours of Service (HOS) Calculator](https://dispatch.texassolutions.co/hours-of-service-calculator.html): Free HOS calculator: estimate remaining drive time under the FMCSA 11-hour driving limit, 14-hour on-duty window and 60/7 or 70/8-day cycle limits. Planning tool only, not a legal record.
 - [Freight Class Calculator](https://dispatch.texassolutions.co/freight-class-calculator.html): Free freight class calculator: estimate NMFC freight class from length, width, height and weight using the standard density table. Estimate only, confirm with your carrier.
+- [Fuel Surcharge Calculator](https://dispatch.texassolutions.co/fuel-surcharge-calculator.html): Free trucking fuel surcharge calculator: base and current fuel price, agreed MPG and miles give surcharge per mile and total, using the per-mile, step-table or percentage method in your contract.
+- [Detention Pay Calculator](https://dispatch.texassolutions.co/detention-pay-calculator.html): Free truck detention pay calculator: enter arrival, appointment and release times, free time, hourly rate and billing increment to see eligible detention hours and estimated detention pay.
 
 ## Guides (blog)
 - [What Is Deadhead in Trucking and How to Reduce It](https://dispatch.texassolutions.co/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html): Deadhead is driving a truck empty, without paid freight, usually to reach a pickup or return from a delivery. Deadhead miles burn fuel and use up legal driving hours while earning nothing, so they lower your effective rate per mile. You can cut them by planning the next load before you deliver, and by choosing lanes with strong return freight.
@@ -62,7 +64,7 @@
 - [Truck dispatch rates and rate-per-mile guide](https://dispatch.texassolutions.co/truck-dispatch-rates.html)
 
 ## Diesel prices
-- As of 2026-10-02: U.S. average $6.382/gal (EIA), Texas $5.793, California $8.379, Florida $5.915, Georgia $5.916, Illinois $6.719, New York $6.526, Ohio $6.630, Pennsylvania $6.572, Oklahoma $5.857, Tennessee $6.072
+- AAA daily state averages as of 2026-10-03; EIA U.S. weekly average $6.382/gal (week of 2026-09-28): Texas $5.777, California $8.379, Florida $5.876, Georgia $5.877, Illinois $6.706, New York $6.520, Ohio $6.528, Pennsylvania $6.566, Oklahoma $5.844, Tennessee $6.059
 - Daily prices for all 50 states and DC: https://dispatch.texassolutions.co/truck-fuel-cost-calculator.html#diesel-prices; one page per state at https://dispatch.texassolutions.co/diesel-prices/texas.html (replace texas with the state name)
 
 ## Company

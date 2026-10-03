@@ -2,6 +2,7 @@
 title: "Hotshot Trucking Rates Per Mile, Fuel and Dispatch (2026)"
 description: "Hotshot rates per mile, fuel mileage by load weight, what a hotshot dispatcher does, and what dispatch costs: 8% of weekly gross at Texas Solutions."
 date: 2026-09-22
+updated: 2026-10-03
 author: "Texas Solutions Dispatch Team"
 tags:
   - Hotshot
@@ -40,6 +41,17 @@ Weight matters more on a hotshot than on a semi, because the cargo is a large sh
 | About 16,000 lbs | about 7-9 mpg |
 
 At $6.00 a gallon, a loaded hotshot averaging 9 mpg spends about **$0.67 per mile** on diesel. Enter your own weight, miles and fuel state in the [hotshot fuel calculator](/truck-fuel-cost-calculator.html?truck=hotshot#fuelCalc).
+
+## Hotshot operating cost and break-even rate
+
+An example hotshot owner-operator pays $1,200 a month for the truck, $500 for the trailer, $900 insurance and $300 for permits, ELD and other fixed costs: **$2,900 fixed**. Running 9,000 miles a month (7,600 of them loaded), that is about $0.32 a mile.
+
+- Diesel at $6.00 and 10 mpg: $0.60 a mile; maintenance and tires: about $0.15
+- Operating cost: about **$1.07 a mile**
+- Add $4,000 a month for the driver's own pay ($0.44 a mile): about $1.52 a mile all-in, or **$1.80 per loaded mile** once empty miles are counted
+- With 8% dispatch and 3% factoring off the top, the break-even rate is about **$2.02 per loaded mile** ($1.80 / 0.89)
+
+Everything above that, toward the $4-5 a mile hotshot loads often pay, is margin before taxes. These are example figures; your payment, insurance and miles will differ. Use your own numbers in the [cost per mile calculator](/cost-per-mile-calculator.html) and the [break-even calculator](/break-even-calculator.html), and check single loads with the [load profitability calculator](/load-profitability-calculator.html).
 
 ## What a hotshot dispatcher does
 
