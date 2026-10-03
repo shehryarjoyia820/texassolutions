@@ -310,8 +310,8 @@ def footer():
   <span class="wa-btn">{ICONS['wa']}</span>
 </a>
 {mobile_bar()}
-<script src="js/site.js" defer></script>
-<script src="js/calc-tools.js" defer></script>"""
+<script src="js/site.js?v={asset_version('js/site.js')}" defer></script>
+<script src="js/calc-tools.js?v={asset_version('js/calc-tools.js')}" defer></script>"""
 
 
 def graph_script(path, title, description, schemas, body, img, img_alt, page_type, published, modified):
@@ -361,6 +361,12 @@ def graph_script(path, title, description, schemas, body, img, img_alt, page_typ
                   "width": 1200, "height": 630, "caption": img_alt or title, "inLanguage": "en-US"}
     graph = [strip(business()), strip(website()), wp, image_node] + extra
     return ld({"@context": "https://schema.org", "@graph": graph})
+
+
+def asset_version(rel):
+    """Short content hash so browsers fetch new CSS/JS right after a deploy."""
+    f = ROOT / rel
+    return hashlib.sha1(f.read_bytes()).hexdigest()[:8] if f.exists() else "0"
 
 
 def page(path, title, description, keywords, schemas, body, current=None, og_type="website", preload_video=False,
@@ -423,7 +429,7 @@ def page(path, title, description, keywords, schemas, body, current=None, og_typ
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v={asset_version('css/site.css')}">
 <link rel="alternate" type="text/plain" href="{C.BASE}/llms.txt" title="LLM summary">
 <link rel="alternate" type="application/rss+xml" title="{esc(C.BRAND)} Blog" href="{C.BASE}/feed.xml">
 <script>document.documentElement.classList.remove('no-js')</script>
@@ -672,7 +678,7 @@ def build_home():
   <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/video/hero-background.mp4" type="video/mp4"></video>
   <div class="wrap">
     <div>
-      <span class="eyebrow"><span class="dot"></span>Truck dispatch services &amp; free trucking tools for USA owner-operators</span>
+      <span class="eyebrow"><span class="dot"></span>Truck dispatch &amp; free tools for USA owner-operators</span>
       <h1>USA Truck Dispatch Service that keeps your <em>truck loaded.</em></h1>
       <p class="lede">We find, negotiate and book freight for owner-operators and small fleets in all 48 lower states. Dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load.</p>
       <div class="ctas">
