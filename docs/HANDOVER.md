@@ -224,3 +224,30 @@ Then send one real test inquiry from the contact page, confirm it arrives in the
 - **Fuel prices:** automatic. To force a refresh, run the "Update diesel prices (daily)" Action manually or run `python tools/fuel_prices.py && python tools/site.py`.
 - **Local preview:** `python -m http.server 8765` in the repo, then open http://localhost:8765. Analytics stay off locally.
 - **Build needs:** `pip install markdown pyyaml pillow`.
+
+## 9. Keyword map (added 3 October 2026)
+
+Keywords came from the owner's list and are not volume-checked. Validate them in Search Console and Keyword Planner. Only true statements are used: 24/7, remote team, new MC from day one, first load free, back office, and the 8 equipment types. Other equipment (car hauler, cargo/sprinter van, tanker, hazmat, lowboy/RGN, conestoga, dump, oversize) is deliberately **not** targeted.
+
+| Keyword group | Page(s) |
+|---|---|
+| Core service (truck/trucking dispatch services, truck dispatcher, dispatching company, USA, hire/for hire, independent, professional, 24/7, affordable, reliable, remote) | Home (title, hero, "Trucking dispatch services for every kind of carrier" section, FAQs) |
+| Customer type (owner operators, small fleets, small trucking companies, one truck, fleet owners, lease operators) | owner-operator-dispatch.html |
+| New authority / new MC / new trucking company / brokers that work with new authority | dispatch-for-new-authority.html (new); blog how-to-start-a-trucking-company |
+| Equipment (dry van, reefer, flatbed, step deck, hotshot / hot shot dispatcher, non-CDL hotshot, box truck dispatcher, 26 ft, non-CDL box truck, power only, semi truck) | Each equipment page (titles, body, FAQs); home section |
+| Pricing (cost, how much dispatchers charge, fees, percentage, flat rate, cheap/low fee, 5 percent, pricing, no contract, no upfront fee, free trial, pay per load) | truck-dispatch-rates.html (title, three new sections, pricing FAQs); blog how-much-does-a-truck-dispatcher-cost |
+| Load and revenue problems (find loads, high paying loads, without load board, direct shipper, dedicated/consistent lanes, no loads, load booking) | blog how-to-find-loads-for-your-truck |
+| Negotiation, rate per mile, deadhead | blog how-to-negotiate-freight-rates; blog what-is-deadhead |
+| Back office (paperwork, packets, invoicing, billing, factoring + dispatch, IFTA filing, compliance, DOT, MC setup, detention and lumper, ELD support, carrier setup) | trucking-back-office-services.html (new) |
+| Comparison (worth it, need a dispatcher, self-dispatch vs, vs load board, DAT vs dispatcher) | blog is-a-truck-dispatcher-worth-it; blog truck-dispatcher-vs-freight-broker |
+| Trust (how to choose, scams, legit, questions to ask, reviews, agreement/contract) | blog how-to-choose-a-truck-dispatcher-avoid-scams |
+| Informational (what is truck dispatching, how it works, how dispatchers find loads, what percentage) | what-does-a-truck-dispatcher-do.html (new sections); blog broker-setup-rate-confirmation-spot-vs-contract |
+| Owner-operator earnings, cost per mile, rate per mile | blog how-much-do-owner-operators-make; existing CPM and rate posts |
+| Location (near me, every state, hubs, equipment + state) | truck-dispatch-by-state.html + 49 pages in /truck-dispatch/ + texas-truck-dispatch.html. Each page has its own hubs, highways, freight, ports, lanes and live diesel price from tools/states.py |
+| AI assistant questions | FAQ answers on faq.html, home, rates, new authority, back office and equipment pages, plus llms.txt facts |
+
+**Not covered, on purpose:** "freight market trends 2026" (no verified data), and "dispatch service reviews" as a claim (we have no reviews; the scams post explains how to check reviews instead).
+
+**Negative keywords for Google Ads (never used on the site):** truck dispatcher jobs, truck dispatcher training, truck dispatcher course, how to become a truck dispatcher, truck dispatcher salary, dispatcher certification, dispatch software, TMS, free load board, 911, police dispatch, emergency dispatch.
+
+**Review `tools/states.py`** when editing state pages. Less certain items: NE I-76/I-680, NV I-11, secondary hubs Seward, Kent, Dalton and Garden City, and the inland-port names for WV, KS and SC.

@@ -75,7 +75,7 @@ def check_urls(f, node, path=""):
             check_urls(f, v, path + k + ".")
 
 
-pages = [p.replace(os.sep, "/") for p in glob.glob("*.html") + glob.glob("blog/*.html") + glob.glob("diesel-prices/*.html") if p != "head-codes.html"]
+pages = [p.replace(os.sep, "/") for p in glob.glob("*.html") + glob.glob("blog/*.html") + glob.glob("diesel-prices/*.html") + glob.glob("truck-dispatch/*.html") if p != "head-codes.html"]
 titles = {}
 for f in sorted(pages):
     t = Path(f).read_text(encoding="utf-8")

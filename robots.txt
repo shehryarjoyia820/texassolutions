@@ -50,3 +50,4 @@ Sitemap: https://dispatch.texassolutions.co/sitemap-pages.xml
 Sitemap: https://dispatch.texassolutions.co/sitemap-tools.xml
 Sitemap: https://dispatch.texassolutions.co/sitemap-blog.xml
 Sitemap: https://dispatch.texassolutions.co/sitemap-diesel.xml
+Sitemap: https://dispatch.texassolutions.co/sitemap-locations.xml
