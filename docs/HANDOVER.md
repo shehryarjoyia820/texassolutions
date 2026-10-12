@@ -251,3 +251,24 @@ Keywords came from the owner's list and are not volume-checked. Validate them in
 **Negative keywords for Google Ads (never used on the site):** truck dispatcher jobs, truck dispatcher training, truck dispatcher course, how to become a truck dispatcher, truck dispatcher salary, dispatcher certification, dispatch software, TMS, free load board, 911, police dispatch, emergency dispatch.
 
 **Review `tools/states.py`** when editing state pages. Less certain items: NE I-76/I-680, NV I-11, secondary hubs Seward, Kent, Dalton and Garden City, and the inland-port names for WV, KS and SC.
+
+## 10. Nationwide keyword map (13 October 2026)
+
+Positioning: nationwide USA dispatch (all 48 lower states); Texas is only the head-office address and one state page. Every page carries `geo.region=US`; Organization and Service schema use `areaServed: United States`.
+
+| Keyword group | Primary pages |
+|---|---|
+| Core (truck dispatch services, truck dispatcher, trucking dispatch company, freight dispatch services, truck dispatch services USA, near me, best) | `/`, `/semi-truck-dispatch.html`, `/about.html`, state pages |
+| Owner-operator (dispatcher for owner operators, find/need a dispatcher for my truck, hire a truck dispatcher) | `/owner-operator-dispatch.html`, `/contact.html` |
+| New authority (dispatch for new MC number, service for new authority) | `/dispatch-for-new-authority.html`, blog `how-to-become-an-owner-operator` |
+| Small fleets (small trucking companies, small fleets) | `/small-fleet-dispatch.html` |
+| Box truck (services, dispatcher, company, 26ft, loads, load board, contracts, non-CDL) | `/box-truck-dispatch.html`, blogs `how-to-start-a-box-truck-business`, `best-load-boards-for-box-trucks`, `box-truck-contracts-how-to-get-them`, `non-cdl-box-truck-and-hotshot-loads`, `how-much-do-box-truck-owner-operators-make` |
+| Hotshot (services, dispatcher, company, loads, load board, non-CDL) | `/hotshot-dispatch.html`, blogs `how-to-start-a-hotshot-business`, `best-load-boards-for-hotshot`, `how-much-do-hotshot-drivers-make` |
+| Semi trailer types (dry van, reefer, flatbed, step deck, power only, loads) | equipment pages, `/semi-truck-dispatch.html`, blog `dry-van-reefer-flatbed-power-only-loads` |
+| Pricing (cost, fee percentage, flat rate, no contract, cheap/affordable, worth it, vs broker) | `/truck-dispatch-rates.html`, `/estimate.html`, blogs `dispatch-percentage-vs-flat-fee`, `how-much-does-a-truck-dispatcher-cost`, `is-a-truck-dispatcher-worth-it`, `truck-dispatcher-vs-freight-broker` |
+| Loads and load boards (truck loads, load board, free/DAT/Truckstop, high paying, without a broker, rate per mile) | blogs `truck-loads-and-load-boards-guide`, `best-load-boards-for-owner-operators`, `how-to-get-loads-without-a-broker`, `how-to-find-loads-for-your-truck`, `what-is-a-good-rate-per-mile-trucking-2026` |
+| Supporting (back office, paperwork, rate negotiation, packets, factoring, IFTA, compliance, MC setup) | `/trucking-back-office-services.html`, related blogs |
+| State and city modifiers | 50 state pages (`/texas-truck-dispatch.html` + `/truck-dispatch/<state>.html`), each with a hub-city box truck/hotshot FAQ; home page links the ten largest freight states |
+| How-it-works / informational | `/what-does-a-truck-dispatcher-do.html`, blog `how-does-truck-dispatching-work`, `how-to-get-amazon-relay` content inside `box-truck-contracts-how-to-get-them` |
+
+Not targeted (owner decision, 13 Oct 2026): dispatcher jobs, salary, training, courses, certification, dispatch software/apps, tow and dump truck dispatch, Pakistan-business queries. Use these as negative keywords in paid ads.

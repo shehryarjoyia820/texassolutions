@@ -14,7 +14,7 @@
 - Back-office services: broker carrier packets, rate confirmations, invoicing and billing, detention and lumper collection, factoring setup, IFTA filing, DOT compliance help, MC authority setup
 - Equipment dispatched: dry van, reefer, flatbed, step deck, power only, hotshot, box truck, straight truck
 - Rough freight rates per mile (not guaranteed): flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20
-- Area served: United States (48 states), with a focus on Texas and the Permian Basin
+- Area served: United States, all 48 lower states (nationwide, remote dispatchers across US time zones); head office in Midland, Texas
 - Texas Solutions is a dispatch service. It is not a motor carrier or freight broker and does not guarantee loads, rates or earnings
 - Phone: (838) 910-3147 | WhatsApp: +1 838 910 3147 (https://wa.me/18389103147) | Email: dispatch@texassolutions.co
 - Address: 401 W Kentucky Ave, Midland, TX 79701
@@ -78,6 +78,15 @@ Percentages vary by equipment and by what is included. Compare the total value, 
 ### Do you dispatch small fleets with 3 to 5 trucks?
 Yes. Each truck is dispatched to its own equipment, lanes and home time, at the same percentage per truck. Fleet owners get one point of contact for every truck.
 
+### Do you dispatch nationwide or only in Texas?
+Nationwide. Our head office is in Midland, Texas, but our dispatchers work remotely across US time zones and book loads for carriers in all 48 lower states, from California and Washington to Florida, New Jersey and Illinois.
+
+### Do you offer a flat-rate dispatch plan?
+No. We only charge a percentage of weekly gross, so a week the truck does not run costs you nothing. A flat weekly fee is due whether or not you haul; a percentage keeps the dispatcher paid only when your truck earns.
+
+### Is a truck dispatcher the same as a freight broker?
+No. A broker works for the shipper and earns the margin between what the shipper pays and what the carrier is paid. A dispatcher works for the carrier, books loads under the carrier's own authority and is paid a fee by the carrier.
+
 ### Do you work with lease operators?
 We dispatch carriers that run under their own MC authority. If you are leased on to another carrier, that carrier normally dispatches you; talk to us when you get your own authority and we can help set it up.
 
@@ -93,6 +102,9 @@ Yes. 26 ft box trucks are the most common truck on our box truck desk. We match 
 ### Can you dispatch a box truck with new authority?
 Yes. We work with new MC numbers from day one and look for brokers that accept new authorities for box truck freight. Your first load is dispatched free.
 
+### How do I find box truck loads near me?
+Box truck freight is posted on load boards and handed out directly by brokers and regional shippers. Your dispatcher searches around your current location and home base, calls the brokers who move box truck freight, and lines up the next load before the current one delivers.
+
 ### How much do hotshot loads pay per mile?
 As a rough guide, hotshot loads often pay about $4-5 a mile, depending on lane, urgency and season. Rates are not guaranteed.
 
@@ -101,6 +113,9 @@ As a rough guide, hotshot loads often pay about $4-5 a mile, depending on lane, 
 
 ### Do you dispatch non-CDL hotshots?
 Yes, if you run under your own MC authority. A non-CDL setup has a lower combined weight rating, so we look for lighter freight that fits your limits.
+
+### How do I find hot shot loads near me?
+Load boards list hotshot freight by pickup area, and brokers who move expedited freight post it there first. A dispatcher searches those boards and calls brokers near your location, so you hear about nearby loads without watching the screen yourself.
 
 ### Can I get a hotshot dispatcher without a contract?
 Yes. There is no long-term contract, no setup fee and no forced dispatch, and your first load is dispatched free. You approve every load.
@@ -132,6 +147,9 @@ No. The trailer is supplied by the shipper, broker or a carrier program. You pro
 ### Is a dispatcher worth it for an owner-operator?
 For many, yes, when the dispatcher saves time, cuts deadhead and negotiates better loads by more than the fee. Results vary and no dispatcher can guarantee earnings.
 
+### I need a dispatcher for my truck. How do I start?
+Call, text or WhatsApp us with your MC number, truck type and the lanes you want to run. We send a short agreement, collect your W-9 and insurance certificate, and start searching loads, usually the same day. Your first load is dispatched free.
+
 ### Do you offer dispatch for one truck?
 Yes. Most of the carriers we work with run one truck. The fee is the same percentage of weekly gross, and your first load is dispatched free.
 
@@ -159,11 +177,35 @@ Yes. We help prepare and file your quarterly IFTA return from your mileage and f
 ### Do you help with detention and lumper fees?
 Yes. We document check-in and check-out times and lumper receipts and bill them with the load. Detention pay depends on the terms in your rate confirmation; try the detention pay calculator to estimate it.
 
+### How much does semi truck dispatch cost?
+5% of weekly gross for OTR semi trucks, whatever the trailer type. On $8,000-$10,000 weekly gross that is about $400-$500 a week. No flat rate, no setup fee and no contract.
+
+### Can one dispatcher handle different trailer types?
+Yes. If you switch between a dry van and a reefer, or run power only between your own loads, the same dispatcher plans around whichever trailer you have that week.
+
+### Do you dispatch team trucks?
+Yes. Team semis can run longer lanes, so we plan loads around both drivers' hours and the miles a team can cover. The fee stays 5% of weekly gross.
+
+### How is dispatch priced for a fleet?
+Per truck, as a percentage of that truck's weekly gross: 5% for semis, 8% for hotshots and 10% for box trucks and straight trucks. A truck that does not run that week pays nothing.
+
+### Do my drivers talk to the dispatcher directly?
+Yes, if you want them to. Many fleet owners have drivers call the dispatcher for load details and updates, while the owner approves rates and lanes.
+
+### What makes a good dispatch company for a small fleet?
+Clear percentage pricing with no setup fee, no long-term contract, people you can reach day and night, and paperwork handled along with the loads. Ask any dispatch company how they plan multiple trucks so they do not compete for the same freight.
+
 ### Where is Texas Solutions located?
 401 W Kentucky Ave, Midland, Texas. We dispatch carriers throughout the United States.
 
 ### Do you offer truck dispatch services in Houston and Dallas?
 Yes. We dispatch carriers based in Houston, Dallas-Fort Worth and across Texas, including hotshot dispatch in Texas and the Permian Basin, 24/7, with your first load dispatched free.
+
+### Do you offer hotshot dispatch in Houston?
+Yes. Hotshot dispatch out of Houston is a large part of our Texas desk: energy, petrochemical and construction freight heading to the Gulf Coast, the Permian Basin and out of state. The fee is 8% of weekly gross, OTR.
+
+### Is there a truck dispatcher in Dallas?
+Our dispatchers are remote, so Dallas-Fort Worth carriers reach one 24/7 by phone, text or WhatsApp. DFW dry van, reefer and box truck freight is booked the same way as every other lane we run.
 
 ### Is there a truck dispatcher near me in Texas?
 Our office is in Midland, and our dispatchers work remotely around the clock, so carriers anywhere in Texas reach a dispatcher by phone, text or WhatsApp at (838) 910-3147.
@@ -374,6 +416,1592 @@ Q: Do I get detention if I arrive late?
 A: Often not. Many agreements only pay detention when the truck arrived on time for its appointment. This calculator warns you when the arrival is after the appointment; your agreement decides.
 
 ## Blog posts
+
+### Truck Loads and Load Boards: How They Work for Carriers
+URL: https://dispatch.texassolutions.co/blog/truck-loads-and-load-boards-guide.html
+Published: 2026-10-13
+
+For most small carriers, the search for truck loads starts on a load board. It is often the first place a new authority finds freight, and it remains a daily tool for many experienced owner-operators. This guide explains what a **load board** is, how carriers use one, and how to judge the loads for trucks you see posted.
+
+## What a load board is
+
+A load board is an online marketplace. Freight brokers, and sometimes shippers, post loads that need a truck. Carriers and dispatchers search those posts and contact the poster to book.
+
+A typical load post shows:
+
+- Origin and destination
+- Pickup date and sometimes a delivery window
+- Equipment type (van, reefer, flatbed, step deck, power only, hotshot and so on)
+- Weight and length
+- Posted rate, or no rate at all
+- The broker's company name, contact and MC number
+- Sometimes the broker's credit score and average days to pay
+
+Carriers can also **post their truck**: where it will be empty and when. Brokers search those posts and call carriers with matching loads.
+
+## Common load boards
+
+These are some of the well-known names. We describe them only in general terms, because features and prices change. Check each provider's website for current details.
+
+- **DAT load board.** One of the largest load board networks in the US, with load search, truck posting, market rate data and broker credit information depending on the plan.
+- **Truckstop load board.** Another large, long-running network, with load search, rate tools and broker payment and credit information on its plans.
+- **123Loadboard.** A load board often used by smaller carriers, with load search and related tools.
+- **Amazon Relay.** Not a traditional broker board. It is Amazon's own platform for booking Amazon freight with carriers who hold their own authority.
+
+Each of these has paid plans with different levels of access. We compare features in more detail in our guide to [the best load boards for owner-operators](/blog/best-load-boards-for-owner-operators.html).
+
+## Free load boards: what to expect
+
+A free load board can be a good way to start, especially for a brand-new carrier with a tight budget. Free options include free tiers of some boards and brokers' own load portals.
+
+Typical trade-offs:
+
+- Fewer loads and less coverage of some lanes
+- Fewer search filters
+- Little or no broker credit and payment data
+- More competition for each posted load
+
+If you use a free board, take extra care checking the broker before you book.
+
+## How carriers use a load board, step by step
+
+1. **Set your search.** Choose your equipment, empty location, search radius and date.
+2. **Set the destination.** Search to a specific market, a region, or anywhere, depending on your plans.
+3. **Sort and filter.** Look at deadhead to pickup, total miles and rate. Hide brokers you will not work with.
+4. **Check the broker.** Look up its MC number on FMCSA, and review credit score and days to pay if the board shows them.
+5. **Call or message.** Confirm the details and ask about anything missing: appointment times, commodity, tarps, lumpers, detention policy.
+6. **Negotiate.** Use market data and your own cost per mile to counter.
+7. **Book and get the rate confirmation.** Read it before pickup.
+
+## How to judge a posted load
+
+The posted rate per loaded mile is not the whole story. What matters is the rate on **every** mile you drive, including empty miles to the pickup.
+
+**Worked example: two dry van posts (assumptions labelled)**
+
+- **Load A:** $2,400 for 700 loaded miles, 90 miles deadhead
+- **Load B:** $2,250 for 680 loaded miles, 15 miles deadhead
+
+Rate per loaded mile:
+
+- Load A: $2,400 / 700 = **$3.43**
+- Load B: $2,250 / 680 = **$3.31**
+
+Rate per total mile:
+
+- Load A: $2,400 / (700 + 90) = $2,400 / 790 = **$3.04**
+- Load B: $2,250 / (680 + 15) = $2,250 / 695 = **$3.24**
+
+Load B pays less on paper but more on every mile driven. Then ask where each load leaves you. A slightly lower rate into a strong freight market can beat a high rate into a dead one. Try your own numbers with the [deadhead miles calculator](/deadhead-miles-calculator.html) and the [load profitability calculator](/load-profitability-calculator.html). For more on empty miles, read [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+
+## Load board safety tips
+
+Fraud is a real problem on open marketplaces. Protect yourself:
+
+- Verify the broker's MC number and contact details independently
+- Be cautious if the phone number or email does not match the company's official records
+- Never pay anyone to "release" a load
+- Do not share login details for your load board, ELD or factoring account
+- Watch for double brokering signs, such as a load that suddenly changes hands
+
+## Limits of load boards
+
+Load boards are useful, but they have limits:
+
+- **Competition.** Many carriers see the same post, which can push rates down.
+- **Time.** Searching and calling can take hours a day, often while you should be driving or resting.
+- **Spot only.** Most posts are one-off loads, not repeat lanes.
+
+That is why many carriers combine boards with broker relationships and direct freight. See [how to find loads for your truck](/blog/how-to-find-loads-for-your-truck.html) for a broader plan.
+
+## Using a dispatcher instead of searching yourself
+
+A truck dispatch service uses load boards and broker networks on your behalf. Texas Solutions searches, calls and negotiates while you drive, then sends you the details to approve. We dispatch dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, with remote dispatchers available 24/7 across the USA.
+
+Fees for OTR are 5% of weekly gross for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no setup fee and no long-term contract. See how our [owner-operator dispatch service](/owner-operator-dispatch.html) works or [get a free estimate](/estimate.html).
+
+### Non-CDL Box Truck and Hotshot Loads: Weight Rules and How to Find Freight
+URL: https://dispatch.texassolutions.co/blog/non-cdl-box-truck-and-hotshot-loads.html
+Published: 2026-10-13
+
+Running without a CDL is one of the most common ways people start in box truck or hotshot trucking. It lowers the barrier to entry, but it comes with a hard ceiling on weight, and misreading the rules can lead to fines, out-of-service orders or an insurance problem after a claim.
+
+This post explains the federal thresholds in plain language, shows how much payload they leave, and covers how to find non-CDL box truck loads and non-CDL hotshot loads. It is general information, not legal advice. Rules can change and states can add their own, so **confirm your situation with FMCSA and your state licensing agency** before buying equipment or booking freight.
+
+## The key terms
+
+- **GVWR (gross vehicle weight rating):** the maximum loaded weight the manufacturer rates a single vehicle for. It is on the door-jamb certification label.
+- **GVW (gross vehicle weight):** what the vehicle actually weighs at a given moment, cargo included.
+- **GCWR (gross combination weight rating):** the rating for a truck and trailer together. Federal rules define it as the greater of the manufacturer's value (when shown on the certification label) or the sum of the truck and trailer ratings or weights.
+- **GCW (gross combination weight):** what the truck and trailer actually weigh together.
+
+An important detail: the federal CDL definitions use **the rating or the actual weight, whichever is greater**. A truck rated at 26,000 lbs that is loaded to 27,000 lbs is treated as over the line.
+
+## The federal CDL thresholds
+
+Under the federal definitions:
+
+- **Class A CDL:** a combination with a GCWR or GCW of **26,001 lbs or more**, when the towed unit has a GVWR or GVW of **more than 10,000 lbs**.
+- **Class B CDL:** a single vehicle with a GVWR or GVW of **26,001 lbs or more**, or such a vehicle towing a trailer of 10,000 lbs or less.
+- **Class C CDL:** smaller vehicles that carry 16 or more passengers including the driver, or haul hazardous materials that require placards.
+
+If your vehicle does not fall into one of those groups, a CDL is generally not required federally. States can have their own requirements, especially for intrastate operations, so check locally.
+
+## Non-CDL box trucks
+
+For a box truck, the question is simple: is the truck rated and loaded at **26,000 lbs or less**? Many 26 ft box trucks are built with a GVWR right at or just under that number for this reason.
+
+### Payload example
+
+Assumptions, for illustration only:
+
+- GVWR: 26,000 lbs
+- Empty weight of the truck with body, liftgate, fuel and driver: 16,500 lbs
+
+Maximum cargo: 26,000 - 16,500 = **9,500 lbs**.
+
+That may be less than you expect. Pallets of dense freight can hit that limit long before the box is full, so always ask the broker for the exact weight and compare it against your payload, not against the box size. Axle ratings also apply, so heavy freight loaded at the rear can overload an axle even when total weight is legal.
+
+## Non-CDL hotshots
+
+Hotshot setups are trickier because two vehicles are involved. There are two common ways operators stay non-CDL.
+
+### Option 1: keep the whole combination at 26,000 lbs or less
+
+If the truck and trailer together are rated and loaded at 26,000 lbs or less, the combination is under the Class A threshold regardless of trailer size.
+
+Assumptions, for illustration only:
+
+- Truck GVWR: 14,000 lbs; empty truck with driver and fuel: 8,500 lbs
+- Trailer GVWR: 12,000 lbs; empty trailer: 4,500 lbs
+- Combined rating: 14,000 + 12,000 = 26,000 lbs
+
+Maximum cargo: 26,000 - (8,500 + 4,500) = **13,000 lbs**, and still limited by each vehicle's own GVWR and axle ratings.
+
+Be careful with the GCWR definition. If the manufacturer's GCWR appears on the certification label and is higher than 26,000 lbs, it may count. Check your specific truck.
+
+### Option 2: trailer rated 10,000 lbs or less
+
+The Class A definition only applies when the towed unit is rated or weighs **more than 10,000 lbs**. So a truck under 26,001 lbs pulling a trailer rated and loaded at 10,000 lbs or less generally does not require a Class A, even if the combined total is above 26,000.
+
+Assumptions, for illustration only:
+
+- Trailer GVWR: 10,000 lbs; empty trailer: 3,000 lbs
+
+Maximum cargo on the trailer: 10,000 - 3,000 = **7,000 lbs**, plus whatever the truck's own payload allows.
+
+Either way, a non-CDL hotshot carries far less than a CDL setup with a heavy-duty 40 ft gooseneck. That narrows the loads you can take and often the rate you can earn.
+
+## What still applies without a CDL
+
+Skipping the CDL does not skip the rest of the rules. For interstate commercial vehicles over 10,000 lbs, you should expect:
+
+- A **USDOT number**.
+- **Operating authority** (MC number) if you haul regulated freight for hire across state lines. See [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html).
+- A **DOT medical card**.
+- **Hours-of-service** rules and, in many cases, an ELD. See [hours of service rules explained](/blog/hours-of-service-rules-explained-11-14-70-hour.html).
+- Vehicle inspections and maintenance records.
+- Commercial insurance that meets FMCSA minimums and broker requirements.
+
+Placarded hazmat requires a CDL with the right endorsement at any vehicle size, so non-CDL operators should pass on those loads.
+
+## How to find non-CDL box truck loads and hotshot loads
+
+The freight is out there; it just has to fit your weight limit.
+
+- **Lead with your real payload.** When you call a broker, state your maximum cargo weight up front. It saves time on both sides.
+- **Filter load boards by weight.** Set the maximum weight to your payload, not your GVWR. See the [best load boards for box trucks](/blog/best-load-boards-for-box-trucks.html) and the [best load boards for hotshot](/blog/best-load-boards-for-hotshot.html).
+- **Look for light, bulky freight.** Furniture, appliances, retail goods, displays and packaging often fill space before weight.
+- **Partial and expedited loads** often suit smaller trucks.
+- **Ask about weight on every load.** Never accept "it should be light". Get the number on the rate confirmation.
+
+## Run the numbers
+
+Lower payload usually means lower revenue per load, so cost control matters even more. Use the [cost per mile calculator](/cost-per-mile-calculator.html) to find your break-even and the [load profitability calculator](/load-profitability-calculator.html) to check each offer, including empty miles.
+
+## Dispatch for non-CDL box trucks and hotshots
+
+Texas Solutions is a dispatch service, not a broker or carrier. We dispatch box trucks, straight trucks and hotshots for owner-operators nationwide. Your dispatcher books only loads that fit the payload you give us, and you approve every load before it is booked. We also offer DOT compliance help through our [back office services](/trucking-back-office-services.html).
+
+Box truck and straight truck dispatch is **10% of weekly gross** and hotshot dispatch is **8%**, for OTR, with no setup fee and no long-term contract. The first load is dispatched free. See [box truck dispatch](/box-truck-dispatch.html), [hotshot dispatch](/hotshot-dispatch.html) or [get a free estimate](/estimate.html).
+
+### How to Start a Hotshot Business: Truck, Trailer, Authority and Dispatch
+URL: https://dispatch.texassolutions.co/blog/how-to-start-a-hotshot-business.html
+Published: 2026-10-13
+
+Hotshot trucking uses a heavy-duty pickup and a flatbed trailer to move loads that are too small, too urgent or too oddly shaped for a full semi load. Think equipment, machinery parts, building materials, pipe and other freight that needs to move now.
+
+It costs less to start than a semi operation, but it is not cheap, and the weight rules are easy to get wrong. Here is how to set one up step by step.
+
+## Step 1: Understand what hotshot freight looks like
+
+Hotshot loads are usually:
+
+- **Partial or less-than-truckload** in size, often well under what a 48 ft flatbed carries.
+- **Time-sensitive.** A broken-down machine or a jobsite waiting on material pays for speed.
+- **Open-deck.** Loaded by forklift or crane from the side or top, so securement skills matter.
+
+Rates often run about **$4 to $5 a mile**, depending on lane, urgency and season. See our post on [hotshot rates per mile and fuel](/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html) for more on what moves the number. Rates are never guaranteed.
+
+## Step 2: Choose your truck and trailer
+
+The common setup is a **1-ton diesel dually pulling a 40 ft gooseneck**. When you shop, focus on weight ratings first and price second.
+
+**Truck checklist:**
+
+- GVWR and GCWR (gross combination weight rating) from the manufacturer's label and specs.
+- Towing capacity for a gooseneck or fifth-wheel hitch.
+- Diesel engine condition and service records.
+
+**Trailer checklist:**
+
+- Deck length (30, 35 and 40 ft are common).
+- Trailer GVWR and axle ratings.
+- Ramps, winches, stake pockets and tie-down points.
+- Empty weight, since every pound of trailer is a pound you cannot haul.
+
+## Step 3: Decide CDL or non-CDL
+
+This decision shapes the whole business.
+
+Under federal rules, a combination generally requires a **Class A CDL** when its gross combination weight rating or actual combination weight (whichever is greater) is **26,001 lbs or more** and the towed unit is rated over **10,000 lbs**. Many 1-ton trucks paired with a heavy-duty gooseneck land in Class A territory.
+
+Some operators run a lighter, "non-CDL" setup by keeping the combination at 26,000 lbs or less. That avoids the CDL but sharply limits payload. Our guide to [non-CDL box truck and hotshot loads](/blog/non-cdl-box-truck-and-hotshot-loads.html) explains how to check this carefully. Always confirm with FMCSA and your state licensing agency before you buy equipment.
+
+If you hold a CDL, drug and alcohol testing rules, including the FMCSA Clearinghouse, apply to you.
+
+## Step 4: Set up the company and authority
+
+The paperwork is similar to any for-hire trucking company:
+
+- Form a business entity, get an EIN and open a business bank account.
+- Get a **USDOT number** and **interstate operating authority** (MC number) from FMCSA.
+- File a **BOC-3** for process agents.
+- Register for **UCR** each year.
+- Check whether **IRP** apportioned plates and **IFTA** apply. Combinations over 26,000 lbs commonly qualify, but confirm with your base state.
+
+Our guides on [getting an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) and [filing IFTA](/blog/ifta-for-owner-operators-how-to-file.html) go deeper. If you want help with the filings, Texas Solutions offers MC authority setup, IFTA filing and DOT compliance help through our [back office services](/trucking-back-office-services.html).
+
+## Step 5: Get insured
+
+FMCSA sets the minimum liability you must have on file. Brokers then set their own requirements, and many want higher auto liability and cargo coverage. Hotshot insurance can be expensive for new authorities, so get several quotes before you commit to equipment.
+
+## Step 6: Gear up for securement
+
+Open-deck freight means you are responsible for securing it properly. Plan for:
+
+- Ratchet straps, chains and binders rated for the loads you will carry.
+- Edge protectors and corner guards.
+- Tarps if you plan to haul freight that must stay dry.
+- Know the cargo securement rules, including how many tie-downs a load needs.
+
+A shifted load can cost you a claim, a ticket and a broker relationship in one trip.
+
+## Step 7: Run the numbers on a sample week
+
+Here is a rough example using assumed figures. Your numbers will differ.
+
+**Assumptions:**
+
+- Weekly gross: $7,500
+- Total miles (loaded plus empty): 2,000
+- Average fuel economy across loaded and empty miles: 11 mpg
+- Diesel price: $4.50 a gallon
+- Dispatch at 8% of gross
+- Insurance: $400 a week
+- Truck and trailer payments: $600 a week
+- Maintenance and tire reserve: $0.20 a mile
+
+**Math:**
+
+- Fuel: 2,000 / 11 = 181.8 gallons x $4.50 = **$818**
+- Dispatch: $7,500 x 0.08 = **$600**
+- Maintenance reserve: 2,000 x $0.20 = **$400**
+- Fixed costs: $400 + $600 = **$1,000**
+- Total costs: $818 + $600 + $400 + $1,000 = **$2,818**
+- Left before taxes, factoring, permits and other expenses: $7,500 - $2,818 = **$4,682**
+
+Slow weeks, repairs and time off will pull the average down, so plan around a range, not one good week. For more detail see [how much hotshot drivers make](/blog/how-much-do-hotshot-drivers-make.html), and check your own fuel with the [truck fuel cost calculator](/truck-fuel-cost-calculator.html).
+
+## Step 8: Find loads and decide on a dispatcher
+
+You can find hotshot freight on load boards, through direct broker relationships, or with a hotshot dispatch company. Our guide to the [best load boards for hotshot](/blog/best-load-boards-for-hotshot.html) covers the first option.
+
+A dispatcher for hotshot trucks is useful when:
+
+- You are new and do not have broker contacts yet.
+- You lose hours each day searching boards and making calls.
+- You want someone to handle broker packets, rate confirmations and invoicing.
+- You want help planning reloads so you are not stuck empty after a delivery.
+
+Before you sign with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+
+## Hotshot trucking dispatch with Texas Solutions
+
+Texas Solutions is a dispatch service, not a broker or carrier. We dispatch hotshots for owner-operators and small fleets nationwide, with 24/7 remote dispatchers who work with brand-new MC authority from day one. You approve every load before it is booked.
+
+Hotshot dispatch is **8% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and your first load is dispatched free. Learn more about our [hotshot dispatch service](/hotshot-dispatch.html) or [get a free estimate](/estimate.html?truck=hotshot).
+
+### How to Start a Box Truck Business: Authority, Equipment and First Loads
+URL: https://dispatch.texassolutions.co/blog/how-to-start-a-box-truck-business.html
+Published: 2026-10-13
+
+A box truck business is one of the lower-cost ways to own a trucking company. The truck costs less than a tractor and trailer, many box trucks do not require a CDL, and there is steady demand for freight that is too small or too awkward for a 53 ft trailer. The trade-off is that margins are thinner, so the planning you do before the first load matters.
+
+This guide walks through the steps in order. If you are still deciding between a box truck and a semi, our general guide on [how to start a trucking company](/blog/how-to-start-a-trucking-company.html) covers the bigger picture.
+
+## Step 1: Decide what kind of freight you want to haul
+
+Before you shop for a truck, decide how you plan to earn money with it. Box truck freight usually falls into a few groups:
+
+- **OTR and regional spot freight** booked through load boards and brokers.
+- **Expedited and partial loads** that need to move faster than a full truckload.
+- **Local delivery and final-mile work** for retailers, furniture and appliance sellers, and distributors.
+- **Repeat lanes and contracts** that grow out of good service with the same brokers or shippers.
+
+The type of freight you chase decides the truck you need, the insurance you buy and whether a dispatcher makes sense for you.
+
+## Step 2: Choose the right box truck
+
+Most box truck owner-operators settle on a **26 ft box truck with a liftgate**. That size typically holds around 12 standard pallets depending on how they are loaded, works for most brokers' "straight truck" postings, and many models stay at a GVWR of 26,000 lbs or less.
+
+When you compare trucks, look at:
+
+- **GVWR.** At 26,000 lbs or less, a single truck generally does not require a CDL. At 26,001 lbs or more, it generally needs a Class B CDL. Our guide to [non-CDL box truck and hotshot loads](/blog/non-cdl-box-truck-and-hotshot-loads.html) explains the thresholds in detail.
+- **Payload.** GVWR minus the truck's empty weight is what you can legally haul. A heavy body and liftgate reduce it.
+- **Liftgate.** Many shippers and receivers without docks require one. Without it you will pass on a lot of freight.
+- **Door type and interior.** Roll-up versus swing doors, E-track and logistics posts for strapping, and interior height.
+- **Fuel and maintenance history.** A cheap truck that spends weeks in the shop is not cheap.
+
+## Step 3: Set up the business
+
+Treat it as a real company from day one:
+
+- Form a business entity (many owner-operators use an LLC) and get an EIN from the IRS.
+- Open a separate business bank account.
+- Pick a simple bookkeeping method so you can track fuel, repairs and income per load.
+
+Talk with an accountant about the entity and tax setup that fits your situation.
+
+## Step 4: Get your USDOT number and operating authority
+
+For interstate for-hire work, you will generally need:
+
+- **A USDOT number** from FMCSA.
+- **Interstate operating authority** (commonly called an MC number) for hauling regulated freight for hire.
+- **A BOC-3 filing** naming process agents in each state.
+- **Unified Carrier Registration (UCR)**, renewed each year.
+
+FMCSA updates its registration system from time to time, so follow the current instructions on its website. Our post on [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) covers the process, and Texas Solutions offers [MC authority setup](/trucking-back-office-services.html) as part of its back office services if you would rather not do the filings yourself.
+
+Drivers of commercial vehicles over 10,000 lbs in interstate commerce generally need a DOT medical card even without a CDL, and hours-of-service rules apply. Check what applies to your operation.
+
+## Step 5: Buy the right insurance
+
+Your authority will not activate until the required liability coverage is on file with FMCSA. Beyond the federal minimum, brokers set their own requirements, and many ask for higher auto liability limits plus cargo coverage. Get quotes from agents who write commercial trucking policies, and ask each one what limits brokers in your target freight usually require.
+
+Insurance is often a new carrier's largest fixed cost, so get quotes before you buy the truck.
+
+## Step 6: Get loads with new authority
+
+This is where many new box truck businesses stall. Some brokers will not work with an MC that has only been active for a short time. You can still get loaded, but it takes more calls and more paperwork.
+
+Ways to find your first loads:
+
+- **Load boards.** Filter for straight trucks or box trucks. See our guide to the [best load boards for box trucks](/blog/best-load-boards-for-box-trucks.html).
+- **Brokers who accept new authority.** Build a list and keep your setup packet ready to send.
+- **A box truck dispatcher with new authority experience.** A dispatcher already knows which brokers take new carriers and can fill out the setup packets for you.
+
+Texas Solutions works with brand-new MC authority from day one, and the first load is dispatched free.
+
+## A simple startup cost check
+
+Every business is different, so build your own numbers. Here is a sample way to lay them out, using assumed figures only:
+
+- Truck down payment (assumption): $10,000
+- First insurance down payment (assumption): $3,000
+- Authority, BOC-3, UCR and registrations (assumption): $1,000
+- ELD, phone, basic equipment like straps and blankets (assumption): $1,000
+- Cash reserve for fuel and repairs while waiting on first payments (assumption): $5,000
+
+Total in this example: $10,000 + $3,000 + $1,000 + $1,000 + $5,000 = **$20,000**.
+
+The reserve matters more than most people expect. Brokers often pay on 30-day terms or longer unless you use [factoring](/blog/freight-factoring-for-owner-operators-explained.html), so you need cash to cover fuel before the first payments arrive.
+
+## Step 7: Know your cost per mile before you book
+
+Box truck rates often run about **$1.80 to $3.20 per mile**, depending on lane and season. That range is wide, and the low end may not cover your costs. Work out your own number with the [cost per mile calculator](/cost-per-mile-calculator.html), then check each offer with the [load profitability calculator](/load-profitability-calculator.html).
+
+If your all-in cost is $1.50 a mile and a load pays $1.90 a loaded mile with 80 empty miles to the pickup on a 300-mile trip, the math looks like this:
+
+- Revenue: 300 x $1.90 = $570
+- Cost: (300 + 80) x $1.50 = $570
+- Profit: **$0**, before dispatch or factoring fees
+
+That load only looks good if you ignore the empty miles.
+
+## Step 8: Turn spot loads into repeat work
+
+Most box truck contracts do not come on day one. They come from showing up on time, communicating well and making it easy for brokers and shippers to work with you. We cover that in more detail in [box truck contracts and how to get them](/blog/box-truck-contracts-how-to-get-them.html).
+
+## Getting help with 26 ft box truck dispatch
+
+You can run every step yourself, or bring in help for the parts that take you away from driving. Texas Solutions is a dispatch service, not a broker or carrier. Our remote dispatchers work 24/7, find and negotiate loads, and send you each one for approval before it is booked. Box truck and straight truck dispatch is **10% of weekly gross** for OTR, with no setup fee and no long-term contract.
+
+Read more about our [box truck dispatch service](/box-truck-dispatch.html) and [dispatch for new authority](/dispatch-for-new-authority.html), or [get a free estimate](/estimate.html?truck=box-truck).
+
+### How to Get Loads Without a Broker: Direct Freight Explained
+URL: https://dispatch.texassolutions.co/blog/how-to-get-loads-without-a-broker.html
+Published: 2026-10-13
+
+Brokers move a large share of the freight small carriers haul. That is not a bad thing, but many owner-operators wonder whether they could keep more of the rate by cutting out the middle. This guide explains **how to get loads without a broker**, what it really takes, and where it makes sense.
+
+## Why carriers look for direct freight
+
+The reasons are usually the same:
+
+- **No broker margin.** The shipper's full rate goes to the carrier.
+- **Steadier freight.** A shipper that likes your service may give you the same lanes every week.
+- **Better planning.** Knowing your loads in advance makes home time and maintenance easier to schedule.
+
+Those benefits are real, but direct freight is not free money. It comes with its own work and risk.
+
+## Option 1: Direct shippers
+
+A direct shipper is the company that owns the freight: a manufacturer, distributor, farm, food plant or building supply yard.
+
+### How to approach shippers
+
+1. **Start local and in your lanes.** Look for businesses near your home base or along routes you already run.
+2. **Find the right person.** Ask for the shipping manager, logistics coordinator or traffic department.
+3. **Bring your paperwork.** Authority, insurance certificate, W-9 and a short summary of your equipment and service area.
+4. **Offer a specific lane.** "I can run your freight from here to that city twice a week" is easier to say yes to than "do you have anything?"
+5. **Follow up.** Shippers often say no the first time. A carrier who checks in politely and shows up when needed is remembered.
+
+### What shippers expect
+
+- On-time pickups and deliveries, every time
+- Clean equipment that fits their freight
+- Clear communication about delays
+- Proper insurance, sometimes above the levels brokers ask for
+- A safety record they can check on FMCSA's public data
+
+New carriers often find this hard at first. Many build a track record with brokers before shippers take them seriously.
+
+## Option 2: Contracts and dedicated lanes
+
+A contract or dedicated lane is a standing agreement to haul freight on a lane at an agreed rate for a period of time.
+
+- **Pros:** predictable volume and rate, easier planning
+- **Cons:** the rate is fixed even when the spot market rises, and you may be expected to cover loads even when it is inconvenient
+
+Contracts come from shippers directly, and sometimes from brokers who manage a shipper's freight. For the difference between contract and spot pricing, see [spot vs contract rates](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+
+## Option 3: Amazon Relay and similar platforms
+
+Amazon Relay is Amazon's platform for booking its own freight with carriers who hold their own authority. Loads are booked through the platform rather than through a broker, and some freight uses Amazon trailers, which suits power only operators.
+
+Keep it in perspective:
+
+- Requirements, rates and rules are set by Amazon and can change
+- Some loads pay well and others do not, so judge each load on its own numbers
+- Depending on a single customer for all your freight is a risk
+
+## The honest pros and cons of direct freight
+
+| | Direct freight | Broker freight |
+|---|---|---|
+| Rate | Often higher, no middle margin | Includes broker margin |
+| Speed to start | Slow, takes relationship building | Fast, available on day one |
+| Payment terms | Can be 30 to 60 days or longer | Varies, many offer quick pay |
+| Paperwork and billing | You invoice and chase payment | Broker handles shipper side |
+| Flexibility | Less, you are committed | More, you pick load by load |
+| Backhauls | Shipper may not have any | Easy to find on boards |
+
+## What high paying freight loads really look like
+
+The best paying loads for owner-operators are the ones that pay well **per total mile**, including deadhead, and do not tie your truck up for days. A high rate from a shipper that pays in 60 days may be worse for your cash flow than a slightly lower broker rate paid in two days.
+
+**Worked example: direct vs broker load (assumptions labelled)**
+
+- Direct shipper load: 600 loaded miles at $3.50 a mile = 600 x $3.50 = **$2,100**, paid in 45 days
+- Broker load: 600 loaded miles at $3.20 a mile = 600 x $3.20 = **$1,920**, paid quickly through factoring
+- Assumed factoring fee on the broker load: 3% of $1,920 = $57.60, leaving **$1,862.40**
+- Difference: $2,100 - $1,862.40 = **$237.60** more for the direct load
+
+The direct load pays more, but you wait about six weeks for it. If you need that cash to buy fuel next week, you might factor the direct invoice too, which narrows the gap. Run your own numbers with the [load profitability calculator](/load-profitability-calculator.html).
+
+## How to keep trucks full while you build direct freight
+
+Direct customers rarely fill every mile. Most owner-operators keep a mix:
+
+- **Direct freight** for the main lane
+- **Broker freight** for backhauls and gaps
+- **Load boards** to check market rates and fill last-minute openings
+
+Our guide to [finding loads for your truck](/blog/how-to-find-loads-for-your-truck.html) covers how to blend these sources. Keeping deadhead low between them matters just as much. The [deadhead miles calculator](/deadhead-miles-calculator.html) shows what empty miles do to your real rate.
+
+## Where a dispatcher fits
+
+A truck dispatch service is not a broker. Texas Solutions works for the carrier, searching load boards and broker networks and negotiating rates for your truck under your own authority. If you win direct freight, a dispatcher can fill the gaps around it with broker loads so the truck is not sitting while you wait for the next shipper order.
+
+Our back office team can also help with the paperwork that comes with direct work: invoicing, detention and lumper collection, and factoring setup. See [trucking back office services](/trucking-back-office-services.html).
+
+## Getting started
+
+Getting loads without a broker is possible, but it is a long game built on service and reliability. In the meantime, the truck still has to earn. Texas Solutions dispatches owner-operators and small fleets nationwide, with fees of 5% for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks running OTR, no setup fee, no long-term contract, and you approve every load.
+
+See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html).
+
+### How to Become an Owner-Operator: Lease-On or Your Own MC
+URL: https://dispatch.texassolutions.co/blog/how-to-become-an-owner-operator.html
+Published: 2026-10-13
+
+Plenty of company drivers think about running their own truck. Some make the jump and never look back. Others find out the hard way that owning a truck is a business, not just a better-paying driving job. This guide explains **how to become an owner-operator** step by step, with the decisions that matter most.
+
+## Owner-operator vs company driver
+
+A company driver is paid by the mile, by the load or by the hour, and the company pays for the truck, fuel, insurance and repairs.
+
+An owner-operator owns or leases the truck and pays those costs. In return, the truck's revenue is yours. The upside is control and earning potential. The downside is that a bad month, a blown engine or a slow freight market comes out of your pocket.
+
+Before you go further, read [how much owner-operators make](/blog/how-much-do-owner-operators-make.html) for an honest look at gross vs net.
+
+## Step 1: Get the license and experience
+
+For a semi truck you need a **Class A CDL**. Many people drive for a company for a year or more first. That time teaches you how freight moves, how to manage hours of service and how to deal with shippers and receivers, while someone else pays for the mistakes.
+
+Smaller equipment is different:
+
+- **Box trucks and straight trucks** under 26,001 lbs GVWR can often be driven without a CDL
+- **Hotshot** setups may or may not require a CDL, depending on the combined weight rating of the truck and trailer
+
+Check the weight ratings and your state's rules before you buy anything.
+
+## Step 2: Choose your path: lease-on or your own authority
+
+This is the biggest decision you will make.
+
+### Leasing on to a carrier
+
+You own or lease the truck, but you haul under another carrier's authority.
+
+- **Pros:** the carrier provides authority and often insurance, freight and fuel discounts. Easier to start.
+- **Cons:** you usually keep a smaller share of the revenue, you may have limited choice of loads, and you depend on one company.
+
+### Running your own MC authority
+
+You become your own motor carrier.
+
+- **Pros:** you choose your loads, lanes and brokers, and the full rate goes to your business.
+- **Cons:** you pay for insurance, compliance and filings, and you have to find your own freight or pay someone to find it.
+
+Many people start leased on, learn the business, then get their own authority.
+
+## Step 3: Get your USDOT number and MC authority
+
+If you choose your own authority, you register with FMCSA for a USDOT number and apply for MC operating authority. You also need a BOC-3 process agent filing and proof of insurance on file before the authority goes active.
+
+We cover each filing in detail in [how to get your MC number and trucking authority](/blog/how-to-get-mc-number-authority-owner-operator.html), and the full business setup (UCR, IRP plates, IFTA, ELD, drug and alcohol consortium) in [how to start a trucking company](/blog/how-to-start-a-trucking-company.html). Texas Solutions also offers MC authority setup help as part of its [back office services](/trucking-back-office-services.html).
+
+Keep in mind that a new carrier enters FMCSA's new entrant program, which includes a safety audit, usually within the first 12 months. Keep your logs, maintenance records and driver files in order from day one.
+
+## Step 4: Pick the truck and trailer
+
+Your equipment decides which freight you can haul and what it pays. Rough rates on our desk, which vary by lane and season and are not guaranteed:
+
+| Equipment | Rough rate per mile |
+|---|---|
+| Flatbed / step deck | $5 - $7 |
+| Reefer | $4 - $6 |
+| Hotshot | $4 - $5 |
+| Dry van / power only | $3 - $5 |
+| Box truck | $1.80 - $3.20 |
+
+Higher rates usually come with higher costs or more work: tarping and securement for flatbed, fuel for the reefer unit, or more expensive equipment. Compare the trade-offs in [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html).
+
+When you look at a used truck, budget for a pre-purchase inspection. A cheap truck that spends weeks in the shop is not cheap.
+
+## Step 5: Build a cash reserve
+
+New owner-operators often underestimate how long it takes for money to come in. Brokers commonly pay on 30-day terms or longer unless you use factoring, and the first insurance down payment can be large.
+
+**Worked example: a startup reserve plan (all figures are assumptions for illustration)**
+
+- Insurance down payment: $4,000
+- Filings, registration and plates: $1,500
+- First month of truck payment: $2,500
+- Fuel for the first two weeks: $3,000
+- Repair cushion: $5,000
+- Total reserve: $4,000 + $1,500 + $2,500 + $3,000 + $5,000 = **$16,000**
+
+Your own numbers could be higher or lower. The point is to price each item before you start, not after. The [cost per mile calculator](/cost-per-mile-calculator.html) helps you work out what you need to earn per mile to cover it all.
+
+## Step 6: Set up how you get paid
+
+Decide early whether you will wait for brokers to pay or use factoring to get paid within a day or two of delivery. Read [freight factoring explained](/blog/freight-factoring-for-owner-operators-explained.html) before you sign anything, and check the fee, recourse terms and contract length.
+
+## Step 7: Find your first loads
+
+With a new MC number, the first weeks are the hardest. Some brokers want an authority that has been active for a set period. Others will work with new carriers if your paperwork is clean.
+
+Options for getting loads:
+
+- Search load boards and call brokers yourself
+- Build relationships with brokers who accept new authority
+- Use a dispatch service that books loads under your MC
+
+Our guide on [how to find loads for your truck](/blog/how-to-find-loads-for-your-truck.html) covers each option.
+
+## A quick checklist
+
+- CDL or the right license for your equipment
+- Lease-on or own authority decided
+- USDOT, MC, BOC-3 and insurance filings complete
+- UCR, plates, IFTA and ELD set up
+- Truck inspected and cost per mile calculated
+- Cash reserve set aside
+- Factoring or banking arranged
+- Broker setup started
+
+## Dispatch for a new MC number
+
+If you get your own authority, you do not have to figure out the load side alone. Texas Solutions is a truck dispatch service that works with brand-new MC authority from day one. We help with broker packets and setup, search and negotiate loads, and you approve every one. Fees for OTR are 5% of weekly gross for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no setup fee and no long-term contract, and your first load is dispatched free.
+
+Learn more about [dispatch for new authority](/dispatch-for-new-authority.html) or [get a free estimate](/estimate.html).
+
+### How Much Do Hotshot Drivers Make? A Realistic Look at Gross and Net
+URL: https://dispatch.texassolutions.co/blog/how-much-do-hotshot-drivers-make.html
+Published: 2026-10-13
+
+Hotshot trucking has a reputation for strong pay per mile, and it can earn well. But a high rate per mile does not automatically mean high take-home pay. What you keep depends on how many paid miles you run, how many empty miles you burn and what your setup costs to own and insure.
+
+This post focuses on hotshot **owner-operators** who run under their own authority or lease to a carrier. Company drivers are paid differently, usually a wage or a percentage, and do not carry the truck's costs.
+
+## What hotshot loads pay
+
+As a rough guide, hotshot loads often pay about **$4 to $5 a mile**. Factors that push the rate up or down:
+
+- **Urgency.** Same-day or next-morning delivery pays a premium.
+- **Weight and size.** Heavier or longer pieces that need a 40 ft deck or more securement often pay more.
+- **Lane.** Loads into areas with little return freight need to pay for the trip home.
+- **Season and industry.** Construction, agriculture and energy activity swing demand.
+
+For a deeper look see [hotshot trucking rates per mile and fuel](/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html), and compare with other equipment on our [rate per mile guide](/truck-dispatch-rates.html). Rates are never guaranteed.
+
+## Typical weekly gross
+
+On the Texas Solutions dispatch desk, OTR hotshots typically gross about **$7,000 to $9,000 a week**. That figure is not a guarantee. Weeks with repairs, weather, home time or slow freight come in lower.
+
+## Worked example: a good week
+
+These are assumptions for illustration. Use your own numbers.
+
+**Assumptions:**
+
+- Weekly gross: **$8,000**
+- Loaded miles: 1,800, empty miles: 450, total 2,250
+- Average fuel economy across loaded and empty miles: 11 mpg
+- Diesel price: $4.50 a gallon
+- Dispatch: 8% of gross
+- Factoring: 3% of gross
+- Insurance: $400 a week
+- Truck and trailer payments: $600 a week
+- Maintenance and tire reserve: $0.20 a mile
+- ELD, phone, permits, tolls and other: $120 a week
+
+**Costs:**
+
+- Fuel: 2,250 / 11 = 204.5 gallons x $4.50 = **$920**
+- Dispatch: $8,000 x 0.08 = **$640**
+- Factoring: $8,000 x 0.03 = **$240**
+- Insurance: **$400**
+- Payments: **$600**
+- Maintenance reserve: 2,250 x $0.20 = **$450**
+- Other: **$120**
+- **Total: $3,370**
+
+**Net before taxes:** $8,000 - $3,370 = **$4,630**, or about 58% of gross.
+
+## Worked example: a slow week
+
+**Assumptions:** weekly gross **$5,000**, total miles 1,400, everything else unchanged.
+
+- Fuel: 1,400 / 11 = 127.3 gallons x $4.50 = **$573**
+- Dispatch: **$400**
+- Factoring: **$150**
+- Insurance: **$400**
+- Payments: **$600**
+- Maintenance reserve: 1,400 x $0.20 = **$280**
+- Other: **$120**
+- **Total: $2,523**
+
+**Net before taxes:** $5,000 - $2,523 = **$2,477**, or about 50% of gross.
+
+Fixed costs stayed at $1,000 a week in both examples. In a slow week they take a bigger bite, which is why a cash reserve is part of running a hotshot business.
+
+## From weekly numbers to a yearly estimate
+
+Avoid multiplying a great week by 52. Instead:
+
+1. Pick a realistic average week, somewhere between your good and slow weeks.
+2. Count only the weeks you expect to work.
+3. Set aside money for income and self-employment taxes.
+
+For example, if your average net is **$3,500 a week** (an assumption) and you work **46 weeks**, that is 3,500 x 46 = **$161,000 before taxes**. Change either number and the result moves a lot, so run your own scenario.
+
+## Own authority vs leased on
+
+How you run also changes what you keep:
+
+- **Own authority.** You book loads under your own MC, keep the full rate and pay all costs, including insurance and compliance. Income has the most upside and the most risk.
+- **Leased to a carrier.** You run under another company's authority and usually receive a percentage of the load. The carrier may cover some costs, such as liability insurance, but takes a share of every load.
+
+Neither is right for everyone. Compare the two with your own numbers before deciding, and if you plan to get your own authority, see [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html).
+
+## What separates higher-earning hotshot operators
+
+There is no secret, but some habits make a clear difference:
+
+### They know their cost per mile
+
+If you do not know your break-even, you cannot tell a good load from a bad one. Use the [cost per mile calculator](/cost-per-mile-calculator.html) and check each offer with the [load profitability calculator](/load-profitability-calculator.html).
+
+### They plan the reload
+
+A $1,500 load into a dead area that leaves you 250 miles empty may pay less than a $1,200 load into a busy market. See [how to reduce deadhead](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+
+### They watch weight and fuel
+
+Hotshot fuel economy drops as weight goes up. Track your real mpg loaded and empty, then check your cost by state with the [truck fuel cost calculator](/truck-fuel-cost-calculator.html).
+
+### They get paid for their time
+
+Detention and layovers should be documented and billed. If you do not ask, you usually do not get paid.
+
+### They negotiate
+
+Brokers expect a counteroffer. Our guide on [how to negotiate freight rates](/blog/how-to-negotiate-freight-rates.html) explains how to approach it.
+
+## Finding hotshot loads that pay
+
+Most hotshot freight is found through load boards, broker relationships and dispatchers. Our guide to the [best load boards for hotshot](/blog/best-load-boards-for-hotshot.html) covers the boards, and [how to start a hotshot business](/blog/how-to-start-a-hotshot-business.html) covers setup if you are just beginning.
+
+## Hotshot dispatch with Texas Solutions
+
+Texas Solutions is a dispatch service, not a broker or carrier. Our 24/7 remote dispatchers find, negotiate and book hotshot loads for owner-operators and small fleets nationwide, and you approve every load before it is booked. Hotshot dispatch is **8% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract. We work with new authority from day one, and the first load is dispatched free.
+
+See our [hotshot dispatch service](/hotshot-dispatch.html) or [get a free estimate](/estimate.html?truck=hotshot).
+
+### How Much Do Box Truck Owner-Operators Make? Gross, Costs and Net
+URL: https://dispatch.texassolutions.co/blog/how-much-do-box-truck-owner-operators-make.html
+Published: 2026-10-13
+
+"How much can I make with a box truck?" is usually the first question people ask, and the honest answer is that it depends on three things: how many miles you run, what those miles pay, and what it costs you to run them. Gross revenue gets the attention, but net income is what you live on.
+
+This post breaks down box truck income with a worked example. For the semi side of the same question, see [how much owner-operators make](/blog/how-much-do-owner-operators-make.html).
+
+## Gross vs net: the difference that matters
+
+- **Gross** is what the loads pay before any expenses.
+- **Net** is what is left after fuel, insurance, payments, repairs, fees and other costs.
+- **Take-home** is net minus income and self-employment taxes.
+
+Two drivers with the same weekly gross can take home very different amounts if one has a paid-off truck and low insurance and the other has a big payment and runs a lot of empty miles.
+
+## What box truck loads pay
+
+As a rough guide, box truck loads often pay about **$1.80 to $3.20 per mile**. Rates move with:
+
+- **Lane.** Loads into areas with little outbound freight need to pay more to cover the trip out.
+- **Season.** Retail peaks and holiday volume can push rates up; slow months push them down.
+- **Urgency and service.** Expedited, team or liftgate-required freight often pays more.
+- **Distance.** Short loads often pay more per mile but take more time per dollar.
+
+Compare equipment types on our [rate per mile guide](/truck-dispatch-rates.html). Rates are market-driven and not guaranteed.
+
+## Typical weekly gross for box trucks
+
+On the Texas Solutions dispatch desk, OTR box trucks typically gross about **$7,000 to $9,000 a week**. That is not a promise. Weeks with breakdowns, home time, weather or soft freight markets will come in lower, and some weeks may come in higher.
+
+## Worked example: a good week
+
+Here is a sample week with clearly labelled assumptions. Replace them with your own figures.
+
+**Assumptions:**
+
+- Weekly gross: **$8,000**
+- Loaded miles: 3,000, empty (deadhead) miles: 400, total 3,400
+- Average fuel economy: 9.5 mpg (26 ft diesel, mix of loaded and empty)
+- Diesel price: $4.50 a gallon
+- Dispatch: 10% of gross
+- Factoring: 3% of gross
+- Insurance: $350 a week
+- Truck payment: $450 a week
+- Maintenance and tire reserve: $0.15 a mile
+- ELD, phone, tolls and other: $100 a week
+
+**Costs:**
+
+- Fuel: 3,400 / 9.5 = 357.9 gallons x $4.50 = **$1,611**
+- Dispatch: $8,000 x 0.10 = **$800**
+- Factoring: $8,000 x 0.03 = **$240**
+- Insurance: **$350**
+- Truck payment: **$450**
+- Maintenance reserve: 3,400 x $0.15 = **$510**
+- Other: **$100**
+- **Total: $4,061**
+
+**Net before taxes:** $8,000 - $4,061 = **$3,939**, or about 49% of gross.
+
+## Worked example: a slow week
+
+Same truck, same fixed costs, fewer miles and lower rates.
+
+**Assumptions:** weekly gross **$5,000**, total miles 2,200, other assumptions unchanged.
+
+- Fuel: 2,200 / 9.5 = 231.6 gallons x $4.50 = **$1,042**
+- Dispatch: **$500**
+- Factoring: **$150**
+- Insurance: **$350**
+- Truck payment: **$450**
+- Maintenance reserve: 2,200 x $0.15 = **$330**
+- Other: **$100**
+- **Total: $2,922**
+
+**Net before taxes:** $5,000 - $2,922 = **$2,078**, or about 42% of gross.
+
+Notice that fixed costs did not shrink when revenue dropped. That is why slow weeks hurt more than the drop in gross suggests, and why a cash reserve matters.
+
+## Turning weekly numbers into a yearly estimate
+
+Do not multiply your best week by 52. A more realistic method:
+
+1. Estimate how many weeks you will actually work. Home time, repairs and holidays count against you.
+2. Use an average week, not your best week.
+3. Subtract taxes. Set aside money each week for quarterly estimated payments and talk with a tax professional.
+
+For example, if you average **$3,000 net a week** (an assumption between the two examples above) and work **46 weeks**, that is 3,000 x 46 = **$138,000 before taxes**. If your average is lower, or you work fewer weeks, the annual figure drops quickly.
+
+## The costs that decide box truck income
+
+### Fuel
+
+A 26 ft diesel box truck commonly gets somewhere around 8.5 to 11 mpg, lower when heavy. At box truck rates, fuel can take a large share of every dollar. Check your fuel cost by state with the [truck fuel cost calculator](/truck-fuel-cost-calculator.html?truck=box-truck#fuelCalc).
+
+### Empty miles
+
+Every empty mile costs fuel and wear and pays nothing. Planning the next load before you deliver is one of the simplest ways to raise net income. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+
+### Insurance and payments
+
+These do not change with how much you run. The more miles you spread them over, the lower your cost per mile.
+
+### Unpaid extras
+
+Detention, layovers and lumper charges add up. If you do not document and invoice them, you are working for free. Texas Solutions handles detention and lumper collection as part of its [back office services](/trucking-back-office-services.html).
+
+## How to find box truck loads that pay
+
+- Know your cost per mile and refuse loads below it. Use the [cost per mile calculator](/cost-per-mile-calculator.html).
+- Check each offer, including empty miles, with the [load profitability calculator](/load-profitability-calculator.html).
+- Negotiate. Our guide on [how to negotiate freight rates](/blog/how-to-negotiate-freight-rates.html) explains how.
+- Use load boards well. See the [best load boards for box trucks](/blog/best-load-boards-for-box-trucks.html).
+- Build repeat business with good brokers, covered in [box truck contracts and how to get them](/blog/box-truck-contracts-how-to-get-them.html).
+
+## Getting help with box truck loads
+
+Texas Solutions is a truck dispatch service, not a broker or carrier. Our 24/7 remote dispatchers find and negotiate box truck loads, and you approve every one before it is booked. Box truck and straight truck dispatch is **10% of weekly gross** for OTR, with no setup fee and no long-term contract, and the first load is dispatched free.
+
+Learn more about our [box truck dispatch service](/box-truck-dispatch.html) or [get a free estimate](/estimate.html?truck=box-truck).
+
+### How Does Truck Dispatching Work? A Carrier's Step-by-Step Guide
+URL: https://dispatch.texassolutions.co/blog/how-does-truck-dispatching-work.html
+Published: 2026-10-13
+
+If you have never used a dispatch service, it can be hard to picture what actually happens between "I signed up" and "I got paid." This guide walks through **how truck dispatching works** from the carrier's side of the desk, one step at a time, so you know what to expect and what to ask for.
+
+## What a truck dispatcher is (and is not)
+
+A dispatcher for truckers is an agent who works on behalf of a carrier. The dispatcher finds freight, negotiates rates and handles a lot of the admin that comes with every load. The truck still runs under **your** MC authority, and you are still the carrier of record.
+
+A dispatcher is not a freight broker. A broker holds its own broker authority and represents the shipper's freight. If you want the full comparison, see [truck dispatcher vs freight broker](/blog/truck-dispatcher-vs-freight-broker.html).
+
+## Step 1: Onboarding
+
+Everything starts with paperwork. A good dispatch service collects it once, keeps it organized and sends it out to brokers when needed.
+
+Typical onboarding items:
+
+- MC and USDOT numbers
+- Certificate of insurance (auto liability and cargo)
+- W-9 for your business
+- Signed dispatch agreement that spells out the fee and what it covers
+- Factoring company details or bank details for payment
+- A notice of assignment, if you factor
+
+You will also talk through how you want to run. This conversation matters more than the paperwork:
+
+- Equipment type, trailer length and any special gear (straps, tarps, load locks, pallet jack)
+- Home base and how often you want to be home
+- Lanes you like and states you want to avoid
+- Your minimum rate per mile, based on your real costs
+- Hours of service you have left and your weekly mile target
+
+If your authority is brand new, say so. Some brokers will not work with a new MC, so the dispatcher needs to focus on brokers who do. Texas Solutions works with new authority from day one. See [dispatch for new authority](/dispatch-for-new-authority.html).
+
+## Step 2: Broker setup
+
+Before a broker can tender a load to you, your company has to be set up in that broker's system. That usually means a carrier packet, insurance verification and sometimes an online onboarding portal.
+
+A dispatcher handles the back-and-forth so you are not filling out forms at a truck stop. The more brokers you are set up with, the more freight your dispatcher can offer you. More detail is in our guide to [broker setup and rate confirmations](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+
+## Step 3: Load search
+
+This is the part most people picture. The dispatcher searches load boards, calls brokers they already work with and watches for freight that fits your truck.
+
+A good search looks at more than the posted rate:
+
+- **Deadhead to pickup.** Empty miles to the shipper cost fuel and time.
+- **Pickup and delivery windows.** Can you legally make it on your hours?
+- **Destination market.** Will you be able to get a decent load out of there?
+- **Broker payment history.** Fast, reliable pay matters as much as the rate.
+- **Weight and commodity.** Does it fit your equipment and insurance?
+
+## Step 4: Negotiation
+
+Posted rates are often a starting point. The dispatcher calls, asks for details the post leaves out, and pushes for a rate that works for your costs. Our [guide to negotiating freight rates](/blog/how-to-negotiate-freight-rates.html) explains the approach.
+
+## Step 5: You approve the load
+
+Before anything is booked, the dispatcher sends you the details: pickup, delivery, miles, weight, rate and any special requirements. **You decide.** At Texas Solutions, the carrier approves every load. No forced dispatch.
+
+## Step 6: Booking and the rate confirmation
+
+Once you say yes, the dispatcher confirms with the broker. The broker sends a **rate confirmation**, the document that lists the agreed rate, addresses, times and terms. Read it before you roll. If something differs from what was discussed, the dispatcher should sort it out before pickup.
+
+## Step 7: On the road
+
+While you drive, the dispatcher can help with:
+
+- Check calls and tracking updates to the broker
+- Reporting delays early, so the broker is not surprised
+- Documenting detention time at the shipper or receiver
+- Arranging lumper receipts when unloading fees come up
+- Lining up the next load before you deliver
+
+That last point is where a dispatcher earns a lot of the fee. Searching for your next load while you are still loaded cuts down the hours you sit empty.
+
+## Step 8: Paperwork, invoicing and payment
+
+After delivery, you send the signed bill of lading (BOL) or proof of delivery. Then the money side starts:
+
+- The invoice and paperwork go to the broker or to your factoring company
+- Detention and lumper charges are submitted with receipts
+- The broker pays on its terms, or the factoring company advances the payment
+
+Texas Solutions also offers [back office services](/trucking-back-office-services.html) such as invoicing, detention and lumper collection, factoring setup and IFTA filing.
+
+## Step 9: The dispatch fee
+
+Most dispatchers bill weekly, based on the truck's gross. Here is how that looks with labelled assumptions.
+
+**Worked example: one semi, one week**
+
+- Assumption: 3 loads booked in the week
+- Load 1: $3,200
+- Load 2: $2,600
+- Load 3: $3,100
+- Weekly gross: $3,200 + $2,600 + $3,100 = **$8,900**
+- Dispatch fee at 5%: $8,900 x 0.05 = **$445**
+- Gross after dispatch fee: $8,900 - $445 = **$8,455**
+
+You still pay fuel, insurance, truck payment, maintenance and other costs from that amount. To test a load before you accept it, use the [load profitability calculator](/load-profitability-calculator.html). These numbers are only an illustration. Weekly gross depends on lane, season, equipment and how much you run, and no dispatcher can guarantee it.
+
+## What a week looks like with a dispatcher
+
+Put together, a typical week runs in a loop:
+
+1. Dispatcher searches and negotiates while you are on the road
+2. You approve or decline each load
+3. Dispatcher books it and sends the rate confirmation
+4. You pick up and deliver while the next load is being lined up
+5. Paperwork goes out, the broker or factor pays, the fee is billed
+
+## Questions to ask any dispatch service
+
+- Is the fee a percentage of gross, and what exactly is it charged on?
+- Are there setup fees, cancellation fees or a long contract?
+- Do I approve every load?
+- Who handles broker packets, invoicing and detention claims?
+- Do you work with new authority?
+
+For more on spotting bad offers, read [how to choose a truck dispatcher](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+
+## How Texas Solutions dispatching works
+
+Texas Solutions is a truck dispatch service, not a broker or carrier. We dispatch dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck carriers nationwide, with remote dispatchers available 24/7. Fees for OTR are 5% for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no flat rate, no setup fee and no long-term contract. Your first load is dispatched free.
+
+See how our [owner-operator dispatch service](/owner-operator-dispatch.html) works, compare [truck dispatch rates](/truck-dispatch-rates.html), or [get a free estimate](/estimate.html) on your own numbers.
+
+### Dry Van, Reefer, Flatbed and Power Only Loads: Finding and Pricing Them
+URL: https://dispatch.texassolutions.co/blog/dry-van-reefer-flatbed-power-only-loads.html
+Published: 2026-10-13
+
+Every trailer type has its own freight, its own customers and its own pricing logic. A dispatcher for semi trucks who books good reefer loads needs a different playbook from one who books flatbed. This guide covers how **dry van loads**, **reefer loads**, **flatbed loads**, step deck and **power only loads** are found, and what moves the **rate per mile** for each.
+
+If you are still choosing a trailer, start with [dry van vs reefer vs flatbed: which trailer pays best](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html). This article focuses on finding and pricing the freight once you have the equipment.
+
+## Rough rates by freight type
+
+These are rough figures from our dispatch desk. They vary by lane and season and are not guaranteed.
+
+| Freight type | Rough rate per mile |
+|---|---|
+| Flatbed / step deck | $5 - $7 |
+| Reefer | $4 - $6 |
+| Dry van | $3 - $5 |
+| Power only | $3 - $5 |
+
+## What affects rate per mile for every freight type
+
+Some factors apply to all trailers:
+
+- **Lane balance.** A market that ships out more freight than it receives tends to pay more on outbound loads. The opposite market often pays less.
+- **Season.** Produce, holidays, construction and weather all shift demand.
+- **Distance.** Short loads often pay more per mile because the fixed time at pickup and delivery is spread over fewer miles.
+- **Lead time.** A load that needs a truck today may pay more than one booked a week out.
+- **Extra work.** Tarps, temperature control, multiple stops and driver assist all add value.
+
+For context on what a good number looks like against your costs, read [what is a good rate per mile in trucking](/blog/what-is-a-good-rate-per-mile-trucking-2026.html).
+
+## Dry van loads
+
+Dry van freight is the largest and most common segment: packaged goods, retail, paper, beverages and general freight.
+
+**Where it comes from:** load boards, broker networks, retail and distribution center freight, and platforms such as Amazon Relay.
+
+**What moves the rate:**
+
+- Huge competition, because many carriers run vans
+- Retail and holiday seasons
+- Live load vs drop-and-hook (live loads can mean long waits)
+- Multiple stops, which should pay extra per stop
+
+**Tip:** with so many trucks chasing the same posts, the real edge is planning the next load before delivery to keep deadhead low. See our [dry van dispatch](/dry-van-dispatch.html) page.
+
+## Reefer loads
+
+Reefer freight includes produce, meat, dairy, frozen food, beverages and some pharmaceuticals.
+
+**Where it comes from:** produce and food brokers, cold storage warehouses, grocery distribution and load boards.
+
+**What moves the rate:**
+
+- Produce seasons in growing regions
+- Temperature requirements (frozen often stricter than chilled)
+- Reefer fuel cost on top of truck fuel
+- Strict appointment times and the risk of claims if temperatures drift
+
+**Tip:** reefer drivers can often haul dry freight too, which helps with backhauls when reefer freight is thin. See [reefer dispatch](/reefer-dispatch.html).
+
+## Flatbed loads
+
+Flatbed carries building materials, steel, lumber, machinery and other freight loaded from the side or top.
+
+**Where it comes from:** open-deck brokers, steel and building supply customers, and load boards with open-deck filters.
+
+**What moves the rate:**
+
+- Construction season and regional building activity
+- Tarping requirements, which usually pay extra
+- Securement time and gear (straps, chains, edge protection)
+- Oversize or overweight freight, which needs permits and planning
+
+**Tip:** always confirm tarp needs, piece count and dimensions before booking. See [flatbed dispatch](/flatbed-dispatch.html).
+
+## Step deck loads
+
+A step deck has a lower rear deck, so it can carry taller freight without going over legal height. Common loads include machinery, equipment and tall building materials.
+
+**Where it comes from:** the same open-deck brokers as flatbed, with fewer trucks competing for freight that needs the extra height.
+
+**What moves the rate:** freight height, ramps or loading needs, and the smaller pool of step decks available in a market. Step deck dispatch services work best when the dispatcher knows which brokers regularly move tall freight. Step deck is covered on our [flatbed dispatch](/flatbed-dispatch.html) page.
+
+## Power only loads
+
+With power only, you supply the tractor and pull someone else's trailer, often a preloaded trailer from a shipper, broker trailer pool or Amazon Relay.
+
+**Where it comes from:** brokers with trailer pools, drop-and-hook programs, platforms like Amazon Relay and load board power only filters.
+
+**What moves the rate:**
+
+- No trailer cost for you, which lets some carriers accept lower rates
+- Drop-and-hook speed, which can mean more loads per week
+- Empty trailer repositioning moves, which often pay less
+- Requirements set by the trailer owner, such as insurance for non-owned trailers
+
+See [power only dispatch](/power-only-dispatch.html).
+
+## Worked example: comparing a week across freight types
+
+The figures below are assumptions for illustration, using midpoints of our rough ranges.
+
+- **Assumption:** 2,000 paid miles and 200 deadhead miles in the week
+- **Dry van at $3.75 a mile:** 2,000 x $3.75 = **$7,500** gross
+- **Flatbed at $5.50 a mile:** 2,000 x $5.50 = **$11,000** gross
+
+Rate per total mile:
+
+- Dry van: $7,500 / 2,200 = **$3.41**
+- Flatbed: $11,000 / 2,200 = **$5.00**
+
+The flatbed gross looks far higher, but flatbed also brings more time on securement and tarping, more gear, and often fewer paid miles in the same week. That could cut the paid miles below 2,000. Compare loads on the same basis with the [load profitability calculator](/load-profitability-calculator.html) and your own [cost per mile](/cost-per-mile-calculator.html).
+
+## How a dispatcher for semi trucks helps
+
+The right dispatcher knows which brokers move each freight type, which lanes pay, and where you can reload. Texas Solutions dispatches dry van, reefer, flatbed, step deck and power only semi trucks nationwide, with 24/7 remote dispatchers. The fee for OTR semi trucks is 5% of weekly gross, with no flat rate, no setup fee and no long-term contract. You approve every load, and your first load is dispatched free.
+
+See our [owner-operator dispatch service](/owner-operator-dispatch.html), compare [truck dispatch rates](/truck-dispatch-rates.html), or [get a free estimate](/estimate.html).
+
+### Dispatch Service Percentage vs Flat Fee: Which Is Better?
+URL: https://dispatch.texassolutions.co/blog/dispatch-percentage-vs-flat-fee.html
+Published: 2026-10-13
+
+When owner-operators compare dispatch services, the first question is usually about price. The second is about **how** the price is charged. This guide compares a **dispatch service percentage vs flat fee**, shows the math on both, and explains how to tell an affordable truck dispatch service from one that is only cheap on the surface.
+
+## The two common pricing models
+
+### Percentage of gross
+
+The dispatcher charges a set percentage of what the truck earns, usually per week.
+
+- Most of the market sits roughly between 3% and 10%
+- Semi truck dispatch tends to be at the lower end
+- Box truck and hotshot dispatch tend to be higher, because smaller loads take more calls and paperwork per dollar
+
+### Flat fee
+
+The dispatcher charges a fixed amount per truck per week or per month, no matter how much the truck grosses.
+
+Some services also charge **per load**, which behaves like a flat fee on each booking.
+
+## Pros and cons of each
+
+### Percentage fee
+
+**Pros:**
+
+- You pay less in slow weeks or when the truck is in the shop
+- The dispatcher earns more only when you earn more
+- Easy to compare across services
+
+**Cons:**
+
+- In a very strong week, the fee is higher in dollars
+- You need to know exactly what the percentage applies to (line haul only, or including accessorials like detention)
+
+### Flat fee
+
+**Pros:**
+
+- Predictable cost
+- In very high-grossing weeks, the fee can work out cheaper as a percentage
+
+**Cons:**
+
+- You pay the same in a week when the truck sits
+- Less built-in reason for the dispatcher to chase a higher rate, since their pay does not change
+- Can cost more than a percentage for low-gross equipment
+
+## Worked example: same truck, three different weeks
+
+Here is a semi on a 5% fee compared with a **hypothetical** flat fee of $450 a week. The flat figure is only an assumption for the comparison, not any particular company's price.
+
+| Week | Weekly gross | 5% fee | Hypothetical flat fee |
+|---|---|---|---|
+| Slow week | $5,000 | $5,000 x 0.05 = **$250** | **$450** |
+| Average week | $9,000 | $9,000 x 0.05 = **$450** | **$450** |
+| Strong week | $11,000 | $11,000 x 0.05 = **$550** | **$450** |
+
+Over these three weeks:
+
+- Percentage total: $250 + $450 + $550 = **$1,250**
+- Flat fee total: $450 x 3 = **$1,350**
+
+In this example the percentage costs less overall, because the slow week saves more than the strong week costs. Change the assumptions and the result changes. If your truck grosses well above average every week, a flat fee could come out ahead. If your weeks swing up and down, the percentage usually protects you more. Use the [dispatch fee estimate](/estimate.html) to plug in your own numbers.
+
+## Why Texas Solutions uses percentage only
+
+We charge a percentage of weekly gross for OTR work, and nothing else:
+
+| Equipment | Fee |
+|---|---|
+| Semi truck (dry van, reefer, flatbed, step deck, power only) | 5% |
+| Hotshot | 8% |
+| Box truck and straight truck | 10% |
+
+There is **no flat rate, no setup fee and no long-term contract**, and the first load is dispatched free. The reason is simple: when our fee moves with your gross, we only do well when your truck does well. Full details are on our [truck dispatch rates](/truck-dispatch-rates.html) page.
+
+That does not make flat-fee dispatchers wrong. Some carriers prefer a fixed cost, and that is a fair choice when the terms are clear.
+
+## Watch out for "cheap" dispatch offers
+
+A low headline price can hide charges that make it the most expensive option. Before you sign with a cheap truck dispatch service, ask about:
+
+- **Setup or onboarding fees** charged before any load is booked
+- **Per-packet or per-broker fees** for carrier setup paperwork
+- **Charges on the full invoice**, including detention, lumper reimbursements and fuel surcharge, when you thought the fee was on line haul only
+- **Minimum weekly charges** that apply even when the truck sits
+- **Long contracts** with cancellation or early termination fees
+- **Required factoring companies** you are pushed to use, sometimes with terms that do not favor you
+- **Access to your bank or factoring account** without clear limits
+
+A truly affordable dispatch service tells you the full cost up front and puts it in writing.
+
+## How to compare two offers fairly
+
+1. Write down your expected weekly gross for a slow, average and strong week
+2. Calculate each offer's cost in all three weeks
+3. Add every extra fee from the agreement
+4. Check contract length and how to cancel
+5. Ask whether you approve every load
+
+For a full checklist of red flags, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html). For the typical cost range by equipment, see [how much a truck dispatcher costs](/blog/how-much-does-a-truck-dispatcher-cost.html).
+
+## What really decides the value
+
+The fee is only half of the picture. A dispatcher who costs a little more but books better-paying loads with less deadhead can leave you with more money than a cheaper one who takes whatever is posted. Check every load on its own numbers with the [load profitability calculator](/load-profitability-calculator.html). No dispatcher can guarantee rates or earnings, so judge a service on how it works, how clearly it charges, and whether the math holds up on your truck.
+
+## Next step
+
+If you want simple, percentage-only dispatch with no contract, see how our [owner-operator dispatch service](/owner-operator-dispatch.html) works, or [get a free estimate](/estimate.html) for your truck.
+
+### Box Truck Contracts: How to Get Them and Where Amazon Relay Fits
+URL: https://dispatch.texassolutions.co/blog/box-truck-contracts-how-to-get-them.html
+Published: 2026-10-13
+
+Many box truck owner-operators want the same thing: steady, predictable freight instead of hunting for a new load every day. That is what people usually mean by "box truck contracts". They exist, but they rarely come first. They tend to come after you have shown brokers and shippers that you can be counted on.
+
+This post covers the main sources of contract-style box truck work, what it takes to win it, where Amazon Relay fits, and how a box truck dispatch company can help along the way.
+
+## What "box truck contracts" usually means
+
+The phrase covers a few different arrangements:
+
+- **Dedicated lanes with a broker.** A broker offers you the same lane on a set schedule, often at an agreed rate.
+- **Repeat spot freight.** No formal contract, but a broker or shipper calls you first whenever they have a load that fits.
+- **Direct shipper agreements.** A business hires your company directly for regular runs, sometimes with a written agreement.
+- **Delivery and final-mile work.** Routes for companies that handle local or regional deliveries.
+- **Load programs run by large shippers.** Amazon Relay is the best-known example.
+
+The difference between spot and contract freight is covered in more detail in our post on [broker setup, rate confirmations and spot vs contract](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+
+## Step 1: Be ready before you ask
+
+Brokers and shippers look for carriers who are easy to set up and low risk. Have these ready:
+
+- Active **USDOT number** and **operating authority**.
+- **Certificate of insurance** with the limits your target customers ask for.
+- **W-9** and a **carrier packet** you can send within minutes.
+- A clean inspection and safety record.
+- A clear description of your truck: box length, door type, liftgate, payload, pallet capacity and any equipment like pallet jacks or blankets.
+
+If you need help with any of this, Texas Solutions prepares broker packets and handles DOT compliance help and MC authority setup through our [back office services](/trucking-back-office-services.html).
+
+## Step 2: Build a service record with spot loads
+
+Very few shippers hand a dedicated lane to a carrier they have never worked with. Spot loads are how you prove yourself. On every load:
+
+- Arrive on time, or call well before you will be late.
+- Send updates at pickup, in transit and at delivery without being asked.
+- Get clean, signed paperwork and send it promptly.
+- Handle freight carefully and report any issues right away.
+
+Keep notes on which brokers you worked with, which lanes and what they paid. That list becomes your contract pipeline. For finding spot freight, see the [best load boards for box trucks](/blog/best-load-boards-for-box-trucks.html).
+
+## Step 3: Ask for repeat lanes
+
+After a few clean loads with the same broker, ask directly:
+
+- Do you have this lane every week?
+- Do you have any freight going back the other way?
+- Is there a dedicated or committed carrier program I can apply for?
+
+Brokers often have shippers who need a reliable small truck on a regular schedule. If you have already delivered for them, you are an easy choice.
+
+## Step 4: Approach shippers directly
+
+Some box truck freight never reaches a load board. Businesses that commonly ship box truck sized loads include:
+
+- Furniture, mattress and appliance sellers.
+- Wholesale distributors and suppliers.
+- Building supply and flooring stores.
+- Printers, displays and trade show companies.
+- Regional manufacturers shipping smaller orders.
+
+Keep the pitch short: your equipment, service area, insurance limits and how to reach you. Be honest about capacity. Promising more than one truck can deliver is a fast way to lose the account.
+
+Direct shippers often pay on their own terms. Understand payment timing before you start, and consider whether [factoring](/blog/freight-factoring-for-owner-operators-explained.html) makes sense for your cash flow.
+
+## Step 5: Price contracts carefully
+
+A steady lane at a bad rate is a steady loss. Before agreeing to any recurring work, run the full round trip.
+
+Example with assumed figures:
+
+- Lane: 250 miles out, 250 miles back, five times a week
+- Rate offered: **$650** each way, with freight both directions
+- Your all-in cost per mile (assumption): **$1.55**
+- Weekly miles: 500 x 5 = 2,500
+- Weekly revenue: $650 x 2 x 5 = **$6,500**
+- Weekly cost: 2,500 x $1.55 = **$3,875**
+- Weekly profit before fees: $6,500 - $3,875 = **$2,625**
+
+Now suppose freight only goes one way and you run back empty. Revenue drops to $650 x 5 = $3,250, while costs stay at $3,875, a **$625 weekly loss**. The return leg decides whether a contract works. Check your break-even with the [cost per mile calculator](/cost-per-mile-calculator.html) and each leg with the [load profitability calculator](/load-profitability-calculator.html).
+
+## How to get Amazon Relay loads
+
+Amazon Relay is Amazon's own load board, where carriers with their own operating authority can book freight that moves through Amazon's network. A few facts to keep in mind:
+
+- **You need your own authority.** Relay is for carriers, not for drivers without their own USDOT and MC numbers.
+- **You apply through Amazon Relay's website.** The application checks things like authority, insurance and safety information.
+- **Requirements change.** Insurance limits, equipment types and eligibility rules are set by Amazon and can change at any time. Historically much Relay freight has been built around tractor-trailer equipment, so check what is currently available for box trucks before you count on it.
+- **Treat it like any other source.** Compare Relay loads against your cost per mile just as you would any load board offer.
+
+Texas Solutions has no partnership or affiliation with Amazon. For current details, go directly to the Amazon Relay website.
+
+## How a box truck dispatch company fits in
+
+A dispatcher does not hand you a contract, and you should be cautious of anyone who promises one. What a good box truck dispatch company can do is help you build the track record that leads to repeat work:
+
+- Find and negotiate spot loads so the truck stays busy.
+- Handle broker setup packets and rate confirmations.
+- Track which brokers and lanes pay well and on time.
+- Keep you in front of brokers who have repeat freight.
+- Collect detention and lumper charges and handle invoicing.
+
+Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html) before you sign with anyone. If you are still setting up, start with [how to start a box truck business](/blog/how-to-start-a-box-truck-business.html).
+
+## Box truck dispatch with Texas Solutions
+
+Texas Solutions is a truck dispatch service, not a broker or carrier. Our 24/7 remote dispatchers work with box truck and straight truck owner-operators nationwide, including brand-new MC authority from day one, and you approve every load before it is booked.
+
+Box truck dispatch is **10% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and your first load is dispatched free. See our [box truck dispatch service](/box-truck-dispatch.html), [dispatch for new authority](/dispatch-for-new-authority.html), or [get a free estimate](/estimate.html?truck=box-truck).
+
+### Best Load Boards for Hotshot and How to Find Hotshot Loads
+URL: https://dispatch.texassolutions.co/blog/best-load-boards-for-hotshot.html
+Published: 2026-10-13
+
+Hotshot freight moves fast. A load posted at 7 a.m. may be gone by 7:15, and the hotshot who gets it is usually the one who already knew the load would fit, had the broker's setup done and called first.
+
+This guide explains how to pick a hotshot load board, how to search for freight your setup can actually haul, and what to do when the boards are slow. For a broader comparison across equipment types, read the [best load boards for owner-operators](/blog/best-load-boards-for-owner-operators.html).
+
+## What to look for in a hotshot load board
+
+Compare boards on what matters to a pickup and gooseneck, not on total load counts:
+
+- **Hotshot and partial flatbed volume in your region.** A board full of full-size flatbed loads does not help if you can only haul a fraction of that weight.
+- **Filters for length and weight.** You should be able to filter loads by size so you only see what fits.
+- **Broker credit and payment data.** Slow or non-paying brokers can sink a small operation.
+- **Rate history.** Knowing what a lane paid recently helps you negotiate.
+- **Phone app.** You will be searching from truck stops and job sites.
+- **Price against bookings.** If a board does not produce booked loads, it is an expense, not a tool.
+
+## Load boards hotshot operators commonly compare
+
+These are public load boards that many carriers use. We name them so you know where to start, not to endorse them. Features and pricing change, so check each one directly.
+
+### DAT
+
+A large US load board with equipment filters and, depending on plan, broker and rate information.
+
+### Truckstop
+
+A large board with load search, broker credit details and rate tools at different plan levels.
+
+### 123Loadboard
+
+A board used by many smaller carriers, with load search and broker details depending on plan.
+
+### Broker carrier portals
+
+Large brokers often post open-deck freight on their own carrier apps or websites. Once you are set up with them, those portals can be a steady source of loads.
+
+## How to find hotshot loads on a board
+
+### Know your numbers before you search
+
+Write these on a card or save them in your phone:
+
+- Deck length and usable deck space.
+- Maximum legal payload, from your truck and trailer ratings and your license class.
+- Equipment on hand: straps, chains, binders, tarps, ramps.
+
+If you are running a non-CDL setup, your payload may be much lower than a CDL hotshot. See [non-CDL box truck and hotshot loads](/blog/non-cdl-box-truck-and-hotshot-loads.html).
+
+### Set up smart searches
+
+- **Equipment:** hotshot first, then flatbed and step deck partials.
+- **Origin:** your current city with a deadhead radius. Start around 75 to 150 miles; hotshot freight is often more spread out than van freight.
+- **Weight and length:** at or below your real limits.
+- **Saved searches and alerts:** let the board notify you so you can call faster.
+
+### Ask the right questions on the call
+
+- Exact weight, dimensions and number of pieces.
+- How it loads and unloads: forklift, crane, ramps, or by hand.
+- Securement and tarp requirements.
+- Pickup and delivery windows, and whether the receiver is a jobsite.
+- Detention terms and how quickly the broker pays.
+
+## Check the math, including deadhead
+
+Example with assumed figures:
+
+- Load pays **$1,350** for 300 loaded miles
+- Empty miles to pickup: 90
+- Your all-in cost per mile (assumption): **$2.10**
+- Cost: (300 + 90) x $2.10 = **$819**
+- Profit: $1,350 - $819 = **$531**, before dispatch or factoring fees
+- Posted rate: $1,350 / 300 = $4.50 per loaded mile
+- Effective rate per mile driven: $1,350 / 390 = **$3.46**
+
+Also think about where the load leaves you. A strong rate into an area with no outbound freight can cost you the next day. Run each load through the [load profitability calculator](/load-profitability-calculator.html) and get your real break-even from the [cost per mile calculator](/cost-per-mile-calculator.html).
+
+## Hot shot loads near me: staying regional
+
+If you want to stay close to home:
+
+- Search from your home base with a tight radius and sort by newest postings.
+- Track which brokers post in your area repeatedly and build a relationship with them.
+- Look at local industries. Construction, agriculture, equipment dealers and manufacturing all ship small open-deck freight.
+- After every delivery, ask the broker if they have anything heading back toward your area.
+
+## When the boards are not enough
+
+New hotshot authorities often run into the same problems: brokers who will not set up a new MC, loads that vanish before you can call, and rates that barely cover fuel. Options beyond the boards:
+
+- **Direct broker relationships** built through reliable service.
+- **Direct shipper work** with local businesses that move equipment or materials.
+- **A hotshot dispatcher** who already has broker contacts and can handle setup packets for you.
+
+For more options, see [how to find loads for your truck](/blog/how-to-find-loads-for-your-truck.html) and [how to negotiate freight rates](/blog/how-to-negotiate-freight-rates.html).
+
+## Load board or dispatcher?
+
+- **A load board** shows you postings. You still search, call, negotiate and handle paperwork.
+- **A dispatcher** does that work and uses boards along with broker contacts.
+
+Many hotshot owner-operators use both at different stages. If you are just getting started, see [how to start a hotshot business](/blog/how-to-start-a-hotshot-business.html), and before signing with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+
+## Hotshot dispatch with Texas Solutions
+
+Texas Solutions is a truck dispatch service, not a broker or carrier. Our 24/7 remote dispatchers find and negotiate hotshot loads nationwide, and you approve every load before it is booked. We work with brand-new MC authority from day one.
+
+Hotshot dispatch is **8% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and the first load is dispatched free. Read about our [hotshot dispatch service](/hotshot-dispatch.html) or [get a free estimate](/estimate.html?truck=hotshot).
+
+### Best Load Boards for Box Trucks and How to Find Box Truck Loads
+URL: https://dispatch.texassolutions.co/blog/best-load-boards-for-box-trucks.html
+Published: 2026-10-13
+
+Load boards are where most box truck owner-operators find their first loads, and many keep using them for years. The challenge is that box truck freight is a smaller slice of what gets posted, so the way you search matters as much as which board you pay for.
+
+This guide covers how to pick a box truck load board, how to set up searches that actually return usable freight, and what to do when the boards run dry. For a general comparison across all equipment types, see our guide to the [best load boards for owner-operators](/blog/best-load-boards-for-owner-operators.html).
+
+## What makes a load board good for box trucks
+
+When you compare boards, look past the total load count. A board with huge numbers of 53 ft van loads does not help a 26 ft box truck. Focus on:
+
+- **Box truck and straight truck volume in your lanes.** The question is how many loads you can actually haul, not how many exist.
+- **Equipment filters.** You need to filter for straight or box trucks, and ideally by length, weight and features like liftgate.
+- **Broker information.** Credit scores, days-to-pay and contact details help you avoid slow payers.
+- **Rate data.** Seeing recent lane rates helps you negotiate.
+- **Mobile app quality.** You will search from the cab, so it needs to work well on a phone.
+- **Cost against bookings.** A subscription is worth it only if it pays for itself in booked loads.
+
+## Well-known load boards to compare
+
+These are public, widely used boards. We are naming them so you know where to start, not endorsing any of them, and plans and features change, so check each site directly.
+
+### DAT
+
+One of the largest load boards in the US. Offers equipment filters, broker information and rate tools depending on the plan.
+
+### Truckstop
+
+Another large board with load search, broker credit information and rate tools depending on plan level.
+
+### 123Loadboard
+
+A board that many smaller carriers use, with load search and broker information features depending on plan.
+
+### Broker carrier portals
+
+Many larger brokers post loads on their own websites or apps for approved carriers. Once you are set up with a broker, their portal can be a steady source of freight.
+
+## How to find box truck loads on a board
+
+### Set your search up correctly
+
+- **Equipment:** straight truck or box truck. Also try small van or partial loads that fit your truck.
+- **Origin:** your current city, with a deadhead radius you can live with. Start around 50 to 100 miles and widen it if needed.
+- **Destination:** leave it open, or set states where you know reloads are good.
+- **Weight and length:** set to what your truck can legally haul, using your payload, not your GVWR.
+
+### Move fast, but check first
+
+Good box truck loads go quickly. Before you call:
+
+- Check the broker's credit and days-to-pay.
+- Confirm the load fits: pallet count, weight, liftgate needs, dock or no dock.
+- Ask about appointment times, detention terms and lumper charges.
+
+### Check the numbers before you say yes
+
+Example with assumed figures:
+
+- Load pays **$700** for 280 loaded miles, with 60 empty miles to pick up
+- Your all-in cost per mile (assumption): **$1.45**
+- Cost: (280 + 60) x $1.45 = **$493**
+- Profit: $700 - $493 = **$207**, before any dispatch or factoring fees
+- Effective rate per mile driven: $700 / 340 = **$2.06**
+
+A load that looks like $2.50 a mile ($700 / 280) is closer to $2.06 once the empty miles count. Run your own numbers with the [load profitability calculator](/load-profitability-calculator.html), and figure out your real cost with the [cost per mile calculator](/cost-per-mile-calculator.html).
+
+## Box truck loads near me: local search tips
+
+If you want to stay close to home:
+
+- Search by your home city with a small radius, then sort by posting time.
+- Note which brokers post in your area again and again, and call them directly.
+- Look for regional loads that let you get home most nights, and accept that they may pay less per load but more per mile.
+- Ask brokers you deliver for if they have anything going back toward your home base.
+
+## When load boards are not enough
+
+Boards are competitive, and new box truck carriers often see the same thing: good loads disappear before they can call, or brokers will not set up a new MC. A few other ways to find box truck loads:
+
+- **Direct broker relationships.** After a few clean loads, ask the broker for more freight in the same lanes.
+- **Shippers and local businesses.** Some freight never hits a board. We cover this in [box truck contracts and how to get them](/blog/box-truck-contracts-how-to-get-them.html).
+- **A dispatcher.** A dispatcher searches the boards, calls brokers, negotiates and handles setup packets for you.
+
+Our post on [how to find loads for your truck](/blog/how-to-find-loads-for-your-truck.html) covers more of these options.
+
+## Should you pay for a board or a dispatcher?
+
+They solve different problems.
+
+- **A load board** gives you access to postings. You still do the searching, calling, negotiating and paperwork.
+- **A dispatcher** does that work for you and usually uses boards as one of several tools.
+
+Some owner-operators start on their own with a board, then bring in a dispatcher once they are spending more time on the phone than driving. Others start with a dispatcher because their authority is new and they have no broker contacts yet. Either way, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html) before signing anything.
+
+## Box truck dispatch with Texas Solutions
+
+Texas Solutions is a dispatch service, not a broker or carrier. Our 24/7 remote dispatchers find and negotiate box truck loads nationwide, and you approve every load before it is booked. We work with brand-new MC authority from day one.
+
+Box truck and straight truck dispatch is **10% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and the first load is dispatched free. Learn more about our [box truck dispatch service](/box-truck-dispatch.html) or [get a free estimate](/estimate.html?truck=box-truck).
 
 ### Is a Truck Dispatcher Worth It? Self-Dispatch vs Dispatch Service
 URL: https://dispatch.texassolutions.co/blog/is-a-truck-dispatcher-worth-it.html
@@ -1743,55 +3371,55 @@ Box truck dispatch costs a higher percentage than semi dispatch (5%) because eac
 
 You will need your own MC and DOT numbers, insurance and a W-9. Then [get a free estimate](/estimate.html?truck=box-truck), read about our [box truck dispatch service](/box-truck-dispatch.html), or message us on WhatsApp.
 
-## Diesel prices by state (AAA daily state averages, 2026-10-12; EIA U.S. weekly average $6.199/gal, week of 2026-10-05)
-- Alabama: $5.923/gal (AAA daily state average, October 12, 2026)
-- Alaska: $6.551/gal (AAA daily state average, October 12, 2026)
-- Arizona: $6.200/gal (AAA daily state average, October 12, 2026)
-- Arkansas: $5.909/gal (AAA daily state average, October 12, 2026)
-- California: $8.380/gal (AAA daily state average, October 12, 2026)
-- Colorado: $6.310/gal (AAA daily state average, October 12, 2026)
-- Connecticut: $6.439/gal (AAA daily state average, October 12, 2026)
-- Delaware: $6.321/gal (AAA daily state average, October 12, 2026)
-- District of Columbia: $6.476/gal (AAA daily state average, October 12, 2026)
-- Florida: $5.863/gal (AAA daily state average, October 12, 2026)
-- Georgia: $5.726/gal (AAA daily state average, October 12, 2026)
-- Hawaii: $7.211/gal (AAA daily state average, October 12, 2026)
-- Idaho: $6.370/gal (AAA daily state average, October 12, 2026)
-- Illinois: $6.578/gal (AAA daily state average, October 12, 2026)
-- Indiana: $6.638/gal (AAA daily state average, October 12, 2026)
-- Iowa: $6.028/gal (AAA daily state average, October 12, 2026)
-- Kansas: $6.013/gal (AAA daily state average, October 12, 2026)
-- Kentucky: $6.115/gal (AAA daily state average, October 12, 2026)
-- Louisiana: $5.804/gal (AAA daily state average, October 12, 2026)
-- Maine: $6.454/gal (AAA daily state average, October 12, 2026)
-- Maryland: $6.368/gal (AAA daily state average, October 12, 2026)
-- Massachusetts: $6.324/gal (AAA daily state average, October 12, 2026)
-- Michigan: $6.489/gal (AAA daily state average, October 12, 2026)
-- Minnesota: $6.125/gal (AAA daily state average, October 12, 2026)
-- Mississippi: $5.870/gal (AAA daily state average, October 12, 2026)
-- Missouri: $5.997/gal (AAA daily state average, October 12, 2026)
-- Montana: $6.126/gal (AAA daily state average, October 12, 2026)
-- Nebraska: $6.036/gal (AAA daily state average, October 12, 2026)
-- Nevada: $6.723/gal (AAA daily state average, October 12, 2026)
-- New Hampshire: $6.348/gal (AAA daily state average, October 12, 2026)
-- New Jersey: $6.323/gal (AAA daily state average, October 12, 2026)
-- New Mexico: $5.978/gal (AAA daily state average, October 12, 2026)
-- New York: $6.513/gal (AAA daily state average, October 12, 2026)
-- North Carolina: $5.842/gal (AAA daily state average, October 12, 2026)
-- North Dakota: $5.992/gal (AAA daily state average, October 12, 2026)
-- Ohio: $6.090/gal (AAA daily state average, October 12, 2026)
-- Oklahoma: $5.849/gal (AAA daily state average, October 12, 2026)
-- Oregon: $6.747/gal (AAA daily state average, October 12, 2026)
-- Pennsylvania: $6.542/gal (AAA daily state average, October 12, 2026)
-- Rhode Island: $6.335/gal (AAA daily state average, October 12, 2026)
-- South Carolina: $5.770/gal (AAA daily state average, October 12, 2026)
-- South Dakota: $6.007/gal (AAA daily state average, October 12, 2026)
-- Tennessee: $5.998/gal (AAA daily state average, October 12, 2026)
-- Texas: $5.668/gal (AAA daily state average, October 12, 2026)
-- Utah: $6.279/gal (AAA daily state average, October 12, 2026)
-- Vermont: $6.384/gal (AAA daily state average, October 12, 2026)
-- Virginia: $6.225/gal (AAA daily state average, October 12, 2026)
-- Washington: $7.276/gal (AAA daily state average, October 12, 2026)
-- West Virginia: $6.392/gal (AAA daily state average, October 12, 2026)
-- Wisconsin: $6.187/gal (AAA daily state average, October 12, 2026)
-- Wyoming: $6.180/gal (AAA daily state average, October 12, 2026)
+## Diesel prices by state (AAA daily state averages, 2026-10-03; EIA U.S. weekly average $6.382/gal, week of 2026-09-28)
+- Alabama: $6.003/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Alaska: $6.593/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Arizona: $6.268/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Arkansas: $5.993/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- California: $8.379/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Colorado: $6.086/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Connecticut: $6.474/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Delaware: $6.414/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- District of Columbia: $6.502/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Florida: $5.876/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Georgia: $5.877/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Hawaii: $7.209/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Idaho: $6.507/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Illinois: $6.706/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Indiana: $6.776/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Iowa: $6.073/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Kansas: $6.067/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Kentucky: $6.216/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Louisiana: $5.869/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Maine: $6.467/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Maryland: $6.420/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Massachusetts: $6.357/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Michigan: $6.641/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Minnesota: $6.191/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Mississippi: $5.933/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Missouri: $6.106/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Montana: $6.218/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Nebraska: $6.030/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Nevada: $6.783/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- New Hampshire: $6.384/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- New Jersey: $6.373/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- New Mexico: $6.056/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- New York: $6.520/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- North Carolina: $6.038/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- North Dakota: $6.079/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Ohio: $6.528/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Oklahoma: $5.844/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Oregon: $6.814/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Pennsylvania: $6.566/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Rhode Island: $6.321/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- South Carolina: $5.885/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- South Dakota: $6.012/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Tennessee: $6.059/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Texas: $5.777/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Utah: $6.463/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Vermont: $6.411/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Virginia: $6.276/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Washington: $7.363/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- West Virginia: $6.432/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Wisconsin: $6.347/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
+- Wyoming: $6.216/gal (AAA daily state average, October 3, 2026 (stale: the source has not updated since))
