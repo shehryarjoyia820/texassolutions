@@ -22,6 +22,8 @@ faq:
 
 For most small carriers, the search for truck loads starts on a load board. It is often the first place a new authority finds freight, and it remains a daily tool for many experienced owner-operators. This guide explains what a **load board** is, how carriers use one, and how to judge the loads for trucks you see posted.
 
+If you are working out how to find loads for trucks you own or drive, the load board is where most carriers start.
+
 ## What a load board is
 
 A load board is an online marketplace. Freight brokers, and sometimes shippers, post loads that need a truck. Carriers and dispatchers search those posts and contact the poster to book.

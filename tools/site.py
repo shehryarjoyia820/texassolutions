@@ -719,7 +719,7 @@ def build_home():
   <div class="prose rv">
     <span class="eyebrow">Truck dispatch services USA</span>
     <h2 style="margin-top:8px">Trucking dispatch services for every kind of carrier</h2>
-    <p>Texas Solutions is a truck dispatch company serving carriers across the USA: an independent truck dispatcher team that works for you, not for brokers. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
+    <p>Texas Solutions is a trucking dispatch company serving carriers across the USA: an independent truck dispatcher team that works for you, not for brokers. Our freight dispatch services cover every lane in the lower 48, and the best truck dispatch company for you is the one that is clear about its fee, so ours is printed on every page. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
     <ul>
       <li><a href="owner-operator-dispatch.html"><b>Dispatch services for owner-operators</b></a> and small trucking companies: one truck or a small fleet.</li>
       <li><a href="dispatch-for-new-authority.html"><b>Dispatch for new authority</b></a>: brand-new MC numbers from day one.</li>
@@ -2534,6 +2534,7 @@ def build_state_dispatch():
     <p>{esc(info['note'])}</p>
     <ul>
       <li><b>Freight hubs:</b> {esc(listing(hubs))}</li>
+      <li><b>Local dispatch:</b> truck dispatcher {esc(hubs[0])}, box truck dispatch {esc(hubs[0])} and hotshot dispatch {esc(hubs[0])} carriers book with the same 24/7 team</li>
       <li><b>{roads}:</b> {esc(listing(info['interstates']))}</li>
       <li><b>Common freight:</b> {esc(listing(info['freight']))}</li>
       {f"<li><b>Ports and gateways:</b> {esc(listing(info['ports']))}</li>" if info['ports'] else ""}
@@ -2565,9 +2566,9 @@ def build_state_dispatch():
   <div class="chip-row" style="justify-content:flex-start">{nbs}<a class="chip" href="truck-dispatch-by-state.html">All 50 states</a></div>
 </div></section>
 {band(f"Running freight in {name}?", "Semi trucks 5%, hotshots 8%, box trucks 10% of weekly gross. First load free, 24/7 dispatchers, new MC welcome.")}"""
-        title = f"Truck Dispatch Services in {name} | Texas Solutions"
+        title = f"Truck Dispatch Services {name} | Texas Solutions"
         if len(title) > 62:
-            title = f"Truck Dispatch Services in {name}"
+            title = f"Truck Dispatch Services {name}"
         desc = (f"24/7 truck dispatch in {name} for owner-operators and small fleets: {listing(hubs[:3])}. "
                 f"Semi 5%, hotshot 8%, box truck 10%. First load free.")
         if len(desc) > 158:

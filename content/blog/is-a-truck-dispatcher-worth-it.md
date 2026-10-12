@@ -111,6 +111,10 @@ At $3.00 a mile you would need about 3,334 miles to gross $10,000. That is a lot
 
 No dispatcher can honestly promise a weekly income. Use the [load profitability calculator](/load-profitability-calculator.html) to test real loads against your own costs.
 
+## Is truck dispatching worth it in 2026?
+
+Freight rates and diesel prices move every season, so the answer depends on your truck and lanes rather than the year. Truck dispatching is worth it in 2026 when the dispatcher's fee is smaller than what you gain in better rates, fewer empty miles and the hours you get back. Run your own numbers with the [load profitability calculator](/load-profitability-calculator.html) before you decide.
+
 ## How to decide
 
 Ask yourself:

@@ -179,6 +179,8 @@ FAQS = [
      "Percentages vary by equipment and by what is included. Compare the total value, not only the rate: does the fee include broker setups, invoicing and negotiation, and is there a setup fee or contract? Texas Solutions charges 5% of weekly gross for OTR semis, with no setup fee or contract."),
     ("Do you dispatch small fleets with 3 to 5 trucks?",
      "Yes. Each truck is dispatched to its own equipment, lanes and home time, at the same percentage per truck. Fleet owners get one point of contact for every truck."),
+    ("Is a truck dispatch service worth it?",
+     "For many owner-operators, yes, when it saves hours on load boards, cuts deadhead and wins better rates by more than the fee. It is less useful if you already have steady direct freight. Results vary, so compare your weekly gross and empty miles before and after."),
     ("Do you dispatch nationwide or only in Texas?",
      "Nationwide. Our head office is in Midland, Texas, but our dispatchers work remotely across US time zones and book loads for carriers in all 48 lower states, from California and Washington to Florida, New Jersey and Illinois."),
     ("Do you offer a flat-rate dispatch plan?",
@@ -230,6 +232,8 @@ LANDING = [
             ("Do you dispatch non-CDL box trucks?", "Yes, as long as you run under your own MC authority. Tell us your truck size and weight rating and we search freight that fits."),
             ("Do you dispatch 26 ft box trucks?", "Yes. 26 ft box trucks are the most common truck on our box truck desk. We match loads to your box length, liftgate and payload, and plan around your home time."),
             ("Can you dispatch a box truck with new authority?", "Yes. We work with new MC numbers from day one and look for brokers that accept new authorities for box truck freight. Your first load is dispatched free."),
+            ("Is there a dispatcher for box truck with new authority?", "Yes. A dispatcher for box truck with new authority needs brokers that accept new MC numbers, and that is where we start: your packet goes to those brokers first, and your first load is dispatched free."),
+            ("Is there box truck dispatch near me?", "Box truck dispatch near me no longer means an office down the road. Our dispatchers are remote and work 24/7 across US time zones, so wherever your truck is, the dispatcher searches loads that pick up near you."),
             ("How do I find box truck loads near me?", "Box truck freight is posted on load boards and handed out directly by brokers and regional shippers. Your dispatcher searches around your current location and home base, calls the brokers who move box truck freight, and lines up the next load before the current one delivers."),
         ],
     },
@@ -264,7 +268,7 @@ LANDING = [
         "lede": "Open-deck freight searched, sized up and negotiated for your flatbed or step deck.",
         "answer": "Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets nationwide. Dispatchers find open-deck loads that often pay $5-7 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5% of weekly gross for OTR semis, with no flat rate.",
         "body": [
-            "Open-deck freight comes with more questions than a sealed trailer: dimensions, weight, tarps, straps and chains, and whether a step deck is needed for height. We ask those questions before the load reaches you.",
+            "Our flatbed dispatch services start with the details. Open-deck freight comes with more questions than a sealed trailer: dimensions, weight, tarps, straps and chains, and whether a step deck is needed for height. We ask those questions before the load reaches you.",
             "Open-deck freight moves in every region: steel from the Midwest and South, lumber from the Southeast and Pacific Northwest, building materials around every growing metro, and machinery and energy equipment from Texas to the Dakotas.",
         ],
         "faqs": [
@@ -342,6 +346,7 @@ LANDING = [
             ]),
         ],
         "faqs": [("Is a dispatcher worth it for an owner-operator?", "For many, yes, when the dispatcher saves time, cuts deadhead and negotiates better loads by more than the fee. Results vary and no dispatcher can guarantee earnings."),
+                 ("How do I find a dispatcher for my truck?", "Look for a dispatcher who works for the carrier, not a broker, publishes the fee, has no long-term contract and lets you approve every load. You can reach a Texas Solutions dispatcher 24/7 by phone, text or WhatsApp at (838) 910-3147."),
                  ("I need a dispatcher for my truck. How do I start?", "Call, text or WhatsApp us with your MC number, truck type and the lanes you want to run. We send a short agreement, collect your W-9 and insurance certificate, and start searching loads, usually the same day. Your first load is dispatched free."),
                  ("Do you offer dispatch for one truck?", "Yes. Most of the carriers we work with run one truck. The fee is the same percentage of weekly gross, and your first load is dispatched free."),
                  ("Can you compare dispatch for a small fleet of 3 to 5 trucks?", "Each truck pays the same percentage of its own weekly gross: 5% for semis, 8% for hotshots, 10% for box trucks. There is no fleet setup fee, and each truck gets lanes planned for its equipment and home time.")],
@@ -352,7 +357,7 @@ LANDING = [
         "description": "Truck dispatch for new authority and new MC numbers from day one: broker setups, brokers that accept new MCs, first load free, 24/7 dispatchers, no contract.",
         "keywords": "dispatch for new authority, dispatch service for new authority, dispatch for new MC number, dispatch services for new MC number, dispatcher for new trucking company, dispatch for carriers with new authority, dispatcher who works with new MC, brokers that work with new authority, how to get loads with new authority",
         "h1": "Dispatch for New Authority",
-        "lede": "A dispatcher who works with a new MC from day one: broker setups, the brokers that accept new authorities, and your first load dispatched free.",
+        "lede": "A dispatch service for new authority that works with a new MC from day one: broker setups, the brokers that accept new authorities, and your first load dispatched free.",
         "answer": "Texas Solutions dispatches carriers with brand-new MC authority from day one. Dispatchers send your carrier packets, find brokers that accept new MC numbers, negotiate every load and handle rate confirmations and invoicing, 24/7. Your first load is dispatched free; after that the fee is 5% of weekly gross for semis, 8% for hotshots and 10% for box trucks.",
         "body": [
             "The first months with a new MC number are the hardest. Many brokers want a few months of authority history, insurance on file and a clean safety record before they book you, and every broker has its own setup packet. That is where most new trucking companies lose time and money.",
@@ -396,7 +401,7 @@ LANDING = [
         "lede": "The paperwork behind every load, handled: broker setups, invoicing, detention and lumper collection, factoring, IFTA, DOT compliance and MC authority setup.",
         "answer": "Texas Solutions handles trucking back-office work alongside dispatch: broker carrier packets and carrier setup with brokers, rate confirmations, invoicing and billing, detention and lumper fee collection, factoring setup, IFTA filing, DOT compliance help and MC authority setup. Dispatchers are available 24/7, and the first load is dispatched free.",
         "body": [
-            "Hauling the load is half the job. The other half is the carrier packet before it, and the invoice, the detention claim and the fuel tax report after it. Missed paperwork means late pay and money left on the table.",
+            "These are trucking paperwork services and trucking compliance services in one place: rate negotiation for truckers, IFTA filing services, and factoring for trucking companies set up and coordinated by the same team. Hauling the load is half the job. The other half is the carrier packet before it, and the invoice, the detention claim and the fuel tax report after it. Missed paperwork means late pay and money left on the table.",
             "Our team handles that paperwork as part of dispatch, so the same people who booked the load make sure it gets billed and paid. Ask us what is included for your truck when you get your estimate.",
         ],
         "sections": [
@@ -441,7 +446,7 @@ LANDING = [
         "lede": "One dispatcher for your tractor, whatever trailer is behind it: dry van, reefer, flatbed, step deck or power only.",
         "answer": "Texas Solutions provides semi truck dispatch services across the USA for owner-operators and small fleets running dry van, reefer, flatbed, step deck and power only. Dispatchers search loads, negotiate every rate, handle broker setups and plan lanes around your home time, for 5% of weekly gross on OTR semis with no flat rate.",
         "body": [
-            "A semi earns when it is loaded and moving in the right direction. Our dispatchers plan each week so the next load picks up close to where the last one delivers, which keeps deadhead down and your truck on the lanes you prefer.",
+            "Our freight dispatch services for semi trucks start with the lane. A semi earns when it is loaded and moving in the right direction. Our dispatchers plan each week so the next load picks up close to where the last one delivers, which keeps deadhead down and your truck on the lanes you prefer.",
             "We match freight to your trailer and your limits before it reaches you: weight and dimensions for open deck, temperature and appointment times for reefer, drop-and-hook programs for power only, and live or drop for dry van.",
             "Most semis on our desk gross between $8,000 and $10,000 a week, though every lane and season is different and nothing is guaranteed. The fee is the same 5% of weekly gross whichever trailer you pull.",
         ],
@@ -468,7 +473,7 @@ LANDING = [
         "lede": "Every truck planned on its own lanes and home time, with one point of contact for the owner.",
         "answer": "Texas Solutions dispatches small fleets and small trucking companies with roughly 2 to 10 trucks. Each truck is planned on its own equipment, lanes and driver home time, and the owner gets one point of contact and a weekly summary. The fee is per truck: 5% of weekly gross for semis, 8% for hotshots and 10% for box trucks, with no fleet setup fee.",
         "body": [
-            "Running a few trucks is a different job from running one. The owner ends up dispatching at night, answering drivers and chasing invoices instead of growing the business. A dispatch team takes the daily load search and broker calls off your desk while you stay in control of rates and lanes.",
+            "Our dispatch services for small trucking companies are built around the owner. As a dispatch service for small fleets, we plan every truck separately. Running a few trucks is a different job from running one. The owner ends up dispatching at night, answering drivers and chasing invoices instead of growing the business. A dispatch team takes the daily load search and broker calls off your desk while you stay in control of rates and lanes.",
             "Mixed fleets are normal for us. A company can run a dry van, a reefer and two box trucks, and each truck still gets freight that fits its equipment and its driver's schedule.",
             "When you add a truck, we add it to the plan. There is no extra setup fee and no long-term contract, and the first load on a new truck is planned with you before it is booked.",
         ],
@@ -498,7 +503,7 @@ LANDING = [
         "body": [
             "Texas is one of the largest freight markets in the country, with energy, manufacturing, cross-border and port freight moving through it every day.",
             "Our head office is in Midland, and our remote dispatchers book Texas freight for flatbed, hotshot, dry van, reefer, power only and box trucks every day, alongside carriers in every other state.",
-            "Houston is one of the busiest hotshot markets in the country, with energy, petrochemical and construction equipment moving to job sites across the Gulf Coast. Dallas-Fort Worth is a national distribution hub for dry van and reefer freight, and Laredo is the largest truck crossing on the Mexico border.",
+            "Carriers ask us most often for hotshot dispatch Houston lanes and for a truck dispatcher Dallas carriers can reach at night. Houston is one of the busiest hotshot markets in the country, with energy, petrochemical and construction equipment moving to job sites across the Gulf Coast. Dallas-Fort Worth is a national distribution hub for dry van and reefer freight, and Laredo is the largest truck crossing on the Mexico border.",
         ],
         "faqs": [("Where is Texas Solutions located?", "401 W Kentucky Ave, Midland, Texas. We dispatch carriers throughout the United States."),
                  ("Do you offer truck dispatch services in Houston and Dallas?", "Yes. We dispatch carriers based in Houston, Dallas-Fort Worth and across Texas, including hotshot dispatch in Texas and the Permian Basin, 24/7, with your first load dispatched free."),
@@ -556,7 +561,8 @@ LANDING = [
                 "Nobody guarantees rates or earnings; markets move.",
             ]),
         ],
-        "faqs": [("Can a dispatcher guarantee my weekly gross?", "No. Rates and freight volume change with the market, and a reputable dispatcher will not guarantee earnings.")],
+        "faqs": [
+            ("What is truck dispatch services?", "Truck dispatch services are a back-office service for carriers: a dispatcher finds and negotiates loads, handles broker setup and paperwork, and supports the driver on the road, for a fee paid by the carrier. Texas Solutions charges 5% of weekly gross for semis, 8% for hotshots and 10% for box trucks."),("Can a dispatcher guarantee my weekly gross?", "No. Rates and freight volume change with the market, and a reputable dispatcher will not guarantee earnings.")],
     },
 ]
 

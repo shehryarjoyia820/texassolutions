@@ -78,6 +78,9 @@ Percentages vary by equipment and by what is included. Compare the total value, 
 ### Do you dispatch small fleets with 3 to 5 trucks?
 Yes. Each truck is dispatched to its own equipment, lanes and home time, at the same percentage per truck. Fleet owners get one point of contact for every truck.
 
+### Is a truck dispatch service worth it?
+For many owner-operators, yes, when it saves hours on load boards, cuts deadhead and wins better rates by more than the fee. It is less useful if you already have steady direct freight. Results vary, so compare your weekly gross and empty miles before and after.
+
 ### Do you dispatch nationwide or only in Texas?
 Nationwide. Our head office is in Midland, Texas, but our dispatchers work remotely across US time zones and book loads for carriers in all 48 lower states, from California and Washington to Florida, New Jersey and Illinois.
 
@@ -101,6 +104,12 @@ Yes. 26 ft box trucks are the most common truck on our box truck desk. We match 
 
 ### Can you dispatch a box truck with new authority?
 Yes. We work with new MC numbers from day one and look for brokers that accept new authorities for box truck freight. Your first load is dispatched free.
+
+### Is there a dispatcher for box truck with new authority?
+Yes. A dispatcher for box truck with new authority needs brokers that accept new MC numbers, and that is where we start: your packet goes to those brokers first, and your first load is dispatched free.
+
+### Is there box truck dispatch near me?
+Box truck dispatch near me no longer means an office down the road. Our dispatchers are remote and work 24/7 across US time zones, so wherever your truck is, the dispatcher searches loads that pick up near you.
 
 ### How do I find box truck loads near me?
 Box truck freight is posted on load boards and handed out directly by brokers and regional shippers. Your dispatcher searches around your current location and home base, calls the brokers who move box truck freight, and lines up the next load before the current one delivers.
@@ -146,6 +155,9 @@ No. The trailer is supplied by the shipper, broker or a carrier program. You pro
 
 ### Is a dispatcher worth it for an owner-operator?
 For many, yes, when the dispatcher saves time, cuts deadhead and negotiates better loads by more than the fee. Results vary and no dispatcher can guarantee earnings.
+
+### How do I find a dispatcher for my truck?
+Look for a dispatcher who works for the carrier, not a broker, publishes the fee, has no long-term contract and lets you approve every load. You can reach a Texas Solutions dispatcher 24/7 by phone, text or WhatsApp at (838) 910-3147.
 
 ### I need a dispatcher for my truck. How do I start?
 Call, text or WhatsApp us with your MC number, truck type and the lanes you want to run. We send a short agreement, collect your W-9 and insurance certificate, and start searching loads, usually the same day. Your first load is dispatched free.
@@ -209,6 +221,9 @@ Our dispatchers are remote, so Dallas-Fort Worth carriers reach one 24/7 by phon
 
 ### Is there a truck dispatcher near me in Texas?
 Our office is in Midland, and our dispatchers work remotely around the clock, so carriers anywhere in Texas reach a dispatcher by phone, text or WhatsApp at (838) 910-3147.
+
+### What is truck dispatch services?
+Truck dispatch services are a back-office service for carriers: a dispatcher finds and negotiates loads, handles broker setup and paperwork, and supports the driver on the road, for a fee paid by the carrier. Texas Solutions charges 5% of weekly gross for semis, 8% for hotshots and 10% for box trucks.
 
 ### Can a dispatcher guarantee my weekly gross?
 No. Rates and freight volume change with the market, and a reputable dispatcher will not guarantee earnings.
@@ -422,6 +437,8 @@ URL: https://dispatch.texassolutions.co/blog/truck-loads-and-load-boards-guide.h
 Published: 2026-10-13
 
 For most small carriers, the search for truck loads starts on a load board. It is often the first place a new authority finds freight, and it remains a daily tool for many experienced owner-operators. This guide explains what a **load board** is, how carriers use one, and how to judge the loads for trucks you see posted.
+
+If you are working out how to find loads for trucks you own or drive, the load board is where most carriers start.
 
 ## What a load board is
 
@@ -2095,6 +2112,10 @@ What is left: $10,000 - $4,000 - $500 - $300 = **$5,200**, before taxes.
 At $3.00 a mile you would need about 3,334 miles to gross $10,000. That is a lot of driving for one driver under hours-of-service rules. Some weeks will be strong. Others will have breakdowns, slow markets or home time.
 
 No dispatcher can honestly promise a weekly income. Use the [load profitability calculator](/load-profitability-calculator.html) to test real loads against your own costs.
+
+## Is truck dispatching worth it in 2026?
+
+Freight rates and diesel prices move every season, so the answer depends on your truck and lanes rather than the year. Truck dispatching is worth it in 2026 when the dispatcher's fee is smaller than what you gain in better rates, fewer empty miles and the hours you get back. Run your own numbers with the [load profitability calculator](/load-profitability-calculator.html) before you decide.
 
 ## How to decide
 
