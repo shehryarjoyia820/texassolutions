@@ -2666,10 +2666,9 @@ def build_404():
     body = f"""{phero("Not found", "This page took a wrong exit.", "The page you are looking for does not exist. Try one of these instead.", ctas=False)}
 <section class="sec"><div class="wrap"><div class="chip-row" style="justify-content:flex-start">
 <a class="chip" href="index.html">Home</a><a class="chip" href="estimate.html">Free Estimate</a><a class="chip" href="truck-dispatch-rates.html">Dispatch Rates</a><a class="chip" href="contact.html">Contact</a>
-{''.join(f'<a class="chip" href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING)}
+{''.join(f'<a class="chip" href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING if not p.get("hide_nav"))}
 </div></div></section>"""
     shell = page("/404.html", "Page Not Found | " + C.BRAND, "Page not found.", "truck dispatch", [], body)
-    shell = shell.replace('content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"', 'content="noindex"')
     shell = re.sub(r'(href|src)="(?!https?:|/|#|tel:|mailto:|data:)', r'\1="/', shell)
     write("404.html", shell)
 
@@ -2759,7 +2758,8 @@ def build_site_files():
             "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "anthropic-ai",
             "PerplexityBot", "Perplexity-User", "Google-Extended", "GoogleOther", "Gemini-Deep-Research", "DuckAssistBot",
             "CCBot", "Meta-ExternalAgent", "Meta-ExternalFetcher", "Amazonbot", "cohere-ai", "MistralAI-User", "YouBot"]
-    block = ["Allow: /", "Disallow: /admin/", "Disallow: /content/", "Disallow: /tools/", "Disallow: /docs/", "Disallow: /head-codes.html"]
+    # Every crawler may crawl everything. The admin login page carries its own noindex tag instead.
+    block = ["Allow: /"]
     robots = ["# dispatch.texassolutions.co: search engines and AI answer engines are welcome.",
               f"# Plain-text summary for AI tools: {C.BASE}/llms.txt (full text: {C.BASE}/llms-full.txt)",
               f"# Blog RSS feed: {C.BASE}/feed.xml", "",

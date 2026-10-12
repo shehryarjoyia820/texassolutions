@@ -4,11 +4,6 @@
 
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /content/
-Disallow: /tools/
-Disallow: /docs/
-Disallow: /head-codes.html
 
 User-agent: Googlebot
 User-agent: Googlebot-Image
@@ -39,11 +34,6 @@ User-agent: cohere-ai
 User-agent: MistralAI-User
 User-agent: YouBot
 Allow: /
-Disallow: /admin/
-Disallow: /content/
-Disallow: /tools/
-Disallow: /docs/
-Disallow: /head-codes.html
 
 Sitemap: https://dispatch.texassolutions.co/sitemap.xml
 Sitemap: https://dispatch.texassolutions.co/sitemap-pages.xml
