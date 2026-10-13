@@ -272,3 +272,10 @@ Positioning: nationwide USA dispatch (all 48 lower states); Texas is only the he
 | How-it-works / informational | `/what-does-a-truck-dispatcher-do.html`, blog `how-does-truck-dispatching-work`, `how-to-get-amazon-relay` content inside `box-truck-contracts-how-to-get-them` |
 
 Not targeted (owner decision, 13 Oct 2026): dispatcher jobs, salary, training, courses, certification, dispatch software/apps, tow and dump truck dispatch, Pakistan-business queries. Use these as negative keywords in paid ads.
+
+### Added 13 Oct 2026 from truck_dispatch_usa_keywords.xlsx
+- Core dispatch variants (freight/cargo/trucking dispatcher, dispatching trucks): blog `freight-dispatcher-vs-truck-dispatcher`, home, semi page.
+- MC number / trucking authority (44 kw): `/trucking-authority-setup.html` + expanded blog `how-to-get-mc-number-authority-owner-operator`.
+- Load board variants (truck boards, loading board, load boards for truckers, truckload load board): blog `truck-loads-and-load-boards-guide`.
+- Fuel cards: blog `how-to-choose-a-fuel-card-for-truckers` (no brands, no partnership).
+- Not targeted: training/course, how to become a dispatcher, dispatch from home, dispatch software.
