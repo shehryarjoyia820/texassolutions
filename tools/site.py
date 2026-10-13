@@ -249,14 +249,18 @@ def header(current):
 <nav class="mnav" id="mnav" aria-label="Mobile">
     <a href="index.html">Home</a>
 {mlinks}
-    <span class="mnav-label">Dispatch Services</span>
-    <div class="mnav-sub">
+    <details class="mnav-group">
+      <summary>Dispatch Services</summary>
+      <div class="mnav-sub">
 {msvc}
-    </div>
-    <span class="mnav-label">Free Tools</span>
-    <div class="mnav-sub">
+      </div>
+    </details>
+    <details class="mnav-group">
+      <summary>Free Tools</summary>
+      <div class="mnav-sub">
 {mtools}
-    </div>
+      </div>
+    </details>
     <a class="btn btn-red" href="estimate.html">Get a Free Estimate</a>
     <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp a Dispatcher</a>
 </nav>"""

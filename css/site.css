@@ -818,3 +818,23 @@ h1 { font-size: clamp(34px, 5vw, 60px); }
 /* accessibility: small red text uses the darker brand red (>= 4.5:1 on white and off-white) */
 .eyebrow, .hero .eyebrow, .brand span small, .form label.fl i, .oneof-hint i { color: var(--red-600); }
 .price .tag { background: var(--red-600); }
+
+/* Mobile menu fixes (Oct 2026): sits under the header, clears the bottom call bar, collapsible groups, X icon */
+@media (max-width: 1040px) {
+  .mnav { top: var(--mnav-top, 109px); right: 0; bottom: 0; left: 0; padding-bottom: calc(28px + env(safe-area-inset-bottom)); overscroll-behavior: contain; }
+  .mnav-group { border-bottom: 1px solid var(--grey-2, var(--line)); }
+  .mnav-group summary { list-style: none; display: flex; align-items: center; justify-content: space-between; padding: 14px 4px; font-weight: 700; font-size: 18px; color: var(--ink); cursor: pointer; min-height: 48px; }
+  .mnav-group summary::-webkit-details-marker { display: none; }
+  .mnav-group summary::after { content: ''; width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); margin-right: 6px; transition: transform .2s; }
+  .mnav-group[open] summary::after { transform: rotate(-135deg); }
+  .mnav-group .mnav-sub { padding-bottom: 8px; }
+  .mnav-group .mnav-sub a:last-child { border-bottom: 0; }
+  .mnav a.btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 20px; border-bottom: 0; font-size: 16px; }
+  .mnav a.btn svg { width: 20px; height: 20px; }
+  .burger[aria-expanded="true"] span { background: transparent; }
+  .burger[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+  .burger[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
+}
+@media (max-width: 640px) {
+  .mnav { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
+}

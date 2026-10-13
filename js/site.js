@@ -58,12 +58,19 @@
   var burger = document.querySelector('.burger');
   var mnav = document.getElementById('mnav');
   if (burger && mnav) {
-    burger.addEventListener('click', function () {
-      var open = mnav.classList.toggle('open');
+    // The menu starts exactly under the header, whether or not the top bar is still on screen.
+    var placeMenu = function () { if (header) mnav.style.setProperty('--mnav-top', Math.round(header.getBoundingClientRect().bottom) + 'px'); };
+    var setMenu = function (open) {
+      if (open) placeMenu();
+      mnav.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       document.body.style.overflow = open ? 'hidden' : '';
-    });
-    mnav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { mnav.classList.remove('open'); document.body.style.overflow = ''; } });
+    };
+    burger.addEventListener('click', function () { setMenu(!mnav.classList.contains('open')); });
+    mnav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && mnav.classList.contains('open')) { setMenu(false); burger.focus(); } });
+    window.addEventListener('resize', function () { if (mnav.classList.contains('open')) placeMenu(); });
   }
   each(document.querySelectorAll('.dd > button'), function (b) {
     b.addEventListener('click', function () {
