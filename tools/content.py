@@ -225,7 +225,7 @@ LANDING = [
         "body": [
             "Box truck freight moves in smaller, more frequent loads, which means more calls, more broker setups and more paperwork for every dollar your truck earns. Our dispatchers work the box truck side of the load boards every day.",
             "We match freight to your box length, liftgate and payload, plan around your home time, and negotiate before anything reaches you. Typical OTR box trucks on our desk gross $7,000 to $9,000 a week.",
-            "Whether you run a 26 ft box truck, a smaller non-CDL box truck or a straight truck, your box truck dispatcher handles load search, broker setups, invoicing and rate confirmations, and is reachable 24/7.",
+            "Need a straight truck dispatch service? Straight trucks are dispatched the same way at the same 10%. Whether you run a 26 ft box truck, a smaller non-CDL box truck or a straight truck, your box truck dispatcher handles load search, broker setups, invoicing and rate confirmations, and is reachable 24/7.",
         ],
         "faqs": [
             ("How much is box truck dispatch?", "10% of weekly gross for OTR box trucks and straight trucks. On $7,000-$9,000 weekly gross that is about $700-$900 a week. No flat rate and no setup fee."),
@@ -380,7 +380,7 @@ LANDING = [
         "includes": [
             "Carrier setup with brokers that accept new MC numbers",
             "Load search, rate negotiation and lane planning",
-            "MC authority setup help if you have not filed yet",
+            "MC number and trucking authority setup help if you have not filed yet",
             "Invoicing, factoring setup and rate confirmations",
             "24/7 dispatchers by phone, text or WhatsApp",
             "First load dispatched free, no contract, no setup fee",
@@ -446,7 +446,7 @@ LANDING = [
         "lede": "One dispatcher for your tractor, whatever trailer is behind it: dry van, reefer, flatbed, step deck or power only.",
         "answer": "Texas Solutions provides semi truck dispatch services across the USA for owner-operators and small fleets running dry van, reefer, flatbed, step deck and power only. Dispatchers search loads, negotiate every rate, handle broker setups and plan lanes around your home time, for 5% of weekly gross on OTR semis with no flat rate.",
         "body": [
-            "Our freight dispatch services for semi trucks start with the lane. A semi earns when it is loaded and moving in the right direction. Our dispatchers plan each week so the next load picks up close to where the last one delivers, which keeps deadhead down and your truck on the lanes you prefer.",
+            "Our freight dispatch services for semi trucks start with the lane. Call it trucking dispatch, freight dispatching or dispatching trucks, the job is the same: keep your truck loaded on lanes you choose. A semi earns when it is loaded and moving in the right direction. Our dispatchers plan each week so the next load picks up close to where the last one delivers, which keeps deadhead down and your truck on the lanes you prefer.",
             "We match freight to your trailer and your limits before it reaches you: weight and dimensions for open deck, temperature and appointment times for reefer, drop-and-hook programs for power only, and live or drop for dry van.",
             "Most semis on our desk gross between $8,000 and $10,000 a week, though every lane and season is different and nothing is guaranteed. The fee is the same 5% of weekly gross whichever trailer you pull.",
         ],
@@ -490,6 +490,57 @@ LANDING = [
             ("How is dispatch priced for a fleet?", "Per truck, as a percentage of that truck's weekly gross: 5% for semis, 8% for hotshots and 10% for box trucks and straight trucks. A truck that does not run that week pays nothing."),
             ("Do my drivers talk to the dispatcher directly?", "Yes, if you want them to. Many fleet owners have drivers call the dispatcher for load details and updates, while the owner approves rates and lanes."),
             ("What makes a good dispatch company for a small fleet?", "Clear percentage pricing with no setup fee, no long-term contract, people you can reach day and night, and paperwork handled along with the loads. Ask any dispatch company how they plan multiple trucks so they do not compete for the same freight."),
+        ],
+    },
+    {
+        "file": "trucking-authority-setup.html", "nav": "MC Number & Authority Setup", "kind": "semi",
+        "title": "MC Number & Trucking Authority Setup | Texas Solutions",
+        "description": "Get your MC number and trucking authority set up the right way: USDOT and MC filing help, BOC-3 and insurance coordination, then dispatch from day one.",
+        "keywords": "mc number, motor carrier number, trucking authority, mc authority, motor carrier operating authority, dot and mc number, how to get mc number, trucking authority packages, carrier authority, how to get your own authority in trucking",
+        "h1": "MC Number and Trucking Authority Setup",
+        "lede": "From USDOT number to active MC authority, with a dispatcher ready to book your first load the day you can haul.",
+        "answer": "An MC number is the motor carrier number FMCSA issues with for-hire operating authority, which lets you haul regulated freight for other companies across state lines. Texas Solutions helps new carriers through each step: USDOT and MC applications, the BOC-3 process agent filing, insurance filings, UCR and broker packets. Government and insurance costs are paid by the carrier, and we start dispatching as soon as your authority is active.",
+        "body": [
+            "Getting your own authority in trucking is a sequence of filings, and each one waits on the last. A missed insurance filing or a BOC-3 that never reaches FMCSA can leave a new carrier waiting weeks with a truck that cannot haul.",
+            "We walk you through the order that saves the most time, check each filing before it goes in, and keep track of where your application stands. When the authority goes active, your broker packet is already prepared and your dispatcher is searching loads from brokers that accept new MC numbers.",
+            "Think of it as a trucking authority package without the mystery: you see every government fee and every provider you pay, and you keep full control of your own USDOT and MC numbers.",
+        ],
+        "sections": [
+            ("What is an MC number?", [
+                "MC stands for motor carrier. The MC number is issued with your motor carrier operating authority.",
+                "It shows brokers and shippers that you are allowed to haul regulated freight for hire across state lines.",
+                "A USDOT number identifies your company for safety records; most for-hire interstate carriers need both a DOT and MC number.",
+            ]),
+            ("How to get your DOT and MC number, step by step", [
+                "Form your business and get an EIN, so the authority is in the right legal name.",
+                "Apply to FMCSA for a USDOT number and for-hire operating authority (the MC number) through the FMCSA registration system.",
+                "File a BOC-3 so a process agent is on record in every state.",
+                "Have your insurance company file proof of liability coverage with FMCSA.",
+                "Register for UCR and set up IRP plates and IFTA in your base state if you run interstate.",
+                "Wait out the protest period; when FMCSA shows your authority as active, you can haul.",
+            ]),
+            ("Where we help", [
+                "A checklist for your truck type and the order to file in.",
+                "Checking applications and filings before they are submitted.",
+                "Coordinating with your insurance agent and BOC-3 provider so filings reach FMCSA.",
+                "Broker packet ready the day your authority goes active.",
+                "Dispatch for new authority from day one, with your first load free.",
+            ]),
+        ],
+        "includes": [
+            "Step-by-step USDOT and MC authority guidance",
+            "BOC-3 and insurance filing coordination",
+            "UCR, IRP and IFTA setup checklist",
+            "Broker carrier packet prepared in advance",
+            "Dispatch from day one of active authority",
+            "First load dispatched free",
+        ],
+        "pricing_note": "Government fees, insurance and BOC-3 costs are paid directly by you, and FMCSA lists the current filing fees on its website. Ask us about authority setup help when you call; once your authority is active, dispatch is 5% of weekly gross for semis, 8% for hotshots and 10% for box trucks.",
+        "faqs": [
+            ("What is a motor carrier number?", "A motor carrier number, or MC number, is the identifier FMCSA issues with your for-hire operating authority. Brokers check it before they book a carrier."),
+            ("How long does it take to get trucking authority?", "Many carriers see their authority go active a few weeks after applying, once insurance and BOC-3 filings are on record and the protest period has passed. Timelines vary, so check your status on FMCSA."),
+            ("What is in a trucking authority package?", "Usually guidance through the USDOT and MC applications, the BOC-3 filing, insurance filing coordination and registration checklists. Ask any provider which government fees are included and which you pay directly; with us, you pay all government and insurance costs yourself and keep full control of your numbers."),
+            ("Can I get dispatched as soon as my MC is active?", "Yes. We work with brand-new authority from day one, send your packet to brokers that accept new MC numbers, and dispatch your first load free."),
         ],
     },
     {
@@ -685,6 +736,9 @@ SEO = {
     '/texas-truck-dispatch.html': (
         'Truck Dispatch Services Texas | Houston, Dallas, Midland',
         'Truck dispatch services in Texas: Houston hotshot dispatch, Dallas-Fort Worth, San Antonio, Laredo and Permian Basin lanes, plus nationwide OTR.'),
+    '/trucking-authority-setup.html': (
+        'MC Number & Trucking Authority Setup | Texas Solutions',
+        'What an MC number is and how to get your DOT and MC number: USDOT, MC authority, BOC-3 and insurance filing help, then dispatch from day one.'),
     '/semi-truck-dispatch.html': (
         'Semi Truck Dispatch Services | Dispatcher for Semi Trucks',
         'Semi truck dispatch across the USA for dry van, reefer, flatbed, step deck and power only. 5% of weekly gross, OTR, no flat rate, first load free, 24/7.'),

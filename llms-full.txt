@@ -207,6 +207,18 @@ Yes, if you want them to. Many fleet owners have drivers call the dispatcher for
 ### What makes a good dispatch company for a small fleet?
 Clear percentage pricing with no setup fee, no long-term contract, people you can reach day and night, and paperwork handled along with the loads. Ask any dispatch company how they plan multiple trucks so they do not compete for the same freight.
 
+### What is a motor carrier number?
+A motor carrier number, or MC number, is the identifier FMCSA issues with your for-hire operating authority. Brokers check it before they book a carrier.
+
+### How long does it take to get trucking authority?
+Many carriers see their authority go active a few weeks after applying, once insurance and BOC-3 filings are on record and the protest period has passed. Timelines vary, so check your status on FMCSA.
+
+### What is in a trucking authority package?
+Usually guidance through the USDOT and MC applications, the BOC-3 filing, insurance filing coordination and registration checklists. Ask any provider which government fees are included and which you pay directly; with us, you pay all government and insurance costs yourself and keep full control of your numbers.
+
+### Can I get dispatched as soon as my MC is active?
+Yes. We work with brand-new authority from day one, send your packet to brokers that accept new MC numbers, and dispatch your first load free.
+
 ### Where is Texas Solutions located?
 401 W Kentucky Ave, Midland, Texas. We dispatch carriers throughout the United States.
 
@@ -438,7 +450,7 @@ Published: 2026-10-13
 
 For most small carriers, the search for truck loads starts on a load board. It is often the first place a new authority finds freight, and it remains a daily tool for many experienced owner-operators. This guide explains what a **load board** is, how carriers use one, and how to judge the loads for trucks you see posted.
 
-If you are working out how to find loads for trucks you own or drive, the load board is where most carriers start.
+If you are working out how to find loads for trucks you own or drive, the load board is where most carriers start. You will also hear them called truck boards, a loading board or a loads board; a load board for truckers is the same tool whatever the name, and most load boards for trucking list truckload, partial and expedited freight side by side. Some carriers keep one truckload load board for long hauls and a second, smaller board for local freight; load boards for truckers differ mainly in which brokers post on them.
 
 ## What a load board is
 
@@ -970,6 +982,132 @@ Getting loads without a broker is possible, but it is a long game built on servi
 
 See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html).
 
+### How to Choose a Fuel Card for Truckers: What to Compare
+URL: https://dispatch.texassolutions.co/blog/how-to-choose-a-fuel-card-for-truckers.html
+Published: 2026-10-13
+
+Fuel is usually the biggest bill an owner-operator pays that changes every week. A fuel card will not change the price of diesel, but the right one can trim what you pay per gallon, cut down on paperwork and make tax time less painful.
+
+There is no single best fuel card for truckers. Truck stop chains, fleet card companies and factoring companies all offer cards, and each is built around a different kind of customer. This guide explains how to compare them so you can pick one that fits the way you run.
+
+You will find plenty of lists of the best fuel cards for truckers online. We do not rank brands here. Discounts, fees and terms change often, and you should verify them directly with any provider before signing up.
+
+## Step 1: Know where you fuel today
+
+Before you look at any offer, pull your last two or three months of fuel receipts. Note:
+
+- Which truck stop chains and independent stations you use most
+- The states you fuel in, and which lanes you run regularly
+- About how many gallons you buy each month
+- Whether you ever fuel at cardlock or unattended sites
+
+A card with a strong discount at stations you never pass is worth very little. A card that works where you already stop is worth a lot more. If you are not sure what fuel costs on your lanes, check our [diesel prices by state](/diesel-prices/texas.html) pages, which exist for each state.
+
+## Step 2: Understand how the discount works
+
+This is the part that confuses most drivers. Fuel card discounts usually come in two forms.
+
+### Retail-minus
+
+You pay the posted pump price minus a set amount per gallon. It is easy to understand and easy to check against the sign. The discount may be different from one chain or location to another.
+
+### Cost-plus
+
+The price starts from what the station pays for fuel, then a markup is added. On some days and at some stations, this can come in well below the pump price. On others the gap is small. Cost-plus is harder to check because you cannot see the station's cost.
+
+### Other forms
+
+Some cards offer rebates paid later, points or rewards at certain chains, or discounts only at an in-network list of locations. Ask exactly when and how any rebate is paid.
+
+The only reliable way to compare is to look at what you would have paid on real fuel stops along your lanes, not at the headline number.
+
+## Step 3: Check network coverage
+
+The best trucking fuel cards for one driver may be useless for another, mostly because of coverage. Ask:
+
+- Which truck stop chains accept the card, and is the discount the same at each?
+- Does it work at independent stations, and is there any discount there?
+- Can you buy DEF, reefer fuel or other items on it?
+- Does it work in every state you run?
+
+If you run regional lanes, a card tied to one chain might be fine. If your lanes change week to week, broad acceptance matters more.
+
+## Step 4: Add up every fee
+
+A discount can disappear fast once fees are counted. Look for:
+
+- Monthly or annual card fees
+- Per-transaction fees
+- Fees for using out-of-network stations
+- Late payment charges and interest on credit cards
+- Fees for adding cards or for paper statements
+
+Ask the provider for a full fee schedule in writing. If they cannot give you one, keep looking.
+
+## Step 5: Credit or prepaid
+
+**Credit cards** give you a line to fuel on now and pay later. That helps cash flow between loads, but usually requires a credit check or business history, and carrying a balance can cost you.
+
+**Prepaid or debit-style cards** use money you load ahead of time. They can be easier to get for a new authority and help prevent overspending, but you need to keep the balance funded.
+
+**Cards through factoring companies** are another option. Some factoring companies let you fuel against your advances. That can be convenient, but read how fuel purchases are deducted and whether the card ties you more tightly to that factor. Our guide to [freight factoring](/blog/freight-factoring-for-owner-operators-explained.html) explains how factoring works.
+
+## Step 6: IFTA reporting and fuel tax data
+
+For an interstate carrier, a good fuel card for truckers is also a record-keeping tool. Look for:
+
+- Transaction reports that show gallons, price and state for every purchase
+- Downloadable reports by quarter
+- Easy matching between fuel records and your miles by state
+
+Clean fuel data makes filing much smoother. See our guide to [IFTA for owner-operators](/blog/ifta-for-owner-operators-how-to-file.html), or use the [IFTA mileage calculator](/ifta-mileage-calculator.html) to work out miles by state.
+
+## Step 7: Controls and security
+
+Even a one-truck operation benefits from basic controls, and small fleets need them more. Useful features include:
+
+- Purchase limits per day or per transaction
+- Restricting purchases to fuel only
+- Driver ID or PIN at the pump
+- Alerts for unusual transactions
+- A simple way to freeze a lost card
+
+## Worked example: how a per-gallon discount adds up
+
+Here is how a discount adds up over time. These are **assumptions for illustration only**, not a quote from any card:
+
+- Fuel economy: 6.3 miles per gallon
+- Miles driven: 10,000 per month
+- Hypothetical discount: 20 cents per gallon
+
+**Math:**
+
+1. Gallons per month: 10,000 / 6.3 = about **1,587 gallons**
+2. Monthly discount: 1,587 x $0.20 = about **$317**
+3. Yearly discount: $317 x 12 = about **$3,810**
+
+Now subtract any card fees. If the card cost, say, $15 a month in fees, the yearly benefit drops by $180. Also remember that a discount only helps if you actually fuel in network. Driving out of route to reach a discount station can cost more in fuel and time than it saves.
+
+Your numbers will differ with mpg, miles, discount and fees. Plug your own figures into the [truck fuel cost calculator](/truck-fuel-cost-calculator.html), and see how fuel fits into your total costs with the [cost per mile calculator](/cost-per-mile-calculator.html).
+
+## A short checklist before you apply
+
+- Does it work where I fuel today?
+- Is the discount retail-minus, cost-plus or a rebate, and how will I verify it?
+- What is the full fee schedule?
+- Credit, prepaid or factoring-linked, and what are the approval terms?
+- Does it give clean state-by-state data for IFTA?
+- Can I set limits and freeze a card quickly?
+- Can I cancel without a penalty?
+
+## Fuel savings start with the right loads
+
+A fuel card helps at the pump, but how you plan loads matters even more. Fewer empty miles means fewer gallons bought. Our post on [cutting fuel cost per mile](/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html) covers that side, and the [fuel surcharge calculator](/fuel-surcharge-calculator.html) helps you check whether a rate covers current diesel prices.
+
+Texas Solutions is a nationwide truck dispatch service, not a fuel card provider, and we have no fuel card partnerships. Our 24/7 remote dispatchers plan loads to keep deadhead down, and you approve every load. Our [back office services](/trucking-back-office-services.html) include IFTA filing, factoring setup and invoicing. OTR fees are 5% of weekly gross for semis, 8% for hotshots and 10% for box trucks and straight trucks, with no setup fee and no long-term contract, and your first load is free.
+
+We cannot promise any set savings, but we can help you run smarter lanes. See our [owner-operator dispatch](/owner-operator-dispatch.html) service or [get a free estimate](/estimate.html).
+
 ### How to Become an Owner-Operator: Lease-On or Your Own MC
 URL: https://dispatch.texassolutions.co/blog/how-to-become-an-owner-operator.html
 Published: 2026-10-13
@@ -1460,6 +1598,111 @@ For more on spotting bad offers, read [how to choose a truck dispatcher](/blog/h
 Texas Solutions is a truck dispatch service, not a broker or carrier. We dispatch dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck carriers nationwide, with remote dispatchers available 24/7. Fees for OTR are 5% for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no flat rate, no setup fee and no long-term contract. Your first load is dispatched free.
 
 See how our [owner-operator dispatch service](/owner-operator-dispatch.html) works, compare [truck dispatch rates](/truck-dispatch-rates.html), or [get a free estimate](/estimate.html) on your own numbers.
+
+### Freight Dispatcher vs Truck Dispatcher: Same Job, Different Name
+URL: https://dispatch.texassolutions.co/blog/freight-dispatcher-vs-truck-dispatcher.html
+Published: 2026-10-13
+
+Search for help finding loads and you will see a pile of job titles: **freight dispatcher**, truck dispatcher, trucking dispatcher, cargo dispatcher, load planner. If you run your own authority, it is fair to wonder whether these are different services with different prices.
+
+For a carrier in the US trucking industry, they are almost always the same thing. This post sorts out the names, explains what the work looks like day to day, and shows where the real lines are drawn: between a dispatcher and a broker, and between an outside service and in-house fleet dispatch.
+
+## Why there are so many names for one job
+
+The labels grew out of habit, region and marketing more than any legal definition. FMCSA does not license a "freight dispatcher" or a "truck dispatcher" as separate categories.
+
+Here is how the terms usually get used:
+
+- **Truck dispatcher / trucking dispatcher.** Named after the equipment. The focus is on keeping a specific truck loaded and moving.
+- **Freight dispatcher.** Named after what the truck hauls. Same job, described from the load side.
+- **Cargo dispatcher.** A less common variation, sometimes used by people coming from shipping or logistics backgrounds.
+- **Freight dispatch, cargo dispatch, trucking dispatch, dispatch trucking.** Names for the service itself rather than the person.
+
+So when a company advertises freight dispatching and another advertises truck dispatching, you are comparing the same kind of service. Judge them on who they work for, what they include and how they charge.
+
+## What a freight dispatcher does for a carrier
+
+We cover the full load cycle in [how truck dispatching works](/blog/how-does-truck-dispatching-work.html), so here is a shorter view of the daily routine.
+
+### Morning: planning the next move
+
+Freight dispatchers rarely just sit on a load board waiting for something to appear. A good one starts the day knowing where each truck will empty and how many hours each driver has left. From there they decide which markets to search, and whether it makes sense to reposition before booking.
+
+### Midday: finding and pricing freight
+
+Most of the day goes into dispatching freight: searching load boards, calling brokers they already have relationships with, and asking questions the posting leaves out. The goal is a load that fits the equipment, the hours and the carrier's minimum rate, with a sensible reload market at the other end.
+
+### Booking with your approval
+
+Once a load looks right, the dispatcher sends you the details. Nothing gets booked until you agree. After you say yes, they confirm with the broker and check the rate confirmation.
+
+### While the truck is loaded
+
+Dispatching trucks does not stop at the booking. Day to day, a dispatcher also:
+
+- Handles broker setup packets so you can haul for new brokers quickly
+- Sends updates when a pickup or delivery runs late
+- Tracks detention time and collects lumper receipts
+- Sends paperwork for invoicing or to your factoring company
+- Looks for the next load before you deliver, to keep empty miles down
+
+## Freight dispatcher vs freight broker
+
+This is the line that actually matters. A dispatcher works for the carrier. A broker works for the shipper's freight and earns the spread between the shipper's rate and what you get paid.
+
+Because a dispatcher is usually paid a percentage of your gross, the dispatcher earns more only when you earn more. A broker's margin moves the other way. That difference is covered in detail in [truck dispatcher vs freight broker](/blog/truck-dispatcher-vs-freight-broker.html), so we will not repeat it here. Put simply, a dispatcher helps you find and dispatch freight for your own truck, while a broker places a shipper's freight with whichever carrier will take it.
+
+One warning sign: if a "dispatch" company wants to take payment from shippers and pay you a lower amount, it is acting like a broker, whatever it calls itself.
+
+## Outside dispatch vs in-house fleet dispatch
+
+Large fleets often have their own dispatch department. Those dispatchers are employees who plan only that company's trucks, often around contract freight and company-driver schedules.
+
+An outside dispatch service is built for carriers who do not want to hire that staff:
+
+| | In-house fleet dispatch | Outside dispatch service |
+|---|---|---|
+| Who they work for | One fleet, as employees | Many independent carriers |
+| How they are paid | Salary or wages from the fleet | Usually a percentage of each truck's gross |
+| Who chooses loads | The fleet's planners | The carrier approves each load |
+| Best fit | Large fleets with steady freight | Owner-operators and small fleets |
+
+For a single truck or a small fleet, paying a full-time dispatcher often does not add up. A percentage-based trucking dispatch service scales with the truck instead. If you run several trucks, see our [small fleet dispatch](/small-fleet-dispatch.html) page.
+
+## How to pick a freight dispatch service
+
+Since the title tells you little, look at how the service operates. Ask these questions before you sign anything:
+
+1. **Do I approve every load?** Forced dispatch is a red flag.
+2. **What is the fee charged on?** Get the percentage and what counts as gross in writing.
+3. **Are there setup fees or a long contract?** You should be able to leave if it is not working.
+4. **Do you work with a new MC?** Many brokers avoid new authorities, so this takes extra effort.
+5. **What back office work is included?** Broker packets, invoicing, detention and lumper collection make a real difference to your week.
+6. **Are you a broker too?** You want someone clearly on the carrier side.
+7. **Who answers at night or on weekends?** Trucks break down and appointments change outside office hours.
+
+Also check the math on your own numbers. Know your cost per mile before you talk to anyone, using the [cost per mile calculator](/cost-per-mile-calculator.html), so you can tell whether the loads being offered actually pay. For more red flags, read [how to choose a truck dispatcher](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+
+## Matching the service to your equipment
+
+The work is the same across equipment types, but the freight is not. A box truck dispatcher spends more time on local and regional freight and tighter appointment windows. A hotshot dispatcher deals with partial loads and weight limits. A semi dispatcher juggles dry van, reefer, flatbed or power only markets.
+
+Ask whether the service already books freight for your type of truck. Texas Solutions dispatches [semi trucks](/semi-truck-dispatch.html), [hotshots](/hotshot-dispatch.html) and [box trucks](/box-truck-dispatch.html), among others.
+
+## How Texas Solutions handles freight dispatching
+
+Texas Solutions is a nationwide truck dispatch service. We are not a broker and not a carrier, so we stay on your side of every negotiation.
+
+- Remote dispatchers available 24/7
+- New MC authorities welcome from day one
+- Your first load is dispatched free
+- You approve every load before it is booked
+- OTR fees: 5% of weekly gross for semis, 8% for hotshots, 10% for box trucks and straight trucks
+- No flat rate, no setup fee, no long-term contract
+
+Our [back office services](/trucking-back-office-services.html) cover broker packets, invoicing, detention and lumper collection, factoring setup, IFTA filing, DOT compliance help and MC authority setup.
+
+No dispatcher can promise a set income, since rates depend on lanes, season and how much you run. What we can promise is a clear fee and a dispatcher who works for your truck. See our [owner-operator dispatch](/owner-operator-dispatch.html) service, compare [truck dispatch rates](/truck-dispatch-rates.html), or [get a free estimate](/estimate.html).
 
 ### Dry Van, Reefer, Flatbed and Power Only Loads: Finding and Pricing Them
 URL: https://dispatch.texassolutions.co/blog/dry-van-reefer-flatbed-power-only-loads.html
@@ -2928,6 +3171,12 @@ Published: 2026-09-23
 
 Almost every owner-operator hauling freight for other companies across state lines needs **their own operating authority**. Here is the process in the order that saves the most time, and what each piece is for. Rules and fees change, so confirm current requirements on the FMCSA website before you file.
 
+## What is an MC number?
+
+An MC number is a motor carrier number. FMCSA issues it with your motor carrier operating authority, the permission to haul regulated freight for other companies across state lines. When people talk about MC trucking or getting their own authority, this is the number they mean, and it is the first thing a broker checks before booking you.
+
+If you want help with the filings, see our [MC number and trucking authority setup](/trucking-authority-setup.html) page.
+
 ## USDOT number vs MC number
 
 | | USDOT number | MC number (operating authority) |
@@ -2947,6 +3196,35 @@ If you are a for-hire hotshot, box truck or semi operator crossing state lines, 
 5. **Get insurance and have it filed.** For-hire carriers hauling non-hazardous general freight are required to carry at least **$750,000** in public liability coverage, and your insurer files the proof with FMCSA. Most brokers also want cargo coverage, commonly $100,000.
 6. **Complete other registrations:** UCR (Unified Carrier Registration), IFTA and IRP if you run a qualifying vehicle, and Form 2290 for heavy vehicles.
 7. **Wait for authority to go active.** Once filings are on record and the protest period has passed, your MC status turns active.
+
+## How to get your own authority in trucking: quick checklist
+
+- Business entity and EIN in the name you will haul under
+- USDOT number and MC operating authority applications
+- BOC-3 process agent filing
+- Insurance filing from your insurer
+- UCR, plus IRP and IFTA if you run interstate
+- Broker packet ready for the day your carrier authority goes active
+
+## Common questions about trucking authority
+
+Truckers use a lot of names for the same thing: truckers authority, truck authority, authority for trucks, authority trucking or simply getting your own authority. They all mean FMCSA motor carrier authority and the MC trucking number that comes with it.
+
+### What is the MC number used for?
+
+Brokers and shippers use it to confirm you are allowed to haul their freight for hire, and FMCSA uses it to tie your insurance and process agent filings to your authority.
+
+### How to get DOT number and MC number at the same time?
+
+New carriers usually apply for both in the same FMCSA registration session. The USDOT number is issued first; the MC number and operating authority MC number status follow once your filings are processed.
+
+### How do you get your own authority for trucking if you are leased on now?
+
+Plan the switch: apply for your own USDOT and MC numbers, line up insurance and a BOC-3 provider, and keep running under your current carrier until your authority is active. Getting authority for a trucking company with more than one truck follows the same steps, with each truck listed on your insurance.
+
+### Are trucking authority packages worth it?
+
+A package can save time if it clearly lists what is included and which government fees you still pay. Avoid any offer that puts the authority in someone else's name or hides the filing fees. See our [MC number and trucking authority setup](/trucking-authority-setup.html) for how we help.
 
 ## What to prepare for brokers
 

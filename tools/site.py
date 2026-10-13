@@ -717,9 +717,9 @@ def build_home():
 </div></section>
 <section class="sec sec-soft"><div class="wrap two">
   <div class="prose rv">
-    <span class="eyebrow">Truck dispatch services USA</span>
+    <span class="eyebrow">Truck dispatch USA</span>
     <h2 style="margin-top:8px">Trucking dispatch services for every kind of carrier</h2>
-    <p>Texas Solutions is a trucking dispatch company serving carriers across the USA: an independent truck dispatcher team that works for you, not for brokers. Our freight dispatch services cover every lane in the lower 48, and the best truck dispatch company for you is the one that is clear about its fee, so ours is printed on every page. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
+    <p>Truck dispatch USA-wide, from one team: Texas Solutions is a trucking dispatch company serving carriers across the USA: an independent truck dispatcher team that works for you, not for brokers. Our freight dispatch services cover every lane in the lower 48: a freight dispatcher for your semi, hotshot or box truck, dispatching trucks for one owner-operator or a whole fleet, and the best truck dispatch company for you is the one that is clear about its fee, so ours is printed on every page. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
     <ul>
       <li><a href="owner-operator-dispatch.html"><b>Dispatch services for owner-operators</b></a> and small trucking companies: one truck or a small fleet.</li>
       <li><a href="dispatch-for-new-authority.html"><b>Dispatch for new authority</b></a>: brand-new MC numbers from day one.</li>
@@ -1051,6 +1051,8 @@ def build_landing(p):
 {"".join(f"      <li>{esc(x)}</li>" + chr(10) for x in p.get("includes", INCLUDES_DEFAULT))}    </ul>
     <h2>{esc(p['nav'])} pricing</h2>
     <p>{kind['label']} on OTR pay <b>{pl(kind)} of weekly gross</b>. With typical weekly gross of {money(kind['gross'][0])}-{money(kind['gross'][1])}, the dispatch fee is about {lo}-{hi} a week. No flat rate, no setup fee and no monthly subscription. <a href="estimate.html?{truck_q}">Estimate your fee</a>.</p>"""
+    if p.get("pricing_note"):
+        what = what.split(f"<h2>{esc(p['nav'])} pricing</h2>")[0] + f"<h2>{esc(p['nav'])} costs</h2>\n    <p>{esc(p['pricing_note'])}</p>"
     faqs = p["faqs"] + [C.FAQS[0], C.FAQS[5]]
     others = "".join(f'<a class="chip" href="{o["file"]}">{esc(o["nav"])}</a>' for o in C.LANDING if o["file"] != p["file"] and not o.get("hide_nav"))
     body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), extra=f'<div class="chip-row" style="justify-content:flex-start"><span class="chip" ><b>{pl(kind)}</b> of weekly gross</span><span class="chip" >OTR &middot; No flat rate</span></div>')}

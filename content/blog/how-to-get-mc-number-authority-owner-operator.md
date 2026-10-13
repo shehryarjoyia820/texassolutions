@@ -22,6 +22,12 @@ faq:
 
 Almost every owner-operator hauling freight for other companies across state lines needs **their own operating authority**. Here is the process in the order that saves the most time, and what each piece is for. Rules and fees change, so confirm current requirements on the FMCSA website before you file.
 
+## What is an MC number?
+
+An MC number is a motor carrier number. FMCSA issues it with your motor carrier operating authority, the permission to haul regulated freight for other companies across state lines. When people talk about MC trucking or getting their own authority, this is the number they mean, and it is the first thing a broker checks before booking you.
+
+If you want help with the filings, see our [MC number and trucking authority setup](/trucking-authority-setup.html) page.
+
 ## USDOT number vs MC number
 
 | | USDOT number | MC number (operating authority) |
@@ -41,6 +47,35 @@ If you are a for-hire hotshot, box truck or semi operator crossing state lines, 
 5. **Get insurance and have it filed.** For-hire carriers hauling non-hazardous general freight are required to carry at least **$750,000** in public liability coverage, and your insurer files the proof with FMCSA. Most brokers also want cargo coverage, commonly $100,000.
 6. **Complete other registrations:** UCR (Unified Carrier Registration), IFTA and IRP if you run a qualifying vehicle, and Form 2290 for heavy vehicles.
 7. **Wait for authority to go active.** Once filings are on record and the protest period has passed, your MC status turns active.
+
+## How to get your own authority in trucking: quick checklist
+
+- Business entity and EIN in the name you will haul under
+- USDOT number and MC operating authority applications
+- BOC-3 process agent filing
+- Insurance filing from your insurer
+- UCR, plus IRP and IFTA if you run interstate
+- Broker packet ready for the day your carrier authority goes active
+
+## Common questions about trucking authority
+
+Truckers use a lot of names for the same thing: truckers authority, truck authority, authority for trucks, authority trucking or simply getting your own authority. They all mean FMCSA motor carrier authority and the MC trucking number that comes with it.
+
+### What is the MC number used for?
+
+Brokers and shippers use it to confirm you are allowed to haul their freight for hire, and FMCSA uses it to tie your insurance and process agent filings to your authority.
+
+### How to get DOT number and MC number at the same time?
+
+New carriers usually apply for both in the same FMCSA registration session. The USDOT number is issued first; the MC number and operating authority MC number status follow once your filings are processed.
+
+### How do you get your own authority for trucking if you are leased on now?
+
+Plan the switch: apply for your own USDOT and MC numbers, line up insurance and a BOC-3 provider, and keep running under your current carrier until your authority is active. Getting authority for a trucking company with more than one truck follows the same steps, with each truck listed on your insurance.
+
+### Are trucking authority packages worth it?
+
+A package can save time if it clearly lists what is included and which government fees you still pay. Avoid any offer that puts the authority in someone else's name or hides the filing fees. See our [MC number and trucking authority setup](/trucking-authority-setup.html) for how we help.
 
 ## What to prepare for brokers
 

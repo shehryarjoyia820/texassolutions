@@ -22,7 +22,7 @@ faq:
 
 For most small carriers, the search for truck loads starts on a load board. It is often the first place a new authority finds freight, and it remains a daily tool for many experienced owner-operators. This guide explains what a **load board** is, how carriers use one, and how to judge the loads for trucks you see posted.
 
-If you are working out how to find loads for trucks you own or drive, the load board is where most carriers start.
+If you are working out how to find loads for trucks you own or drive, the load board is where most carriers start. You will also hear them called truck boards, a loading board or a loads board; a load board for truckers is the same tool whatever the name, and most load boards for trucking list truckload, partial and expedited freight side by side. Some carriers keep one truckload load board for long hauls and a second, smaller board for local freight; load boards for truckers differ mainly in which brokers post on them.
 
 ## What a load board is
 

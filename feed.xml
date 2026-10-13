@@ -6,7 +6,7 @@
     <atom:link href="https://dispatch.texassolutions.co/feed.xml" rel="self" type="application/rss+xml" />
     <description>Truck dispatch, rates, diesel prices and fuel-saving guides for owner-operators and small fleets.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 22:42:12 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 08:19:54 +0000</lastBuildDate>
     <item>
       <title>Truck Loads and Load Boards: How They Work for Carriers</title>
       <link>https://dispatch.texassolutions.co/blog/truck-loads-and-load-boards-guide.html</link>
@@ -48,6 +48,14 @@
       <category>Finding loads</category>
     </item>
     <item>
+      <title>How to Choose a Fuel Card for Truckers: What to Compare</title>
+      <link>https://dispatch.texassolutions.co/blog/how-to-choose-a-fuel-card-for-truckers.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-choose-a-fuel-card-for-truckers.html</guid>
+      <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How owner-operators can compare trucking fuel cards: discount type, truck stop network, fees, credit vs prepaid, IFTA data and controls.</description>
+      <category>Fuel</category>
+    </item>
+    <item>
       <title>How to Become an Owner-Operator: Lease-On or Your Own MC</title>
       <link>https://dispatch.texassolutions.co/blog/how-to-become-an-owner-operator.html</link>
       <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-become-an-owner-operator.html</guid>
@@ -77,6 +85,14 @@
       <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-does-truck-dispatching-work.html</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How truck dispatching works from the carrier&#x27;s side: onboarding, load search, rate negotiation, booking, tracking, invoicing and getting paid.</description>
+      <category>Dispatch basics</category>
+    </item>
+    <item>
+      <title>Freight Dispatcher vs Truck Dispatcher: Same Job, Different Name</title>
+      <link>https://dispatch.texassolutions.co/blog/freight-dispatcher-vs-truck-dispatcher.html</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/freight-dispatcher-vs-truck-dispatcher.html</guid>
+      <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Freight dispatcher, truck dispatcher, cargo dispatcher: what the names mean for carriers, what the job covers, and how it differs from brokers.</description>
       <category>Dispatch basics</category>
     </item>
     <item>
