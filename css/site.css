@@ -851,3 +851,8 @@ h1 { font-size: clamp(34px, 5vw, 60px); }
 .trust-box li b { color: var(--ink); }
 .trust-box li span { color: var(--muted); }
 .form-intent { background: var(--soft, #f6f5f3); border-left: 3px solid var(--red-600, #c2410c); padding: 10px 12px; border-radius: 8px; font-size: 14px; margin-bottom: 14px; }
+/* Comfortable tap targets on touch screens */
+@media (max-width: 1040px) {
+  .topbar a, .hero-tools a, .price-link, .cta-sub a { display: inline-flex; align-items: center; min-height: 32px; padding: 4px 2px; }
+  .price-link { display: flex; justify-content: center; min-height: 40px; }
+}

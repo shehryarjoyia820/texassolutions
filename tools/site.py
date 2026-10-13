@@ -710,7 +710,7 @@ def build_home():
           f"8% for OTR hotshots and 10% for OTR box trucks and straight trucks. There is no flat rate, no setup fee and no "
           f"monthly subscription, and no long-term contract (a signed dispatch agreement is required). For example, on a hypothetical semi grossing {money(M['gross'][0])}-{money(M['gross'][1])} in a week, the fee would be {SEMI_FEE[0]}-{SEMI_FEE[1]}. Local and regional work is quoted separately.")
     hero = f"""<section class="hero">
-  <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/video/hero-background.mp4" type="video/mp4"></video>
+  <video muted loop playsinline preload="none" aria-hidden="true" data-src="assets/video/hero-background.mp4"></video>
   <div class="wrap">
     <div>
       <span class="eyebrow"><span class="dot"></span>{esc(C.COVERAGE)}</span>

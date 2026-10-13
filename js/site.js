@@ -51,6 +51,18 @@
     if (ev) TS.track(ev, { link_location: linkLocation(a), tool_name: (a.closest('[data-tool]') || {}).getAttribute ? a.closest('[data-tool]').getAttribute('data-tool') : undefined });
   });
 
+  /* hero video: 8 MB, so only on wide screens, without data saver or reduced motion */
+  (function () {
+    var v = document.querySelector('.hero video[data-src]');
+    if (!v) return;
+    var conn = navigator.connection || {};
+    var ok = window.matchMedia('(min-width: 900px)').matches && !conn.saveData &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!ok) { v.remove(); return; }
+    v.src = v.getAttribute('data-src'); v.autoplay = true;
+    var p = v.play(); if (p && p.catch) p.catch(function () {});
+  })();
+
   /* ---------------------------------------------------------------- header + mobile nav */
   var header = document.querySelector('.header');
   function onScroll() { if (header) header.classList.toggle('scrolled', window.scrollY > 8); }
