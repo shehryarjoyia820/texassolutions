@@ -1938,7 +1938,7 @@ The fee is only half of the picture. A dispatcher who costs a little more but bo
 
 ## Next step
 
-If you want simple, percentage-only dispatch with no contract, see how our [owner-operator dispatch service](/owner-operator-dispatch.html) works, or [get a free estimate](/estimate.html) for your truck.
+If you want simple, percentage-only dispatch with no long-term contract, see how our [owner-operator dispatch service](/owner-operator-dispatch.html) works, or [get a free estimate](/estimate.html) for your truck.
 
 ### Box Truck Contracts: How to Get Them and Where Amazon Relay Fits
 URL: https://dispatch.texassolutions.co/blog/box-truck-contracts-how-to-get-them.html
@@ -2376,7 +2376,7 @@ If most answers point to struggle, a dispatcher may be worth testing. A free tri
 
 ## How Texas Solutions helps
 
-Texas Solutions Truck Dispatch works with owner-operators across the USA. We search loads, negotiate rates, plan lanes, handle broker setups and help with invoicing, detention and lumper collection. You approve every load. There is no forced dispatch, no upfront fee and no contract, and your first load is dispatched free.
+Texas Solutions Truck Dispatch works with owner-operators across the USA. We search loads, negotiate rates, plan lanes, handle broker setups and help with invoicing, detention and lumper collection. You approve every load. There is no forced dispatch, no upfront fee and no long-term contract, and your first load is dispatched free.
 
 See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html).
 

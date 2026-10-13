@@ -6,7 +6,7 @@ author: "Texas Solutions Dispatch Team"
 tags:
   - Dispatch pricing
   - Owner-operators
-keywords: "dispatch service percentage vs flat fee, dispatch service flat rate, dispatch service no contract, affordable truck dispatch services, cheap truck dispatch service, truck dispatcher fee percentage"
+keywords: "dispatch service percentage vs flat fee, dispatch service flat rate, dispatch service no long-term contract, affordable truck dispatch services, cheap truck dispatch service, truck dispatcher fee percentage"
 question: "Is a percentage or a flat fee better for truck dispatch?"
 answer: "A percentage fee rises and falls with what your truck earns, so you pay less in slow weeks and the dispatcher is motivated to book better-paying freight. A flat fee is predictable but costs the same in a bad week. The right choice depends on your weekly gross, how steady your freight is, and whether the offer hides extra charges or contracts."
 faq:
@@ -127,4 +127,4 @@ The fee is only half of the picture. A dispatcher who costs a little more but bo
 
 ## Next step
 
-If you want simple, percentage-only dispatch with no contract, see how our [owner-operator dispatch service](/owner-operator-dispatch.html) works, or [get a free estimate](/estimate.html) for your truck.
+If you want simple, percentage-only dispatch with no long-term contract, see how our [owner-operator dispatch service](/owner-operator-dispatch.html) works, or [get a free estimate](/estimate.html) for your truck.
