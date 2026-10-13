@@ -241,7 +241,7 @@ def header(current):
     </nav>
     <div class="nav-cta">
       <a class="btn btn-line" href="tel:{C.PHONE_E164}">{ICONS['phone']}Call</a>
-      <a class="btn btn-red" href="estimate.html">Get an Estimate</a>
+      <a class="btn btn-red" href="{INQUIRY}" data-cta="talk">Talk to a Dispatcher</a>
       <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span></button>
     </div>
   </div>
@@ -261,7 +261,8 @@ def header(current):
 {mtools}
       </div>
     </details>
-    <a class="btn btn-red" href="estimate.html">Get a Free Estimate</a>
+    <a class="btn btn-red" href="{INQUIRY}" data-cta="talk">Talk to a Dispatcher</a>
+    <a class="btn btn-line" href="estimate.html">Calculate Your Dispatch Fee</a>
     <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp a Dispatcher</a>
 </nav>"""
 
@@ -273,7 +274,7 @@ def footer():
     <div class="cols">
       <div class="fbrand">
         <img src="assets/logo/texas-solutions-logo.png" alt="Texas Solutions" width="127" height="44" loading="lazy">
-        <p>Truck dispatch service for owner-operators and small fleets across the United States. Semi trucks {pl(M)}, hotshots 8% and box trucks 10% of weekly gross, OTR. First load free, dispatchers available 24/7.</p>
+        <p>Nationwide truck dispatch for owner-operators and small fleets across the contiguous 48 states. Semi trucks {pl(M)}, hotshots 8% and box trucks 10% of weekly gross, OTR. First load free, dispatchers available 24/7.</p>
       </div>
       <div>
         <h4>Dispatch Services</h4>
@@ -466,8 +467,35 @@ def faq_html(items):
         f'  <details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in items) + "\n</div>"
 
 
+INQUIRY = "contact.html#inquiry"
+FIRST_LOAD = "contact.html?intent=first-load-free#inquiry"
+
+
+def lead_ctas(home=False, dark=False):
+    """Contacting a dispatcher is the main action; the fee calculator is a secondary link."""
+    talk = "#contact" if home else INQUIRY
+    free = "?intent=first-load-free#contact" if home else FIRST_LOAD
+    return (f'<div class="ctas"><a class="btn {"btn-dark" if dark else "btn-red"}" href="{talk}" data-cta="talk">{ICONS["phone"]}Talk to a Dispatcher</a>'
+            f'<a class="btn btn-line" href="{free}" data-cta="first_load">Start Your First Load Free</a></div>'
+            f'<p class="cta-sub"><a href="estimate.html">Calculate your dispatch fee</a> &middot; <a href="tel:{C.PHONE_E164}">Call</a> &middot; '
+            f'<a href="sms:{C.PHONE_E164}">Text</a> &middot; <a href="{WA_URL}" target="_blank" rel="noopener">WhatsApp</a> &middot; <a href="contact.html#callback">Request a callback</a></p>')
+
+
+def trust_box():
+    """Verified business facts only. Reviews, photos and case studies are added when the owner supplies them with permission."""
+    facts = [
+        ("Who we are", f"{C.NAME} LLC, a truck dispatch service. Owner and CEO: Shehryar Joyia."),
+        ("Office and coverage", C.OFFICE_VS_COVERAGE),
+        ("How we work", "We work for the carrier, not brokers. Loads are booked under your own MC authority, and you approve every load."),
+        ("Agreement", C.AGREEMENT_NOTE),
+        ("Reach a person", f"Call or text {C.PHONE}, email {C.EMAIL}, or WhatsApp. Dispatchers are available 24/7."),
+    ]
+    rows = "".join(f'<li><b>{esc(t)}</b><span>{esc(d)}</span></li>' for t, d in facts)
+    return f'<div class="trust-box rv"><h3>Before you send your details</h3><ul>{rows}</ul></div>'
+
+
 def phero(crumb_name, h1, lede, ctas=True, extra=""):
-    cta = f"""<div class="ctas"><a class="btn btn-red" href="estimate.html">Get a Free Estimate</a><a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp Us</a></div>""" if ctas else ""
+    cta = lead_ctas() if ctas else ""
     return f"""<section class="phero"><div class="wrap">
   <div class="crumbs"><a href="index.html">Home</a> / {esc(crumb_name)}</div>
   <h1>{h1}</h1>
@@ -487,12 +515,12 @@ PRICE_GROUPS = [
 def pricing_cards(cta=True):
     def card(key, label, eq, pct, gross, tq, feat):
         lo, hi = money(gross[0] * pct / 100), money(gross[1] * pct / 100)
-        items = [f"Typical weekly gross {money(gross[0])} - {money(gross[1])}",
-                 f"About {lo} - {hi} per week on typical gross",
+        items = [f"Example: {money(gross[0])} - {money(gross[1])} weekly gross (hypothetical)",
+                 f"Fee on that example: {lo} - {hi} per week",
                  "OTR (over-the-road) operations", "No flat rate, no setup fee, no subscription",
                  "You approve every load"]
         li = "\n".join(f"      <li>{esc(i)}</li>" for i in items)
-        btn = f'<a class="btn {"btn-red" if feat else "btn-dark"}" href="estimate.html?truck={tq}">Estimate my fee</a>' if cta else ""
+        btn = f'<a class="btn {"btn-red" if feat else "btn-dark"}" href="{INQUIRY}" data-cta="talk">Talk to a Dispatcher</a><a class="price-link" href="estimate.html?truck={tq}">Calculate my fee</a>' if cta else ""
         tag = '<span class="tag">Most popular</span>' if feat else ""
         return f"""<div class="price{' feat' if feat else ''} rv">
     {tag}<h3>{label}</h3>
@@ -507,7 +535,7 @@ def pricing_cards(cta=True):
     return f"""<div class="grid g3 price-grid">
   {cards}
 </div>
-<p class="note center">{esc(C.PRICING_CONDITION)} {esc(C.PRICING_NOTE)}</p>"""
+<p class="note center">{esc(C.PRICING_CONDITION)} {esc(C.PRICING_NOTE)} {esc(C.GROSS_NOTE)}</p>"""
 
 
 def rate_board(equip=None):
@@ -523,24 +551,24 @@ def rate_board(equip=None):
     board = ""
     if len(lanes) >= 3:
         board = f"""  <div class="board rv">
-    <div class="board-head"><b>Example lanes</b><span>Illustrative examples, not live rates</span></div>
+    <div class="board-head"><b>Illustrative lane examples</b><span>Not available loads or current rate quotes</span></div>
     <div style="overflow-x:auto"><table class="board-table">
       <thead><tr><th>Lane</th><th>Equipment</th><th class="hide-sm">Miles</th><th>Example rate</th></tr></thead>
       <tbody>
 {rows}
       </tbody>
     </table></div>
-    <p class="board-foot">Example lanes showing how {"these" if equip else ""} loads are quoted per mile. They are not current market rates or offers of freight. Texas Solutions does not guarantee any specific load volume, rate, revenue, or earnings.</p>
+    <p class="board-foot">Illustrative lane examples&mdash;not available loads or current rate quotes. They show how {"these" if equip else ""} loads are priced per mile across different regions. Texas Solutions does not guarantee any load volume, rate, revenue or earnings.</p>
   </div>"""
     names = " and ".join(equip) if equip else "common equipment"
     return f"""<div class="grid board-grid{' board-solo' if not board else ''}" id="board">
 {board}
   <div class="rv">
-    <h3 style="margin-bottom:14px">Rough rate per mile{' for ' + names.lower() if equip else ' by equipment'}</h3>
+    <h3 style="margin-bottom:14px">Planning ranges per mile{' for ' + names.lower() if equip else ' by equipment'}</h3>
     <div class="rate-guide">
 {guide}
     </div>
-    <p style="font-size:13px;color:var(--muted);margin-top:12px">Rough ranges, not quotes. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR. Actual rates depend on lane, season and market.</p>
+    <p style="font-size:13px;color:var(--muted);margin-top:12px">{esc(C.RATE_GUIDE_NOTE)}</p>
   </div>
 </div>"""
 
@@ -564,10 +592,10 @@ def steps(dark=False):
 
 
 def band(title="Ready to keep your truck loaded?", text=None):
-    text = text or f"Semi trucks {pl(M)}, hotshots 8%, box trucks 10% of weekly gross. First load free. 24/7 dispatchers. No contract, no setup fee."
+    text = text or f"Semi trucks {pl(M)}, hotshots 8%, box trucks 10% of weekly gross. First load free. 24/7 dispatchers. No long-term contract, no setup fee."
     return f"""<section class="sec"><div class="wrap"><div class="band rv">
   <div><h2>{esc(title)}</h2><p>{esc(text)}</p></div>
-  <div class="ctas"><a class="btn btn-dark" href="estimate.html">Get a Free Estimate</a><a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp</a></div>
+  {lead_ctas(dark=True)}
 </div></div></section>"""
 
 
@@ -599,20 +627,24 @@ def form_tail(button):
   <p class="fine">{esc(C.FORM_DISCLAIMER)}</p>"""
 
 
-def lead_form(fid, subject, button):
-    """Short first-contact form. Documents (MC, W-9, insurance) are collected after the first call."""
+def lead_form(fid, subject, button, extra=""):
+    """Short first-contact form: name, phone or email, and equipment are required; the rest is optional.
+    Documents (MC, W-9, insurance) are collected after the first call."""
     return f"""<form class="form rv" id="{fid}" data-web3 data-kind="lead" data-subject="{esc(subject)}" novalidate>
+  <input type="hidden" name="intent" value="talk_to_dispatcher">
   <div class="grid g2">
     <div class="full"><label class="fl" for="{fid}-name">Your name <i>*</i></label><input type="text" id="{fid}-name" name="name" autocomplete="name" required></div>
     <div><label class="fl" for="{fid}-phone">Phone</label><input type="tel" id="{fid}-phone" name="phone" autocomplete="tel" data-oneof="contact"></div>
     <div><label class="fl" for="{fid}-email">Email</label><input type="email" id="{fid}-email" name="email" autocomplete="email" data-oneof="contact"></div>
-    <p class="full hint oneof-hint">Phone or email, whichever you prefer. <i>*</i></p>
-    <div><label class="fl" for="{fid}-eq">Equipment <i>*</i></label><select id="{fid}-eq" name="equipment" required>{opts(C.EQUIPMENT, "Select equipment")}</select></div>
-    <div><label class="fl" for="{fid}-state">Home state <i>*</i></label><select id="{fid}-state" name="home_state" required>{state_opts()}</select></div>
-    <div><label class="fl" for="{fid}-trucks">Number of trucks <i>*</i></label><input type="number" id="{fid}-trucks" name="trucks" min="1" max="500" value="1" required></div>
-    <div><label class="fl" for="{fid}-mc">MC authority status <i>*</i></label><select id="{fid}-mc" name="mc_status" required>{opts(C.MC_STATUS, "Select status")}</select></div>
-    <div class="full"><label class="fl" for="{fid}-method">Preferred contact method <i>*</i></label><select id="{fid}-method" name="contact_method" required>{opts(C.CONTACT_METHODS, "Select one")}</select></div>
-    <div class="full"><label class="fl" for="{fid}-msg">Anything else? (optional)</label><textarea id="{fid}-msg" name="message" rows="3" placeholder="Lanes, home time, questions. We collect documents after the first call."></textarea></div>
+    <p class="full hint oneof-hint">Phone or email, at least one. <i>*</i></p>
+    <div class="full"><label class="fl" for="{fid}-eq">Equipment <i>*</i></label><select id="{fid}-eq" name="equipment" required>{opts(C.EQUIPMENT, "Select equipment")}</select></div>
+    <p class="full hint">Optional, but it helps us prepare:</p>
+    <div><label class="fl" for="{fid}-mc">MC number or authority status</label><select id="{fid}-mc" name="mc_status">{opts(C.MC_STATUS, "Select status")}</select></div>
+    <div><label class="fl" for="{fid}-trucks">Number of trucks</label><input type="number" id="{fid}-trucks" name="trucks" min="1" max="500" placeholder="1"></div>
+    <div><label class="fl" for="{fid}-state">Home state</label><select id="{fid}-state" name="home_state">{state_opts()}</select></div>
+    <div><label class="fl" for="{fid}-lanes">Preferred lanes</label><input type="text" id="{fid}-lanes" name="lanes" placeholder="e.g. Midwest to Southeast"></div>
+    <div class="full"><label class="fl" for="{fid}-method">Preferred contact method</label><select id="{fid}-method" name="contact_method">{opts(C.CONTACT_METHODS, "Any")}</select></div>{extra}
+    <div class="full"><label class="fl" for="{fid}-msg">Message</label><textarea id="{fid}-msg" name="message" rows="3" placeholder="MC number, home time, questions. We collect documents after the first call."></textarea></div>
     {consent_box(fid)}
   </div>
   {form_tail(button)}
@@ -676,18 +708,15 @@ def build_home():
     qa = ("How much does truck dispatch cost at Texas Solutions?",
           f"Texas Solutions charges {pl(M)} of weekly gross for OTR semi trucks (dry van, reefer, flatbed, step deck, power only) "
           f"8% for OTR hotshots and 10% for OTR box trucks and straight trucks. There is no flat rate, no setup fee and no "
-          f"monthly subscription. On a typical semi grossing {money(M['gross'][0])}-{money(M['gross'][1])} a week, the fee is about {SEMI_FEE[0]}-{SEMI_FEE[1]} a week.")
+          f"monthly subscription, and no long-term contract (a signed dispatch agreement is required). For example, on a hypothetical semi grossing {money(M['gross'][0])}-{money(M['gross'][1])} in a week, the fee would be {SEMI_FEE[0]}-{SEMI_FEE[1]}. Local and regional work is quoted separately.")
     hero = f"""<section class="hero">
   <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/video/hero-background.mp4" type="video/mp4"></video>
   <div class="wrap">
     <div>
-      <span class="eyebrow"><span class="dot"></span>Truck dispatch &amp; free tools for USA owner-operators</span>
+      <span class="eyebrow"><span class="dot"></span>{esc(C.COVERAGE)}</span>
       <h1>USA Truck Dispatch Service that keeps your <em>truck loaded.</em></h1>
-      <p class="lede">We find, negotiate and book freight for owner-operators and small fleets in all 48 lower states. Dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load.</p>
-      <div class="ctas">
-        <a class="btn btn-red" href="estimate.html">{ICONS['calc']}Get a Free Estimate</a>
-        <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp a Dispatcher</a>
-      </div>
+      <p class="lede">We find, negotiate and book freight for owner-operators and small fleets running under their own MC authority: dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load. Office in Midland, Texas; service across the contiguous 48 states.</p>
+      {lead_ctas(home=True)}
       <p class="hero-tools">Free tools, no signup: <a href="truck-fuel-cost-calculator.html">Fuel cost</a> <a href="cost-per-mile-calculator.html">Cost per mile</a> <a href="load-profitability-calculator.html">Load profit</a> <a href="tools.html">All tools &rarr;</a></p>
       <div class="hero-stats">
         <div><b>{pl(M)}</b><span>Semi trucks, OTR</span></div>
@@ -697,9 +726,9 @@ def build_home():
     </div>
     <aside class="hero-card" aria-label="Dispatch pricing">
       <h2>Simple percentage pricing</h2>
-      <div class="row"><div><b>Semi trucks</b><br><span>Dry van, reefer, flatbed, step deck, power only &middot; gross {money(M['gross'][0])}-{money(M['gross'][1])}/wk</span></div><span class="pct">{pl(M)}</span></div>
-      <div class="row"><div><b>Hotshot</b><br><span>Gooseneck &amp; flatbed trailers &middot; gross $7,000-$9,000/wk</span></div><span class="pct">8%</span></div>
-      <div class="row"><div><b>Box &amp; straight trucks</b><br><span>Gross $7,000-$9,000/wk</span></div><span class="pct">10%</span></div>
+      <div class="row"><div><b>Semi trucks</b><br><span>Dry van, reefer, flatbed, step deck, power only &middot; example gross {money(M['gross'][0])}-{money(M['gross'][1])}/wk</span></div><span class="pct">{pl(M)}</span></div>
+      <div class="row"><div><b>Hotshot</b><br><span>Gooseneck &amp; flatbed trailers &middot; example gross $7,000-$9,000/wk</span></div><span class="pct">8%</span></div>
+      <div class="row"><div><b>Box &amp; straight trucks</b><br><span>Example gross $7,000-$9,000/wk</span></div><span class="pct">10%</span></div>
       <a class="btn btn-red" href="estimate.html">Calculate my dispatch fee</a>
       <small>OTR operations. Rough estimate; final percentage set in your dispatch agreement. Earnings not guaranteed.</small>
     </aside>
@@ -712,7 +741,7 @@ def build_home():
   {pricing_cards()}
 </div></section>
 <section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>What loads typically pay</h2><p>A rough guide to rates per mile on common equipment. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR.</p></div>
+  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Illustrative lanes across the country</h2><p>Example lanes from different regions and the planning ranges our dispatchers use. These are not available loads or current rate quotes.</p></div>
   {rate_board()}
 </div></section>
 <section class="sec"><div class="wrap">
@@ -723,7 +752,7 @@ def build_home():
   <div class="prose rv">
     <span class="eyebrow">Truck dispatch USA</span>
     <h2 style="margin-top:8px">Trucking dispatch services for every kind of carrier</h2>
-    <p>Truck dispatch USA-wide, from one team: Texas Solutions is a trucking dispatch company serving carriers across the USA: an independent truck dispatcher team that works for you, not for brokers. Our freight dispatch services cover every lane in the lower 48: a freight dispatcher for your semi, hotshot or box truck, dispatching trucks for one owner-operator or a whole fleet, and the best truck dispatch company for you is the one that is clear about its fee, so ours is printed on every page. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
+    <p>{esc(C.COVERAGE)} Texas Solutions is a trucking dispatch company serving carriers across the contiguous 48 states: an independent truck dispatcher team that works for you, not for brokers. Our freight dispatch services cover every lane in the lower 48: a freight dispatcher for your semi, hotshot or box truck, dispatching trucks for one owner-operator or a whole fleet, and the best truck dispatch company for you is the one that is clear about its fee, so ours is printed on every page. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
     <ul>
       <li><a href="owner-operator-dispatch.html"><b>Dispatch services for owner-operators</b></a> and small trucking companies: one truck or a small fleet.</li>
       <li><a href="dispatch-for-new-authority.html"><b>Dispatch for new authority</b></a>: brand-new MC numbers from day one.</li>
@@ -731,9 +760,9 @@ def build_home():
       <li><a href="hotshot-dispatch.html"><b>Hotshot dispatch services</b></a> and <a href="box-truck-dispatch.html"><b>box truck dispatch services</b></a>, including straight trucks and non-CDL box trucks.</li>
       <li><a href="trucking-back-office-services.html"><b>Trucking back-office services</b></a>: broker setups, invoicing, detention and lumper collection, factoring setup, IFTA and DOT help.</li>
       <li><a href="semi-truck-dispatch.html"><b>Semi truck dispatch services</b></a> and <a href="small-fleet-dispatch.html"><b>dispatch for small fleets</b></a> and small trucking companies.</li>
-      <li><a href="truck-dispatch-by-state.html"><b>Truck dispatch services in every state</b></a>: <a href="texas-truck-dispatch.html">Texas</a>, <a href="truck-dispatch/california.html">California</a>, <a href="truck-dispatch/florida.html">Florida</a>, <a href="truck-dispatch/georgia.html">Georgia</a>, <a href="truck-dispatch/illinois.html">Illinois</a>, <a href="truck-dispatch/ohio.html">Ohio</a>, <a href="truck-dispatch/new-jersey.html">New Jersey</a>, <a href="truck-dispatch/pennsylvania.html">Pennsylvania</a>, <a href="truck-dispatch/tennessee.html">Tennessee</a>, <a href="truck-dispatch/north-carolina.html">North Carolina</a> and the rest of the lower 48.</li>
+      <li><a href="truck-dispatch-by-state.html"><b>Truck dispatch services in every state</b></a>: <a href="texas-truck-dispatch.html">Texas</a>, <a href="truck-dispatch/california.html">California</a>, <a href="truck-dispatch/florida.html">Florida</a>, <a href="truck-dispatch/georgia.html">Georgia</a>, <a href="truck-dispatch/illinois.html">Illinois</a>, <a href="truck-dispatch/ohio.html">Ohio</a>, <a href="truck-dispatch/new-jersey.html">New Jersey</a>, <a href="truck-dispatch/pennsylvania.html">Pennsylvania</a>, <a href="truck-dispatch/tennessee.html">Tennessee</a>, <a href="truck-dispatch/north-carolina.html">North Carolina</a> and the rest of the contiguous 48 states.</li>
     </ul>
-    <p>Affordable truck dispatch services with no catches: a percentage of weekly gross, no contract, no upfront fee, and your first load free. Read <a href="blog/how-to-choose-a-truck-dispatcher-avoid-scams.html">how to choose a truck dispatcher</a> or <a href="blog/is-a-truck-dispatcher-worth-it.html">whether a dispatcher is worth it</a>.</p>
+    <p>Affordable truck dispatch services with no catches: a percentage of weekly gross, no long-term contract, no upfront fee, and your first load free. Read <a href="blog/how-to-choose-a-truck-dispatcher-avoid-scams.html">how to choose a truck dispatcher</a> or <a href="blog/is-a-truck-dispatcher-worth-it.html">whether a dispatcher is worth it</a>.</p>
   </div>
   <div class="aside">{answer("Can I hire a truck dispatcher today?", f"Yes. Call, text or WhatsApp {C.PHONE} any time, 24/7. Tell us your truck, authority and lanes; we send a short agreement and start searching loads. Your first load is dispatched free, and new MC numbers are welcome.", "Truck dispatcher for hire")}</div>
 </div></section>
@@ -743,10 +772,10 @@ def build_home():
 </div></section>
 <section class="sec sec-soft" id="contact"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Contact us</span><h2>Talk to a dispatcher</h2><p>Tell us about your truck, authority and lanes. Prefer to chat? WhatsApp is the fastest way to reach us.</p></div>
+    <div class="sec-head rv"><span class="eyebrow">Contact us</span><h2>Talk to a dispatcher</h2><p>Three details are enough: your name, a phone number or email, and your equipment. Everything else is optional. A dispatcher replies by the method you choose.</p></div>
     {lead_form("homeForm", "New dispatch inquiry (home page)", "Send My Details")}
   </div>
-  <div class="aside">{contact_side()}</div>
+  <div class="aside">{trust_box()}{contact_side()}</div>
 </div></section>
 <section class="sec sec-dark tools-sec"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Free trucking tools</span><h2>Know your numbers before you book</h2><p>Free calculators built for owner-operators, with daily diesel prices for all 50 states. No signup; calculations run in your browser.</p></div>
@@ -809,7 +838,7 @@ def build_estimate():
     </div>
     <div class="field"><label for="estGross">Weekly gross per truck</label>
       <div class="range-row"><input type="range" id="estGross" min="3000" max="15000" step="250" value="9000"><output id="estGrossOut" for="estGross">$9,000</output></div>
-      <p class="hint">Typical OTR weekly gross for a <b id="estTruckName2">Dry Van</b>: <b id="estTypical">$8,000 - $10,000</b></p>
+      <p class="hint">Example weekly gross range for a <b id="estTruckName2">Dry Van</b> (hypothetical, not a guarantee): <b id="estTypical">$8,000 - $10,000</b>. Gross is revenue, not profit.</p>
     </div>
     <div class="field"><label for="estCustom">Your own percentage (optional)</label>
       <div class="range-row"><input type="number" id="estCustom" min="1" max="20" step="0.5" inputmode="decimal" placeholder="e.g. 5" class="pct-in"><output>%</output></div>
@@ -828,26 +857,13 @@ def build_estimate():
       <div><span>Total fee, monthly (avg)</span><b id="estMonthly">-</b></div>
       <div><span>You keep of gross, weekly</span><b id="estKeep">-</b></div>
     </div>
-    <a class="btn btn-red" href="#quote">Get my free quote</a>
+    <a class="btn btn-red" href="#quote" data-cta="talk">Talk to a Dispatcher</a>
     <small>{esc(C.PRICING_NOTE)} Gross, rates and earnings are not guaranteed.</small>
   </div>
 </div>"""
-    quote = f"""<form class="form rv" id="waQuote" novalidate>
-  <div class="grid g2">
-    <div><label class="fl" for="wqName">Full name <i>*</i></label><input type="text" id="wqName" autocomplete="name" required></div>
-    <div><label class="fl" for="wqPhone">Phone <i>*</i></label><input type="tel" id="wqPhone" autocomplete="tel" required></div>
-    <div><label class="fl" for="wqTruck">Truck type <i>*</i></label><select id="wqTruck" required>{eq_opts}</select></div>
-    <div><label class="fl" for="wqTrucks">Number of trucks</label><input type="number" id="wqTrucks" min="1" max="500" value="1"></div>
-    <div><label class="fl" for="wqPct">Your desired percentage (%) <i>*</i></label><input type="number" id="wqPct" min="1" max="20" step="0.5" inputmode="decimal" placeholder="e.g. 5" required><p class="hint" id="wqPctHint" style="font-size:13px;color:var(--muted);margin-top:6px">Our rate for this truck: 5-6%</p></div>
-    <div><label class="fl" for="wqGross">Weekly gross per truck ($)</label><input type="number" id="wqGross" min="0" step="100" inputmode="numeric" placeholder="e.g. 9000"></div>
-    <div><label class="fl" for="wqMc">MC number</label><input type="text" id="wqMc" inputmode="numeric"></div>
-    <div><label class="fl" for="wqLanes">Home base and lanes</label><input type="text" id="wqLanes" placeholder="e.g. Midland, TX. OTR Southeast"></div>
-    <div class="full"><label class="fl" for="wqMsg">Message</label><textarea id="wqMsg" placeholder="Anything else we should know?"></textarea></div>
-  </div>
-  <button class="btn btn-wa" type="submit">{ICONS['wa']}Get Free Quote on WhatsApp</button>
-  <p class="form-status" role="status" aria-live="polite"></p>
-  <p class="fine">Tapping the button opens WhatsApp with your details filled in, ready to send to Texas Solutions at +1 (838) 910-3147. Nothing is sent until you press send in WhatsApp. Your requested percentage is reviewed by a dispatcher; the final percentage is discussed with each carrier.</p>
-</form>"""
+    quote = lead_form("estimateForm", "New dispatch inquiry (fee calculator)", "Send My Details", extra=f"""
+    <div><label class="fl" for="estimateForm-gross">Weekly gross per truck ($, optional)</label><input type="number" id="estimateForm-gross" name="weekly_gross" min="0" step="100" inputmode="numeric" placeholder="e.g. 9000"></div>
+    <div><label class="fl" for="estimateForm-pct">Percentage you have in mind (optional)</label><input type="number" id="estimateForm-pct" name="proposed_percent" min="1" max="20" step="0.5" inputmode="decimal" placeholder="Our rate: 5% semi, 8% hotshot, 10% box truck"></div>""")
     body = f"""{phero("Estimate", "Truck Dispatch Fee Calculator &amp; Free Quote", f"See what dispatch costs before you sign. Semi trucks {pl(M)}, hotshots 8%, box trucks 10% of weekly gross, for OTR carriers. No flat rate.", ctas=False)}
 <section class="sec" style="padding-top:56px"><div class="wrap">
   {calc}
@@ -858,7 +874,7 @@ def build_estimate():
 </div></section>
 <section class="sec" id="quote"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Free quote</span><h2>Name your percentage, get a free quote</h2><p>Tell us your truck and the dispatch percentage you want. Tap the button and your quote request opens in WhatsApp, ready to send.</p></div>
+    <div class="sec-head rv"><span class="eyebrow">Talk to a dispatcher</span><h2>Send your details to a dispatcher</h2><p>Your inquiry is sent straight to our dispatch team; a dispatcher replies by the method you choose. Name, a phone number or email, and your equipment are enough. WhatsApp stays available if you prefer to chat.</p></div>
     {quote}
   </div>
   <div class="aside">
@@ -883,7 +899,7 @@ def build_estimate():
 
 PRICING_FAQS = [
     ("How much should I pay a truck dispatcher?", "Most owner-operators pay a percentage of weekly gross, commonly somewhere around 3-10% depending on equipment and services. At Texas Solutions it is 5% for semis, 8% for hotshots and 10% for box trucks, with broker setups, rate confirmations and invoicing included."),
-    ("Do you offer a dispatch service with no contract?", "Yes. There is no long-term contract. The dispatch agreement sets the terms and the notice period for ending service."),
+    ("Do you offer a dispatch service with no long-term contract?", "Yes. There is no long-term contract. The dispatch agreement sets the terms and the notice period for ending service."),
     ("Is there an upfront fee or a free trial?", "There is no upfront fee and no setup fee, and your first load is dispatched free as a trial."),
     ("Do you charge per load?", "We charge a percentage of weekly gross, which works like paying per load: you pay on loads your truck hauls and nothing when it sits. There is no flat weekly rate."),
 ]
@@ -917,7 +933,7 @@ def build_rates():
     </table></div>
     <h2>Local vs OTR dry van rates</h2>
     <p>Dry van freight has the widest range, roughly $3 to $5 a mile. Short local and regional loads often pay more per mile because the load is short, while long OTR runs pay less per mile but more per load. Our published dispatch percentages apply to OTR operations.</p>
-    <h2>Example: what dispatch costs on a typical week</h2>
+    <h2>Example: what dispatch costs in a hypothetical week</h2>
     <ul>
       <li>Semi truck grossing {money(M['gross'][0])}-{money(M['gross'][1])}: fee about {SEMI_FEE[0]}-{SEMI_FEE[1]} a week at {pl(M)}.</li>
       <li>Box truck or hotshot grossing {money(S['gross'][0])}-{money(S['gross'][1])}: fee about $560-$720 a week for a hotshot at 8%, $700-$900 for a box truck at 10%.</li>
@@ -928,7 +944,7 @@ def build_rates():
     <h2>Flat rate vs percentage dispatch</h2>
     <p>A flat rate truck dispatch fee is charged every week whether your truck runs or not. A percentage is only paid on what the truck actually grosses, so a slow week costs less. That is why we do not offer flat rate dispatch. Pay per load works out much the same as a percentage: you pay on each load that is hauled, and nothing when the truck sits.</p>
     <h2>Low fee dispatch without the catches</h2>
-    <p>Cheap truck dispatch services can cost more if the low rate comes with a setup fee, a long contract, forced loads or extra charges for paperwork. Ours: a 5 percent dispatch service for semis, no upfront fee, no contract, no forced dispatch, and a free trial: your first load is dispatched free. Broker packets, rate confirmations and invoicing are included.</p>
+    <p>Cheap truck dispatch services can cost more if the low rate comes with a setup fee, a long contract, forced loads or extra charges for paperwork. Ours: a 5 percent dispatch service for semis, no upfront fee, no long-term contract, no forced dispatch, and a free trial: your first load is dispatched free. Broker packets, rate confirmations and invoicing are included.</p>
   <div class="aside">{contact_side()}</div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
@@ -946,13 +962,13 @@ def build_rates():
 def build_contact():
     title = "Contact a Truck Dispatcher | Call or WhatsApp (838) 910-3147 | Texas Solutions"
     desc = "Talk to a Texas Solutions truck dispatcher. Call or WhatsApp (838) 910-3147, email dispatch@texassolutions.co, or send your details. Office: 401 W Kentucky Ave, Midland, TX."
-    body = f"""{phero("Contact", "Talk to a Truck Dispatcher", "Tell us about your truck, authority and lanes. The fastest way to reach us is WhatsApp.", ctas=False)}
+    body = f"""{phero("Contact", "Talk to a Truck Dispatcher", "Tell us about your truck, authority and lanes. Send the short form below, call, text, WhatsApp or request a callback.", ctas=False)}
 <section class="sec" style="padding-top:56px"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Carrier inquiry</span><h2>Tell us about your truck</h2><p>Seven quick questions. We collect your documents after the first conversation, not before.</p></div>
+    <div class="sec-head rv" id="inquiry"><span class="eyebrow">Carrier inquiry</span><h2>Tell us about your truck</h2><p>Name, a phone number or email, and your equipment are all we need. Everything else is optional, and we collect documents after the first conversation, not before.</p></div>
     {lead_form("contactForm", "New dispatch inquiry", "Send My Details")}
   </div>
-  <div class="aside">{contact_side()}
+  <div class="aside">{trust_box()}{contact_side()}
     {answer("Is there a fee to talk to a dispatcher?", f"No. The first call is free. Paid dispatch is {pl(M)} of weekly gross for OTR semis, 8% for hotshots and 10% for box trucks, with no flat rate or setup fee.", "Good to know")}
   </div>
 </div></section>
@@ -983,7 +999,7 @@ def build_about():
   <div class="prose rv">
     <h2 style="margin-top:0">We work for the carrier</h2>
     <p>Owner-operators and small fleets run thin on time. Every hour spent calling brokers, comparing boards and chasing rate confirmations is an hour off the road. Our team takes that work on so the truck stays moving and the decisions stay yours.</p>
-    <p>We do not own trucks and we are not a freight broker. We are a nationwide dispatch service headquartered in {C.CITY}, Texas, paid a percentage of weekly gross under a signed agreement, with no setup fee, no flat rate and no long-term contract.</p>
+    <p>We do not own trucks and we are not a freight broker. Our office is in {C.CITY}, Texas, and our service covers the contiguous 48 states. We are paid a percentage of weekly gross under a signed agreement, with no setup fee, no flat rate and no long-term contract.</p>
     <h2>Equipment we dispatch</h2>
     <div class="chip-row" style="justify-content:flex-start">{chips}</div>
   </div>
@@ -1049,12 +1065,16 @@ def build_landing(p):
     sections = ""
     for h, lis in p.get("sections", []):
         sections += f"\n    <h2>{esc(h)}</h2>\n    <ul>\n" + "\n".join(f"      <li>{esc(x)}</li>" for x in lis) + "\n    </ul>"
+    if p.get("requirements"):
+        sections += "\n    <h2>Equipment and documents we need</h2>\n    <ul>\n" + "\n".join(f"      <li>{esc(x)}</li>" for x in p["requirements"]) + "\n    </ul>"
+        sections += ("\n    <h2>How onboarding works</h2>\n    <ol>\n" + "\n".join(f"      <li><b>{esc(st)}.</b> {esc(sd)}</li>" for st, sd in C.STEPS)
+                     + f"\n    </ol>\n    <p>{esc(C.FIRST_LOAD_NOTE)} {esc(C.AGREEMENT_NOTE)} <a href=\"{INQUIRY}\">Talk to a dispatcher</a> to start.</p>")
     what = "" if p.get("guide") else f"""
     <h2>What our {esc(p['nav'].lower())} includes</h2>
     <ul>
 {"".join(f"      <li>{esc(x)}</li>" + chr(10) for x in p.get("includes", INCLUDES_DEFAULT))}    </ul>
     <h2>{esc(p['nav'])} pricing</h2>
-    <p>{kind['label']} on OTR pay <b>{pl(kind)} of weekly gross</b>. With typical weekly gross of {money(kind['gross'][0])}-{money(kind['gross'][1])}, the dispatch fee is about {lo}-{hi} a week. No flat rate, no setup fee and no monthly subscription. <a href="estimate.html?{truck_q}">Estimate your fee</a>.</p>"""
+    <p>{kind['label']} on OTR pay <b>{pl(kind)} of weekly gross</b>. On a hypothetical weekly gross of {money(kind['gross'][0])}-{money(kind['gross'][1])}, the dispatch fee would be {lo}-{hi}. Gross is revenue, not profit, and local or regional work is quoted separately. No flat rate, no setup fee and no monthly subscription. <a href="estimate.html?{truck_q}">Estimate your fee</a>.</p>"""
     if p.get("pricing_note"):
         what = what.split(f"<h2>{esc(p['nav'])} pricing</h2>")[0] + f"<h2>{esc(p['nav'])} costs</h2>\n    <p>{esc(p['pricing_note'])}</p>"
     faqs = p["faqs"] + [C.FAQS[0], C.FAQS[5]]
@@ -1066,7 +1086,7 @@ def build_landing(p):
 {body_p}{sections}{what}
   </div>
   <div class="aside">
-    <div class="price feat"><h3>{kind['label']}</h3><div class="amt">{pl(kind)}<small> of weekly gross</small></div><ul><li>OTR operations</li><li>No flat rate or setup fee</li><li>About {lo}-{hi}/week on typical gross</li></ul><a class="btn btn-red" href="estimate.html?{truck_q}">Get a Free Estimate</a></div>
+    <div class="price feat"><h3>{kind['label']}</h3><div class="amt">{pl(kind)}<small> of weekly gross</small></div><ul><li>OTR operations</li><li>No flat rate or setup fee</li><li>About {lo}-{hi}/week on an example gross</li></ul><a class="btn btn-red" href="{INQUIRY}" data-cta="talk">Talk to a Dispatcher</a><a class="price-link" href="estimate.html?{truck_q}">Calculate my fee</a></div>
     <a class="card tool-mini" href="truck-fuel-cost-calculator.html?{truck_q if truck_q.startswith('truck=') else ''}#fuelCalc"><div class="icon">{ICONS['truck']}</div><div><b>Fuel cost for this truck</b><p>MPG, fuel per mile and the latest diesel price by state.</p></div></a>
     <a class="card tool-mini" href="cost-per-mile-calculator.html"><div class="icon">{ICONS['cash']}</div><div><b>Your cost per mile</b><p>Fixed and variable costs and your own pay, per total and loaded mile.</p></div></a>
     <a class="card tool-mini" href="load-profitability-calculator.html"><div class="icon">{ICONS['route']}</div><div><b>Is this load worth it?</b><p>Profit after dispatch and factoring fees, deadhead and your CPM.</p></div></a>
@@ -2520,8 +2540,13 @@ def build_state_dispatch():
               f"Yes. Texas Solutions provides truck dispatch services in {name}, for owner-operators and small fleets based in or running through "
               f"{listing(hubs[:3])}. Our remote dispatchers work 24/7, work with new MC authority from day one and dispatch your first load free. "
               f"The fee is {pl(M)} of weekly gross for semis, 8% for hotshots and 10% for box trucks.")
+        if code in ("AK", "HI"):
+            qa = (f"Do you dispatch carriers based in {name}?",
+                  f"Our dispatch coverage is the contiguous 48 states. Carriers based in {name} can contact us about their mainland operations, "
+                  f"and we will tell you plainly whether we can help. For mainland loads the fee is {pl(M)} of weekly gross for semis, 8% for hotshots and 10% for box trucks.")
+            lanes = []
         faqs = [qa,
-                (f"How much does truck dispatch cost in {name}?", f"The same as everywhere we dispatch: {pl(M)} of weekly gross for OTR semi trucks, 8% for hotshots and 10% for box trucks and straight trucks. No flat rate, no setup fee, no contract, and the first load is free."),
+                (f"How much does truck dispatch cost in {name}?", f"The same as everywhere we dispatch: {pl(M)} of weekly gross for OTR semi trucks, 8% for hotshots and 10% for box trucks and straight trucks. No flat rate, no setup fee, no long-term contract, and the first load is free."),
                 (f"Is there a truck dispatcher near me in {name}?", f"Our dispatchers work remotely across US time zones, so carriers in {listing(hubs[:3])} reach one 24/7 by phone, text or WhatsApp at {C.PHONE}. You do not need an office nearby; loads are booked by phone and email."),
                 (f"What freight moves in {name}?", f"Common freight in {name} includes {listing(info['freight'])}." + (f" Key freight gateways: {listing(info['ports'][:3])}." if info["ports"] else "")),
                 (f"Do you dispatch new authorities in {name}?", f"Yes. We dispatch carriers with brand-new MC numbers in {name} from day one and set you up with brokers that accept new authorities."),
@@ -2530,8 +2555,8 @@ def build_state_dispatch():
         body = f"""<section class="phero"><div class="wrap">
   <div class="crumbs"><a href="index.html">Home</a> / <a href="truck-dispatch-by-state.html">Dispatch by State</a> / {esc(name)}</div>
   <h1>Truck Dispatch Services in {esc(name)}</h1>
-  <p class="lede">24/7 truck dispatch for owner-operators and small fleets in {esc(listing(hubs[:4]))}. Semi trucks {pl(M)}, hotshots 8%, box trucks 10% of weekly gross. First load free, new MC welcome.</p>
-  <div class="ctas"><a class="btn btn-red" href="estimate.html">Get a Free Estimate</a><a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp a Dispatcher</a></div>
+  <p class="lede">{("Our coverage is the contiguous 48 states; carriers based in " + esc(name) + " can contact us about mainland operations.") if code in ("AK", "HI") else ("24/7 truck dispatch for owner-operators and small fleets in " + esc(listing(hubs[:4])) + ".")} Semi trucks {pl(M)}, hotshots 8%, box trucks 10% of weekly gross. First load free, new MC welcome.</p>
+  {lead_ctas()}
 </div></section>
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>
 <section class="sec"><div class="wrap two">
@@ -2545,7 +2570,7 @@ def build_state_dispatch():
       <li><b>Common freight:</b> {esc(listing(info['freight']))}</li>
       {f"<li><b>Ports and gateways:</b> {esc(listing(info['ports']))}</li>" if info['ports'] else ""}
     </ul>
-    <h2>Equipment we dispatch in {esc(name)}</h2>
+    <h2>Equipment we dispatch {("for " + esc(name) + "-based carriers on mainland runs") if code in ("AK", "HI") else ("in " + esc(name))}</h2>
     <ul>{eq_links}</ul>
     <p>We also dispatch {esc(listing([e for e in C.EQUIPMENT if e not in eq]).lower())} in {esc(name)}.</p>
     {"<h2>Common lanes from " + esc(name) + "</h2><ul>" + "".join(lanes) + "</ul><p>Lanes are examples of where loads from " + esc(name) + " often go, not quotes. Rates depend on lane, season and market.</p>" if lanes else ""}
@@ -2563,7 +2588,7 @@ def build_state_dispatch():
     {faq_html(faqs)}
   </div>
   <div class="aside">
-    <div class="price feat"><h3>{esc(name)} dispatch rates</h3><div class="amt">{pl(M)}<small> semi, of weekly gross</small></div><ul><li>Hotshot 8%, box truck 10%</li><li>First load free</li><li>No contract, no setup fee</li></ul><a class="btn btn-red" href="estimate.html">Estimate my fee</a></div>
+    <div class="price feat"><h3>{esc(name)} dispatch rates</h3><div class="amt">{pl(M)}<small> semi, of weekly gross</small></div><ul><li>Hotshot 8%, box truck 10%</li><li>First load free</li><li>No long-term contract, no setup fee</li></ul><a class="btn btn-red" href="{INQUIRY}" data-cta="talk">Talk to a Dispatcher</a><a class="price-link" href="estimate.html">Calculate my fee</a></div>
     {contact_side()}
   </div>
 </div></section>
@@ -2610,14 +2635,14 @@ def build_state_hub(states):
                 hub_lines.append(f'<a class="chip" href="{state_dispatch_path(c).lstrip("/")}">{esc(city)}, {c}</a>')
                 break
     qa = ("Is there a truck dispatch service near me?",
-          f"Texas Solutions dispatches owner-operators and small fleets in all 50 states. Our dispatchers work remotely across US time zones and are "
+          f"Texas Solutions dispatches owner-operators and small fleets across the contiguous 48 states. Our dispatchers work remotely across US time zones and are "
           f"available 24/7 by phone, text or WhatsApp at {C.PHONE}, so a carrier anywhere in the country can reach one. Pick your state below "
           f"for local freight, lanes and diesel prices.")
     faqs = [qa,
             ("Do I need a truck dispatcher in my own state?", "No. Dispatch is done by phone, email and load boards, so the dispatcher does not need to be local. What matters is that they know your lanes and are reachable when you need them; ours are available 24/7."),
-            ("Do you dispatch in every state?", "Yes. We dispatch dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck carriers in all 48 lower states, and carriers based in Alaska and Hawaii for their mainland freight."),
+            ("Do you dispatch in every state?", "We dispatch dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck carriers across the contiguous 48 states. " + C.AK_HI_NOTE),
             ("Is the dispatch fee different by state?", f"No. The fee is the same everywhere: {pl(M)} of weekly gross for OTR semis, 8% for hotshots and 10% for box trucks, with your first load free.")]
-    body = f"""{phero("Dispatch by State", "Truck Dispatch Services by State", "24/7 truck dispatch for owner-operators and small fleets in all 50 states. Find your state for local freight hubs, lanes and diesel prices.")}
+    body = f"""{phero("Dispatch by State", "Truck Dispatch Services by State", "24/7 truck dispatch for owner-operators and small fleets across the contiguous 48 states. Find your state for local freight hubs, lanes and diesel prices.")}
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa, label="Truck dispatch near me")}</div></section>
 <section class="sec"><div class="wrap">
   <div class="prose rv">
@@ -2631,7 +2656,7 @@ def build_state_hub(states):
 </div></section>
 {band()}"""
     title = "Truck Dispatch Services by State & Near Me | Texas Solutions"
-    desc = "Truck dispatch services in all 50 states: find your state for freight hubs, lanes and diesel prices. 24/7 dispatchers, first load free, new MC welcome."
+    desc = "Truck dispatch across the contiguous 48 states: find your state for freight hubs, lanes and diesel prices. 24/7 dispatchers, first load free, new MC welcome."
     schemas = [{"@context": "https://schema.org", "@type": "CollectionPage"}, faq_ld(faqs), crumbs_ld([("Dispatch by State", path)]), speakable(path, title)]
     kw = "truck dispatch services near me, truck dispatcher near me, dispatch company near me, truck dispatch by state, truck dispatch services USA"
     write(path.lstrip("/"), page(path, title, desc, kw, schemas, body, current="truck-dispatch-by-state.html"))
@@ -2714,8 +2739,8 @@ def llms_facts():
     return [
         f"- Service: truck dispatch (load search, rate negotiation, broker setup packets, rate confirmations, lane planning)",
         f"- Semi truck dispatch fee (dry van, reefer, flatbed, step deck, power only): {pl(M)} of weekly gross, OTR - about {SEMI_FEE[0]}-{SEMI_FEE[1]} per week on typical gross of {money(M['gross'][0])}-{money(M['gross'][1])}",
-        "- Hotshot dispatch fee: 8% of weekly gross, OTR - about $560-$720 per week on typical gross of $7,000-$9,000",
-        "- Box truck and straight truck dispatch fee: 10% of weekly gross, OTR - about $700-$900 per week on typical gross of $7,000-$9,000",
+        "- Hotshot dispatch fee: 8% of weekly gross, OTR - for example $560-$720 on a hypothetical $7,000-$9,000 week",
+        "- Box truck and straight truck dispatch fee: 10% of weekly gross, OTR - for example $700-$900 on a hypothetical $7,000-$9,000 week",
         "- The fee is a percentage of weekly gross (what the truck earns hauling loads that week). No flat rate, no setup fee, no monthly subscription, no long-term contract, no forced loads",
         f"- Condition: {C.PRICING_CONDITION}",
         "- Free trial: the first load is dispatched free",
@@ -2723,7 +2748,7 @@ def llms_facts():
         "- Back-office services: broker carrier packets, rate confirmations, invoicing and billing, detention and lumper collection, factoring setup, IFTA filing, DOT compliance help, MC authority setup",
         "- Equipment dispatched: dry van, reefer, flatbed, step deck, power only, hotshot, box truck, straight truck",
         "- Rough freight rates per mile (not guaranteed): flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20",
-        "- Area served: United States, all 48 lower states (nationwide, remote dispatchers across US time zones); head office in Midland, Texas",
+        "- Area served: the contiguous 48 states (remote dispatchers across US time zones); office in Midland, Texas. Alaska and Hawaii-based carriers can ask about mainland operations",
         "- Texas Solutions is a dispatch service. It is not a motor carrier or freight broker and does not guarantee loads, rates or earnings",
         f"- Phone: {C.PHONE} | WhatsApp: +1 838 910 3147 (https://wa.me/{C.WHATSAPP}) | Email: {C.EMAIL}",
         f"- Address: {C.STREET}, {C.CITY}, {C.REGION} {C.POSTAL}",

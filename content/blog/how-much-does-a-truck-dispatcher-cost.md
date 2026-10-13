@@ -33,7 +33,7 @@ Percentages across the US market usually fall between **3% and 10%** of gross. S
 
 We charge a percentage of weekly gross only, for carriers running OTR:
 
-| Truck type | Dispatch fee | Typical weekly gross | Fee per week |
+| Truck type | Dispatch fee | Example weekly gross (hypothetical) | Fee per week |
 |---|---|---|---|
 | Semi truck (dry van, reefer, flatbed, step deck, power only) | **5%** | $8,000 - $10,000 | about $400 - $500 |
 | Hotshot | **8%** | $7,000 - $9,000 | about $560 - $720 |

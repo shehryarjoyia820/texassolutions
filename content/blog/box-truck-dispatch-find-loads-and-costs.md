@@ -47,7 +47,7 @@ These are example figures, not a quote. Work out your own cost per mile with the
 
 ## What box truck dispatch costs
 
-Texas Solutions charges **10% of weekly gross** for OTR box trucks and straight trucks. On typical weekly gross of $7,000-$9,000 that is about **$700-$900 a week**, with no flat rate, no setup fee and no monthly subscription.
+Texas Solutions charges **10% of weekly gross** for OTR box trucks and straight trucks. On a hypothetical weekly gross of $7,000-$9,000 that is about **$700-$900 a week**, with no flat rate, no setup fee and no monthly subscription.
 
 Box truck dispatch costs a higher percentage than semi dispatch (5%) because each dollar of box truck gross takes more loads, more broker setups and more paperwork.
 

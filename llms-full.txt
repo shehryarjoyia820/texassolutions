@@ -5,8 +5,8 @@
 ## Key facts
 - Service: truck dispatch (load search, rate negotiation, broker setup packets, rate confirmations, lane planning)
 - Semi truck dispatch fee (dry van, reefer, flatbed, step deck, power only): 5% of weekly gross, OTR - about $400-$500 per week on typical gross of $8,000-$10,000
-- Hotshot dispatch fee: 8% of weekly gross, OTR - about $560-$720 per week on typical gross of $7,000-$9,000
-- Box truck and straight truck dispatch fee: 10% of weekly gross, OTR - about $700-$900 per week on typical gross of $7,000-$9,000
+- Hotshot dispatch fee: 8% of weekly gross, OTR - for example $560-$720 on a hypothetical $7,000-$9,000 week
+- Box truck and straight truck dispatch fee: 10% of weekly gross, OTR - for example $700-$900 on a hypothetical $7,000-$9,000 week
 - The fee is a percentage of weekly gross (what the truck earns hauling loads that week). No flat rate, no setup fee, no monthly subscription, no long-term contract, no forced loads
 - Condition: Rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately.
 - Free trial: the first load is dispatched free
@@ -14,7 +14,7 @@
 - Back-office services: broker carrier packets, rate confirmations, invoicing and billing, detention and lumper collection, factoring setup, IFTA filing, DOT compliance help, MC authority setup
 - Equipment dispatched: dry van, reefer, flatbed, step deck, power only, hotshot, box truck, straight truck
 - Rough freight rates per mile (not guaranteed): flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20
-- Area served: United States, all 48 lower states (nationwide, remote dispatchers across US time zones); head office in Midland, Texas
+- Area served: the contiguous 48 states (remote dispatchers across US time zones); office in Midland, Texas. Alaska and Hawaii-based carriers can ask about mainland operations
 - Texas Solutions is a dispatch service. It is not a motor carrier or freight broker and does not guarantee loads, rates or earnings
 - Phone: (838) 910-3147 | WhatsApp: +1 838 910 3147 (https://wa.me/18389103147) | Email: dispatch@texassolutions.co
 - Address: 401 W Kentucky Ave, Midland, TX 79701
@@ -34,7 +34,7 @@ Our published rates apply to OTR (over-the-road) operations. Local and regional 
 No. Texas Solutions charges a percentage of weekly gross only, so you pay when your truck earns and nothing in a week it sits. There is no flat rate, no setup fee and no monthly subscription, and your first load is dispatched free.
 
 ### What equipment do you dispatch?
-Dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, for owner-operators and small fleets across the United States.
+Dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, for owner-operators and small fleets across the contiguous 48 states.
 
 ### Is Texas Solutions a freight broker?
 No. Texas Solutions is a truck dispatch service that works for the carrier. We are not a motor carrier or freight broker. Loads are booked under your own authority, and you approve every load before it is booked.
@@ -46,7 +46,7 @@ No. You decide which loads, lanes and rates work for your business. Nothing is b
 No. Freight volume, rates, operating costs and market conditions vary. Texas Solutions does not guarantee any specific load volume, rate, revenue or earnings.
 
 ### Is there a long-term contract?
-No. The dispatch agreement sets the service terms and your percentage, and the notice period for ending service is stated in that agreement.
+No long-term contract. A signed dispatch agreement is still required: it sets your percentage, what is included and the notice period for ending service.
 
 ### What do I need to get started?
 Your MC and DOT numbers, equipment type and preferred lanes. After the first call we collect your W-9, certificate of insurance and, if you factor, a notice of assignment.
@@ -61,7 +61,7 @@ Yes. Tap the WhatsApp button on any page or message +1 (838) 910-3147 on WhatsAp
 Yes. Our dispatchers work remotely across US time zones and are available 24/7 by phone, text or WhatsApp at (838) 910-3147, including nights and weekends when loads, breakdowns and reloads come up.
 
 ### Is there a free trial?
-Yes. Your first load is dispatched free so you can see how we work. After that the fee is a percentage of weekly gross: 5% for semis, 8% for hotshots, 10% for box trucks and straight trucks.
+Yes. Your first load is dispatched with no dispatch fee so you can see how we work. After that, the percentage in your signed dispatch agreement applies: 5% of weekly gross for OTR semis, 8% for hotshots, 10% for box trucks and straight trucks. Local and regional work is quoted separately.
 
 ### Do you work with new MC authority?
 Yes, from day one. We work with brand-new MC numbers, help with broker setup packets and look for brokers that accept new authorities. See dispatch for new authority for details.
@@ -82,7 +82,10 @@ Yes. Each truck is dispatched to its own equipment, lanes and home time, at the 
 For many owner-operators, yes, when it saves hours on load boards, cuts deadhead and wins better rates by more than the fee. It is less useful if you already have steady direct freight. Results vary, so compare your weekly gross and empty miles before and after.
 
 ### Do you dispatch nationwide or only in Texas?
-Nationwide. Our head office is in Midland, Texas, but our dispatchers work remotely across US time zones and book loads for carriers in all 48 lower states, from California and Washington to Florida, New Jersey and Illinois.
+Nationwide. Our office is in Midland, Texas, but our service covers the contiguous 48 states: remote dispatchers across US time zones book loads for carriers from California and Washington to Florida, New Jersey and Illinois.
+
+### Do you work with carriers in Alaska or Hawaii?
+Our dispatch coverage is the contiguous 48 states. Carriers based in Alaska or Hawaii can contact us about their mainland operations, and we will tell you plainly whether we can help.
 
 ### Do you offer a flat-rate dispatch plan?
 No. We only charge a percentage of weekly gross, so a week the truck does not run costs you nothing. A flat weekly fee is due whether or not you haul; a percentage keeps the dispatcher paid only when your truck earns.
@@ -190,7 +193,7 @@ Yes. We help prepare and file your quarterly IFTA return from your mileage and f
 Yes. We document check-in and check-out times and lumper receipts and bill them with the load. Detention pay depends on the terms in your rate confirmation; try the detention pay calculator to estimate it.
 
 ### How much does semi truck dispatch cost?
-5% of weekly gross for OTR semi trucks, whatever the trailer type. On $8,000-$10,000 weekly gross that is about $400-$500 a week. No flat rate, no setup fee and no contract.
+5% of weekly gross for OTR semi trucks, whatever the trailer type. On $8,000-$10,000 weekly gross that is about $400-$500 a week. No flat rate, no setup fee and no long-term contract.
 
 ### Can one dispatcher handle different trailer types?
 Yes. If you switch between a dry van and a reefer, or run power only between your own loads, the same dispatcher plans around whichever trailer you have that week.
@@ -1163,7 +1166,7 @@ Keep in mind that a new carrier enters FMCSA's new entrant program, which includ
 
 ## Step 4: Pick the truck and trailer
 
-Your equipment decides which freight you can haul and what it pays. Rough rates on our desk, which vary by lane and season and are not guaranteed:
+Your equipment decides which freight you can haul and what it pays. Rough planning ranges from our desk (not market data, available loads or quotes), which vary by lane and season:
 
 | Equipment | Rough rate per mile |
 |---|---|
@@ -1244,9 +1247,9 @@ As a rough guide, hotshot loads often pay about **$4 to $5 a mile**. Factors tha
 
 For a deeper look see [hotshot trucking rates per mile and fuel](/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html), and compare with other equipment on our [rate per mile guide](/truck-dispatch-rates.html). Rates are never guaranteed.
 
-## Typical weekly gross
+## Example weekly gross (hypothetical)
 
-On the Texas Solutions dispatch desk, OTR hotshots typically gross about **$7,000 to $9,000 a week**. That figure is not a guarantee. Weeks with repairs, weather, home time or slow freight come in lower.
+As a hypothetical example, OTR hotshots might gross about **$7,000 to $9,000 a week**. That figure is not a guarantee. Weeks with repairs, weather, home time or slow freight come in lower.
 
 ## Worked example: a good week
 
@@ -1375,9 +1378,9 @@ As a rough guide, box truck loads often pay about **$1.80 to $3.20 per mile**. R
 
 Compare equipment types on our [rate per mile guide](/truck-dispatch-rates.html). Rates are market-driven and not guaranteed.
 
-## Typical weekly gross for box trucks
+## Example weekly gross for box trucks (hypothetical)
 
-On the Texas Solutions dispatch desk, OTR box trucks typically gross about **$7,000 to $9,000 a week**. That is not a promise. Weeks with breakdowns, home time, weather or soft freight markets will come in lower, and some weeks may come in higher.
+As a hypothetical example, OTR box trucks might gross about **$7,000 to $9,000 a week**. That is not a promise. Weeks with breakdowns, home time, weather or soft freight markets will come in lower, and some weeks may come in higher.
 
 ## Worked example: a good week
 
@@ -3495,7 +3498,7 @@ Percentages across the US market usually fall between **3% and 10%** of gross. S
 
 We charge a percentage of weekly gross only, for carriers running OTR:
 
-| Truck type | Dispatch fee | Typical weekly gross | Fee per week |
+| Truck type | Dispatch fee | Example weekly gross (hypothetical) | Fee per week |
 |---|---|---|---|
 | Semi truck (dry van, reefer, flatbed, step deck, power only) | **5%** | $8,000 - $10,000 | about $400 - $500 |
 | Hotshot | **8%** | $7,000 - $9,000 | about $560 - $720 |
@@ -3582,7 +3585,7 @@ You approve every load before it is booked.
 
 ## What hotshot dispatch costs
 
-Texas Solutions charges **8% of weekly gross** for OTR hotshot dispatch, with no flat rate and no setup fee. On typical weekly gross of $7,000-$9,000, that is about **$560-$720 a week**. [Calculate your fee](/estimate.html?truck=hotshot) or read more about our [hotshot dispatch service](/hotshot-dispatch.html).
+Texas Solutions charges **8% of weekly gross** for OTR hotshot dispatch, with no flat rate and no setup fee. On a hypothetical weekly gross of $7,000-$9,000, that is about **$560-$720 a week**. [Calculate your fee](/estimate.html?truck=hotshot) or read more about our [hotshot dispatch service](/hotshot-dispatch.html).
 
 ### Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile
 URL: https://dispatch.texassolutions.co/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html
@@ -3662,7 +3665,7 @@ These are example figures, not a quote. Work out your own cost per mile with the
 
 ## What box truck dispatch costs
 
-Texas Solutions charges **10% of weekly gross** for OTR box trucks and straight trucks. On typical weekly gross of $7,000-$9,000 that is about **$700-$900 a week**, with no flat rate, no setup fee and no monthly subscription.
+Texas Solutions charges **10% of weekly gross** for OTR box trucks and straight trucks. On a hypothetical weekly gross of $7,000-$9,000 that is about **$700-$900 a week**, with no flat rate, no setup fee and no monthly subscription.
 
 Box truck dispatch costs a higher percentage than semi dispatch (5%) because each dollar of box truck gross takes more loads, more broker setups and more paperwork.
 

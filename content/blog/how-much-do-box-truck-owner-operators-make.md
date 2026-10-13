@@ -8,10 +8,10 @@ tags:
   - Earnings
 keywords: "how much do box truck owner operators make, box truck loads"
 question: "How much do box truck owner-operators make?"
-answer: "It varies widely with miles, rates and costs. On the Texas Solutions dispatch desk, box trucks typically gross about $7,000 to $9,000 a week, though that is not guaranteed. After fuel, insurance, truck payments, maintenance and fees, our worked examples keep about 42 to 49 percent of gross before taxes, and real results can be lower."
+answer: "It varies widely with miles, rates and costs. As a hypothetical example, box trucks might gross about $7,000 to $9,000 a week, though that is not guaranteed. After fuel, insurance, truck payments, maintenance and fees, our worked examples keep about 42 to 49 percent of gross before taxes, and real results can be lower."
 faq:
   - q: "How much does a box truck gross per week?"
-    a: "On our dispatch desk, box trucks typically gross about $7,000 to $9,000 a week running OTR. Your results depend on lanes, season, miles driven and how many weeks you work. Earnings are not guaranteed."
+    a: "As a hypothetical example, box trucks might gross about $7,000 to $9,000 a week running OTR. Your results depend on lanes, season, miles driven and how many weeks you work. Earnings are not guaranteed."
   - q: "What do box truck loads pay per mile?"
     a: "As a rough guide, box truck loads often pay about $1.80 to $3.20 per mile, depending on lane, season and urgency."
   - q: "What is the biggest expense for a box truck owner-operator?"
@@ -42,9 +42,9 @@ As a rough guide, box truck loads often pay about **$1.80 to $3.20 per mile**. R
 
 Compare equipment types on our [rate per mile guide](/truck-dispatch-rates.html). Rates are market-driven and not guaranteed.
 
-## Typical weekly gross for box trucks
+## Example weekly gross for box trucks (hypothetical)
 
-On the Texas Solutions dispatch desk, OTR box trucks typically gross about **$7,000 to $9,000 a week**. That is not a promise. Weeks with breakdowns, home time, weather or soft freight markets will come in lower, and some weeks may come in higher.
+As a hypothetical example, OTR box trucks might gross about **$7,000 to $9,000 a week**. That is not a promise. Weeks with breakdowns, home time, weather or soft freight markets will come in lower, and some weeks may come in higher.
 
 ## Worked example: a good week
 

@@ -64,4 +64,4 @@ You approve every load before it is booked.
 
 ## What hotshot dispatch costs
 
-Texas Solutions charges **8% of weekly gross** for OTR hotshot dispatch, with no flat rate and no setup fee. On typical weekly gross of $7,000-$9,000, that is about **$560-$720 a week**. [Calculate your fee](/estimate.html?truck=hotshot) or read more about our [hotshot dispatch service](/hotshot-dispatch.html).
+Texas Solutions charges **8% of weekly gross** for OTR hotshot dispatch, with no flat rate and no setup fee. On a hypothetical weekly gross of $7,000-$9,000, that is about **$560-$720 a week**. [Calculate your fee](/estimate.html?truck=hotshot) or read more about our [hotshot dispatch service](/hotshot-dispatch.html).

@@ -9,10 +9,10 @@ tags:
   - Earnings
 keywords: "how much do hotshot drivers make, hotshot loads"
 question: "How much do hotshot drivers make?"
-answer: "Hotshot owner-operator income depends on miles, rates and costs. On the Texas Solutions dispatch desk, hotshots typically gross about $7,000 to $9,000 a week, which is not guaranteed. After fuel, insurance, equipment payments, maintenance and fees, our worked examples keep about 50 to 58 percent of gross before taxes, and real results can be lower."
+answer: "Hotshot owner-operator income depends on miles, rates and costs. As a hypothetical example, hotshots might gross about $7,000 to $9,000 a week, which is not guaranteed. After fuel, insurance, equipment payments, maintenance and fees, our worked examples keep about 50 to 58 percent of gross before taxes, and real results can be lower."
 faq:
   - q: "How much does a hotshot gross per week?"
-    a: "On our dispatch desk, OTR hotshots typically gross about $7,000 to $9,000 a week. Lanes, season, miles and home time all change the result, and earnings are not guaranteed."
+    a: "As a hypothetical example, OTR hotshots might gross about $7,000 to $9,000 a week. Lanes, season, miles and home time all change the result, and earnings are not guaranteed."
   - q: "What do hotshot loads pay per mile?"
     a: "As a rough guide, hotshot loads often pay about $4 to $5 a mile, depending on lane, urgency and season."
   - q: "Do company hotshot drivers make the same as owner-operators?"
@@ -35,9 +35,9 @@ As a rough guide, hotshot loads often pay about **$4 to $5 a mile**. Factors tha
 
 For a deeper look see [hotshot trucking rates per mile and fuel](/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html), and compare with other equipment on our [rate per mile guide](/truck-dispatch-rates.html). Rates are never guaranteed.
 
-## Typical weekly gross
+## Example weekly gross (hypothetical)
 
-On the Texas Solutions dispatch desk, OTR hotshots typically gross about **$7,000 to $9,000 a week**. That figure is not a guarantee. Weeks with repairs, weather, home time or slow freight come in lower.
+As a hypothetical example, OTR hotshots might gross about **$7,000 to $9,000 a week**. That figure is not a guarantee. Weeks with repairs, weather, home time or slow freight come in lower.
 
 ## Worked example: a good week
 

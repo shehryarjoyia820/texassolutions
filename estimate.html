@@ -35,7 +35,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="css/site.css?v=d381ce80">
+<link rel="stylesheet" href="css/site.css?v=92c7ceb0">
 <link rel="alternate" type="text/plain" href="https://dispatch.texassolutions.co/llms.txt" title="LLM summary">
 <link rel="alternate" type="application/rss+xml" title="Texas Solutions Truck Dispatch Blog" href="https://dispatch.texassolutions.co/feed.xml">
 <script>document.documentElement.classList.remove('no-js')</script>
@@ -112,7 +112,7 @@
     </nav>
     <div class="nav-cta">
       <a class="btn btn-line" href="tel:+18389103147"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
-      <a class="btn btn-red" href="estimate.html">Get an Estimate</a>
+      <a class="btn btn-red" href="contact.html#inquiry" data-cta="talk">Talk to a Dispatcher</a>
       <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span></button>
     </div>
   </div>
@@ -162,7 +162,8 @@
       <a href="detention-pay-calculator.html">Detention Pay Calculator</a>
       </div>
     </details>
-    <a class="btn btn-red" href="estimate.html">Get a Free Estimate</a>
+    <a class="btn btn-red" href="contact.html#inquiry" data-cta="talk">Talk to a Dispatcher</a>
+    <a class="btn btn-line" href="estimate.html">Calculate Your Dispatch Fee</a>
     <a class="btn btn-wa" href="https://wa.me/18389103147?text=Hi%20Texas%20Solutions%2C%20I%27d%20like%20to%20know%20more%20about%20your%20truck%20dispatch%20service." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.75A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3zm0 23.66c-2 0-3.95-.54-5.65-1.55l-.4-.24-3.97 1.04 1.06-3.86-.26-.4a10.6 10.6 0 0 1-1.63-5.65c0-5.87 4.78-10.65 10.66-10.65 5.87 0 10.63 4.78 10.63 10.65 0 5.88-4.77 10.66-10.44 10.66zm5.84-7.97c-.32-.16-1.9-.94-2.19-1.04-.3-.11-.5-.16-.72.16-.21.32-.83 1.04-1.01 1.25-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67 0 1.57 1.15 3.1 1.31 3.3.16.22 2.26 3.45 5.47 4.84.77.33 1.36.53 1.83.67.77.25 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.52-.08-.14-.29-.22-.61-.38z"/></svg>WhatsApp a Dispatcher</a>
 </nav>
 <main id="main">
@@ -194,7 +195,7 @@
     </div>
     <div class="field"><label for="estGross">Weekly gross per truck</label>
       <div class="range-row"><input type="range" id="estGross" min="3000" max="15000" step="250" value="9000"><output id="estGrossOut" for="estGross">$9,000</output></div>
-      <p class="hint">Typical OTR weekly gross for a <b id="estTruckName2">Dry Van</b>: <b id="estTypical">$8,000 - $10,000</b></p>
+      <p class="hint">Example weekly gross range for a <b id="estTruckName2">Dry Van</b> (hypothetical, not a guarantee): <b id="estTypical">$8,000 - $10,000</b>. Gross is revenue, not profit.</p>
     </div>
     <div class="field"><label for="estCustom">Your own percentage (optional)</label>
       <div class="range-row"><input type="number" id="estCustom" min="1" max="20" step="0.5" inputmode="decimal" placeholder="e.g. 5" class="pct-in"><output>%</output></div>
@@ -213,8 +214,8 @@
       <div><span>Total fee, monthly (avg)</span><b id="estMonthly">-</b></div>
       <div><span>You keep of gross, weekly</span><b id="estKeep">-</b></div>
     </div>
-    <a class="btn btn-red" href="#quote">Get my free quote</a>
-    <small>Rough estimate only. Your final percentage is confirmed in your signed dispatch agreement. Your first load is dispatched free. No flat rate, no setup fee, no monthly subscription. Gross, rates and earnings are not guaranteed.</small>
+    <a class="btn btn-red" href="#quote" data-cta="talk">Talk to a Dispatcher</a>
+    <small>Rough estimate only. Your percentage is confirmed in your signed dispatch agreement. First load dispatched free. No flat rate, no setup fee, no monthly subscription, no long-term contract. Gross, rates and earnings are not guaranteed.</small>
   </div>
 </div>
 </div></section>
@@ -226,8 +227,8 @@
     <p class="eq">Dry Van, Reefer, Flatbed, Step Deck, Power Only</p>
     <div class="amt">5%<small> of weekly gross</small></div>
     <ul>
-      <li>Typical weekly gross $8,000 - $10,000</li>
-      <li>About $400 - $500 per week on typical gross</li>
+      <li>Example: $8,000 - $10,000 weekly gross (hypothetical)</li>
+      <li>Fee on that example: $400 - $500 per week</li>
       <li>OTR (over-the-road) operations</li>
       <li>No flat rate, no setup fee, no subscription</li>
       <li>You approve every load</li>
@@ -239,8 +240,8 @@
     <p class="eq">Hotshot trucks, Gooseneck and flatbed trailers</p>
     <div class="amt">8%<small> of weekly gross</small></div>
     <ul>
-      <li>Typical weekly gross $7,000 - $9,000</li>
-      <li>About $560 - $720 per week on typical gross</li>
+      <li>Example: $7,000 - $9,000 weekly gross (hypothetical)</li>
+      <li>Fee on that example: $560 - $720 per week</li>
       <li>OTR (over-the-road) operations</li>
       <li>No flat rate, no setup fee, no subscription</li>
       <li>You approve every load</li>
@@ -252,8 +253,8 @@
     <p class="eq">Box Truck, Straight Truck</p>
     <div class="amt">10%<small> of weekly gross</small></div>
     <ul>
-      <li>Typical weekly gross $7,000 - $9,000</li>
-      <li>About $700 - $900 per week on typical gross</li>
+      <li>Example: $7,000 - $9,000 weekly gross (hypothetical)</li>
+      <li>Fee on that example: $700 - $900 per week</li>
       <li>OTR (over-the-road) operations</li>
       <li>No flat rate, no setup fee, no subscription</li>
       <li>You approve every load</li>
@@ -261,26 +262,35 @@
     
   </div>
 </div>
-<p class="note center">Rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately. Rough estimate only. Your final percentage is confirmed in your signed dispatch agreement. Your first load is dispatched free. No flat rate, no setup fee, no monthly subscription.</p>
+<p class="note center">Rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately. Rough estimate only. Your percentage is confirmed in your signed dispatch agreement. First load dispatched free. No flat rate, no setup fee, no monthly subscription, no long-term contract. Weekly gross is the revenue a truck books before fuel, insurance, maintenance and other costs. It is not profit.</p>
 </div></section>
 <section class="sec" id="quote"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Free quote</span><h2>Name your percentage, get a free quote</h2><p>Tell us your truck and the dispatch percentage you want. Tap the button and your quote request opens in WhatsApp, ready to send.</p></div>
-    <form class="form rv" id="waQuote" novalidate>
+    <div class="sec-head rv"><span class="eyebrow">Talk to a dispatcher</span><h2>Send your details to a dispatcher</h2><p>Your inquiry is sent straight to our dispatch team; a dispatcher replies by the method you choose. Name, a phone number or email, and your equipment are enough. WhatsApp stays available if you prefer to chat.</p></div>
+    <form class="form rv" id="estimateForm" data-web3 data-kind="lead" data-subject="New dispatch inquiry (fee calculator)" novalidate>
+  <input type="hidden" name="intent" value="talk_to_dispatcher">
   <div class="grid g2">
-    <div><label class="fl" for="wqName">Full name <i>*</i></label><input type="text" id="wqName" autocomplete="name" required></div>
-    <div><label class="fl" for="wqPhone">Phone <i>*</i></label><input type="tel" id="wqPhone" autocomplete="tel" required></div>
-    <div><label class="fl" for="wqTruck">Truck type <i>*</i></label><select id="wqTruck" required><option value="dry-van">Dry Van</option><option value="reefer">Reefer</option><option value="flatbed">Flatbed</option><option value="step-deck">Step Deck</option><option value="power-only">Power Only</option><option value="box-truck">Box Truck</option><option value="straight-truck">Straight Truck</option><option value="hotshot">Hotshot</option></select></div>
-    <div><label class="fl" for="wqTrucks">Number of trucks</label><input type="number" id="wqTrucks" min="1" max="500" value="1"></div>
-    <div><label class="fl" for="wqPct">Your desired percentage (%) <i>*</i></label><input type="number" id="wqPct" min="1" max="20" step="0.5" inputmode="decimal" placeholder="e.g. 5" required><p class="hint" id="wqPctHint" style="font-size:13px;color:var(--muted);margin-top:6px">Our rate for this truck: 5-6%</p></div>
-    <div><label class="fl" for="wqGross">Weekly gross per truck ($)</label><input type="number" id="wqGross" min="0" step="100" inputmode="numeric" placeholder="e.g. 9000"></div>
-    <div><label class="fl" for="wqMc">MC number</label><input type="text" id="wqMc" inputmode="numeric"></div>
-    <div><label class="fl" for="wqLanes">Home base and lanes</label><input type="text" id="wqLanes" placeholder="e.g. Midland, TX. OTR Southeast"></div>
-    <div class="full"><label class="fl" for="wqMsg">Message</label><textarea id="wqMsg" placeholder="Anything else we should know?"></textarea></div>
+    <div class="full"><label class="fl" for="estimateForm-name">Your name <i>*</i></label><input type="text" id="estimateForm-name" name="name" autocomplete="name" required></div>
+    <div><label class="fl" for="estimateForm-phone">Phone</label><input type="tel" id="estimateForm-phone" name="phone" autocomplete="tel" data-oneof="contact"></div>
+    <div><label class="fl" for="estimateForm-email">Email</label><input type="email" id="estimateForm-email" name="email" autocomplete="email" data-oneof="contact"></div>
+    <p class="full hint oneof-hint">Phone or email, at least one. <i>*</i></p>
+    <div class="full"><label class="fl" for="estimateForm-eq">Equipment <i>*</i></label><select id="estimateForm-eq" name="equipment" required><option value="">Select equipment</option><option>Dry Van</option><option>Reefer</option><option>Flatbed</option><option>Step Deck</option><option>Power Only</option><option>Hotshot</option><option>Box Truck</option><option>Straight Truck</option></select></div>
+    <p class="full hint">Optional, but it helps us prepare:</p>
+    <div><label class="fl" for="estimateForm-mc">MC number or authority status</label><select id="estimateForm-mc" name="mc_status"><option value="">Select status</option><option>Active MC authority</option><option>New authority (under 6 months)</option><option>Applying for authority</option><option>No authority yet / leased on</option></select></div>
+    <div><label class="fl" for="estimateForm-trucks">Number of trucks</label><input type="number" id="estimateForm-trucks" name="trucks" min="1" max="500" placeholder="1"></div>
+    <div><label class="fl" for="estimateForm-state">Home state</label><select id="estimateForm-state" name="home_state"><option value="">Select state</option><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select></div>
+    <div><label class="fl" for="estimateForm-lanes">Preferred lanes</label><input type="text" id="estimateForm-lanes" name="lanes" placeholder="e.g. Midwest to Southeast"></div>
+    <div class="full"><label class="fl" for="estimateForm-method">Preferred contact method</label><select id="estimateForm-method" name="contact_method"><option value="">Any</option><option>Phone call</option><option>Text message</option><option>WhatsApp</option><option>Email</option></select></div>
+    <div><label class="fl" for="estimateForm-gross">Weekly gross per truck ($, optional)</label><input type="number" id="estimateForm-gross" name="weekly_gross" min="0" step="100" inputmode="numeric" placeholder="e.g. 9000"></div>
+    <div><label class="fl" for="estimateForm-pct">Percentage you have in mind (optional)</label><input type="number" id="estimateForm-pct" name="proposed_percent" min="1" max="20" step="0.5" inputmode="decimal" placeholder="Our rate: 5% semi, 8% hotshot, 10% box truck"></div>
+    <div class="full"><label class="fl" for="estimateForm-msg">Message</label><textarea id="estimateForm-msg" name="message" rows="3" placeholder="MC number, home time, questions. We collect documents after the first call."></textarea></div>
+    <div class="full"><label class="consent"><input type="checkbox" name="sms_consent" value="yes"><span>I agree to receive conversational and service-related SMS messages from Texas Solutions, a brand operated by LeadFlow Marketing Inc. at the phone number provided, including responses to my inquiry and dispatch-related communications. Message frequency varies. Message and data rates may apply. Reply STOP to opt out and HELP for help. SMS consent is optional and is not a condition of receiving dispatch services. See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms &amp; Conditions</a>.</span></label>
+      <input type="hidden" name="sms_consent_text" value="I agree to receive conversational and service-related SMS messages from Texas Solutions, a brand operated by LeadFlow Marketing Inc. at the phone number provided, including responses to my inquiry and dispatch-related communications. Message frequency varies. Message and data rates may apply. Reply STOP to opt out and HELP for help. SMS consent is optional and is not a condition of receiving dispatch services. See our Privacy Policy and Terms &amp; Conditions."><input type="hidden" name="sms_consent_version" value="sms-consent-v1 (wording live since September 2026)"></div>
   </div>
-  <button class="btn btn-wa" type="submit"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.75A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3zm0 23.66c-2 0-3.95-.54-5.65-1.55l-.4-.24-3.97 1.04 1.06-3.86-.26-.4a10.6 10.6 0 0 1-1.63-5.65c0-5.87 4.78-10.65 10.66-10.65 5.87 0 10.63 4.78 10.63 10.65 0 5.88-4.77 10.66-10.44 10.66zm5.84-7.97c-.32-.16-1.9-.94-2.19-1.04-.3-.11-.5-.16-.72.16-.21.32-.83 1.04-1.01 1.25-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67 0 1.57 1.15 3.1 1.31 3.3.16.22 2.26 3.45 5.47 4.84.77.33 1.36.53 1.83.67.77.25 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.52-.08-.14-.29-.22-.61-.38z"/></svg>Get Free Quote on WhatsApp</button>
+  <label class="hp" aria-hidden="true">Leave empty <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+  <button class="btn btn-red" type="submit">Send My Details</button>
   <p class="form-status" role="status" aria-live="polite"></p>
-  <p class="fine">Tapping the button opens WhatsApp with your details filled in, ready to send to Texas Solutions at +1 (838) 910-3147. Nothing is sent until you press send in WhatsApp. Your requested percentage is reviewed by a dispatcher; the final percentage is discussed with each carrier.</p>
+  <p class="fine">Submitting this form requests contact from Texas Solutions regarding Texas Solutions&#x27;s own dispatch services. Texas Solutions does not sell or transfer mobile opt-in information or SMS consent to third parties for marketing or promotional purposes.</p>
 </form>
   </div>
   <div class="aside">
@@ -311,32 +321,35 @@
   <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Rough rates per mile</h2></div>
   <div class="grid board-grid" id="board">
   <div class="board rv">
-    <div class="board-head"><b>Example lanes</b><span>Illustrative examples, not live rates</span></div>
+    <div class="board-head"><b>Illustrative lane examples</b><span>Not available loads or current rate quotes</span></div>
     <div style="overflow-x:auto"><table class="board-table">
       <thead><tr><th>Lane</th><th>Equipment</th><th class="hide-sm">Miles</th><th>Example rate</th></tr></thead>
       <tbody>
-      <tr><td>Midland, TX &rarr; Phoenix, AZ</td><td><span class="eq-badge">Flatbed</span></td><td class="hide-sm">872 mi</td><td class="rate">$5.60/mi</td></tr>
-      <tr><td>Odessa, TX &rarr; Oklahoma City, OK</td><td><span class="eq-badge">Hotshot</span></td><td class="hide-sm">412 mi</td><td class="rate">$4.85/mi</td></tr>
-      <tr><td>Laredo, TX &rarr; Atlanta, GA</td><td><span class="eq-badge">Dry Van</span></td><td class="hide-sm">1,142 mi</td><td class="rate">$3.25/mi</td></tr>
-      <tr><td>Dallas, TX &rarr; Denver, CO</td><td><span class="eq-badge">Flatbed</span></td><td class="hide-sm">793 mi</td><td class="rate">$6.40/mi</td></tr>
-      <tr><td>Houston, TX &rarr; Memphis, TN</td><td><span class="eq-badge">Dry Van</span></td><td class="hide-sm">587 mi</td><td class="rate">$3.10/mi</td></tr>
-      <tr><td>Amarillo, TX &rarr; Salt Lake City, UT</td><td><span class="eq-badge">Hotshot</span></td><td class="hide-sm">906 mi</td><td class="rate">$4.40/mi</td></tr>
-      <tr><td>El Paso, TX &rarr; Los Angeles, CA</td><td><span class="eq-badge">Power Only</span></td><td class="hide-sm">801 mi</td><td class="rate">$3.45/mi</td></tr>
-      <tr><td>San Antonio, TX &rarr; Nashville, TN</td><td><span class="eq-badge">Step Deck</span></td><td class="hide-sm">1,024 mi</td><td class="rate">$5.90/mi</td></tr>
-      <tr><td>Fort Worth, TX &rarr; Kansas City, MO</td><td><span class="eq-badge">Reefer</span></td><td class="hide-sm">520 mi</td><td class="rate">$4.80/mi</td></tr>
-      <tr><td>Houston, TX &rarr; San Antonio, TX</td><td><span class="eq-badge">Dry Van</span></td><td class="hide-sm">197 mi</td><td class="rate">$4.60/mi</td></tr>
-      <tr><td>San Antonio, TX &rarr; Shreveport, LA</td><td><span class="eq-badge">Hotshot</span></td><td class="hide-sm">392 mi</td><td class="rate">$4.30/mi</td></tr>
+      <tr><td>Los Angeles, CA &rarr; Phoenix, AZ</td><td><span class="eq-badge">Dry Van</span></td><td class="hide-sm">372 mi</td><td class="rate">$3.40/mi</td></tr>
+      <tr><td>Chicago, IL &rarr; Atlanta, GA</td><td><span class="eq-badge">Dry Van</span></td><td class="hide-sm">716 mi</td><td class="rate">$3.20/mi</td></tr>
+      <tr><td>Philadelphia, PA &rarr; Atlanta, GA</td><td><span class="eq-badge">Dry Van</span></td><td class="hide-sm">781 mi</td><td class="rate">$3.10/mi</td></tr>
+      <tr><td>Ontario, CA &rarr; Dallas, TX</td><td><span class="eq-badge">Reefer</span></td><td class="hide-sm">1,388 mi</td><td class="rate">$4.10/mi</td></tr>
+      <tr><td>Jacksonville, FL &rarr; Atlanta, GA</td><td><span class="eq-badge">Reefer</span></td><td class="hide-sm">346 mi</td><td class="rate">$4.50/mi</td></tr>
+      <tr><td>Columbus, OH &rarr; Nashville, TN</td><td><span class="eq-badge">Reefer</span></td><td class="hide-sm">380 mi</td><td class="rate">$4.30/mi</td></tr>
+      <tr><td>Pittsburgh, PA &rarr; Chicago, IL</td><td><span class="eq-badge">Flatbed</span></td><td class="hide-sm">461 mi</td><td class="rate">$5.40/mi</td></tr>
+      <tr><td>Ontario, CA &rarr; Las Vegas, NV</td><td><span class="eq-badge">Flatbed</span></td><td class="hide-sm">230 mi</td><td class="rate">$5.90/mi</td></tr>
+      <tr><td>Dallas, TX &rarr; Oklahoma City, OK</td><td><span class="eq-badge">Step Deck</span></td><td class="hide-sm">206 mi</td><td class="rate">$5.80/mi</td></tr>
+      <tr><td>Savannah, GA &rarr; Nashville, TN</td><td><span class="eq-badge">Power Only</span></td><td class="hide-sm">492 mi</td><td class="rate">$3.30/mi</td></tr>
+      <tr><td>Chicago, IL &rarr; Indianapolis, IN</td><td><span class="eq-badge">Power Only</span></td><td class="hide-sm">182 mi</td><td class="rate">$3.60/mi</td></tr>
+      <tr><td>Allentown, PA &rarr; Columbus, OH</td><td><span class="eq-badge">Power Only</span></td><td class="hide-sm">421 mi</td><td class="rate">$3.20/mi</td></tr>
+      <tr><td>Cleveland, OH &rarr; Pittsburgh, PA</td><td><span class="eq-badge">Hotshot</span></td><td class="hide-sm">134 mi</td><td class="rate">$4.60/mi</td></tr>
+      <tr><td>Houston, TX &rarr; Baton Rouge, LA</td><td><span class="eq-badge">Hotshot</span></td><td class="hide-sm">271 mi</td><td class="rate">$4.70/mi</td></tr>
+      <tr><td>Fresno, CA &rarr; Reno, NV</td><td><span class="eq-badge">Hotshot</span></td><td class="hide-sm">265 mi</td><td class="rate">$4.40/mi</td></tr>
+      <tr><td>Atlanta, GA &rarr; Charlotte, NC</td><td><span class="eq-badge">Box Truck</span></td><td class="hide-sm">245 mi</td><td class="rate">$2.80/mi</td></tr>
+      <tr><td>Joliet, IL &rarr; Columbus, OH</td><td><span class="eq-badge">Box Truck</span></td><td class="hide-sm">333 mi</td><td class="rate">$2.70/mi</td></tr>
+      <tr><td>Miami, FL &rarr; Orlando, FL</td><td><span class="eq-badge">Box Truck</span></td><td class="hide-sm">235 mi</td><td class="rate">$2.40/mi</td></tr>
       <tr><td>Dallas, TX &rarr; Houston, TX</td><td><span class="eq-badge">Box Truck</span></td><td class="hide-sm">239 mi</td><td class="rate">$2.90/mi</td></tr>
-      <tr><td>Midland, TX &rarr; San Antonio, TX</td><td><span class="eq-badge">Box Truck</span></td><td class="hide-sm">320 mi</td><td class="rate">$2.60/mi</td></tr>
-      <tr><td>Fort Worth, TX &rarr; Oklahoma City, OK</td><td><span class="eq-badge">Box Truck</span></td><td class="hide-sm">205 mi</td><td class="rate">$3.10/mi</td></tr>
-      <tr><td>Houston, TX &rarr; New Orleans, LA</td><td><span class="eq-badge">Box Truck</span></td><td class="hide-sm">348 mi</td><td class="rate">$2.40/mi</td></tr>
-      <tr><td>El Paso, TX &rarr; Phoenix, AZ</td><td><span class="eq-badge">Box Truck</span></td><td class="hide-sm">430 mi</td><td class="rate">$2.20/mi</td></tr>
       </tbody>
     </table></div>
-    <p class="board-foot">Example lanes showing how  loads are quoted per mile. They are not current market rates or offers of freight. Texas Solutions does not guarantee any specific load volume, rate, revenue, or earnings.</p>
+    <p class="board-foot">Illustrative lane examples&mdash;not available loads or current rate quotes. They show how  loads are priced per mile across different regions. Texas Solutions does not guarantee any load volume, rate, revenue or earnings.</p>
   </div>
   <div class="rv">
-    <h3 style="margin-bottom:14px">Rough rate per mile by equipment</h3>
+    <h3 style="margin-bottom:14px">Planning ranges per mile by equipment</h3>
     <div class="rate-guide">
     <div class="rg hi"><b>Flatbed</b><span class="v">$5.00 - $7.00/mi</span><small>Open-deck OTR freight</small></div>
     <div class="rg hi"><b>Step Deck</b><span class="v">$5.00 - $7.00/mi</span><small>Taller open-deck freight</small></div>
@@ -346,7 +359,7 @@
     <div class="rg"><b>Power Only</b><span class="v">$3.00 - $5.00/mi</span><small>Drop-and-hook trailers</small></div>
     <div class="rg"><b>Box Truck</b><span class="v">$1.80 - $3.20/mi</span><small>Small-truck freight</small></div>
     </div>
-    <p style="font-size:13px;color:var(--muted);margin-top:12px">Rough ranges, not quotes. Flatbed and step deck loads often pay $5-7 a mile, reefer $4-6, hotshot $4-5, dry van and power only $3-5, and box trucks $1.80-3.20, depending on lane, season and local or OTR. Actual rates depend on lane, season and market.</p>
+    <p style="font-size:13px;color:var(--muted);margin-top:12px">Planning ranges our dispatchers use, October 2026. Not a market index, available loads or rate quotes; real rates depend on lane, distance, season, freight type and local or OTR work.</p>
   </div>
 </div>
 </div></section>
@@ -356,7 +369,7 @@
     <div class="cols">
       <div class="fbrand">
         <img src="assets/logo/texas-solutions-logo.png" alt="Texas Solutions" width="127" height="44" loading="lazy">
-        <p>Truck dispatch service for owner-operators and small fleets across the United States. Semi trucks 5%, hotshots 8% and box trucks 10% of weekly gross, OTR. First load free, dispatchers available 24/7.</p>
+        <p>Nationwide truck dispatch for owner-operators and small fleets across the contiguous 48 states. Semi trucks 5%, hotshots 8% and box trucks 10% of weekly gross, OTR. First load free, dispatchers available 24/7.</p>
       </div>
       <div>
         <h4>Dispatch Services</h4>
@@ -414,7 +427,7 @@
   <a href="https://wa.me/18389103147?text=Hi%20Texas%20Solutions%2C%20I%27d%20like%20to%20know%20more%20about%20your%20truck%20dispatch%20service." target="_blank" rel="noopener" class="mbar-wa"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.75A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3zm0 23.66c-2 0-3.95-.54-5.65-1.55l-.4-.24-3.97 1.04 1.06-3.86-.26-.4a10.6 10.6 0 0 1-1.63-5.65c0-5.87 4.78-10.65 10.66-10.65 5.87 0 10.63 4.78 10.63 10.65 0 5.88-4.77 10.66-10.44 10.66zm5.84-7.97c-.32-.16-1.9-.94-2.19-1.04-.3-.11-.5-.16-.72.16-.21.32-.83 1.04-1.01 1.25-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67 0 1.57 1.15 3.1 1.31 3.3.16.22 2.26 3.45 5.47 4.84.77.33 1.36.53 1.83.67.77.25 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.52-.08-.14-.29-.22-.61-.38z"/></svg><span>WhatsApp</span></a>
   <a href="contact.html#callback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Callback</span></a>
 </nav>
-<script src="js/site.js?v=c88dea23" defer></script>
+<script src="js/site.js?v=8b371c7c" defer></script>
 <script src="js/calc-tools.js?v=74a91deb" defer></script>
 </body>
 </html>

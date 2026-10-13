@@ -71,7 +71,7 @@ Keep in mind that a new carrier enters FMCSA's new entrant program, which includ
 
 ## Step 4: Pick the truck and trailer
 
-Your equipment decides which freight you can haul and what it pays. Rough rates on our desk, which vary by lane and season and are not guaranteed:
+Your equipment decides which freight you can haul and what it pays. Rough planning ranges from our desk (not market data, available loads or quotes), which vary by lane and season:
 
 | Equipment | Rough rate per mile |
 |---|---|

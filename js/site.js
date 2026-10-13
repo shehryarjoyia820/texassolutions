@@ -262,7 +262,7 @@
       if (reset) gross.value = Math.round((tr.gross[0] + tr.gross[1]) / 2);
       $('estTypical').textContent = money(tr.gross[0]) + ' - ' + money(tr.gross[1]);
       $('estTruckName').textContent = tr.name; $('estTruckName2').textContent = tr.name;
-      var wt = $('wqTruck'); if (wt && !wt.dataset.touched) { wt.value = tr.id; wt.dispatchEvent(new Event('sync')); }
+      var wt = $('estimateForm-eq'); if (wt && !wt.dataset.touched) wt.value = tr.name;
     };
     var estCalc = function () {
       var tr = current();
@@ -281,9 +281,9 @@
       $('estMonthly').textContent = rng(lo * n * 52 / 12, hi * n * 52 / 12);
       $('estKeep').textContent = rng((g - hi) * n, (g - lo) * n);
       $('estBig').innerHTML = (useCustom || lo === hi) ? money(lo * n) + '<small>per week at ' + (useCustom ? cp : pLo) + '%</small>' : money(lo * n) + '<small> - ' + money(hi * n) + ' / week</small>';
-      var wp = $('wqPct'); if (wp && !wp.dataset.touched) wp.value = useCustom ? cp : '';
-      var wq = $('wqTrucks'); if (wq && !wq.dataset.touched) wq.value = n;
-      var wg = $('wqGross'); if (wg && !wg.dataset.touched) wg.value = g;
+      var wp = $('estimateForm-pct'); if (wp && !wp.dataset.touched) wp.value = useCustom ? cp : '';
+      var wq = $('estimateForm-trucks'); if (wq && !wq.dataset.touched) wq.value = n;
+      var wg = $('estimateForm-gross'); if (wg && !wg.dataset.touched) wg.value = g;
     };
     var qs = new URLSearchParams(location.search), want = qs.get('truck') || { semi: 'dry-van', small: 'box-truck' }[qs.get('type')];
     if (want) { var r0 = est.querySelector('input[name=estTruck][value="' + want + '"]'); if (r0) r0.checked = true; }
@@ -291,40 +291,30 @@
     TS.tool(est, { run: estCalc, equipment: function () { return current().name; } }).run(false);
   }
 
-  /* free quote: opens WhatsApp with the carrier's details filled in (nothing is stored by us) */
-  var wa = document.getElementById('waQuote');
-  if (wa && cfg) {
-    var wt = document.getElementById('wqTruck'), hint = document.getElementById('wqPctHint');
-    var syncHint = function () { var tr = truckById(wt.value); hint.textContent = 'Our rate for a ' + tr.name + ': ' + pctTxt(tr.pct) + ' of weekly gross (OTR)'; };
-    wt.addEventListener('change', function () { wt.dataset.touched = '1'; syncHint(); });
-    wt.addEventListener('sync', syncHint); syncHint();
-    ['wqTrucks', 'wqGross', 'wqPct'].forEach(function (id) { var el = document.getElementById(id); el.addEventListener('input', function () { el.dataset.touched = '1'; }); });
-    wa.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!wa.checkValidity()) { wa.reportValidity(); return; }
-      var v = function (id) { return document.getElementById(id).value.trim(); };
-      var tr = truckById(wt.value);
-      var lines = [
-        'FREE DISPATCH QUOTE REQUEST',
-        'Name: ' + v('wqName'),
-        'Phone: ' + v('wqPhone'),
-        'Truck type: ' + tr.name,
-        'Number of trucks: ' + (v('wqTrucks') || '1'),
-        'Desired percentage: ' + v('wqPct') + '%',
-        'Weekly gross per truck: ' + (v('wqGross') ? money(+v('wqGross')) : '-'),
-        'MC number: ' + (v('wqMc') || '-'),
-        'Home base / lanes: ' + (v('wqLanes') || '-'),
-        'Message: ' + (v('wqMsg') || '-'),
-        '(Sent from dispatch.texassolutions.co/estimate)'
-      ];
-      var url = 'https://wa.me/' + cfg.wa + '?text=' + encodeURIComponent(lines.join('\n'));
-      var st = wa.querySelector('.form-status');
-      st.className = 'form-status ok';
-      st.innerHTML = 'Opening WhatsApp... If it does not open, <a href="' + url + '" target="_blank" rel="noopener">tap here</a>.';
-      TS.track('click_whatsapp', { link_location: 'estimate_quote', equipment: tr.name });
-      window.open(url, '_blank', 'noopener');
+  /* estimate page: remember which inquiry fields the visitor typed in, so the calculator stops overwriting them */
+  ['estimateForm-eq', 'estimateForm-trucks', 'estimateForm-gross', 'estimateForm-pct'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) ['input', 'change'].forEach(function (t) { el.addEventListener(t, function (e) { if (e.isTrusted !== false) el.dataset.touched = '1'; }); });
+  });
+
+  /* "Start Your First Load Free": mark the inquiry so the dispatch team sees the intent */
+  (function () {
+    var intent = new URLSearchParams(location.search).get('intent');
+    if (intent !== 'first-load-free') return;
+    each(document.querySelectorAll('form[data-web3][data-kind="lead"]'), function (f) {
+      var h = f.querySelector('input[name=intent]'); if (h) h.value = 'first_load_free';
+      f.setAttribute('data-subject', 'First load free request: ' + (f.getAttribute('data-subject') || 'dispatch inquiry'));
+      var note = document.createElement('p'); note.className = 'form-intent';
+      note.textContent = 'First load free: your first load is dispatched with no dispatch fee. Send your details and a dispatcher will set it up with you.';
+      f.insertBefore(note, f.firstChild);
     });
-  }
+  })();
+
+  /* main buttons: a click is interest, not a lead (leads are counted only on a successful form submission) */
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-cta]');
+    if (b) TS.track('cta_click', { cta: b.getAttribute('data-cta'), link_location: linkLocation(b) });
+  });
 
   /* ---------------------------------------------------------------- inquiry + callback forms
      Web3Forms emails each submission to the dispatch inbox. lead_form_submit /
@@ -379,14 +369,14 @@
             mc_status: val('mc_status') || undefined, contact_method: val('contact_method') || undefined, sms_consent: agreed ? 'yes' : 'no'
           });
           form.reset();
-          show(kind === 'callback' ? 'Thank you. A dispatcher will call you back. For a faster reply, message us on WhatsApp.' : 'Thank you. A Texas Solutions dispatcher will contact you shortly. For a faster reply, message us on WhatsApp.', true);
+          show(kind === 'callback' ? 'Callback request received. A dispatcher will call you at the number you gave.' : 'Inquiry received. A Texas Solutions dispatcher will contact you by your preferred method. You do not need to send it again.', true);
         })
         .catch(function (err) {
           TS.track('lead_form_error', { form_id: form.id, error_type: err && err.message === 'rejected' ? 'rejected' : 'network' });
           var txt = encodeURIComponent((kind === 'callback' ? 'CALLBACK REQUEST' : 'DISPATCH INQUIRY') + '\nName: ' + val('name') + '\nPhone: ' + (val('phone') || '-') +
             '\nEmail: ' + (val('email') || '-') + '\nEquipment: ' + (val('equipment') || '-') + '\nHome state: ' + (val('home_state') || '-') +
             '\nTrucks: ' + (val('trucks') || '-') + '\nMC status: ' + (val('mc_status') || '-') + '\nBest time: ' + (val('best_time') || '-'));
-          show('Sorry, your details could not be sent. Nothing was saved. Please <a href="tel:+18389103147">call (838) 910-3147</a> or <a href="https://wa.me/18389103147?text=' + txt + '" target="_blank" rel="noopener">send them on WhatsApp</a>.', false, true);
+          show('Sorry, your details could not be sent, so nothing has reached us yet. Everything you typed is still in the form: please press the button again to retry, or <a href="tel:+18389103147">call (838) 910-3147</a>, or <a href="https://wa.me/18389103147?text=' + txt + '" target="_blank" rel="noopener">send the same details on WhatsApp</a>.', false, true);
         })
         .then(function () { busy = false; btn.disabled = false; btn.textContent = label; });
     });
