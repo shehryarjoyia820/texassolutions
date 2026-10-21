@@ -1,734 +1,734 @@
 {
  "404.html": {
   "date": "2026-10-21",
-  "hash": "80459cb40a1b4fc1cfc22b00a0c83082aec666e2"
+  "hash": "d21aaf035d865305fd7e36543500d029ebd50354"
  },
  "about.html": {
   "date": "2026-10-21",
-  "hash": "48636c77b52ce2d94fca2f0b7d0b4ce3bb010b56"
+  "hash": "0a319eb3b61bb7a3ab3f05d8af38fc67d036e269"
  },
  "blog.html": {
   "date": "2026-10-21",
-  "hash": "c6ddbb9f45ea6eb58fa3f1fe4b2e636169c4b4d8"
+  "hash": "791c9dcfcd01869b51108b709eaccdcf4a04bca2"
  },
  "blog/best-load-boards-for-box-trucks.html": {
   "date": "2026-10-21",
-  "hash": "58a3493dd20c23d4ef0feb03b6ad16a9db83af01"
+  "hash": "d91179ba782015525767e6c4be0f8cee2f212466"
  },
  "blog/best-load-boards-for-hotshot.html": {
   "date": "2026-10-21",
-  "hash": "a9dd5e46b41517207e70dea75482721e7e1b2990"
+  "hash": "ea71bd00b99b3b55d59aa10fb3fc28c9ba4a3ee9"
  },
  "blog/best-load-boards-for-owner-operators.html": {
   "date": "2026-10-21",
-  "hash": "babdc3cdcb8dcb4501039d99c67a1a35715bbfde"
+  "hash": "6b18ee4e745c3d01e6e89fe76da5f8ce131337b6"
  },
  "blog/best-truck-dispatch-service-for-owner-operators-2026.html": {
   "date": "2026-10-21",
-  "hash": "92c5e2dcef01e156bec95ede3800e161d9b554d7"
+  "hash": "879f4d358be64deb1a5fc2229fca1511a9f95ac9"
  },
  "blog/box-truck-contracts-how-to-get-them.html": {
   "date": "2026-10-21",
-  "hash": "ac91e07afc1f767c12fe450e382a01e6bcecde9f"
+  "hash": "7a0fce55e5d73d4cd071ecc9fabe35dcc9ae1ee5"
  },
  "blog/box-truck-dispatch-find-loads-and-costs.html": {
   "date": "2026-10-21",
-  "hash": "74d36d7d803defcac34d5c98d74eda48d85f0a3d"
+  "hash": "2bf5369b687db473a8b9cccdd47082e3dbce07f0"
  },
  "blog/broker-setup-rate-confirmation-spot-vs-contract.html": {
   "date": "2026-10-21",
-  "hash": "4fef176de017f092bd39573700e5c5f11d98f0c5"
+  "hash": "285a58be5a10ee5aad5ceede5cda692e44bc2491"
  },
  "blog/cheapest-truck-dispatch-service-real-cost.html": {
   "date": "2026-10-21",
-  "hash": "76c73ad740699c94530bfd2203c03258a3b01d68"
+  "hash": "a15187d0471d48b3c40c93212d968a11bb00c271"
  },
  "blog/cost-of-running-a-semi-truck-per-mile.html": {
   "date": "2026-10-21",
-  "hash": "381dc13af619798e74b69431215816037ecc6a3f"
+  "hash": "e044a830d3539a942c55e0cb75afec6c6672e82a"
  },
  "blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html": {
   "date": "2026-10-21",
-  "hash": "94cdaa668d421aa262dcda98efcb723b1a0ea3de"
+  "hash": "e34e6cc7c8181ffa0f1f925eeecc15a8ba259df0"
  },
  "blog/dispatch-percentage-vs-flat-fee.html": {
   "date": "2026-10-21",
-  "hash": "d86d0f2be8e30e786374bbfc3e5651b95cd7eea7"
+  "hash": "7e0149a82a70e6d295bd0f4772bb4454a0e97ef2"
  },
  "blog/dispatcher-vs-self-dispatch-load-board.html": {
   "date": "2026-10-21",
-  "hash": "3a9a8033fd52f95e296c0acee9da72281481146b"
+  "hash": "f4df0c6520bcbe58618ad13e5d78aa9045ba0b4e"
  },
  "blog/dry-van-reefer-flatbed-power-only-loads.html": {
   "date": "2026-10-21",
-  "hash": "c9310223cab12370c390e17dd43557bef1fc4355"
+  "hash": "dc781058141c354d5b339b3865c4be8c740e1f88"
  },
  "blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html": {
   "date": "2026-10-21",
-  "hash": "57dbff0a0db0b193859ffdd197356fabd64f6f9d"
+  "hash": "64c10465d21f27c6a6990b80c1bcc9ab4eec792a"
  },
  "blog/freight-dispatcher-vs-truck-dispatcher.html": {
   "date": "2026-10-21",
-  "hash": "07e005e23d5e4ed6bef6cd6dab98758158a75b5f"
+  "hash": "7fcacb44e6a53961e3cc630bb7ead233d3cc31dc"
  },
  "blog/freight-factoring-for-owner-operators-explained.html": {
   "date": "2026-10-21",
-  "hash": "a6b4d6033ee76a234abcc65ae184bc65d29bd7ff"
+  "hash": "186bcef19a162f4666d039674a7248ed16ae7319"
  },
  "blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "4472d98e640556af6fedea69b013021b15fc643c"
+  "hash": "722c3a2ef181382a60184a99f296c1367b4daf42"
  },
  "blog/hours-of-service-rules-explained-11-14-70-hour.html": {
   "date": "2026-10-21",
-  "hash": "34833ec12966ea541d41c98c96c53f08c90e5621"
+  "hash": "b2c7c7932d21b323c8e71a73e5fa8e4e65485b79"
  },
  "blog/how-does-truck-dispatching-work.html": {
   "date": "2026-10-21",
-  "hash": "1ac82d050b166255c4120198179f47f04ee4fa71"
+  "hash": "2ade6feae8f8a3abc4616cbfbc669f2b7a0da588"
  },
  "blog/how-much-do-box-truck-owner-operators-make.html": {
   "date": "2026-10-21",
-  "hash": "87fe0a068c75ac396579bf08193454861203107f"
+  "hash": "c1a879110ac705338681b055ffe9b2d883c34623"
  },
  "blog/how-much-do-hotshot-drivers-make.html": {
   "date": "2026-10-21",
-  "hash": "8a1b5a60abf373efa811c318365ef9be94ffb2f3"
+  "hash": "64c84fe188cd11249a5a1eb75db85dd8ac5bc1a6"
  },
  "blog/how-much-do-owner-operators-make.html": {
   "date": "2026-10-21",
-  "hash": "3f934a93884b0c9a7b3c2944fa2a5f1cff6e8258"
+  "hash": "e79d39a7975400b50c4caa7b609ac372df9c4610"
  },
  "blog/how-much-does-a-truck-dispatcher-cost.html": {
   "date": "2026-10-21",
-  "hash": "e15b6be87355316336319853a64983ff981b1e7e"
+  "hash": "81b39875f9a231bfbce002d8ce16ccb1c03e6a21"
  },
  "blog/how-to-become-an-owner-operator.html": {
   "date": "2026-10-21",
-  "hash": "650001de4510280efa0586862c1e35a407bc1134"
+  "hash": "f7796c8045f54e65668c899cc08b2415e6a13e1f"
  },
  "blog/how-to-choose-a-fuel-card-for-truckers.html": {
   "date": "2026-10-21",
-  "hash": "d94b4ab91c1a59bbb615b3fc264637426cb24032"
+  "hash": "d40cd15ea3d390c08b9673aa607e26a22cfa31d5"
  },
  "blog/how-to-choose-a-truck-dispatcher-avoid-scams.html": {
   "date": "2026-10-21",
-  "hash": "5bff9cbc3c8e85efd88dcddbfa47a310aaea5934"
+  "hash": "b38c3264c78dd05f6acd7d1df854f4eeef8ac93d"
  },
  "blog/how-to-find-loads-for-your-truck.html": {
   "date": "2026-10-21",
-  "hash": "95efe7b98c62e52b5f2a2bf2b15d85a777ab5d3e"
+  "hash": "575dbf9b9bb7f5de511b9948917c762c4f41de17"
  },
  "blog/how-to-get-loads-with-new-mc-number.html": {
   "date": "2026-10-21",
-  "hash": "4363f1024a0dd4106638d6e48676461f72f4b41c"
+  "hash": "319fd66cdc29fb81d30515893ecb58d6bbddf47f"
  },
  "blog/how-to-get-loads-without-a-broker.html": {
   "date": "2026-10-21",
-  "hash": "33f757abd7e35862361193b7f765e731372442bd"
+  "hash": "419e81d75710ac5fb59562252dacb6201624a757"
  },
  "blog/how-to-get-mc-number-authority-owner-operator.html": {
   "date": "2026-10-21",
-  "hash": "9030af75b7011ac3a9e210eddc970dd61272990a"
+  "hash": "6e3f8d428e6e1553d3e9fda07ae481326283ce0c"
  },
  "blog/how-to-negotiate-freight-rates.html": {
   "date": "2026-10-21",
-  "hash": "38123241a57a481f3439106d419007c726aa8b2f"
+  "hash": "a64ea530f4e4ab84c67b10203b69a9ce4d979538"
  },
  "blog/how-to-start-a-box-truck-business.html": {
   "date": "2026-10-21",
-  "hash": "4c1b8498334e4b715c61ba98f84d05351085a693"
+  "hash": "ded7aef767e304105643bfb88f61d128ca1f8ede"
  },
  "blog/how-to-start-a-hotshot-business.html": {
   "date": "2026-10-21",
-  "hash": "2c1b1009d48a2030239bb44dbd78c076b1a70808"
+  "hash": "9e0ec8d7bc33c4e964662de82be185c9bf5923fd"
  },
  "blog/how-to-start-a-trucking-company.html": {
   "date": "2026-10-21",
-  "hash": "beaa7c6b981d3f11aa653eccd48e84ae533e40ad"
+  "hash": "5a4e83cfa8bfd0faeeaba763b6b015471a92cb97"
  },
  "blog/ifta-for-owner-operators-how-to-file.html": {
   "date": "2026-10-21",
-  "hash": "67d93d602e403599ee7b8a468cf0f618462cc0b7"
+  "hash": "58b919bbb0641ff30b1ce621933183fc19a14b7e"
  },
  "blog/is-a-truck-dispatcher-worth-it.html": {
   "date": "2026-10-21",
-  "hash": "b8783d2329e3925a521be2544ef128ae51d7c501"
+  "hash": "62c5d7e2db3b6e2ff199ce6afcf265f5020c9c26"
  },
  "blog/non-cdl-box-truck-and-hotshot-loads.html": {
   "date": "2026-10-21",
-  "hash": "13322f319fda19a2db81b686211e61c5dd4c18e0"
+  "hash": "4d1361fca61029da7c399dd21f8c4fa7fc16d0a4"
  },
  "blog/peak-season-trucking-loads-holiday-freight.html": {
   "date": "2026-10-21",
-  "hash": "f56c8903d2fc81e156bbc728b33e95316df924ec"
+  "hash": "f05e78a6ec8a19903729f0772a95885febc25564"
  },
  "blog/reefer-loads-refrigerated-dispatch-guide.html": {
   "date": "2026-10-21",
-  "hash": "e918828e2423629fa3654a2410c528fb8497e435"
+  "hash": "2f0690bbd345023ae9da1c776b0bf4b8daed2daa"
  },
  "blog/truck-dispatcher-vs-freight-broker.html": {
   "date": "2026-10-21",
-  "hash": "fb3caaba64221ed94ff97bc0a6829e8d179ed52f"
+  "hash": "f0b4469334b189552e18d20bc62c53b50e9c73a3"
  },
  "blog/truck-loads-and-load-boards-guide.html": {
   "date": "2026-10-21",
-  "hash": "ab0e6a9359ad8ac787f082096d9ea47608407c61"
+  "hash": "f5985eb82a29cd4c9b221fe37af6cc388d63da97"
  },
  "blog/what-is-a-good-rate-per-mile-trucking-2026.html": {
   "date": "2026-10-21",
-  "hash": "ccd04f8cab7a024fab035d38e91ae5faea796897"
+  "hash": "3396cff568e0a5bb31e999a2f1f4e1cb35795db1"
  },
  "blog/what-is-deadhead-in-trucking-how-to-reduce-it.html": {
   "date": "2026-10-21",
-  "hash": "336a8b36dafdaf458f83bb87100873dc150810cf"
+  "hash": "52b2c29e8a7d96ae522e84f625dc352e2b4b5b91"
  },
  "box-truck-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "5d7d0ca9d516bc4bf0fd1181a0e36dc7c181713a"
+  "hash": "2cde590b03f18429f845b258e840fe4f6fc6cbce"
  },
  "break-even-calculator.html": {
   "date": "2026-10-21",
-  "hash": "c4675c79d3dfd2e113ff7197a5d294bbf0121130"
+  "hash": "143325b2661418ab5a99cfcda435c4dcf903ab3b"
  },
  "contact.html": {
   "date": "2026-10-21",
-  "hash": "8e21d3f3b3ead4269b526416317a0fcfd3b3ad0e"
+  "hash": "6e2bd878bae43e779a0173b4cefaf7a7fcbbf365"
  },
  "cost-per-mile-calculator.html": {
   "date": "2026-10-21",
-  "hash": "a40b5d0a0d9df924c9e27f772d295e9722b3ceb7"
+  "hash": "7113a40d16f07a2f576679b077c1d5bf00b5eb00"
  },
  "deadhead-miles-calculator.html": {
   "date": "2026-10-21",
-  "hash": "a81f993520555e7b409f09a4499395eeb2501f57"
+  "hash": "82da85624a93be7e87183706c3ada791d5f75ca4"
  },
  "detention-pay-calculator.html": {
   "date": "2026-10-21",
-  "hash": "b2807379aa129e84f41c52efc8a49e70f7ad8cd8"
+  "hash": "f6bbc88c37d87d35a22dbb52446a455534503a10"
  },
  "diesel-prices/alabama.html": {
   "date": "2026-10-21",
-  "hash": "a61105ec50cc89cbdc0293c1ceab4b164310c3df"
+  "hash": "1227743058bbca97545ab3a1f4c7be9b9ea0e353"
  },
  "diesel-prices/alaska.html": {
   "date": "2026-10-21",
-  "hash": "35c62da16b441206cc15b202b3548f9cf3a33452"
+  "hash": "2359380136f67fd85b0f689607fcc8745e31982e"
  },
  "diesel-prices/arizona.html": {
   "date": "2026-10-21",
-  "hash": "cd300c6faa0086559e58132fd812b24cd93cd1f5"
+  "hash": "06823fb6d2be59361c350cdd4994505c744afc22"
  },
  "diesel-prices/arkansas.html": {
   "date": "2026-10-21",
-  "hash": "f7f782b5b3da065b5913261b47f67f8dc53a4aaf"
+  "hash": "5c561c924da50507be38032202c8e82aba86fb2d"
  },
  "diesel-prices/california.html": {
   "date": "2026-10-21",
-  "hash": "b603ca31f1e6b1a3078babc50d37be1a78778d93"
+  "hash": "d5b49b0f502bf5dec5b355f77fc374514f2a9697"
  },
  "diesel-prices/colorado.html": {
   "date": "2026-10-21",
-  "hash": "c1286571e0d0abe6c8715d5d02fc4a125d033baf"
+  "hash": "e43f51aceef88b96263eefe641dc879675dda4f0"
  },
  "diesel-prices/connecticut.html": {
   "date": "2026-10-21",
-  "hash": "ee9366a88eca28093749704163d4e1f908eb12b7"
+  "hash": "5c8601ef56b2a1873e9f38c450fbc0e2d5cf5be6"
  },
  "diesel-prices/delaware.html": {
   "date": "2026-10-21",
-  "hash": "0924da38863bddf1cd10bbd52908e355ea9cdbfb"
+  "hash": "3066bea8734e29cfa7b9028f077a1f098d5e254f"
  },
  "diesel-prices/district-of-columbia.html": {
   "date": "2026-10-21",
-  "hash": "797699ec195e3e4cb8be78451000446e6d9787e4"
+  "hash": "c3bc823846abdc15e5db0776b03909a3d0cff929"
  },
  "diesel-prices/florida.html": {
   "date": "2026-10-21",
-  "hash": "2c40926a68ad2c8e7c360dd08e1d8e5b0292b976"
+  "hash": "a9b241feab70da66cfd9e9a4451f2000645badec"
  },
  "diesel-prices/georgia.html": {
   "date": "2026-10-21",
-  "hash": "7fb9480b254ec6cf111495e428379aef06e03a00"
+  "hash": "54b352606f14c8ff6754b065baaf4f65ea155141"
  },
  "diesel-prices/hawaii.html": {
   "date": "2026-10-21",
-  "hash": "219cc0ff5e60e07b3df0183863bc69395fbc4b66"
+  "hash": "3429cda4951087b7f0b901009fa9f31285ceb92b"
  },
  "diesel-prices/idaho.html": {
   "date": "2026-10-21",
-  "hash": "da0e3b688698712fdcb59c2b40a9becd13f5175b"
+  "hash": "fddc88efa9a5758b1f650dc43dca5f5dd0f538cc"
  },
  "diesel-prices/illinois.html": {
   "date": "2026-10-21",
-  "hash": "82dc24785ce6d05875b2cd8f2acf2cd55ae162fa"
+  "hash": "b5c15881c572c516fccc2a25cde0338eb4dc79b1"
  },
  "diesel-prices/indiana.html": {
   "date": "2026-10-21",
-  "hash": "f450a271fdb8ecd3b213274bc6caca8ed3b1d7f6"
+  "hash": "49542f62ecb887163fe2536aec8d1b85cb5d7eb7"
  },
  "diesel-prices/iowa.html": {
   "date": "2026-10-21",
-  "hash": "093fc97984ead23447a201a50dfc1eade5331467"
+  "hash": "e3b5cf9df2c0576e9c34fe4e43d61ddd11c323c9"
  },
  "diesel-prices/kansas.html": {
   "date": "2026-10-21",
-  "hash": "1b0eb203c3b13e638b463a1f282aefceb1aa716e"
+  "hash": "eaf9a40b41fdfffde56db2fe1a3990152015c0f6"
  },
  "diesel-prices/kentucky.html": {
   "date": "2026-10-21",
-  "hash": "38b1a51319e71662cfea7c5692d5e856d4cad106"
+  "hash": "cbab0558401f2a529ff7409297c5b7421e26f57a"
  },
  "diesel-prices/louisiana.html": {
   "date": "2026-10-21",
-  "hash": "b6cda94181d6ae07cf395a65d6926872cd6546cf"
+  "hash": "f095a6f650c370930dfe7282e1fde95d31004953"
  },
  "diesel-prices/maine.html": {
   "date": "2026-10-21",
-  "hash": "de9f8ddcf0b7277f3b19419c85f488e873b22292"
+  "hash": "1a67ee6899638a771893f5163cca64045ac402b8"
  },
  "diesel-prices/maryland.html": {
   "date": "2026-10-21",
-  "hash": "1aae4fe88ec368f15cca4247ea17f099eb7ff9de"
+  "hash": "1b1319033f1501f562954c09a77d473013af67b4"
  },
  "diesel-prices/massachusetts.html": {
   "date": "2026-10-21",
-  "hash": "ac364e1fb33e5e6e3175c871b0ff09422443e2ff"
+  "hash": "be115bb63e346d33e66420cafbc582123479c9b7"
  },
  "diesel-prices/michigan.html": {
   "date": "2026-10-21",
-  "hash": "897e3c0548de1715a660581921fc5c5a3d86d602"
+  "hash": "01b116bc51bb0d89cc2e8a1a8305463750102bad"
  },
  "diesel-prices/minnesota.html": {
   "date": "2026-10-21",
-  "hash": "5b9901ba26deb248e6e6e33ac627ace10c8237e4"
+  "hash": "67b1abe346b609ccfdc7f6a47acdfb3817381c63"
  },
  "diesel-prices/mississippi.html": {
   "date": "2026-10-21",
-  "hash": "f7b816430056b9616f666f19c1420340bf6444ec"
+  "hash": "98754a32616488f6fa44d77ae523e1d3e66a98e5"
  },
  "diesel-prices/missouri.html": {
   "date": "2026-10-21",
-  "hash": "a569012365c50835407ab763fb5dd788b5ffdb07"
+  "hash": "36effa2141cc8f58cc782fda2745b909c3a393ba"
  },
  "diesel-prices/montana.html": {
   "date": "2026-10-21",
-  "hash": "382dd86943cf74201cf60c6d2f68fd0ccd0a012d"
+  "hash": "8b160408e10a133d2cb30b8698229dda34d7a0c9"
  },
  "diesel-prices/nebraska.html": {
   "date": "2026-10-21",
-  "hash": "027634dfe82979237336fb4a69d5598facfc01ae"
+  "hash": "dd9bba2420bddc54042abf3e81842fabacda9d15"
  },
  "diesel-prices/nevada.html": {
   "date": "2026-10-21",
-  "hash": "6d2c94fbf52a73086e4cf463f63cc95d72e251a3"
+  "hash": "12a1463a9e8ea5ca5ba56acf5210862ef67cc140"
  },
  "diesel-prices/new-hampshire.html": {
   "date": "2026-10-21",
-  "hash": "6d463f1904e76f51af1922396b431a918180e991"
+  "hash": "dc334ab12f46b145d903ba4cfc34a9b4e54083a6"
  },
  "diesel-prices/new-jersey.html": {
   "date": "2026-10-21",
-  "hash": "cc1e2e949ca7bb0aa656e28a20d59086d54f77b9"
+  "hash": "768326daf828ff37fde63cc2810a1eb386768083"
  },
  "diesel-prices/new-mexico.html": {
   "date": "2026-10-21",
-  "hash": "e3bce0de08ebb0d2b1761b4742fefc1fcaf4b2a5"
+  "hash": "a526245011c0795d7c713d6dba8bdc8c8ba2bb7f"
  },
  "diesel-prices/new-york.html": {
   "date": "2026-10-21",
-  "hash": "699efcde6cb271cb2fc825132283ba7693501c4d"
+  "hash": "0ff2eea12685f595a5d4fb14563768499b0d2053"
  },
  "diesel-prices/north-carolina.html": {
   "date": "2026-10-21",
-  "hash": "26d8a8a0187128565662ffcf2d50db88da8bfe07"
+  "hash": "b06af7dc08d00647bd7660533fa89ddabdef7532"
  },
  "diesel-prices/north-dakota.html": {
   "date": "2026-10-21",
-  "hash": "cc3f963c9a7d9d7593312d8821c4747419b602aa"
+  "hash": "0e8e386ebf2e7c6ac3d84cec3ff877503c84fdaa"
  },
  "diesel-prices/ohio.html": {
   "date": "2026-10-21",
-  "hash": "558ef4f86462e7067f6230470079936a070bc7a9"
+  "hash": "8923de1a87976cf6b4b7f1e85095497366addbe5"
  },
  "diesel-prices/oklahoma.html": {
   "date": "2026-10-21",
-  "hash": "85b88cb1eaec6d3f8d29fa5a056013074e581f8f"
+  "hash": "55dd16c3f17a45a569adad9d2ee777033073d8c5"
  },
  "diesel-prices/oregon.html": {
   "date": "2026-10-21",
-  "hash": "33cfdea04b7a875599f31db767a218a38bb9e70b"
+  "hash": "7f858138975f2aeffb5dc049df82b951eb5f960a"
  },
  "diesel-prices/pennsylvania.html": {
   "date": "2026-10-21",
-  "hash": "6b2027492bb146ae43079f69a2a40d9fb643c319"
+  "hash": "6fc285d6feaa5a77418b3b15d10e6aa13e40476f"
  },
  "diesel-prices/rhode-island.html": {
   "date": "2026-10-21",
-  "hash": "ed7dbbcf0ca69a4dd69b77ca7a2c759de6bbfec9"
+  "hash": "b708870188af0a029f718e4384a7110dbe5407d9"
  },
  "diesel-prices/south-carolina.html": {
   "date": "2026-10-21",
-  "hash": "1945a44abaf704442f2c54c26011bdc1332f860c"
+  "hash": "c9916f0a9d186b1d3a259e9d02e54dca8e599efa"
  },
  "diesel-prices/south-dakota.html": {
   "date": "2026-10-21",
-  "hash": "16156bc2685d4ac43109a665b7160fb5f8c20342"
+  "hash": "0cc56f486d5ec95a5d0b8ff22db6e9227bcd1b80"
  },
  "diesel-prices/tennessee.html": {
   "date": "2026-10-21",
-  "hash": "03275886815e4f47294777b6fc847b8f72497936"
+  "hash": "c89ad64173500c589f847530b6262fbf5ffeb216"
  },
  "diesel-prices/texas.html": {
   "date": "2026-10-21",
-  "hash": "3ec5a221fef9a053beb9acd8534e0843de670e13"
+  "hash": "c4ea2d7cc9057292b31efe2fb98e66d91d208d5e"
  },
  "diesel-prices/utah.html": {
   "date": "2026-10-21",
-  "hash": "bf562daef01930928ef8604094e802c8bcf95a4d"
+  "hash": "255b6a1398001074a07d504ecdaa9b5bcaca2ccf"
  },
  "diesel-prices/vermont.html": {
   "date": "2026-10-21",
-  "hash": "4f48b5d2a31a26f9ee3782c7d83556b99efab814"
+  "hash": "d5f7c592400f847115a40a855ef8ad9e547f6739"
  },
  "diesel-prices/virginia.html": {
   "date": "2026-10-21",
-  "hash": "25bdd1b46928816e109ade3100dc94963e1aaecd"
+  "hash": "5eb02fc338398fa3aed8216f88979ff91f91c87e"
  },
  "diesel-prices/washington.html": {
   "date": "2026-10-21",
-  "hash": "7a0df4da1faaab0e738be668299a42e26fe2e000"
+  "hash": "ffce043bc4d16cd50603e05d4eb291b87931603f"
  },
  "diesel-prices/west-virginia.html": {
   "date": "2026-10-21",
-  "hash": "144d244a7e2d259a8910271768919d5b309cda76"
+  "hash": "ef0a5e424ae49c1dafa70e9105fa12e71caf9df8"
  },
  "diesel-prices/wisconsin.html": {
   "date": "2026-10-21",
-  "hash": "07e3d84beefa161114995095b40fde3af11c26c6"
+  "hash": "9fb78649e3688372febbdf1aec0769bfc07858e2"
  },
  "diesel-prices/wyoming.html": {
   "date": "2026-10-21",
-  "hash": "8aa858cf7555c7737d0c90c8944455362bb71c20"
+  "hash": "bb67fe7228d8f9992fe0cd69691279aad12f3b6a"
  },
  "dispatch-for-new-authority.html": {
   "date": "2026-10-21",
-  "hash": "3d035a6265d1fbcee584e6d61317b6a6e909e43a"
+  "hash": "218fb846ce8f6c6b6a076ee59502581a468ecc48"
  },
  "driver-pay-calculator.html": {
   "date": "2026-10-21",
-  "hash": "e94705f52d90bb62761a587a6993505ee7431435"
+  "hash": "97e6a5546efed7458bd4102918047619123139ab"
  },
  "dry-van-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "b4dadcf0326bca0ea658169c06adbbd570af6f0e"
+  "hash": "bd276c59dbae21606bdc9ec270828a382b1ac7cc"
  },
  "estimate.html": {
   "date": "2026-10-21",
-  "hash": "325ec2a9f3a6943db64d5325724c53b6779269fb"
+  "hash": "19429aaa9670c5e112357136137c168d5c481d8c"
  },
  "faq.html": {
   "date": "2026-10-21",
-  "hash": "62f879c0931f6e2855cb73edc852104324fcbcd7"
+  "hash": "163b83e0cb0b5444bd3d714f622d7ca9895303b0"
  },
  "flatbed-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "ef888a3470c9b710c141ba4708f496a11ac08081"
+  "hash": "7502e8d2c4315796116b6d3f2fd89d4e0c7873e1"
  },
  "freight-class-calculator.html": {
   "date": "2026-10-21",
-  "hash": "cc8306b74fbe133ce0b53bef18b4a36362c83b54"
+  "hash": "9b75d36e948d652806d838f7a983519af674eb0d"
  },
  "fuel-surcharge-calculator.html": {
   "date": "2026-10-21",
-  "hash": "45bee5574f6ab9ddc471ab6bf35814381f911708"
+  "hash": "4bb12a6097c47215f7685fb3f22e4ac1c5a2d74f"
  },
  "hotshot-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "5eaeab741c937341dc1651245fa425c53923b628"
+  "hash": "d1ece24cd8f431db834ed8b5dd80efa456ca7c0d"
  },
  "hours-of-service-calculator.html": {
   "date": "2026-10-21",
-  "hash": "e45a3ae28555f077ffad4492c9576a39fabd33ec"
+  "hash": "e3f43f1fa114e4f8a2eca2e4203f5e0ead5ca7b7"
  },
  "ifta-mileage-calculator.html": {
   "date": "2026-10-21",
-  "hash": "020abe889a4f3f74ed963b11dc0f48497877f3ce"
+  "hash": "062cf0b6eb07b358323148a4b2679fc594ce8079"
  },
  "index.html": {
   "date": "2026-10-21",
-  "hash": "eee1a6eafe648b65739741f176612192d3befdcd"
+  "hash": "6fb6fb85c08e50aa76bef3670586592f504f7c4c"
  },
  "load-profitability-calculator.html": {
   "date": "2026-10-21",
-  "hash": "3d25015e7099d57db37014a842f31e29187baa70"
+  "hash": "f26e07e1256544e7bca9a2d0c4f2d1a62672a971"
  },
  "maintenance-budget-calculator.html": {
   "date": "2026-10-21",
-  "hash": "3a113332224507d459b300d66b0193f36abc1e4a"
+  "hash": "6ac7bdf9a8af78b4ac70ff84fe825a5cc766a1a7"
  },
  "owner-operator-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "fc18fec514939652a8dfe80306701b942cf4ada9"
+  "hash": "2dad87c3220421cf7892ef334faadc9936d252ff"
  },
  "per-diem-calculator.html": {
   "date": "2026-10-21",
-  "hash": "2b679f50a5ce71b7c120f581a0753595b6d68d4f"
+  "hash": "b186b5a31278f7475158765d74bca8c75fee35aa"
  },
  "power-only-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "4c6fd3abedfb21b2b2abb393f9bd9804ad291d82"
+  "hash": "5923dbf583e8abe9c5aadce56dae9919e2275cec"
  },
  "privacy.html": {
   "date": "2026-10-21",
-  "hash": "f2a0d6af0171e753fa5a61ed9bdb8da36f6ce518"
+  "hash": "38fcb9732534a43d186e93007be2ea261975f4ad"
  },
  "reefer-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "343c70e039db8214fb9230ed1a6bbdc281b873ab"
+  "hash": "f0f7ddb21a66369e18e78d251ae9392943267db4"
  },
  "semi-truck-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "37d5d9cbbb2215fc592fdfe03abec7c4c47f483d"
+  "hash": "1e08b7e3cf172cb9d35af99b3679573008bd652f"
  },
  "small-fleet-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "239d47898f8c25b6d803fb908440b6cf8f6358be"
+  "hash": "f00c6b250ec00fd6d67fe639baa369f35a6301ec"
  },
  "terms.html": {
   "date": "2026-10-21",
-  "hash": "01e23caa6d53a6cc0d72aba6a016ce80ff82c0e3"
+  "hash": "888877a09624bbfc2002d5187bae9c0a56a4e47a"
  },
  "texas-truck-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "6b4c5e8eb36c8d77c3600445ed2c2101c5e32025"
+  "hash": "a2067bf6f9cfca45dd6fa9c7e7c1ce029bc10b66"
  },
  "tools.html": {
   "date": "2026-10-21",
-  "hash": "7853d4a374850d26762d1b14605c3e4d5100e0e2"
+  "hash": "174bad2a03c391c467da07d9c31b0dfa7cded720"
  },
  "truck-dispatch-by-state.html": {
   "date": "2026-10-21",
-  "hash": "72e57bc94182235f5aae00b28f31dfa512e88fc4"
+  "hash": "6e469ae5964993e3e484c890c9bb173f3c85e072"
  },
  "truck-dispatch-rates.html": {
   "date": "2026-10-21",
-  "hash": "38b0e221ebafa92567d19eb3a3efc59a450c23eb"
+  "hash": "c135fc11d4cad82d880455a88df8daf3eb0bfe14"
  },
  "truck-dispatch/alabama.html": {
   "date": "2026-10-21",
-  "hash": "8e4a7e16499e60ff86d19f9572167ffbe5bc403a"
+  "hash": "6eacccc2e179c1cd8b55754e58d6eb86b2020522"
  },
  "truck-dispatch/alaska.html": {
   "date": "2026-10-21",
-  "hash": "821fa64fb7100f5b396c184410ea87067366bccd"
+  "hash": "836b3c1c1aae145692cc93c6f2b7bcf7a274ecf0"
  },
  "truck-dispatch/arizona.html": {
   "date": "2026-10-21",
-  "hash": "b8c1cab209cc83c71e9e28df0b7f77ffc5247205"
+  "hash": "4a5955ec4ab3b3e31c8ec021351394cac5e785ab"
  },
  "truck-dispatch/arkansas.html": {
   "date": "2026-10-21",
-  "hash": "9c9f98ca10edb34ec93bf75c341257c6714e92c3"
+  "hash": "4590a303a61876f3de08cba5aa0253537ae2f4f8"
  },
  "truck-dispatch/california.html": {
   "date": "2026-10-21",
-  "hash": "fd8d4d1ab34cf4500de0f6bbfb583849bde8d72e"
+  "hash": "cc417cf8d8e63c38d9a71db51e1c15beba08b8f9"
  },
  "truck-dispatch/colorado.html": {
   "date": "2026-10-21",
-  "hash": "657f9197471988139c17b875b3f2fe3f2295bf0c"
+  "hash": "6f31b33f9f568014e004faea61414efaa8f7139e"
  },
  "truck-dispatch/connecticut.html": {
   "date": "2026-10-21",
-  "hash": "8dcac1f0d5f64a2df6ac1079f342b21ff9c1adca"
+  "hash": "3e03ef4906b7f25deb528d94e7e63e8a881b2d80"
  },
  "truck-dispatch/delaware.html": {
   "date": "2026-10-21",
-  "hash": "62260cbdee45bb2bb999e81fd5a90ecb49134268"
+  "hash": "30d4f5cad8d19fc74452283c7cdd211ffeffe5b1"
  },
  "truck-dispatch/florida.html": {
   "date": "2026-10-21",
-  "hash": "9551360f179516a0008cdceb29ac91790dfe6eae"
+  "hash": "d7e2d89e250bbb4e295a4d037efcf2685c148b0f"
  },
  "truck-dispatch/georgia.html": {
   "date": "2026-10-21",
-  "hash": "0f70d0313cd345cc3efbe2b8d66fbd1f487c2c62"
+  "hash": "94184be92b9ed80edae5ac6e80e03e7a2e5cda3f"
  },
  "truck-dispatch/hawaii.html": {
   "date": "2026-10-21",
-  "hash": "fd6521a71c42b9e1443533a14cd6ee8fcfb5d7ee"
+  "hash": "bb404e0c3c6ea8523fc68aad2cf51032f649a0c0"
  },
  "truck-dispatch/idaho.html": {
   "date": "2026-10-21",
-  "hash": "f720f8a7f0988846327a10e4643acfbc9ee4c867"
+  "hash": "87fde60ec15f4c1f52520bc111004b7938247fda"
  },
  "truck-dispatch/illinois.html": {
   "date": "2026-10-21",
-  "hash": "74334ea003dc9ddbfd4725b19fd52de70d0c83d6"
+  "hash": "8b5ac9344522269463cad3f710467b5f0fdd4b7e"
  },
  "truck-dispatch/indiana.html": {
   "date": "2026-10-21",
-  "hash": "321da4e046d46f1de2ec3cc76aee60124318eff3"
+  "hash": "1d26d75d1b81f63e9d1ab259d56682fca807a324"
  },
  "truck-dispatch/iowa.html": {
   "date": "2026-10-21",
-  "hash": "ca9bf273e23403ed1dc1764918a3ad175a0e6147"
+  "hash": "86375b05bf1a0b6e7d297ea6d0e30340472fa904"
  },
  "truck-dispatch/kansas.html": {
   "date": "2026-10-21",
-  "hash": "305ec494a6c0304221e7938f41607f67eee27b66"
+  "hash": "6c8745144193e50ea8f6155bf37811c7af0cd6e7"
  },
  "truck-dispatch/kentucky.html": {
   "date": "2026-10-21",
-  "hash": "274407a6d29662a0c0c523f0dafbee0492615590"
+  "hash": "0ea3cb1712a8240fba83cffa90e677659ad368fd"
  },
  "truck-dispatch/louisiana.html": {
   "date": "2026-10-21",
-  "hash": "18b866bd052e7ff984042fe56eace5caae4d6064"
+  "hash": "47d7298c21626c18d37602b2bc76d0e6bf955276"
  },
  "truck-dispatch/maine.html": {
   "date": "2026-10-21",
-  "hash": "01b546b162b4ce745b682ae689c5726b3de9b3ff"
+  "hash": "1c39d7b6aa591ba5c62bbe29346bf80934dec462"
  },
  "truck-dispatch/maryland.html": {
   "date": "2026-10-21",
-  "hash": "4700982dd1a0139e5d9994475d15d191f31018d3"
+  "hash": "60503eefd4cf5b4d13810c7f578034445b76a6c6"
  },
  "truck-dispatch/massachusetts.html": {
   "date": "2026-10-21",
-  "hash": "3fe0f151a0e6d19d4ae375998d6a825280755d14"
+  "hash": "6251bd9af24db7149d8435ae85d3189049a15b6b"
  },
  "truck-dispatch/michigan.html": {
   "date": "2026-10-21",
-  "hash": "9e5a3195558b15fe90193f31afb9782ed0b4a5fe"
+  "hash": "027aae6c5b7ddcc22b070ca5b732d98fb29c71d5"
  },
  "truck-dispatch/minnesota.html": {
   "date": "2026-10-21",
-  "hash": "72d939f1219510452d73ffa02ab40eae6d736583"
+  "hash": "bcb90faff89d752fb749eee5a67cb4373ec8fe60"
  },
  "truck-dispatch/mississippi.html": {
   "date": "2026-10-21",
-  "hash": "a87a2fa34ba2bd04bcbc0ce3a7c20a73e787f4af"
+  "hash": "f5328a4bde3e5b656cb387435590c92c11a711e5"
  },
  "truck-dispatch/missouri.html": {
   "date": "2026-10-21",
-  "hash": "db107d4002b9fc50690688a2607c625ea160c138"
+  "hash": "00f878299c44ad1fa537282b4a0a5b00f9e951a6"
  },
  "truck-dispatch/montana.html": {
   "date": "2026-10-21",
-  "hash": "fc05dee9b6b0a16aeb08e3142373358bc979dc84"
+  "hash": "138a4b18b9118fdee3efb4b9961be99fc3c883fa"
  },
  "truck-dispatch/nebraska.html": {
   "date": "2026-10-21",
-  "hash": "2d123de5b1603411cc69543995b9ac08d6f56c14"
+  "hash": "8a5c39e86ec8ec69316aa807dbb2538ced498b39"
  },
  "truck-dispatch/nevada.html": {
   "date": "2026-10-21",
-  "hash": "621fd71d535e4190570d931dc9632b5c6b7cb4bb"
+  "hash": "3a64d16d59ee4ec1789e53035c39225869eedd90"
  },
  "truck-dispatch/new-hampshire.html": {
   "date": "2026-10-21",
-  "hash": "4ff82b7c5df46ab1117a2e4bf9c009f055020a0f"
+  "hash": "ee65fede9ab900975aafdd8a66226216b8da942b"
  },
  "truck-dispatch/new-jersey.html": {
   "date": "2026-10-21",
-  "hash": "56fc0f6f0863a9f0eaec1d3bd2f8fe9d0af048e0"
+  "hash": "0d9ecf896f70cd5a099bd311164ec8a929cae849"
  },
  "truck-dispatch/new-mexico.html": {
   "date": "2026-10-21",
-  "hash": "bc936208964caf94efd59aae0ef51bedcc88a385"
+  "hash": "99ed15a9b20ef6b97d613cc10ce727a0bb460c58"
  },
  "truck-dispatch/new-york.html": {
   "date": "2026-10-21",
-  "hash": "8d5836175a44ce0dfc77a141e58d0a2bbf3aa5e7"
+  "hash": "3e9c23a3510ba965b3df861d42ef9ebfeed54434"
  },
  "truck-dispatch/north-carolina.html": {
   "date": "2026-10-21",
-  "hash": "790e38d5bcabbf043654c2bf201c2da6ab84d3d1"
+  "hash": "4ba6f279b602c4b6ea72870f27b5d717c8e3aef8"
  },
  "truck-dispatch/north-dakota.html": {
   "date": "2026-10-21",
-  "hash": "14439ea2160c4d7a02d8ea22404c771f69673f45"
+  "hash": "9d9ac58dfed78295513f83ac39a9e1543e0be222"
  },
  "truck-dispatch/ohio.html": {
   "date": "2026-10-21",
-  "hash": "6a433577f4415dfad754bdc9fcfa2df9bcefb52f"
+  "hash": "0aa1a94434f51678b6394622f89707e0ae5b6065"
  },
  "truck-dispatch/oklahoma.html": {
   "date": "2026-10-21",
-  "hash": "2f91ce0418085d19abd9ca488bc92f2fd8740780"
+  "hash": "31d4b1198b1fa1b374314229bfbf798b2b9e7131"
  },
  "truck-dispatch/oregon.html": {
   "date": "2026-10-21",
-  "hash": "47b27b9685f091b63be8a5ce0daee15294436b18"
+  "hash": "844354f743078a261e1f7fba5d2243d62b069d88"
  },
  "truck-dispatch/pennsylvania.html": {
   "date": "2026-10-21",
-  "hash": "3436a8a718918739db40de0a8c7f55f893ba160d"
+  "hash": "c8904a6e2d9be628ff5d48f777f979fa8dd55831"
  },
  "truck-dispatch/rhode-island.html": {
   "date": "2026-10-21",
-  "hash": "10322a63219580f38a0b6c91065410bcc87cb40d"
+  "hash": "fbaa04d830ce8210c3937277deaaa09b710697d0"
  },
  "truck-dispatch/south-carolina.html": {
   "date": "2026-10-21",
-  "hash": "6650c8325ffaf9bedf1b165721a898e0c22c3cea"
+  "hash": "9464082ccf667675a7f4da864d6afe928a232f3c"
  },
  "truck-dispatch/south-dakota.html": {
   "date": "2026-10-21",
-  "hash": "29aebdaa0775e7dc2854a8562c8e0fed8487c37a"
+  "hash": "4efec1ff8a440d9aedae7cd54443f21079ab2c6f"
  },
  "truck-dispatch/tennessee.html": {
   "date": "2026-10-21",
-  "hash": "ed90d57267f76d29ddfbf3af0631443a1d505dfb"
+  "hash": "5cc4f18243410de54fc168bc364c638b973b88e3"
  },
  "truck-dispatch/utah.html": {
   "date": "2026-10-21",
-  "hash": "f11afeef3ae4efba36791cbb4c6f7592de7d85c0"
+  "hash": "9524a0891c87811c808a20dd6317e322401eaf0a"
  },
  "truck-dispatch/vermont.html": {
   "date": "2026-10-21",
-  "hash": "7ad9221e056d51e7ed66cf2876c6643d361f39b4"
+  "hash": "0f728e53a4faa6e7e5b9f37b1ba81dd6f21cbaa2"
  },
  "truck-dispatch/virginia.html": {
   "date": "2026-10-21",
-  "hash": "4d20dc50a3eb7a0415f14e64a37ce6a617e2b5b9"
+  "hash": "a958f1461de26da6787b100d3b9c0494f7eee7c5"
  },
  "truck-dispatch/washington.html": {
   "date": "2026-10-21",
-  "hash": "e3ca7170bca440a1282e58102b2f458e70c631ce"
+  "hash": "8ccf144cab248b576e3212490ba312b844384ece"
  },
  "truck-dispatch/west-virginia.html": {
   "date": "2026-10-21",
-  "hash": "804e89fb03cb8044aa43cf0e6e40562c2948b6d0"
+  "hash": "3a3a584d5c62b93a62ba259af9f2bf1acb74703c"
  },
  "truck-dispatch/wisconsin.html": {
   "date": "2026-10-21",
-  "hash": "d1d1219d7be28a17fb0045c8c2b4f1f9c603e3b5"
+  "hash": "2800057f202c59028afd2f9dc01954f0da5e641b"
  },
  "truck-dispatch/wyoming.html": {
   "date": "2026-10-21",
-  "hash": "b46565b1190641dd16b701d184d7d17a95f8fa49"
+  "hash": "fb14b9003afdda72a716e258d4c3f23fafeb0969"
  },
  "truck-fuel-cost-calculator.html": {
   "date": "2026-10-21",
-  "hash": "aef88ac1f57f438e8787203729d8d09cf557a2b1"
+  "hash": "554f85f1e1536c8f31191fa6c0768f11270ff1e5"
  },
  "truck-loan-calculator.html": {
   "date": "2026-10-21",
-  "hash": "5899cc4d7f882f220fd22b33be975045d7bea195"
+  "hash": "7e74d2367337cf5234733aef6351b6fe6d87b009"
  },
  "trucking-authority-setup.html": {
   "date": "2026-10-21",
-  "hash": "db51c44415180dbc19021d8790e0bfc7c55556d0"
+  "hash": "ae48bf8ea98bbff73ed24333ec092ca3cfdd524b"
  },
  "trucking-back-office-services.html": {
   "date": "2026-10-21",
-  "hash": "54f7a240c2252b4213d6e5706615c0d3c40f9152"
+  "hash": "a5a5cbeb9a371eca278c7bce4eebe663a5663c7a"
  },
  "what-does-a-truck-dispatcher-do.html": {
   "date": "2026-10-21",
-  "hash": "6b48899c7d2c9c0650daf2d62d873bf5fa257475"
+  "hash": "6b9be3af6a729c68a2dd5cbb09908a712d0cb5ee"
  }
 }

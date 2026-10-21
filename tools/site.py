@@ -274,7 +274,7 @@ def footer():
     <div class="cols">
       <div class="fbrand">
         <img src="assets/logo/texas-solutions-logo.png" alt="Texas Solutions" width="127" height="44" loading="lazy">
-        <p>Nationwide truck dispatch for owner-operators and small fleets across the contiguous 48 states. Semi trucks {pl(M)}, hotshots 7% and box trucks 8% of weekly gross, OTR. First load free, dispatchers available 24/7.</p>
+        <p>Nationwide truck dispatch for owner-operators and small fleets across the USA. Semi trucks {pl(M)}, hotshots 7% and box trucks 8% of weekly gross, OTR. First load free, dispatchers available 24/7.</p>
       </div>
       <div>
         <h4>Dispatch Services</h4>
@@ -723,7 +723,7 @@ def build_home():
     <div>
       <span class="eyebrow"><span class="dot"></span>{esc(C.COVERAGE)}</span>
       <h1 class="split">USA Truck Dispatch Service that keeps your <em class="hl">truck loaded.</em></h1>
-      <p class="lede">We find, negotiate and book freight for owner-operators and small fleets running under their own MC authority: dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load. Office in Midland, Texas; service across the contiguous 48 states.</p>
+      <p class="lede">We find, negotiate and book freight for owner-operators and small fleets running under their own MC authority: dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load. Office in Midland, Texas; service across the USA.</p>
       {lead_ctas(home=True)}
       <p class="hero-tools">Free tools, no signup: <a href="truck-fuel-cost-calculator.html">Fuel cost</a> <a href="cost-per-mile-calculator.html">Cost per mile</a> <a href="load-profitability-calculator.html">Load profit</a> <a href="tools.html">All tools &rarr;</a></p>
       <div class="hero-stats">
@@ -766,7 +766,7 @@ def build_home():
   <div class="prose rv">
     <span class="eyebrow">Truck dispatch USA</span>
     <h2 style="margin-top:8px">Trucking dispatch services for every kind of carrier</h2>
-    <p>{esc(C.COVERAGE)} Texas Solutions is a trucking dispatch company serving carriers across the contiguous 48 states: an independent truck dispatcher team that works for you, not for brokers. Our truck dispatching services and freight dispatch services cover lanes across the contiguous 48 states: a freight dispatcher for your semi, hotshot or box truck, dispatching trucks for one owner-operator or a whole fleet, and the best truck dispatch company for you is the one that is clear about its fee, so ours is printed on every page. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
+    <p>{esc(C.COVERAGE)} Texas Solutions is a trucking dispatch company serving carriers across the USA: an independent truck dispatcher team that works for you, not for brokers. Our truck dispatching services and freight dispatch services cover lanes across the USA: a freight dispatcher for your semi, hotshot or box truck, dispatching trucks for one owner-operator or a whole fleet, and the best truck dispatch company for you is the one that is clear about its fee, so ours is printed on every page. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
     <ul>
       <li><a href="owner-operator-dispatch.html"><b>Dispatch services for owner-operators</b></a> and small trucking companies: one truck or a small fleet.</li>
       <li><a href="dispatch-for-new-authority.html"><b>Dispatch for new authority</b></a>: brand-new MC numbers from day one.</li>
@@ -774,7 +774,7 @@ def build_home():
       <li><a href="hotshot-dispatch.html"><b>Hotshot dispatch services</b></a> and <a href="box-truck-dispatch.html"><b>box truck dispatch services</b></a>, including straight trucks and non-CDL box trucks.</li>
       <li><a href="trucking-back-office-services.html"><b>Trucking back-office services</b></a>: broker setups, invoicing, detention and lumper collection, factoring setup, IFTA and DOT help.</li>
       <li><a href="semi-truck-dispatch.html"><b>Semi truck dispatch services</b></a> and <a href="small-fleet-dispatch.html"><b>dispatch for small fleets</b></a> and small trucking companies.</li>
-      <li><a href="truck-dispatch-by-state.html"><b>Truck dispatch services in every state</b></a>: <a href="texas-truck-dispatch.html">Texas</a>, <a href="truck-dispatch/california.html">California</a>, <a href="truck-dispatch/florida.html">Florida</a>, <a href="truck-dispatch/georgia.html">Georgia</a>, <a href="truck-dispatch/illinois.html">Illinois</a>, <a href="truck-dispatch/ohio.html">Ohio</a>, <a href="truck-dispatch/new-jersey.html">New Jersey</a>, <a href="truck-dispatch/pennsylvania.html">Pennsylvania</a>, <a href="truck-dispatch/tennessee.html">Tennessee</a>, <a href="truck-dispatch/north-carolina.html">North Carolina</a> and the rest of the contiguous 48 states.</li>
+      <li><a href="truck-dispatch-by-state.html"><b>Truck dispatch services in every state</b></a>: <a href="texas-truck-dispatch.html">Texas</a>, <a href="truck-dispatch/california.html">California</a>, <a href="truck-dispatch/florida.html">Florida</a>, <a href="truck-dispatch/georgia.html">Georgia</a>, <a href="truck-dispatch/illinois.html">Illinois</a>, <a href="truck-dispatch/ohio.html">Ohio</a>, <a href="truck-dispatch/new-jersey.html">New Jersey</a>, <a href="truck-dispatch/pennsylvania.html">Pennsylvania</a>, <a href="truck-dispatch/tennessee.html">Tennessee</a>, <a href="truck-dispatch/north-carolina.html">North Carolina</a> and every other state.</li>
     </ul>
     <p>Affordable truck dispatch services with no catches: a percentage of weekly gross, no long-term contract, no upfront fee, and your first load free. Read <a href="blog/how-to-choose-a-truck-dispatcher-avoid-scams.html">how to choose a truck dispatcher</a> or <a href="blog/is-a-truck-dispatcher-worth-it.html">whether a dispatcher is worth it</a>.</p>
   </div>
@@ -1018,7 +1018,7 @@ def build_about():
   <div class="prose rv">
     <h2 style="margin-top:0">We work for the carrier</h2>
     <p>Owner-operators and small fleets run thin on time. Every hour spent calling brokers, comparing boards and chasing rate confirmations is an hour off the road. Our team takes that work on so the truck stays moving and the decisions stay yours.</p>
-    <p>We do not own trucks and we are not a freight broker. Our office is in {C.CITY}, Texas, and our service covers the contiguous 48 states. We are paid a percentage of weekly gross under a signed agreement, with no setup fee, no flat rate and no long-term contract.</p>
+    <p>We do not own trucks and we are not a freight broker. Our office is in {C.CITY}, Texas, and our service covers the entire USA. We are paid a percentage of weekly gross under a signed agreement, with no setup fee, no flat rate and no long-term contract.</p>
     <h2>Equipment we dispatch</h2>
     <div class="chip-row" style="justify-content:flex-start">{chips}</div>
   </div>
@@ -2561,7 +2561,7 @@ def build_state_dispatch():
               f"The fee is {pl(M)} of weekly gross for semis, 7% for hotshots and 8% for box trucks.")
         if code in ("AK", "HI"):
             qa = (f"Do you dispatch carriers based in {name}?",
-                  f"Our dispatch coverage is the contiguous 48 states. Carriers based in {name} can contact us about their mainland operations, "
+                  f"We dispatch across the mainland USA. Carriers based in {name} can contact us about their mainland operations, "
                   f"and we will tell you plainly whether we can help. For mainland loads the fee is {pl(M)} of weekly gross for semis, 7% for hotshots and 8% for box trucks.")
             lanes = []
         faqs = [qa,
@@ -2574,7 +2574,7 @@ def build_state_dispatch():
         body = f"""<section class="phero"><div class="wrap">
   <div class="crumbs"><a href="index.html">Home</a> / <a href="truck-dispatch-by-state.html">Dispatch by State</a> / {esc(name)}</div>
   <h1>Truck Dispatch Services in {esc(name)}</h1>
-  <p class="lede">{("Our coverage is the contiguous 48 states; carriers based in " + esc(name) + " can contact us about mainland operations.") if code in ("AK", "HI") else ("24/7 truck dispatch for owner-operators and small fleets in " + esc(listing(hubs[:4])) + ".")} Semi trucks {pl(M)}, hotshots 7%, box trucks 8% of weekly gross. First load free, new MC welcome.</p>
+  <p class="lede">{("We dispatch across the mainland USA; carriers based in " + esc(name) + " can contact us about mainland operations.") if code in ("AK", "HI") else ("24/7 truck dispatch for owner-operators and small fleets in " + esc(listing(hubs[:4])) + ".")} Semi trucks {pl(M)}, hotshots 7%, box trucks 8% of weekly gross. First load free, new MC welcome.</p>
   {lead_ctas()}
 </div></section>
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>
@@ -2654,14 +2654,14 @@ def build_state_hub(states):
                 hub_lines.append(f'<a class="chip" href="{state_dispatch_path(c).lstrip("/")}">{esc(city)}, {c}</a>')
                 break
     qa = ("Is there a truck dispatch service near me?",
-          f"Texas Solutions dispatches owner-operators and small fleets across the contiguous 48 states. Our dispatchers work remotely across US time zones and are "
+          f"Texas Solutions dispatches owner-operators and small fleets across the USA. Our dispatchers work remotely across US time zones and are "
           f"available 24/7 by phone, text or WhatsApp at {C.PHONE}, so a carrier anywhere in the country can reach one. Pick your state below "
           f"for local freight, lanes and diesel prices.")
     faqs = [qa,
             ("Do I need a truck dispatcher in my own state?", "No. Dispatch is done by phone, email and load boards, so the dispatcher does not need to be local. What matters is that they know your lanes and are reachable when you need them; ours are available 24/7."),
-            ("Do you dispatch in every state?", "We dispatch dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck carriers across the contiguous 48 states. " + C.AK_HI_NOTE),
+            ("Do you dispatch in every state?", "We dispatch dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck carriers across the USA. " + C.AK_HI_NOTE),
             ("Is the dispatch fee different by state?", f"No. The fee is the same everywhere: {pl(M)} of weekly gross for OTR semis, 7% for hotshots and 8% for box trucks, with your first load free.")]
-    body = f"""{phero("Dispatch by State", "Truck Dispatch Services by State", "24/7 truck dispatch for owner-operators and small fleets across the contiguous 48 states. Find your state for local freight hubs, lanes and diesel prices.")}
+    body = f"""{phero("Dispatch by State", "Truck Dispatch Services by State", "24/7 truck dispatch for owner-operators and small fleets across the USA. Find your state for local freight hubs, lanes and diesel prices.")}
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa, label="Truck dispatch near me")}</div></section>
 <section class="sec"><div class="wrap">
   <div class="prose rv">
@@ -2675,7 +2675,7 @@ def build_state_hub(states):
 </div></section>
 {band()}"""
     title = "Truck Dispatch Services by State & Near Me | Texas Solutions"
-    desc = "Truck dispatch across the contiguous 48 states: find your state for freight hubs, lanes and diesel prices. 24/7 dispatchers, first load free, new MC welcome."
+    desc = "Truck dispatch across the USA: find your state for freight hubs, lanes and diesel prices. 24/7 dispatchers, first load free, new MC welcome."
     schemas = [{"@context": "https://schema.org", "@type": "CollectionPage"}, faq_ld(faqs), crumbs_ld([("Dispatch by State", path)]), speakable(path, title)]
     kw = "truck dispatch services near me, truck dispatcher near me, dispatch company near me, truck dispatch by state, truck dispatch services USA"
     write(path.lstrip("/"), page(path, title, desc, kw, schemas, body, current="truck-dispatch-by-state.html"))
@@ -2767,7 +2767,7 @@ def llms_facts():
         "- Back-office services: broker carrier packets, rate confirmations, invoicing and billing, detention and lumper collection, factoring setup, IFTA filing, DOT compliance help, MC authority setup",
         "- Equipment dispatched: dry van, reefer, flatbed, step deck, power only, hotshot, box truck, straight truck",
         "- Rough freight rates per mile (not guaranteed): flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20",
-        "- Area served: the contiguous 48 states (remote dispatchers across US time zones); office in Midland, Texas. Alaska and Hawaii-based carriers can ask about mainland operations",
+        "- Area served: the United States (remote dispatchers across US time zones); office in Midland, Texas. Alaska and Hawaii-based carriers can ask about mainland operations",
         "- Texas Solutions is a dispatch service. It is not a motor carrier or freight broker and does not guarantee loads, rates or earnings",
         f"- Phone: {C.PHONE} | WhatsApp: +1 838 910 3147 (https://wa.me/{C.WHATSAPP}) | Email: {C.EMAIL}",
         f"- Address: {C.STREET}, {C.CITY}, {C.REGION} {C.POSTAL}",

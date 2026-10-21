@@ -47,9 +47,9 @@ PRICING = {
 EQ_PCT = {"Dry Van": 5, "Reefer": 5, "Flatbed": 5, "Step Deck": 5, "Power Only": 5,
           "Box Truck": 8, "Straight Truck": 8, "Hotshot": 7}
 PRICING_CONDITION = "Rates apply to OTR (over-the-road) operations. Local and regional work is quoted separately."
-COVERAGE = "Nationwide truck dispatch for owner-operators and small fleets across the contiguous 48 states."
-OFFICE_VS_COVERAGE = "Office: 401 W Kentucky Ave, Midland, TX 79701. Service coverage: the contiguous 48 states, with remote dispatchers across US time zones."
-AK_HI_NOTE = "Carriers based in Alaska or Hawaii can contact us about their mainland operations in the contiguous 48 states."
+COVERAGE = "Nationwide truck dispatch for owner-operators and small fleets across the USA."
+OFFICE_VS_COVERAGE = "Office: 401 W Kentucky Ave, Midland, TX 79701. Service coverage: nationwide across the USA, with remote dispatchers across US time zones."
+AK_HI_NOTE = "Carriers based in Alaska or Hawaii can contact us about their mainland USA operations."
 AGREEMENT_NOTE = "No long-term contract. A signed dispatch agreement sets your percentage and the notice period before we book loads."
 FIRST_LOAD_NOTE = "Your first load is dispatched with no dispatch fee. After that, the percentage in your signed dispatch agreement applies."
 GROSS_NOTE = "Weekly gross is the revenue a truck books before fuel, insurance, maintenance and other costs. It is not profit."
@@ -167,7 +167,7 @@ FAQS = [
     ("Is there a flat weekly fee?",
      "No. Texas Solutions charges a percentage of weekly gross only, so you pay when your truck earns and nothing in a week it sits. There is no flat rate, no setup fee and no monthly subscription, and your first load is dispatched free."),
     ("What equipment do you dispatch?",
-     "Dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, for owner-operators and small fleets across the contiguous 48 states."),
+     "Dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, for owner-operators and small fleets across the USA."),
     ("Is Texas Solutions a freight broker?",
      "No. Texas Solutions is a truck dispatch service that works for the carrier. We are not a motor carrier or freight broker. Loads are booked under your own authority, and you approve every load before it is booked."),
     ("Will I be forced to accept loads?",
@@ -199,9 +199,9 @@ FAQS = [
     ("Is a truck dispatch service worth it?",
      "For many owner-operators, yes, when it saves hours on load boards, cuts deadhead and wins better rates by more than the fee. It is less useful if you already have steady direct freight. Results vary, so compare your weekly gross and empty miles before and after."),
     ("Do you dispatch nationwide or only in Texas?",
-     "Nationwide. Our office is in Midland, Texas, but our service covers the contiguous 48 states: remote dispatchers across US time zones book loads for carriers from California and Washington to Florida, New Jersey and Illinois."),
+     "Nationwide. Our office is in Midland, Texas, but our service covers the entire USA: remote dispatchers across US time zones book loads for carriers from California and Washington to Florida, New Jersey and Illinois."),
     ("Do you work with carriers in Alaska or Hawaii?",
-     "Our dispatch coverage is the contiguous 48 states. Carriers based in Alaska or Hawaii can contact us about their mainland operations, and we will tell you plainly whether we can help."),
+     "We dispatch across the mainland USA. Carriers based in Alaska or Hawaii can contact us about their mainland operations, and we will tell you plainly whether we can help."),
     ("Do you offer a flat-rate dispatch plan?",
      "No. We only charge a percentage of weekly gross, so a week the truck does not run costs you nothing. A flat weekly fee is due whether or not you haul; a percentage keeps the dispatcher paid only when your truck earns."),
     ("Is a truck dispatcher the same as a freight broker?",
@@ -244,7 +244,7 @@ LANDING = [
         "keywords": "box truck dispatch service, box truck dispatch services, box truck dispatcher, box truck dispatch company, 26ft box truck dispatch, 26 ft box truck loads, box truck loads, box truck loads near me, box truck load board, how to find box truck loads, dispatcher for box truck with new authority, non CDL box truck loads, straight truck dispatch",
         "h1": "Box Truck Dispatch Service",
         "lede": "We find, negotiate and book freight for box trucks and straight trucks, while you drive.",
-        "answer": "Texas Solutions provides box truck dispatch for owner-operators and small fleets across the contiguous 48 states. Dispatchers search and negotiate loads, complete broker setups and keep paperwork organized. The fee is 8% of weekly gross for OTR box trucks and straight trucks, with no flat rate, no setup fee and your approval on every load.",
+        "answer": "Texas Solutions provides box truck dispatch for owner-operators and small fleets across the USA. Dispatchers search and negotiate loads, complete broker setups and keep paperwork organized. The fee is 8% of weekly gross for OTR box trucks and straight trucks, with no flat rate, no setup fee and your approval on every load.",
         "body": [
             "Box truck freight moves in smaller, more frequent loads, which means more calls, more broker setups and more paperwork for every dollar your truck earns. Our dispatchers work the box truck side of the load boards every day.",
             "We match freight to your box length, liftgate and payload, plan around your home time, and negotiate before anything reaches you. As a hypothetical example, a box truck grossing $7,000 to $9,000 in a week would pay $560 to $720 in dispatch fees.",
@@ -267,7 +267,7 @@ LANDING = [
         "keywords": "hotshot dispatch services, hotshot dispatcher, hotshot dispatch company, hotshot trucking dispatch, dispatcher for hotshot trucks, hotshot loads, hot shot loads near me, hotshot load board, non CDL hotshot loads, gooseneck dispatch",
         "h1": "Hotshot Dispatch Service",
         "lede": "Time-sensitive hotshot freight found, negotiated and confirmed with you before it is booked.",
-        "answer": "Texas Solutions is a hotshot dispatch company for owner-operators across the contiguous 48 states. Dispatchers find expedited and partial loads, negotiate rates that often run $4-5 a mile, and handle broker paperwork. The dispatch fee is 7% of weekly gross for OTR hotshots, with no flat rate.",
+        "answer": "Texas Solutions is a hotshot dispatch company for owner-operators across the USA. Dispatchers find expedited and partial loads, negotiate rates that often run $4-5 a mile, and handle broker paperwork. The dispatch fee is 7% of weekly gross for OTR hotshots, with no flat rate.",
         "body": [
             "Hotshot freight is fast and time-critical: equipment, machinery, construction and oilfield materials that cannot wait for a full truckload. Winning it means answering brokers fast and knowing which lanes pay.",
             "Hotshot loads come from every region: oilfield and energy work in Texas, New Mexico and North Dakota, construction and equipment moves around fast-growing metros, and agricultural parts across the Plains and Midwest. Rough rates on hotshot loads commonly run $4 to $5 a mile.",
@@ -289,7 +289,7 @@ LANDING = [
         "keywords": "flatbed dispatch service, flatbed dispatch services, flatbed dispatcher, step deck dispatch, step deck dispatch services, flatbed loads, open deck dispatch, flatbed loads per mile, flatbed truck dispatch company",
         "h1": "Flatbed & Step Deck Dispatch",
         "lede": "Open-deck freight searched, sized up and negotiated for your flatbed or step deck.",
-        "answer": "Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets across the contiguous 48 states. Dispatchers find open-deck loads that often pay $5-7 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5% of weekly gross for OTR semis, with no flat rate.",
+        "answer": "Texas Solutions provides flatbed and step deck dispatch for owner-operators and small fleets across the USA. Dispatchers find open-deck loads that often pay $5-7 a mile, confirm dimensions, weight and tarping, and handle broker paperwork. The fee is 5% of weekly gross for OTR semis, with no flat rate.",
         "body": [
             "Our flatbed dispatch services start with the details. Open-deck freight comes with more questions than a sealed trailer: dimensions, weight, tarps, straps and chains, and whether a step deck is needed for height. We ask those questions before the load reaches you.",
             "Open-deck freight moves in every region: steel from the Midwest and South, lumber from the Southeast and Pacific Northwest, building materials around every growing metro, and machinery and energy equipment from Texas to the Dakotas.",
@@ -307,7 +307,7 @@ LANDING = [
         "keywords": "dry van dispatch, dry van dispatch service, dry van dispatcher, dry van loads per mile, 53 ft dry van dispatch, dry van trucking dispatch",
         "h1": "Dry Van Dispatch Service",
         "lede": "Lanes planned, deadhead cut and every load negotiated, with you approving each booking.",
-        "answer": "Texas Solutions provides dry van dispatch for owner-operators and small fleets across the contiguous 48 states. Dispatchers plan lanes to reduce deadhead, negotiate every load and handle broker paperwork. Dry van loads run roughly $3-5 a mile depending on local or OTR lanes, and the dispatch fee is 5% of weekly gross for OTR semis.",
+        "answer": "Texas Solutions provides dry van dispatch for owner-operators and small fleets across the USA. Dispatchers plan lanes to reduce deadhead, negotiate every load and handle broker paperwork. Dry van loads run roughly $3-5 a mile depending on local or OTR lanes, and the dispatch fee is 5% of weekly gross for OTR semis.",
         "body": [
             "Dry van is the most common trailer on the road, which means the most freight and the most competition for it. Good dry van dispatch is about lanes: booking the next load before this one delivers and avoiding markets that leave you stuck.",
         ],
@@ -323,9 +323,9 @@ LANDING = [
         "keywords": "reefer dispatch, reefer dispatch service, refrigerated truck dispatch, refrigerated load dispatch, reefer loads, reefer dispatcher, reefer rates per mile, produce loads, peak season reefer loads",
         "h1": "Reefer Dispatch Service",
         "lede": "Temperature-controlled freight negotiated for your reefer, with appointments confirmed before you commit.",
-        "answer": "Texas Solutions provides reefer dispatch for owner-operators and small fleets across the contiguous 48 states. Dispatchers find temperature-controlled loads, confirm temperature and appointment requirements with brokers and handle paperwork. The fee is 5% of weekly gross for OTR reefer semis, with no flat rate.",
+        "answer": "Texas Solutions provides reefer dispatch for owner-operators and small fleets across the USA. Dispatchers find temperature-controlled loads, confirm temperature and appointment requirements with brokers and handle paperwork. The fee is 5% of weekly gross for OTR reefer semis, with no flat rate.",
         "body": ["Reefer freight pays for precision: set temperatures and tight appointments. We confirm both with the broker before a load reaches you.",
-                 "Our reefer dispatch services cover refrigerated truck dispatch across the contiguous 48 states, with dispatchers available 24/7 for the early appointments and overnight reloads reefer freight brings.",
+                 "Our reefer dispatch services cover refrigerated truck dispatch across the USA, with dispatchers available 24/7 for the early appointments and overnight reloads reefer freight brings.",
                  "Refrigerated load dispatch is also about timing. Produce seasons move from Florida and Texas in spring to California, the Northwest and the Midwest through summer and fall, and the holiday peak season fills grocery and food-service lanes in November and December. We plan reefer lanes around those markets so the reload is lined up before you deliver."],
         "faqs": [("Do you check temperature requirements before booking?", "Yes. We confirm temperature, appointment times and special handling before presenting the load."),
                  ("Do you dispatch reefer trucks running the Midwest?", "Yes. We dispatch reefers nationwide, including Midwest lanes, and plan reloads around produce and food distribution markets so you are not stuck empty. Your first load is dispatched free."),
@@ -467,11 +467,11 @@ LANDING = [
     {
         "file": "semi-truck-dispatch.html", "requirements": ['Active MC authority and USDOT number in your own name', 'Certificate of insurance that brokers will accept (auto liability and cargo)', 'W-9, and a notice of assignment if you use factoring', 'Tractor and trailer details: type, length, and any special equipment', 'Equipment you carry for the freight: load locks, straps, tarps or a reefer unit'], "nav": "Semi Truck Dispatch", "kind": "semi",
         "title": "Semi Truck Dispatch Services | Dispatcher for Semi Trucks",
-        "description": "Semi truck dispatch across the contiguous 48 states for dry van, reefer, flatbed, step deck and power only. 5% of weekly gross, OTR, no flat rate, first load free, 24/7.",
+        "description": "Semi truck dispatch across the USA for dry van, reefer, flatbed, step deck and power only. 5% of weekly gross, OTR, no flat rate, first load free, 24/7.",
         "keywords": "semi truck dispatch services, dispatcher for semi trucks, truck dispatch services USA, freight dispatch services, trucking dispatch company, dispatch services for trucks, dispatcher for truckers",
         "h1": "Semi Truck Dispatch Services",
         "lede": "One dispatcher for your tractor, whatever trailer is behind it: dry van, reefer, flatbed, step deck or power only.",
-        "answer": "Texas Solutions provides semi truck dispatch services across the contiguous 48 states for owner-operators and small fleets running dry van, reefer, flatbed, step deck and power only. Dispatchers search loads, negotiate every rate, handle broker setups and plan lanes around your home time, for 5% of weekly gross on OTR semis with no flat rate.",
+        "answer": "Texas Solutions provides semi truck dispatch services across the USA for owner-operators and small fleets running dry van, reefer, flatbed, step deck and power only. Dispatchers search loads, negotiate every rate, handle broker setups and plan lanes around your home time, for 5% of weekly gross on OTR semis with no flat rate.",
         "body": [
             "Our freight dispatch services for semi trucks start with the lane. Call it trucking dispatch, freight dispatching or dispatching trucks, the job is the same: keep your truck loaded on lanes you choose. A semi earns when it is loaded and moving in the right direction. Our dispatchers plan each week so the next load picks up close to where the last one delivers, which keeps deadhead down and your truck on the lanes you prefer.",
             "We match freight to your trailer and your limits before it reaches you: weight and dimensions for open deck, temperature and appointment times for reefer, drop-and-hook programs for power only, and live or drop for dry van.",
@@ -576,7 +576,7 @@ LANDING = [
         "description": "Truck dispatch services in Texas for owner-operators and small fleets: Houston hotshot, Dallas, San Antonio, Laredo and Permian Basin lanes, plus nationwide OTR.",
         "keywords": "truck dispatch services Texas, truck dispatch service Texas, hotshot dispatch Houston, truck dispatcher Dallas, Houston truck dispatch, San Antonio truck dispatch, Laredo truck dispatch, Midland TX truck dispatch, Permian Basin dispatch",
         "h1": "Truck Dispatch Services in Texas",
-        "lede": "Dispatch for carriers based in or running through Texas, from the same nationwide team that books loads in all 48 lower states.",
+        "lede": "Dispatch for carriers based in or running through Texas, from the same nationwide team that books loads across the USA.",
         "answer": "Texas Solutions is a nationwide truck dispatch company with its head office at 401 W Kentucky Ave, Midland, Texas. For Texas carriers it dispatches lanes out of Houston, Dallas-Fort Worth, San Antonio, Laredo, El Paso and the Permian Basin, and anywhere those loads lead, for 5% of weekly gross on semis, 7% on hotshots and 8% on box trucks.",
         "body": [
             "Texas is one of the largest freight markets in the country, with energy, manufacturing, cross-border and port freight moving through it every day.",
@@ -768,7 +768,7 @@ SEO = {
         'What an MC number is and how to get your DOT and MC number: USDOT, MC authority, BOC-3 and insurance filing help, then dispatch from day one.'),
     '/semi-truck-dispatch.html': (
         'Semi Truck Dispatch Services | Dispatcher for Semi Trucks',
-        'Semi truck dispatch across the contiguous 48 states: dry van, reefer, flatbed, step deck, power only. 5% of weekly gross, OTR, first load free.'),
+        'Semi truck dispatch across the USA: dry van, reefer, flatbed, step deck, power only. 5% of weekly gross, OTR, first load free.'),
     '/small-fleet-dispatch.html': (
         'Dispatch Services for Small Fleets & Trucking Companies',
         'Dispatch for small trucking companies with 2-10 trucks: one contact, each truck on its own lanes, 5% semi, 7% hotshot, 8% box truck. No fleet setup fee.'),
@@ -777,7 +777,7 @@ SEO = {
         'What a truck dispatcher does, how much dispatch costs (5% semi, 7% hotshot, 8% box truck at Texas Solutions), dispatcher vs broker, and how to choose one.'),
     '/about.html': (
         'About Texas Solutions | Nationwide Truck Dispatch Company',
-        'Texas Solutions: truck dispatch for owner-operators and small fleets across the contiguous 48 states. Office in Midland, Texas. Not a broker.'),
+        'Texas Solutions: truck dispatch for owner-operators and small fleets across the USA. Office in Midland, Texas. Not a broker.'),
     '/contact.html': (
         'Contact a Truck Dispatcher | Call or WhatsApp | Texas Solutions',
         'Talk to a Texas Solutions truck dispatcher: call or WhatsApp (838) 910-3147, email dispatch@texassolutions.co, or send your details. Midland, TX.'),

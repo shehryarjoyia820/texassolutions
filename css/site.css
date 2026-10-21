@@ -1043,3 +1043,11 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
   .scroll-progress { display: none; }
   em.hl::after { transform: scaleX(1); }
 }
+
+/* CTA band: the secondary links sit under the buttons, in white */
+.band > div:first-child { grid-row: span 2; }
+.band .ctas { align-self: end; }
+.band .cta-sub { grid-column: 2; align-self: start; margin-top: -14px; color: #737373; position: relative; z-index: 1; }
+.band .cta-sub a { color: #ffffff; }
+.band .cta-sub a:hover { color: var(--orange); }
+@media (max-width: 800px) { .band > div:first-child { grid-row: auto; } .band .cta-sub { grid-column: 1; margin-top: 0; } }

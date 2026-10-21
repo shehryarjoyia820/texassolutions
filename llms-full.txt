@@ -14,7 +14,7 @@
 - Back-office services: broker carrier packets, rate confirmations, invoicing and billing, detention and lumper collection, factoring setup, IFTA filing, DOT compliance help, MC authority setup
 - Equipment dispatched: dry van, reefer, flatbed, step deck, power only, hotshot, box truck, straight truck
 - Rough freight rates per mile (not guaranteed): flatbed $5-7, step deck $5-7, reefer $4-6, hotshot $4-5, dry van $3-5 (local or OTR), power only $3-5, box truck $1.80-3.20
-- Area served: the contiguous 48 states (remote dispatchers across US time zones); office in Midland, Texas. Alaska and Hawaii-based carriers can ask about mainland operations
+- Area served: the United States (remote dispatchers across US time zones); office in Midland, Texas. Alaska and Hawaii-based carriers can ask about mainland operations
 - Texas Solutions is a dispatch service. It is not a motor carrier or freight broker and does not guarantee loads, rates or earnings
 - Phone: (838) 910-3147 | WhatsApp: +1 838 910 3147 (https://wa.me/18389103147) | Email: dispatch@texassolutions.co
 - Address: 401 W Kentucky Ave, Midland, TX 79701
@@ -34,7 +34,7 @@ Our published rates apply to OTR (over-the-road) operations. Local and regional 
 No. Texas Solutions charges a percentage of weekly gross only, so you pay when your truck earns and nothing in a week it sits. There is no flat rate, no setup fee and no monthly subscription, and your first load is dispatched free.
 
 ### What equipment do you dispatch?
-Dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, for owner-operators and small fleets across the contiguous 48 states.
+Dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, for owner-operators and small fleets across the USA.
 
 ### Is Texas Solutions a freight broker?
 No. Texas Solutions is a truck dispatch service that works for the carrier. We are not a motor carrier or freight broker. Loads are booked under your own authority, and you approve every load before it is booked.
@@ -82,10 +82,10 @@ Yes. Each truck is dispatched to its own equipment, lanes and home time, at the 
 For many owner-operators, yes, when it saves hours on load boards, cuts deadhead and wins better rates by more than the fee. It is less useful if you already have steady direct freight. Results vary, so compare your weekly gross and empty miles before and after.
 
 ### Do you dispatch nationwide or only in Texas?
-Nationwide. Our office is in Midland, Texas, but our service covers the contiguous 48 states: remote dispatchers across US time zones book loads for carriers from California and Washington to Florida, New Jersey and Illinois.
+Nationwide. Our office is in Midland, Texas, but our service covers the entire USA: remote dispatchers across US time zones book loads for carriers from California and Washington to Florida, New Jersey and Illinois.
 
 ### Do you work with carriers in Alaska or Hawaii?
-Our dispatch coverage is the contiguous 48 states. Carriers based in Alaska or Hawaii can contact us about their mainland operations, and we will tell you plainly whether we can help.
+We dispatch across the mainland USA. Carriers based in Alaska or Hawaii can contact us about their mainland operations, and we will tell you plainly whether we can help.
 
 ### Do you offer a flat-rate dispatch plan?
 No. We only charge a percentage of weekly gross, so a week the truck does not run costs you nothing. A flat weekly fee is due whether or not you haul; a percentage keeps the dispatcher paid only when your truck earns.
