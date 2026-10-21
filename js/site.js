@@ -496,7 +496,7 @@
     });
     fuelTool.run(false);
     // Pick up newer prices if this page was served from a cache.
-    fetch('data/fuel-prices.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    fetch('/data/fuel-prices.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.fuels && JSON.stringify(d) !== JSON.stringify(data)) {
         data = d; if (priceIn.dataset.auto) fillPrice(); fuelTool.run(false);
       }

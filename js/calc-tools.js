@@ -35,7 +35,7 @@
         $('cpmMonthlyTotal').textContent = money(monthly);
         // Hand the all-in CPM (incl. own pay) to the load calculator, so its "profit" is money left after paying yourself.
         var link = $('cpmToLp');
-        if (link) { link.href = 'load-profitability-calculator.html?cpm=' + allIn.toFixed(2); link.textContent = 'Check a load with this CPM ($' + allIn.toFixed(2) + ')'; }
+        if (link) { link.href = '/calculators/load-profitability-calculator/?cpm=' + allIn.toFixed(2); link.textContent = 'Check a load with this CPM ($' + allIn.toFixed(2) + ')'; }
       }
     }).run(false);
   }

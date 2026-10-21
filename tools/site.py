@@ -466,10 +466,12 @@ def trust_box():
     return f'<div class="trust-box rv"><h3>Before you send your details</h3><ul>{rows}</ul></div>'
 
 
-def phero(crumb_name, h1, lede, ctas=True, extra=""):
+def phero(crumb_name, h1, lede, ctas=True, extra="", parents=()):
+    """parents: (label, file) pairs between Home and this page, matching the folder URL (see tools/permalinks.py)."""
     cta = lead_ctas() if ctas else ""
+    mid = "".join(f'<a href="{h}">{esc(n)}</a> / ' for n, h in parents)
     return f"""<section class="phero"><div class="wrap">
-  <div class="crumbs"><a href="index.html">Home</a> / {esc(crumb_name)}</div>
+  <div class="crumbs"><a href="index.html">Home</a> / {mid}{esc(crumb_name)}</div>
   <h1>{h1}</h1>
   <p class="lede">{lede}</p>
   {cta}{extra}
@@ -888,7 +890,7 @@ def build_estimate():
     quote = lead_form("estimateForm", "New dispatch inquiry (fee calculator)", "Send My Details", extra=f"""
     <div><label class="fl" for="estimateForm-gross">Weekly gross per truck ($, optional)</label><input type="number" id="estimateForm-gross" name="weekly_gross" min="0" step="100" inputmode="numeric" placeholder="e.g. 9000"></div>
     <div><label class="fl" for="estimateForm-pct">Percentage you have in mind (optional)</label><input type="number" id="estimateForm-pct" name="proposed_percent" min="1" max="20" step="0.5" inputmode="decimal" placeholder="Our rate: 5% semi, 7% hotshot, 8% box truck"></div>""")
-    body = f"""{phero("Estimate", "Truck Dispatch Fee Calculator &amp; Free Quote", f"See what dispatch costs before you sign. Semi trucks {pl(M)}, hotshots 7%, box trucks 8% of weekly gross, for OTR carriers. No flat rate.", ctas=False)}
+    body = f"""{phero("Dispatch Fee Calculator", "Truck Dispatch Fee Calculator &amp; Free Quote", f"See what dispatch costs before you sign. Semi trucks {pl(M)}, hotshots 7%, box trucks 8% of weekly gross, for OTR carriers. No flat rate.", ctas=False, parents=[("Tools", "tools.html")])}
 <section class="sec" style="padding-top:56px"><div class="wrap">
   {calc}
 </div></section>
@@ -916,7 +918,7 @@ def build_estimate():
 </div></section>"""
     items = [qa] + [C.FAQS[0], C.FAQS[2], C.FAQS[3]]
     schemas = [service("Truck Dispatch Fee Estimate", desc, "/estimate.html", "Truck dispatch"),
-               faq_ld(items), crumbs_ld([("Estimate", "/estimate.html")]), speakable("/estimate.html", title)]
+               faq_ld(items), crumbs_ld([("Tools", "/tools.html"), ("Dispatch Fee Calculator", "/estimate.html")]), speakable("/estimate.html", title)]
     kw = "truck dispatch calculator, dispatch fee calculator, truck dispatch quote, how much does a truck dispatcher cost, truck dispatcher percentage, dispatch fee per week, owner operator dispatch cost, " + HOME_KW
     write("estimate.html", page("/estimate.html", title, desc, kw, schemas, body, current="estimate.html"))
 
@@ -1193,7 +1195,7 @@ def build_contract():
     path = "/sign-contract.html"
     K = C.CONTRACT
     fees = {eq: C.EQ_PCT[eq] for eq in C.EQUIPMENT}
-    data = dict(K, fees=fees, logo="assets/logo/texas-solutions-logo.png")
+    data = dict(K, fees=fees, logo="/assets/logo/texas-solutions-logo.png")
 
     def para(x):
         if isinstance(x, list):
@@ -1395,6 +1397,14 @@ INCLUDES_DEFAULT = [
 ]
 
 
+DISPATCH_CRUMB, SERVICES_CRUMB, GUIDES_CRUMB = ("Dispatch", "dispatch.html"), ("Services", "trucking-business-services.html"), ("Guides", "blog.html")
+SECTION_PARENTS = {
+    "mc-lease.html": [SERVICES_CRUMB], "trucking-back-office-services.html": [SERVICES_CRUMB], "trucking-authority-setup.html": [SERVICES_CRUMB],
+    "texas-truck-dispatch.html": [DISPATCH_CRUMB, ("Dispatch by State", "truck-dispatch-by-state.html")],
+    "what-does-a-truck-dispatcher-do.html": [GUIDES_CRUMB],
+}
+
+
 def build_landing(p):
     kind = landing_pricing(p)
     truck_q = {"box-truck-dispatch.html": "truck=box-truck", "hotshot-dispatch.html": "truck=hotshot", "flatbed-dispatch.html": "truck=flatbed",
@@ -1420,7 +1430,8 @@ def build_landing(p):
         what = what.split(f"<h2>{esc(p['nav'])} pricing</h2>")[0] + f"<h2>{esc(p['nav'])} costs</h2>\n    <p>{esc(p['pricing_note'])}</p>"
     faqs = p["faqs"] + [C.FAQS[0], C.FAQS[5]]
     others = "".join(f'<a class="chip" href="{o["file"]}">{esc(o["nav"])}</a>' for o in C.LANDING if o["file"] != p["file"] and not o.get("hide_nav"))
-    body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), extra=f'<div class="chip-row" style="justify-content:flex-start"><span class="chip" ><b>{pl(kind)}</b> of weekly gross</span><span class="chip" >OTR &middot; No flat rate</span></div>')}
+    parents = SECTION_PARENTS.get(p["file"], [DISPATCH_CRUMB])
+    body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), parents=parents, extra=f'<div class="chip-row" style="justify-content:flex-start"><span class="chip" ><b>{pl(kind)}</b> of weekly gross</span><span class="chip" >OTR &middot; No flat rate</span></div>')}
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(p['h1'] if p.get('guide') else f"What is {p['nav'].lower().replace('mc ', 'MC ')} from Texas Solutions?", p['answer'])}</div></section>
 <section class="sec"><div class="wrap two">
   <div class="prose rv">
@@ -1445,7 +1456,7 @@ def build_landing(p):
 </div></section>
 {band()}"""
     schemas = [service(p["h1"], p["answer"], path, p["nav"].replace("What a Truck Dispatcher Does", "Truck dispatch")),
-               faq_ld(faqs), crumbs_ld([(p["nav"], path)]), speakable(path, p["title"])]
+               faq_ld(faqs), crumbs_ld([(n, "/" + h) for n, h in parents] + [(p["nav"], path)]), speakable(path, p["title"])]
     og = "article" if p.get("guide") else "website"
     if p.get("guide"):
         schemas.append({"@context": "https://schema.org", "@type": "Article", "headline": p["h1"], "description": p["description"],
@@ -2903,7 +2914,7 @@ def build_state_dispatch():
                 (f"Do you offer box truck and hotshot dispatch in {hubs[0]}?", f"Yes. Box truck dispatch around {hubs[0]} is billed at 8% of weekly gross and hotshot dispatch at 7%, OTR. A dispatcher searches loads that pick up near {hubs[0]} and the rest of {name}, negotiates the rate and sends you the details to approve.")]
         nbs = "".join(f'<a class="chip" href="{state_dispatch_path(nb).lstrip("/")}">{esc(C.STATE_REGION[nb][0])}</a>' for nb in info["neighbors"])
         body = f"""<section class="phero"><div class="wrap">
-  <div class="crumbs"><a href="index.html">Home</a> / <a href="truck-dispatch-by-state.html">Dispatch by State</a> / {esc(name)}</div>
+  <div class="crumbs"><a href="index.html">Home</a> / <a href="dispatch.html">Dispatch</a> / <a href="truck-dispatch-by-state.html">Dispatch by State</a> / {esc(name)}</div>
   <h1>Truck Dispatch Services in {esc(name)}</h1>
   <p class="lede">{("We dispatch across the mainland USA; carriers based in " + esc(name) + " can contact us about mainland operations.") if code in ("AK", "HI") else ("24/7 truck dispatch for owner-operators and small fleets in " + esc(listing(hubs[:4])) + ".")} Semi trucks {pl(M)}, hotshots 7%, box trucks 8% of weekly gross. First load free, new MC welcome.</p>
   {lead_ctas()}
@@ -2956,7 +2967,7 @@ def build_state_dispatch():
             desc = f"24/7 truck dispatch in {name} for owner-operators and small fleets. Semi 5%, hotshot 7%, box truck 8% of weekly gross. First load free."
         svc = service(f"Truck dispatch services in {name}", qa[1], path, "Truck dispatch")
         svc["areaServed"] = {"@type": "State", "name": name, "containedInPlace": {"@type": "Country", "name": "United States"}}
-        schemas = [svc, faq_ld(faqs), crumbs_ld([("Dispatch by State", "/truck-dispatch-by-state.html"), (name, path)]), speakable(path, title)]
+        schemas = [svc, faq_ld(faqs), crumbs_ld([("Dispatch", "/dispatch.html"), ("Dispatch by State", "/truck-dispatch-by-state.html"), (name, path)]), speakable(path, title)]
         kw = (f"truck dispatch services {name}, truck dispatch services in {name}, truck dispatcher {name}, dispatch services {name}, truck dispatch {hubs[0]}, "
               f"truck dispatcher {hubs[0]}, box truck dispatch {hubs[0]}, hotshot dispatch {hubs[0]}, "
               + ", ".join(f"{e.lower()} dispatch {name}" for e in eq) + f", truck dispatch near me {name}")
@@ -3234,7 +3245,9 @@ def main():
     build_rss()
     build_404()
     build_site_files()
-    print("built", 19 + len(C.LANDING) + len(POSTS) + len(STATE_PAGES) + len(TOOLS), "pages, plus feed.xml")
+    import permalinks  # last step: nested folder URLs, rewritten links, redirects from the old .html paths
+    moved, _ = permalinks.apply(ROOT, C.BASE, [t["slug"] for t in TOOLS])
+    print("built", 19 + len(C.LANDING) + len(POSTS) + len(STATE_PAGES) + len(TOOLS), "pages, plus feed.xml;", moved, "moved to folder URLs")
 
 
 if __name__ == "__main__":

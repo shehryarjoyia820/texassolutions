@@ -12,7 +12,7 @@ backend:
     deleteMedia: "Blog: delete {{path}}"
 
 site_url: https://dispatch.texassolutions.co
-display_url: https://dispatch.texassolutions.co/blog.html
+display_url: https://dispatch.texassolutions.co/guides/
 logo_url: /assets/logo/texas-solutions-icon.png
 
 media_folder: assets/blog
@@ -30,7 +30,7 @@ collections:
     slug: "{{slug}}"
     summary: "{{title}} ({{date}})"
     sortable_fields: [date, title]
-    preview_path: "blog/{{slug}}.html"
+    preview_path: "guides/{{slug}}/"
     fields:
       - { name: title, label: "Title (60 characters or less works best on Google)", widget: string }
       - { name: description, label: "Meta description (about 150 characters, shown on Google)", widget: text }

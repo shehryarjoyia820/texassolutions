@@ -2,351 +2,831 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Texas Solutions Truck Dispatch Blog</title>
-    <link>https://dispatch.texassolutions.co/blog.html</link>
+    <link>https://dispatch.texassolutions.co/guides/</link>
     <atom:link href="https://dispatch.texassolutions.co/feed.xml" rel="self" type="application/rss+xml" />
     <description>Truck dispatch, rates, diesel prices and fuel-saving guides for owner-operators and small fleets.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Oct 2026 12:57:23 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 13:06:39 +0000</lastBuildDate>
+    <item>
+      <title>Working With a Factoring Company: Setup, Paperwork and Payments</title>
+      <link>https://dispatch.texassolutions.co/guides/working-with-a-factoring-company/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/working-with-a-factoring-company/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How to work with a factoring company day to day: onboarding, notice of assignment, submitting invoices, avoiding chargebacks and switching cleanly.</description>
+      <category>Getting paid</category>
+    </item>
+    <item>
+      <title>Winter Driving and Chain Laws: A Trucker&#x27;s Survival Guide</title>
+      <link>https://dispatch.texassolutions.co/guides/winter-driving-and-chain-laws/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/winter-driving-and-chain-laws/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Winter driving tips for truckers: how chain laws work, chaining up, preventing fuel gel and frozen brakes, the adverse conditions rule and a winter kit list.</description>
+      <category>Safety</category>
+    </item>
+    <item>
+      <title>Weigh Stations and Bypass: Weight Limits, Scales and Tips</title>
+      <link>https://dispatch.texassolutions.co/guides/weigh-stations-and-bypass/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/weigh-stations-and-bypass/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How weigh stations work, federal weight limits, how bypass programs decide who rolls past, and how to balance axle weights to pass the scale the first time.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>UCR Registration Guide: Who Needs It, Fees and Deadlines</title>
+      <link>https://dispatch.texassolutions.co/guides/ucr-registration-guide/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/ucr-registration-guide/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Unified Carrier Registration in plain English: who must register, how fee brackets work, when to file each year, how to count trucks and avoid overpaying.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>TWIC Card and Port Drayage: A Guide for Owner-Operators</title>
+      <link>https://dispatch.texassolutions.co/guides/twic-card-and-port-drayage/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/twic-card-and-port-drayage/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>What a TWIC card is, how to apply, and what else you need to haul port containers: interchange agreements, terminal registration and chassis checks.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>Trucking Tax Basics for Owner-Operators</title>
+      <link>https://dispatch.texassolutions.co/guides/trucking-tax-basics/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/trucking-tax-basics/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A plain-English overview of owner-operator taxes: self-employment tax, quarterly estimates, common deductions, depreciation, per diem, HVUT and IFTA.</description>
+      <category>Finance</category>
+    </item>
+    <item>
+      <title>Trucking LLC Setup and Simple Bookkeeping for Owner-Operators</title>
+      <link>https://dispatch.texassolutions.co/guides/trucking-llc-and-bookkeeping/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/trucking-llc-and-bookkeeping/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Sole proprietor or LLC? Learn how business entities work for trucking, why separate accounts matter, and a simple weekly bookkeeping routine that works.</description>
+      <category>Business</category>
+    </item>
+    <item>
+      <title>Trucking KPIs to Track: 10 Numbers That Run Your Business</title>
+      <link>https://dispatch.texassolutions.co/guides/trucking-kpis-to-track/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/trucking-kpis-to-track/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>The trucking KPIs that matter most for owner-operators and small fleets: rate per total mile, cost per mile, deadhead, utilization, days to pay and more.</description>
+      <category>Business</category>
+    </item>
+    <item>
+      <title>Trucking Insurance Explained: Coverages Owner-Operators Need</title>
+      <link>https://dispatch.texassolutions.co/guides/trucking-insurance-explained/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/trucking-insurance-explained/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Trucking insurance in plain English: liability, cargo, physical damage, bobtail and more, what FMCSA and brokers require, and questions to ask your agent.</description>
+      <category>Finance</category>
+    </item>
+    <item>
+      <title>How to Write a Trucking Business Plan (With a Simple Template)</title>
+      <link>https://dispatch.texassolutions.co/guides/trucking-business-plan/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/trucking-business-plan/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Write a trucking business plan that lenders and you can use: the sections to include, a simple outline, hypothetical startup numbers and a break-even check.</description>
+      <category>Business</category>
+    </item>
+    <item>
+      <title>Trucking Apps for Owner-Operators: What You Actually Need</title>
+      <link>https://dispatch.texassolutions.co/guides/trucking-apps-for-owner-operators/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/trucking-apps-for-owner-operators/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>The main types of trucking apps owner-operators use, from truck GPS and ELDs to document scanning and expense tracking, plus questions to ask before you pay.</description>
+      <category>Business</category>
+    </item>
+    <item>
+      <title>Truck Parking and Trip Planning: How to Never Get Stuck</title>
+      <link>https://dispatch.texassolutions.co/guides/truck-parking-and-trip-planning/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/truck-parking-and-trip-planning/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Plan trips around hours of service and safe truck parking: a step-by-step method, a worked example, backup options and mistakes that leave drivers stuck.</description>
+      <category>Drivers</category>
+    </item>
+    <item>
+      <title>Truck Maintenance Schedule for Owner-Operators</title>
+      <link>https://dispatch.texassolutions.co/guides/truck-maintenance-schedule/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/truck-maintenance-schedule/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A practical semi truck maintenance schedule: daily, weekly, monthly, PM service and annual checks, required DOT records, and how to budget for repairs.</description>
+      <category>Equipment</category>
+    </item>
+    <item>
+      <title>TONU, Layover and Lumper Pay: How Truckers Get Paid for Each</title>
+      <link>https://dispatch.texassolutions.co/guides/tonu-layover-and-lumper-pay/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/tonu-layover-and-lumper-pay/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>TONU, layover and lumper fees explained: what each accessorial covers, how to put it on the rate con, what proof to keep and how to bill it without delays.</description>
+      <category>Getting paid</category>
+    </item>
+    <item>
+      <title>Team Driving in Trucking: Pay, Hours and How to Make It Work</title>
+      <link>https://dispatch.texassolutions.co/guides/team-driving-guide/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/team-driving-guide/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How team truck driving works: hours of service for teams, how teams split pay, what freight suits them, choosing a partner, and a simple revenue example.</description>
+      <category>Drivers</category>
+    </item>
+    <item>
+      <title>How to Start a Cargo Van Business: A Practical Guide</title>
+      <link>https://dispatch.texassolutions.co/guides/start-a-cargo-van-business/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/start-a-cargo-van-business/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Starting a cargo van business? Learn the van, authority, insurance and freight choices, how to price runs, and when it makes sense to move up to a box truck.</description>
+      <category>Business</category>
+    </item>
+    <item>
+      <title>Sleeper Berth Split Explained: 7/3 and 8/2 With Examples</title>
+      <link>https://dispatch.texassolutions.co/guides/sleeper-berth-split-explained/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/sleeper-berth-split-explained/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How the sleeper berth split works for property-carrying drivers: the 7/3 and 8/2 pairings, how to recalculate your 11 and 14 hours, and a worked example.</description>
+      <category>Compliance</category>
+    </item>
     <item>
       <title>Reefer Loads and Refrigerated Load Dispatch: Rates per Mile, Seasons and Tips</title>
-      <link>https://dispatch.texassolutions.co/blog/reefer-loads-refrigerated-dispatch-guide.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/reefer-loads-refrigerated-dispatch-guide.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/reefer-loads-refrigerated-dispatch-guide/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/reefer-loads-refrigerated-dispatch-guide/</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>Refrigerated load dispatch guide: reefer rates per mile in 2026, produce and holiday seasons, temperature rules and how to find better reefer loads.</description>
       <category>Reefer</category>
     </item>
     <item>
+      <title>Reefer Loads in Summer Heat: How to Protect the Load</title>
+      <link>https://dispatch.texassolutions.co/guides/reefer-loads-in-summer-heat/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/reefer-loads-in-summer-heat/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How to run reefer loads in summer heat without rejections or claims: pre-cooling, pulp temps, airflow, continuous vs cycle mode, reefer fuel and paperwork.</description>
+      <category>Seasonal freight</category>
+    </item>
+    <item>
+      <title>Pre-Trip Inspection Checklist for Truck Drivers</title>
+      <link>https://dispatch.texassolutions.co/guides/pre-trip-inspection-checklist/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/pre-trip-inspection-checklist/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A practical pre-trip inspection checklist for semi trucks: engine, cab, air brakes, lights, tires, coupling and trailer, plus documents and DVIR basics.</description>
+      <category>Safety</category>
+    </item>
+    <item>
+      <title>Power Only Trucking Explained: How It Works and Who It Fits</title>
+      <link>https://dispatch.texassolutions.co/guides/power-only-trucking-explained/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/power-only-trucking-explained/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Power only trucking means hauling someone else&#x27;s trailer with your tractor. Learn how it works, insurance needs, rates, pros and cons, and how to get started.</description>
+      <category>Equipment</category>
+    </item>
+    <item>
+      <title>How to Plan a Profitable Round Trip in Trucking</title>
+      <link>https://dispatch.texassolutions.co/guides/plan-a-profitable-round-trip/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/plan-a-profitable-round-trip/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Plan round trips that pay on every leg: check backhaul markets first, price the whole loop, use triangle routes and avoid high-paying loads into dead markets.</description>
+      <category>Finding loads</category>
+    </item>
+    <item>
+      <title>PHMSA Hazmat Registration: Who Needs It and How to File</title>
+      <link>https://dispatch.texassolutions.co/guides/phmsa-hazmat-registration/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/phmsa-hazmat-registration/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>PHMSA hazmat registration explained for owner-operators: which loads trigger it, the July-June registration year, how to file, and what to keep in the truck.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>Personal Conveyance and Yard Moves: When You Can Use Them</title>
+      <link>https://dispatch.texassolutions.co/guides/personal-conveyance-and-yard-moves/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/personal-conveyance-and-yard-moves/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Learn when truckers can log personal conveyance or yard moves on an ELD, common examples that are and are not allowed, and how to avoid an HOS violation.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
       <title>Peak Season Trucking Loads: How Owner-Operators Can Plan Q4 Holiday Freight</title>
-      <link>https://dispatch.texassolutions.co/blog/peak-season-trucking-loads-holiday-freight.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/peak-season-trucking-loads-holiday-freight.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/peak-season-trucking-loads-holiday-freight/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/peak-season-trucking-loads-holiday-freight/</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>Q4 peak season trucking loads: holiday freight timing, reefer demand, Texas, Midwest and California loads, and how to plan lanes and home time.</description>
       <category>Finding loads</category>
     </item>
     <item>
+      <title>Owner-Operator vs Company Driver: Which Path Is Right for You?</title>
+      <link>https://dispatch.texassolutions.co/guides/owner-operator-vs-company-driver/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/owner-operator-vs-company-driver/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Owner-operator vs company driver: compare pay, costs, risk, taxes, home time and control to decide whether to stay a company driver or run your own truck.</description>
+      <category>Business</category>
+    </item>
+    <item>
+      <title>Oversize and Overweight Permits: A Practical Guide</title>
+      <link>https://dispatch.texassolutions.co/guides/oversize-overweight-permits/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/oversize-overweight-permits/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>When a load needs an oversize or overweight permit, how state permits work, escort and travel-time rules, and how to price OS/OW loads so the extra work pays.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>Out-of-Service Criteria: What Puts a Truck or Driver Out of Service</title>
+      <link>https://dispatch.texassolutions.co/guides/out-of-service-criteria/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/out-of-service-criteria/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>What the CVSA out-of-service criteria are, common driver and vehicle OOS violations, what to do when you are placed out of service, and how to avoid it.</description>
+      <category>Safety</category>
+    </item>
+    <item>
+      <title>New Entrant Safety Audit: How to Prepare and Pass</title>
+      <link>https://dispatch.texassolutions.co/guides/new-entrant-safety-audit-guide/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/new-entrant-safety-audit-guide/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>What the FMCSA new entrant safety audit checks, which violations cause an automatic fail, the documents to have ready, and what to do if you fail.</description>
+      <category>New authority</category>
+    </item>
+    <item>
+      <title>DOT Physical and Medical Card: What Truck Drivers Should Know</title>
+      <link>https://dispatch.texassolutions.co/guides/medical-card-and-dot-physical/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/medical-card-and-dot-physical/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>What happens at a DOT physical, how long a medical card lasts, common issues like blood pressure and diabetes, and how to avoid a lapse that stops your truck.</description>
+      <category>Drivers</category>
+    </item>
+    <item>
+      <title>Load-to-Truck Ratio Explained for Owner-Operators</title>
+      <link>https://dispatch.texassolutions.co/guides/load-to-truck-ratio-explained/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/load-to-truck-ratio-explained/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>What the load-to-truck ratio means, how it is calculated, why it moves spot rates, and how owner-operators use it to pick markets and negotiate better loads.</description>
+      <category>Finding loads</category>
+    </item>
+    <item>
+      <title>Lease vs Buy a Truck: Which Is Better for Owner-Operators?</title>
+      <link>https://dispatch.texassolutions.co/guides/lease-vs-buy-a-truck/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/lease-vs-buy-a-truck/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Compare leasing and buying a semi truck: upfront cash, monthly cost, repairs, equity and flexibility, plus a hypothetical side-by-side cost example.</description>
+      <category>Equipment</category>
+    </item>
+    <item>
+      <title>How to Keep Your MC Authority Active and in Good Standing</title>
+      <link>https://dispatch.texassolutions.co/guides/keep-your-mc-authority-active/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/keep-your-mc-authority-active/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>The filings and habits that keep your MC authority and USDOT number active: insurance, BOC-3, UCR, MCS-150 updates, drug testing and a compliance calendar.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>How to Vet a Freight Broker Before You Haul Their Load</title>
+      <link>https://dispatch.texassolutions.co/guides/how-to-vet-a-freight-broker/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-vet-a-freight-broker/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How to vet a freight broker before booking: check FMCSA authority and bond, credit and days to pay, contact details and contract terms. Scorecard included.</description>
+      <category>Getting paid</category>
+    </item>
+    <item>
+      <title>How to Read a Rate Confirmation Before You Sign It</title>
+      <link>https://dispatch.texassolutions.co/guides/how-to-read-a-rate-confirmation/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-read-a-rate-confirmation/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Learn how to read a rate confirmation line by line: rate, accessorials, detention, TONU, payment terms and fine print to check before you sign a load.</description>
+      <category>Getting paid</category>
+    </item>
+    <item>
       <title>How to Get Loads With a New MC Number: A Guide for New Authority Carriers</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-get-loads-with-new-mc-number.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-get-loads-with-new-mc-number.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-get-loads-with-new-mc-number/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-get-loads-with-new-mc-number/</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to get loads with a new MC number: broker setup packet checklist, brokers that accept new authority, first lanes and new authority dispatch.</description>
       <category>New authority</category>
     </item>
     <item>
+      <title>How to Get Detention Paid: A Step-by-Step Guide for Carriers</title>
+      <link>https://dispatch.texassolutions.co/guides/how-to-get-detention-paid/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-get-detention-paid/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Get detention paid more often: put terms on the rate con, log in and out times, notify the broker early and invoice with proof. Steps and examples inside.</description>
+      <category>Getting paid</category>
+    </item>
+    <item>
+      <title>How to Finance a Semi Truck: A Step-by-Step Guide</title>
+      <link>https://dispatch.texassolutions.co/guides/how-to-finance-a-semi-truck/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-finance-a-semi-truck/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Learn how semi truck financing works: what lenders look at, down payments, interest and term, a sample payment calculation, and red flags to avoid.</description>
+      <category>Finance</category>
+    </item>
+    <item>
+      <title>How to File Form 2290: Heavy Vehicle Use Tax for Truckers</title>
+      <link>https://dispatch.texassolutions.co/guides/how-to-file-form-2290/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-file-form-2290/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A plain-English guide to IRS Form 2290 for owner-operators: who must file, when it is due, how to e-file, Schedule 1, suspended vehicles and common mistakes.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>How to Dispute a Roadside Violation With DataQs</title>
+      <link>https://dispatch.texassolutions.co/guides/how-to-dispute-a-violation-dataqs/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-dispute-a-violation-dataqs/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Step-by-step guide to challenging a wrong inspection violation or crash record in FMCSA&#x27;s DataQs system, with the evidence to gather and mistakes to avoid.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>How to Choose an ELD: Features and Questions to Ask</title>
+      <link>https://dispatch.texassolutions.co/guides/how-to-choose-an-eld/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-choose-an-eld/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A brand-neutral guide to choosing an ELD: compliance checks, hardware fit, driver app, pricing traps, contracts and the questions to ask before you sign.</description>
+      <category>Equipment</category>
+    </item>
+    <item>
+      <title>How to Choose a Factoring Company: Features and Questions to Ask</title>
+      <link>https://dispatch.texassolutions.co/guides/how-to-choose-a-factoring-company/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-choose-a-factoring-company/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Choose a freight factoring company by comparing fees, advance rate, recourse terms, contract length and funding speed. Includes a list of questions to ask.</description>
+      <category>Getting paid</category>
+    </item>
+    <item>
+      <title>Hiring Your First Truck Driver: A Step-by-Step Guide</title>
+      <link>https://dispatch.texassolutions.co/guides/hiring-your-first-truck-driver/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/hiring-your-first-truck-driver/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How owner-operators hire a first truck driver: the numbers to run, employee vs contractor, insurance approval, DQ file, testing, pay plans and onboarding.</description>
+      <category>Drivers</category>
+    </item>
+    <item>
+      <title>Hazmat Endorsement Guide for Owner-Operators</title>
+      <link>https://dispatch.texassolutions.co/guides/hazmat-endorsement-guide/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/hazmat-endorsement-guide/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How to get a hazmat endorsement on your CDL: training, the TSA background check, the knowledge test, renewal, and what changes for your business.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>How to Grow From 1 to 5 Trucks Without Breaking Your Business</title>
+      <link>https://dispatch.texassolutions.co/guides/grow-from-1-to-5-trucks/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/grow-from-1-to-5-trucks/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Ready to add trucks? Learn when to grow, what changes at truck two, the costs of hiring drivers, a hypothetical second-truck profit check and a growth plan.</description>
+      <category>Business</category>
+    </item>
+    <item>
+      <title>Fuel-Saving Tips for Truckers: Cut Your Diesel Bill</title>
+      <link>https://dispatch.texassolutions.co/guides/fuel-saving-tips-for-truckers/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/fuel-saving-tips-for-truckers/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Practical fuel-saving tips for owner-operators: speed, idling, tires, aerodynamics and smart fueling, plus an example of what better mpg is worth.</description>
+      <category>Fuel</category>
+    </item>
+    <item>
+      <title>Freight Market Calendar: Busy and Slow Months for Truckers</title>
+      <link>https://dispatch.texassolutions.co/guides/freight-market-calendar/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/freight-market-calendar/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A month-by-month freight calendar for owner-operators: when produce, retail and holiday freight peak, when rates soften, and how to plan around each season.</description>
+      <category>Seasonal freight</category>
+    </item>
+    <item>
+      <title>Flatbed Cargo Securement: Rules, Math and a Checklist</title>
+      <link>https://dispatch.texassolutions.co/guides/flatbed-cargo-securement/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/flatbed-cargo-securement/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Flatbed cargo securement made practical: working load limits, how many tiedowns you need, commodity rules, re-check intervals and a checklist.</description>
+      <category>Safety</category>
+    </item>
+    <item>
+      <title>How to Start a Final Mile Delivery Business</title>
+      <link>https://dispatch.texassolutions.co/guides/final-mile-delivery-business/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/final-mile-delivery-business/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Learn how a final mile delivery business works: equipment, crews, contracts, pay models, insurance and the costs to check before you sign a route agreement.</description>
+      <category>Business</category>
+    </item>
+    <item>
+      <title>Expedited Freight: How It Works and How to Haul It</title>
+      <link>https://dispatch.texassolutions.co/guides/expedited-freight-guide/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/expedited-freight-guide/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>What expedited freight is, which trucks haul it, how rates and waiting time work, and what owner-operators need to succeed in time-critical trucking.</description>
+      <category>Business</category>
+    </item>
+    <item>
+      <title>Entry-Level Driver Training (ELDT): What New CDL Drivers Need</title>
+      <link>https://dispatch.texassolutions.co/guides/entry-level-driver-training-eldt/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/entry-level-driver-training-eldt/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Who needs entry-level driver training, how the Training Provider Registry works, theory vs behind-the-wheel, and what carriers should know before hiring.</description>
+      <category>Drivers</category>
+    </item>
+    <item>
+      <title>ELD Malfunction Rules: What to Do When Your ELD Fails</title>
+      <link>https://dispatch.texassolutions.co/guides/eld-malfunction-rules/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/eld-malfunction-rules/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>ELD quit mid-trip? Learn the driver and carrier steps under the ELD malfunction rules: notice, paper logs, the repair deadline and what to keep in the cab.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>DOT Drug and Alcohol Testing Program for Owner-Operators</title>
+      <link>https://dispatch.texassolutions.co/guides/drug-and-alcohol-testing-program/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/drug-and-alcohol-testing-program/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How to set up a DOT drug and alcohol testing program as an owner-operator or small fleet: consortium, Clearinghouse queries, test types and records.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>Driver Qualification File Checklist for Small Carriers</title>
+      <link>https://dispatch.texassolutions.co/guides/driver-qualification-file-checklist/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/driver-qualification-file-checklist/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A practical DQ file checklist for owner-operators and small fleets: what goes in each driver file, when to update it, how long to keep it, and common gaps.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>Double Brokering and Freight Fraud: How Carriers Protect Themselves</title>
+      <link>https://dispatch.texassolutions.co/guides/double-brokering-and-freight-fraud/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/double-brokering-and-freight-fraud/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Learn how double brokering and freight fraud work, the red flags to watch for, and practical steps to protect your MC, your payments and the loads you haul.</description>
+      <category>Getting paid</category>
+    </item>
+    <item>
+      <title>DOT Roadside Inspections: Levels, What Officers Check, How to Pass</title>
+      <link>https://dispatch.texassolutions.co/guides/dot-roadside-inspections/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/dot-roadside-inspections/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Learn the CVSA inspection levels, what officers check on the driver and truck, which documents to keep in the cab, and how to pass DOT roadside inspections.</description>
+      <category>Safety</category>
+    </item>
+    <item>
       <title>Load Board vs Dispatcher: Should You Self-Dispatch or Hire a Truck Dispatcher?</title>
-      <link>https://dispatch.texassolutions.co/blog/dispatcher-vs-self-dispatch-load-board.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/dispatcher-vs-self-dispatch-load-board.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/dispatcher-vs-self-dispatch-load-board/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/dispatcher-vs-self-dispatch-load-board/</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>Dispatcher vs self-dispatch for owner-operators: real time cost of load boards, when a dispatcher pays for itself, a worked example and how to decide.</description>
       <category>Dispatch</category>
     </item>
     <item>
+      <title>CSA Scores Explained: How FMCSA Measures Your Safety</title>
+      <link>https://dispatch.texassolutions.co/guides/csa-scores-explained/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/csa-scores-explained/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>What CSA scores are, how the seven BASICs work, why recent violations weigh more, and steps owner-operators can take to keep their safety data clean.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
+      <title>Crossing Into Canada and Mexico: A Trucker&#x27;s Guide</title>
+      <link>https://dispatch.texassolutions.co/guides/crossing-into-canada-and-mexico/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/crossing-into-canada-and-mexico/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>What US owner-operators need to haul into Canada or to the Mexican border: driver documents, eManifest, FAST, cabotage, insurance, HOS and border-day tips.</description>
+      <category>Compliance</category>
+    </item>
+    <item>
       <title>Cheapest Truck Dispatch Service? How to Compare Dispatch Fees and Their Real Cost</title>
-      <link>https://dispatch.texassolutions.co/blog/cheapest-truck-dispatch-service-real-cost.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/cheapest-truck-dispatch-service-real-cost.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/cheapest-truck-dispatch-service-real-cost/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/cheapest-truck-dispatch-service-real-cost/</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>Truck dispatch cost explained: dispatch fee percentage vs flat rate and weekly fees, what 5% really costs, and the hidden charges to check.</description>
       <category>Dispatch</category>
     </item>
     <item>
+      <title>Carrier Packet Checklist: Documents Brokers Ask For</title>
+      <link>https://dispatch.texassolutions.co/guides/carrier-packet-checklist/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/carrier-packet-checklist/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A complete carrier packet checklist: the documents brokers ask for, how to keep them current, and tips to get set up faster and avoid payment delays.</description>
+      <category>New authority</category>
+    </item>
+    <item>
+      <title>Cargo Claims Guide: How to Prevent, Handle and Settle Them</title>
+      <link>https://dispatch.texassolutions.co/guides/cargo-claims-guide/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/cargo-claims-guide/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A practical cargo claims guide for carriers: prevent damage and shortages, what to do at delivery, how claims are filed and how to work with your insurer.</description>
+      <category>Getting paid</category>
+    </item>
+    <item>
+      <title>Buying a Used Semi Truck: Inspection Checklist and Red Flags</title>
+      <link>https://dispatch.texassolutions.co/guides/buying-a-used-semi-truck/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/buying-a-used-semi-truck/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>How to buy a used semi truck without buying someone else&#x27;s problems: what to check, which records to request, red flags and a hypothetical budget.</description>
+      <category>Equipment</category>
+    </item>
+    <item>
+      <title>Box Truck vs Cargo Van: Which Is Better for Your Business?</title>
+      <link>https://dispatch.texassolutions.co/guides/box-truck-vs-cargo-van/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/box-truck-vs-cargo-van/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Box truck vs cargo van: compare startup cost, capacity, freight types, rules, rates and running costs to decide which vehicle fits your trucking business.</description>
+      <category>Equipment</category>
+    </item>
+    <item>
+      <title>BOC-3 Filing Explained: Process Agents for Trucking Authority</title>
+      <link>https://dispatch.texassolutions.co/guides/boc-3-filing-explained/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/boc-3-filing-explained/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>What a BOC-3 is, why FMCSA requires a process agent in every state, how blanket agents file it, when to update it, and how it affects your trucking authority.</description>
+      <category>New authority</category>
+    </item>
+    <item>
       <title>Best Truck Dispatch Service for Owner-Operators in 2026: How to Compare</title>
-      <link>https://dispatch.texassolutions.co/blog/best-truck-dispatch-service-for-owner-operators-2026.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/best-truck-dispatch-service-for-owner-operators-2026.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/best-truck-dispatch-service-for-owner-operators-2026/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/best-truck-dispatch-service-for-owner-operators-2026/</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to pick the best truck dispatch service for owner-operators in 2026: fees, contracts, forced dispatch, 24/7 support, new MC help and the questions to ask.</description>
       <category>Dispatch</category>
     </item>
     <item>
       <title>Truck Loads and Load Boards: How They Work for Carriers</title>
-      <link>https://dispatch.texassolutions.co/blog/truck-loads-and-load-boards-guide.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/truck-loads-and-load-boards-guide.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/truck-loads-and-load-boards-guide/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/truck-loads-and-load-boards-guide/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>What a load board is, how carriers use DAT, Truckstop, 123Loadboard and free load boards to find truck loads, and how to judge a posted load.</description>
       <category>Finding loads</category>
     </item>
     <item>
       <title>Non-CDL Box Truck and Hotshot Loads: Weight Rules and How to Find Freight</title>
-      <link>https://dispatch.texassolutions.co/blog/non-cdl-box-truck-and-hotshot-loads.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/non-cdl-box-truck-and-hotshot-loads.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/non-cdl-box-truck-and-hotshot-loads/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/non-cdl-box-truck-and-hotshot-loads/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How the 26,000 lb GVWR and GCWR thresholds decide whether a box truck or hotshot needs a CDL, what payload that leaves, and how to find non-CDL loads.</description>
       <category>Box truck</category>
     </item>
     <item>
       <title>How to Start a Hotshot Business: Truck, Trailer, Authority and Dispatch</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-start-a-hotshot-business.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-start-a-hotshot-business.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-start-a-hotshot-business/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-start-a-hotshot-business/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to start a hotshot business: choosing a truck and gooseneck, CDL and weight rules, USDOT and MC authority, insurance, and finding a hotshot dispatcher.</description>
       <category>Hotshot</category>
     </item>
     <item>
       <title>How to Start a Box Truck Business: Authority, Equipment and First Loads</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-start-a-box-truck-business.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-start-a-box-truck-business.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-start-a-box-truck-business/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-start-a-box-truck-business/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>A step-by-step plan to start a box truck business: picking a 26 ft truck, getting USDOT and MC authority, insurance, and booking loads with new authority.</description>
       <category>Box truck</category>
     </item>
     <item>
       <title>How to Get Loads Without a Broker: Direct Freight Explained</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-get-loads-without-a-broker.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-get-loads-without-a-broker.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-get-loads-without-a-broker/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-get-loads-without-a-broker/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to get loads without a broker: direct shippers, freight contracts and Amazon Relay, with honest pros, cons and a worked rate comparison.</description>
       <category>Finding loads</category>
     </item>
     <item>
       <title>How to Choose a Fuel Card for Truckers: What to Compare</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-choose-a-fuel-card-for-truckers.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-choose-a-fuel-card-for-truckers.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-choose-a-fuel-card-for-truckers/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-choose-a-fuel-card-for-truckers/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How owner-operators can compare trucking fuel cards: discount type, truck stop network, fees, credit vs prepaid, IFTA data and controls.</description>
       <category>Fuel</category>
     </item>
     <item>
       <title>How to Become an Owner-Operator: Lease-On or Your Own MC</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-become-an-owner-operator.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-become-an-owner-operator.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-become-an-owner-operator/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-become-an-owner-operator/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to become an owner-operator: CDL and experience, lease-on vs your own MC authority, choosing a truck, startup cash and getting your first loads.</description>
       <category>Owner-operators</category>
     </item>
     <item>
       <title>How Much Do Hotshot Drivers Make? A Realistic Look at Gross and Net</title>
-      <link>https://dispatch.texassolutions.co/blog/how-much-do-hotshot-drivers-make.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-much-do-hotshot-drivers-make.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-much-do-hotshot-drivers-make/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-much-do-hotshot-drivers-make/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How much hotshot owner-operators can gross and keep, what hotshot loads pay per mile, and a worked weekly cost example. All figures are estimates.</description>
       <category>Hotshot</category>
     </item>
     <item>
       <title>How Much Do Box Truck Owner-Operators Make? Gross, Costs and Net</title>
-      <link>https://dispatch.texassolutions.co/blog/how-much-do-box-truck-owner-operators-make.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-much-do-box-truck-owner-operators-make.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-much-do-box-truck-owner-operators-make/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-much-do-box-truck-owner-operators-make/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>What box truck owner-operators can gross and keep each week, with a worked example of fuel, insurance, dispatch and maintenance costs. Estimates only.</description>
       <category>Box truck</category>
     </item>
     <item>
       <title>How Does Truck Dispatching Work? A Carrier&#x27;s Step-by-Step Guide</title>
-      <link>https://dispatch.texassolutions.co/blog/how-does-truck-dispatching-work.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-does-truck-dispatching-work.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-does-truck-dispatching-work/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-does-truck-dispatching-work/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How truck dispatching works from the carrier&#x27;s side: onboarding, load search, rate negotiation, booking, tracking, invoicing and getting paid.</description>
       <category>Dispatch basics</category>
     </item>
     <item>
       <title>Freight Dispatcher vs Truck Dispatcher: Same Job, Different Name</title>
-      <link>https://dispatch.texassolutions.co/blog/freight-dispatcher-vs-truck-dispatcher.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/freight-dispatcher-vs-truck-dispatcher.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/freight-dispatcher-vs-truck-dispatcher/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/freight-dispatcher-vs-truck-dispatcher/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>Freight dispatcher, truck dispatcher, cargo dispatcher: what the names mean for carriers, what the job covers, and how it differs from brokers.</description>
       <category>Dispatch basics</category>
     </item>
     <item>
       <title>Dry Van, Reefer, Flatbed and Power Only Loads: Finding and Pricing Them</title>
-      <link>https://dispatch.texassolutions.co/blog/dry-van-reefer-flatbed-power-only-loads.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/dry-van-reefer-flatbed-power-only-loads.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/dry-van-reefer-flatbed-power-only-loads/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/dry-van-reefer-flatbed-power-only-loads/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How dry van, reefer, flatbed, step deck and power only loads are found, and what drives rate per mile for each freight type in semi truck trucking.</description>
       <category>Finding loads</category>
     </item>
     <item>
       <title>Dispatch Service Percentage vs Flat Fee: Which Is Better?</title>
-      <link>https://dispatch.texassolutions.co/blog/dispatch-percentage-vs-flat-fee.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/dispatch-percentage-vs-flat-fee.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/dispatch-percentage-vs-flat-fee/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/dispatch-percentage-vs-flat-fee/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>Truck dispatch percentage vs flat fee compared with worked examples, plus how to spot cheap dispatch offers that hide fees or lock you into contracts.</description>
       <category>Dispatch pricing</category>
     </item>
     <item>
       <title>Box Truck Contracts: How to Get Them and Where Amazon Relay Fits</title>
-      <link>https://dispatch.texassolutions.co/blog/box-truck-contracts-how-to-get-them.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/box-truck-contracts-how-to-get-them.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/box-truck-contracts-how-to-get-them/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/box-truck-contracts-how-to-get-them/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>Where box truck contracts come from, how to win repeat lanes with brokers and shippers, what Amazon Relay is, and how a box truck dispatch company helps.</description>
       <category>Box truck</category>
     </item>
     <item>
       <title>Best Load Boards for Hotshot and How to Find Hotshot Loads</title>
-      <link>https://dispatch.texassolutions.co/blog/best-load-boards-for-hotshot.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/best-load-boards-for-hotshot.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/best-load-boards-for-hotshot/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/best-load-boards-for-hotshot/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to choose a hotshot load board, search for partial flatbed and gooseneck freight, find hot shot loads near you, and avoid loads that lose money.</description>
       <category>Hotshot</category>
     </item>
     <item>
       <title>Best Load Boards for Box Trucks and How to Find Box Truck Loads</title>
-      <link>https://dispatch.texassolutions.co/blog/best-load-boards-for-box-trucks.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/best-load-boards-for-box-trucks.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/best-load-boards-for-box-trucks/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/best-load-boards-for-box-trucks/</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to pick a box truck load board, set up searches for straight truck freight, find box truck loads near you, and decide when a dispatcher makes sense.</description>
       <category>Box truck</category>
     </item>
     <item>
       <title>Is a Truck Dispatcher Worth It? Self-Dispatch vs Dispatch Service</title>
-      <link>https://dispatch.texassolutions.co/blog/is-a-truck-dispatcher-worth-it.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/is-a-truck-dispatcher-worth-it.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/is-a-truck-dispatcher-worth-it/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/is-a-truck-dispatcher-worth-it/</guid>
       <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
       <description>Is a truck dispatcher worth it? Compare self dispatch vs a dispatch service and a load board, what to pay a dispatcher, and honest math on $10,000 weeks.</description>
       <category>Dispatch</category>
     </item>
     <item>
       <title>How to Start a Trucking Company and Get Loads With New Authority</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-start-a-trucking-company.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-start-a-trucking-company.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-start-a-trucking-company/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-start-a-trucking-company/</guid>
       <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to start a trucking company step by step: USDOT and MC, BOC-3, UCR, insurance, IRP/IFTA, ELD, factoring, broker setup and loads on new authority.</description>
       <category>New authority</category>
     </item>
     <item>
       <title>How to Negotiate Freight Rates and Increase Your Rate Per Mile</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-negotiate-freight-rates.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-negotiate-freight-rates.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-negotiate-freight-rates/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-negotiate-freight-rates/</guid>
       <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to negotiate freight rates with brokers: know your numbers, set a floor, counter with reasons and avoid deadhead miles. Worked rate-per-mile example.</description>
       <category>Rate negotiation</category>
     </item>
     <item>
       <title>How to Find Loads for Your Truck: A Practical Guide for Owner-Operators</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-find-loads-for-your-truck.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-find-loads-for-your-truck.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-find-loads-for-your-truck/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-find-loads-for-your-truck/</guid>
       <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to find loads for your truck: load boards, brokers, direct shippers and dispatch. How to spot high paying loads and build consistent lanes.</description>
       <category>Finding loads</category>
     </item>
     <item>
       <title>How to Choose a Truck Dispatcher and Avoid Dispatch Scams</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-choose-a-truck-dispatcher-avoid-scams/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-choose-a-truck-dispatcher-avoid-scams/</guid>
       <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to choose a truck dispatcher: red flags of dispatch scams, questions to ask, how to check reviews and references, and what a dispatch agreement needs.</description>
       <category>Dispatch</category>
     </item>
     <item>
       <title>How Much Do Owner-Operators Make? Gross vs Net Explained</title>
-      <link>https://dispatch.texassolutions.co/blog/how-much-do-owner-operators-make.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-much-do-owner-operators-make.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-much-do-owner-operators-make/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-much-do-owner-operators-make/</guid>
       <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
       <description>How much do owner-operators make? A worked weekly example of gross vs net, cost per mile, dispatch and factoring fees, and what a good rate per mile is.</description>
       <category>Owner-operators</category>
     </item>
     <item>
       <title>Broker Setup, Rate Confirmations and Spot vs Contract Rates</title>
-      <link>https://dispatch.texassolutions.co/blog/broker-setup-rate-confirmation-spot-vs-contract.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/broker-setup-rate-confirmation-spot-vs-contract.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/broker-setup-rate-confirmation-spot-vs-contract/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/broker-setup-rate-confirmation-spot-vs-contract/</guid>
       <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to get set up with brokers, what a rate confirmation is, spot rates vs contract rates, and how truck dispatch works from load search to payment.</description>
       <category>Brokers</category>
     </item>
     <item>
       <title>What Is Deadhead in Trucking and How to Reduce It</title>
-      <link>https://dispatch.texassolutions.co/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/what-is-deadhead-in-trucking-how-to-reduce-it/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/what-is-deadhead-in-trucking-how-to-reduce-it/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>Deadhead miles are empty miles with no paid freight. See how they cut your effective rate per mile and 7 practical ways owner-operators reduce them.</description>
       <category>Deadhead</category>
     </item>
     <item>
       <title>What Is a Good Rate Per Mile in Trucking in 2026?</title>
-      <link>https://dispatch.texassolutions.co/blog/what-is-a-good-rate-per-mile-trucking-2026.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/what-is-a-good-rate-per-mile-trucking-2026.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/what-is-a-good-rate-per-mile-trucking-2026/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/what-is-a-good-rate-per-mile-trucking-2026/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>A good rate per mile beats your cost per mile with profit left over. See rough 2026 rates for dry van, reefer, flatbed, hotshot and box truck, and find yours.</description>
       <category>Rates</category>
     </item>
     <item>
       <title>Truck Dispatcher vs Freight Broker: The Real Difference</title>
-      <link>https://dispatch.texassolutions.co/blog/truck-dispatcher-vs-freight-broker.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/truck-dispatcher-vs-freight-broker.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/truck-dispatcher-vs-freight-broker/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/truck-dispatcher-vs-freight-broker/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>A truck dispatcher works for the carrier; a freight broker connects shippers and carriers. Compare who they work for, pay and authority.</description>
       <category>Dispatch</category>
     </item>
     <item>
       <title>IFTA for Owner-Operators: How to File Quarterly Returns</title>
-      <link>https://dispatch.texassolutions.co/blog/ifta-for-owner-operators-how-to-file.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/ifta-for-owner-operators-how-to-file.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/ifta-for-owner-operators-how-to-file/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/ifta-for-owner-operators-how-to-file/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>IFTA explained for owner-operators: who needs it, what records to keep, quarterly due dates, and how net taxable gallons are calculated by state.</description>
       <category>Fuel taxes</category>
     </item>
     <item>
       <title>How to Get Your MC Number and Trucking Authority</title>
-      <link>https://dispatch.texassolutions.co/blog/how-to-get-mc-number-authority-owner-operator.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-to-get-mc-number-authority-owner-operator.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-get-mc-number-authority-owner-operator/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-get-mc-number-authority-owner-operator/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>Step-by-step guide for new owner-operators: USDOT number, MC operating authority, BOC-3, insurance filing, UCR, and what to set up before you haul.</description>
       <category>Getting started</category>
     </item>
     <item>
       <title>Hours of Service Rules Explained: 11, 14 and 70-Hour</title>
-      <link>https://dispatch.texassolutions.co/blog/hours-of-service-rules-explained-11-14-70-hour.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/hours-of-service-rules-explained-11-14-70-hour.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/hours-of-service-rules-explained-11-14-70-hour/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/hours-of-service-rules-explained-11-14-70-hour/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>FMCSA hours-of-service rules in plain English: 11-hour driving limit, 14-hour window, 30-minute break, 60/70-hour cycle and the 34-hour restart.</description>
       <category>Compliance</category>
     </item>
     <item>
       <title>Freight Factoring for Owner-Operators: How It Works</title>
-      <link>https://dispatch.texassolutions.co/blog/freight-factoring-for-owner-operators-explained.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/freight-factoring-for-owner-operators-explained.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/freight-factoring-for-owner-operators-explained/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/freight-factoring-for-owner-operators-explained/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>How freight factoring works for truckers: advances, fees, recourse vs non-recourse, notice of assignment, and how to compare factoring companies.</description>
       <category>Cash flow</category>
     </item>
     <item>
       <title>Dry Van vs Reefer vs Flatbed: Which Trailer Pays Best?</title>
-      <link>https://dispatch.texassolutions.co/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/dry-van-vs-reefer-vs-flatbed-which-trailer/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/dry-van-vs-reefer-vs-flatbed-which-trailer/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>Compare dry van, reefer and flatbed for owner-operators: rates per mile, demand, extra work and costs, so you can choose the trailer that fits your goals.</description>
       <category>Equipment</category>
     </item>
     <item>
       <title>Cost of Running a Semi Truck Per Mile (2026 Breakdown)</title>
-      <link>https://dispatch.texassolutions.co/blog/cost-of-running-a-semi-truck-per-mile.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/cost-of-running-a-semi-truck-per-mile.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/cost-of-running-a-semi-truck-per-mile/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/cost-of-running-a-semi-truck-per-mile/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>What it costs to run a semi per mile: the ATRI industry average, fixed vs variable costs, and how to calculate your own cost per mile before you book.</description>
       <category>Operating costs</category>
     </item>
     <item>
       <title>Best Load Boards for Owner-Operators and How to Use Them</title>
-      <link>https://dispatch.texassolutions.co/blog/best-load-boards-for-owner-operators.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/best-load-boards-for-owner-operators.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/best-load-boards-for-owner-operators/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/best-load-boards-for-owner-operators/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>How to choose a load board: DAT, Truckstop, 123Loadboard and others compared by features, plus tips to vet brokers and avoid freight scams.</description>
       <category>Load boards</category>
     </item>
     <item>
       <title>How Much Does a Truck Dispatcher Cost in 2026?</title>
-      <link>https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/how-much-does-a-truck-dispatcher-cost.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-much-does-a-truck-dispatcher-cost/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-much-does-a-truck-dispatcher-cost/</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
       <description>Truck dispatch fees explained: typical 3-10% of weekly gross, what the fee covers, and Texas Solutions rates of 5% semi, 7% hotshot and 8% box truck.</description>
       <category>Dispatch pricing</category>
     </item>
     <item>
       <title>Hotshot Trucking Rates Per Mile, Fuel and Dispatch (2026)</title>
-      <link>https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/hotshot-trucking-rates-per-mile-fuel-and-dispatch/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/hotshot-trucking-rates-per-mile-fuel-and-dispatch/</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
       <description>Hotshot rates per mile, fuel mileage by load weight, what a hotshot dispatcher does, and what dispatch costs: 7% of weekly gross at Texas Solutions.</description>
       <category>Hotshot</category>
     </item>
     <item>
       <title>Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile</title>
-      <link>https://dispatch.texassolutions.co/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/diesel-prices-by-state-cut-fuel-cost-per-mile/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/diesel-prices-by-state-cut-fuel-cost-per-mile/</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
       <description>Why diesel prices differ by state, how to work out fuel cost per mile, and 7 ways truckers cut fuel spend. Free fuel calculator and daily state prices.</description>
       <category>Fuel</category>
     </item>
     <item>
       <title>Box Truck Dispatch: How to Find Loads and What It Really Costs</title>
-      <link>https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/blog/box-truck-dispatch-find-loads-and-costs.html</guid>
+      <link>https://dispatch.texassolutions.co/guides/box-truck-dispatch-find-loads-and-costs/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/box-truck-dispatch-find-loads-and-costs/</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
       <description>How box truck owner-operators find loads, what they spend on fuel, and what box truck dispatch costs: 8% of weekly gross at Texas Solutions.</description>
       <category>Box truck</category>

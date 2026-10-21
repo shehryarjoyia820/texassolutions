@@ -75,7 +75,16 @@ def check_urls(f, node, path=""):
             check_urls(f, v, path + k + ".")
 
 
-pages = [p.replace(os.sep, "/") for p in glob.glob("*.html") + glob.glob("blog/*.html") + glob.glob("diesel-prices/*.html") + glob.glob("truck-dispatch/*.html") if p != "head-codes.html"]
+def is_redirect(p):
+    """Old .html paths are redirect stubs to the folder URLs (see tools/permalinks.py)."""
+    with open(p, encoding="utf-8", errors="ignore") as fh:
+        return 'http-equiv="refresh"' in fh.read(600)
+
+
+pages = sorted({p.replace(os.sep, "/") for p in glob.glob("*.html") + glob.glob("**/index.html", recursive=True)
+         + glob.glob("blog/*.html") + glob.glob("diesel-prices/*.html") + glob.glob("truck-dispatch/*.html")
+         if p != "head-codes.html" and not p.replace(os.sep, "/").startswith(("admin/", "tools/", "content/", "docs/"))
+         and not is_redirect(p)})
 titles = {}
 for f in sorted(pages):
     t = Path(f).read_text(encoding="utf-8")
@@ -152,6 +161,11 @@ for f in sorted(pages):
     for h in set(re.findall(r'href="/?([A-Za-z0-9_\-/]+\.html)(?:[?#"])', t)):
         if not os.path.exists(h):
             err(f, f"broken internal link: {h}")
+        elif h not in ("index.html", "404.html") and is_redirect(h):
+            warn(f, f"links to an old URL that redirects: {h}")
+    for h in set(re.findall(r'href="/([A-Za-z0-9_\-/]+/)(?:[?#"])', t)):
+        if not h.startswith(("assets/", "css/", "js/")) and not os.path.exists(h + "index.html"):
+            err(f, f"broken internal link: /{h}")
 
 for title, fs in titles.items():
     if len(fs) > 1:
@@ -173,7 +187,7 @@ for s in sm_files:
 for f in pages:
     if f in ("404.html",):
         continue
-    u = BASE + "/" + ("" if f == "index.html" else f)
+    u = BASE + "/" + ("" if f == "index.html" else f[:-len("index.html")] if f.endswith("/index.html") else f)
     if u not in locs:
         err("sitemap", f"{u} not in any sitemap")
 for f in ("robots.txt", "llms.txt", "ads.txt", "feed.xml"):

@@ -279,3 +279,22 @@ Not targeted (owner decision, 13 Oct 2026): dispatcher jobs, salary, training, c
 - Load board variants (truck boards, loading board, load boards for truckers, truckload load board): blog `truck-loads-and-load-boards-guide`.
 - Fuel cards: blog `how-to-choose-a-fuel-card-for-truckers` (no brands, no partnership).
 - Not targeted: training/course, how to become a dispatcher, dispatch from home, dispatch software.
+
+## 11. Folder URLs (October 2026)
+
+`tools/site.py` still writes flat pages, then `tools/permalinks.py` runs last and moves each page to a
+folder URL, rewrites every link, canonical, sitemap, feed, llms.txt and urls.txt entry, and leaves a
+redirect page (canonical + noindex + meta refresh) at the old `.html` path. GitHub Pages cannot send 301s.
+
+| Section | URL pattern |
+|---|---|
+| Dispatch by truck type and audience | `/dispatch/<type>/` (box-truck, hotshot, flatbed-step-deck, dry-van, reefer, power-only, semi-truck, owner-operators, small-fleets, new-authority) |
+| Dispatch by state | `/dispatch/states/`, `/dispatch/states/<state>/` |
+| Services | `/services/`, `/services/mc-lease/`, `/services/back-office/`, `/services/mc-authority-setup/` |
+| Guides | `/guides/`, `/guides/<slug>/` (source: `content/blog/<slug>.md`) |
+| Calculators | `/calculators/`, `/calculators/<tool>/` (`/tools/` is the build-scripts folder) |
+| Other | `/rates/`, `/new-mc/`, `/sign-contract/`, `/about/`, `/contact/`, `/faq/`, `/privacy/`, `/terms/`, `/diesel-prices/<state>/` |
+
+Add a new mapping in `EXPLICIT` in `tools/permalinks.py`; anything unlisted at the root becomes `/<name>/`.
+Breadcrumbs follow the same hierarchy (`SECTION_PARENTS` in site.py). `tools/audit.py` checks folder URLs,
+skips redirect pages and warns if a page links to an old URL.
