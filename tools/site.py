@@ -32,7 +32,7 @@ PAGE_HASH = {}
 WEBSITE_ID = f"{C.BASE}/#website"
 LOGO_ID = f"{C.BASE}/#logo"
 TODAY = date.today().isoformat()
-OG_IMAGE = f"{C.BASE}/assets/og-image.png"
+OG_IMAGE = f"{C.BASE}/assets/og-image.png?v=2"  # bump ?v when the image changes so social apps refetch it
 LOGO = f"{C.BASE}/assets/logo/texas-solutions-logo.png"
 BUSINESS_ID = f"{C.BASE}/#business"
 INDEXNOW_KEY = "7c1f4e2a9b8d4c6e8f0a1b2c3d4e5f60"
@@ -1400,13 +1400,13 @@ def load_posts():
         tags = [str(x) for x in (meta.get("tags") or [])]
         cover = meta.get("cover") or ""
         if not cover and covers is not None:
-            sig = hashlib.sha1(("v3-light|" + title + "|" + "|".join(tags)).encode()).hexdigest()
+            sig = hashlib.sha1(("v4-brand|" + title + "|" + "|".join(tags)).encode()).hexdigest()
             out = ROOT / "assets" / "blog" / f"{f.stem}.jpg"
             if not out.exists() or cache.get(f.stem) != sig:
                 covers.make_cover(f.stem, title, tags, out)
                 cache[f.stem] = sig
             cover = f"/assets/blog/{f.stem}.jpg"
-        cover_abs = cover if str(cover).startswith("http") else (C.BASE + cover if cover else OG_IMAGE)
+        cover_abs = cover if str(cover).startswith("http") else (C.BASE + cover + "?v=2" if cover else OG_IMAGE)
         posts.append({
             "slug": f.stem, "title": title, "seo_title": str(meta.get("seo_title") or ""), "description": str(meta.get("description", "")),
             "date": d, "updated": updated, "author": str(meta.get("author") or "Texas Solutions Dispatch Team"),
@@ -1681,12 +1681,12 @@ def og_image(slug, title, tags):
     out = ROOT / "assets" / "og" / f"{slug}.jpg"
     cache_file = ROOT / "assets" / "og" / "covers.json"
     cache = json.loads(cache_file.read_text(encoding="utf-8")) if cache_file.exists() else {}
-    sig = hashlib.sha1(("v1|" + title).encode()).hexdigest()
+    sig = hashlib.sha1(("v2-brand|" + title).encode()).hexdigest()
     if not out.exists() or cache.get(slug) != sig:
         covers.make_cover(slug, title, tags, out, label="Free tool", sub="No signup. Runs in your browser.")
         cache[slug] = sig
         cache_file.write_text(json.dumps(cache, indent=1, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
-    return f"{C.BASE}/assets/og/{slug}.jpg"
+    return f"{C.BASE}/assets/og/{slug}.jpg?v=2"
 
 
 def calc_cta(service_file="owner-operator-dispatch.html", service_name="owner-operator dispatch"):

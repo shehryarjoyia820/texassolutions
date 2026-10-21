@@ -19,9 +19,10 @@ ROOT = Path(__file__).resolve().parent.parent
 FONT = ROOT / "tools" / "fonts" / "Archivo-Variable.ttf"
 ICON = ROOT / "assets" / "logo" / "texas-solutions-icon.png"
 W, H = 1200, 630
-INK = (20, 17, 15)
-RED = (236, 48, 19)
-ACCENTS = [(236, 48, 19), (255, 122, 26), (214, 40, 72), (240, 170, 30)]
+INK = (10, 10, 10)
+RED = (249, 115, 22)
+GREEN = (21, 128, 61)
+ACCENTS = [(249, 115, 22), (22, 163, 74), (234, 88, 12), (21, 128, 61)]
 
 
 def font(size, weight=800):
@@ -110,7 +111,7 @@ def make_cover(slug, title, tags=(), out=None, label=None, sub=None):
     d = ImageDraw.Draw(img, "RGBA")
     for i in range(-2, 9):  # faint road lines
         x0 = i * 190
-        d.line([(x0, H), (x0 + 330, 0)], fill=(20, 17, 15, 14), width=2)
+        d.line([(x0, H), (x0 + 330, 0)], fill=(10, 10, 10, 14), width=2)
 
     # large glyph, drawn on its own layer so overlaps do not show
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -126,7 +127,7 @@ def make_cover(slug, title, tags=(), out=None, label=None, sub=None):
         mark = mark.resize((int(mark.width * mh / mark.height), mh))
         img.paste(mark, (64, 54), mark)
         d.text((64 + mark.width + 16, 52), "TEXAS SOLUTIONS", font=font(22, 800), fill=INK + (255,))
-        d.text((64 + mark.width + 16, 80), "TRUCK DISPATCH", font=font(18, 700), fill=accent + (255,))
+        d.text((64 + mark.width + 16, 80), "TRUCK DISPATCH", font=font(18, 700), fill=GREEN + (255,))
     except Exception:
         d.text((64, 60), "TEXAS SOLUTIONS", font=font(24, 800), fill=INK + (255,))
 
@@ -177,5 +178,5 @@ if __name__ == "__main__":
         print("cover", p.name, p.stat().st_size // 1024, "KB")
     # default social-share image
     make_cover("og-default", "Truck Dispatch for Owner-Operators", (), ROOT / "assets" / "og-image.png", label="Dispatch",
-               sub="Semi 5%  |  Hotshot 8%  |  Box truck 10% of weekly gross")
+               sub="Semi 5%  |  Hotshot 7%  |  Box truck 8% of weekly gross")
     print("og-image.png")
