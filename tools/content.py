@@ -33,13 +33,20 @@ PRICING = {
     "small": {
         "label": "Small trucks",
         "equipment": ["Box Truck", "Straight Truck", "Hotshot"],
-        "pct": (7, 8),  # hotshot 7%, box and straight truck 7% (see EQ_PCT)
+        "pct": (7, 8),  # hotshot 7%, box and straight truck 8% (see EQ_PCT)
         "gross": (7000, 9000),
     },
     "semi": {
         "label": "Semi trucks",
         "equipment": ["Dry Van", "Reefer", "Flatbed", "Step Deck", "Power Only"],
         "pct": (5, 5),
+        "gross": (8000, 10000),
+    },
+    # MC lease (lease-on to a partner carrier's authority). Not part of the dispatch fee calculator.
+    "lease": {
+        "label": "MC lease",
+        "equipment": ["Lease-on"],
+        "pct": (18, 20),
         "gross": (8000, 10000),
     },
 }
@@ -211,7 +218,7 @@ FAQS = [
     ("What is the cheapest truck dispatch service?",
      "The lowest percentage is not always the cheapest once setup fees, weekly minimums, contracts or extra charges for paperwork are added. Texas Solutions charges 5% of weekly gross for OTR semis, 7% for hotshots and 8% for box trucks, with no setup fee, no flat weekly fee and no long-term contract, and your first load is dispatched free."),
     ("Do you work with lease operators?",
-     "We dispatch carriers that run under their own MC authority. If you are leased on to another carrier, that carrier normally dispatches you; talk to us when you get your own authority and we can help set it up."),
+     "Yes. Carriers with their own MC authority get regular dispatch. If you do not have your own authority yet, our MC lease program lets you lease on to an established partner carrier's authority for 18-20% of gross, with dispatch included. See MC lease for details."),
 ]
 
 STEPS = [
@@ -417,6 +424,37 @@ LANDING = [
             ("How do I get loads with a new MC number?", "Have a complete broker setup packet ready, get set up with brokers that accept new authority before you need a load, start on lanes where new carriers get booked, and deliver on time so those brokers rebook you. New authority truck dispatch does this searching and setup work for you while you drive. Read our guide on loads for new authority carriers for the full steps."),
             ("Do you help with broker setup packets?", "Yes. Broker setup packet help is part of dispatch: we prepare your MC authority, W-9, certificate of insurance and notice of assignment once, then complete each broker's carrier packet so you can be booked quickly."),
             ("Why do some brokers not work with new authority?", "Many brokers set a minimum authority age or insurance history to manage risk. Others accept new carriers if the packet is complete and insurance is verified. Knowing which is which saves days of calls."),
+        ],
+    },
+    {
+        "file": "mc-lease.html", "nav": "MC Lease (Lease-On)", "kind": "lease",
+        "requirements": ['A truck you own or lease-purchase, in good mechanical condition', 'A valid CDL where your truck requires one, and a driving record the partner carrier can insure', 'Truck title or lease, registration and a recent annual inspection', 'Equipment type, trailer details and the lanes you want to run', 'Willingness to follow the partner carrier\'s safety, ELD and paperwork rules'],
+        "title": "MC Lease for Owner-Operators | Lease On, 18-20% | Texas Solutions",
+        "description": "MC lease for owner-operators without authority: lease on to a partner carrier's MC with dispatch included. 18-20% of gross.",
+        "keywords": "MC lease, lease on to a carrier, lease on trucking, lease your truck on to a carrier, owner operator lease on, lease onto authority, run under someone else's authority, MC lease percentage, lease on with dispatch, new owner operator without authority",
+        "h1": "MC Lease for Owner-Operators",
+        "lede": "No authority yet, or tired of waiting for a new MC to age? Lease on to an established partner carrier and start hauling, with dispatch included.",
+        "answer": "Texas Solutions arranges MC leases for owner-operators: you lease your truck on to an established partner carrier and haul under that carrier's active authority and insurance filings, with Texas Solutions dispatchers finding and negotiating your loads. The fee is 18-20% of gross, depending on your equipment and what is included, and is set in a written lease agreement. Texas Solutions itself is a dispatch service, not a motor carrier.",
+        "body": [
+            "Getting your own MC takes time, and many brokers will not book a new authority for its first months. An MC lease skips that wait: the partner carrier's authority is already active and already set up with brokers, so you can start hauling sooner.",
+            "You bring the truck and drive it; the partner carrier provides the operating authority; our dispatchers search, negotiate and book loads for you. One percentage covers the lease and the dispatch, so there is no separate dispatch fee.",
+            "When you are ready for your own authority, we help you file it and move you to regular dispatch on your own MC.",
+        ],
+        "includes": [
+            "Haul under an established partner carrier's active MC and USDOT authority",
+            "The partner carrier's insurance filings, as set out in the lease agreement",
+            "Dispatch included: load search, rate negotiation and lane planning",
+            "Brokers already set up with the carrier, so no new-MC waiting period",
+            "A written lease agreement that states the percentage and what is included",
+            "Help moving to your own authority later, if you want it",
+        ],
+        "pricing_note": "MC lease is 18-20% of gross, depending on your equipment and what the lease includes. The exact percentage, what is deducted and how settlements are paid are written in your lease agreement before you haul. Earnings are not guaranteed.",
+        "faqs": [
+            ("What is an MC lease?", "An MC lease, or lease-on, means an owner-operator leases their truck to a motor carrier and hauls under that carrier's operating authority instead of their own MC number."),
+            ("How much does an MC lease cost?", "18-20% of gross, depending on your equipment and what the lease includes. Dispatch is included in that percentage. The exact terms are in your written lease agreement."),
+            ("Whose authority will I run under?", "An established partner carrier with active authority. Texas Solutions is a dispatch service, not a motor carrier; the partner carrier is named in your lease agreement."),
+            ("Can I switch to my own authority later?", "Yes. We help you file for your own MC and USDOT numbers and then dispatch you on your own authority at the regular dispatch percentage."),
+            ("Is dispatch included in the MC lease?", "Yes. Our dispatchers find, negotiate and book your loads, and you still approve every load."),
         ],
     },
     {
@@ -785,3 +823,29 @@ SEO = {
         'Truck Dispatch FAQ: Cost, OTR & How It Works | Texas Solutions',
         'Answers about truck dispatch: what a dispatcher costs (5% semi, 7% hotshot, 8% box truck), OTR vs local, contracts, paperwork and getting started.'),
 }
+
+# -------------------------------------------------------------- business services (beyond dispatch)
+# Shown on trucking-business-services.html. Quoted on request; government fees, insurance and taxes are paid by the carrier.
+BUSINESS_SERVICES = [
+    ("Getting started", [
+        ("MC authority setup", "USDOT, MC, BOC-3 and UCR filings in the right order, checked before they go in.", "trucking-authority-setup.html"),
+        ("MC lease (lease-on)", "No authority yet? Haul under an established partner carrier's MC, dispatch included, 18-20% of gross.", "mc-lease.html"),
+        ("Compliance and permits", "IRP plates, IFTA account, state permits and a driver qualification file set up for you.", None),
+        ("Factoring setup", "Compare factoring offers, set up the notice of assignment and get paid faster.", "trucking-back-office-services.html"),
+        ("Partner referrals", "Introductions to insurance agents, ELD providers, fuel cards and drug-testing consortiums.", None),
+    ]),
+    ("Staying compliant", [
+        ("IFTA and Form 2290 filing", "Quarterly fuel tax returns from your mileage and fuel records, and the annual heavy vehicle use tax.", "trucking-back-office-services.html"),
+        ("Safety audit preparation", "A mock new-entrant audit so your files, logs and maintenance records are ready before FMCSA asks.", None),
+        ("ELD and logbooks", "ELD setup and regular log reviews to catch hours-of-service problems early.", None),
+        ("DOT drug and alcohol testing", "Consortium enrollment, pre-employment testing and Clearinghouse queries through our partners.", None),
+    ]),
+    ("Growing your business", [
+        ("Accounting and bookkeeping", "Per-load income and expense tracking so you know what each truck and lane really earns.", None),
+        ("Collections", "Follow-up on late invoices, detention, layover and TONU charges until they are paid.", "trucking-back-office-services.html"),
+        ("Driver hiring", "Screened CDL drivers with a driver qualification file, for solo and team trucks.", None),
+        ("Carrier websites", "A clean website that makes your company look established to brokers, shippers and drivers.", None),
+        ("Trucking SEO", "Search visibility so shippers and drivers find your company on Google.", None),
+        ("Trucking social media", "Regular posts that build trust with shippers and help you recruit drivers.", None),
+    ]),
+]

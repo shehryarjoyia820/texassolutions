@@ -100,7 +100,7 @@ Self-dispatch saves the fee but costs hours on load boards and broker calls ever
 The lowest percentage is not always the cheapest once setup fees, weekly minimums, contracts or extra charges for paperwork are added. Texas Solutions charges 5% of weekly gross for OTR semis, 7% for hotshots and 8% for box trucks, with no setup fee, no flat weekly fee and no long-term contract, and your first load is dispatched free.
 
 ### Do you work with lease operators?
-We dispatch carriers that run under their own MC authority. If you are leased on to another carrier, that carrier normally dispatches you; talk to us when you get your own authority and we can help set it up.
+Yes. Carriers with their own MC authority get regular dispatch. If you do not have your own authority yet, our MC lease program lets you lease on to an established partner carrier's authority for 18-20% of gross, with dispatch included. See MC lease for details.
 
 ### How much is box truck dispatch?
 8% of weekly gross for OTR box trucks and straight trucks. On $7,000-$9,000 weekly gross that is about $560-$720 a week. No flat rate and no setup fee.
@@ -194,6 +194,21 @@ Yes. Broker setup packet help is part of dispatch: we prepare your MC authority,
 
 ### Why do some brokers not work with new authority?
 Many brokers set a minimum authority age or insurance history to manage risk. Others accept new carriers if the packet is complete and insurance is verified. Knowing which is which saves days of calls.
+
+### What is an MC lease?
+An MC lease, or lease-on, means an owner-operator leases their truck to a motor carrier and hauls under that carrier's operating authority instead of their own MC number.
+
+### How much does an MC lease cost?
+18-20% of gross, depending on your equipment and what the lease includes. Dispatch is included in that percentage. The exact terms are in your written lease agreement.
+
+### Whose authority will I run under?
+An established partner carrier with active authority. Texas Solutions is a dispatch service, not a motor carrier; the partner carrier is named in your lease agreement.
+
+### Can I switch to my own authority later?
+Yes. We help you file for your own MC and USDOT numbers and then dispatch you on your own authority at the regular dispatch percentage.
+
+### Is dispatch included in the MC lease?
+Yes. Our dispatchers find, negotiate and book your loads, and you still approve every load.
 
 ### Which dispatchers also handle paperwork and invoicing?
 Texas Solutions does. Along with load search and rate negotiation we handle broker packets, rate confirmations, invoicing, detention and lumper collection, factoring setup, IFTA filing, DOT compliance help and MC authority setup.

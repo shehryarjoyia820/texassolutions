@@ -1078,3 +1078,13 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .hero-form .consent input { height: 18px; width: 18px; }
 @media (max-width: 480px) { .hero-form .hf-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 360px) { .hero-form .hf-grid { grid-template-columns: 1fr; } }
+
+/* Home: dispatch by state (replaces the pricing cards) */
+.st-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); gap: 16px; align-items: start; }
+.st-group { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+.st-group h3 { font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--green-brand-700); margin-bottom: 14px; }
+.st-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.st-links a { display: inline-flex; padding: 7px 12px; border-radius: 999px; background: var(--off, #f7f6f3); border: 1px solid var(--line); color: var(--ink); font-size: 14px; font-weight: 600; text-decoration: none; transition: background .2s, color .2s, border-color .2s, transform .2s var(--ease); }
+.st-links a:hover { background: var(--ink); color: #fff; border-color: var(--ink); transform: translateY(-2px); }
+.sec-ink .btn-line { color: #fff; border-color: rgba(255,255,255,.35); background: transparent; }
+.sec-ink .btn-line:hover { background: rgba(255,255,255,.1); color: #fff; border-color: #fff; }

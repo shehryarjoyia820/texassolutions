@@ -61,7 +61,7 @@ def pl(p):
 
 
 SMALL_TXT = "box trucks and straight trucks 8%, hotshots 7%"
-LANDING_PCT = {"box-truck-dispatch.html": (10, 10), "hotshot-dispatch.html": (8, 8)}
+LANDING_PCT = {"box-truck-dispatch.html": (C.EQ_PCT["Box Truck"],) * 2, "hotshot-dispatch.html": (C.EQ_PCT["Hotshot"],) * 2}
 
 
 def landing_pricing(p):
@@ -207,10 +207,10 @@ def tools_nav_items():
 
 
 def header(current):
-    svc = "\n".join(f'          <a href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING if not p.get("hide_nav")) + '\n          <a href="truck-dispatch-by-state.html">Dispatch by State</a>'
+    svc = "\n".join(f'          <a href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING if not p.get("hide_nav")) + '\n          <a href="truck-dispatch-by-state.html">Dispatch by State</a>' + '\n          <a href="trucking-business-services.html">All Trucking Services</a>'
     links = "\n".join(f'      <a href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for t, h in nav_links())
     mlinks = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in nav_links())
-    msvc = "\n".join(f'      <a href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING if not p.get("hide_nav")) + '\n      <a href="truck-dispatch-by-state.html">Dispatch by State</a>'
+    msvc = "\n".join(f'      <a href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING if not p.get("hide_nav")) + '\n      <a href="truck-dispatch-by-state.html">Dispatch by State</a>' + '\n      <a href="trucking-business-services.html">All Trucking Services</a>'
     tnav = tools_nav_items()
     tools_dd = "\n".join(f'          <a href="{f}">{esc(n)}</a>' for n, f in tnav)
     mtools = "\n".join(f'      <a href="{f}">{esc(n)}</a>' for n, f in tnav)
@@ -274,7 +274,7 @@ def footer():
     <div class="cols">
       <div class="fbrand">
         <img src="assets/logo/texas-solutions-logo.png" alt="Texas Solutions" width="127" height="44" loading="lazy">
-        <p>Nationwide truck dispatch for owner-operators and small fleets across the USA. Semi trucks {pl(M)}, hotshots 7% and box trucks 8% of weekly gross, OTR. First load free, dispatchers available 24/7.</p>
+        <p>Nationwide truck dispatch for owner-operators and small fleets across the USA: semi trucks, hotshots and box trucks. First load free, no setup fee, dispatchers available 24/7.</p>
       </div>
       <div>
         <h4>Dispatch Services</h4>
@@ -510,9 +510,9 @@ def phero(crumb_name, h1, lede, ctas=True, extra=""):
 
 PRICE_GROUPS = [
     # key, label, equipment, pct, gross, truck query, featured
-    ("semi", "Semi trucks", ["Dry Van", "Reefer", "Flatbed", "Step Deck", "Power Only"], 5, (8000, 10000), "dry-van", True),
-    ("hotshot", "Hotshot", ["Hotshot trucks", "Gooseneck and flatbed trailers"], 8, (7000, 9000), "hotshot", False),
-    ("box", "Box trucks", ["Box Truck", "Straight Truck"], 10, (7000, 9000), "box-truck", False),
+    ("semi", "Semi trucks", ["Dry Van", "Reefer", "Flatbed", "Step Deck", "Power Only"], C.EQ_PCT["Dry Van"], (8000, 10000), "dry-van", True),
+    ("hotshot", "Hotshot", ["Hotshot trucks", "Gooseneck and flatbed trailers"], C.EQ_PCT["Hotshot"], (7000, 9000), "hotshot", False),
+    ("box", "Box trucks", ["Box Truck", "Straight Truck"], C.EQ_PCT["Box Truck"], (7000, 9000), "box-truck", False),
 ]
 
 
@@ -577,10 +577,19 @@ def rate_board(equip=None):
 </div>"""
 
 
+def no_pct(text):
+    """Drop the sentences that quote a percentage (the home page shows no fees; service pages do)."""
+    keep = [s for s in re.split(r"(?<=[.!?])\s+", text) if "%" not in s]
+    return " ".join(keep) or text.split(":")[0] + "."
+
+
 def equip_cards():
     icons = "truck"
+    def summary(p):
+        t = no_pct(p["description"])
+        return t if len(t) <= 150 else t[:150].rsplit(" ", 1)[0] + "..."
     return '<div class="grid g3">\n' + "\n".join(
-        f"""  <a class="card rv" href="{p['file']}"><div class="icon">{ICONS[icons]}</div><h3>{esc(p['nav'])}</h3><p>{esc(p['description'][:150].rsplit(' ', 1)[0])}...</p><span class="more">{pl(landing_pricing(p))} &middot; Learn more &rarr;</span></a>"""
+        f"""  <a class="card rv" href="{p['file']}"><div class="icon">{ICONS[icons]}</div><h3>{esc(p['nav'])}</h3><p>{esc(summary(p))}</p><span class="more">Learn more &rarr;</span></a>"""
         for p in C.LANDING if not p.get("guide")) + "\n</div>"
 
 
@@ -713,14 +722,34 @@ def blog_teaser():
 </div></section>"""
 
 
+HOME_FAQS = [(q, a) for q, a in C.FAQS if "%" not in a and "%" not in q]
+
+
+def states_section():
+    """Home: every state we dispatch in, grouped by region (replaces the pricing cards)."""
+    groups = []
+    for region, codes in REGIONS_US:
+        links = "".join(f'<a href="{state_dispatch_path(c).lstrip("/")}">{esc(C.STATE_REGION[c][0])}</a>'
+                        for c in sorted(codes, key=lambda c: C.STATE_REGION[c][0]))
+        groups.append(f'<div class="st-group rv"><h3>{esc(region)}</h3><div class="st-links">{links}</div></div>')
+    return f"""<section class="sec" id="states"><div class="wrap">
+  <div class="sec-head center rv"><span class="eyebrow">We offer dispatch</span><h2>Dispatch by state</h2><p>Local lanes, state rules, one dispatcher.</p></div>
+  <div class="st-grid">
+  {chr(10).join(groups)}
+  </div>
+  <p class="mt-l center rv"><a class="btn btn-line" href="truck-dispatch-by-state.html">See every state</a></p>
+</div></section>"""
+
+
 def build_home():
-    title = "Truck Dispatch Service for Owner-Operators | 5% Semi, 7% Hotshot, 8% Box Truck | Texas Solutions"
-    desc = (f"Truck dispatch service for owner-operators and small fleets. Semi trucks {pl(M)}, hotshots 7% and box trucks "
-            f"8% of weekly gross, OTR. No flat rate, no setup fee. Flatbed loads $5-7/mile. Free estimate.")
-    qa = ("How much does truck dispatch cost at Texas Solutions?",
-          f"Texas Solutions charges {pl(M)} of weekly gross for OTR semi trucks (dry van, reefer, flatbed, step deck, power only) "
-          f"7% for OTR hotshots and 8% for OTR box trucks and straight trucks. There is no flat rate, no setup fee and no "
-          f"monthly subscription, and no long-term contract (a signed dispatch agreement is required). For example, on a hypothetical semi grossing {money(M['gross'][0])}-{money(M['gross'][1])} in a week, the fee would be {SEMI_FEE[0]}-{SEMI_FEE[1]}. Local and regional work is quoted separately.")
+    title = "Truck Dispatch Service USA for Owner-Operators, 24/7 | Texas Solutions"
+    desc = ("Truck dispatch service for owner-operators and small fleets across the USA: dry van, reefer, flatbed, hotshot "
+            "and box truck. First load free, no flat rate, no setup fee, dispatchers 24/7.")
+    qa = ("What does Texas Solutions truck dispatch include?",
+          "Texas Solutions dispatchers find and negotiate loads for owner-operators and small fleets under their own MC authority, "
+          "send broker carrier packets, check rate confirmations, handle invoicing and plan lanes to cut deadhead, 24/7. "
+          "You approve every load. Your first load is dispatched free; after that the fee is a percentage of weekly gross that "
+          "depends on your truck type, with no flat rate, no setup fee and no long-term contract.")
     hero = f"""<section class="hero">
   <video muted loop playsinline preload="none" aria-hidden="true" data-src="assets/video/hero-background.mp4"></video>
   <div class="wrap">
@@ -731,16 +760,16 @@ def build_home():
       {lead_ctas(home=True, calc=True)}
       <p class="hero-tools">Free tools, no signup: <a href="truck-fuel-cost-calculator.html">Fuel cost</a> <a href="cost-per-mile-calculator.html">Cost per mile</a> <a href="load-profitability-calculator.html">Load profit</a> <a href="tools.html">All tools &rarr;</a></p>
       <div class="hero-stats">
-        <div><b data-count="{M['pct'][0]}" data-suffix="%">{pl(M)}</b><span>Semi trucks, OTR</span></div>
-        <div><b data-count="7" data-suffix="%">7%</b><span>Hotshots, OTR</span></div>
-        <div><b data-count="8" data-suffix="%">8%</b><span>Box &amp; straight trucks</span></div>
-        <div><b>24/7</b><span>Dispatchers, first load free</span></div>
+        <div><b>24/7</b><span>Dispatchers by call, text or WhatsApp</span></div>
+        <div><b>1st load</b><span>Dispatched free</span></div>
+        <div><b>$0</b><span>Setup fee, no flat rate</span></div>
+        <div><b data-count="50">50</b><span>States served</span></div>
       </div>
     </div>
     <aside class="hero-card hero-form" id="claim" aria-label="Claim your free first load">
       <span class="hf-tag">First load free</span>
       <h2>Claim your free first load</h2>
-      <p class="hf-sub">No dispatch fee on your first load. After that: semi {pl(M)}, hotshot 7%, box truck 8%.</p>
+      <p class="hf-sub">No dispatch fee on your first load. No setup fee, no long-term contract, and you approve every load.</p>
       <form class="form" id="heroClaimForm" data-web3 data-kind="lead" data-subject="Free first load claim (home hero)" data-success="Claim received. A Texas Solutions dispatcher will call you shortly to set up your free first load." novalidate>
         <input type="hidden" name="intent" value="first_load_free">
         <div class="hf-grid">
@@ -761,12 +790,10 @@ def build_home():
 <section class="sec sec-ink"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Dispatch services</span><h2>One dispatcher for whatever you haul</h2><p>Semi trailers, hotshots, box trucks and the back office behind every load.</p></div>
   {equip_cards()}
+  <p class="mt-l center"><a class="btn btn-line" href="trucking-business-services.html">All trucking services &rarr;</a></p>
 </div></section>
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>
-<section class="sec" id="pricing"><div class="wrap">
-  <div class="sec-head center rv"><span class="eyebrow">Truck dispatch rates</span><h2>No flat rate. Pay only a percentage of what your truck grosses.</h2><p>Transparent OTR dispatch pricing for owner-operators and small fleets. No setup fee, no monthly subscription, no long-term contract.</p></div>
-  {pricing_cards()}
-</div></section>
+{states_section()}
 <section class="sec sec-dark"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Illustrative lanes across the country</h2><p>Example lanes from different regions and the planning ranges our dispatchers use. These are not available loads or current rate quotes.</p></div>
   {rate_board()}
@@ -809,7 +836,7 @@ def build_home():
   <div class="sec-head rv"><span class="eyebrow">Free trucking tools</span><h2>Know your numbers before you book</h2><p>Free calculators built for owner-operators, with daily diesel prices for all 50 states. No signup; calculations run in your browser.</p></div>
   <div class="grid g3">
     <a class="tool-card rv" href="truck-fuel-cost-calculator.html"><div class="icon">{ICONS['truck']}</div><h3>Truck fuel cost calculator</h3><p>MPG by truck type and load weight, trip fuel cost and cost per mile, with today's diesel price for your state.</p><span class="more">Calculate fuel cost &rarr;</span></a>
-    <a class="tool-card rv" href="estimate.html"><div class="icon">{ICONS['calc']}</div><h3>Dispatch fee calculator</h3><p>See your weekly and monthly dispatch fee for your truck: semi 5%, hotshot 7%, box truck 8%.</p><span class="more">Estimate my fee &rarr;</span></a>
+    <a class="tool-card rv" href="estimate.html"><div class="icon">{ICONS['calc']}</div><h3>Dispatch fee calculator</h3><p>See your weekly and monthly dispatch fee for your truck type and weekly gross.</p><span class="more">Estimate my fee &rarr;</span></a>
     <a class="tool-card rv" href="cost-per-mile-calculator.html"><div class="icon">{ICONS['cash']}</div><h3>Cost per mile calculator</h3><p>Fixed and variable costs, your own labor shown separately, and cost per total and per loaded mile.</p><span class="more">Find my CPM &rarr;</span></a>
     <a class="tool-card rv" href="load-profitability-calculator.html"><div class="icon">{ICONS['route']}</div><h3>Load profitability calculator</h3><p>Dispatch and factoring fees, deadhead and return miles, estimated profit and the rate you need.</p><span class="more">Check a load &rarr;</span></a>
     <a class="tool-card rv" href="fuel-surcharge-calculator.html"><div class="icon">{ICONS['truck']}</div><h3>Fuel surcharge calculator</h3><p>Surcharge per mile and per trip by your contract's method: per-mile, percentage or step table.</p><span class="more">Work out my FSC &rarr;</span></a>
@@ -819,14 +846,14 @@ def build_home():
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Truck dispatch FAQ</span><h2>Questions owner-operators ask</h2></div>
-  {faq_html(C.FAQS[:4])}
+  {faq_html(HOME_FAQS[:4])}
   <div class="faq faq-more" id="moreFaqs" hidden>
-{chr(10).join(f'    <details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in C.FAQS[4:])}
+{chr(10).join(f'    <details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in HOME_FAQS[4:])}
   </div>
   <p class="mt-l"><button class="btn btn-line" type="button" data-expand="moreFaqs" data-more="See all FAQs" data-less="Show fewer FAQs" aria-expanded="false" aria-controls="moreFaqs">See all FAQs</button></p>
 </div></section>
-{band()}"""
-    schemas = [service("Truck Dispatch Service", desc, "/", "Truck dispatch"), faq_ld([qa] + C.FAQS[:4]), howto(), speakable("/", title)]
+{band(text="First load dispatched free. 24/7 dispatchers. No flat rate, no setup fee, no long-term contract.")}"""
+    schemas = [service("Truck Dispatch Service", desc, "/", "Truck dispatch"), faq_ld([qa] + HOME_FAQS[:4]), howto(), speakable("/", title)]
     write("index.html", page("/", title, desc, HOME_KW, schemas, body, current="index.html"))
 
 
@@ -1017,6 +1044,47 @@ def build_contact():
     write("contact.html", page("/contact.html", title, desc, kw, schemas, body, current="contact.html"))
 
 
+def build_services():
+    """All trucking business services beyond dispatch (authority, MC lease, compliance, growth)."""
+    path = "/trucking-business-services.html"
+    title = "Trucking Services: MC Setup, MC Lease & IFTA | Texas Solutions"
+    desc = ("Trucking services beyond dispatch: MC setup, MC lease, IFTA and 2290, ELD, drug testing, "
+            "bookkeeping, collections, driver hiring and SEO.")
+    groups = ""
+    for head, items in C.BUSINESS_SERVICES:
+        cards = "\n".join(
+            (f'    <a class="card rv" href="{href}"><div class="icon">{ICONS["check"]}</div><h3>{esc(n)}</h3><p>{esc(d)}</p><span class="more">Learn more &rarr;</span></a>'
+             if href else
+             f'    <a class="card rv" href="{INQUIRY}" data-cta="service_quote"><div class="icon">{ICONS["check"]}</div><h3>{esc(n)}</h3><p>{esc(d)}</p><span class="more">Ask for a quote &rarr;</span></a>')
+            for n, d, href in items)
+        groups += f"""
+<section class="sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">{esc(head)}</span><h2>{esc(head)}</h2></div>
+  <div class="grid g3">
+{cards}
+  </div>
+</div></section>"""
+    qa = ("What trucking services does Texas Solutions offer besides dispatch?",
+          "Besides dispatch, Texas Solutions helps carriers get started (MC authority setup, MC lease, compliance and permits, "
+          "factoring setup), stay compliant (IFTA and 2290 filing, safety audit prep, ELD and logs, DOT drug testing) and grow "
+          "(bookkeeping, collections, driver hiring, carrier websites, SEO and social media). Government fees, insurance and taxes are paid by the carrier.")
+    body = f"""{phero("Trucking Services", "Everything a trucking company needs, beyond the load", "From your first USDOT filing to hiring drivers and getting found on Google: one team for authority, compliance and growth, alongside dispatch.")}
+<section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>{groups}
+<section class="sec sec-soft"><div class="wrap two">
+  <div>
+    <div class="sec-head rv"><span class="eyebrow">Get a quote</span><h2>Tell us what you need</h2><p>Pick the services you want in the message box. Government filing fees, insurance premiums and taxes are paid directly by you.</p></div>
+    {lead_form("servicesForm", "Trucking services inquiry", "Send My Request")}
+  </div>
+  <div class="aside">{contact_side()}</div>
+</div></section>
+{band()}"""
+    schemas = [service("Trucking Business Services", desc, path, "Trucking compliance and back-office services"),
+               faq_ld([qa]), crumbs_ld([("Trucking Services", path)])]
+    write("trucking-business-services.html", page(path, title, desc,
+          "trucking services, MC authority setup, MC lease, IFTA filing, 2290 filing, safety audit prep, ELD setup, DOT drug testing, trucking bookkeeping, trucking collections, driver hiring, carrier website, trucking SEO",
+          schemas, body))
+
+
 def build_about():
     title = "About Texas Solutions | Truck Dispatch Company in Midland, Texas"
     desc = "Texas Solutions is a truck dispatch company in Midland, Texas, working for owner-operators and small fleets: load search, rate negotiation and paperwork. Not a broker. No flat rate."
@@ -1099,6 +1167,7 @@ def build_landing(p):
         sections += f"\n    <h2>{esc(h)}</h2>\n    <ul>\n" + "\n".join(f"      <li>{esc(x)}</li>" for x in lis) + "\n    </ul>"
     if p.get("requirements"):
         sections += "\n    <h2>Equipment and documents we need</h2>\n    <ul>\n" + "\n".join(f"      <li>{esc(x)}</li>" for x in p["requirements"]) + "\n    </ul>"
+    if p.get("requirements") and p["kind"] != "lease":  # dispatch onboarding (first load free) does not apply to a lease
         sections += ("\n    <h2>How onboarding works</h2>\n    <ol>\n" + "\n".join(f"      <li><b>{esc(st)}.</b> {esc(sd)}</li>" for st, sd in C.STEPS)
                      + f"\n    </ol>\n    <p>{esc(C.FIRST_LOAD_NOTE)} {esc(C.AGREEMENT_NOTE)} <a href=\"{INQUIRY}\">Talk to a dispatcher</a> to start.</p>")
     what = "" if p.get("guide") else f"""
@@ -1112,7 +1181,7 @@ def build_landing(p):
     faqs = p["faqs"] + [C.FAQS[0], C.FAQS[5]]
     others = "".join(f'<a class="chip" href="{o["file"]}">{esc(o["nav"])}</a>' for o in C.LANDING if o["file"] != p["file"] and not o.get("hide_nav"))
     body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), extra=f'<div class="chip-row" style="justify-content:flex-start"><span class="chip" ><b>{pl(kind)}</b> of weekly gross</span><span class="chip" >OTR &middot; No flat rate</span></div>')}
-<section class="sec" style="padding-bottom:0"><div class="wrap">{answer(p['h1'] if p.get('guide') else f"What is {p['nav'].lower()} from Texas Solutions?", p['answer'])}</div></section>
+<section class="sec" style="padding-bottom:0"><div class="wrap">{answer(p['h1'] if p.get('guide') else f"What is {p['nav'].lower().replace('mc ', 'MC ')} from Texas Solutions?", p['answer'])}</div></section>
 <section class="sec"><div class="wrap two">
   <div class="prose rv">
 {body_p}{sections}{what}
@@ -2796,7 +2865,7 @@ def build_site_files():
         return {"loc": url(path), "lastmod": lm.get(f, TODAY)}
 
     core = ["/", "/estimate.html", "/truck-dispatch-rates.html", "/truck-fuel-cost-calculator.html"] + ["/" + p["file"] for p in C.LANDING] + \
-           ["/faq.html", "/about.html", "/contact.html", "/privacy.html", "/terms.html"]
+           ["/trucking-business-services.html", "/faq.html", "/about.html", "/contact.html", "/privacy.html", "/terms.html"]
     tool_paths = ["/tools.html"] + ["/" + tl["slug"] + ".html" for tl in TOOLS]
     blog_entries = [entry("/blog.html")] + [dict(entry(f"/blog/{po['slug']}.html"), image=po["cover_abs"], title=po["title"]) for po in POSTS]
     groups = {
@@ -2901,6 +2970,7 @@ def main():
     build_rates()
     build_contact()
     build_about()
+    build_services()
     build_faq()
     build_legal("privacy.html", "Privacy Policy")
     build_legal("terms.html", "Terms & Conditions")
