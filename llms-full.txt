@@ -93,6 +93,12 @@ No. We only charge a percentage of weekly gross, so a week the truck does not ru
 ### Is a truck dispatcher the same as a freight broker?
 No. A broker works for the shipper and earns the margin between what the shipper pays and what the carrier is paid. A dispatcher works for the carrier, books loads under the carrier's own authority and is paid a fee by the carrier.
 
+### Dispatcher vs self-dispatch: which is better?
+Self-dispatch saves the fee but costs hours on load boards and broker calls every day. A dispatcher makes sense when those hours, better rates and fewer deadhead miles are worth more than the percentage. Many carriers self-dispatch first, then hire a dispatcher once the phone time starts competing with driving time.
+
+### What is the cheapest truck dispatch service?
+The lowest percentage is not always the cheapest once setup fees, weekly minimums, contracts or extra charges for paperwork are added. Texas Solutions charges 5% of weekly gross for OTR semis, 8% for hotshots and 10% for box trucks, with no setup fee, no flat weekly fee and no long-term contract, and your first load is dispatched free.
+
 ### Do you work with lease operators?
 We dispatch carriers that run under their own MC authority. If you are leased on to another carrier, that carrier normally dispatches you; talk to us when you get your own authority and we can help set it up.
 
@@ -153,6 +159,9 @@ Yes. We confirm temperature, appointment times and special handling before prese
 ### Do you dispatch reefer trucks running the Midwest?
 Yes. We dispatch reefers nationwide, including Midwest lanes, and plan reloads around produce and food distribution markets so you are not stuck empty. Your first load is dispatched free.
 
+### What are reefer rates per mile today?
+Our dispatchers plan around roughly $4-6 a mile for reefer freight (October 2026 planning range, not a market index or quote). The real rate depends on the lane, distance, season and how much outbound freight the delivery market has. We negotiate every load before it reaches you.
+
 ### Do I need a trailer for power only?
 No. The trailer is supplied by the shipper, broker or a carrier program. You provide the tractor and authority.
 
@@ -176,6 +185,12 @@ Yes, from day one. We work with brand-new MC numbers and set you up with brokers
 
 ### Which dispatch companies work with new MC authorities?
 Texas Solutions works with new MC authorities from day one, for dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck. The first load is dispatched free and there is no long-term contract.
+
+### How do I get loads with a new MC number?
+Have a complete broker setup packet ready, get set up with brokers that accept new authority before you need a load, start on lanes where new carriers get booked, and deliver on time so those brokers rebook you. New authority truck dispatch does this searching and setup work for you while you drive. Read our guide on loads for new authority carriers for the full steps.
+
+### Do you help with broker setup packets?
+Yes. Broker setup packet help is part of dispatch: we prepare your MC authority, W-9, certificate of insurance and notice of assignment once, then complete each broker's carrier packet so you can be booked quickly.
 
 ### Why do some brokers not work with new authority?
 Many brokers set a minimum authority age or insurance history to manage risk. Others accept new carriers if the packet is complete and insurance is verified. Knowing which is which saves days of calls.
@@ -446,6 +461,391 @@ Q: Do I get detention if I arrive late?
 A: Often not. Many agreements only pay detention when the truck arrived on time for its appointment. This calculator warns you when the arrival is after the appointment; your agreement decides.
 
 ## Blog posts
+
+### Reefer Loads and Refrigerated Load Dispatch: Rates per Mile, Seasons and Tips
+URL: https://dispatch.texassolutions.co/blog/reefer-loads-refrigerated-dispatch-guide.html
+Published: 2026-10-21
+
+Reefer freight pays more than dry van for a reason: it is harder to haul. A missed appointment or a wrong temperature can mean a rejected load and a claim. Good **refrigerated load dispatch** is about the details. This guide covers **reefer rates per mile**, the seasons that drive reefer freight, and what to check before you book.
+
+## Reefer rates per mile in 2026
+
+Our dispatchers plan reefer freight at roughly **$4 to $6 a mile** (October 2026). That is a planning range, not a market index or a quote. Real **reefer rates per mile today** depend on:
+
+- **Lane and direction.** Loads out of produce and food markets in season pay better than loads into them.
+- **Distance.** Short loads often pay more per mile; long runs pay more per load.
+- **Season.** Produce season and the holiday peak lift reefer demand.
+- **Appointment pressure.** Short-notice or hard-to-cover loads leave more room to negotiate.
+
+Always compare loads by rate per total mile, including the empty miles to pick up. The [load profitability calculator](/load-profitability-calculator.html) lets you count reefer fuel too.
+
+## The reefer calendar
+
+| Months | Where reefer freight builds |
+|---|---|
+| March to May | Florida, South Texas and Mexico border crossings (produce) |
+| May to August | California, Arizona, the Northwest |
+| August to October | Midwest and Northeast harvests, Michigan, Wisconsin, upstate New York |
+| November to December | Holiday peak season: grocery, meat, dairy and frozen food distribution nationwide |
+
+Planning lanes around this calendar keeps a reefer loaded both ways. See [peak season trucking loads](/blog/peak-season-trucking-loads-holiday-freight.html) for the Q4 picture.
+
+## What to check before you accept a reefer load
+
+1. **Temperature setting** and whether the unit must run continuous or cycle.
+2. **Pre-cool** requirements before arrival at the shipper.
+3. **Appointments:** pickup and delivery times, and what happens if you are late.
+4. **Pulp temperature** rules for produce, and who checks it.
+5. **Weight**, so you stay legal with fuel in both tanks.
+6. **Temperature download** or seal requirements at delivery.
+7. **Lumper fees** at grocery warehouses, and how they are paid back. The [detention pay calculator](/detention-pay-calculator.html) helps you claim waiting time.
+
+## Reefer fuel: the hidden cost
+
+A reefer unit burns diesel even when the truck is parked, often somewhere around a gallon an hour depending on the unit, setting and outside temperature. On a long load with waiting time, that is real money. Add it to your [truck fuel cost](/truck-fuel-cost-calculator.html) when you price a load.
+
+## How to find better reefer loads
+
+- **Book the reload before you deliver.** Grocery distribution centers often sit in markets with weak outbound freight.
+- **Follow the season.** Position your truck where produce is moving next.
+- **Build broker relationships.** Reefer brokers rebook carriers who hit appointments and keep temperatures right.
+- **Negotiate.** Ask for more on short-notice loads and loads with long waits.
+
+## When a reefer dispatch service helps
+
+A **reefer dispatch service** handles the search, the broker calls and the appointment details while you drive. At Texas Solutions we confirm temperature and appointment rules before a load reaches you, plan lanes around produce and holiday markets, and are available 24/7 for early appointments and overnight reloads. The fee is 5% of weekly gross for OTR reefer semis, no setup fee, no long-term contract, and your first load is dispatched free. Rates and earnings are not guaranteed. See [reefer dispatch](/reefer-dispatch.html) or compare trailer types in [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html).
+
+### Peak Season Trucking Loads: How Owner-Operators Can Plan Q4 Holiday Freight
+URL: https://dispatch.texassolutions.co/blog/peak-season-trucking-loads-holiday-freight.html
+Published: 2026-10-21
+
+The last three months of the year are the busiest stretch for many carriers. **Peak season trucking loads** come from retail restocking, holiday food and grocery, and e-commerce. For an owner-operator, Q4 can be the best quarter of the year or a frustrating one stuck in the wrong market. This guide shows how to plan **holiday freight loads**, which regions to watch, and how to keep deadhead down when everyone is busy.
+
+## What drives Q4 freight
+
+- **Retail restocking.** Stores and warehouses fill shelves from late summer through November.
+- **Holiday food.** Turkey, meat, dairy, baking goods and frozen food move hard before Thanksgiving and Christmas. Reefer demand climbs.
+- **E-commerce.** Parcel and fulfillment networks need extra capacity, which pulls dry van, power only and box truck freight.
+- **Year-end shipping.** Some shippers move freight before the year closes.
+
+Then, in the last week or so of December, freight drops off as receivers close. Plan for both.
+
+## Reefer rates per mile in peak season
+
+Reefer is usually the first trailer to feel the holiday rush. Our dispatchers plan reefer freight around roughly $4 to $6 a mile (October 2026 planning range, not a market index or quote). **Reefer rates per mile today** on your lane can sit above or below that. Check the board daily, and read our [reefer loads guide](/blog/reefer-loads-refrigerated-dispatch-guide.html) for what to confirm before booking.
+
+## Regional picture: Texas, Midwest and California loads
+
+### Texas loads
+
+Dallas-Fort Worth and Houston are national distribution hubs, and Laredo is the busiest cross-border crossing. Q4 brings retail, grocery and cross-border freight. Houston also stays busy with energy and construction freight for hotshots and flatbeds. See [Texas truck dispatch](/texas-truck-dispatch.html).
+
+### Midwest loads
+
+Chicago, Indianapolis, Columbus and Kansas City host large warehouse and rail networks. Midwest loads in Q4 include retail, food processing and the end of the harvest. Winter weather can slow everything, so build in time. See [Illinois truck dispatch](/truck-dispatch/illinois.html), [Ohio](/truck-dispatch/ohio.html) and [Indiana](/truck-dispatch/indiana.html).
+
+### California loads
+
+The Southern California ports and Inland Empire warehouses push import freight inland for the holidays. California loads often pay well outbound; the challenge is getting back in without a long empty run. See [California truck dispatch](/truck-dispatch/california.html).
+
+For other states, use our [truck dispatch by state](/truck-dispatch-by-state.html) list.
+
+## Seven ways to make the most of peak season
+
+1. **Position early.** Be near a strong outbound market before the rush, not after.
+2. **Book the reload first.** Before you accept a load, check freight out of the delivery city.
+3. **Negotiate harder on short-notice loads.** Brokers with uncovered holiday freight have more room.
+4. **Watch deadhead.** A high rate with 200 empty miles may pay less than a normal load next door. Use the [deadhead miles calculator](/deadhead-miles-calculator.html).
+5. **Plan for waiting.** Warehouses are busy; log check-in times and claim detention. Try the [detention pay calculator](/detention-pay-calculator.html).
+6. **Keep the truck ready.** A breakdown in December costs more than any rate gain. Budget with the [maintenance calculator](/maintenance-budget-calculator.html).
+7. **Set home time now.** Pick your dates and plan the last loads so you end near home.
+
+## Watch your hours
+
+Peak season tempts long days. The hours-of-service limits do not change for the holidays. Plan loads you can run legally with the [hours of service calculator](/hours-of-service-calculator.html).
+
+## How a dispatcher helps in Q4
+
+A dispatcher who works the boards all day sees holiday freight move first and can line up the next load while you are still loaded. At Texas Solutions, dispatchers are available 24/7 for the night and weekend reloads Q4 brings, negotiate every load, and plan your last runs around your home-time dates. The fee is 5% of weekly gross for OTR semis, 8% for hotshots and 10% for box trucks, with no setup fee and no long-term contract, and your first load is dispatched free. Freight and rates are not guaranteed. [Talk to a dispatcher](/contact.html) before the rush starts.
+
+### How to Get Loads With a New MC Number: A Guide for New Authority Carriers
+URL: https://dispatch.texassolutions.co/blog/how-to-get-loads-with-new-mc-number.html
+Published: 2026-10-21
+
+You have the truck, the insurance and an active MC. Now the hard part: **how to get loads with a new MC number**. Many brokers will not book a carrier until the authority is a few months old, and every broker has its own setup process. This guide is the step-by-step plan we use for **loads for new authority carriers**, whether you run a semi, a hotshot or a box truck.
+
+## Step 1: build one complete broker setup packet
+
+Do this once, before you need a load. Keep it as a single PDF and as separate files.
+
+- MC authority letter (or a screenshot of active authority on FMCSA).
+- W-9 in the exact legal name on your authority.
+- Certificate of insurance from your agent, with auto liability and cargo limits listed. Ask your agent how fast they can issue certificates naming each broker.
+- Notice of assignment and letter of release, if you use a factoring company.
+- Bank details for payment, if you do not factor.
+- A short carrier profile: equipment, trailer length, lanes, contact phone and email.
+
+A packet that is complete the first time is the quickest way through broker onboarding. Missing documents are the most common reason a new carrier waits days for setup. That is why **broker setup packet help** is the first thing we do for a new client.
+
+## Step 2: find brokers that accept new authority
+
+Brokers fall into three groups:
+
+1. **Will not book new MCs** until the authority reaches a set age.
+2. **Will book new MCs** if the packet is complete and insurance is verified.
+3. **Will book new MCs on certain freight** (often less time-sensitive or lower value loads) while you build history.
+
+Your job is to find groups 2 and 3 and get set up with them before you need a load. Ask directly when you call: "Do you work with new authority?" You save more time asking that up front than you spend on setups that go nowhere.
+
+## Step 3: use load boards the right way
+
+Load boards are where most new carriers find their first loads. Filter for brokers that show they accept new authority, and call fast: good loads go in minutes. Read our [load board guide](/blog/truck-loads-and-load-boards-guide.html) and [best load boards for owner-operators](/blog/best-load-boards-for-owner-operators.html).
+
+## Step 4: pick first lanes that set up the next load
+
+Do not chase the single highest rate. Pick lanes that deliver into markets with plenty of outbound freight, so the reload is easy. Use the [deadhead miles calculator](/deadhead-miles-calculator.html) to see what an empty leg really costs.
+
+## Step 5: negotiate, even with a new MC
+
+A new MC does not have to mean the lowest rate. Know your [cost per mile](/cost-per-mile-calculator.html), ask for more on short-notice loads, and walk away from freight that does not cover your costs. See [how to negotiate freight rates](/blog/how-to-negotiate-freight-rates.html).
+
+## Step 6: deliver perfectly and get rebooked
+
+For the first months, every load is an audition. Be on time, answer check calls, send clear photos of the bill of lading and paperwork the same day. Brokers rebook carriers who make their job easy, and repeat freight is how a new authority stops depending on load boards.
+
+## Common mistakes new authority carriers make
+
+- Waiting until the authority is active to start broker setups.
+- Taking every cheap load to "build history" and running at a loss.
+- Hauling under someone else's MC: it is risky and does not build your own record.
+- Paying a large upfront fee to anyone who promises guaranteed loads. Read [how to avoid truck dispatch scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+
+## When new authority truck dispatch helps
+
+If you would rather drive than spend the day calling brokers, a dispatcher who works with new MC numbers can take over steps 1 to 5. At Texas Solutions we:
+
+- Prepare your packet and handle broker setups.
+- Target brokers that accept new authority for your equipment.
+- Negotiate every load and plan lanes to keep deadhead down.
+- Handle rate confirmations, invoicing and factoring paperwork.
+- Answer 24/7 by call, text or WhatsApp.
+
+Your first load is dispatched free. After that, the fee is 5% of weekly gross for OTR semis, 8% for hotshots and 10% for box trucks, with no setup fee and no long-term contract. No one can guarantee loads or rates. See [dispatch for new authority](/dispatch-for-new-authority.html), or if you have not filed yet, [MC number and authority setup](/trucking-authority-setup.html).
+
+### Load Board vs Dispatcher: Should You Self-Dispatch or Hire a Truck Dispatcher?
+URL: https://dispatch.texassolutions.co/blog/dispatcher-vs-self-dispatch-load-board.html
+Published: 2026-10-21
+
+Every owner-operator ends up asking the same question: **load board vs dispatcher**. Do you keep paying for a load board and book your own freight, or hand that work to a truck dispatcher for a percentage? There is no single right answer. This guide lays out the real costs of **dispatcher vs self-dispatch** so you can decide with your own numbers.
+
+## What self-dispatch really costs
+
+Self-dispatch looks free apart from the board subscription. It is not. Here is where the cost hides:
+
+- **Time.** Searching boards, calling brokers, sending carrier packets, negotiating and checking rate confirmations easily takes a couple of hours a day. Those hours come out of driving time, sleep or home time.
+- **Rate negotiation.** Brokers negotiate all day. If you take the posted rate because you are tired or in a hurry, you leave money on the table on every load.
+- **Deadhead.** Booking one load at a time often means delivering into a market with no outbound freight and driving empty to the next one. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+- **Paperwork.** Invoices, detention claims and lumper receipts get missed when you are also the driver.
+
+## What a dispatcher costs
+
+A dispatcher usually charges a percentage of weekly gross. At Texas Solutions it is 5% for OTR semis, 8% for hotshots and 10% for box trucks, with no setup fee and no long-term contract. On a semi grossing $8,000 a week, 5% is $400.
+
+## A worked example (hypothetical)
+
+Take a dry van semi grossing $8,000 a week on self-dispatch, with 18% deadhead.
+
+| | Self-dispatch | With a dispatcher |
+|---|---|---|
+| Weekly gross | $8,000 | $8,400 (better rates on 4 loads) |
+| Dispatch fee | $0 | $420 (5%) |
+| Empty miles | 450 | 300 |
+| Fuel saved on 150 fewer empty miles (about 6.5 mpg, $3.70/gal) | | about $85 |
+| Hours on the phone per week | about 12 | about 2 |
+
+In this example the fee is roughly covered by the higher rates and lower fuel cost, and the carrier gets about 10 hours a week back. Change the numbers and the answer changes. That is the point: run your own. The [load profitability calculator](/load-profitability-calculator.html) and [deadhead miles calculator](/deadhead-miles-calculator.html) help.
+
+## When self-dispatch makes sense
+
+- You already have steady direct freight or a dedicated lane.
+- You enjoy negotiating and have the time to do it well.
+- You run local or regional loads with the same customers every week.
+- Your margins are so tight that any fee breaks the budget, and you would rather spend the time.
+
+## When a dispatcher makes sense
+
+- You spend more time on the phone than you want to, or you are calling brokers while driving.
+- Your deadhead percentage is high and you keep getting stuck in weak markets.
+- You have new authority and need brokers who will set you up.
+- You run more than one truck and are dispatching at night.
+- Paperwork is slipping and invoices are going out late.
+
+## How to find high paying loads either way
+
+Whether you self-dispatch or not, the same habits pay:
+
+1. **Judge loads per total mile, including deadhead.** A $3.20 load with 120 empty miles can pay less than a $2.90 load next door. See [best paying loads per mile](/blog/what-is-a-good-rate-per-mile-trucking-2026.html).
+2. **Plan the reload before you accept the load.** Check outbound freight in the delivery market.
+3. **Negotiate every time.** Ask for more, especially on short-notice and hard-to-cover loads. Our guide on [rate negotiation with brokers](/blog/how-to-negotiate-freight-rates.html) has scripts.
+4. **Build repeat lanes.** Brokers rebook carriers who deliver on time and answer the phone.
+
+## A middle path
+
+You do not have to choose all or nothing. Some carriers keep the board for their own repeat freight and use a dispatcher for the rest, or try a dispatcher for a few weeks and compare. With Texas Solutions your first load is dispatched free, so you can compare one real week. [Talk to a dispatcher](/contact.html) or read [is a truck dispatcher worth it](/blog/is-a-truck-dispatcher-worth-it.html).
+
+### Cheapest Truck Dispatch Service? How to Compare Dispatch Fees and Their Real Cost
+URL: https://dispatch.texassolutions.co/blog/cheapest-truck-dispatch-service-real-cost.html
+Published: 2026-10-21
+
+Everyone wants the **cheapest truck dispatch service**. That is fair: the fee comes straight out of your gross. But the lowest number in an ad is often not the lowest cost once the extras are added. This guide shows how **truck dispatch cost** is calculated, how a **dispatch fee percentage** compares with a **flat rate** or **weekly dispatch fee**, and what to check before you sign.
+
+## The three ways dispatchers charge
+
+| Model | How it works | Good for | Watch out for |
+|---|---|---|---|
+| Percentage of weekly gross | A set % of what the truck books each week | Carriers whose weeks vary | Check what "gross" includes |
+| Flat weekly fee | Same dollar amount every week | Steady, high-gross trucks | Due even when the truck sits |
+| Per load | A fee on each load booked | Occasional dispatch | Can add up on short loads |
+
+Most independent dispatchers use a percentage, commonly quoted from about 3% to 10% depending on equipment and services. Read more in [dispatch percentage vs flat fee](/blog/dispatch-percentage-vs-flat-fee.html).
+
+## What 5% truck dispatch really costs
+
+At 5% of weekly gross, the fee moves with your week:
+
+| Weekly gross | 5% fee | 8% fee (hotshot) | 10% fee (box truck) |
+|---|---|---|---|
+| $4,000 | $200 | $320 | $400 |
+| $6,000 | $300 | $480 | $600 |
+| $8,000 | $400 | $640 | $800 |
+| $10,000 | $500 | $800 | $1,000 |
+
+Now compare a hypothetical flat weekly fee of $350. In a $10,000 week it is cheaper than 5%. In a $4,000 week, or a week the truck is in the shop, you still pay $350, and $350 on zero gross is the most expensive dispatch there is. Run your own numbers in the [dispatch fee calculator](/estimate.html).
+
+## Hidden costs that make "cheap" expensive
+
+A low percentage can hide a high total. Ask about:
+
+- **Setup or onboarding fees** charged before a single load.
+- **Weekly minimums** that apply even when you do not run.
+- **Paperwork charges** per broker packet, invoice or rate confirmation.
+- **Long contracts** with penalties for leaving. Look for **no contract truck dispatch**: a signed agreement with a short notice period, not a 12-month lock-in.
+- **Forced dispatch.** A dispatcher paid on volume may push cheap loads. **No forced dispatch** means you approve every load.
+- **Low rates.** A dispatcher who books the first posted rate costs you more per load than any fee difference.
+
+## Cheapest fee vs best value
+
+Two dispatchers, same semi, same week:
+
+- Dispatcher A charges 4%, takes the posted rates and leaves you with 20% deadhead.
+- Dispatcher B charges 5%, negotiates $150 more across the week and plans the reload so you run 100 fewer empty miles.
+
+Dispatcher B costs about $80 more in fee on $8,000 gross but puts more money in your pocket. Use the [load profitability calculator](/load-profitability-calculator.html) to compare offers on your own lanes.
+
+## Questions to ask about price
+
+1. Is the fee a percentage of gross, a flat weekly amount or per load?
+2. What counts as gross: linehaul only, or detention and fuel surcharge too?
+3. Is there a setup fee, minimum or contract term?
+4. What paperwork is included in the fee?
+5. Do I approve every load?
+6. Can I try a load first?
+
+## Texas Solutions pricing, in writing
+
+- 5% of weekly gross for OTR semis (dry van, reefer, flatbed, step deck, power only).
+- 8% for hotshots, 10% for box trucks and straight trucks.
+- No flat rate, no setup fee, no monthly subscription, no long-term contract.
+- Broker packets, rate confirmations and invoicing included.
+- You approve every load. First load dispatched free.
+
+Local and regional work is quoted separately. See the full [truck dispatch rates](/truck-dispatch-rates.html) page or [talk to a dispatcher](/contact.html).
+
+### Best Truck Dispatch Service for Owner-Operators in 2026: How to Compare
+URL: https://dispatch.texassolutions.co/blog/best-truck-dispatch-service-for-owner-operators-2026.html
+Published: 2026-10-21
+
+Searching for the **best truck dispatch service for owner-operators in 2026** gives you dozens of companies that all say they are the best. None of those claims can be checked. What you can check is how a dispatch service charges, what it puts in writing and how it treats you on the first load. This guide gives you a way to compare truck dispatching services across the USA on the things that actually affect your weekly gross.
+
+## What a truck dispatch service should do for you
+
+A truck dispatch service works for the carrier. Under your own MC authority, a dispatcher:
+
+- Searches load boards and broker networks for freight that fits your equipment and lanes.
+- Negotiates the rate before the load reaches you.
+- Sends your carrier packet to brokers and checks every rate confirmation.
+- Plans the next load so you do not deadhead across a state for it.
+- Handles invoicing, detention and lumper paperwork, and factoring documents if you factor.
+
+If a "dispatcher" wants you to haul under their MC or asks for the broker's payment to go to them, that is not dispatch. Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html) before you sign anything.
+
+## Seven things to compare
+
+| What to check | Good sign | Warning sign |
+|---|---|---|
+| Fee | A published percentage or rate, in writing | "We'll talk about price later" |
+| Upfront cost | No setup fee, or a small one you understand | Large payment before any load is booked |
+| Contract | No long-term contract, clear notice period | 6 or 12 month lock-in with penalties |
+| Load approval | You approve every load: no forced dispatch | Loads booked without your OK |
+| Equipment | Experience with your trailer or truck type | "We do everything" with no detail |
+| Availability | Reachable 24/7 by phone, text or WhatsApp | Office hours only, email replies next day |
+| Paperwork | Broker packets, rate cons and invoicing included | Extra charge for every document |
+
+### 1. The fee and how it is calculated
+
+Ask what the fee is based on. A percentage of weekly gross means you pay more in a good week and less in a slow one. A flat weekly fee is due even when your truck sits. Compare both in [dispatch percentage vs flat fee](/blog/dispatch-percentage-vs-flat-fee.html) and work out your own number with the [dispatch fee calculator](/estimate.html).
+
+### 2. No contract truck dispatch
+
+A good dispatcher keeps you because the loads are good, not because a contract says you cannot leave. You still need a signed dispatch agreement: it sets your percentage, what is included and how either side can end the service. Look for no long-term contract and a short notice period.
+
+### 3. No forced dispatch
+
+You own the truck and the authority, so you decide which loads run. A dispatcher can recommend; you approve. If you ever feel pushed into a cheap load "to keep the relationship", the relationship is the problem.
+
+### 4. Equipment experience
+
+Reefer, flatbed, hotshot, box truck and power only freight each move through different brokers and boards. Ask the dispatcher how they find loads for your exact setup. Our pages for [reefer dispatch](/reefer-dispatch.html), [flatbed and step deck dispatch](/flatbed-dispatch.html), [box truck dispatch](/box-truck-dispatch.html), [hotshot dispatch](/hotshot-dispatch.html), [dry van dispatch](/dry-van-dispatch.html) and [power only dispatch](/power-only-dispatch.html) show what that looks like.
+
+### 5. Help with new authority
+
+If your MC number is new, many brokers will not book you yet. The best dispatch service for a new carrier knows which brokers accept new authority. See [how to get loads with a new MC number](/blog/how-to-get-loads-with-new-mc-number.html).
+
+### 6. A 24/7 truck dispatch service
+
+OTR freight does not stop at 5 p.m. A cancelled load at 9 p.m. or a reload on Sunday morning needs someone who answers. Ask who picks up the phone at night.
+
+### 7. Paperwork included
+
+Broker setup packets, rate confirmations, invoicing and detention claims take hours every week. Check whether they are part of the fee or billed on top.
+
+## Independent truck dispatcher or dispatch company?
+
+An independent truck dispatcher is often one person working a handful of trucks. That can mean very personal service, but nobody covers when that person sleeps or takes a day off. A dispatch company has a team, so there is cover around the clock, but you should still have a main contact who knows your truck. Ask both how many trucks each dispatcher handles.
+
+## Questions to ask before you sign
+
+1. What is your fee, and is it a percentage of gross or a flat weekly amount?
+2. Is there a setup fee, a minimum or a contract term?
+3. Do I approve every load before it is booked?
+4. Who signs rate confirmations?
+5. How do you find loads for my equipment and lanes?
+6. Do you work with new MC authority?
+7. What paperwork is included?
+8. How do I reach you at night and on weekends?
+9. Can I try one load before I commit?
+
+## How Texas Solutions answers those questions
+
+- **Fee:** 5% of weekly gross for OTR semis (dry van, reefer, flatbed, step deck, power only), 8% for hotshots, 10% for box trucks and straight trucks. Local and regional work is quoted separately.
+- **Upfront cost:** none. No setup fee, no flat rate, no monthly subscription.
+- **Contract:** no long-term contract. A signed dispatch agreement sets your percentage and notice period.
+- **Load approval:** you approve every load. No forced dispatch.
+- **New authority:** we work with new MC numbers from day one.
+- **Availability:** dispatchers available 24/7 by call, text or WhatsApp at (838) 910-3147.
+- **Trial:** your first load is dispatched with no dispatch fee.
+
+We do not guarantee rates or earnings; nobody honest can. What we can promise is a clear fee, your approval on every load and someone who answers. [Talk to a dispatcher](/contact.html) or check the [dispatch rates](/truck-dispatch-rates.html).
 
 ### Truck Loads and Load Boards: How They Work for Carriers
 URL: https://dispatch.texassolutions.co/blog/truck-loads-and-load-boards-guide.html
@@ -2654,7 +3054,7 @@ The fee is a percentage of weekly gross, OTR: 5% for semis, 8% for hotshots and 
 URL: https://dispatch.texassolutions.co/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html
 Published: 2026-10-03
 
-Knowing **how to choose a truck dispatcher** can save you money, time and stress. Most dispatchers are honest people doing hard work. But truck dispatch service scams exist, and new owner-operators are common targets. This guide covers the red flags, the questions to ask a truck dispatcher, how to check reviews, and what belongs in a dispatch service agreement.
+Knowing **how to choose a truck dispatcher** can save you money, time and stress. Most dispatchers are honest people doing hard work. But truck dispatch scams exist, and new owner-operators are common targets. This guide covers the red flags, the questions to ask a truck dispatcher, how to check reviews, and what belongs in a dispatch service agreement.
 
 ## Common truck dispatch service scams and red flags
 

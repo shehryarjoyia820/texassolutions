@@ -6,7 +6,7 @@ author: "Texas Solutions Dispatch Team"
 tags:
   - Dispatch
   - Choosing a dispatcher
-keywords: "how to choose a truck dispatcher, truck dispatch service scams, legit truck dispatch companies, questions to ask a truck dispatcher, dispatch service agreement, dispatch service contract, dispatch service reviews, best dispatch companies reviews, most trusted truck dispatch companies, how to find a legit dispatcher"
+keywords: "how to choose a truck dispatcher, how to choose a dispatch company, truck dispatch scams, truck dispatch service scams, legit truck dispatch companies, questions to ask a truck dispatcher, dispatch service agreement, dispatch service contract, dispatch service reviews, best dispatch companies reviews, most trusted truck dispatch companies, how to find a legit dispatcher"
 question: "How do I find a legit truck dispatcher and avoid scams?"
 answer: "Check that the dispatcher has a real business presence, a written agreement, clear fees and no upfront payment demands. Ask for references from current carriers and look at independent reviews. Walk away from anyone who guarantees income, asks you to haul under their authority or pressures you to accept loads."
 faq:
@@ -22,7 +22,7 @@ faq:
     a: "Look at several independent sources, not just the dispatcher's own website. Read detailed reviews, watch for many vague five-star reviews posted at once, and ask for carrier references you can call yourself."
 ---
 
-Knowing **how to choose a truck dispatcher** can save you money, time and stress. Most dispatchers are honest people doing hard work. But truck dispatch service scams exist, and new owner-operators are common targets. This guide covers the red flags, the questions to ask a truck dispatcher, how to check reviews, and what belongs in a dispatch service agreement.
+Knowing **how to choose a truck dispatcher** can save you money, time and stress. Most dispatchers are honest people doing hard work. But truck dispatch scams exist, and new owner-operators are common targets. This guide covers the red flags, the questions to ask a truck dispatcher, how to check reviews, and what belongs in a dispatch service agreement.
 
 ## Common truck dispatch service scams and red flags
 

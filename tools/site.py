@@ -752,7 +752,7 @@ def build_home():
   <div class="prose rv">
     <span class="eyebrow">Truck dispatch USA</span>
     <h2 style="margin-top:8px">Trucking dispatch services for every kind of carrier</h2>
-    <p>{esc(C.COVERAGE)} Texas Solutions is a trucking dispatch company serving carriers across the contiguous 48 states: an independent truck dispatcher team that works for you, not for brokers. Our freight dispatch services cover lanes across the contiguous 48 states: a freight dispatcher for your semi, hotshot or box truck, dispatching trucks for one owner-operator or a whole fleet, and the best truck dispatch company for you is the one that is clear about its fee, so ours is printed on every page. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
+    <p>{esc(C.COVERAGE)} Texas Solutions is a trucking dispatch company serving carriers across the contiguous 48 states: an independent truck dispatcher team that works for you, not for brokers. Our truck dispatching services and freight dispatch services cover lanes across the contiguous 48 states: a freight dispatcher for your semi, hotshot or box truck, dispatching trucks for one owner-operator or a whole fleet, and the best truck dispatch company for you is the one that is clear about its fee, so ours is printed on every page. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
     <ul>
       <li><a href="owner-operator-dispatch.html"><b>Dispatch services for owner-operators</b></a> and small trucking companies: one truck or a small fleet.</li>
       <li><a href="dispatch-for-new-authority.html"><b>Dispatch for new authority</b></a>: brand-new MC numbers from day one.</li>
@@ -945,6 +945,10 @@ def build_rates():
     <p>A flat rate truck dispatch fee is charged every week whether your truck runs or not. A percentage is only paid on what the truck actually grosses, so a slow week costs less. That is why we do not offer flat rate dispatch. Pay per load works out much the same as a percentage: you pay on each load that is hauled, and nothing when the truck sits.</p>
     <h2>Low fee dispatch without the catches</h2>
     <p>Cheap truck dispatch services can cost more if the low rate comes with a setup fee, a long contract, forced loads or extra charges for paperwork. Ours: a 5 percent dispatch service for semis, no upfront fee, no long-term contract, no forced dispatch, and a free trial: your first load is dispatched free. Broker packets, rate confirmations and invoicing are included.</p>
+    <h2>Dispatch fee percentage vs weekly dispatch fee</h2>
+    <p>A weekly dispatch fee is the same dollar amount every week, so it costs most in the weeks you earn least. A dispatch fee percentage moves with your gross. Before you pick the cheapest truck dispatch service, add up the real cost: percentage or weekly fee, plus any setup fee, minimum, contract term or paperwork charge. See <a href="blog/cheapest-truck-dispatch-service-real-cost.html">the real cost of the cheapest truck dispatch service</a>.</p>
+    <h2>Dispatcher vs self-dispatch</h2>
+    <p>Self-dispatch saves the fee but costs hours on load boards and broker calls. A dispatcher earns the fee when better rates, fewer deadhead miles and the hours you get back add up to more than the percentage. Compare both in <a href="blog/dispatcher-vs-self-dispatch-load-board.html">load board vs dispatcher</a>.</p>
   <div class="aside">{contact_side()}</div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
@@ -955,7 +959,7 @@ def build_rates():
     items = [qa, C.FAQS[0], C.FAQS[3], C.FAQS[2], C.FAQS[7]] + PRICING_FAQS
     schemas = [service("Truck Dispatch Rates", desc, "/truck-dispatch-rates.html", "Truck dispatch"), faq_ld(items),
                crumbs_ld([("Dispatch Rates", "/truck-dispatch-rates.html")]), speakable("/truck-dispatch-rates.html", title)]
-    kw = "truck dispatch rates, dispatch rates per mile, flatbed rates per mile, hotshot rates per mile, dry van rates per mile, truck dispatcher percentage, dispatch fee, 5 percent dispatch, 10 percent dispatch, " + HOME_KW
+    kw = "truck dispatch rates, dispatch rates per mile, flatbed rates per mile, hotshot rates per mile, dry van rates per mile, truck dispatcher percentage, dispatch fee, dispatch fee percentage, truck dispatch cost, 5 percent dispatch, 5% truck dispatch, 10 percent dispatch, flat rate truck dispatch, weekly dispatch fee, cheapest truck dispatch service, no contract truck dispatch, no forced dispatch, dispatcher vs self-dispatch, " + HOME_KW
     write("truck-dispatch-rates.html", page("/truck-dispatch-rates.html", title, desc, kw, schemas, body, current="truck-dispatch-rates.html"))
 
 
