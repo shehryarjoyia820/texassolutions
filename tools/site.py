@@ -411,7 +411,7 @@ def page(path, title, description, keywords, schemas, body, current=None, og_typ
 <meta name="bingbot" content="index, follow">
 <meta name="author" content="Texas Solutions">
 <meta name="geo.region" content="US">
-<meta name="theme-color" content="#14110f">
+<meta name="theme-color" content="#0a0a0a">
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="{esc(C.BRAND)}">
 <meta property="og:title" content="{esc(title)}">
