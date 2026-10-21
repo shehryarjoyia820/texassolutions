@@ -1405,6 +1405,43 @@ SECTION_PARENTS = {
 }
 
 
+# Pages about one truck type show that truck's fee; pages for every truck show all three rates;
+# service pages (authority setup, back office, MC lease) show their own price and no rate board.
+ONE_TRUCK_PAGES = {"box-truck-dispatch.html", "hotshot-dispatch.html", "flatbed-dispatch.html", "dry-van-dispatch.html",
+                   "reefer-dispatch.html", "power-only-dispatch.html", "semi-truck-dispatch.html"}
+TOOL_MINI = {
+    "fuel": ("Fuel cost for this truck", "truck-fuel-cost-calculator.html", "truck", "MPG, fuel per mile and the latest diesel price by state."),
+    "cpm": ("Your cost per mile", "cost-per-mile-calculator.html", "cash", "Fixed and variable costs and your own pay, per total and loaded mile."),
+    "profit": ("Is this load worth it?", "load-profitability-calculator.html", "route", "Profit after dispatch and factoring fees, deadhead and your CPM."),
+    "breakeven": ("Break-even calculator", "break-even-calculator.html", "calc", "Miles a month and the rate you need to cover every cost."),
+    "newmc": ("New MC guide", "new-mc.html", "doc", "Every step from USDOT number to your first load."),
+    "ifta": ("IFTA mileage calculator", "ifta-mileage-calculator.html", "doc", "Miles and fuel by state for your quarterly return."),
+    "detention": ("Detention pay calculator", "detention-pay-calculator.html", "clock", "Billable hours and pay from arrival, release and free time."),
+    "fsc": ("Fuel surcharge calculator", "fuel-surcharge-calculator.html", "truck", "Surcharge per mile and per trip by your contract's method."),
+}
+SERVICE_CARDS = {
+    "trucking-authority-setup.html": {"title": "MC authority setup", "amt": "$275", "unit": "one-time",
+        "items": ["USDOT, MC, BOC-3 and UCR filings checked", "Filed in the order that saves time", "Broker packet ready the day you go active",
+                  "Government fees and insurance paid by you"], "cta": "Start my authority", "tools": ["newmc", "breakeven", "cpm"]},
+    "trucking-back-office-services.html": {"title": "Back-office services", "amt": "From $83", "unit": "per IFTA quarter",
+        "items": ["Factoring setup $132, one-time", "IFTA $83 per quarter, Form 2290 $50", "Collections free for dispatch clients",
+                  "Bookkeeping setup $165"], "cta": "Get a quote", "tools": ["ifta", "detention", "fsc"]},
+    "mc-lease.html": {"title": "MC lease", "amt": "18-20%", "unit": "of gross",
+        "items": ["Partner carrier's active authority and insurance filings", "Dispatch included", "Terms in a written lease agreement"],
+        "cta": "Ask about MC lease", "tools": ["cpm", "profit", "breakeven"]},
+}
+
+
+def tool_minis(keys, truck_q=""):
+    out = []
+    for k in keys:
+        name, href, icon, desc = TOOL_MINI[k]
+        if k == "fuel":
+            href += f"?{truck_q}#fuelCalc" if truck_q.startswith("truck=") else "#fuelCalc"
+        out.append(f'<a class="card tool-mini" href="{href}"><div class="icon">{ICONS[icon]}</div><div><b>{esc(name)}</b><p>{esc(desc)}</p></div></a>')
+    return "\n    ".join(out)
+
+
 def build_landing(p):
     kind = landing_pricing(p)
     truck_q = {"box-truck-dispatch.html": "truck=box-truck", "hotshot-dispatch.html": "truck=hotshot", "flatbed-dispatch.html": "truck=flatbed",
@@ -1428,28 +1465,50 @@ def build_landing(p):
     <p>{kind['label']} on OTR pay <b>{pl(kind)} of weekly gross</b>. On a hypothetical weekly gross of {money(kind['gross'][0])}-{money(kind['gross'][1])}, the dispatch fee would be {lo}-{hi}. Gross is revenue, not profit, and local or regional work is quoted separately. No flat rate, no setup fee and no monthly subscription. <a href="estimate.html?{truck_q}">Estimate your fee</a>.</p>"""
     if p.get("pricing_note"):
         what = what.split(f"<h2>{esc(p['nav'])} pricing</h2>")[0] + f"<h2>{esc(p['nav'])} costs</h2>\n    <p>{esc(p['pricing_note'])}</p>"
-    faqs = p["faqs"] + [C.FAQS[0], C.FAQS[5]]
+    faqs = p["faqs"] + [C.FAQS[0], C.FAQS[5]]  # service pages drop the dispatch-cost FAQ below
     others = "".join(f'<a class="chip" href="{o["file"]}">{esc(o["nav"])}</a>' for o in C.LANDING if o["file"] != p["file"] and not o.get("hide_nav"))
     parents = SECTION_PARENTS.get(p["file"], [DISPATCH_CRUMB])
-    body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), parents=parents, extra=f'<div class="chip-row" style="justify-content:flex-start"><span class="chip" ><b>{pl(kind)}</b> of weekly gross</span><span class="chip" >OTR &middot; No flat rate</span></div>')}
+    svc = SERVICE_CARDS.get(p["file"])
+    if svc:
+        chips = f'<span class="chip"><b>{esc(svc["amt"])}</b> {esc(svc["unit"])}</span>'
+        card = (f'<div class="price feat"><h3>{esc(svc["title"])}</h3><div class="amt">{esc(svc["amt"])}<small> {esc(svc["unit"])}</small></div>'
+                f'<ul>{"".join(f"<li>{esc(i)}</li>" for i in svc["items"])}</ul>'
+                f'<a class="btn btn-red" href="{INQUIRY}" data-cta="service_quote">{esc(svc["cta"])}</a>'
+                f'<a class="price-link" href="trucking-business-services.html">All services and prices</a></div>')
+        tools, board = tool_minis(svc["tools"]), ""
+        faqs = p["faqs"] + [C.FAQS[5]]
+    else:
+        if p["file"] in ONE_TRUCK_PAGES:
+            chips = f'<span class="chip"><b>{pl(kind)}</b> of weekly gross</span><span class="chip">OTR &middot; No flat rate</span>'
+            card = (f'<div class="price feat"><h3>{kind["label"]}</h3><div class="amt">{pl(kind)}<small> of weekly gross</small></div>'
+                    f'<ul><li>OTR operations</li><li>No flat rate or setup fee</li><li>About {lo}-{hi}/week on an example gross</li></ul>')
+        else:
+            chips = f'<span class="chip"><b>{M['pct'][0]}-8%</b> of weekly gross</span><span class="chip">OTR &middot; No flat rate</span>'
+            card = (f'<div class="price feat"><h3>Dispatch fees</h3><div class="amt">{M['pct'][0]}-8%<small> of weekly gross</small></div>'
+                    f'<ul><li>Semi trucks {pl(M)}</li><li>Hotshots 7%</li><li>Box and straight trucks 8%</li><li>OTR, no flat rate or setup fee</li></ul>')
+            what = what.replace(
+                f"<p>{kind['label']} on OTR pay <b>{pl(kind)} of weekly gross</b>. On a hypothetical weekly gross of {money(kind['gross'][0])}-{money(kind['gross'][1])}, the dispatch fee would be {lo}-{hi}.",
+                f"<p>Dispatch is a percentage of weekly gross by truck type, OTR: <b>semi trucks {pl(M)}, hotshots 7%, box and straight trucks 8%</b>.")
+        card += f'<a class="btn btn-red" href="{INQUIRY}" data-cta="talk">Talk to a Dispatcher</a><a class="price-link" href="estimate.html?{truck_q}">Calculate my fee</a></div>'
+        tools = tool_minis(["fuel", "cpm", "profit"], truck_q)
+        board = f"""<section class="sec sec-dark"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Rough rates per mile{f" for {esc(p['nav'].replace(' Dispatch', '').lower())}" if p["file"] in C.BOARD_EQUIPMENT else ""}</h2></div>
+  {rate_board(C.BOARD_EQUIPMENT.get(p["file"]))}
+</div></section>
+"""
+    body = f"""{phero(p['nav'], esc(p['h1']), esc(p['lede']), parents=parents, extra=f'<div class="chip-row" style="justify-content:flex-start">{chips}</div>')}
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(p['h1'] if p.get('guide') else f"What is {p['nav'].lower().replace('mc ', 'MC ')} from Texas Solutions?", p['answer'])}</div></section>
 <section class="sec"><div class="wrap two">
   <div class="prose rv">
 {body_p}{sections}{what}
   </div>
   <div class="aside">
-    <div class="price feat"><h3>{kind['label']}</h3><div class="amt">{pl(kind)}<small> of weekly gross</small></div><ul><li>OTR operations</li><li>No flat rate or setup fee</li><li>About {lo}-{hi}/week on an example gross</li></ul><a class="btn btn-red" href="{INQUIRY}" data-cta="talk">Talk to a Dispatcher</a><a class="price-link" href="estimate.html?{truck_q}">Calculate my fee</a></div>
-    <a class="card tool-mini" href="truck-fuel-cost-calculator.html?{truck_q if truck_q.startswith('truck=') else ''}#fuelCalc"><div class="icon">{ICONS['truck']}</div><div><b>Fuel cost for this truck</b><p>MPG, fuel per mile and the latest diesel price by state.</p></div></a>
-    <a class="card tool-mini" href="cost-per-mile-calculator.html"><div class="icon">{ICONS['cash']}</div><div><b>Your cost per mile</b><p>Fixed and variable costs and your own pay, per total and loaded mile.</p></div></a>
-    <a class="card tool-mini" href="load-profitability-calculator.html"><div class="icon">{ICONS['route']}</div><div><b>Is this load worth it?</b><p>Profit after dispatch and factoring fees, deadhead and your CPM.</p></div></a>
+    {card}
+    {tools}
     {contact_side()}
   </div>
 </div></section>
-<section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Rough rates per mile{f" for {esc(p['nav'].replace(' Dispatch', '').lower())}" if p["file"] in C.BOARD_EQUIPMENT else ""}</h2></div>
-  {rate_board(C.BOARD_EQUIPMENT.get(p["file"]))}
-</div></section>
-<section class="sec sec-soft"><div class="wrap">
+{board}<section class="sec sec-soft"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">FAQ</span><h2>{esc(p['nav'])} questions</h2></div>
   {faq_html(faqs)}
   <div class="chip-row mt-l" style="justify-content:flex-start">{others}</div>

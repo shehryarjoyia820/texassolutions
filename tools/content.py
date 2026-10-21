@@ -459,6 +459,7 @@ LANDING = [
     },
     {
         "file": "trucking-back-office-services.html", "nav": "Back-Office Services", "kind": "semi",
+        "pricing_note": "Factoring setup is $132 one-time, IFTA filing $83 per quarter, Form 2290 $50, bookkeeping setup $165, and collections are free for dispatch clients (11% of the amount recovered for others). Government fees, insurance premiums and taxes are paid directly by you.",
         "title": "Trucking Back-Office Services: Invoicing, IFTA & Setup",
         "description": "Trucking back-office services with dispatch: broker packets, invoicing, detention and lumper collection, factoring setup, IFTA filing, DOT help, MC setup.",
         "keywords": "trucking back office services, trucking paperwork services, rate negotiation for truckers, broker carrier packet setup, factoring for trucking companies, IFTA filing services, trucking compliance services, MC authority setup, trucking invoicing service, trucking billing services, factoring and dispatch services, IFTA filing service, trucking compliance services, DOT compliance help, MC authority setup service, detention and lumper fee collection, trucking accounting and dispatch, ELD and dispatch support, carrier setup with brokers",

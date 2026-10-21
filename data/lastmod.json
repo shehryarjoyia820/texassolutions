@@ -425,7 +425,7 @@
  },
  "box-truck-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "02df3447464b791ec64bf252c5691125779a9fcd"
+  "hash": "5606a303fbe361b7528378fa17f42b2fd0caa9fc"
  },
  "break-even-calculator.html": {
   "date": "2026-10-21",
@@ -653,7 +653,7 @@
  },
  "dispatch-for-new-authority.html": {
   "date": "2026-10-21",
-  "hash": "5fe72ded91a5a8bcdf060c8a506665cf639843e2"
+  "hash": "be5fd436bea4b76ff366ae4437bab0e158ca5205"
  },
  "dispatch.html": {
   "date": "2026-10-21",
@@ -665,7 +665,7 @@
  },
  "dry-van-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "1ba607d91186e37077eca298a5f230a0a18a541d"
+  "hash": "9e9b036e4ddd12afc2d96be3ac463ffd5e689762"
  },
  "estimate.html": {
   "date": "2026-10-21",
@@ -677,7 +677,7 @@
  },
  "flatbed-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "ce1f6718079258c6b5717a640aba8c179fe27ab5"
+  "hash": "79411500b12a2433fe74e2437e62f9aa067a4b7c"
  },
  "freight-class-calculator.html": {
   "date": "2026-10-21",
@@ -689,7 +689,7 @@
  },
  "hotshot-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "39059423a83cb0cc1a39f2c0a5f7851943df9331"
+  "hash": "9edd6119c31a4b93271d61ffa8db120228329a93"
  },
  "hours-of-service-calculator.html": {
   "date": "2026-10-21",
@@ -713,7 +713,7 @@
  },
  "mc-lease.html": {
   "date": "2026-10-21",
-  "hash": "03ec25e51b28abf32294309a9c2b81639c630ff9"
+  "hash": "27d88c6a05e2f2101f182d6d38e2c06e51fbea0b"
  },
  "new-mc.html": {
   "date": "2026-10-21",
@@ -721,7 +721,7 @@
  },
  "owner-operator-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "bcb401797b4b01e117864193007023d81b3d3246"
+  "hash": "d7bbe486e24fab8bfde865ec9909602d136ad620"
  },
  "per-diem-calculator.html": {
   "date": "2026-10-21",
@@ -729,7 +729,7 @@
  },
  "power-only-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "dd0ad2d28de7a67ce0ab8bb65485087f4492634e"
+  "hash": "2c334862450c1dc0ae1e1da3b3d3f2b20eea3a15"
  },
  "privacy.html": {
   "date": "2026-10-21",
@@ -737,11 +737,11 @@
  },
  "reefer-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "63faf37e897bd37192b9c9cc0d6d0e23792b976c"
+  "hash": "6a50822fec1a000ea5963f0f53af28765f01cdc1"
  },
  "semi-truck-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "4f10a92adb32af05d70d5b17486261dec54cfd96"
+  "hash": "ab76d9942803a79de5a95076f1f1712ff2aa9378"
  },
  "sign-contract.html": {
   "date": "2026-10-21",
@@ -749,7 +749,7 @@
  },
  "small-fleet-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "405e0687ec6227755e0194218a4a133db904431c"
+  "hash": "52219ef079f335762ffc5f567b022c4054b671bb"
  },
  "terms.html": {
   "date": "2026-10-21",
@@ -757,7 +757,7 @@
  },
  "texas-truck-dispatch.html": {
   "date": "2026-10-21",
-  "hash": "41fd59ad0982835a28d8ba5fd2a5ee6412e2ebb6"
+  "hash": "3686435d7db3a8bace2d0d32903dbbe06852d43e"
  },
  "tools.html": {
   "date": "2026-10-21",
@@ -977,11 +977,11 @@
  },
  "trucking-authority-setup.html": {
   "date": "2026-10-21",
-  "hash": "416907605ab9aaa836dc13f6cb20a90c726d9448"
+  "hash": "23ad48dabde8112c049186bda81fe887c91b405d"
  },
  "trucking-back-office-services.html": {
   "date": "2026-10-21",
-  "hash": "9d821025d0b6a71a94612bfc3f5bb06d42b9a3ad"
+  "hash": "bd7ab9fd9e1fa0d31f4143c09d7955d05bdac02d"
  },
  "trucking-business-services.html": {
   "date": "2026-10-21",
@@ -989,6 +989,6 @@
  },
  "what-does-a-truck-dispatcher-do.html": {
   "date": "2026-10-21",
-  "hash": "f64840b13bbf0c7dab4d38dd69da98fa32d84071"
+  "hash": "ab6efe5362168e826415f5d2d0626d6dee033479"
  }
 }
