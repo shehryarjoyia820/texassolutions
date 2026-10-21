@@ -1107,3 +1107,8 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .cover-list li { display: flex; gap: 12px; align-items: flex-start; background: #141414; border: 1px solid #262626; border-radius: 14px; padding: 16px 18px; color: #e5e5e5; font-weight: 600; }
 .cover-list li::before { content: ""; flex: none; width: 20px; height: 20px; margin-top: 1px; border-radius: 50%; background: var(--green-brand) url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27white%27 stroke-width=%273%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M20 6 9 17l-5-5%27/%3E%3C/svg%3E") center / 12px no-repeat; }
 .sec-ink .ctas .btn-line { color: #fff; }
+
+/* Trucking services: price on each card */
+.svc-card .svc-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 8px; margin: 6px 0 10px; }
+.svc-card .svc-price b { font-size: 26px; font-weight: 800; letter-spacing: -.02em; color: var(--orange-600); }
+.svc-card .svc-price span { font-size: 13px; color: var(--muted); font-weight: 600; }

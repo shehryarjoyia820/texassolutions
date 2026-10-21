@@ -480,6 +480,13 @@ LANDING = [
                 "Detention and lumper fee collection, with times and receipts documented.",
                 "Factoring setup and coordination with your factoring company, if you factor.",
             ]),
+            ("Back-office prices", [
+                "Factoring setup: $132 one-time.",
+                "IFTA filing: $83 per quarter. Form 2290: $50.",
+                "Collections: free for dispatch clients; 11% of the amount recovered for others.",
+                "Bookkeeping setup: $165 one-time. Compliance and permits package: $165 one-time.",
+                "Government fees, insurance premiums and taxes are paid directly by you.",
+            ]),
             ("Compliance and authority", [
                 "IFTA filing support: mileage and fuel records by state each quarter.",
                 "DOT compliance help: keeping filings, insurance and records current.",
@@ -600,7 +607,7 @@ LANDING = [
             "Dispatch from day one of active authority",
             "First load dispatched free",
         ],
-        "pricing_note": "Government fees, insurance and BOC-3 costs are paid directly by you, and FMCSA lists the current filing fees on its website. Ask us about authority setup help when you call; once your authority is active, dispatch is 5% of weekly gross for semis, 7% for hotshots and 8% for box trucks.",
+        "pricing_note": "MC authority setup is $275, one-time, for our help with the USDOT, MC, BOC-3 and UCR filings. Government fees, insurance and BOC-3 costs are paid directly by you, and FMCSA lists the current filing fees on its website. Once your authority is active, dispatch is 5% of weekly gross for semis, 7% for hotshots and 8% for box trucks.",
         "faqs": [
             ("What is a motor carrier number?", "A motor carrier number, or MC number, is the identifier FMCSA issues with your for-hire operating authority. Brokers check it before they book a carrier."),
             ("How long does it take to get trucking authority?", "Many carriers see their authority go active a few weeks after applying, once insurance and BOC-3 filings are on record and the protest period has passed. Timelines vary, so check your status on FMCSA."),
@@ -825,27 +832,28 @@ SEO = {
 }
 
 # -------------------------------------------------------------- business services (beyond dispatch)
-# Shown on trucking-business-services.html. Quoted on request; government fees, insurance and taxes are paid by the carrier.
+# Shown on trucking-business-services.html. (name, description, link or None, price, price note).
+# Prices are our own; government filing fees, insurance premiums and taxes are paid by the carrier.
 BUSINESS_SERVICES = [
     ("Getting started", [
-        ("MC authority setup", "USDOT, MC, BOC-3 and UCR filings in the right order, checked before they go in.", "trucking-authority-setup.html"),
-        ("MC lease (lease-on)", "No authority yet? Haul under an established partner carrier's MC, dispatch included, 18-20% of gross.", "mc-lease.html"),
-        ("Compliance and permits", "IRP plates, IFTA account, state permits and a driver qualification file set up for you.", None),
-        ("Factoring setup", "Compare factoring offers, set up the notice of assignment and get paid faster.", "trucking-back-office-services.html"),
-        ("Partner referrals", "Introductions to insurance agents, ELD providers, fuel cards and drug-testing consortiums.", None),
+        ("MC authority setup", "USDOT, MC, BOC-3 and UCR filings in the right order, checked before they go in.", "trucking-authority-setup.html", "$275", "one-time"),
+        ("MC lease (lease-on)", "No authority yet? Haul under an established partner carrier's MC, dispatch included.", "mc-lease.html", "18-20%", "of gross"),
+        ("Compliance and permits", "IRP plates, IFTA account, state permits, drug-testing enrollment and a driver qualification file set up for you.", None, "$165", "one-time"),
+        ("Factoring setup", "Compare factoring offers, set up the notice of assignment and get paid faster.", "trucking-back-office-services.html", "$132", "one-time"),
+        ("Partner referrals", "Introductions to insurance agents, ELD providers, fuel cards and drug-testing consortiums.", None, "Free", ""),
     ]),
     ("Staying compliant", [
-        ("IFTA and Form 2290 filing", "Quarterly fuel tax returns from your mileage and fuel records, and the annual heavy vehicle use tax.", "trucking-back-office-services.html"),
-        ("Safety audit preparation", "A mock new-entrant audit so your files, logs and maintenance records are ready before FMCSA asks.", None),
-        ("ELD and logbooks", "ELD setup and regular log reviews to catch hours-of-service problems early.", None),
-        ("DOT drug and alcohol testing", "Consortium enrollment, pre-employment testing and Clearinghouse queries through our partners.", None),
+        ("IFTA and Form 2290 filing", "Quarterly fuel tax returns from your mileage and fuel records, and the annual heavy vehicle use tax.", "trucking-back-office-services.html", "$83", "per IFTA quarter, 2290 $50"),
+        ("Safety audit preparation", "A mock new-entrant audit so your files, logs and maintenance records are ready before FMCSA asks.", None, "$219", "one-time"),
+        ("ELD and logbooks", "ELD setup and regular log reviews to catch hours-of-service problems early.", None, "$110", "one-time"),
+        ("DOT drug and alcohol testing", "Consortium enrollment, pre-employment testing and Clearinghouse queries through our partners.", None, "Free referral", "full setup in compliance package"),
     ]),
     ("Growing your business", [
-        ("Accounting and bookkeeping", "Per-load income and expense tracking so you know what each truck and lane really earns.", None),
-        ("Collections", "Follow-up on late invoices, detention, layover and TONU charges until they are paid.", "trucking-back-office-services.html"),
-        ("Driver hiring", "Screened CDL drivers with a driver qualification file, for solo and team trucks.", None),
-        ("Carrier websites", "A clean website that makes your company look established to brokers, shippers and drivers.", None),
-        ("Trucking SEO", "Search visibility so shippers and drivers find your company on Google.", None),
-        ("Trucking social media", "Regular posts that build trust with shippers and help you recruit drivers.", None),
+        ("Accounting and bookkeeping", "Per-load income and expense tracking so you know what each truck and lane really earns.", None, "$165", "one-time setup"),
+        ("Collections", "Follow-up on late invoices, detention, layover and TONU charges until they are paid.", "trucking-back-office-services.html", "Free", "for dispatch clients, 11% of recovered for others"),
+        ("Driver hiring", "Screened CDL drivers with a driver qualification file, for solo and team trucks.", None, "$550", "solo driver, $825 team"),
+        ("Carrier websites", "A clean website that makes your company look established to brokers, shippers and drivers.", None, "From $219", "+ $39/mo, free for dispatch clients"),
+        ("Trucking SEO", "Search visibility so shippers and drivers find your company on Google.", None, "Custom quote", "after a free audit"),
+        ("Trucking social media", "Regular posts that build trust with shippers and help you recruit drivers.", None, "Custom quote", ""),
     ]),
 ]

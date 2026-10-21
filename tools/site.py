@@ -1117,11 +1117,13 @@ def build_services():
             "bookkeeping, collections, driver hiring and SEO.")
     groups = ""
     for head, items in C.BUSINESS_SERVICES:
+        def price(pr, note):
+            return f'<div class="svc-price"><b>{esc(pr)}</b>{f"<span>{esc(note)}</span>" if note else ""}</div>'
         cards = "\n".join(
-            (f'    <a class="card rv" href="{href}"><div class="icon">{ICONS["check"]}</div><h3>{esc(n)}</h3><p>{esc(d)}</p><span class="more">Learn more &rarr;</span></a>'
+            (f'    <a class="card svc-card rv" href="{href}"><div class="icon">{ICONS["check"]}</div><h3>{esc(n)}</h3>{price(pr, note)}<p>{esc(d)}</p><span class="more">Learn more &rarr;</span></a>'
              if href else
-             f'    <a class="card rv" href="{INQUIRY}" data-cta="service_quote"><div class="icon">{ICONS["check"]}</div><h3>{esc(n)}</h3><p>{esc(d)}</p><span class="more">Ask for a quote &rarr;</span></a>')
-            for n, d, href in items)
+             f'    <a class="card svc-card rv" href="{INQUIRY}" data-cta="service_quote"><div class="icon">{ICONS["check"]}</div><h3>{esc(n)}</h3>{price(pr, note)}<p>{esc(d)}</p><span class="more">Get started &rarr;</span></a>')
+            for n, d, href, pr, note in items)
         groups += f"""
 <section class="sec"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">{esc(head)}</span><h2>{esc(head)}</h2></div>
@@ -1137,7 +1139,7 @@ def build_services():
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>{groups}
 <section class="sec sec-soft"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Get a quote</span><h2>Tell us what you need</h2><p>Pick the services you want in the message box. Government filing fees, insurance premiums and taxes are paid directly by you.</p></div>
+    <div class="sec-head rv"><span class="eyebrow">Get a quote</span><h2>Tell us what you need</h2><p>Pick the services you want in the message box. Prices are our service fees; government filing fees, insurance premiums and taxes are paid directly by you.</p></div>
     {lead_form("servicesForm", "Trucking services inquiry", "Send My Request")}
   </div>
   <div class="aside">{contact_side()}</div>
