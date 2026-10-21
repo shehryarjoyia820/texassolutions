@@ -471,13 +471,17 @@ INQUIRY = "contact.html#inquiry"
 FIRST_LOAD = "contact.html?intent=first-load-free#inquiry"
 
 
-def lead_ctas(home=False, dark=False):
-    """Contacting a dispatcher is the main action; the fee calculator is a secondary link."""
+def lead_ctas(home=False, dark=False, calc=False):
+    """Contacting a dispatcher is the main action; the fee calculator is a secondary link.
+    calc=True (home hero, where the free-load form sits) swaps the first-load button for the fee calculator."""
     talk = "#contact" if home else INQUIRY
     free = "?intent=first-load-free#contact" if home else FIRST_LOAD
+    second = (f'<a class="btn btn-line" href="estimate.html" data-cta="calculator">{ICONS["calc"]}Calculate my dispatch fee</a>' if calc
+              else f'<a class="btn btn-line" href="{free}" data-cta="first_load">Start Your First Load Free</a>')
+    sub_first = '<a href="#claim">Claim your free first load</a>' if calc else '<a href="estimate.html">Calculate your dispatch fee</a>'
     return (f'<div class="ctas"><a class="btn {"btn-dark" if dark else "btn-red"}" href="{talk}" data-cta="talk">{ICONS["phone"]}Talk to a Dispatcher</a>'
-            f'<a class="btn btn-line" href="{free}" data-cta="first_load">Start Your First Load Free</a></div>'
-            f'<p class="cta-sub"><a href="estimate.html">Calculate your dispatch fee</a> &middot; <a href="tel:{C.PHONE_E164}">Call</a> &middot; '
+            f'{second}</div>'
+            f'<p class="cta-sub">{sub_first} &middot; <a href="tel:{C.PHONE_E164}">Call</a> &middot; '
             f'<a href="sms:{C.PHONE_E164}">Text</a> &middot; <a href="{WA_URL}" target="_blank" rel="noopener">WhatsApp</a> &middot; <a href="contact.html#callback">Request a callback</a></p>')
 
 
@@ -724,7 +728,7 @@ def build_home():
       <span class="eyebrow"><span class="dot"></span>{esc(C.COVERAGE)}</span>
       <h1 class="split">USA Truck Dispatch Service that keeps your <em class="hl">truck loaded.</em></h1>
       <p class="lede">We find, negotiate and book freight for owner-operators and small fleets running under their own MC authority: dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load. Office in Midland, Texas; service across the USA.</p>
-      {lead_ctas(home=True)}
+      {lead_ctas(home=True, calc=True)}
       <p class="hero-tools">Free tools, no signup: <a href="truck-fuel-cost-calculator.html">Fuel cost</a> <a href="cost-per-mile-calculator.html">Cost per mile</a> <a href="load-profitability-calculator.html">Load profit</a> <a href="tools.html">All tools &rarr;</a></p>
       <div class="hero-stats">
         <div><b data-count="{M['pct'][0]}" data-suffix="%">{pl(M)}</b><span>Semi trucks, OTR</span></div>
@@ -733,13 +737,22 @@ def build_home():
         <div><b>24/7</b><span>Dispatchers, first load free</span></div>
       </div>
     </div>
-    <aside class="hero-card" aria-label="Dispatch pricing">
-      <h2>Simple percentage pricing</h2>
-      <div class="row"><div><b>Semi trucks</b><br><span>Dry van, reefer, flatbed, step deck, power only &middot; example gross {money(M['gross'][0])}-{money(M['gross'][1])}/wk</span></div><span class="pct">{pl(M)}</span></div>
-      <div class="row"><div><b>Hotshot</b><br><span>Gooseneck &amp; flatbed trailers &middot; example gross $7,000-$9,000/wk</span></div><span class="pct">7%</span></div>
-      <div class="row"><div><b>Box &amp; straight trucks</b><br><span>Example gross $7,000-$9,000/wk</span></div><span class="pct">8%</span></div>
-      <a class="btn btn-red" href="estimate.html">Calculate my dispatch fee</a>
-      <small>OTR operations. Rough estimate; final percentage set in your dispatch agreement. Earnings not guaranteed.</small>
+    <aside class="hero-card hero-form" id="claim" aria-label="Claim your free first load">
+      <span class="hf-tag">First load free</span>
+      <h2>Claim your free first load</h2>
+      <p class="hf-sub">No dispatch fee on your first load. After that: semi {pl(M)}, hotshot 7%, box truck 8%.</p>
+      <form class="form" id="heroClaimForm" data-web3 data-kind="lead" data-subject="Free first load claim (home hero)" data-success="Claim received. A Texas Solutions dispatcher will call you shortly to set up your free first load." novalidate>
+        <input type="hidden" name="intent" value="first_load_free">
+        <div class="hf-grid">
+          <div class="full"><label class="fl" for="hc-name">Full name <i>*</i></label><input type="text" id="hc-name" name="name" autocomplete="name" required></div>
+          <div><label class="fl" for="hc-phone">Phone <i>*</i></label><input type="tel" id="hc-phone" name="phone" autocomplete="tel" required></div>
+          <div><label class="fl" for="hc-email">Email <i>*</i></label><input type="email" id="hc-email" name="email" autocomplete="email" required></div>
+          <div><label class="fl" for="hc-mc">MC or USDOT number <i>*</i></label><input type="text" id="hc-mc" name="mc_dot" inputmode="numeric" placeholder="e.g. MC 123456" required></div>
+          <div><label class="fl" for="hc-eq">Equipment <i>*</i></label><select id="hc-eq" name="equipment" required>{opts(C.EQUIPMENT, "Select equipment")}</select></div>
+          {consent_box("hc")}
+        </div>
+        {form_tail("Claim My Free Load")}
+      </form>
     </aside>
   </div>
 </section>"""

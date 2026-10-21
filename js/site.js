@@ -378,16 +378,16 @@
           sent[sig] = Date.now(); store.set('sessionStorage', 'ts:sent', sent);
           TS.track(kind === 'callback' ? 'callback_request' : 'lead_form_submit', {
             form_id: form.id, equipment: val('equipment') || undefined, trucks: val('trucks') || undefined,
-            mc_status: val('mc_status') || undefined, contact_method: val('contact_method') || undefined, sms_consent: agreed ? 'yes' : 'no'
+            mc_status: val('mc_status') || undefined, mc_dot: val('mc_dot') ? 'yes' : undefined, intent: val('intent') || undefined, contact_method: val('contact_method') || undefined, sms_consent: agreed ? 'yes' : 'no'
           });
           form.reset();
-          show(kind === 'callback' ? 'Callback request received. A dispatcher will call you at the number you gave.' : 'Inquiry received. A Texas Solutions dispatcher will contact you by your preferred method. You do not need to send it again.', true);
+          show(form.getAttribute('data-success') || (kind === 'callback' ? 'Callback request received. A dispatcher will call you at the number you gave.' : 'Inquiry received. A Texas Solutions dispatcher will contact you by your preferred method. You do not need to send it again.'), true);
         })
         .catch(function (err) {
           TS.track('lead_form_error', { form_id: form.id, error_type: err && err.message === 'rejected' ? 'rejected' : 'network' });
           var txt = encodeURIComponent((kind === 'callback' ? 'CALLBACK REQUEST' : 'DISPATCH INQUIRY') + '\nName: ' + val('name') + '\nPhone: ' + (val('phone') || '-') +
             '\nEmail: ' + (val('email') || '-') + '\nEquipment: ' + (val('equipment') || '-') + '\nHome state: ' + (val('home_state') || '-') +
-            '\nTrucks: ' + (val('trucks') || '-') + '\nMC status: ' + (val('mc_status') || '-') + '\nBest time: ' + (val('best_time') || '-'));
+            '\nTrucks: ' + (val('trucks') || '-') + '\nMC status: ' + (val('mc_status') || '-') + '\nMC/USDOT: ' + (val('mc_dot') || '-') + '\nBest time: ' + (val('best_time') || '-'));
           show('Sorry, your details could not be sent, so nothing has reached us yet. Everything you typed is still in the form: please press the button again to retry, or <a href="tel:+18389103147">call (838) 910-3147</a>, or <a href="https://wa.me/18389103147?text=' + txt + '" target="_blank" rel="noopener">send the same details on WhatsApp</a>.', false, true);
         })
         .then(function () { busy = false; btn.disabled = false; btn.textContent = label; });
