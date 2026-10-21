@@ -580,6 +580,14 @@ def equip_cards():
         for p in C.LANDING if not p.get("guide")) + "\n</div>"
 
 
+def marquee():
+    """Scrolling strip of the equipment we dispatch (the list is doubled for a seamless loop)."""
+    items = "".join(f"<span>{esc(e)}</span><i aria-hidden=\"true\"></i>" for e in C.EQUIPMENT)
+    return f"""<div class="marquee" role="region" aria-label="Equipment we dispatch">
+  <div class="marquee-track"><div class="mq-group">{items}</div><div class="mq-group" aria-hidden="true">{items}</div></div>
+</div>"""
+
+
 def features():
     return '<div class="grid g3">\n' + "\n".join(
         f'  <div class="card rv"><div class="icon">{ICONS[FEATURE_ICONS[i]]}</div><h3>{esc(t)}</h3><p>{esc(d)}</p></div>'
@@ -703,8 +711,8 @@ def blog_teaser():
 
 def build_home():
     title = "Truck Dispatch Service for Owner-Operators | 5% Semi, 7% Hotshot, 8% Box Truck | Texas Solutions"
-    desc = (f"Truck dispatch service for owner-operators and small fleets. Semi trucks {pl(M)} and box trucks & hotshots "
-            f"8% of weekly gross (hotshots 7%), OTR. No flat rate, no setup fee. Flatbed loads $5-7/mile. Free estimate.")
+    desc = (f"Truck dispatch service for owner-operators and small fleets. Semi trucks {pl(M)}, hotshots 7% and box trucks "
+            f"8% of weekly gross, OTR. No flat rate, no setup fee. Flatbed loads $5-7/mile. Free estimate.")
     qa = ("How much does truck dispatch cost at Texas Solutions?",
           f"Texas Solutions charges {pl(M)} of weekly gross for OTR semi trucks (dry van, reefer, flatbed, step deck, power only) "
           f"7% for OTR hotshots and 8% for OTR box trucks and straight trucks. There is no flat rate, no setup fee and no "
@@ -714,14 +722,15 @@ def build_home():
   <div class="wrap">
     <div>
       <span class="eyebrow"><span class="dot"></span>{esc(C.COVERAGE)}</span>
-      <h1>USA Truck Dispatch Service that keeps your <em>truck loaded.</em></h1>
+      <h1 class="split">USA Truck Dispatch Service that keeps your <em class="hl">truck loaded.</em></h1>
       <p class="lede">We find, negotiate and book freight for owner-operators and small fleets running under their own MC authority: dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load. Office in Midland, Texas; service across the contiguous 48 states.</p>
       {lead_ctas(home=True)}
       <p class="hero-tools">Free tools, no signup: <a href="truck-fuel-cost-calculator.html">Fuel cost</a> <a href="cost-per-mile-calculator.html">Cost per mile</a> <a href="load-profitability-calculator.html">Load profit</a> <a href="tools.html">All tools &rarr;</a></p>
       <div class="hero-stats">
-        <div><b>{pl(M)}</b><span>Semi trucks, OTR</span></div>
-        <div><b>7-8%</b><span>Hotshot 7%, box truck 8%</span></div>
-        <div><b>1st load</b><span>Free, no setup fee</span></div>
+        <div><b data-count="{M['pct'][0]}" data-suffix="%">{pl(M)}</b><span>Semi trucks, OTR</span></div>
+        <div><b data-count="7" data-suffix="%">7%</b><span>Hotshots, OTR</span></div>
+        <div><b data-count="8" data-suffix="%">8%</b><span>Box &amp; straight trucks</span></div>
+        <div><b>24/7</b><span>Dispatchers, first load free</span></div>
       </div>
     </div>
     <aside class="hero-card" aria-label="Dispatch pricing">
@@ -735,6 +744,11 @@ def build_home():
   </div>
 </section>"""
     body = f"""{hero}
+{marquee()}
+<section class="sec sec-ink"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Dispatch services</span><h2>One dispatcher for whatever you haul</h2><p>Semi trailers, hotshots, box trucks and the back office behind every load.</p></div>
+  {equip_cards()}
+</div></section>
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>
 <section class="sec" id="pricing"><div class="wrap">
   <div class="sec-head center rv"><span class="eyebrow">Truck dispatch rates</span><h2>No flat rate. Pay only a percentage of what your truck grosses.</h2><p>Transparent OTR dispatch pricing for owner-operators and small fleets. No setup fee, no monthly subscription, no long-term contract.</p></div>
@@ -766,8 +780,9 @@ def build_home():
   </div>
   <div class="aside">{answer("Can I hire a truck dispatcher today?", f"Yes. Call, text or WhatsApp {C.PHONE} any time, 24/7. Tell us your truck, authority and lanes; we send a short agreement and start searching loads. Your first load is dispatched free, and new MC numbers are welcome.", "Truck dispatcher for hire")}</div>
 </div></section>
-<section class="sec"><div class="wrap">
+<section class="sec sec-ink"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">How it works</span><h2>Start dispatching in four steps</h2></div>
+  <div class="steps-line" aria-hidden="true"><span></span></div>
   {steps()}
 </div></section>
 <section class="sec sec-soft" id="contact"><div class="wrap two">

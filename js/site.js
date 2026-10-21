@@ -517,3 +517,87 @@
 
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 })();
+
+/* Redesign motion (Oct 2026): headline reveal, staggered sections, counters,
+   scroll progress, steps line and card spotlight. Reduced motion skips them. */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+
+  // stagger the reveal of items in the same grid or list
+  each(document.querySelectorAll('.grid, .faq, .steps, .rate-guide'), function (g) {
+    var i = 0;
+    each(g.children, function (c) { if (c.classList.contains('rv')) c.style.setProperty('--d', Math.min(i++, 8) * 0.08 + 's'); });
+  });
+
+  // headline: wrap each word so it can rise into place
+  if (!reduce) each(document.querySelectorAll('.split'), function (h) {
+    var n = 0;
+    (function walk(node) {
+      each(Array.prototype.slice.call(node.childNodes), function (ch) {
+        if (ch.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          ch.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            var w = document.createElement('span'); w.className = 'w';
+            var s = document.createElement('span'); s.textContent = part; s.style.setProperty('--i', n++);
+            w.appendChild(s); frag.appendChild(w);
+          });
+          node.replaceChild(frag, ch);
+        } else if (ch.nodeType === 1) { walk(ch); }
+      });
+    })(h);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { h.classList.add('go'); }); });
+  });
+  else each(document.querySelectorAll('.split'), function (h) { h.classList.add('go'); });
+
+  // numbers count up when they come into view
+  if (!reduce && 'IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        cio.unobserve(e.target);
+        var el = e.target, to = parseFloat(el.getAttribute('data-count')), suf = el.getAttribute('data-suffix') || '', t0 = null;
+        if (!isFinite(to)) return;
+        var step = function (t) {
+          if (!t0) t0 = t;
+          var k = Math.min(1, (t - t0) / 1200);
+          el.textContent = (k < 1 ? Math.round(to * (1 - Math.pow(1 - k, 3))) : to) + suf;
+          if (k < 1) requestAnimationFrame(step);
+        };
+        el.textContent = '0' + suf;
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    each(document.querySelectorAll('[data-count]'), function (c) { cio.observe(c); });
+  }
+
+  // scroll progress bar and the "how it works" line
+  var bar = null;
+  if (!reduce) { bar = document.createElement('div'); bar.className = 'scroll-progress'; bar.setAttribute('aria-hidden', 'true'); document.body.appendChild(bar); }
+  var lines = document.querySelectorAll('.steps-line');
+  var ticking = false;
+  var update = function () {
+    ticking = false;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.setProperty('--p', max > 0 ? (window.scrollY / max).toFixed(4) : 0);
+    each(lines, function (l) {
+      var r = l.getBoundingClientRect();
+      var p = reduce ? 1 : (window.innerHeight * 0.85 - r.top) / (window.innerHeight * 0.55);
+      l.style.setProperty('--p', Math.max(0, Math.min(1, p)).toFixed(3));
+    });
+  };
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+
+  // soft orange spotlight that follows the cursor on cards
+  if (!reduce) document.addEventListener('pointermove', function (e) {
+    var c = e.target && e.target.closest ? e.target.closest('a.card, .tool-card, .price') : null;
+    if (!c) return;
+    var r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }, { passive: true });
+})();
