@@ -1069,3 +1069,12 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .hero-form .form-status { font-size: 14px; }
 .hero .ctas .btn-line svg { width: 18px; height: 18px; }
 @media (max-width: 480px) { .hero-form .hf-grid { grid-template-columns: 1fr; } .hero-form { padding: 20px; } }
+/* hero claim form: two-column fields like the reference (name|phone, email|MC-DOT, equipment full width) */
+.hero-form .hf-grid { column-gap: 12px; row-gap: 14px; }
+.hero-form label.fl { font-size: 14px; font-weight: 700; color: #57534e; margin-bottom: 6px; }
+.hero-form .form input:not([type=checkbox]), .hero-form .form select { background: #ffffff; border: 1px solid #d6d3d1; border-radius: 6px; height: 46px; padding: 0 12px; font-size: 16px; color: var(--ink); }
+.hero-form select { padding-right: 32px; }
+.hero-form .form input:not([type=checkbox]):focus, .hero-form .form select:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(249,115,22,.15); outline: 0; }
+.hero-form .consent input { height: 18px; width: 18px; }
+@media (max-width: 480px) { .hero-form .hf-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 360px) { .hero-form .hf-grid { grid-template-columns: 1fr; } }

@@ -744,11 +744,11 @@ def build_home():
       <form class="form" id="heroClaimForm" data-web3 data-kind="lead" data-subject="Free first load claim (home hero)" data-success="Claim received. A Texas Solutions dispatcher will call you shortly to set up your free first load." novalidate>
         <input type="hidden" name="intent" value="first_load_free">
         <div class="hf-grid">
-          <div class="full"><label class="fl" for="hc-name">Full name <i>*</i></label><input type="text" id="hc-name" name="name" autocomplete="name" required></div>
-          <div><label class="fl" for="hc-phone">Phone <i>*</i></label><input type="tel" id="hc-phone" name="phone" autocomplete="tel" required></div>
-          <div><label class="fl" for="hc-email">Email <i>*</i></label><input type="email" id="hc-email" name="email" autocomplete="email" required></div>
-          <div><label class="fl" for="hc-mc">MC or USDOT number <i>*</i></label><input type="text" id="hc-mc" name="mc_dot" inputmode="numeric" placeholder="e.g. MC 123456" required></div>
-          <div><label class="fl" for="hc-eq">Equipment <i>*</i></label><select id="hc-eq" name="equipment" required>{opts(C.EQUIPMENT, "Select equipment")}</select></div>
+          <div><label class="fl" for="hc-name">Full name</label><input type="text" id="hc-name" name="name" autocomplete="name" required></div>
+          <div><label class="fl" for="hc-phone">Phone</label><input type="tel" id="hc-phone" name="phone" autocomplete="tel" required></div>
+          <div><label class="fl" for="hc-email">Email</label><input type="email" id="hc-email" name="email" autocomplete="email" required></div>
+          <div><label class="fl" for="hc-mc">MC or DOT # (optional)</label><input type="text" id="hc-mc" name="mc_dot" inputmode="numeric"></div>
+          <div class="full"><label class="fl" for="hc-eq">Equipment</label><select id="hc-eq" name="equipment" required>{opts(C.EQUIPMENT, "Select equipment")}</select></div>
           {consent_box("hc")}
         </div>
         {form_tail("Claim My Free Load")}
