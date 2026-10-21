@@ -59,14 +59,23 @@
   });
 
   /* signatures as JPEG images on white; typed names and the dispatcher's signature use a script font */
-  function scriptSignature(name) {
+  function scriptSignature(name, stamp) {
+    /* stamp: the dispatcher's signature, larger in Great Vibes, slightly tilted, with an orange flourish */
     var c = document.createElement('canvas'); c.width = 900; c.height = 260;
     var x = c.getContext('2d');
+    var face = stamp ? '400 SIZEpx "Great Vibes", "Dancing Script", cursive' : '600 SIZEpx "Dancing Script", cursive';
     x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height);
     x.fillStyle = '#0a0a0a'; x.textBaseline = 'middle';
-    var size = 120; x.font = '600 ' + size + 'px "Dancing Script", cursive';
-    while (x.measureText(name).width > 860 && size > 40) { size -= 6; x.font = '600 ' + size + 'px "Dancing Script", cursive'; }
-    x.fillText(name, 20, 140);
+    var size = stamp ? 170 : 120; x.font = face.replace('SIZE', size);
+    while (x.measureText(name).width > 820 && size > 40) { size -= 6; x.font = face.replace('SIZE', size); }
+    if (stamp) {
+      x.save(); x.translate(30, 128); x.rotate(-0.05); x.fillText(name, 0, 0); x.restore();
+      var w = x.measureText(name).width;
+      x.strokeStyle = '#f97316'; x.lineWidth = 5; x.lineCap = 'round';
+      x.beginPath(); x.moveTo(60, 214); x.bezierCurveTo(260, 236, 520, 226, Math.min(870, w + 70), 186); x.stroke();
+    } else {
+      x.fillText(name, 20, 140);
+    }
     return c.toDataURL('image/jpeg', 0.92);
   }
   function signatureImage() {
@@ -214,8 +223,8 @@
       docId: (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2)).toUpperCase(),
       signedLocal: signed.toString(), signedUtc: signed.toISOString(), ua: navigator.userAgent, page: location.href.split('?')[0]
     };
-    (document.fonts && document.fonts.load ? document.fonts.load('600 40px "Dancing Script"') : Promise.resolve())
-      .then(function () { sig = signatureImage(); info.dispatcherSig = scriptSignature(K.dispatcher_signature); return loadImage(K.logo); })
+    (document.fonts && document.fonts.load ? Promise.all([document.fonts.load('600 40px "Dancing Script"'), document.fonts.load('400 40px "Great Vibes"')]) : Promise.resolve())
+      .then(function () { sig = signatureImage(); info.dispatcherSig = scriptSignature(K.dispatcher_signature, true); return loadImage(K.logo); })
       .then(function (logo) {
         lastDoc = buildPdf(info, sig, logo);
         lastName = 'Texas-Solutions-Dispatch-Agreement-' + (info.company || 'carrier').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') + '.pdf';

@@ -915,7 +915,7 @@ CONTRACT = {
     "attorney_note": ("This template provides a solid commercial foundation, but for ongoing business operations, it is advisable to have "
                       "a U.S. attorney review it to ensure it complies with the laws of the state where your dispatch business operates "
                       "and to tailor clauses such as payment terms, non-circumvention and dispute resolution to your specific needs."),
-    "dispatcher_signature": "Texas Solutions Dispatch",
+    "dispatcher_signature": "Texas Solutions",
     "esign": ("By signing below, I agree that my electronic signature is the legal equivalent of my handwritten signature, "
               "that I am authorized to sign for the Carrier named above, and that I have read and agree to this Agreement."),
 }

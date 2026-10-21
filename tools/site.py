@@ -1271,7 +1271,7 @@ def build_contract():
 </form>
 </div></section>
 <script type="application/json" id="contractData">{json.dumps(data)}</script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&amp;family=Great+Vibes&amp;display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 <script src="js/contract.js?v={asset_version('js/contract.js')}" defer></script>"""
     title = "Sign Your Truck Dispatch Agreement Online | Texas Solutions"
