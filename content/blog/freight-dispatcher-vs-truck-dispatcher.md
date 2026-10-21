@@ -84,7 +84,7 @@ An outside dispatch service is built for carriers who do not want to hire that s
 | Who chooses loads | The fleet's planners | The carrier approves each load |
 | Best fit | Large fleets with steady freight | Owner-operators and small fleets |
 
-For a single truck or a small fleet, paying a full-time dispatcher often does not add up. A percentage-based trucking dispatch service scales with the truck instead. If you run several trucks, see our [small fleet dispatch](/small-fleet-dispatch.html) page.
+For a single truck or a small fleet, paying a full-time dispatcher often does not add up. A percentage-based truck dispatch service scales with the truck instead. If you run several trucks, see our [small fleet dispatch](/small-fleet-dispatch.html) page.
 
 ## How to pick a freight dispatch service
 

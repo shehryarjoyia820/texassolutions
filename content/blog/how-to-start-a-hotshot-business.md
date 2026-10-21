@@ -127,7 +127,7 @@ A dispatcher for hotshot trucks is useful when:
 
 Before you sign with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
 
-## Hotshot trucking dispatch with Texas Solutions
+## Hotshot truck dispatch with Texas Solutions
 
 Texas Solutions is a dispatch service, not a broker or carrier. We dispatch hotshots for owner-operators and small fleets nationwide, with 24/7 remote dispatchers who work with brand-new MC authority from day one. You approve every load before it is booked.
 

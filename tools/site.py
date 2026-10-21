@@ -207,10 +207,8 @@ def tools_nav_items():
 
 
 def header(current):
-    svc = "\n".join(f'          <a href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING if not p.get("hide_nav")) + '\n          <a href="truck-dispatch-by-state.html">Dispatch by State</a>' + '\n          <a href="trucking-business-services.html">All Trucking Services</a>'
     links = "\n".join(f'      <a href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for t, h in nav_links())
     mlinks = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in nav_links())
-    msvc = "\n".join(f'      <a href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING if not p.get("hide_nav")) + '\n      <a href="truck-dispatch-by-state.html">Dispatch by State</a>' + '\n      <a href="trucking-business-services.html">All Trucking Services</a>'
     tnav = tools_nav_items()
     tools_dd = "\n".join(f'          <a href="{f}">{esc(n)}</a>' for n, f in tnav)
     mtools = "\n".join(f'      <a href="{f}">{esc(n)}</a>' for n, f in tnav)
@@ -225,12 +223,8 @@ def header(current):
       <span>Texas Solutions<small>Truck Dispatch</small></span>
     </a>
     <nav class="nav" aria-label="Main">
-      <div class="dd">
-        <button type="button" aria-expanded="false">Dispatch Services &#9662;</button>
-        <div class="dd-menu">
-{svc}
-        </div>
-      </div>
+      <a href="dispatch.html"{' aria-current="page"' if current == "dispatch.html" else ""}>Dispatch</a>
+      <a href="trucking-business-services.html"{' aria-current="page"' if current == "trucking-business-services.html" else ""}>Services</a>
       <div class="dd">
         <button type="button" aria-expanded="false">Tools &#9662;</button>
         <div class="dd-menu wide">
@@ -248,13 +242,9 @@ def header(current):
 </header>
 <nav class="mnav" id="mnav" aria-label="Mobile">
     <a href="index.html">Home</a>
+    <a href="dispatch.html">Dispatch</a>
+    <a href="trucking-business-services.html">Services</a>
 {mlinks}
-    <details class="mnav-group">
-      <summary>Dispatch Services</summary>
-      <div class="mnav-sub">
-{msvc}
-      </div>
-    </details>
     <details class="mnav-group">
       <summary>Free Tools</summary>
       <div class="mnav-sub">
@@ -579,7 +569,13 @@ def rate_board(equip=None):
 
 def no_pct(text):
     """Drop the sentences that quote a percentage (the home page shows no fees; service pages do)."""
-    keep = [s for s in re.split(r"(?<=[.!?])\s+", text) if "%" not in s]
+    keep = []
+    for s in re.split(r"(?<=[.!?])\s+", text):
+        if "%" in s:  # cut the fee clauses; keep the sentence only if enough of it is left
+            s = re.sub(r"[,;:]?\s*[^,;:.]*\d+(?:-\d+)?%[^,;:.]*", "", s).strip(" ,;:.")
+            s = s + "." if len(s.split()) >= 6 else ""
+        if s:
+            keep.append(s)
     return " ".join(keep) or text.split(":")[0] + "."
 
 
@@ -800,8 +796,8 @@ def build_home():
 <section class="sec sec-soft"><div class="wrap two">
   <div class="prose rv">
     <span class="eyebrow">Truck dispatch USA</span>
-    <h2 style="margin-top:8px">Trucking dispatch services for every kind of carrier</h2>
-    <p>{esc(C.COVERAGE)} Texas Solutions is a trucking dispatch company serving carriers across the USA: an independent truck dispatcher team that works for you, not for brokers. Our truck dispatching services and freight dispatch services cover lanes across the USA: a freight dispatcher for your semi, hotshot or box truck, dispatching trucks for one owner-operator or a whole fleet, and the best truck dispatch company for you is the one that is clear about its fee, so ours is printed on every page. Hire a truck dispatcher for one truck or a whole fleet, with professional, reliable dispatch available 24/7 from a remote team across US time zones.</p>
+    <h2 style="margin-top:8px">Truck dispatch for every kind of carrier</h2>
+    <p>{esc(C.COVERAGE)} Texas Solutions is a truck dispatch company serving carriers across the USA: an independent dispatch team that works for you, not for brokers. Our truck dispatch covers semis, hotshots and box trucks, for one owner-operator or a whole fleet. The best truck dispatch company for you is the one that is clear about its fee, so ours is on every service page. Hire a truck dispatcher for one truck or a whole fleet, with dispatchers available 24/7 across US time zones.</p>
     <ul>
       <li><a href="owner-operator-dispatch.html"><b>Dispatch services for owner-operators</b></a> and small trucking companies: one truck or a small fleet.</li>
       <li><a href="dispatch-for-new-authority.html"><b>Dispatch for new authority</b></a>: brand-new MC numbers from day one.</li>
@@ -1037,6 +1033,80 @@ def build_contact():
                crumbs_ld([("Contact", "/contact.html")])]
     kw = "contact truck dispatcher, truck dispatch phone number, truck dispatch WhatsApp, hire a truck dispatcher, need a dispatcher for my truck, " + HOME_KW
     write("contact.html", page("/contact.html", title, desc, kw, schemas, body, current="contact.html"))
+
+
+def build_dispatch_hub():
+    """Dispatch hub: every truck type and who we work with on one page (the menu links here instead of a dropdown)."""
+    path = "/dispatch.html"
+    by_file = {p["file"]: p for p in C.LANDING}
+
+    def cards(files):
+        out = []
+        for f in files:
+            p = by_file[f]
+            t = no_pct(p["description"])
+            t = t if len(t) <= 150 else t[:150].rsplit(" ", 1)[0] + "..."
+            out.append(f'    <a class="card rv" href="{f}"><div class="icon">{ICONS["truck"]}</div><h3>{esc(p["nav"])}</h3><p>{esc(t)}</p><span class="more">Learn more &rarr;</span></a>')
+        return "\n".join(out)
+
+    covers = ["Load search and rate negotiation", "Lane and deadhead planning", "Broker credit and authority checks before you book",
+              "Carrier setup packets and rate confirmations", "Invoices to you or your factoring company",
+              "Detention, layover and TONU follow-up", "A weekly gross and load summary", "No long-term contract, no forced dispatch"]
+    compare = [("How it is charged", "A percentage of what the truck grosses that week", "The same dollar amount every week"),
+               ("Slow week or truck in the shop", "You pay little or nothing", "The full fee is still due"),
+               ("Big week", "The fee grows with your gross", "The fee stays the same"),
+               ("Best for", "New authorities, part-time, seasonal and home-time-heavy trucks", "Established trucks with steady high gross"),
+               ("What the dispatcher is paid for", "Higher rates and more loaded miles", "Keeping you signed up")]
+    rows = "\n".join(f"      <tr><th>{esc(a)}</th><td>{esc(b)}</td><td>{esc(c)}</td></tr>" for a, b, c in compare)
+    title = "Truck Dispatch for Every Truck | Texas Solutions"
+    desc = ("Truck dispatch for dry van, reefer, flatbed, step deck, power only, hotshot and box truck, "
+            "for owner-operators, small fleets and new MCs across the USA.")
+    qa = ("Which trucks does Texas Solutions dispatch?",
+          "Texas Solutions dispatches semi trucks pulling dry van, reefer, flatbed, step deck and power only, plus hotshots, box trucks and "
+          "straight trucks, for owner-operators, small fleets and carriers with new authority across the USA. Owner-operators without "
+          "their own authority can use the MC lease program.")
+    body = f"""{phero("Dispatch", "Truck dispatch", "Dispatch for every truck. Pick your equipment to see what we handle, the loads we look for and what brokers will ask you for.")}
+<section class="sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Semi trucks</span><h2>Tractor-trailer dispatch</h2><p>One dispatcher for your tractor, whatever trailer is behind it.</p></div>
+  <div class="grid g3">
+{cards(["semi-truck-dispatch.html", "dry-van-dispatch.html", "reefer-dispatch.html", "flatbed-dispatch.html", "power-only-dispatch.html"])}
+  </div>
+</div></section>
+<section class="sec sec-ink"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Smaller trucks</span><h2>Box truck and hotshot dispatch</h2><p>Smaller loads, more broker calls, more paperwork. We handle all three.</p></div>
+  <div class="grid g3">
+{cards(["box-truck-dispatch.html", "hotshot-dispatch.html"])}
+  </div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Who we work with</span><h2>One truck or a whole fleet</h2></div>
+  <div class="grid g3">
+{cards(["owner-operator-dispatch.html", "small-fleet-dispatch.html", "dispatch-for-new-authority.html", "mc-lease.html", "trucking-back-office-services.html", "trucking-authority-setup.html"])}
+  </div>
+</div></section>
+{states_section()}
+<section class="sec"><div class="wrap two">
+  <div class="rv">
+    <div class="sec-head"><span class="eyebrow">Percentage vs flat fee</span><h2>Which pricing fits your truck?</h2><p>Both models are fair; they suit different trucks. We only charge a percentage, so a week the truck sits costs you nothing.</p></div>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Percentage of gross</th><th>Flat weekly fee</th></tr></thead>
+      <tbody>
+{rows}
+      </tbody>
+    </table></div>
+    <p class="mt-l"><a class="btn btn-red" href="estimate.html">{ICONS["calc"]}Compare with your numbers</a></p>
+  </div>
+  <div class="aside">{answer(*qa)}</div>
+</div></section>
+<section class="sec sec-ink"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Included</span><h2>What dispatch covers</h2></div>
+  <ul class="cover-list rv">
+{chr(10).join(f"    <li>{esc(x)}</li>" for x in covers)}
+  </ul>
+  <div class="ctas mt-l rv"><a class="btn btn-red" href="index.html#claim" data-cta="first_load">Get your first load free</a><a class="btn btn-line" href="truck-dispatch-rates.html">See dispatch rates</a></div>
+</div></section>"""
+    schemas = [service("Truck Dispatch Services", desc, path, "Truck dispatch"), faq_ld([qa]), crumbs_ld([("Dispatch", path)])]
+    write("dispatch.html", page(path, title, desc, "truck dispatch services, " + ", ".join(C.CORE_KEYWORDS[:10]), schemas, body, current="dispatch.html"))
 
 
 def build_services():
@@ -2860,7 +2930,7 @@ def build_site_files():
         return {"loc": url(path), "lastmod": lm.get(f, TODAY)}
 
     core = ["/", "/estimate.html", "/truck-dispatch-rates.html", "/truck-fuel-cost-calculator.html"] + ["/" + p["file"] for p in C.LANDING] + \
-           ["/trucking-business-services.html", "/faq.html", "/about.html", "/contact.html", "/privacy.html", "/terms.html"]
+           ["/dispatch.html", "/trucking-business-services.html", "/faq.html", "/about.html", "/contact.html", "/privacy.html", "/terms.html"]
     tool_paths = ["/tools.html"] + ["/" + tl["slug"] + ".html" for tl in TOOLS]
     blog_entries = [entry("/blog.html")] + [dict(entry(f"/blog/{po['slug']}.html"), image=po["cover_abs"], title=po["title"]) for po in POSTS]
     groups = {
@@ -2966,6 +3036,7 @@ def main():
     build_contact()
     build_about()
     build_services()
+    build_dispatch_hub()
     build_faq()
     build_legal("privacy.html", "Privacy Policy")
     build_legal("terms.html", "Terms & Conditions")
