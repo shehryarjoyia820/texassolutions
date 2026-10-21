@@ -110,7 +110,7 @@ There is no official list. Any "top 10" list may be paid advertising. The most t
 
 Here is how Texas Solutions Truck Dispatch answers the questions above, so you can compare:
 
-- **Fee:** a percentage of weekly gross, OTR. 5% for semis, 8% for hotshots, 10% for box trucks and straight trucks. See [truck dispatch rates](/truck-dispatch-rates.html).
+- **Fee:** a percentage of weekly gross, OTR. 5% for semis, 7% for hotshots, 8% for box trucks and straight trucks. See [truck dispatch rates](/truck-dispatch-rates.html).
 - **No** flat rate, setup fee, monthly subscription, upfront fee or long-term contract.
 - **No forced dispatch.** You approve every load.
 - **Your authority.** We are not a freight broker or motor carrier. Loads are booked under your own authority.

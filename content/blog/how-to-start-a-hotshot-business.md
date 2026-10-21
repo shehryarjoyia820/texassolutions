@@ -18,7 +18,7 @@ faq:
   - q: "What does a hotshot dispatcher do?"
     a: "A hotshot dispatcher searches load boards, calls brokers, negotiates rates, handles broker setup packets and keeps loads lined up so you spend less time empty. At Texas Solutions you approve every load before it is booked."
   - q: "How much does hotshot dispatch cost?"
-    a: "Texas Solutions charges 8% of weekly gross for OTR hotshot dispatch. There is no flat rate, no setup fee and no long-term contract, and the first load is dispatched free."
+    a: "Texas Solutions charges 7% of weekly gross for OTR hotshot dispatch. There is no flat rate, no setup fee and no long-term contract, and the first load is dispatched free."
 ---
 Hotshot trucking uses a heavy-duty pickup and a flatbed trailer to move loads that are too small, too urgent or too oddly shaped for a full semi load. Think equipment, machinery parts, building materials, pipe and other freight that needs to move now.
 
@@ -98,7 +98,7 @@ Here is a rough example using assumed figures. Your numbers will differ.
 - Total miles (loaded plus empty): 2,000
 - Average fuel economy across loaded and empty miles: 11 mpg
 - Diesel price: $4.50 a gallon
-- Dispatch at 8% of gross
+- Dispatch at 7% of gross
 - Insurance: $400 a week
 - Truck and trailer payments: $600 a week
 - Maintenance and tire reserve: $0.20 a mile
@@ -106,11 +106,11 @@ Here is a rough example using assumed figures. Your numbers will differ.
 **Math:**
 
 - Fuel: 2,000 / 11 = 181.8 gallons x $4.50 = **$818**
-- Dispatch: $7,500 x 0.08 = **$600**
+- Dispatch: $7,500 x 0.07 = **$525**
 - Maintenance reserve: 2,000 x $0.20 = **$400**
 - Fixed costs: $400 + $600 = **$1,000**
-- Total costs: $818 + $600 + $400 + $1,000 = **$2,818**
-- Left before taxes, factoring, permits and other expenses: $7,500 - $2,818 = **$4,682**
+- Total costs: $818 + $525 + $400 + $1,000 = **$2,743**
+- Left before taxes, factoring, permits and other expenses: $7,500 - $2,743 = **$4,757**
 
 Slow weeks, repairs and time off will pull the average down, so plan around a range, not one good week. For more detail see [how much hotshot drivers make](/blog/how-much-do-hotshot-drivers-make.html), and check your own fuel with the [truck fuel cost calculator](/truck-fuel-cost-calculator.html).
 
@@ -131,4 +131,4 @@ Before you sign with anyone, read [how to choose a truck dispatcher and avoid sc
 
 Texas Solutions is a dispatch service, not a broker or carrier. We dispatch hotshots for owner-operators and small fleets nationwide, with 24/7 remote dispatchers who work with brand-new MC authority from day one. You approve every load before it is booked.
 
-Hotshot dispatch is **8% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and your first load is dispatched free. Learn more about our [hotshot dispatch service](/hotshot-dispatch.html) or [get a free estimate](/estimate.html?truck=hotshot).
+Hotshot dispatch is **7% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and your first load is dispatched free. Learn more about our [hotshot dispatch service](/hotshot-dispatch.html) or [get a free estimate](/estimate.html?truck=hotshot).

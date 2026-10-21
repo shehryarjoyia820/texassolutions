@@ -119,4 +119,4 @@ That is why many carriers combine boards with broker relationships and direct fr
 
 A truck dispatch service uses load boards and broker networks on your behalf. Texas Solutions searches, calls and negotiates while you drive, then sends you the details to approve. We dispatch dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, with remote dispatchers available 24/7 across the USA.
 
-Fees for OTR are 5% of weekly gross for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no setup fee and no long-term contract. See how our [owner-operator dispatch service](/owner-operator-dispatch.html) works or [get a free estimate](/estimate.html).
+Fees for OTR are 5% of weekly gross for semi trucks, 7% for hotshots and 8% for box trucks and straight trucks, with no setup fee and no long-term contract. See how our [owner-operator dispatch service](/owner-operator-dispatch.html) works or [get a free estimate](/estimate.html).

@@ -45,4 +45,4 @@ Sometimes a longer empty run to a strong market pays off. Test it: compare the p
 
 ## How Texas Solutions helps
 
-We negotiate every rate against your real cost per mile and plan the next load before the current one delivers. Dispatch is 5% of weekly gross for semis, 8% for hotshots and 10% for box trucks, OTR, with no flat rate. See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html). To weigh a load with deadhead and a return trip, use the [load profitability calculator](/load-profitability-calculator.html).
+We negotiate every rate against your real cost per mile and plan the next load before the current one delivers. Dispatch is 5% of weekly gross for semis, 7% for hotshots and 8% for box trucks, OTR, with no flat rate. See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html). To weigh a load with deadhead and a return trip, use the [load profitability calculator](/load-profitability-calculator.html).

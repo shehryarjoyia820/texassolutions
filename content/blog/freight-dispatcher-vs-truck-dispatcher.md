@@ -17,7 +17,7 @@ faq:
   - q: "What is the difference between in-house fleet dispatch and an outside dispatch service?"
     a: "An in-house dispatcher is an employee of one fleet and only plans that fleet's trucks. An outside dispatch service works for several independent carriers, usually for a percentage of each truck's gross, and the carrier keeps control of which loads it accepts."
   - q: "How much does freight dispatching cost with Texas Solutions?"
-    a: "For OTR work, the fee is 5% of weekly gross for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks. There is no flat rate, no setup fee and no long-term contract, and your first load is dispatched free."
+    a: "For OTR work, the fee is 5% of weekly gross for semi trucks, 7% for hotshots and 8% for box trucks and straight trucks. There is no flat rate, no setup fee and no long-term contract, and your first load is dispatched free."
 ---
 
 Search for help finding loads and you will see a pile of job titles: **freight dispatcher**, truck dispatcher, trucking dispatcher, cargo dispatcher, load planner. If you run your own authority, it is fair to wonder whether these are different services with different prices.
@@ -114,7 +114,7 @@ Texas Solutions is a nationwide truck dispatch service. We are not a broker and 
 - New MC authorities welcome from day one
 - Your first load is dispatched free
 - You approve every load before it is booked
-- OTR fees: 5% of weekly gross for semis, 8% for hotshots, 10% for box trucks and straight trucks
+- OTR fees: 5% of weekly gross for semis, 7% for hotshots, 8% for box trucks and straight trucks
 - No flat rate, no setup fee, no long-term contract
 
 Our [back office services](/trucking-back-office-services.html) cover broker packets, invoicing, detention and lumper collection, factoring setup, IFTA filing, DOT compliance help and MC authority setup.

@@ -16,7 +16,7 @@ faq:
   - q: "Should I use an independent truck dispatcher or a dispatch company?"
     a: "An independent truck dispatcher can be very personal, but one person cannot answer 24/7. A dispatch company has a team that covers every shift. Either can work if the fee, the agreement and the communication are clear."
   - q: "How much should a good truck dispatch service cost?"
-    a: "Most independent dispatchers charge a percentage of weekly gross, commonly quoted from about 3% to 10% depending on equipment and services. Texas Solutions charges 5% for OTR semis, 8% for hotshots and 10% for box trucks, with no setup fee."
+    a: "Most independent dispatchers charge a percentage of weekly gross, commonly quoted from about 3% to 10% depending on equipment and services. Texas Solutions charges 5% for OTR semis, 7% for hotshots and 8% for box trucks, with no setup fee."
   - q: "Is a 24/7 truck dispatch service worth it?"
     a: "Yes, if you run OTR. Loads cancel, appointments move and reloads come up at night and on weekends. A dispatcher who is reachable then keeps the truck moving instead of waiting until Monday."
 ---
@@ -93,7 +93,7 @@ An independent truck dispatcher is often one person working a handful of trucks.
 
 ## How Texas Solutions answers those questions
 
-- **Fee:** 5% of weekly gross for OTR semis (dry van, reefer, flatbed, step deck, power only), 8% for hotshots, 10% for box trucks and straight trucks. Local and regional work is quoted separately.
+- **Fee:** 5% of weekly gross for OTR semis (dry van, reefer, flatbed, step deck, power only), 7% for hotshots, 8% for box trucks and straight trucks. Local and regional work is quoted separately.
 - **Upfront cost:** none. No setup fee, no flat rate, no monthly subscription.
 - **Contract:** no long-term contract. A signed dispatch agreement sets your percentage and notice period.
 - **Load approval:** you approve every load. No forced dispatch.

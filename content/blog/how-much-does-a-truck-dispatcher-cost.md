@@ -1,6 +1,6 @@
 ---
 title: "How Much Does a Truck Dispatcher Cost in 2026?"
-description: "Truck dispatch fees explained: typical 3-10% of weekly gross, what the fee covers, and Texas Solutions rates of 5% semi, 8% hotshot and 10% box truck."
+description: "Truck dispatch fees explained: typical 3-10% of weekly gross, what the fee covers, and Texas Solutions rates of 5% semi, 7% hotshot and 8% box truck."
 date: 2026-09-22
 updated: 2026-10-03
 author: "Texas Solutions Dispatch Team"
@@ -9,7 +9,7 @@ tags:
   - Owner-operators
 keywords: "how much does a truck dispatcher cost, truck dispatcher percentage, truck dispatch fee, dispatch fee for owner operators, 5 percent truck dispatch, hotshot dispatch fee, box truck dispatch fee"
 question: "How much does a truck dispatcher cost?"
-answer: "Most independent truck dispatchers charge a percentage of the truck's weekly gross, usually somewhere between 3% and 10%. Texas Solutions charges 5% for OTR semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no flat rate, no setup fee and no monthly subscription."
+answer: "Most independent truck dispatchers charge a percentage of the truck's weekly gross, usually somewhere between 3% and 10%. Texas Solutions charges 5% for OTR semi trucks, 7% for hotshots and 8% for box trucks and straight trucks, with no flat rate, no setup fee and no monthly subscription."
 faq:
   - q: "What percentage do truck dispatchers take?"
     a: "Independent dispatchers usually charge 3% to 10% of the truck's weekly gross. Semi truck dispatch tends to sit at the lower end and small-truck dispatch (box trucks, hotshots) at the higher end, because smaller loads need more calls and paperwork per dollar earned."
@@ -36,8 +36,8 @@ We charge a percentage of weekly gross only, for carriers running OTR:
 | Truck type | Dispatch fee | Example weekly gross (hypothetical) | Fee per week |
 |---|---|---|---|
 | Semi truck (dry van, reefer, flatbed, step deck, power only) | **5%** | $8,000 - $10,000 | about $400 - $500 |
-| Hotshot | **8%** | $7,000 - $9,000 | about $560 - $720 |
-| Box truck and straight truck | **10%** | $7,000 - $9,000 | about $700 - $900 |
+| Hotshot | **7%** | $7,000 - $9,000 | about $490 - $630 |
+| Box truck and straight truck | **8%** | $7,000 - $9,000 | about $560 - $720 |
 
 There is no flat rate, no setup fee and no monthly subscription. Local and regional work is quoted separately, and your final percentage is discussed with you before service starts. Use the [dispatch fee calculator](/estimate.html) to see the fee on your own numbers.
 

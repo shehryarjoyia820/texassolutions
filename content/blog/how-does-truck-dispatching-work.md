@@ -17,7 +17,7 @@ faq:
   - q: "What do I need to start with a dispatch service?"
     a: "Usually your MC and USDOT numbers, certificate of insurance, W-9, signed dispatch agreement, factoring or banking details, and your equipment and lane preferences. A new authority is fine with Texas Solutions."
   - q: "How is a truck dispatcher paid?"
-    a: "Most independent dispatchers charge a percentage of the truck's gross. Texas Solutions charges 5% for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks running OTR, with no setup fee and no long-term contract."
+    a: "Most independent dispatchers charge a percentage of the truck's gross. Texas Solutions charges 5% for semi trucks, 7% for hotshots and 8% for box trucks and straight trucks running OTR, with no setup fee and no long-term contract."
 ---
 
 If you have never used a dispatch service, it can be hard to picture what actually happens between "I signed up" and "I got paid." This guide walks through **how truck dispatching works** from the carrier's side of the desk, one step at a time, so you know what to expect and what to ask for.
@@ -141,6 +141,6 @@ For more on spotting bad offers, read [how to choose a truck dispatcher](/blog/h
 
 ## How Texas Solutions dispatching works
 
-Texas Solutions is a truck dispatch service, not a broker or carrier. We dispatch dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck carriers nationwide, with remote dispatchers available 24/7. Fees for OTR are 5% for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no flat rate, no setup fee and no long-term contract. Your first load is dispatched free.
+Texas Solutions is a truck dispatch service, not a broker or carrier. We dispatch dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck carriers nationwide, with remote dispatchers available 24/7. Fees for OTR are 5% for semi trucks, 7% for hotshots and 8% for box trucks and straight trucks, with no flat rate, no setup fee and no long-term contract. Your first load is dispatched free.
 
 See how our [owner-operator dispatch service](/owner-operator-dispatch.html) works, compare [truck dispatch rates](/truck-dispatch-rates.html), or [get a free estimate](/estimate.html) on your own numbers.

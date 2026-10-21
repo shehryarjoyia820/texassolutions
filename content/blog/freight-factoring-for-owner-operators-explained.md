@@ -57,6 +57,6 @@ Some brokers offer **quick pay**, where the broker pays you faster for a fee (of
 
 ## Factoring and dispatch
 
-A dispatcher can build your factoring company's notice of assignment into every broker packet so payment goes to the right place from the start. At Texas Solutions, we handle broker setups and paperwork for a percentage of weekly gross: 5% for semis, 8% for hotshots, 10% for box trucks. See [what dispatch costs](/estimate.html).
+A dispatcher can build your factoring company's notice of assignment into every broker packet so payment goes to the right place from the start. At Texas Solutions, we handle broker setups and paperwork for a percentage of weekly gross: 5% for semis, 7% for hotshots, 8% for box trucks. See [what dispatch costs](/estimate.html).
 
 Include factoring costs in your numbers with the [cost per mile calculator](/cost-per-mile-calculator.html) and check the impact on a load with the [load profitability calculator](/load-profitability-calculator.html).

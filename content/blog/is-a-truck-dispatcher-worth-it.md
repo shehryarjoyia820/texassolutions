@@ -15,7 +15,7 @@ faq:
   - q: "Is it better to self-dispatch or hire a dispatch service?"
     a: "It depends on your time, skills and results. Self-dispatch saves the fee but costs hours each week. A dispatch service costs a fee but handles the search, negotiation and paperwork. Track your rates and hours for a few weeks, then compare."
   - q: "How much should I pay a truck dispatcher?"
-    a: "Dispatch services commonly charge either a percentage of gross or a flat weekly fee. Texas Solutions charges a percentage of weekly gross, OTR: 5% for semis, 8% for hotshots and 10% for box trucks and straight trucks, with no setup fee and no long-term contract."
+    a: "Dispatch services commonly charge either a percentage of gross or a flat weekly fee. Texas Solutions charges a percentage of weekly gross, OTR: 5% for semis, 7% for hotshots and 8% for box trucks and straight trucks, with no setup fee and no long-term contract."
   - q: "What is the difference between DAT and a dispatcher?"
     a: "DAT is a load board, a marketplace where brokers post loads and carriers search them. A dispatcher is a person or service that uses load boards and broker contacts to find, negotiate and book loads for you. A load board is a tool; a dispatcher does the work."
   - q: "How can I make $10,000 a week with my truck?"
@@ -76,8 +76,8 @@ Dispatch services commonly charge either a percentage of gross or a flat weekly 
 Texas Solutions charges a percentage of weekly gross, OTR:
 
 - **Semi trucks** (dry van, reefer, flatbed, step deck, power only): **5%**
-- **Hotshot:** **8%**
-- **Box truck and straight truck:** **10%**
+- **Hotshot:** **7%**
+- **Box truck and straight truck:** **8%**
 
 There is no setup fee, no monthly subscription and no long-term contract. See [truck dispatch rates](/truck-dispatch-rates.html) and [how much a truck dispatcher costs](/blog/how-much-does-a-truck-dispatcher-cost.html).
 

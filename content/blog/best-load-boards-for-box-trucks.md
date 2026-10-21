@@ -17,7 +17,7 @@ faq:
   - q: "What equipment type should I search for on a load board?"
     a: "Search for straight truck or box truck postings, and also check small partial or LTL-size dry van loads that fit your box length, payload and liftgate."
   - q: "Can a dispatcher use load boards for me?"
-    a: "Yes. A dispatcher searches boards and calls brokers on your behalf. At Texas Solutions you approve every load before it is booked, and box truck dispatch is 10% of weekly gross for OTR."
+    a: "Yes. A dispatcher searches boards and calls brokers on your behalf. At Texas Solutions you approve every load before it is booked, and box truck dispatch is 8% of weekly gross for OTR."
 ---
 Load boards are where most box truck owner-operators find their first loads, and many keep using them for years. The challenge is that box truck freight is a smaller slice of what gets posted, so the way you search matters as much as which board you pay for.
 
@@ -115,4 +115,4 @@ Some owner-operators start on their own with a board, then bring in a dispatcher
 
 Texas Solutions is a dispatch service, not a broker or carrier. Our 24/7 remote dispatchers find and negotiate box truck loads nationwide, and you approve every load before it is booked. We work with brand-new MC authority from day one.
 
-Box truck and straight truck dispatch is **10% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and the first load is dispatched free. Learn more about our [box truck dispatch service](/box-truck-dispatch.html) or [get a free estimate](/estimate.html?truck=box-truck).
+Box truck and straight truck dispatch is **8% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and the first load is dispatched free. Learn more about our [box truck dispatch service](/box-truck-dispatch.html) or [get a free estimate](/estimate.html?truck=box-truck).

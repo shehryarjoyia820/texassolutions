@@ -9,7 +9,7 @@ tags:
   - Earnings
 keywords: "how much do hotshot drivers make, hotshot loads"
 question: "How much do hotshot drivers make?"
-answer: "Hotshot owner-operator income depends on miles, rates and costs. As a hypothetical example, hotshots might gross about $7,000 to $9,000 a week, which is not guaranteed. After fuel, insurance, equipment payments, maintenance and fees, our worked examples keep about 50 to 58 percent of gross before taxes, and real results can be lower."
+answer: "Hotshot owner-operator income depends on miles, rates and costs. As a hypothetical example, hotshots might gross about $7,000 to $9,000 a week, which is not guaranteed. After fuel, insurance, equipment payments, maintenance and fees, our worked examples keep about 51 to 59 percent of gross before taxes, and real results can be lower."
 faq:
   - q: "How much does a hotshot gross per week?"
     a: "As a hypothetical example, OTR hotshots might gross about $7,000 to $9,000 a week. Lanes, season, miles and home time all change the result, and earnings are not guaranteed."
@@ -49,7 +49,7 @@ These are assumptions for illustration. Use your own numbers.
 - Loaded miles: 1,800, empty miles: 450, total 2,250
 - Average fuel economy across loaded and empty miles: 11 mpg
 - Diesel price: $4.50 a gallon
-- Dispatch: 8% of gross
+- Dispatch: 7% of gross
 - Factoring: 3% of gross
 - Insurance: $400 a week
 - Truck and trailer payments: $600 a week
@@ -59,30 +59,30 @@ These are assumptions for illustration. Use your own numbers.
 **Costs:**
 
 - Fuel: 2,250 / 11 = 204.5 gallons x $4.50 = **$920**
-- Dispatch: $8,000 x 0.08 = **$640**
+- Dispatch: $8,000 x 0.07 = **$560**
 - Factoring: $8,000 x 0.03 = **$240**
 - Insurance: **$400**
 - Payments: **$600**
 - Maintenance reserve: 2,250 x $0.20 = **$450**
 - Other: **$120**
-- **Total: $3,370**
+- **Total: $3,290**
 
-**Net before taxes:** $8,000 - $3,370 = **$4,630**, or about 58% of gross.
+**Net before taxes:** $8,000 - $3,290 = **$4,710**, or about 59% of gross.
 
 ## Worked example: a slow week
 
 **Assumptions:** weekly gross **$5,000**, total miles 1,400, everything else unchanged.
 
 - Fuel: 1,400 / 11 = 127.3 gallons x $4.50 = **$573**
-- Dispatch: **$400**
+- Dispatch: **$350**
 - Factoring: **$150**
 - Insurance: **$400**
 - Payments: **$600**
 - Maintenance reserve: 1,400 x $0.20 = **$280**
 - Other: **$120**
-- **Total: $2,523**
+- **Total: $2,473**
 
-**Net before taxes:** $5,000 - $2,523 = **$2,477**, or about 50% of gross.
+**Net before taxes:** $5,000 - $2,473 = **$2,527**, or about 51% of gross.
 
 Fixed costs stayed at $1,000 a week in both examples. In a slow week they take a bigger bite, which is why a cash reserve is part of running a hotshot business.
 
@@ -135,6 +135,6 @@ Most hotshot freight is found through load boards, broker relationships and disp
 
 ## Hotshot dispatch with Texas Solutions
 
-Texas Solutions is a dispatch service, not a broker or carrier. Our 24/7 remote dispatchers find, negotiate and book hotshot loads for owner-operators and small fleets nationwide, and you approve every load before it is booked. Hotshot dispatch is **8% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract. We work with new authority from day one, and the first load is dispatched free.
+Texas Solutions is a dispatch service, not a broker or carrier. Our 24/7 remote dispatchers find, negotiate and book hotshot loads for owner-operators and small fleets nationwide, and you approve every load before it is booked. Hotshot dispatch is **7% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract. We work with new authority from day one, and the first load is dispatched free.
 
 See our [hotshot dispatch service](/hotshot-dispatch.html) or [get a free estimate](/estimate.html?truck=hotshot).

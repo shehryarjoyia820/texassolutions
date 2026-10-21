@@ -57,4 +57,4 @@ See [today's diesel prices for all 50 states](/truck-fuel-cost-calculator.html#d
 
 ## How a dispatcher helps
 
-A good dispatcher plans lanes to reduce empty miles and negotiates rates that leave room after fuel. At Texas Solutions, semi truck dispatch is 5% of weekly gross, hotshot dispatch 8% and box truck dispatch 10%. Read about our [owner-operator dispatch service](/owner-operator-dispatch.html) or [see what it would cost you](/estimate.html).
+A good dispatcher plans lanes to reduce empty miles and negotiates rates that leave room after fuel. At Texas Solutions, semi truck dispatch is 5% of weekly gross, hotshot dispatch 7% and box truck dispatch 8%. Read about our [owner-operator dispatch service](/owner-operator-dispatch.html) or [see what it would cost you](/estimate.html).

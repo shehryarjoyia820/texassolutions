@@ -52,6 +52,6 @@ A broker is a middleman: the shipper hires them to find a truck, and they hire y
 
 ## How to choose a dispatcher
 
-Look for a **clear percentage of weekly gross**, no forced dispatch, no long contract, and no hidden setup fees. At Texas Solutions, dispatch is 5% for semis, 8% for hotshots and 10% for box trucks, OTR, with no flat rate. We are a dispatch service and **not a broker or motor carrier**.
+Look for a **clear percentage of weekly gross**, no forced dispatch, no long contract, and no hidden setup fees. At Texas Solutions, dispatch is 5% for semis, 7% for hotshots and 8% for box trucks, OTR, with no flat rate. We are a dispatch service and **not a broker or motor carrier**.
 
 Read more about [what a truck dispatcher does](/what-does-a-truck-dispatcher-do.html) or see [how much dispatch costs](/blog/how-much-does-a-truck-dispatcher-cost.html).

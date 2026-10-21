@@ -17,7 +17,7 @@ faq:
   - q: "How much weight can a hotshot haul?"
     a: "It depends on your truck and trailer ratings and your licensing. Your legal payload is limited by GVWR, GCWR and axle ratings, and by whether you hold a CDL. Know your number before you call on a load."
   - q: "Should a hotshot use a dispatcher instead of a load board?"
-    a: "A load board gives you access to postings; a dispatcher does the searching, calling, negotiating and paperwork. Texas Solutions charges 8% of weekly gross for OTR hotshot dispatch and you approve every load."
+    a: "A load board gives you access to postings; a dispatcher does the searching, calling, negotiating and paperwork. Texas Solutions charges 7% of weekly gross for OTR hotshot dispatch and you approve every load."
 ---
 Hotshot freight moves fast. A load posted at 7 a.m. may be gone by 7:15, and the hotshot who gets it is usually the one who already knew the load would fit, had the broker's setup done and called first.
 
@@ -125,4 +125,4 @@ Many hotshot owner-operators use both at different stages. If you are just getti
 
 Texas Solutions is a truck dispatch service, not a broker or carrier. Our 24/7 remote dispatchers find and negotiate hotshot loads nationwide, and you approve every load before it is booked. We work with brand-new MC authority from day one.
 
-Hotshot dispatch is **8% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and the first load is dispatched free. Read about our [hotshot dispatch service](/hotshot-dispatch.html) or [get a free estimate](/estimate.html?truck=hotshot).
+Hotshot dispatch is **7% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and the first load is dispatched free. Read about our [hotshot dispatch service](/hotshot-dispatch.html) or [get a free estimate](/estimate.html?truck=hotshot).

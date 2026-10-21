@@ -129,6 +129,6 @@ Our guide on [how to find loads for your truck](/blog/how-to-find-loads-for-your
 
 ## Dispatch for a new MC number
 
-If you get your own authority, you do not have to figure out the load side alone. Texas Solutions is a truck dispatch service that works with brand-new MC authority from day one. We help with broker packets and setup, search and negotiate loads, and you approve every one. Fees for OTR are 5% of weekly gross for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks, with no setup fee and no long-term contract, and your first load is dispatched free.
+If you get your own authority, you do not have to figure out the load side alone. Texas Solutions is a truck dispatch service that works with brand-new MC authority from day one. We help with broker packets and setup, search and negotiate loads, and you approve every one. Fees for OTR are 5% of weekly gross for semi trucks, 7% for hotshots and 8% for box trucks and straight trucks, with no setup fee and no long-term contract, and your first load is dispatched free.
 
 Learn more about [dispatch for new authority](/dispatch-for-new-authority.html) or [get a free estimate](/estimate.html).

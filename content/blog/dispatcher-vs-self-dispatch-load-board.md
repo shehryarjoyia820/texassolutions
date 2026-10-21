@@ -34,7 +34,7 @@ Self-dispatch looks free apart from the board subscription. It is not. Here is w
 
 ## What a dispatcher costs
 
-A dispatcher usually charges a percentage of weekly gross. At Texas Solutions it is 5% for OTR semis, 8% for hotshots and 10% for box trucks, with no setup fee and no long-term contract. On a semi grossing $8,000 a week, 5% is $400.
+A dispatcher usually charges a percentage of weekly gross. At Texas Solutions it is 5% for OTR semis, 7% for hotshots and 8% for box trucks, with no setup fee and no long-term contract. On a semi grossing $8,000 a week, 5% is $400.
 
 ## A worked example (hypothetical)
 

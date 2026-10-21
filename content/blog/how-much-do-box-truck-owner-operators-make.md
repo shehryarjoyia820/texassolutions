@@ -8,7 +8,7 @@ tags:
   - Earnings
 keywords: "how much do box truck owner operators make, box truck loads"
 question: "How much do box truck owner-operators make?"
-answer: "It varies widely with miles, rates and costs. As a hypothetical example, box trucks might gross about $7,000 to $9,000 a week, though that is not guaranteed. After fuel, insurance, truck payments, maintenance and fees, our worked examples keep about 42 to 49 percent of gross before taxes, and real results can be lower."
+answer: "It varies widely with miles, rates and costs. As a hypothetical example, box trucks might gross about $7,000 to $9,000 a week, though that is not guaranteed. After fuel, insurance, truck payments, maintenance and fees, our worked examples keep about 44 to 51 percent of gross before taxes, and real results can be lower."
 faq:
   - q: "How much does a box truck gross per week?"
     a: "As a hypothetical example, box trucks might gross about $7,000 to $9,000 a week running OTR. Your results depend on lanes, season, miles driven and how many weeks you work. Earnings are not guaranteed."
@@ -56,7 +56,7 @@ Here is a sample week with clearly labelled assumptions. Replace them with your 
 - Loaded miles: 3,000, empty (deadhead) miles: 400, total 3,400
 - Average fuel economy: 9.5 mpg (26 ft diesel, mix of loaded and empty)
 - Diesel price: $4.50 a gallon
-- Dispatch: 10% of gross
+- Dispatch: 8% of gross
 - Factoring: 3% of gross
 - Insurance: $350 a week
 - Truck payment: $450 a week
@@ -66,15 +66,15 @@ Here is a sample week with clearly labelled assumptions. Replace them with your 
 **Costs:**
 
 - Fuel: 3,400 / 9.5 = 357.9 gallons x $4.50 = **$1,611**
-- Dispatch: $8,000 x 0.10 = **$800**
+- Dispatch: $8,000 x 0.08 = **$640**
 - Factoring: $8,000 x 0.03 = **$240**
 - Insurance: **$350**
 - Truck payment: **$450**
 - Maintenance reserve: 3,400 x $0.15 = **$510**
 - Other: **$100**
-- **Total: $4,061**
+- **Total: $3,901**
 
-**Net before taxes:** $8,000 - $4,061 = **$3,939**, or about 49% of gross.
+**Net before taxes:** $8,000 - $3,901 = **$4,099**, or about 51% of gross.
 
 ## Worked example: a slow week
 
@@ -83,15 +83,15 @@ Same truck, same fixed costs, fewer miles and lower rates.
 **Assumptions:** weekly gross **$5,000**, total miles 2,200, other assumptions unchanged.
 
 - Fuel: 2,200 / 9.5 = 231.6 gallons x $4.50 = **$1,042**
-- Dispatch: **$500**
+- Dispatch: **$400**
 - Factoring: **$150**
 - Insurance: **$350**
 - Truck payment: **$450**
 - Maintenance reserve: 2,200 x $0.15 = **$330**
 - Other: **$100**
-- **Total: $2,922**
+- **Total: $2,822**
 
-**Net before taxes:** $5,000 - $2,922 = **$2,078**, or about 42% of gross.
+**Net before taxes:** $5,000 - $2,822 = **$2,178**, or about 44% of gross.
 
 Notice that fixed costs did not shrink when revenue dropped. That is why slow weeks hurt more than the drop in gross suggests, and why a cash reserve matters.
 
@@ -133,6 +133,6 @@ Detention, layovers and lumper charges add up. If you do not document and invoic
 
 ## Getting help with box truck loads
 
-Texas Solutions is a truck dispatch service, not a broker or carrier. Our 24/7 remote dispatchers find and negotiate box truck loads, and you approve every one before it is booked. Box truck and straight truck dispatch is **10% of weekly gross** for OTR, with no setup fee and no long-term contract, and the first load is dispatched free.
+Texas Solutions is a truck dispatch service, not a broker or carrier. Our 24/7 remote dispatchers find and negotiate box truck loads, and you approve every one before it is booked. Box truck and straight truck dispatch is **8% of weekly gross** for OTR, with no setup fee and no long-term contract, and the first load is dispatched free.
 
 Learn more about our [box truck dispatch service](/box-truck-dispatch.html) or [get a free estimate](/estimate.html?truck=box-truck).

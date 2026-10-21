@@ -108,4 +108,4 @@ Read more in [what is deadhead in trucking](/blog/what-is-deadhead-in-trucking-h
 
 Texas Solutions Truck Dispatch is a rate negotiation service for truckers. We negotiate every load against your real cost per mile, plan lanes to reduce deadhead, and check rate confirmations before you roll. Loads are booked under your own authority, and you approve every load. We never guarantee rates or earnings.
 
-The fee is 5% of weekly gross for semis, 8% for hotshots and 10% for box trucks and straight trucks, OTR, with no setup fee or contract. Your first load is dispatched free. [Get a free estimate](/estimate.html) or [contact us](/contact.html).
+The fee is 5% of weekly gross for semis, 7% for hotshots and 8% for box trucks and straight trucks, OTR, with no setup fee or contract. Your first load is dispatched free. [Get a free estimate](/estimate.html) or [contact us](/contact.html).

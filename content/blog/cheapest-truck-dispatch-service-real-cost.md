@@ -12,7 +12,7 @@ question: "What is the cheapest truck dispatch service?"
 answer: "The cheapest truck dispatch service is the one with the lowest total cost for your truck, not the lowest advertised number. Add up the percentage or weekly fee, any setup fee, minimum, contract term and extra charges for paperwork, then compare what each fee includes. A percentage of weekly gross costs nothing in a week the truck does not run; a flat weekly fee does."
 faq:
   - q: "What percentage do truck dispatchers charge?"
-    a: "Most independent dispatchers charge a percentage of weekly gross, commonly quoted from about 3% to 10% depending on equipment and services. Texas Solutions charges 5% for OTR semis, 8% for hotshots and 10% for box trucks and straight trucks."
+    a: "Most independent dispatchers charge a percentage of weekly gross, commonly quoted from about 3% to 10% depending on equipment and services. Texas Solutions charges 5% for OTR semis, 7% for hotshots and 8% for box trucks and straight trucks."
   - q: "Is a flat rate truck dispatch fee cheaper than a percentage?"
     a: "Sometimes, in a strong week. But a flat weekly fee is due even when the truck sits, so in slow weeks it costs more. Work out both over a typical month, including your slow weeks."
   - q: "Is 5% truck dispatch a good deal?"
@@ -37,12 +37,12 @@ Most independent dispatchers use a percentage, commonly quoted from about 3% to 
 
 At 5% of weekly gross, the fee moves with your week:
 
-| Weekly gross | 5% fee | 8% fee (hotshot) | 10% fee (box truck) |
+| Weekly gross | 5% fee | 7% fee (hotshot) | 8% fee (box truck) |
 |---|---|---|---|
-| $4,000 | $200 | $320 | $400 |
-| $6,000 | $300 | $480 | $600 |
-| $8,000 | $400 | $640 | $800 |
-| $10,000 | $500 | $800 | $1,000 |
+| $4,000 | $200 | $280 | $320 |
+| $6,000 | $300 | $420 | $480 |
+| $8,000 | $400 | $560 | $640 |
+| $10,000 | $500 | $700 | $800 |
 
 Now compare a hypothetical flat weekly fee of $350. In a $10,000 week it is cheaper than 5%. In a $4,000 week, or a week the truck is in the shop, you still pay $350, and $350 on zero gross is the most expensive dispatch there is. Run your own numbers in the [dispatch fee calculator](/estimate.html).
 
@@ -78,7 +78,7 @@ Dispatcher B costs about $80 more in fee on $8,000 gross but puts more money in 
 ## Texas Solutions pricing, in writing
 
 - 5% of weekly gross for OTR semis (dry van, reefer, flatbed, step deck, power only).
-- 8% for hotshots, 10% for box trucks and straight trucks.
+- 7% for hotshots, 8% for box trucks and straight trucks.
 - No flat rate, no setup fee, no monthly subscription, no long-term contract.
 - Broker packets, rate confirmations and invoicing included.
 - You approve every load. First load dispatched free.

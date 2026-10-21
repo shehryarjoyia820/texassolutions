@@ -11,7 +11,7 @@ question: "Is a percentage or a flat fee better for truck dispatch?"
 answer: "A percentage fee rises and falls with what your truck earns, so you pay less in slow weeks and the dispatcher is motivated to book better-paying freight. A flat fee is predictable but costs the same in a bad week. The right choice depends on your weekly gross, how steady your freight is, and whether the offer hides extra charges or contracts."
 faq:
   - q: "What percentage do truck dispatchers charge?"
-    a: "Most independent dispatchers charge somewhere between 3% and 10% of the truck's gross. Texas Solutions charges 5% for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks running OTR."
+    a: "Most independent dispatchers charge somewhere between 3% and 10% of the truck's gross. Texas Solutions charges 5% for semi trucks, 7% for hotshots and 8% for box trucks and straight trucks running OTR."
   - q: "Does Texas Solutions offer a flat rate?"
     a: "No. Texas Solutions charges a percentage of weekly gross only. There is no flat rate, no setup fee and no long-term contract."
   - q: "Is a cheap truck dispatch service worth it?"
@@ -90,8 +90,8 @@ We charge a percentage of weekly gross for OTR work, and nothing else:
 | Equipment | Fee |
 |---|---|
 | Semi truck (dry van, reefer, flatbed, step deck, power only) | 5% |
-| Hotshot | 8% |
-| Box truck and straight truck | 10% |
+| Hotshot | 7% |
+| Box truck and straight truck | 8% |
 
 There is **no flat rate, no setup fee and no long-term contract**, and the first load is dispatched free. The reason is simple: when our fee moves with your gross, we only do well when your truck does well. Full details are on our [truck dispatch rates](/truck-dispatch-rates.html) page.
 

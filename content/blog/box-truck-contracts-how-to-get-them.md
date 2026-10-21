@@ -17,7 +17,7 @@ faq:
   - q: "Can a new box truck company get contracts?"
     a: "It is harder at first, because many shippers and brokers want to see some history. New carriers usually start with spot loads, build an on-time record and then ask for repeat lanes."
   - q: "What does a box truck dispatch company do?"
-    a: "A box truck dispatch company finds and negotiates loads, handles broker setup packets and rate confirmations, and helps with paperwork so the driver can focus on driving. Texas Solutions charges 10% of weekly gross for OTR box truck dispatch, and the carrier approves every load."
+    a: "A box truck dispatch company finds and negotiates loads, handles broker setup packets and rate confirmations, and helps with paperwork so the driver can focus on driving. Texas Solutions charges 8% of weekly gross for OTR box truck dispatch, and the carrier approves every load."
 ---
 Many box truck owner-operators want the same thing: steady, predictable freight instead of hunting for a new load every day. That is what people usually mean by "box truck contracts". They exist, but they rarely come first. They tend to come after you have shown brokers and shippers that you can be counted on.
 
@@ -125,4 +125,4 @@ Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-tr
 
 Texas Solutions is a truck dispatch service, not a broker or carrier. Our 24/7 remote dispatchers work with box truck and straight truck owner-operators nationwide, including brand-new MC authority from day one, and you approve every load before it is booked.
 
-Box truck dispatch is **10% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and your first load is dispatched free. See our [box truck dispatch service](/box-truck-dispatch.html), [dispatch for new authority](/dispatch-for-new-authority.html), or [get a free estimate](/estimate.html?truck=box-truck).
+Box truck dispatch is **8% of weekly gross** for OTR, with no flat rate, no setup fee and no long-term contract, and your first load is dispatched free. See our [box truck dispatch service](/box-truck-dispatch.html), [dispatch for new authority](/dispatch-for-new-authority.html), or [get a free estimate](/estimate.html?truck=box-truck).

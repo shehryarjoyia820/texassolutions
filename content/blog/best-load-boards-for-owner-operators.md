@@ -56,4 +56,4 @@ Do not chase the highest rate per mile alone. Compare each load on its **rate pe
 
 ## When a dispatcher makes sense
 
-Searching boards, calling brokers and negotiating takes hours every day. A dispatcher does that for a percentage of your weekly gross: at Texas Solutions it is 5% for semis, 8% for hotshots and 10% for box trucks, OTR, with no flat rate. You approve every load. [Get a free estimate](/estimate.html).
+Searching boards, calling brokers and negotiating takes hours every day. A dispatcher does that for a percentage of your weekly gross: at Texas Solutions it is 5% for semis, 7% for hotshots and 8% for box trucks, OTR, with no flat rate. You approve every load. [Get a free estimate](/estimate.html).

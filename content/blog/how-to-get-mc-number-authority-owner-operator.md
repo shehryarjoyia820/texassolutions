@@ -94,4 +94,4 @@ Work out your monthly fixed costs with the [cost per mile calculator](/cost-per-
 
 New authorities face a **new entrant safety period** and a safety audit within about the first year. Keep driver qualification files, logs, and maintenance records in order from day one.
 
-A dispatcher can take load searching, rate negotiation and broker paperwork off your plate once you are active. At Texas Solutions, dispatch is **5% of weekly gross for semis, 8% for hotshots and 10% for box trucks**, OTR, with no flat rate. [Get a free estimate](/estimate.html).
+A dispatcher can take load searching, rate negotiation and broker paperwork off your plate once you are active. At Texas Solutions, dispatch is **5% of weekly gross for semis, 7% for hotshots and 8% for box trucks**, OTR, with no flat rate. [Get a free estimate](/estimate.html).

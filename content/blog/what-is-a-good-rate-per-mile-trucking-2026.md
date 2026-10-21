@@ -62,4 +62,4 @@ Use the [load profitability calculator](/load-profitability-calculator.html) to 
 
 ## Let someone negotiate for you
 
-A dispatcher negotiates against your real numbers. Texas Solutions charges **5% of weekly gross for semis, 8% for hotshots and 10% for box trucks**, OTR, with no flat rate, and you approve every load. [Get a free estimate](/estimate.html).
+A dispatcher negotiates against your real numbers. Texas Solutions charges **5% of weekly gross for semis, 7% for hotshots and 8% for box trucks**, OTR, with no flat rate, and you approve every load. [Get a free estimate](/estimate.html).

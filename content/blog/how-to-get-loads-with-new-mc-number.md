@@ -79,4 +79,4 @@ If you would rather drive than spend the day calling brokers, a dispatcher who w
 - Handle rate confirmations, invoicing and factoring paperwork.
 - Answer 24/7 by call, text or WhatsApp.
 
-Your first load is dispatched free. After that, the fee is 5% of weekly gross for OTR semis, 8% for hotshots and 10% for box trucks, with no setup fee and no long-term contract. No one can guarantee loads or rates. See [dispatch for new authority](/dispatch-for-new-authority.html), or if you have not filed yet, [MC number and authority setup](/trucking-authority-setup.html).
+Your first load is dispatched free. After that, the fee is 5% of weekly gross for OTR semis, 7% for hotshots and 8% for box trucks, with no setup fee and no long-term contract. No one can guarantee loads or rates. See [dispatch for new authority](/dispatch-for-new-authority.html), or if you have not filed yet, [MC number and authority setup](/trucking-authority-setup.html).

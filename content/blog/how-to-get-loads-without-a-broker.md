@@ -115,6 +115,6 @@ Our back office team can also help with the paperwork that comes with direct wor
 
 ## Getting started
 
-Getting loads without a broker is possible, but it is a long game built on service and reliability. In the meantime, the truck still has to earn. Texas Solutions dispatches owner-operators and small fleets nationwide, with fees of 5% for semi trucks, 8% for hotshots and 10% for box trucks and straight trucks running OTR, no setup fee, no long-term contract, and you approve every load.
+Getting loads without a broker is possible, but it is a long game built on service and reliability. In the meantime, the truck still has to earn. Texas Solutions dispatches owner-operators and small fleets nationwide, with fees of 5% for semi trucks, 7% for hotshots and 8% for box trucks and straight trucks running OTR, no setup fee, no long-term contract, and you approve every load.
 
 See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html).

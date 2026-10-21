@@ -18,7 +18,7 @@ faq:
   - q: "Can a box truck with brand-new authority get loads?"
     a: "Yes, but some brokers will not load a carrier until its authority has been active for a while. A dispatcher who works with new authority knows which brokers accept new carriers and can handle the setup packets for you."
   - q: "What does box truck dispatch cost at Texas Solutions?"
-    a: "10% of weekly gross for OTR box trucks and straight trucks, with no flat rate, no setup fee and no long-term contract. Your first load is dispatched free."
+    a: "8% of weekly gross for OTR box trucks and straight trucks, with no flat rate, no setup fee and no long-term contract. Your first load is dispatched free."
 ---
 A box truck business is one of the lower-cost ways to own a trucking company. The truck costs less than a tractor and trailer, many box trucks do not require a CDL, and there is steady demand for freight that is too small or too awkward for a 53 ft trailer. The trade-off is that margins are thinner, so the planning you do before the first load matters.
 
@@ -120,6 +120,6 @@ Most box truck contracts do not come on day one. They come from showing up on ti
 
 ## Getting help with 26 ft box truck dispatch
 
-You can run every step yourself, or bring in help for the parts that take you away from driving. Texas Solutions is a dispatch service, not a broker or carrier. Our remote dispatchers work 24/7, find and negotiate loads, and send you each one for approval before it is booked. Box truck and straight truck dispatch is **10% of weekly gross** for OTR, with no setup fee and no long-term contract.
+You can run every step yourself, or bring in help for the parts that take you away from driving. Texas Solutions is a dispatch service, not a broker or carrier. Our remote dispatchers work 24/7, find and negotiate loads, and send you each one for approval before it is booked. Box truck and straight truck dispatch is **8% of weekly gross** for OTR, with no setup fee and no long-term contract.
 
 Read more about our [box truck dispatch service](/box-truck-dispatch.html) and [dispatch for new authority](/dispatch-for-new-authority.html), or [get a free estimate](/estimate.html?truck=box-truck).

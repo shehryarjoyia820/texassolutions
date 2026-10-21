@@ -120,4 +120,4 @@ Lower payload usually means lower revenue per load, so cost control matters even
 
 Texas Solutions is a dispatch service, not a broker or carrier. We dispatch box trucks, straight trucks and hotshots for owner-operators nationwide. Your dispatcher books only loads that fit the payload you give us, and you approve every load before it is booked. We also offer DOT compliance help through our [back office services](/trucking-back-office-services.html).
 
-Box truck and straight truck dispatch is **10% of weekly gross** and hotshot dispatch is **8%**, for OTR, with no setup fee and no long-term contract. The first load is dispatched free. See [box truck dispatch](/box-truck-dispatch.html), [hotshot dispatch](/hotshot-dispatch.html) or [get a free estimate](/estimate.html).
+Box truck and straight truck dispatch is **8% of weekly gross** and hotshot dispatch is **7%**, for OTR, with no setup fee and no long-term contract. The first load is dispatched free. See [box truck dispatch](/box-truck-dispatch.html), [hotshot dispatch](/hotshot-dispatch.html) or [get a free estimate](/estimate.html).

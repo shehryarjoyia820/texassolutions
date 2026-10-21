@@ -107,4 +107,4 @@ Slow days happen. When you are stuck, try this:
 
 Texas Solutions Truck Dispatch searches load boards and broker networks, negotiates rates, and plans lanes to cut deadhead for dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck. Loads are booked under your own authority, and you approve every load. We do not guarantee loads or rates.
 
-The fee is a percentage of weekly gross, OTR: 5% for semis, 8% for hotshots and 10% for box trucks and straight trucks. There is no setup fee, no monthly subscription and no long-term contract, and your first load is dispatched free. See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html).
+The fee is a percentage of weekly gross, OTR: 5% for semis, 7% for hotshots and 8% for box trucks and straight trucks. There is no setup fee, no monthly subscription and no long-term contract, and your first load is dispatched free. See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html).

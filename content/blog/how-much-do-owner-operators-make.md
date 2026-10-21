@@ -19,7 +19,7 @@ faq:
   - q: "Is gross revenue the same as what an owner-operator makes?"
     a: "No. Gross is what loads pay before any costs. Net is what is left after fuel, payments, insurance, maintenance, fees and taxes. Many new owner-operators confuse the two."
   - q: "How do dispatch fees affect owner-operator pay?"
-    a: "A percentage dispatch fee comes out of gross. At Texas Solutions it is 5% for semis, 8% for hotshots and 10% for box trucks and straight trucks, OTR. On $7,200 gross, 5% is $360."
+    a: "A percentage dispatch fee comes out of gross. At Texas Solutions it is 5% for semis, 7% for hotshots and 8% for box trucks and straight trucks, OTR. On $7,200 gross, 5% is $360."
 ---
 
 **How much do owner-operators make?** You will see big numbers online, but most of them are gross revenue, not take-home pay. The real answer depends on your rate per mile, how many miles you run, your cost per mile for owner-operators like you, and the fees you pay. This guide walks through a full weekly example so you can see where the money goes.
@@ -110,8 +110,8 @@ For rough market ranges by equipment, see our [truck dispatch rates guide](/truc
 Dispatch fees at Texas Solutions are a percentage of weekly gross, OTR. On the same $7,200 week:
 
 - **Semi** (dry van, reefer, flatbed, step deck, power only) at 5%: **$360**
-- **Hotshot** at 8%: **$576**
-- **Box truck or straight truck** at 10%: **$720**
+- **Hotshot** at 7%: **$504**
+- **Box truck or straight truck** at 8%: **$576**
 
 Gross revenue also differs a lot by equipment, so compare fees against what each truck type actually earns. Try the [dispatch fee calculator](/estimate.html).
 
