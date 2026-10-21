@@ -199,19 +199,9 @@ def nav_links():
             ("Contact", "contact.html")]
 
 
-def tools_nav_items():
-    """(name, file) for every calculator, dispatch fee and fuel cost first."""
-    items = [("Dispatch Fee Calculator", "estimate.html"), ("Truck Fuel Cost Calculator", "truck-fuel-cost-calculator.html")]
-    items += [(t["hub_title"], t["slug"] + ".html") for t in TOOLS]
-    return items
-
-
 def header(current):
     links = "\n".join(f'      <a href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for t, h in nav_links())
     mlinks = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in nav_links())
-    tnav = tools_nav_items()
-    tools_dd = "\n".join(f'          <a href="{f}">{esc(n)}</a>' for n, f in tnav)
-    mtools = "\n".join(f'      <a href="{f}">{esc(n)}</a>' for n, f in tnav)
     return f"""<a class="skip" href="#main">Skip to content</a>
 <div class="topbar"><div class="wrap tb-right">
   <div class="tb-left"><a href="tel:{C.PHONE_E164}">{C.PHONE}</a><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></div>
@@ -225,12 +215,7 @@ def header(current):
     <nav class="nav" aria-label="Main">
       <a href="dispatch.html"{' aria-current="page"' if current == "dispatch.html" else ""}>Dispatch</a>
       <a href="trucking-business-services.html"{' aria-current="page"' if current == "trucking-business-services.html" else ""}>Services</a>
-      <div class="dd">
-        <button type="button" aria-expanded="false">Tools &#9662;</button>
-        <div class="dd-menu wide">
-{tools_dd}
-        </div>
-      </div>
+      <a href="tools.html"{' aria-current="page"' if current == "tools.html" else ""}>Tools</a>
 {links}
     </nav>
     <div class="nav-cta">
@@ -244,13 +229,8 @@ def header(current):
     <a href="index.html">Home</a>
     <a href="dispatch.html">Dispatch</a>
     <a href="trucking-business-services.html">Services</a>
+    <a href="tools.html">Free Tools</a>
 {mlinks}
-    <details class="mnav-group">
-      <summary>Free Tools</summary>
-      <div class="mnav-sub">
-{mtools}
-      </div>
-    </details>
     <a class="btn btn-red" href="{INQUIRY}" data-cta="talk">Talk to a Dispatcher</a>
     <a class="btn btn-line" href="estimate.html">Calculate Your Dispatch Fee</a>
     <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp a Dispatcher</a>
@@ -1894,6 +1874,9 @@ def build_tools_hub():
         ("estimate.html", "Dispatch Fee Calculator", "See your weekly dispatch fee by truck type: semi 5%, hotshot 7%, box truck 8%.", "calc"),
         ("truck-fuel-cost-calculator.html", "Truck Fuel Cost Calculator", "MPG by truck type and load weight, trip fuel cost, and diesel prices for all 50 states.", "truck"),
     ]
+    groups = [("Dispatch and rates", "Price a load before you take it.", ["estimate", "load-profitability-calculator", "deadhead-miles-calculator", "detention-pay-calculator", "fuel-surcharge-calculator"]),
+              ("Fuel and costs", "Know what every mile costs you.", ["truck-fuel-cost-calculator", "cost-per-mile-calculator", "break-even-calculator", "maintenance-budget-calculator", "truck-loan-calculator"]),
+              ("Compliance and pay", "Stay legal and pay yourself right.", ["ifta-mileage-calculator", "hours-of-service-calculator", "per-diem-calculator", "driver-pay-calculator", "freight-class-calculator"])]
     cards = []
     n = 1
     for file, name, desc, icon in existing:
@@ -1902,16 +1885,22 @@ def build_tools_hub():
     for t in TOOLS:
         cards.append(f"""  <a class="tool-num-card rv" href="{t['slug']}.html"><span class="tool-num">TOOL.{n:02d}</span><div class="icon">{ICONS[TOOL_ICONS[t['prefix']]]}</div><h3>{esc(t['hub_title'])}</h3><p>{esc(t['hub_desc'])}</p><span class="more">Open tool &rarr;</span></a>""")
         n += 1
+    by_slug = {re.search(r'href="([a-z0-9-]+)\.html"', c).group(1): c for c in cards}
+    assert sorted(by_slug) == sorted(x for _, _, ss in groups for x in ss), "every tool must sit in one group"
+    grouped = "\n".join(f"""<section class="sec{' sec-soft' if gi % 2 else ''}"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">{esc(h)}</span><h2>{esc(h)}</h2><p>{esc(sub)}</p></div>
+  <div class="grid g3">
+{chr(10).join(by_slug[x] for x in ss)}
+  </div>
+</div></section>""" for gi, (h, sub, ss) in enumerate(groups))
+    counter = iter(range(1, len(cards) + 1))  # number the tools in the order they now appear
+    grouped = re.sub(r"TOOL\.\d\d", lambda _: f"TOOL.{next(counter):02d}", grouped)
     title = "Free Trucking Calculators: Dispatch, Fuel, CPM, IFTA, HOS & More | Texas Solutions"
     n_tools = len(existing) + len(TOOLS)
     desc = "Free calculators for owner-operators and small fleets: dispatch fee, fuel cost, fuel surcharge, detention pay, cost per mile, load profitability, break-even, deadhead miles, driver pay, IFTA mileage, per diem, truck loan, maintenance budget, HOS and freight class."
     body = f"""{phero("Tools", "Free Trucking Calculators", f"{n_tools} free calculators: dispatch fees, fuel cost and surcharge, detention, cost per mile, load profit, IFTA mileage, HOS hours and more. No signup.", ctas=False)}
 <section class="sec" style="padding-bottom:0"><div class="wrap"><div class="privacy-note rv"><b>Your numbers stay with you.</b> Calculations run in your browser and nothing you type is sent to us. If you tap <i>Save on this device</i>, your inputs are kept only in this browser's local storage on this device, never on our servers, and you can clear them with <i>Reset</i>. We use Google Analytics to count tool use (which tool, not what you typed). Forms are different: when you send an inquiry, the details you enter are emailed to our dispatch team.</div></div></section>
-<section class="sec"><div class="wrap">
-  <div class="grid g3">
-{chr(10).join(cards)}
-  </div>
-</div></section>
+{grouped}
 {band("Want a dispatcher who knows these numbers too?", "We negotiate every rate and plan lanes with your cost per mile in mind, not just the headline rate.")}"""
     schemas = [{"@context": "https://schema.org", "@type": "ItemList", "name": "Free trucking calculators", "url": url("/tools.html"),
                 "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": (existing[i][1] if i < 2 else TOOLS[i - 2]["hub_title"]), "url": url("/" + (existing[i][0] if i < 2 else TOOLS[i - 2]["slug"] + ".html"))}
