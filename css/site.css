@@ -1218,3 +1218,5 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .k-sign { grid-template-columns: 1fr 1fr; }
 .k-auto-sig { white-space: nowrap; font-size: clamp(40px, 4.4vw, 56px); }
 @media (max-width: 760px) { .k-sign { grid-template-columns: 1fr; } }
+.k-hint { margin-top: 6px; font-size: 13px; color: var(--muted); }
+#k-fee { font-weight: 800; color: var(--orange-600); }

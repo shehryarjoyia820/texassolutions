@@ -16,7 +16,10 @@
   Array.prototype.forEach.call(document.querySelectorAll('.k-date-copy'), function (el) { el.textContent = dateText; });
 
   /* fee and payment method shown inside the agreement text */
-  var fee = function () { var f = K.fees[val('equipment')]; return f ? String(f) : ''; };
+  /* fee: our standard rate for the equipment fills the field; the carrier may change it */
+  var standardFee = function () { var f = K.fees[val('equipment')]; return f ? String(f) : ''; };
+  var fee = function () { var n = parseFloat(val('fee')); return isFinite(n) && n > 0 ? String(n) : ''; };
+  $('k-equipment').addEventListener('change', function () { $('k-fee').value = standardFee(); syncTerms(); });
   var payment = function () { return val('payment') === 'Other' ? (val('payment_other') || 'Other') : val('payment'); };
   var syncTerms = function () {
     Array.prototype.forEach.call(document.querySelectorAll('.k-fee'), function (el) { el.textContent = fee() || '__'; });
@@ -25,7 +28,7 @@
     $('k-other-wrap').hidden = !other;
     $('k-payment_other').required = other;
   };
-  ['k-equipment', 'k-payment', 'k-payment_other'].forEach(function (id) { $(id).addEventListener('input', syncTerms); $(id).addEventListener('change', syncTerms); });
+  ['k-equipment', 'k-fee', 'k-payment', 'k-payment_other'].forEach(function (id) { $(id).addEventListener('input', syncTerms); $(id).addEventListener('change', syncTerms); });
   syncTerms();
 
   /* ---------------------------------------------------------------- signature: draw or type */
@@ -219,7 +222,7 @@
     var signed = new Date();
     var info = {
       company: val('company'), mc: val('mc'), usdot: val('usdot'), address: val('address'), phone: val('phone'), email: val('email'),
-      equipment: val('equipment'), fee: fee(), payment: payment(), rep: val('rep_name'), mode: mode, date: dateText,
+      equipment: val('equipment'), fee: fee(), standardFee: standardFee(), payment: payment(), rep: val('rep_name'), mode: mode, date: dateText,
       docId: (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2)).toUpperCase(),
       signedLocal: signed.toString(), signedUtc: signed.toISOString(), ua: navigator.userAgent, page: location.href.split('?')[0]
     };
@@ -243,7 +246,9 @@
             fd.append('document_id', info.docId);
             fd.append('carrier_company', info.company); fd.append('mc_number', info.mc); fd.append('usdot_number', info.usdot);
             fd.append('address', info.address); fd.append('phone', info.phone); fd.append('email', info.email);
-            fd.append('equipment', info.equipment); fd.append('dispatch_fee_percent', info.fee); fd.append('payment_method', info.payment);
+            fd.append('equipment', info.equipment); fd.append('dispatch_fee_percent', info.fee);
+            fd.append('standard_fee_percent', info.standardFee);
+            fd.append('fee_changed_by_carrier', info.fee !== info.standardFee ? 'YES - carrier entered ' + info.fee + '% (standard ' + info.standardFee + '%)' : 'No'); fd.append('payment_method', info.payment);
             fd.append('representative', info.rep); fd.append('name', info.rep);
             fd.append('signature_type', info.mode === 'type' ? 'Typed name' : 'Drawn by hand');
             fd.append('dispatcher_signature', 'Auto-signed: ' + K.dispatcher_signature);

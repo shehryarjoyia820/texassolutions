@@ -1234,8 +1234,10 @@ def build_contract():
       <div class="k-row">{fld("phone", "Phone", "tel", "tel")}{fld("email", "Email", "email", "email")}</div>
       <div class="k-row">
         <label class="k-field"><span>Equipment</span><select name="equipment" id="k-equipment" required>{eq_opts}</select></label>
-        <label class="k-field"><span>Payment method</span><select name="payment" id="k-payment" required><option value="">Select</option>{pay_opts}</select></label>
+        <label class="k-field"><span>Dispatch fee (%)</span><input type="number" name="fee" id="k-fee" min="1" max="30" step="0.5" inputmode="decimal" placeholder="Pick equipment" required></label>
       </div>
+      <p class="k-hint" id="k-fee-hint">Your equipment fills in our standard rate. You can change it to the percentage you agreed with your dispatcher.</p>
+      <label class="k-field"><span>Payment method</span><select name="payment" id="k-payment" required><option value="">Select</option>{pay_opts}</select></label>
       <label class="k-field" id="k-other-wrap" hidden><span>Other payment method</span><input type="text" name="payment_other" id="k-payment_other"></label>
     </div>
   </div>
