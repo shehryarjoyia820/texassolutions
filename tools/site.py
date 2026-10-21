@@ -432,7 +432,7 @@ def page(path, title, description, keywords, schemas, body, current=None, og_typ
 <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;display=swap">
 <link rel="stylesheet" href="css/site.css?v={asset_version('css/site.css')}">
 <link rel="alternate" type="text/plain" href="{C.BASE}/llms.txt" title="LLM summary">
 <link rel="alternate" type="application/rss+xml" title="{esc(C.BRAND)} Blog" href="{C.BASE}/feed.xml">
@@ -726,18 +726,13 @@ HOME_FAQS = [(q, a) for q, a in C.FAQS if "%" not in a and "%" not in q]
 
 
 def states_section():
-    """Home: every state we dispatch in, grouped by region (replaces the pricing cards)."""
-    groups = []
-    for region, codes in REGIONS_US:
-        links = "".join(f'<a href="{state_dispatch_path(c).lstrip("/")}">{esc(C.STATE_REGION[c][0])}</a>'
-                        for c in sorted(codes, key=lambda c: C.STATE_REGION[c][0]))
-        groups.append(f'<div class="st-group rv"><h3>{esc(region)}</h3><div class="st-links">{links}</div></div>')
-    return f"""<section class="sec" id="states"><div class="wrap">
-  <div class="sec-head center rv"><span class="eyebrow">We offer dispatch</span><h2>Dispatch by state</h2><p>Local lanes, state rules, one dispatcher.</p></div>
-  <div class="st-grid">
-  {chr(10).join(groups)}
-  </div>
-  <p class="mt-l center rv"><a class="btn btn-line" href="truck-dispatch-by-state.html">See every state</a></p>
+    """Home: every mainland state we dispatch in, as one alphabetical list (replaces the pricing cards)."""
+    codes = sorted((c for _, cs in REGIONS_US for c in cs if c not in ("AK", "HI")), key=lambda c: C.STATE_REGION[c][0])
+    links = "".join(f'<a href="{state_dispatch_path(c).lstrip("/")}">{esc(C.STATE_REGION[c][0])}</a>' for c in codes)
+    return f"""<section class="sec st-sec" id="states"><div class="wrap">
+  <div class="st-head rv"><span class="eyebrow">We offer dispatch</span><h2>Local lanes, state rules, one dispatcher</h2>
+  <p>We book loads in every state. These guides cover the main freight markets, corridors and state rules where you run.</p></div>
+  <div class="st-links rv">{links}<a class="st-all" href="truck-dispatch-by-state.html">All states &rarr;</a></div>
 </div></section>"""
 
 
