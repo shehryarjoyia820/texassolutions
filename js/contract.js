@@ -58,21 +58,24 @@
     });
   });
 
-  /* signature as a trimmed PNG (typed names are drawn in a script font) */
-  function signatureImage() {
+  /* signatures as JPEG images on white; typed names and the dispatcher's signature use a script font */
+  function scriptSignature(name) {
     var c = document.createElement('canvas'); c.width = 900; c.height = 260;
     var x = c.getContext('2d');
     x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height);
-    if (mode === 'type') {
-      if (!typed.value.trim()) return null;
-      x.fillStyle = '#0a0a0a'; x.textBaseline = 'middle';
-      var size = 120; x.font = '600 ' + size + 'px "Dancing Script", cursive';
-      while (x.measureText(typed.value).width > 860 && size > 40) { size -= 6; x.font = '600 ' + size + 'px "Dancing Script", cursive'; }
-      x.fillText(typed.value.trim(), 20, 140);
-    } else {
-      if (!drawn) return null;
-      x.drawImage(canvas, 0, 0);
-    }
+    x.fillStyle = '#0a0a0a'; x.textBaseline = 'middle';
+    var size = 120; x.font = '600 ' + size + 'px "Dancing Script", cursive';
+    while (x.measureText(name).width > 860 && size > 40) { size -= 6; x.font = '600 ' + size + 'px "Dancing Script", cursive'; }
+    x.fillText(name, 20, 140);
+    return c.toDataURL('image/jpeg', 0.92);
+  }
+  function signatureImage() {
+    if (mode === 'type') return typed.value.trim() ? scriptSignature(typed.value.trim()) : null;
+    if (!drawn) return null;
+    var c = document.createElement('canvas'); c.width = 900; c.height = 260;
+    var x = c.getContext('2d');
+    x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height);
+    x.drawImage(canvas, 0, 0);
     return c.toDataURL('image/jpeg', 0.92);
   }
 
@@ -145,6 +148,7 @@
     heading('Required documents from the Carrier');
     text('Before dispatch services begin, the Carrier should provide:', 10.5, 'normal', INK, 4);
     bullets(K.documents);
+    text(K.attorney_note, 9.5, 'italic', MUTED, 6);
 
     /* signatures */
     need(250); heading('Signatures');
@@ -152,14 +156,14 @@
     doc.setFont('helvetica', 'bold'); doc.setFontSize(11); setC(INK); doc.text('DISPATCHER', M, y); doc.text('CARRIER', M + col + 24, y); y += 18;
     doc.setFont('helvetica', 'normal'); doc.setFontSize(10);
     doc.text('Company: ' + K.dispatcher.name, M, y); doc.text('Company: ' + info.company, M + col + 24, y, { maxWidth: col }); y += 16;
-    doc.text('Representative: authorized representative', M, y); doc.text('Representative: ' + info.rep, M + col + 24, y, { maxWidth: col }); y += 10;
+    doc.text('Signed by: ' + K.dispatcher_signature, M, y); doc.text('Representative: ' + info.rep, M + col + 24, y, { maxWidth: col }); y += 10;
     var sigTop = y + 6;
     doc.setDrawColor(200, 196, 190); doc.setLineWidth(0.8);
     doc.roundedRect(M, sigTop, col, 70, 6, 6); doc.roundedRect(M + col + 24, sigTop, col, 70, 6, 6);
-    setC(MUTED); doc.setFontSize(9); doc.text('To be countersigned by Texas Solutions Dispatch', M + 10, sigTop + 40);
+    if (info.dispatcherSig) doc.addImage(info.dispatcherSig, 'JPEG', M + 10, sigTop + 6, col - 20, (col - 20) * 260 / 900);
     if (sig) doc.addImage(sig, 'JPEG', M + col + 34, sigTop + 6, col - 20, (col - 20) * 260 / 900);
     y = sigTop + 88; setC(INK); doc.setFontSize(10);
-    doc.text('Date: ________________', M, y); doc.text('Date: ' + info.date, M + col + 24, y); y += 22;
+    doc.text('Date: ' + info.date, M, y); doc.text('Date: ' + info.date, M + col + 24, y); y += 22;
     doc.setFontSize(8.5); setC(MUTED);
     var es = doc.splitTextToSize(K.esign, col); doc.text(es, M + col + 24, y); y += es.length * 11 + 10;
 
@@ -177,7 +181,7 @@
     text('Signed on ' + info.page, 8.5, 'normal', MUTED, 10);
     doc.setDrawColor(GREEN[0], GREEN[1], GREEN[2]); doc.setFillColor(234, 247, 238);
     need(40); doc.roundedRect(M, y, W - 2 * M, 34, 6, 6, 'FD'); doc.setFont('helvetica', 'bold'); doc.setFontSize(10); setC(GREEN);
-    doc.text('Signed electronically by the Carrier. Pending countersignature by Texas Solutions Dispatch.', M + 12, y + 21);
+    doc.text('Signed electronically by the Carrier and by ' + K.dispatcher_signature + '.', M + 12, y + 21);
 
     /* page footers */
     var n = doc.getNumberOfPages();
@@ -211,7 +215,7 @@
       signedLocal: signed.toString(), signedUtc: signed.toISOString(), ua: navigator.userAgent, page: location.href.split('?')[0]
     };
     (document.fonts && document.fonts.load ? document.fonts.load('600 40px "Dancing Script"') : Promise.resolve())
-      .then(function () { sig = signatureImage(); return loadImage(K.logo); })
+      .then(function () { sig = signatureImage(); info.dispatcherSig = scriptSignature(K.dispatcher_signature); return loadImage(K.logo); })
       .then(function (logo) {
         lastDoc = buildPdf(info, sig, logo);
         lastName = 'Texas-Solutions-Dispatch-Agreement-' + (info.company || 'carrier').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') + '.pdf';
@@ -233,6 +237,7 @@
             fd.append('equipment', info.equipment); fd.append('dispatch_fee_percent', info.fee); fd.append('payment_method', info.payment);
             fd.append('representative', info.rep); fd.append('name', info.rep);
             fd.append('signature_type', info.mode === 'type' ? 'Typed name' : 'Drawn by hand');
+            fd.append('dispatcher_signature', 'Auto-signed: ' + K.dispatcher_signature);
             fd.append('signed_at_utc', info.signedUtc); fd.append('signed_at_local', info.signedLocal);
             fd.append('agreement_date', info.date); fd.append('user_agent', info.ua); fd.append('page', info.page);
             fd.append('signature_image', sigSmall);

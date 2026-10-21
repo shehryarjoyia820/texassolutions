@@ -1240,12 +1240,13 @@ def build_contract():
     </div>
   </div>
 {secs}
-  <section class="k-sec k-docs"><h3>Required documents from the Carrier</h3><p>Before dispatch services begin, the Carrier should provide:</p><ul>{"".join(f"<li>{esc(x)}</li>" for x in K["documents"])}</ul></section>
+  <section class="k-sec k-docs"><h3>Required documents from the Carrier</h3><p>Before dispatch services begin, the Carrier should provide:</p><ul>{"".join(f"<li>{esc(x)}</li>" for x in K["documents"])}</ul><p class="k-note">{esc(K["attorney_note"])}</p></section>
   <section class="k-sign">
     <div class="k-signer">
       <h3>Dispatcher</h3>
       <p><b>{esc(d["name"])}</b></p>
-      <p class="k-muted">Countersigned by an authorized Texas Solutions representative after we receive your signed copy.</p>
+      <div class="k-pad k-pad-auto" aria-label="Dispatcher signature"><span class="k-auto-sig">{esc(K["dispatcher_signature"])}</span></div>
+      <p class="k-muted">Signed electronically by {esc(d["name"])}. Date: <b class="k-date-copy">today</b></p>
     </div>
     <div class="k-signer">
       <h3>Carrier</h3>
