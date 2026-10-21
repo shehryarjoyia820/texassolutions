@@ -857,3 +857,61 @@ BUSINESS_SERVICES = [
         ("Trucking social media", "Regular posts that build trust with shippers and help you recruit drivers.", None, "Custom quote", ""),
     ]),
 ]
+
+# -------------------------------------------------------------- dispatch agreement (sign-contract.html)
+# One source for the on-page agreement and the signed PDF (js/contract.js reads it as JSON).
+# Bump "version" whenever the wording changes; it is printed on every signed copy.
+CONTRACT = {
+    "version": "TSD-DSA-2026-10",
+    "title": "Truck Dispatch Services Agreement",
+    "dispatcher": {"name": "Texas Solutions Dispatch", "address": "401 W Kentucky Ave, Midland, Texas 79701",
+                   "email": "dispatch@texassolutions.co", "phone": "(838) 910-3147"},
+    "notify_email": "dispatch@texassolutions.co",
+    "sections": [
+        ("Purpose", [
+            "The Carrier authorizes the Dispatcher to locate freight opportunities, negotiate rates, communicate with brokers and shippers, and provide dispatch-related administrative services.",
+            "The Dispatcher acts solely as an independent dispatcher and is not a freight broker, motor carrier or freight forwarder.",
+        ]),
+        ("Services provided", ["The Dispatcher agrees to:", [
+            "Search and negotiate loads.",
+            "Communicate with freight brokers.",
+            "Submit carrier packets.",
+            "Schedule pickups and deliveries.",
+            "Handle check calls and appointment updates.",
+            "Provide rate confirmations.",
+            "Assist with detention, TONU and layover requests.",
+            "Assist with documentation when needed.",
+        ]]),
+        ("Carrier responsibilities", ["The Carrier agrees to:", [
+            "Maintain active MC and USDOT authority.",
+            "Carry all legally required insurance.",
+            "Ensure vehicles comply with FMCSA regulations.",
+            "Notify the Dispatcher immediately of delays, accidents, breakdowns or delivery issues.",
+            "Deliver loads safely and on time.",
+            "Provide signed PODs immediately after delivery.",
+        ]]),
+        ("Dispatch fee", [
+            "The Carrier agrees to pay the Dispatcher {fee}% of the gross revenue for each completed load. The Carrier's first load under this Agreement is dispatched with no fee.",
+            "Payment is due within 24 hours after the Carrier receives payment from the broker, unless otherwise agreed.",
+        ]),
+        ("Payment method", ["The Carrier may pay by ACH, Zelle, wire transfer, Cash App, check or another method agreed in writing. Selected method: {payment}."]),
+        ("Non-circumvention", [
+            "The Carrier agrees not to directly solicit or conduct business with any customer, broker or shipper introduced by the Dispatcher during this Agreement and for 12 months following termination.",
+            "Violation may result in liquidated damages of $5,000 per occurrence plus legal costs.",
+        ]),
+        ("Governing law", [
+            "This Agreement shall be governed by the laws of the State of Texas, United States.",
+            "Any disputes shall be resolved in the appropriate courts located in Texas.",
+        ]),
+        ("Entire agreement", [
+            "This Agreement constitutes the entire agreement between the parties and supersedes all prior discussions or agreements.",
+            "Any amendments must be in writing and signed by both parties.",
+        ]),
+    ],
+    "documents": ["Active MC authority", "Certificate of insurance (COI)", "W-9", "Notice of assignment (if applicable)",
+                  "Copy of CDL (owner-operator, if applicable)", "Voided check or ACH information (if required)",
+                  "Signed Dispatch Services Agreement"],
+    "payment_methods": ["ACH", "Zelle", "Wire transfer", "Cash App", "Check", "Other"],
+    "esign": ("By signing below, I agree that my electronic signature is the legal equivalent of my handwritten signature, "
+              "that I am authorized to sign for the Carrier named above, and that I have read and agree to this Agreement."),
+}

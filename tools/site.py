@@ -195,8 +195,8 @@ def head_codes():
 
 # ------------------------------------------------------------------ chrome
 def nav_links():
-    return [("Rates", "truck-dispatch-rates.html"), ("Blog", "blog.html"), ("About", "about.html"),
-            ("Contact", "contact.html")]
+    """Header links after Dispatch, Services, New MC and Tools. About and Contact live in the footer."""
+    return [("Rates", "truck-dispatch-rates.html"), ("Guides", "blog.html"), ("Sign Contract", "sign-contract.html")]
 
 
 def header(current):
@@ -215,6 +215,7 @@ def header(current):
     <nav class="nav" aria-label="Main">
       <a href="dispatch.html"{' aria-current="page"' if current == "dispatch.html" else ""}>Dispatch</a>
       <a href="trucking-business-services.html"{' aria-current="page"' if current == "trucking-business-services.html" else ""}>Services</a>
+      <a href="new-mc.html"{' aria-current="page"' if current == "new-mc.html" else ""}>New MC</a>
       <a href="tools.html"{' aria-current="page"' if current == "tools.html" else ""}>Tools</a>
 {links}
     </nav>
@@ -229,6 +230,7 @@ def header(current):
     <a href="index.html">Home</a>
     <a href="dispatch.html">Dispatch</a>
     <a href="trucking-business-services.html">Services</a>
+    <a href="new-mc.html">New MC</a>
     <a href="tools.html">Free Tools</a>
 {mlinks}
     <a class="btn btn-red" href="{INQUIRY}" data-cta="talk">Talk to a Dispatcher</a>
@@ -238,46 +240,42 @@ def header(current):
 
 
 def footer():
-    svc = "\n".join(f'      <a href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING if not p.get("hide_nav"))
+    """Five balanced columns: brand and contact, then Dispatch, Services, Resources and Company (6-8 links each)."""
+    def col(title, links):
+        return f'      <nav class="fcol" aria-label="{esc(title)}"><h4>{esc(title)}</h4>' + "".join(f'<a href="{h}">{esc(n)}</a>' for n, h in links) + "</nav>"
+    dispatch = [("Box Truck", "box-truck-dispatch.html"), ("Hotshot", "hotshot-dispatch.html"), ("Flatbed & Step Deck", "flatbed-dispatch.html"),
+                ("Dry Van", "dry-van-dispatch.html"), ("Reefer", "reefer-dispatch.html"), ("Power Only", "power-only-dispatch.html"),
+                ("Semi Truck", "semi-truck-dispatch.html"), ("All dispatch →", "dispatch.html")]
+    services = [("MC Lease", "mc-lease.html"), ("New Authority Dispatch", "dispatch-for-new-authority.html"), ("Owner-Operators", "owner-operator-dispatch.html"),
+                ("Small Fleets", "small-fleet-dispatch.html"), ("Back-Office Services", "trucking-back-office-services.html"),
+                ("MC & Authority Setup", "trucking-authority-setup.html"), ("All services →", "trucking-business-services.html")]
+    resources = [("New MC Guide", "new-mc.html"), ("Guides", "blog.html"), ("Free Tools", "tools.html"), ("Dispatch Fee Calculator", "estimate.html"),
+                 ("Diesel Prices by State", "diesel-prices/texas.html"), ("Dispatch by State", "truck-dispatch-by-state.html"), ("FAQ", "faq.html")]
+    company = [("About Us", "about.html"), ("Contact", "contact.html"), ("Dispatch Rates", "truck-dispatch-rates.html"), ("Sign Contract", "sign-contract.html"),
+               ("Privacy Policy", "privacy.html"), ("Terms & Conditions", "terms.html"), ("Texas Solutions Software", C.MAIN_SITE + "/")]
     return f"""<footer class="footer">
   <div class="wrap">
-    <div class="cols">
+    <div class="fgrid">
       <div class="fbrand">
         <img src="assets/logo/texas-solutions-logo.png" alt="Texas Solutions" width="127" height="44" loading="lazy">
-        <p>Nationwide truck dispatch for owner-operators and small fleets across the USA: semi trucks, hotshots and box trucks. First load free, no setup fee, dispatchers available 24/7.</p>
+        <p>Nationwide truck dispatch for owner-operators and small fleets across the USA. First load free, no setup fee.</p>
+        <ul class="fcontact">
+          <li><a href="tel:{C.PHONE_E164}">{ICONS['phone']}{C.PHONE}</a></li>
+          <li><a href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp a dispatcher</a></li>
+          <li><a href="mailto:{C.EMAIL}">{ICONS['mail']}{C.EMAIL}</a></li>
+          <li><span>{ICONS['pin']}{C.STREET}, {C.CITY}, {C.REGION} {C.POSTAL}</span></li>
+          <li><span>{ICONS['clock']}Dispatchers available 24/7</span></li>
+        </ul>
       </div>
-      <div>
-        <h4>Dispatch Services</h4>
-{svc}
-      </div>
-      <div>
-        <h4>Company</h4>
-      <a href="truck-dispatch-rates.html">Dispatch Rates</a>
-      <a href="estimate.html">Free Estimate</a>
-      <a href="tools.html">All Free Tools</a>
-      <a href="truck-fuel-cost-calculator.html">Fuel Cost Calculator</a>
-      <a href="diesel-prices/texas.html">Diesel Prices by State</a>
-      <a href="truck-dispatch-by-state.html">Truck Dispatch by State</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About Us</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms &amp; Conditions</a>
-      <a href="{C.MAIN_SITE}/" rel="noopener">Texas Solutions Software</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-      <a href="tel:{C.PHONE_E164}">Call {C.PHONE}</a>
-      <a href="sms:{C.PHONE_E164}">Text {C.PHONE}</a>
-      <a href="{WA_URL}" target="_blank" rel="noopener">WhatsApp +1 838 910 3147</a>
-      <a href="contact.html#callback">Request a callback</a>
-      <a href="mailto:{C.EMAIL}">{C.EMAIL}</a>
-      <p style="margin-top:8px">{C.STREET}<br>{C.CITY}, {C.REGION} {C.POSTAL}</p>
-      <p style="margin-top:8px">{C.HOURS}</p>
-      </div>
+{col("Dispatch", dispatch)}
+{col("Services", services)}
+{col("Resources", resources)}
+{col("Company", company)}
     </div>
-    <p class="legal">&copy; <span id="year">2026</span> Texas Solutions. All rights reserved. {C.LEGAL_FOOTER}</p>
+    <div class="fbottom">
+      <p>&copy; <span id="year">2026</span> Texas Solutions. All rights reserved.</p>
+      <p class="legal">{C.LEGAL_FOOTER}</p>
+    </div>
   </div>
 </footer>
 <a class="wa-float" href="{WA_URL}" target="_blank" rel="noopener" aria-label="Chat with a Texas Solutions dispatcher on WhatsApp">
@@ -690,7 +688,7 @@ def blog_teaser():
         return ""
     cards = "\n".join(post_card(po) for po in POSTS[:3])
     return f"""<section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">From the blog</span><h2>Guides for owner-operators</h2></div>
+  <div class="sec-head rv"><span class="eyebrow">Guides</span><h2>Guides for owner-operators</h2></div>
   <div class="grid g3">
 {cards}
   </div>
@@ -1087,6 +1085,198 @@ def build_dispatch_hub():
 </div></section>"""
     schemas = [service("Truck Dispatch Services", desc, path, "Truck dispatch"), faq_ld([qa]), crumbs_ld([("Dispatch", path)])]
     write("dispatch.html", page(path, title, desc, "truck dispatch services, " + ", ".join(C.CORE_KEYWORDS[:10]), schemas, body, current="dispatch.html"))
+
+
+def build_new_mc():
+    """New MC: the full guide from USDOT number to first load, linking every related page, guide and tool."""
+    path = "/new-mc.html"
+    steps = [
+        ("Set up the business", "Form your LLC or corporation, get an EIN and open a business bank account, so the authority is in the right legal name.",
+         [("How to start a trucking company", "blog/how-to-start-a-trucking-company.html")]),
+        ("Apply for USDOT and MC authority", "Register with FMCSA for a USDOT number and for-hire operating authority (your MC number). Check every answer before you submit; mistakes cost weeks.",
+         [("MC number and authority setup", "trucking-authority-setup.html"), ("How to get your MC number", "blog/how-to-get-mc-number-authority-owner-operator.html")]),
+        ("File insurance and BOC-3", "Your insurance agent files proof of liability coverage with FMCSA, and a process agent files your BOC-3. Authority cannot go active without both.",
+         [("Partner referrals for insurance", "trucking-business-services.html")]),
+        ("Wait out the protest period", "FMCSA posts your application for a protest period. Use the time to prepare your broker packet, choose a factoring company and set up your ELD.",
+         [("Freight factoring explained", "blog/freight-factoring-for-owner-operators-explained.html")]),
+        ("Register UCR, IRP, IFTA and drug testing", "Interstate carriers register for UCR, IRP plates and an IFTA account in their base state, and join a drug and alcohol consortium before the first load.",
+         [("IFTA for owner-operators", "blog/ifta-for-owner-operators-how-to-file.html"), ("Compliance and permits", "trucking-business-services.html")]),
+        ("Get set up with brokers and book the first load", "Send one complete carrier packet to brokers that accept new authority, then book loads that leave you in a good market for the next one.",
+         [("How to get loads with a new MC", "blog/how-to-get-loads-with-new-mc-number.html"), ("Dispatch for new authority", "dispatch-for-new-authority.html")]),
+    ]
+    step_html = "\n".join(
+        f'''    <li class="mc-step rv"><span class="mc-num">{i:02d}</span><div><h3>{esc(t)}</h3><p>{esc(d)}</p>
+      <p class="mc-links">{" ".join(f'<a href="{h}">{esc(n)} &rarr;</a>' for n, h in links)}</p></div></li>'''
+        for i, (t, d, links) in enumerate(steps, 1))
+    costs = [("FMCSA registration", "FMCSA", "Paid when you apply. FMCSA lists the current fee on its website."),
+             ("BOC-3 process agent", "A process agent company", "Usually a small one-time fee."),
+             ("Liability and cargo insurance", "Your insurance company", "Down payment plus monthly premium; depends on your truck, driving record and lanes."),
+             ("UCR, IRP plates and IFTA", "Your base state and UCR", "Depends on the number of trucks and the states you run."),
+             ("MC authority setup help", "Texas Solutions", "$275 one-time, optional. We check and file in the right order."),
+             ("Dispatch", "Texas Solutions", "First load free, then a percentage of gross by truck type. No setup fee.")]
+    cost_rows = "\n".join(f"      <tr><th>{esc(a)}</th><td>{esc(b)}</td><td>{esc(c)}</td></tr>" for a, b, c in costs)
+    checklist = ["Active MC authority and USDOT number", "Certificate of insurance listing auto liability and cargo", "W-9 in the legal business name",
+                 "Notice of assignment, if you use factoring", "Copy of your CDL (owner-operator)", "Voided check or ACH details",
+                 "ELD installed and working", "Drug and alcohol consortium enrollment", "Signed dispatch agreement"]
+    tips = [("Start where new MCs get booked", "Some brokers accept brand-new authority; many wait a few months. Target the first group from day one."),
+            ("Keep the packet ready", "One clean PDF with authority, W-9, COI and notice of assignment gets you set up in minutes."),
+            ("Do not chase every cheap load", "Know your cost per mile and walk away from loads that do not cover it."),
+            ("Deliver perfectly", "On-time pickups, quick check calls and clean paperwork are how brokers decide to rebook you.")]
+    tip_html = "\n".join(f'    <div class="card rv"><div class="icon">{ICONS["check"]}</div><h3>{esc(t)}</h3><p>{esc(d)}</p></div>' for t, d in tips)
+    by_slug = {po["slug"]: po for po in POSTS}
+    guide_slugs = ["how-to-get-mc-number-authority-owner-operator", "how-to-get-loads-with-new-mc-number", "how-to-start-a-trucking-company",
+                   "how-to-become-an-owner-operator", "how-to-start-a-box-truck-business", "how-to-start-a-hotshot-business"]
+    guides = "\n".join(post_card(by_slug[s]) for s in guide_slugs if s in by_slug)
+    tool_links = [("Cost per mile calculator", "cost-per-mile-calculator.html"), ("Break-even calculator", "break-even-calculator.html"),
+                  ("IFTA mileage calculator", "ifta-mileage-calculator.html"), ("Hours of service calculator", "hours-of-service-calculator.html"),
+                  ("Load profitability calculator", "load-profitability-calculator.html"), ("Dispatch fee calculator", "estimate.html")]
+    faqs = [("How long does it take to get MC authority?", "Many carriers see their authority go active a few weeks after applying, once insurance and BOC-3 filings are on record and the protest period has passed. Timelines vary, so check your status on FMCSA."),
+            ("Can I get loads with a brand-new MC number?", "Yes. Some brokers book new authorities from day one if your packet is complete and insurance is verified. A dispatcher who works with new MCs knows which ones."),
+            ("What if I do not have my own authority yet?", "You can lease on to an established partner carrier's authority with our MC lease program and haul while your own authority is processed."),
+            ("Do you help with the filings?", "Yes. MC authority setup is $275 one-time. Government fees, insurance and BOC-3 costs are paid directly by you.")]
+    qa = ("How do I start with a new MC number?",
+          "Set up your business and EIN, apply to FMCSA for a USDOT number and MC authority, have your insurance and BOC-3 filed, wait out the protest period, "
+          "register UCR, IRP, IFTA and drug testing, then send a complete carrier packet to brokers that accept new authority and book your first load.")
+    body = f"""{phero("New MC", "New MC? Start here", "The full guide from your USDOT number to your first load: every step, what it costs, the checklist, and the guides and tools that help.")}
+<section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>
+<section class="sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Step by step</span><h2>From USDOT number to first load</h2></div>
+  <ol class="mc-steps">
+{step_html}
+  </ol>
+</div></section>
+<section class="sec sec-soft"><div class="wrap two">
+  <div class="rv">
+    <div class="sec-head"><span class="eyebrow">What it costs</span><h2>Who you pay, and for what</h2><p>Government fees, insurance and taxes are paid directly by you. Our help is optional.</p></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Item</th><th>Paid to</th><th>Notes</th></tr></thead>
+      <tbody>
+{cost_rows}
+      </tbody>
+    </table></div>
+  </div>
+  <div class="aside rv">
+    <div class="card"><h3>Checklist before your first load</h3><ul class="mc-check">{"".join(f"<li>{esc(x)}</li>" for x in checklist)}</ul>
+    <p class="mt-s"><a class="btn btn-red" href="sign-contract.html">Sign the dispatch agreement</a></p></div>
+  </div>
+</div></section>
+<section class="sec sec-ink"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">No authority yet?</span><h2>Haul now with an MC lease</h2><p>Lease on to an established partner carrier's authority, with dispatch included, while your own MC is processed.</p></div>
+  <p class="rv"><a class="btn btn-red" href="mc-lease.html">See MC lease</a> <a class="btn btn-line" href="dispatch-for-new-authority.html">Dispatch for new authority</a></p>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">The first 90 days</span><h2>How new MCs keep the truck loaded</h2></div>
+  <div class="grid g4">
+{tip_html}
+  </div>
+</div></section>
+<section class="sec sec-soft"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Guides</span><h2>Read next</h2></div>
+  <div class="grid g3">
+{guides}
+  </div>
+  <div class="chip-row mt-l rv" style="justify-content:flex-start">{"".join(f'<a class="chip" href="{h}">{esc(n)}</a>' for n, h in tool_links)}</div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">FAQ</span><h2>New MC questions</h2></div>
+  {faq_html(faqs)}
+</div></section>
+{band("Ready for your first load?", "We work with new MC numbers from day one, and your first load is dispatched free.")}"""
+    title = "New MC Number Guide: Steps, Costs & First Loads | Texas Solutions"
+    desc = "New MC authority guide: USDOT and MC filing, insurance and BOC-3, UCR, IRP and IFTA, broker packets and how to get your first loads."
+    schemas = [faq_ld([qa] + faqs), crumbs_ld([("New MC", path)]), speakable(path, title)]
+    write("new-mc.html", page(path, title, desc, "new MC number, new MC authority, how to get MC number, new trucking authority, new authority loads, first load new MC, USDOT and MC, BOC-3, UCR, new carrier checklist", schemas, body, current="new-mc.html", og_type="article"))
+
+
+def build_contract():
+    """Sign Contract: read the dispatch agreement, fill in carrier details, e-sign, download the PDF (js/contract.js)."""
+    path = "/sign-contract.html"
+    K = C.CONTRACT
+    fees = {eq: C.EQ_PCT[eq] for eq in C.EQUIPMENT}
+    data = dict(K, fees=fees, logo="assets/logo/texas-solutions-logo.png")
+
+    def para(x):
+        if isinstance(x, list):
+            return "<ul>" + "".join(f"<li>{esc(i)}</li>" for i in x) + "</ul>"
+        x = esc(x).replace("{fee}", '<b class="k-fee">__</b>').replace("{payment}", '<b class="k-pay">__</b>')
+        return f"<p>{x}</p>"
+
+    secs = "\n".join(f'    <section class="k-sec"><h3>{n}. {esc(h)}</h3>{"".join(para(x) for x in body)}</section>'
+                     for n, (h, body) in enumerate(K["sections"], 1))
+    d = K["dispatcher"]
+
+    def fld(name, label, typ="text", auto="", extra=""):
+        return (f'<label class="k-field"><span>{esc(label)}</span><input type="{typ}" name="{name}" id="k-{name}" '
+                f'autocomplete="{auto}" required {extra}></label>')
+
+    eq_opts = opts(C.EQUIPMENT, "Select equipment")
+    pay_opts = "".join(f"<option>{esc(m)}</option>" for m in K["payment_methods"])
+    body = f"""{phero("Sign Contract", "Sign your dispatch agreement", "Read the agreement, fill in your company details and sign online. Your signed PDF downloads right away, and a copy goes to our dispatch team.", ctas=False)}
+<section class="sec"><div class="wrap">
+<form class="k-doc" id="contractForm" novalidate>
+  <header class="k-head">
+    <img src="assets/logo/texas-solutions-logo.png" alt="Texas Solutions" width="190" height="66">
+    <div class="k-bars" aria-hidden="true"><i></i><i></i></div>
+  </header>
+  <h2 class="k-title">{esc(K["title"])}</h2>
+  <p class="k-intro">This Dispatch Services Agreement ("Agreement") is entered into on <b id="k-date">today</b>, by and between:</p>
+  <div class="k-parties">
+    <div class="k-party">
+      <h3>Dispatch company</h3>
+      <p class="k-name">{esc(d["name"])}</p>
+      <dl><dt>Address</dt><dd>{esc(d["address"])}</dd><dt>Email</dt><dd>{esc(d["email"])}</dd><dt>Phone</dt><dd>{esc(d["phone"])}</dd></dl>
+    </div>
+    <div class="k-party">
+      <h3>Carrier</h3>
+      {fld("company", "Company name", auto="organization")}
+      <div class="k-row">{fld("mc", "MC number", extra='inputmode="numeric"')}{fld("usdot", "USDOT number", extra='inputmode="numeric"')}</div>
+      {fld("address", "Address", auto="street-address")}
+      <div class="k-row">{fld("phone", "Phone", "tel", "tel")}{fld("email", "Email", "email", "email")}</div>
+      <div class="k-row">
+        <label class="k-field"><span>Equipment</span><select name="equipment" id="k-equipment" required>{eq_opts}</select></label>
+        <label class="k-field"><span>Payment method</span><select name="payment" id="k-payment" required><option value="">Select</option>{pay_opts}</select></label>
+      </div>
+      <label class="k-field" id="k-other-wrap" hidden><span>Other payment method</span><input type="text" name="payment_other" id="k-payment_other"></label>
+    </div>
+  </div>
+{secs}
+  <section class="k-sec k-docs"><h3>Required documents from the Carrier</h3><p>Before dispatch services begin, the Carrier should provide:</p><ul>{"".join(f"<li>{esc(x)}</li>" for x in K["documents"])}</ul></section>
+  <section class="k-sign">
+    <div class="k-signer">
+      <h3>Dispatcher</h3>
+      <p><b>{esc(d["name"])}</b></p>
+      <p class="k-muted">Countersigned by an authorized Texas Solutions representative after we receive your signed copy.</p>
+    </div>
+    <div class="k-signer">
+      <h3>Carrier</h3>
+      {fld("rep_name", "Representative (full name)", auto="name")}
+      <div class="k-pad-tabs" role="tablist">
+        <button type="button" class="on" data-mode="draw" role="tab" aria-selected="true">Draw</button>
+        <button type="button" data-mode="type" role="tab" aria-selected="false">Type</button>
+      </div>
+      <div class="k-pad" id="k-pad-draw"><canvas id="k-canvas" width="900" height="260" aria-label="Signature pad: draw your signature"></canvas><span class="k-pad-hint">Sign here with your mouse or finger</span><button type="button" class="k-clear" id="k-clear">Clear</button></div>
+      <div class="k-pad k-pad-type" id="k-pad-type" hidden><input type="text" id="k-typed" placeholder="Type your full name" autocomplete="name"><div class="k-typed-preview" id="k-typed-preview" aria-hidden="true"></div></div>
+      <p class="k-muted">Date: <b class="k-date-copy">today</b></p>
+    </div>
+  </section>
+  <label class="k-consent"><input type="checkbox" id="k-consent" required><span>{esc(K["esign"])}</span></label>
+  <button class="btn btn-red k-submit" type="submit">Sign and download PDF</button>
+  <p class="form-status" id="k-status" role="status" aria-live="polite"></p>
+  <div class="k-done" id="k-done" hidden>
+    <h3>Agreement signed</h3>
+    <p>Your signed PDF has downloaded. A copy has been sent to our dispatch team, and a dispatcher will contact you to collect your documents.</p>
+    <button type="button" class="btn btn-dark" id="k-again">Download PDF again</button>
+  </div>
+</form>
+</div></section>
+<script type="application/json" id="contractData">{json.dumps(data)}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&amp;display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script src="js/contract.js?v={asset_version('js/contract.js')}" defer></script>"""
+    title = "Sign Your Truck Dispatch Agreement Online | Texas Solutions"
+    desc = "Read the Texas Solutions Dispatch agreement, fill in your carrier details and e-sign online. Your signed PDF downloads instantly."
+    schemas = [crumbs_ld([("Sign Contract", path)])]
+    write("sign-contract.html", page(path, title, desc, "truck dispatch agreement, dispatch contract, sign dispatch agreement online, dispatch services agreement", schemas, body, current="sign-contract.html"))
 
 
 def build_services():
@@ -1573,7 +1763,7 @@ def post_title_tag(po):
 
 def build_blog():
     posts = load_posts()
-    title = "Trucking Blog: Dispatch, Rates, Fuel & Compliance Guides"
+    title = "Trucking Guides: Dispatch, Rates, Fuel & Compliance"
     desc = "Practical trucking guides for owner-operators: dispatch costs, rates per mile, diesel prices, fuel cost, MC authority, IFTA, HOS, deadhead and more."
     lead = posts[0] if posts else None
     rest = posts[1:]
@@ -1584,7 +1774,7 @@ def build_blog():
     <div><span class="tag">{esc(lead['tags'][0]) if lead['tags'] else 'Trucking'}</span><h2>{esc(lead['title'])}</h2>
     <p>{esc(lead['description'])}</p><span class="more">Read the guide &rarr;</span></div></a>"""
     cards = "\n".join(post_card(po) for po in rest) or ""
-    body = f"""{phero("Blog", "Trucking Blog", "Straight answers for owner-operators on dispatch costs, rates per mile, diesel prices, compliance and fuel savings.", ctas=False)}
+    body = f"""{phero("Guides", "Trucking Guides", "Straight answers for owner-operators on dispatch costs, rates per mile, diesel prices, compliance and fuel savings.", ctas=False)}
 <section class="sec"><div class="wrap">
   {feature}
   <div class="grid g3" style="margin-top:28px">
@@ -1598,7 +1788,7 @@ def build_blog():
                               "datePublished": po["date"].isoformat(), "image": po["cover_abs"],
                               "author": {"@type": "Organization", "name": po["author"]}} for po in posts]},
                {"@context": "https://schema.org", "@type": "CollectionPage"},
-               crumbs_ld([("Blog", "/blog.html")])]
+               crumbs_ld([("Guides", "/blog.html")])]
     kw = "trucking blog, truck dispatch blog, owner operator tips, diesel prices, fuel cost per mile, hotshot trucking, box truck loads, MC number, IFTA, hours of service, freight factoring"
     write("blog.html", page("/blog.html", title, desc, kw, schemas, body, current="blog.html",
                             image=posts[0]["cover_abs"] if posts else None, image_alt="Texas Solutions trucking blog"))
@@ -1626,7 +1816,7 @@ def build_blog():
                      f'<time datetime="{po["date"].isoformat()}">{po["date"].strftime("%B")} {po["date"].day}, {po["date"].year}</time>{upd} '
                      f'&middot; {max(1, round(po["words"] / 220))} min read</p>')
         body = f"""<section class="phero"><div class="wrap">
-  <div class="crumbs"><a href="index.html">Home</a> / <a href="blog.html">Blog</a></div>
+  <div class="crumbs"><a href="index.html">Home</a> / <a href="blog.html">Guides</a></div>
   <h1>{esc(po['title'])}</h1>
   {meta_line}
   <div class="chip-row" style="justify-content:flex-start">{tags}</div>
@@ -1660,7 +1850,7 @@ def build_blog():
                "publisher": {"@id": BUSINESS_ID}, "mainEntityOfPage": {"@id": url(path) + "#webpage"},
                "articleSection": po["tags"][0] if po["tags"] else "Trucking", "keywords": po["keywords"], "wordCount": po["words"],
                "inLanguage": "en-US", "isAccessibleForFree": True}
-        schemas = [art, crumbs_ld([("Blog", "/blog.html"), (po["title"], path)]), speakable(path, po["title"])]
+        schemas = [art, crumbs_ld([("Guides", "/blog.html"), (po["title"], path)]), speakable(path, po["title"])]
         if po["faq"]:
             schemas.append(faq_ld(po["faq"]))
         shell = page(path, post_title_tag(po), po["description"], po["keywords"] or "truck dispatch", schemas, body, current="blog.html",
@@ -2921,7 +3111,7 @@ def build_site_files():
         return {"loc": url(path), "lastmod": lm.get(f, TODAY)}
 
     core = ["/", "/estimate.html", "/truck-dispatch-rates.html", "/truck-fuel-cost-calculator.html"] + ["/" + p["file"] for p in C.LANDING] + \
-           ["/dispatch.html", "/trucking-business-services.html", "/faq.html", "/about.html", "/contact.html", "/privacy.html", "/terms.html"]
+           ["/dispatch.html", "/new-mc.html", "/sign-contract.html", "/trucking-business-services.html", "/faq.html", "/about.html", "/contact.html", "/privacy.html", "/terms.html"]
     tool_paths = ["/tools.html"] + ["/" + tl["slug"] + ".html" for tl in TOOLS]
     blog_entries = [entry("/blog.html")] + [dict(entry(f"/blog/{po['slug']}.html"), image=po["cover_abs"], title=po["title"]) for po in POSTS]
     groups = {
@@ -3028,6 +3218,8 @@ def main():
     build_about()
     build_services()
     build_dispatch_hub()
+    build_contract()
+    build_new_mc()
     build_faq()
     build_legal("privacy.html", "Privacy Policy")
     build_legal("terms.html", "Terms & Conditions")

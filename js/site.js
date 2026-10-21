@@ -5,6 +5,7 @@
   var ENDPOINT = 'https://api.web3forms.com/submit';
   document.documentElement.classList.remove('no-js');
   var TS = window.TS = {};
+  TS.form = { key: WEB3FORMS_ACCESS_KEY, endpoint: ENDPOINT };  /* used by js/contract.js */
   var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
   var store = {
     get: function (s, k) { try { return JSON.parse(window[s].getItem(k)); } catch (e) { return null; } },
