@@ -1284,7 +1284,5 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .board-ad .ad-btn:hover { filter: brightness(1.08); color: #fff; }
 .board-ad .ad-btn span { transition: transform .2s; }
 .board-ad .ad-btn:hover span { transform: translateX(4px); }
-.board-ad .ad-call { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; font-size: 14px; font-weight: 700; color: var(--dd); text-decoration: none; }
-.board-ad .ad-call svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
 @media (max-width: 900px) { .board-ad { position: static; } }
 @media (prefers-reduced-motion: reduce) { .board-ad, .board-ad .ad-btn span { transition: none; } .board-ad:hover { transform: none; } }

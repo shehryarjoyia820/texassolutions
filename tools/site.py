@@ -548,7 +548,7 @@ def rate_board(equip=None):
 </div>"""
 
 
-AD_IC = {'pin': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>', 'port': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18l-2 4H5z"/><path d="M6 17V9h5v8M11 12h6v5"/><path d="M8 9V5"/></svg>', 'fleet': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7z"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>', 'check': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg>', 'phone': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>'}
+AD_IC = {'pin': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>', 'port': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18l-2 4H5z"/><path d="M6 17V9h5v8M11 12h6v5"/><path d="M8 9V5"/></svg>', 'fleet': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7z"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>', 'check': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg>'}
 
 
 def board_ad():
@@ -569,7 +569,6 @@ def board_ad():
       <div class="ad-body">
         <ul class="ad-feats">{rows}</ul>
         <a class="ad-btn" href="{link}" target="_blank" rel="sponsored noopener" data-cta="ad_dieseldynamix">Book mobile testing <span aria-hidden="true">&rarr;</span></a>
-        <a class="ad-call" href="tel:+18583428328" rel="sponsored" data-cta="ad_dieseldynamix_call">{AD_IC["phone"]}(858) 342-8328</a>
       </div>
     </aside>"""
 
