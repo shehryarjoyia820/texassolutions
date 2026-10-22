@@ -26,7 +26,7 @@ COUNTRY = "US"
 HOURS = "Dispatchers available 24/7 by call, text or WhatsApp"
 
 # Web3Forms delivers form submissions by email (existing account).
-WEB3FORMS_KEY = "c66393e0-d742-483a-b9d0-a923d09baa97"
+WEB3FORMS_KEY = "acb4c65c-c969-44a9-8bee-31407b1b23d6"
 
 # -------------------------------------------------------------- pricing
 PRICING = {
