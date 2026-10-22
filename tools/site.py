@@ -1246,8 +1246,8 @@ def build_contract():
 {secs}
   <section class="k-sec k-docs"><h3>Required documents from the Carrier</h3><p>Before dispatch services begin, the Carrier should provide:</p><ul>{"".join(f"<li>{esc(x)}</li>" for x in K["documents"])}</ul><p class="k-note">{esc(K["attorney_note"])}</p></section>
   <section class="k-sec k-uploads"><h3>Upload your documents</h3>
-    <p>Optional, but it gets you dispatched faster. Photos or PDFs, up to 5 MB each; phone photos are resized automatically. They are sent with your signed agreement.</p>
-    <div class="k-up-grid">{"".join(f'<label class="k-up" data-field="{f}"><span class="k-up-label">{esc(l)}</span><input type="file" name="{f}" accept="image/*,application/pdf"><span class="k-up-state">Choose file or take a photo</span></label>' for f, l in K["uploads"])}</div>
+    <p>MC authority, COI and W-9 are required; the rest are optional. Photos or PDFs, up to 5 MB each; phone photos are resized automatically. They are sent with your signed agreement.</p>
+    <div class="k-up-grid">{"".join(f'<label class="k-up{" req" if r else ""}" data-field="{f}"><span class="k-up-label">{esc(l)} <em>{"Required" if r else "Optional"}</em></span><input type="file" name="{f}" accept="image/*,application/pdf"{" required" if r else ""}><span class="k-up-state">Choose file or take a photo</span></label>' for f, l, r in K["uploads"])}</div>
   </section>
   <section class="k-sign">
     <div class="k-signer">

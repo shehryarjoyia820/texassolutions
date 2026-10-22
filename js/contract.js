@@ -227,7 +227,7 @@
     });
   };
   Array.prototype.forEach.call(form.querySelectorAll('.k-up input[type=file]'), function (input) {
-    var box = input.closest('.k-up'), state = box.querySelector('.k-up-state'), label = box.querySelector('.k-up-label').textContent;
+    var box = input.closest('.k-up'), state = box.querySelector('.k-up-state'), label = box.querySelector('.k-up-label').firstChild.textContent.trim();
     var reset = function (msg, err) { delete docs[input.name]; box.classList.remove('has-file'); box.classList.toggle('bad', !!err); state.textContent = msg || 'Choose file or take a photo'; };
     input.addEventListener('change', function () {
       var f = input.files && input.files[0];

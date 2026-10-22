@@ -1235,3 +1235,6 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .k-up.has-file .k-up-state { color: var(--green-brand-700); font-weight: 600; }
 .k-up.bad { border-color: #dc2626; }
 .k-up.bad .k-up-state { color: #b91c1c; }
+.k-up-label em { font-style: normal; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-left: 6px; color: var(--muted); }
+.k-up.req .k-up-label em { color: var(--orange-600); }
+.k-up.has-file .k-up-label em { color: var(--green-brand-700); }
