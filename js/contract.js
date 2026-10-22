@@ -277,7 +277,8 @@
         /* copy for the dispatch team: every field, the signature image and the document ID */
         var small = document.createElement('canvas'); small.width = 450; small.height = 130;
         var img = new Image();
-        return new Promise(function (res) { img.onload = function () { small.getContext('2d').drawImage(img, 0, 0, 450, 130); res(small.toDataURL('image/jpeg', 0.8)); }; img.src = sig; })
+        /* white background so the attachment is not black where the pad is transparent */
+        return new Promise(function (res) { img.onload = function () { var c = small.getContext('2d'); c.fillStyle = '#fff'; c.fillRect(0, 0, 450, 130); c.drawImage(img, 0, 0, 450, 130); small.toBlob(res, 'image/png'); }; img.src = sig; })
           .then(function (sigSmall) {
             var fd = new FormData();
             fd.append('access_key', TS.form.key);
@@ -296,13 +297,14 @@
             fd.append('dispatcher_signature', 'Auto-signed: ' + K.dispatcher_signature);
             fd.append('signed_at_utc', info.signedUtc); fd.append('signed_at_local', info.signedLocal);
             fd.append('agreement_date', info.date); fd.append('user_agent', info.ua); fd.append('page', info.page);
-            fd.append('signature_image', sigSmall);
+            fd.append('signature_image', 'Attached as a PNG file (also printed in the signed PDF)');
             /* attachments: the signed PDF plus any documents the carrier uploaded */
             var names = Object.keys(docs);
             fd.append('documents_attached', names.length ? names.map(function (n) { return docs[n].label; }).join(', ') : 'None uploaded');
             var withFiles = new FormData();
             fd.forEach(function (v, k) { withFiles.append(k, v); });
             withFiles.append('contract_pdf', new File([lastDoc.output('blob')], lastName, { type: 'application/pdf' }));
+            if (sigSmall) withFiles.append('signature', new File([sigSmall], 'Signature-' + (info.company || 'carrier').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') + '.png', { type: 'image/png' }));
             names.forEach(function (n) { withFiles.append(n, docs[n].file, fileName(docs[n].label, info.company, docs[n].file)); });
             show(names.length ? 'Sending your signed agreement and ' + names.length + ' document' + (names.length > 1 ? 's' : '') + '...' : 'Sending your signed agreement...', true);
             var send = function (body) {
@@ -315,6 +317,7 @@
               /* attachments refused: still deliver the agreement details, and ask for the files another way */
               info.filesFailed = true;
               fd.set('documents_attached', 'Attachments could not be sent: ' + (res && res.message ? res.message : 'rejected'));
+              fd.set('signature_image', 'Not attached (attachments were refused); it is printed in the PDF the carrier downloaded');
               return send(fd);
             });
           });
