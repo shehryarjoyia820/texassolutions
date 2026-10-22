@@ -913,6 +913,10 @@ CONTRACT = {
                   "Copy of CDL (owner-operator, if applicable)", "Voided check or ACH information (if required)",
                   "Signed Dispatch Services Agreement"],
     "payment_methods": ["ACH", "Zelle", "Wire transfer", "Cash App", "Check", "Other"],
+    # Optional uploads on the contract page, emailed with the signed PDF (Web3Forms Pro attachments,
+    # one field per file, 5 MB max each; photos are resized in the browser first).
+    "uploads": [("doc_mc_authority", "MC authority letter"), ("doc_coi", "Certificate of insurance (COI)"), ("doc_w9", "W-9"),
+                ("doc_noa", "Notice of assignment (if you factor)"), ("doc_cdl", "CDL (owner-operator)"), ("doc_void_check", "Voided check or ACH form")],
     "attorney_note": ("This template provides a solid commercial foundation, but for ongoing business operations, it is advisable to have "
                       "a U.S. attorney review it to ensure it complies with the laws of the state where your dispatch business operates "
                       "and to tailor clauses such as payment terms, non-circumvention and dispute resolution to your specific needs."),

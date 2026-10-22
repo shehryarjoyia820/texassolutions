@@ -1245,6 +1245,10 @@ def build_contract():
   </div>
 {secs}
   <section class="k-sec k-docs"><h3>Required documents from the Carrier</h3><p>Before dispatch services begin, the Carrier should provide:</p><ul>{"".join(f"<li>{esc(x)}</li>" for x in K["documents"])}</ul><p class="k-note">{esc(K["attorney_note"])}</p></section>
+  <section class="k-sec k-uploads"><h3>Upload your documents</h3>
+    <p>Optional, but it gets you dispatched faster. Photos or PDFs, up to 5 MB each; phone photos are resized automatically. They are sent with your signed agreement.</p>
+    <div class="k-up-grid">{"".join(f'<label class="k-up" data-field="{f}"><span class="k-up-label">{esc(l)}</span><input type="file" name="{f}" accept="image/*,application/pdf"><span class="k-up-state">Choose file or take a photo</span></label>' for f, l in K["uploads"])}</div>
+  </section>
   <section class="k-sign">
     <div class="k-signer">
       <h3>Dispatcher</h3>
@@ -1269,7 +1273,7 @@ def build_contract():
   <p class="form-status" id="k-status" role="status" aria-live="polite"></p>
   <div class="k-done" id="k-done" hidden>
     <h3>Agreement signed</h3>
-    <p>Your signed PDF has downloaded. A copy has been sent to our dispatch team, and a dispatcher will contact you to collect your documents.</p>
+    <p>Your signed PDF has downloaded. A copy, with any documents you uploaded, has been sent to our dispatch team, and a dispatcher will contact you about anything still missing.</p>
     <button type="button" class="btn btn-dark" id="k-again">Download PDF again</button>
   </div>
 </form>

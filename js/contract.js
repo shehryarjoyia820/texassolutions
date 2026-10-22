@@ -206,6 +206,48 @@
     return doc;
   }
 
+  /* ---------------------------------------------------------------- document uploads
+     One field per document (Web3Forms Pro sends each as an attachment, 5 MB max per file).
+     Photos are resized to 2000 px JPEG in the browser; PDFs are sent as they are. */
+  var MAX_BYTES = 5 * 1024 * 1024;
+  var docs = {};
+  var kb = function (n) { return n > 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; };
+  var shrinkImage = function (f) {
+    return new Promise(function (res) {
+      var url = URL.createObjectURL(f), img = new Image();
+      img.onload = function () {
+        var k = Math.min(1, 2000 / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement('canvas');
+        c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+        var g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(function (b) { res(b ? new File([b], f.name.replace(/\.[^.]+$/, '') + '.jpg', { type: 'image/jpeg' }) : f); }, 'image/jpeg', 0.82);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); res(f); };  /* e.g. HEIC the browser cannot draw: send as is */
+      img.src = url;
+    });
+  };
+  Array.prototype.forEach.call(form.querySelectorAll('.k-up input[type=file]'), function (input) {
+    var box = input.closest('.k-up'), state = box.querySelector('.k-up-state'), label = box.querySelector('.k-up-label').textContent;
+    var reset = function (msg, err) { delete docs[input.name]; box.classList.remove('has-file'); box.classList.toggle('bad', !!err); state.textContent = msg || 'Choose file or take a photo'; };
+    input.addEventListener('change', function () {
+      var f = input.files && input.files[0];
+      if (!f) { reset(); return; }
+      var isImg = /^image\//.test(f.type), isPdf = f.type === 'application/pdf' || /\.pdf$/i.test(f.name);
+      if (!isImg && !isPdf) { input.value = ''; reset('Please choose a photo or a PDF.', true); return; }
+      state.textContent = 'Preparing ' + f.name + '...';
+      (isImg ? shrinkImage(f) : Promise.resolve(f)).then(function (out) {
+        if (out.size > MAX_BYTES) { input.value = ''; reset(f.name + ' is ' + kb(out.size) + '. The limit is 5 MB.', true); return; }
+        docs[input.name] = { file: out, label: label };
+        box.classList.add('has-file'); box.classList.remove('bad');
+        state.textContent = out.name + ' · ' + kb(out.size);
+      });
+    });
+  });
+  var fileName = function (label, company, file) {
+    var ext = (file.name.match(/\.[a-z0-9]+$/i) || ['.pdf'])[0].toLowerCase();
+    return (label.replace(/\(.*?\)/g, '') + ' ' + company).trim().replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') + ext;
+  };
+
   /* ---------------------------------------------------------------- submit */
   var lastDoc = null, lastName = '', busy = false;
   $('k-again').addEventListener('click', function () { if (lastDoc) lastDoc.save(lastName); });
@@ -255,12 +297,31 @@
             fd.append('signed_at_utc', info.signedUtc); fd.append('signed_at_local', info.signedLocal);
             fd.append('agreement_date', info.date); fd.append('user_agent', info.ua); fd.append('page', info.page);
             fd.append('signature_image', sigSmall);
-            return fetch(TS.form.endpoint, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
-              .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); });
+            /* attachments: the signed PDF plus any documents the carrier uploaded */
+            var names = Object.keys(docs);
+            fd.append('documents_attached', names.length ? names.map(function (n) { return docs[n].label; }).join(', ') : 'None uploaded');
+            var withFiles = new FormData();
+            fd.forEach(function (v, k) { withFiles.append(k, v); });
+            withFiles.append('contract_pdf', new File([lastDoc.output('blob')], lastName, { type: 'application/pdf' }));
+            names.forEach(function (n) { withFiles.append(n, docs[n].file, fileName(docs[n].label, info.company, docs[n].file)); });
+            show(names.length ? 'Sending your signed agreement and ' + names.length + ' document' + (names.length > 1 ? 's' : '') + '...' : 'Sending your signed agreement...', true);
+            var send = function (body) {
+              /* no Content-Type header: the browser sets the multipart boundary */
+              return fetch(TS.form.endpoint, { method: 'POST', body: body, headers: { Accept: 'application/json' } })
+                .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); });
+            };
+            return send(withFiles).then(function (res) {
+              if (res && res.success) return res;
+              /* attachments refused: still deliver the agreement details, and ask for the files another way */
+              info.filesFailed = true;
+              fd.set('documents_attached', 'Attachments could not be sent: ' + (res && res.message ? res.message : 'rejected'));
+              return send(fd);
+            });
           });
       })
       .then(function (res) {
         if (!(res && res.success)) throw new Error('rejected');
+        if (info.filesFailed) $('k-done').querySelector('p').textContent = 'Your signed PDF has downloaded and your agreement details reached our team, but the attachments could not be sent. Please email the PDF and your documents to ' + K.notify_email + ' or WhatsApp them to (838) 910-3147.';
         if (TS.track) TS.track('contract_signed', { equipment: info.equipment, fee: info.fee });
         status.className = 'form-status'; status.textContent = '';
         $('k-done').hidden = false; $('k-done').scrollIntoView({ behavior: 'smooth', block: 'center' });

@@ -1220,3 +1220,18 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 @media (max-width: 760px) { .k-sign { grid-template-columns: 1fr; } }
 .k-hint { margin-top: 6px; font-size: 13px; color: var(--muted); }
 #k-fee { font-weight: 800; color: var(--orange-600); }
+
+/* Contract: document uploads */
+.k-uploads > p { color: var(--muted); }
+.k-up-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 14px; }
+.k-up { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 16px 16px 14px 52px; border: 1.5px dashed #cfc9c1; border-radius: 12px; background: #fffdf9; cursor: pointer; transition: border-color .2s, background .2s; }
+.k-up::before { content: "+"; position: absolute; left: 14px; top: 14px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--off); color: var(--orange-600); font-weight: 800; }
+.k-up:hover, .k-up:focus-within { border-color: var(--orange); }
+.k-up input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.k-up-label { font-weight: 700; color: var(--ink); font-size: 15px; }
+.k-up-state { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.k-up.has-file { border-style: solid; border-color: var(--green-brand); background: var(--green-brand-50); }
+.k-up.has-file::before { content: "\2713"; background: var(--green-brand); color: #fff; }
+.k-up.has-file .k-up-state { color: var(--green-brand-700); font-weight: 600; }
+.k-up.bad { border-color: #dc2626; }
+.k-up.bad .k-up-state { color: #b91c1c; }
