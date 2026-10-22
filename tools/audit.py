@@ -187,6 +187,8 @@ for s in sm_files:
 for f in pages:
     if f in ("404.html",):
         continue
+    if 'name="robots" content="noindex' in Path(f).read_text(encoding="utf-8")[:4000]:
+        continue  # noindex pages (thank-you) stay out of the sitemap on purpose
     u = BASE + "/" + ("" if f == "index.html" else f[:-len("index.html")] if f.endswith("/index.html") else f)
     if u not in locs:
         err("sitemap", f"{u} not in any sitemap")

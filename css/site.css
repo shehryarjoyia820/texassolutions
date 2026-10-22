@@ -1238,3 +1238,15 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .k-up-label em { font-style: normal; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-left: 6px; color: var(--muted); }
 .k-up.req .k-up-label em { color: var(--orange-600); }
 .k-up.has-file .k-up-label em { color: var(--green-brand-700); }
+
+/* ---------------------------------------------------------------- thank-you page */
+.ty .ty-main h2 { margin: 0 0 10px; }
+.ty-lede { font-size: 1.12rem; color: var(--ink-2, #333); margin: 0 0 22px; }
+.ty-steps { counter-reset: ty; list-style: none; padding: 0; margin: 10px 0 24px; display: grid; gap: 10px; }
+.ty-steps li { counter-increment: ty; position: relative; padding: 14px 16px 14px 56px; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; }
+.ty-steps li::before { content: counter(ty); position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; background: var(--red); color: #fff; font-weight: 800; display: grid; place-items: center; }
+.ty-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.ty-warn { background: #fff4e5; border: 1px solid #f5b971; border-radius: 10px; padding: 12px 14px; }
+.ty-links { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px; padding: 20px 22px; }
+.ty-links h3 { margin: 0 0 10px; }
+.ty-links ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }

@@ -343,7 +343,7 @@ def asset_version(rel):
 
 
 def page(path, title, description, keywords, schemas, body, current=None, og_type="website", preload_video=False,
-         image=None, image_alt="", published=None, modified=None, tags=(), page_type="WebPage"):
+         image=None, image_alt="", published=None, modified=None, tags=(), page_type="WebPage", robots=None):
     ov = C.SEO.get(path)
     if ov:
         title, description = ov
@@ -375,8 +375,8 @@ def page(path, title, description, keywords, schemas, body, current=None, og_typ
 <link rel="canonical" href="{url(path)}">
 <link rel="alternate" hreflang="en-us" href="{url(path)}">
 <link rel="alternate" hreflang="x-default" href="{url(path)}">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="bingbot" content="index, follow">
+<meta name="robots" content="{robots or 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}">
+<meta name="bingbot" content="{robots or 'index, follow'}">
 <meta name="author" content="Texas Solutions">
 <meta name="geo.region" content="US">
 <meta name="theme-color" content="#0a0a0a">
@@ -3117,6 +3117,48 @@ def build_rss():
 """
     write("feed.xml", rss)
 
+def build_thank_you():
+    """Where every form lands after a successful send (js/site.js) and the contract after signing (js/contract.js).
+    ?from=lead|callback|contract picks the message; noindex and left out of the sitemap."""
+    path = "/thank-you.html"
+    variants = [
+        ("lead", "Thank you, we have your details.", "A Texas Solutions dispatcher will contact you by the method you chose, usually the same business day. You do not need to send the form again.",
+         ["A dispatcher reviews your truck, equipment and lanes.", "We call, text or email you to talk through rates and how we work.", "If you decide to start, we collect your MC authority, W-9 and insurance certificate."]),
+        ("callback", "Thank you, your callback is booked.", "A dispatcher will call you at the number you gave, around the time you picked. Keep your phone close.",
+         ["Have your equipment type and home state ready.", "Tell us the lanes you like and any you want to avoid.", "Ask anything about rates, contracts or paperwork."]),
+        ("contract", "Thank you, your agreement is signed.", "Your signed PDF has downloaded, and a copy with your documents has been sent to our dispatch team. A dispatcher will contact you to set up your first load.",
+         ["We check your MC authority, insurance and W-9.", "We send your carrier packet to the brokers on your lanes.", "Your dispatcher starts booking loads that fit your truck."]),
+    ]
+    blocks = "".join(f'''<div class="ty-v" data-ty="{k}"{"" if k == "lead" else " hidden"}>
+  <h2>{esc(h)}</h2><p class="ty-lede">{esc(t)}</p>
+  <h3>What happens next</h3><ol class="ty-steps">{"".join(f"<li>{esc(x)}</li>" for x in steps)}</ol>
+</div>''' for k, h, t, steps in variants)
+    body = f"""{phero("Thank you", "Thank you", "Your request reached the Texas Solutions dispatch team.", ctas=False)}
+<section class="sec ty"><div class="wrap two">
+  <div class="ty-main">
+    {blocks}
+    <p class="ty-warn" id="ty-files" hidden>Your agreement details reached us, but the uploaded files could not be attached. Please email your signed PDF and documents to <a href="mailto:{C.EMAIL}">{C.EMAIL}</a> or send them on <a href="{WA_URL}" target="_blank" rel="noopener">WhatsApp</a>.</p>
+    <div class="ty-actions">
+      <button type="button" class="btn btn-dark" id="ty-pdf" hidden>Download signed PDF again</button>
+      <a class="btn btn-red" href="tel:{C.PHONE_E164}">Call {C.PHONE}</a>
+      <a class="btn btn-wa" href="{WA_URL}" target="_blank" rel="noopener">{ICONS['wa']}WhatsApp us</a>
+    </div>
+  </div>
+  <div class="aside">
+    <div class="ty-links"><h3>While you wait</h3><ul>
+      <li><a href="blog.html">Truck dispatch guides</a></li>
+      <li><a href="truck-dispatch-rates.html">Dispatch rates</a></li>
+      <li><a href="new-mc.html">New MC authority guide</a></li>
+      <li><a href="tools.html">Free trucking calculators</a></li>
+      <li><a href="index.html">Back to home</a></li>
+    </ul></div>
+  </div>
+</div></section>"""
+    title = "Thank You | " + C.BRAND
+    desc = "Thank you for contacting Texas Solutions Truck Dispatch. A dispatcher will contact you soon about your truck, lanes and next steps."
+    write("thank-you.html", page(path, title, desc, "truck dispatch", [crumbs_ld([("Thank you", path)])], body, robots="noindex, follow"))
+
+
 def build_404():
     body = f"""{phero("Not found", "This page took a wrong exit.", "The page you are looking for does not exist. Try one of these instead.", ctas=False)}
 <section class="sec"><div class="wrap"><div class="chip-row" style="justify-content:flex-start">
@@ -3307,6 +3349,7 @@ def main():
     build_tools_hub()
     build_rss()
     build_404()
+    build_thank_you()
     build_site_files()
     import permalinks  # last step: nested folder URLs, rewritten links, redirects from the old .html paths
     moved, _ = permalinks.apply(ROOT, C.BASE, [t["slug"] for t in TOOLS])

@@ -382,6 +382,8 @@
             mc_status: val('mc_status') || undefined, mc_dot: val('mc_dot') ? 'yes' : undefined, intent: val('intent') || undefined, contact_method: val('contact_method') || undefined, sms_consent: agreed ? 'yes' : 'no'
           });
           form.reset();
+          /* short pause so the GA4 event leaves before the page changes */
+          setTimeout(function () { location.href = '/thank-you/?from=' + (kind === 'callback' ? 'callback' : 'lead'); }, 400);
           show(form.getAttribute('data-success') || (kind === 'callback' ? 'Callback request received. A dispatcher will call you at the number you gave.' : 'Inquiry received. A Texas Solutions dispatcher will contact you by your preferred method. You do not need to send it again.'), true);
         })
         .catch(function (err) {
@@ -394,6 +396,25 @@
         .then(function () { busy = false; btn.disabled = false; btn.textContent = label; });
     });
   });
+
+  /* ---------------------------------------------------------------- thank-you page (?from=lead|callback|contract) */
+  (function thankYou() {
+    var v = document.querySelectorAll('[data-ty]');
+    if (!v.length) return;
+    var from = qs0.get('from');
+    if (!document.querySelector('[data-ty="' + from + '"]')) from = 'lead';
+    each(v, function (el) { el.hidden = el.getAttribute('data-ty') !== from; });
+    if (from !== 'contract') return;
+    if (qs0.get('files') === '0') document.getElementById('ty-files').hidden = false;
+    /* the signed PDF, kept by js/contract.js for this tab only */
+    var pdf = store.get('sessionStorage', 'ts:contract-pdf'), btn = document.getElementById('ty-pdf');
+    if (!pdf || !pdf.data) return;
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      var a = document.createElement('a'); a.href = pdf.data; a.download = pdf.name || 'Texas-Solutions-Dispatch-Agreement.pdf';
+      document.body.appendChild(a); a.click(); a.remove();
+    });
+  })();
 
   /* ---------------------------------------------------------------- fuel data (mirror of tools/fuel_data.py) */
   var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
