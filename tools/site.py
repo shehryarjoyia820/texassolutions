@@ -543,8 +543,37 @@ def rate_board(equip=None):
 {guide}
     </div>
     <p style="font-size:13px;color:var(--muted);margin-top:12px">{esc(C.RATE_GUIDE_NOTE)}</p>
+    {board_ad() if board else ""}
   </div>
 </div>"""
+
+
+AD_IC = {'pin': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>', 'port': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18l-2 4H5z"/><path d="M6 17V9h5v8M11 12h6v5"/><path d="M8 9V5"/></svg>', 'fleet': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7z"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>', 'check': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg>', 'phone': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>'}
+
+
+def board_ad():
+    """Sponsored card for Diesel Dynamix (mobile Clean Truck Check testing in Southern California), beside the lane table."""
+    link = "https://dieseldynamix.com/?utm_source=texassolutions_dispatch&utm_medium=referral&utm_campaign=rate_board"
+    feats = [(AD_IC["pin"], "Anywhere in Southern California", "LA, Orange County, Inland Empire, San Diego"),
+             (AD_IC["port"], "Port trucks covered", "Ports of Long Beach and Los Angeles"),
+             (AD_IC["fleet"], "One truck or the whole fleet", "Tested in one visit, scheduled around your dispatch")]
+    rows = "".join(f'<li><span class="ad-ic">{ic}</span><span><b>{esc(t)}</b><small>{esc(d)}</small></span></li>' for ic, t, d in feats)
+    return f"""<aside class="board-ad" aria-label="Sponsored: Diesel Dynamix">
+      <div class="ad-top">
+        <span class="ad-tag">Sponsored</span>
+        <div class="ad-brand"><img src="https://dieseldynamix.com/icon.svg" alt="" width="40" height="40" loading="lazy"><span><b>Diesel Dynamix</b><small>Mobile CARB testing</small></span></div>
+        <h3>Clean Truck Check? <em>They come to your yard.</em></h3>
+        <p>California emissions testing for heavy-duty trucks, done on-site so your driver keeps working.</p>
+        <span class="ad-badge">{AD_IC["check"]}California Clean Truck Check</span>
+      </div>
+      <div class="ad-body">
+        <ul class="ad-feats">{rows}</ul>
+        <a class="ad-btn" href="{link}" target="_blank" rel="sponsored noopener" data-cta="ad_dieseldynamix">Book mobile testing <span aria-hidden="true">&rarr;</span></a>
+        <a class="ad-call" href="tel:+18583428328" rel="sponsored" data-cta="ad_dieseldynamix_call">{AD_IC["phone"]}(858) 342-8328</a>
+      </div>
+    </aside>"""
+
+
 
 
 def no_pct(text):
