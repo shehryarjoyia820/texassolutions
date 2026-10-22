@@ -1250,3 +1250,4 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .ty-links { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px; padding: 20px 22px; }
 .ty-links h3 { margin: 0 0 10px; }
 .ty-links ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.ty [hidden] { display: none !important; }  /* .btn sets display, which would beat the hidden attribute */

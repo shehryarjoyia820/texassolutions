@@ -407,8 +407,12 @@
     if (from !== 'contract') return;
     if (qs0.get('files') === '0') document.getElementById('ty-files').hidden = false;
     /* the signed PDF, kept by js/contract.js for this tab only */
+    /* only right after signing: the link token must match the PDF saved by that signing, within 30 minutes */
     var pdf = store.get('sessionStorage', 'ts:contract-pdf'), btn = document.getElementById('ty-pdf');
-    if (!pdf || !pdf.data) return;
+    if (!pdf || !pdf.data || !pdf.token || pdf.token !== qs0.get('k') || Date.now() - pdf.at > 30 * 60 * 1000) {
+      if (pdf && Date.now() - pdf.at > 30 * 60 * 1000) store.del('sessionStorage', 'ts:contract-pdf');
+      return;
+    }
     btn.hidden = false;
     btn.addEventListener('click', function () {
       var a = document.createElement('a'); a.href = pdf.data; a.download = pdf.name || 'Texas-Solutions-Dispatch-Agreement.pdf';

@@ -330,8 +330,10 @@
         $('k-done').hidden = false; $('k-done').scrollIntoView({ behavior: 'smooth', block: 'center' });
         form.querySelector('.k-submit').hidden = true;
         /* keep the PDF for this tab so the thank-you page can offer it again, then go there */
-        try { sessionStorage.setItem('ts:contract-pdf', JSON.stringify({ name: lastName, data: lastDoc.output('datauristring') })); } catch (e) { /* storage full or blocked */ }
-        setTimeout(function () { location.href = '/thank-you/?from=contract' + (info.filesFailed ? '&files=0' : ''); }, 1200);
+        /* the token ties the stored PDF to this signing, so the button never shows on a visit to the bare URL */
+        var token = info.docId.slice(0, 12);
+        try { sessionStorage.setItem('ts:contract-pdf', JSON.stringify({ token: token, at: Date.now(), name: lastName, data: lastDoc.output('datauristring') })); } catch (e) { token = ''; }
+        setTimeout(function () { location.href = '/thank-you/?from=contract' + (token ? '&k=' + token : '') + (info.filesFailed ? '&files=0' : ''); }, 1200);
       })
       .catch(function () {
         if (lastDoc) show('Your PDF downloaded, but the copy could not reach our team. Please email the PDF to ' + K.notify_email + ' or WhatsApp it to (838) 910-3147.', false);
