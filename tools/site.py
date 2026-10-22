@@ -514,7 +514,7 @@ def pricing_cards(cta=True):
 
 def rate_board(equip=None):
     """Example lanes and the rough rate guide. equip limits both to one page's equipment."""
-    lanes = [x for x in C.LANES if not equip or x[2] in equip]
+    lanes = [x for x in C.LANES if not equip or x[2] in equip] + [x for x in C.EXTRA_LANES if equip and x[2] in equip]
     guide_rows = [x for x in C.RATE_GUIDE if not equip or x[0] in equip]
     rows = chr(10).join(
         f'      <tr><td>{o} &rarr; {d}</td><td><span class="eq-badge">{e}</span></td><td class="hide-sm">{mi:,} mi</td><td class="rate">{r}/mi</td></tr>'

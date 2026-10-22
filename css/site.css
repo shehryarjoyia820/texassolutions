@@ -1253,35 +1253,35 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .ty [hidden] { display: none !important; }  /* .btn sets display, which would beat the hidden attribute */
 
 /* ---------------------------------------------------------------- sponsored card beside the lane table (Diesel Dynamix) */
-.board-ad { --dd: #1f5fe0; --dd-ink: #0b1730; position: sticky; top: 100px; margin-top: 24px; border-radius: 20px; overflow: hidden; background: #fff;
-  border: 1px solid #dbe4f5; box-shadow: 0 22px 48px rgba(11,23,48,.14); transition: transform .25s ease, box-shadow .25s ease; }
-.board-ad:hover { transform: translateY(-3px); box-shadow: 0 28px 60px rgba(11,23,48,.2); }
+.board-ad { --dd: var(--red); --dd-ink: #0a0a0a; position: sticky; top: 100px; margin-top: 24px; border-radius: 20px; overflow: hidden; background: #fff;
+  border: 1px solid rgba(0,0,0,.08); box-shadow: 0 22px 48px rgba(0,0,0,.14); transition: transform .25s ease, box-shadow .25s ease; }
+.board-ad:hover { transform: translateY(-3px); box-shadow: 0 28px 60px rgba(0,0,0,.2); }
 .board-ad .ad-top { position: relative; padding: 22px 24px; color: #fff;
-  background: radial-gradient(90% 120% at 100% 0%, rgba(77,141,255,.55), transparent 60%),
+  background: radial-gradient(90% 120% at 100% 0%, rgba(249,115,22,.45), transparent 60%),
               linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px) 0 0/22px 22px,
               linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px) 0 0/22px 22px,
-              linear-gradient(155deg, #0b1730 0%, #12306e 60%, #1f5fe0 130%); }
+              linear-gradient(155deg, #0a0a0a 0%, #161616 60%, #2a1608 130%); }
 .board-ad .ad-tag { position: absolute; top: 16px; right: 16px; font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
   color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.25); padding: 3px 8px; border-radius: 999px; }
 .board-ad .ad-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .board-ad .ad-brand img { background: #fff; border-radius: 10px; padding: 5px; box-shadow: 0 6px 16px rgba(0,0,0,.25); }
 .board-ad .ad-brand b { display: block; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; }
-.board-ad .ad-brand small { display: block; font-size: 12px; color: #9ec0ff; letter-spacing: .04em; }
+.board-ad .ad-brand small { display: block; font-size: 12px; color: #fdba74; letter-spacing: .04em; }
 .board-ad h3 { color: #fff; margin: 0 0 8px; font-size: 1.45rem; line-height: 1.15; }
-.board-ad h3 em { font-style: normal; color: #8fb6ff; display: block; }
+.board-ad h3 em { font-style: normal; color: var(--red); display: block; }
 .board-ad .ad-top p { color: rgba(255,255,255,.78); margin: 0 0 14px; font-size: 15px; }
-.board-ad .ad-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; color: #0b1730; background: #e6f9ee; padding: 6px 10px; border-radius: 999px; }
+.board-ad .ad-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; color: #06371d; background: #dcfce7; padding: 6px 10px; border-radius: 999px; }
 .board-ad .ad-badge svg { width: 16px; height: 16px; fill: none; stroke: #16a34a; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .board-ad .ad-body { padding: 18px 24px 22px; }
 .board-ad .ad-feats { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 12px; }
 .board-ad .ad-feats li { display: flex; gap: 12px; align-items: flex-start; }
-.board-ad .ad-ic { flex: 0 0 36px; height: 36px; border-radius: 10px; background: #eef3fd; display: grid; place-items: center; }
+.board-ad .ad-ic { flex: 0 0 36px; height: 36px; border-radius: 10px; background: #fff1e6; display: grid; place-items: center; }
 .board-ad .ad-ic svg { width: 19px; height: 19px; fill: none; stroke: var(--dd); stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 .board-ad .ad-feats b { display: block; color: var(--dd-ink); font-size: 15px; line-height: 1.3; }
-.board-ad .ad-feats small { display: block; color: #5b6475; font-size: 13.5px; line-height: 1.4; }
+.board-ad .ad-feats small { display: block; color: var(--muted, #5b6475); font-size: 13.5px; line-height: 1.4; }
 .board-ad .ad-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 14px 18px; border-radius: 12px;
-  background: linear-gradient(135deg, #2a6cf0, #1747b8); color: #fff; font-weight: 800; text-decoration: none; box-shadow: 0 10px 24px rgba(31,95,224,.35); transition: filter .2s; }
-.board-ad .ad-btn:hover { filter: brightness(1.08); color: #fff; }
+  background: var(--red); color: #fff; font-weight: 800; text-decoration: none; box-shadow: 0 10px 24px rgba(249,115,22,.35); transition: filter .2s; }
+.board-ad .ad-btn:hover { background: var(--red-600); color: #fff; }
 .board-ad .ad-btn span { transition: transform .2s; }
 .board-ad .ad-btn:hover span { transform: translateX(4px); }
 @media (max-width: 900px) { .board-ad { position: static; } }
