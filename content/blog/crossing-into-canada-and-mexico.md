@@ -59,7 +59,7 @@ Before you haul the first load, your company typically needs:
 | CBSA carrier code | Canada's carrier identifier for advance manifests. |
 | eManifest access | A way to file advance manifests with both countries, either directly or through a service provider. |
 | US import user fee decal | An annual fee paid by commercial trucks entering the US. |
-| IFTA and IRP | Canadian provinces take part in IFTA and IRP, so add the provinces you will run to your IRP account and track miles by jurisdiction. See our [IFTA guide](/blog/ifta-for-owner-operators-how-to-file.html). |
+| IFTA and IRP | Canadian provinces take part in IFTA and IRP, so add the provinces you will run to your IRP account and track miles by jurisdiction. See our [IFTA guide](/blog/how-to-file-ifta.html). |
 | Insurance | Confirm your policy covers Canadian operations. US policies generally do not cover driving in Mexico. Read [trucking insurance explained](/blog/trucking-insurance-explained.html). |
 | Bond (if needed) | Some in-bond moves require a bonded carrier. Ask your customs broker. |
 
@@ -91,7 +91,7 @@ Canada restricts foreign carriers from hauling **domestic** freight from one Can
 
 Canada has its own federal hours of service rules, and they differ from US rules. As a general picture, Canada uses a daily limit of 13 hours of driving and 14 hours on duty, a 16-hour elapsed work shift limit, and two cycle options (70 hours in 7 days or 120 hours in 14 days). Canada also requires electronic logging devices certified for Canadian use.
 
-When you are in Canada, you follow Canadian rules; when you return, you follow US rules, and your recent hours carry over. Make sure your ELD supports both rule sets and that you know how to switch. Review the [US hours of service rules](/blog/hours-of-service-rules-explained-11-14-70-hour.html) and confirm Canadian details with Transport Canada.
+When you are in Canada, you follow Canadian rules; when you return, you follow US rules, and your recent hours carry over. Make sure your ELD supports both rule sets and that you know how to switch. Review the [US hours of service rules](/blog/hours-of-service-rules.html) and confirm Canadian details with Transport Canada.
 
 ## Hauling to Mexico: the border handoff
 

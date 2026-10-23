@@ -23,7 +23,7 @@ faq:
 
 Choosing a **factoring company** is one of the most important money decisions an owner-operator makes. The right one keeps cash moving and helps you avoid bad brokers. The wrong one can drain margins with hidden fees and lock you into a contract that is hard to leave. This guide compares factoring by features and gives you the questions to ask.
 
-If you are new to factoring, start with our guide to [freight factoring for owner-operators](/blog/freight-factoring-for-owner-operators-explained.html), then come back here to compare offers.
+If you are new to factoring, start with our guide to [freight factoring for owner-operators](/blog/freight-factoring-explained.html), then come back here to compare offers.
 
 ## Recourse vs non-recourse
 

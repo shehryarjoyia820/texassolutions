@@ -66,7 +66,7 @@ For interstate for-hire work, you will generally need:
 - **A BOC-3 filing** naming process agents in each state.
 - **Unified Carrier Registration (UCR)**, renewed each year.
 
-FMCSA updates its registration system from time to time, so follow the current instructions on its website. Our post on [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) covers the process, and Texas Solutions offers [MC authority setup](/trucking-back-office-services.html) as part of its back office services if you would rather not do the filings yourself.
+FMCSA updates its registration system from time to time, so follow the current instructions on its website. Our post on [how to get an MC number](/blog/how-to-get-an-mc-number.html) covers the process, and Texas Solutions offers [MC authority setup](/trucking-back-office-services.html) as part of its back office services if you would rather not do the filings yourself.
 
 Drivers of commercial vehicles over 10,000 lbs in interstate commerce generally need a DOT medical card even without a CDL, and hours-of-service rules apply. Check what applies to your operation.
 
@@ -100,7 +100,7 @@ Every business is different, so build your own numbers. Here is a sample way to 
 
 Total in this example: $10,000 + $3,000 + $1,000 + $1,000 + $5,000 = **$20,000**.
 
-The reserve matters more than most people expect. Brokers often pay on 30-day terms or longer unless you use [factoring](/blog/freight-factoring-for-owner-operators-explained.html), so you need cash to cover fuel before the first payments arrive.
+The reserve matters more than most people expect. Brokers often pay on 30-day terms or longer unless you use [factoring](/blog/freight-factoring-explained.html), so you need cash to cover fuel before the first payments arrive.
 
 ## Step 7: Know your cost per mile before you book
 

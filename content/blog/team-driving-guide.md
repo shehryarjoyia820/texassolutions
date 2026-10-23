@@ -35,7 +35,7 @@ Each driver:
 
 ## Hours of service for teams
 
-The same basic limits apply to each team driver as to a solo driver: the 11-hour driving limit, the 14-hour window, the 30-minute break requirement and the 60/70-hour weekly limit. Our [hours of service rules guide](/blog/hours-of-service-rules-explained-11-14-70-hour.html) explains each one.
+The same basic limits apply to each team driver as to a solo driver: the 11-hour driving limit, the 14-hour window, the 30-minute break requirement and the 60/70-hour weekly limit. Our [hours of service rules guide](/blog/hours-of-service-rules.html) explains each one.
 
 What makes teams different is how rest happens:
 

@@ -49,7 +49,7 @@ Dry van varies the most: short local and regional loads often pay more per mile 
 - **Fuel surcharge:** included in the rate or paid separately?
 - **Detention and layover:** are they paid, and after how many hours?
 - **Lumper and tolls:** who covers them?
-- **Payment terms:** a higher rate paid in 45 days may be worse than a lower one paid quickly. See [freight factoring](/blog/freight-factoring-for-owner-operators-explained.html).
+- **Payment terms:** a higher rate paid in 45 days may be worse than a lower one paid quickly. See [freight factoring](/blog/freight-factoring-explained.html).
 - **Return freight:** a great rate into a dead market can cost more in deadhead than it earns.
 
 ## Spot vs contract

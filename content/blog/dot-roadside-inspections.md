@@ -53,7 +53,7 @@ For most owner-operators the common ones are Levels I, II and III.
 - **Seat belt use** and signs of fatigue, illness, alcohol or drugs.
 - **Shipping papers,** and hazmat documents and placards if applicable.
 
-See our guide to [hours of service rules](/blog/hours-of-service-rules-explained-11-14-70-hour.html) to understand the limits you will be checked against.
+See our guide to [hours of service rules](/blog/hours-of-service-rules.html) to understand the limits you will be checked against.
 
 ### The vehicle
 

@@ -45,6 +45,26 @@ EXPLICIT = {
     "truck-fuel-cost-calculator.html": "/calculators/truck-fuel-cost-calculator/",
     "truck-dispatch-rates.html": "/rates/",
 }
+# Guides renamed to shorter, year-free slugs (Oct 2026). The old address keeps working as a redirect
+# page (/guides/<old>/ and /blog/<old>.html), so links, bookmarks and search results still land.
+RENAMED_GUIDES = {
+    "best-truck-dispatch-service-for-owner-operators-2026": "best-truck-dispatch-service",
+    "what-is-a-good-rate-per-mile-trucking-2026": "what-is-a-good-rate-per-mile",
+    "hotshot-trucking-rates-per-mile-fuel-and-dispatch": "hotshot-trucking-rates",
+    "freight-factoring-for-owner-operators-explained": "freight-factoring-explained",
+    "broker-setup-rate-confirmation-spot-vs-contract": "broker-setup-spot-vs-contract",
+    "hours-of-service-rules-explained-11-14-70-hour": "hours-of-service-rules",
+    "what-is-deadhead-in-trucking-how-to-reduce-it": "what-is-deadhead-in-trucking",
+    "how-to-get-mc-number-authority-owner-operator": "how-to-get-an-mc-number",
+    "diesel-prices-by-state-cut-fuel-cost-per-mile": "cut-fuel-cost-per-mile",
+    "how-to-choose-a-truck-dispatcher-avoid-scams": "how-to-choose-a-truck-dispatcher",
+    "peak-season-trucking-loads-holiday-freight": "peak-season-trucking",
+    "dry-van-vs-reefer-vs-flatbed-which-trailer": "dry-van-vs-reefer-vs-flatbed",
+    "cheapest-truck-dispatch-service-real-cost": "cheapest-truck-dispatch-service",
+    "reefer-loads-refrigerated-dispatch-guide": "reefer-loads-guide",
+    "box-truck-dispatch-find-loads-and-costs": "box-truck-loads-and-costs",
+    "ifta-for-owner-operators-how-to-file": "how-to-file-ifta",
+}
 KEEP = {"index.html", "404.html", "head-codes.html"}
 SKIP_PREFIX = ("http:", "https:", "//", "#", "mailto:", "tel:", "sms:", "data:", "javascript:")
 ATTR = re.compile(r'\b(href|src|action|data-src|poster)="([^"]*)"')
@@ -63,6 +83,8 @@ def build_map(root, tool_slugs):
         m[f"truck-dispatch/{f.name}"] = f"/dispatch/states/{f.stem}/"
     for f in root.glob("diesel-prices/*.html"):
         m[f"diesel-prices/{f.name}"] = f"/diesel-prices/{f.stem}/"
+    for old, new in RENAMED_GUIDES.items():
+        m.setdefault(f"blog/{old}.html", f"/guides/{new}/")
     return m
 
 
@@ -99,7 +121,10 @@ def rewrite_html(text, rel_dir, m, base):
 
 def rewrite_urls(text, m, base):
     pat = re.compile(re.escape(base) + r"/([A-Za-z0-9_\-/]+\.html)")
-    return pat.sub(lambda mt: base + map_path("/" + mt.group(1), m), text)
+    text = pat.sub(lambda mt: base + map_path("/" + mt.group(1), m), text)
+    for old, new in RENAMED_GUIDES.items():
+        text = text.replace(f"/guides/{old}/", f"/guides/{new}/")
+    return text
 
 
 def stub(base, new):
@@ -130,6 +155,11 @@ def apply(root, base, tool_slugs):
         dest.write_text(html, encoding="utf-8", newline="\n")
         src.write_text(stub(base, new), encoding="utf-8", newline="\n")
         moved += 1
+    # Renamed guides: both old addresses become redirect pages to the new one.
+    for old, new in RENAMED_GUIDES.items():
+        for f in (root / "blog" / f"{old}.html", root / "guides" / old / "index.html"):
+            f.parent.mkdir(parents=True, exist_ok=True)
+            f.write_text(stub(base, f"/guides/{new}/"), encoding="utf-8", newline="\n")
     for pattern in ("sitemap*.xml", "feed.xml", "llms*.txt", "urls.txt", "robots.txt"):
         for f in root.glob(pattern):
             t = f.read_text(encoding="utf-8")

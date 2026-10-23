@@ -30,7 +30,7 @@ Brokers are responsible for choosing carriers carefully. The packet lets them co
 - They know who to pay and where
 - You have agreed to their terms in writing
 
-Many brokers now use online onboarding systems, but the documents behind them are the same. For how setup fits into booking loads, see [broker setup, rate confirmations, spot vs contract](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+Many brokers now use online onboarding systems, but the documents behind them are the same. For how setup fits into booking loads, see [broker setup, rate confirmations, spot vs contract](/blog/broker-setup-spot-vs-contract.html).
 
 ## The carrier packet checklist
 
@@ -90,7 +90,7 @@ If you factor your invoices, the factoring company will send brokers a notice of
 - Your W-9 and remit-to information match what the factor expects
 - You understand how to change factors later, since brokers need a release letter
 
-Paying the wrong party is a common cause of late payments. Our guide to [freight factoring](/blog/freight-factoring-for-owner-operators-explained.html) explains the process.
+Paying the wrong party is a common cause of late payments. Our guide to [freight factoring](/blog/freight-factoring-explained.html) explains the process.
 
 ## Protect yourself while sharing documents
 

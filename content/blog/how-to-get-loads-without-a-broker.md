@@ -61,7 +61,7 @@ A contract or dedicated lane is a standing agreement to haul freight on a lane a
 - **Pros:** predictable volume and rate, easier planning
 - **Cons:** the rate is fixed even when the spot market rises, and you may be expected to cover loads even when it is inconvenient
 
-Contracts come from shippers directly, and sometimes from brokers who manage a shipper's freight. For the difference between contract and spot pricing, see [spot vs contract rates](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+Contracts come from shippers directly, and sometimes from brokers who manage a shipper's freight. For the difference between contract and spot pricing, see [spot vs contract rates](/blog/broker-setup-spot-vs-contract.html).
 
 ## Option 3: Amazon Relay and similar platforms
 

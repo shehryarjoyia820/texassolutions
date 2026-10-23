@@ -113,7 +113,7 @@ A 26 ft diesel box truck commonly gets somewhere around 8.5 to 11 mpg, lower whe
 
 ### Empty miles
 
-Every empty mile costs fuel and wear and pays nothing. Planning the next load before you deliver is one of the simplest ways to raise net income. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+Every empty mile costs fuel and wear and pays nothing. Planning the next load before you deliver is one of the simplest ways to raise net income. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking.html).
 
 ### Insurance and payments
 

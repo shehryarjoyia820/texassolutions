@@ -27,7 +27,7 @@ Long waits at shippers and receivers burn hours you could be driving and money y
 
 Detention is a charge for time spent at a pickup or delivery beyond the free time allowed. A typical arrangement says something like: "two hours free, then a set hourly rate." The hourly rate, free-time window and any daily cap are negotiated and should appear on the rate confirmation.
 
-Detention matters because your hours of service keep running while you sit at a dock. Under the federal 14-hour rule, on-duty waiting time eats into your driving window, so a long wait can push your next load back by a day. Our guide to [hours of service rules](/blog/hours-of-service-rules-explained-11-14-70-hour.html) explains how that clock works.
+Detention matters because your hours of service keep running while you sit at a dock. Under the federal 14-hour rule, on-duty waiting time eats into your driving window, so a long wait can push your next load back by a day. Our guide to [hours of service rules](/blog/hours-of-service-rules.html) explains how that clock works.
 
 ## Step 1: Get the terms in writing before pickup
 

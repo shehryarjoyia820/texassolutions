@@ -73,7 +73,7 @@ That is still decent, but it is a lot lower than the rate on any single load. Ch
 
 ## Hours of service and team driving
 
-Expedite tempts drivers to push, but hours-of-service rules still apply to vehicles covered by them. A solo driver in a covered vehicle has limits on daily driving and on-duty time, plus weekly limits. When a delivery is too far to reach legally solo, the answer is a team, not a falsified log. Learn the limits in our [hours of service guide](/blog/hours-of-service-rules-explained-11-14-70-hour.html), and if you are thinking of running with a partner, read the [team driving guide](/blog/team-driving-guide.html). Always confirm current rules with FMCSA.
+Expedite tempts drivers to push, but hours-of-service rules still apply to vehicles covered by them. A solo driver in a covered vehicle has limits on daily driving and on-duty time, plus weekly limits. When a delivery is too far to reach legally solo, the answer is a team, not a falsified log. Learn the limits in our [hours of service guide](/blog/hours-of-service-rules.html), and if you are thinking of running with a partner, read the [team driving guide](/blog/team-driving-guide.html). Always confirm current rules with FMCSA.
 
 ## What it takes to succeed in expedite
 

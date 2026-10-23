@@ -103,7 +103,7 @@ Using the example costs:
 
 Anything below that loses money. Anything above it is profit. Most owner-operators want a rate well above break-even to cover their own pay, slow weeks and repairs.
 
-For rough market ranges by equipment, see our [truck dispatch rates guide](/truck-dispatch-rates.html) and [what is a good rate per mile](/blog/what-is-a-good-rate-per-mile-trucking-2026.html). Those ranges are rough and change by lane and season. Check your own floor with the [break-even calculator](/break-even-calculator.html).
+For rough market ranges by equipment, see our [truck dispatch rates guide](/truck-dispatch-rates.html) and [what is a good rate per mile](/blog/what-is-a-good-rate-per-mile.html). Those ranges are rough and change by lane and season. Check your own floor with the [break-even calculator](/break-even-calculator.html).
 
 ## How fees compare by equipment
 

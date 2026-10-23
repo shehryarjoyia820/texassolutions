@@ -109,7 +109,7 @@ They solve different problems.
 - **A load board** gives you access to postings. You still do the searching, calling, negotiating and paperwork.
 - **A dispatcher** does that work for you and usually uses boards as one of several tools.
 
-Some owner-operators start on their own with a board, then bring in a dispatcher once they are spending more time on the phone than driving. Others start with a dispatcher because their authority is new and they have no broker contacts yet. Either way, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html) before signing anything.
+Some owner-operators start on their own with a board, then bring in a dispatcher once they are spending more time on the phone than driving. Others start with a dispatcher because their authority is new and they have no broker contacts yet. Either way, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html) before signing anything.
 
 ## Box truck dispatch with Texas Solutions
 

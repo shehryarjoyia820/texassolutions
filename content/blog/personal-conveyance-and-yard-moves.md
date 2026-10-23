@@ -94,7 +94,7 @@ Your carrier must enable yard moves in the ELD. Some devices end the yard move s
 
 Misused PC is easy to spot in ELD data: long PC segments that end at a shipper, or PC driving right before a pickup. During an inspection or an audit, that can lead to hours of service violations, which affect your CSA scores. Read our guide to [CSA scores explained](/blog/csa-scores-explained.html). If you believe a violation was written in error, you can challenge it through FMCSA's DataQs system.
 
-For the core limits behind all of this, read [hours of service rules explained](/blog/hours-of-service-rules-explained-11-14-70-hour.html), and plan your stops with the [hours of service calculator](/hours-of-service-calculator.html). Good [truck parking and trip planning](/blog/truck-parking-and-trip-planning.html) also reduces how often you need PC in the first place.
+For the core limits behind all of this, read [hours of service rules explained](/blog/hours-of-service-rules.html), and plan your stops with the [hours of service calculator](/hours-of-service-calculator.html). Good [truck parking and trip planning](/blog/truck-parking-and-trip-planning.html) also reduces how often you need PC in the first place.
 
 ## How Texas Solutions can help
 

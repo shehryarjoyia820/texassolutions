@@ -119,7 +119,7 @@ A truly affordable dispatch service tells you the full cost up front and puts it
 4. Check contract length and how to cancel
 5. Ask whether you approve every load
 
-For a full checklist of red flags, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html). For the typical cost range by equipment, see [how much a truck dispatcher costs](/blog/how-much-does-a-truck-dispatcher-cost.html).
+For a full checklist of red flags, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html). For the typical cost range by equipment, see [how much a truck dispatcher costs](/blog/how-much-does-a-truck-dispatcher-cost.html).
 
 ## What really decides the value
 

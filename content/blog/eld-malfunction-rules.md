@@ -94,7 +94,7 @@ If a quick fix works and the indicator clears, note what happened anyway. If it 
 
 ## How malfunctions affect your trip planning
 
-Paper logs do not change your hours of service limits. You still have the same 11-hour driving limit, 14-hour window and 60/70-hour cycle. They do mean more work at every stop and more scrutiny at inspections, so build in a little extra time. Our [hours of service rules guide](/blog/hours-of-service-rules-explained-11-14-70-hour.html) covers the limits, and the [hours of service calculator](/hours-of-service-calculator.html) helps you plan a day by hand when the ELD is down.
+Paper logs do not change your hours of service limits. You still have the same 11-hour driving limit, 14-hour window and 60/70-hour cycle. They do mean more work at every stop and more scrutiny at inspections, so build in a little extra time. Our [hours of service rules guide](/blog/hours-of-service-rules.html) covers the limits, and the [hours of service calculator](/hours-of-service-calculator.html) helps you plan a day by hand when the ELD is down.
 
 If you keep running into malfunctions, the device itself may be the problem. See [how to choose an ELD](/blog/how-to-choose-an-eld.html) for the features and support questions to ask before you switch.
 

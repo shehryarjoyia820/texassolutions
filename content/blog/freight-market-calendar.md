@@ -54,7 +54,7 @@ This table is a general pattern, not a forecast. Your region, trailer type and c
 
 ### Spring: produce and construction
 
-Produce season is one of the biggest seasonal drivers for refrigerated freight. Harvests usually start in the southern states and move north as the weather warms, which pulls reefer capacity toward those growing regions. If you run a reefer, the [reefer loads guide](/blog/reefer-loads-refrigerated-dispatch-guide.html) covers how to work those markets.
+Produce season is one of the biggest seasonal drivers for refrigerated freight. Harvests usually start in the southern states and move north as the weather warms, which pulls reefer capacity toward those growing regions. If you run a reefer, the [reefer loads guide](/blog/reefer-loads-guide.html) covers how to work those markets.
 
 Spring also brings construction back. Flatbed demand for lumber, steel and building materials usually firms up as job sites reopen after winter.
 
@@ -72,7 +72,7 @@ Summer heat also matters for reefer operators, since temperature-sensitive loads
 
 ### Fall: peak season
 
-For many dry van and reefer carriers, late summer and fall are the strongest stretch of the year. Retailers stock up for back-to-school and holiday sales, and harvest freight adds to the volume. Read our [peak season guide](/blog/peak-season-trucking-loads-holiday-freight.html) for how to make the most of it.
+For many dry van and reefer carriers, late summer and fall are the strongest stretch of the year. Retailers stock up for back-to-school and holiday sales, and harvest freight adds to the volume. Read our [peak season guide](/blog/peak-season-trucking.html) for how to make the most of it.
 
 Peak season is also when rate confirmations get rushed. Read every rate con carefully, confirm detention and layover terms, and do not let a busy week push you into a load that does not cover your costs.
 

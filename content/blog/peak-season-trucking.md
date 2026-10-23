@@ -34,7 +34,7 @@ Then, in the last week or so of December, freight drops off as receivers close. 
 
 ## Reefer rates per mile in peak season
 
-Reefer is usually the first trailer to feel the holiday rush. Our dispatchers plan reefer freight around roughly $4 to $6 a mile (October 2026 planning range, not a market index or quote). **Reefer rates per mile today** on your lane can sit above or below that. Check the board daily, and read our [reefer loads guide](/blog/reefer-loads-refrigerated-dispatch-guide.html) for what to confirm before booking.
+Reefer is usually the first trailer to feel the holiday rush. Our dispatchers plan reefer freight around roughly $4 to $6 a mile (October 2026 planning range, not a market index or quote). **Reefer rates per mile today** on your lane can sit above or below that. Check the board daily, and read our [reefer loads guide](/blog/reefer-loads-guide.html) for what to confirm before booking.
 
 ## Regional picture: Texas, Midwest and California loads
 

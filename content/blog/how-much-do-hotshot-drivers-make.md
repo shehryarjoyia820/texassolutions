@@ -33,7 +33,7 @@ As a rough guide, hotshot loads often pay about **$4 to $5 a mile**. Factors tha
 - **Lane.** Loads into areas with little return freight need to pay for the trip home.
 - **Season and industry.** Construction, agriculture and energy activity swing demand.
 
-For a deeper look see [hotshot trucking rates per mile and fuel](/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html), and compare with other equipment on our [rate per mile guide](/truck-dispatch-rates.html). Rates are never guaranteed.
+For a deeper look see [hotshot trucking rates per mile and fuel](/blog/hotshot-trucking-rates.html), and compare with other equipment on our [rate per mile guide](/truck-dispatch-rates.html). Rates are never guaranteed.
 
 ## Example weekly gross (hypothetical)
 
@@ -103,7 +103,7 @@ How you run also changes what you keep:
 - **Own authority.** You book loads under your own MC, keep the full rate and pay all costs, including insurance and compliance. Income has the most upside and the most risk.
 - **Leased to a carrier.** You run under another company's authority and usually receive a percentage of the load. The carrier may cover some costs, such as liability insurance, but takes a share of every load.
 
-Neither is right for everyone. Compare the two with your own numbers before deciding, and if you plan to get your own authority, see [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html).
+Neither is right for everyone. Compare the two with your own numbers before deciding, and if you plan to get your own authority, see [how to get an MC number](/blog/how-to-get-an-mc-number.html).
 
 ## What separates higher-earning hotshot operators
 
@@ -115,7 +115,7 @@ If you do not know your break-even, you cannot tell a good load from a bad one. 
 
 ### They plan the reload
 
-A $1,500 load into a dead area that leaves you 250 miles empty may pay less than a $1,200 load into a busy market. See [how to reduce deadhead](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+A $1,500 load into a dead area that leaves you 250 miles empty may pay less than a $1,200 load into a busy market. See [how to reduce deadhead](/blog/what-is-deadhead-in-trucking.html).
 
 ### They watch weight and fuel
 

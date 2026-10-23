@@ -94,9 +94,9 @@ Either way, a non-CDL hotshot carries far less than a CDL setup with a heavy-dut
 Skipping the CDL does not skip the rest of the rules. For interstate commercial vehicles over 10,000 lbs, you should expect:
 
 - A **USDOT number**.
-- **Operating authority** (MC number) if you haul regulated freight for hire across state lines. See [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html).
+- **Operating authority** (MC number) if you haul regulated freight for hire across state lines. See [how to get an MC number](/blog/how-to-get-an-mc-number.html).
 - A **DOT medical card**.
-- **Hours-of-service** rules and, in many cases, an ELD. See [hours of service rules explained](/blog/hours-of-service-rules-explained-11-14-70-hour.html).
+- **Hours-of-service** rules and, in many cases, an ELD. See [hours of service rules explained](/blog/hours-of-service-rules.html).
 - Vehicle inspections and maintenance records.
 - Commercial insurance that meets FMCSA minimums and broker requirements.
 

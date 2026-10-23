@@ -33,7 +33,7 @@ The phrase covers a few different arrangements:
 - **Delivery and final-mile work.** Routes for companies that handle local or regional deliveries.
 - **Load programs run by large shippers.** Amazon Relay is the best-known example.
 
-The difference between spot and contract freight is covered in more detail in our post on [broker setup, rate confirmations and spot vs contract](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+The difference between spot and contract freight is covered in more detail in our post on [broker setup, rate confirmations and spot vs contract](/blog/broker-setup-spot-vs-contract.html).
 
 ## Step 1: Be ready before you ask
 
@@ -80,7 +80,7 @@ Some box truck freight never reaches a load board. Businesses that commonly ship
 
 Keep the pitch short: your equipment, service area, insurance limits and how to reach you. Be honest about capacity. Promising more than one truck can deliver is a fast way to lose the account.
 
-Direct shippers often pay on their own terms. Understand payment timing before you start, and consider whether [factoring](/blog/freight-factoring-for-owner-operators-explained.html) makes sense for your cash flow.
+Direct shippers often pay on their own terms. Understand payment timing before you start, and consider whether [factoring](/blog/freight-factoring-explained.html) makes sense for your cash flow.
 
 ## Step 5: Price contracts carefully
 
@@ -119,7 +119,7 @@ A dispatcher does not hand you a contract, and you should be cautious of anyone 
 - Keep you in front of brokers who have repeat freight.
 - Collect detention and lumper charges and handle invoicing.
 
-Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html) before you sign with anyone. If you are still setting up, start with [how to start a box truck business](/blog/how-to-start-a-box-truck-business.html).
+Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html) before you sign with anyone. If you are still setting up, start with [how to start a box truck business](/blog/how-to-start-a-box-truck-business.html).
 
 ## Box truck dispatch with Texas Solutions
 

@@ -43,7 +43,7 @@ Always compare loads by rate per total mile, including the empty miles to pick u
 | August to October | Midwest and Northeast harvests, Michigan, Wisconsin, upstate New York |
 | November to December | Holiday peak season: grocery, meat, dairy and frozen food distribution nationwide |
 
-Planning lanes around this calendar keeps a reefer loaded both ways. See [peak season trucking loads](/blog/peak-season-trucking-loads-holiday-freight.html) for the Q4 picture.
+Planning lanes around this calendar keeps a reefer loaded both ways. See [peak season trucking loads](/blog/peak-season-trucking.html) for the Q4 picture.
 
 ## What to check before you accept a reefer load
 
@@ -68,4 +68,4 @@ A reefer unit burns diesel even when the truck is parked, often somewhere around
 
 ## When a reefer dispatch service helps
 
-A **reefer dispatch service** handles the search, the broker calls and the appointment details while you drive. At Texas Solutions we confirm temperature and appointment rules before a load reaches you, plan lanes around produce and holiday markets, and are available 24/7 for early appointments and overnight reloads. The fee is 5% of weekly gross for OTR reefer semis, no setup fee, no long-term contract, and your first load is dispatched free. Rates and earnings are not guaranteed. See [reefer dispatch](/reefer-dispatch.html) or compare trailer types in [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html).
+A **reefer dispatch service** handles the search, the broker calls and the appointment details while you drive. At Texas Solutions we confirm temperature and appointment rules before a load reaches you, plan lanes around produce and holiday markets, and are available 24/7 for early appointments and overnight reloads. The fee is 5% of weekly gross for OTR reefer semis, no setup fee, no long-term contract, and your first load is dispatched free. Rates and earnings are not guaranteed. See [reefer dispatch](/reefer-dispatch.html) or compare trailer types in [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed.html).

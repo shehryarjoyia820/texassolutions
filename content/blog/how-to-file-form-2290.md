@@ -102,7 +102,7 @@ That means a truck bought late in the period can need two 2290 filings within a 
 - **Not tracking miles** on a suspended truck that ends up working more than expected.
 - **Assuming a leasing carrier filed for you.** Unless your lease clearly says so in writing, the registered owner is usually responsible.
 
-Track your highway miles carefully, too. The same mileage records help with your fuel tax filings; see our guide to [IFTA for owner-operators](/blog/ifta-for-owner-operators-how-to-file.html) and the [IFTA mileage calculator](/ifta-mileage-calculator.html).
+Track your highway miles carefully, too. The same mileage records help with your fuel tax filings; see our guide to [IFTA for owner-operators](/blog/how-to-file-ifta.html) and the [IFTA mileage calculator](/ifta-mileage-calculator.html).
 
 Form 2290 is one of several recurring items for a carrier with its own authority. Others include UCR registration, the MCS-150 biennial update, IFTA returns and IRP renewal. Our guide on how to [keep your MC authority active](/blog/keep-your-mc-authority-active.html) puts these on one calendar, and our [trucking back office services](/trucking-back-office-services.html) page explains the paperwork support we offer.
 

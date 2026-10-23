@@ -94,7 +94,7 @@ Deadhead quietly lowers your rate per mile. In the example above, 50 empty miles
 4. **Ask brokers about backhauls** in the same lane.
 5. **Build unavoidable deadhead into the rate** and say so when you counter.
 
-Read more in [what is deadhead in trucking](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html), or measure it with the [deadhead miles calculator](/deadhead-miles-calculator.html).
+Read more in [what is deadhead in trucking](/blog/what-is-deadhead-in-trucking.html), or measure it with the [deadhead miles calculator](/deadhead-miles-calculator.html).
 
 ## Mistakes that cost carriers money
 

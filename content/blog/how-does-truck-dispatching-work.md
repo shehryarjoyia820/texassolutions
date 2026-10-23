@@ -55,7 +55,7 @@ If your authority is brand new, say so. Some brokers will not work with a new MC
 
 Before a broker can tender a load to you, your company has to be set up in that broker's system. That usually means a carrier packet, insurance verification and sometimes an online onboarding portal.
 
-A dispatcher handles the back-and-forth so you are not filling out forms at a truck stop. The more brokers you are set up with, the more freight your dispatcher can offer you. More detail is in our guide to [broker setup and rate confirmations](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+A dispatcher handles the back-and-forth so you are not filling out forms at a truck stop. The more brokers you are set up with, the more freight your dispatcher can offer you. More detail is in our guide to [broker setup and rate confirmations](/blog/broker-setup-spot-vs-contract.html).
 
 ## Step 3: Load search
 
@@ -137,7 +137,7 @@ Put together, a typical week runs in a loop:
 - Who handles broker packets, invoicing and detention claims?
 - Do you work with new authority?
 
-For more on spotting bad offers, read [how to choose a truck dispatcher](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+For more on spotting bad offers, read [how to choose a truck dispatcher](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## How Texas Solutions dispatching works
 

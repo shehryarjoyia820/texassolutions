@@ -65,7 +65,7 @@ Many people start leased on, learn the business, then get their own authority.
 
 If you choose your own authority, you register with FMCSA for a USDOT number and apply for MC operating authority. You also need a BOC-3 process agent filing and proof of insurance on file before the authority goes active.
 
-We cover each filing in detail in [how to get your MC number and trucking authority](/blog/how-to-get-mc-number-authority-owner-operator.html), and the full business setup (UCR, IRP plates, IFTA, ELD, drug and alcohol consortium) in [how to start a trucking company](/blog/how-to-start-a-trucking-company.html). Texas Solutions also offers MC authority setup help as part of its [back office services](/trucking-back-office-services.html).
+We cover each filing in detail in [how to get your MC number and trucking authority](/blog/how-to-get-an-mc-number.html), and the full business setup (UCR, IRP plates, IFTA, ELD, drug and alcohol consortium) in [how to start a trucking company](/blog/how-to-start-a-trucking-company.html). Texas Solutions also offers MC authority setup help as part of its [back office services](/trucking-back-office-services.html).
 
 Keep in mind that a new carrier enters FMCSA's new entrant program, which includes a safety audit, usually within the first 12 months. Keep your logs, maintenance records and driver files in order from day one.
 
@@ -81,7 +81,7 @@ Your equipment decides which freight you can haul and what it pays. Rough planni
 | Dry van / power only | $3 - $5 |
 | Box truck | $1.80 - $3.20 |
 
-Higher rates usually come with higher costs or more work: tarping and securement for flatbed, fuel for the reefer unit, or more expensive equipment. Compare the trade-offs in [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html).
+Higher rates usually come with higher costs or more work: tarping and securement for flatbed, fuel for the reefer unit, or more expensive equipment. Compare the trade-offs in [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed.html).
 
 When you look at a used truck, budget for a pre-purchase inspection. A cheap truck that spends weeks in the shop is not cheap.
 
@@ -102,7 +102,7 @@ Your own numbers could be higher or lower. The point is to price each item befor
 
 ## Step 6: Set up how you get paid
 
-Decide early whether you will wait for brokers to pay or use factoring to get paid within a day or two of delivery. Read [freight factoring explained](/blog/freight-factoring-for-owner-operators-explained.html) before you sign anything, and check the fee, recourse terms and contract length.
+Decide early whether you will wait for brokers to pay or use factoring to get paid within a day or two of delivery. Read [freight factoring explained](/blog/freight-factoring-explained.html) before you sign anything, and check the fee, recourse terms and contract length.
 
 ## Step 7: Find your first loads
 

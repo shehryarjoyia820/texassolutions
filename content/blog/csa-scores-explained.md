@@ -104,7 +104,7 @@ Outside FMCSA, high percentiles can mean brokers decline to set you up, shippers
 
 ### On the road
 
-- Run legal hours and keep ELD logs accurate. Our guide to [hours of service](/blog/hours-of-service-rules-explained-11-14-70-hour.html) covers the 11, 14 and 70-hour rules.
+- Run legal hours and keep ELD logs accurate. Our guide to [hours of service](/blog/hours-of-service-rules.html) covers the 11, 14 and 70-hour rules.
 - Avoid speeding and phone use. Unsafe Driving violations tend to be weighted heavily.
 - Wear a seat belt. It is an easy violation to avoid.
 

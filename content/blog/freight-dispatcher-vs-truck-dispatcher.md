@@ -98,7 +98,7 @@ Since the title tells you little, look at how the service operates. Ask these qu
 6. **Are you a broker too?** You want someone clearly on the carrier side.
 7. **Who answers at night or on weekends?** Trucks break down and appointments change outside office hours.
 
-Also check the math on your own numbers. Know your cost per mile before you talk to anyone, using the [cost per mile calculator](/cost-per-mile-calculator.html), so you can tell whether the loads being offered actually pay. For more red flags, read [how to choose a truck dispatcher](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+Also check the math on your own numbers. Know your cost per mile before you talk to anyone, using the [cost per mile calculator](/cost-per-mile-calculator.html), so you can tell whether the loads being offered actually pay. For more red flags, read [how to choose a truck dispatcher](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## Matching the service to your equipment
 

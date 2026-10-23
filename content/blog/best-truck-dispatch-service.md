@@ -33,7 +33,7 @@ A truck dispatch service works for the carrier. Under your own MC authority, a d
 - Plans the next load so you do not deadhead across a state for it.
 - Handles invoicing, detention and lumper paperwork, and factoring documents if you factor.
 
-If a "dispatcher" wants you to haul under their MC or asks for the broker's payment to go to them, that is not dispatch. Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html) before you sign anything.
+If a "dispatcher" wants you to haul under their MC or asks for the broker's payment to go to them, that is not dispatch. Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html) before you sign anything.
 
 ## Seven things to compare
 

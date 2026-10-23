@@ -30,7 +30,7 @@ Rules change, and some depend on your state, vehicle weight and type of freight.
 
 Most interstate carriers need a **USDOT number**. For-hire carriers moving regulated freight across state lines also need **operating authority**, often called an MC number. Both are applied for through FMCSA.
 
-After you apply, there is a waiting period before your authority becomes active. You cannot haul under your own authority until it is active. See our guide on [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html).
+After you apply, there is a waiting period before your authority becomes active. You cannot haul under your own authority until it is active. See our guide on [how to get an MC number](/blog/how-to-get-an-mc-number.html).
 
 ## Step 2: BOC-3 filing
 
@@ -59,7 +59,7 @@ If you or your drivers need a CDL, you will generally need a **drug and alcohol 
 
 ## Step 8: Factoring and banking
 
-Brokers often pay in 30 days or more. **Freight factoring** pays you sooner for a fee. Set it up before your first load so cash flow does not stop you. Read [freight factoring for owner-operators explained](/blog/freight-factoring-for-owner-operators-explained.html).
+Brokers often pay in 30 days or more. **Freight factoring** pays you sooner for a fee. Set it up before your first load so cash flow does not stop you. Read [freight factoring for owner-operators explained](/blog/freight-factoring-explained.html).
 
 ## Step 9: Broker setup
 

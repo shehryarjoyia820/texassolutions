@@ -100,7 +100,7 @@ It can hurt when:
 - [ ] Your 60/70-hour cycle has room
 - [ ] Your ELD shows the recalculated clocks you expect
 
-For the bigger picture, read our [hours of service rules explained](/blog/hours-of-service-rules-explained-11-14-70-hour.html) guide, and try your own schedule in the [hours of service calculator](/hours-of-service-calculator.html). Team drivers have their own planning challenges, covered in our [team driving guide](/blog/team-driving-guide.html).
+For the bigger picture, read our [hours of service rules explained](/blog/hours-of-service-rules.html) guide, and try your own schedule in the [hours of service calculator](/hours-of-service-calculator.html). Team drivers have their own planning challenges, covered in our [team driving guide](/blog/team-driving-guide.html).
 
 ## How Texas Solutions can help
 

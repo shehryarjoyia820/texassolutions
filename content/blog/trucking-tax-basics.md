@@ -36,7 +36,7 @@ Think of your taxes in two groups: taxes on your profit, and taxes on your truck
 **Taxes on the truck and fuel**
 
 - **Heavy Vehicle Use Tax (HVUT)**, filed on IRS Form 2290 for heavy highway vehicles. See our guide on [how to file Form 2290](/blog/how-to-file-form-2290.html).
-- **Fuel tax through IFTA** if you run interstate with a qualifying vehicle. Our [IFTA filing guide](/blog/ifta-for-owner-operators-how-to-file.html) walks through the quarterly return.
+- **Fuel tax through IFTA** if you run interstate with a qualifying vehicle. Our [IFTA filing guide](/blog/how-to-file-ifta.html) walks through the quarterly return.
 - **Registration fees** through your base state and IRP for apportioned plates.
 
 ## Why quarterly estimated taxes matter

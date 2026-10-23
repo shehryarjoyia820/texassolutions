@@ -119,7 +119,7 @@ For more options, see [how to find loads for your truck](/blog/how-to-find-loads
 - **A load board** shows you postings. You still search, call, negotiate and handle paperwork.
 - **A dispatcher** does that work and uses boards along with broker contacts.
 
-Many hotshot owner-operators use both at different stages. If you are just getting started, see [how to start a hotshot business](/blog/how-to-start-a-hotshot-business.html), and before signing with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+Many hotshot owner-operators use both at different stages. If you are just getting started, see [how to start a hotshot business](/blog/how-to-start-a-hotshot-business.html), and before signing with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## Hotshot dispatch with Texas Solutions
 

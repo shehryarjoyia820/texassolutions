@@ -67,7 +67,7 @@ For the first months, every load is an audition. Be on time, answer check calls,
 - Waiting until the authority is active to start broker setups.
 - Taking every cheap load to "build history" and running at a loss.
 - Hauling under someone else's MC: it is risky and does not build your own record.
-- Paying a large upfront fee to anyone who promises guaranteed loads. Read [how to avoid truck dispatch scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+- Paying a large upfront fee to anyone who promises guaranteed loads. Read [how to avoid truck dispatch scams](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## When new authority truck dispatch helps
 

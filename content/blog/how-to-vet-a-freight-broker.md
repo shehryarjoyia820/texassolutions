@@ -71,7 +71,7 @@ The setup agreement governs every load you haul for that broker. Read it before 
 - **Non-solicitation:** restrictions on working directly with their shippers
 - **Indemnity and dispute terms**
 
-You can ask for changes. Have an attorney review agreements you sign often or that feel one-sided. Our guide on [broker setup and rate confirmations](/blog/broker-setup-rate-confirmation-spot-vs-contract.html) covers the packet process, and [cargo claims](/blog/cargo-claims-guide.html) explains why claim terms matter.
+You can ask for changes. Have an attorney review agreements you sign often or that feel one-sided. Our guide on [broker setup and rate confirmations](/blog/broker-setup-spot-vs-contract.html) covers the packet process, and [cargo claims](/blog/cargo-claims-guide.html) explains why claim terms matter.
 
 ## Step 5: Watch behavior on the first loads
 

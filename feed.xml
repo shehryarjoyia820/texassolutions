@@ -6,7 +6,7 @@
     <atom:link href="https://dispatch.texassolutions.co/feed.xml" rel="self" type="application/rss+xml" />
     <description>Truck dispatch, rates, diesel prices and fuel-saving guides for owner-operators and small fleets.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Oct 2026 15:52:03 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 09:58:54 +0000</lastBuildDate>
     <item>
       <title>Working With a Factoring Company: Setup, Paperwork and Payments</title>
       <link>https://dispatch.texassolutions.co/guides/working-with-a-factoring-company/</link>
@@ -144,20 +144,20 @@
       <category>Compliance</category>
     </item>
     <item>
-      <title>Reefer Loads and Refrigerated Load Dispatch: Rates per Mile, Seasons and Tips</title>
-      <link>https://dispatch.texassolutions.co/guides/reefer-loads-refrigerated-dispatch-guide/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/reefer-loads-refrigerated-dispatch-guide/</guid>
-      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Refrigerated load dispatch guide: reefer rates per mile in 2026, produce and holiday seasons, temperature rules and how to find better reefer loads.</description>
-      <category>Reefer</category>
-    </item>
-    <item>
       <title>Reefer Loads in Summer Heat: How to Protect the Load</title>
       <link>https://dispatch.texassolutions.co/guides/reefer-loads-in-summer-heat/</link>
       <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/reefer-loads-in-summer-heat/</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to run reefer loads in summer heat without rejections or claims: pre-cooling, pulp temps, airflow, continuous vs cycle mode, reefer fuel and paperwork.</description>
       <category>Seasonal freight</category>
+    </item>
+    <item>
+      <title>Reefer Loads and Refrigerated Load Dispatch: Rates per Mile, Seasons and Tips</title>
+      <link>https://dispatch.texassolutions.co/guides/reefer-loads-guide/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/reefer-loads-guide/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Refrigerated load dispatch guide: reefer rates per mile in 2026, produce and holiday seasons, temperature rules and how to find better reefer loads.</description>
+      <category>Reefer</category>
     </item>
     <item>
       <title>Pre-Trip Inspection Checklist for Truck Drivers</title>
@@ -201,8 +201,8 @@
     </item>
     <item>
       <title>Peak Season Trucking Loads: How Owner-Operators Can Plan Q4 Holiday Freight</title>
-      <link>https://dispatch.texassolutions.co/guides/peak-season-trucking-loads-holiday-freight/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/peak-season-trucking-loads-holiday-freight/</guid>
+      <link>https://dispatch.texassolutions.co/guides/peak-season-trucking/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/peak-season-trucking/</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>Q4 peak season trucking loads: holiday freight timing, reefer demand, Texas, Midwest and California loads, and how to plan lanes and home time.</description>
       <category>Finding loads</category>
@@ -481,8 +481,8 @@
     </item>
     <item>
       <title>Cheapest Truck Dispatch Service? How to Compare Dispatch Fees and Their Real Cost</title>
-      <link>https://dispatch.texassolutions.co/guides/cheapest-truck-dispatch-service-real-cost/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/cheapest-truck-dispatch-service-real-cost/</guid>
+      <link>https://dispatch.texassolutions.co/guides/cheapest-truck-dispatch-service/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/cheapest-truck-dispatch-service/</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>Truck dispatch cost explained: dispatch fee percentage vs flat rate and weekly fees, what 5% really costs, and the hidden charges to check.</description>
       <category>Dispatch</category>
@@ -529,8 +529,8 @@
     </item>
     <item>
       <title>Best Truck Dispatch Service for Owner-Operators in 2026: How to Compare</title>
-      <link>https://dispatch.texassolutions.co/guides/best-truck-dispatch-service-for-owner-operators-2026/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/best-truck-dispatch-service-for-owner-operators-2026/</guid>
+      <link>https://dispatch.texassolutions.co/guides/best-truck-dispatch-service/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/best-truck-dispatch-service/</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to pick the best truck dispatch service for owner-operators in 2026: fees, contracts, forced dispatch, 24/7 support, new MC help and the questions to ask.</description>
       <category>Dispatch</category>
@@ -697,8 +697,8 @@
     </item>
     <item>
       <title>How to Choose a Truck Dispatcher and Avoid Dispatch Scams</title>
-      <link>https://dispatch.texassolutions.co/guides/how-to-choose-a-truck-dispatcher-avoid-scams/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-choose-a-truck-dispatcher-avoid-scams/</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-choose-a-truck-dispatcher/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-choose-a-truck-dispatcher/</guid>
       <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to choose a truck dispatcher: red flags of dispatch scams, questions to ask, how to check reviews and references, and what a dispatch agreement needs.</description>
       <category>Dispatch</category>
@@ -713,24 +713,24 @@
     </item>
     <item>
       <title>Broker Setup, Rate Confirmations and Spot vs Contract Rates</title>
-      <link>https://dispatch.texassolutions.co/guides/broker-setup-rate-confirmation-spot-vs-contract/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/broker-setup-rate-confirmation-spot-vs-contract/</guid>
+      <link>https://dispatch.texassolutions.co/guides/broker-setup-spot-vs-contract/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/broker-setup-spot-vs-contract/</guid>
       <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
       <description>How to get set up with brokers, what a rate confirmation is, spot rates vs contract rates, and how truck dispatch works from load search to payment.</description>
       <category>Brokers</category>
     </item>
     <item>
       <title>What Is Deadhead in Trucking and How to Reduce It</title>
-      <link>https://dispatch.texassolutions.co/guides/what-is-deadhead-in-trucking-how-to-reduce-it/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/what-is-deadhead-in-trucking-how-to-reduce-it/</guid>
+      <link>https://dispatch.texassolutions.co/guides/what-is-deadhead-in-trucking/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/what-is-deadhead-in-trucking/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>Deadhead miles are empty miles with no paid freight. See how they cut your effective rate per mile and 7 practical ways owner-operators reduce them.</description>
       <category>Deadhead</category>
     </item>
     <item>
       <title>What Is a Good Rate Per Mile in Trucking in 2026?</title>
-      <link>https://dispatch.texassolutions.co/guides/what-is-a-good-rate-per-mile-trucking-2026/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/what-is-a-good-rate-per-mile-trucking-2026/</guid>
+      <link>https://dispatch.texassolutions.co/guides/what-is-a-good-rate-per-mile/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/what-is-a-good-rate-per-mile/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>A good rate per mile beats your cost per mile with profit left over. See rough 2026 rates for dry van, reefer, flatbed, hotshot and box truck, and find yours.</description>
       <category>Rates</category>
@@ -744,41 +744,41 @@
       <category>Dispatch</category>
     </item>
     <item>
-      <title>IFTA for Owner-Operators: How to File Quarterly Returns</title>
-      <link>https://dispatch.texassolutions.co/guides/ifta-for-owner-operators-how-to-file/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/ifta-for-owner-operators-how-to-file/</guid>
-      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
-      <description>IFTA explained for owner-operators: who needs it, what records to keep, quarterly due dates, and how net taxable gallons are calculated by state.</description>
-      <category>Fuel taxes</category>
-    </item>
-    <item>
       <title>How to Get Your MC Number and Trucking Authority</title>
-      <link>https://dispatch.texassolutions.co/guides/how-to-get-mc-number-authority-owner-operator/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-get-mc-number-authority-owner-operator/</guid>
+      <link>https://dispatch.texassolutions.co/guides/how-to-get-an-mc-number/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-get-an-mc-number/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>Step-by-step guide for new owner-operators: USDOT number, MC operating authority, BOC-3, insurance filing, UCR, and what to set up before you haul.</description>
       <category>Getting started</category>
     </item>
     <item>
+      <title>IFTA for Owner-Operators: How to File Quarterly Returns</title>
+      <link>https://dispatch.texassolutions.co/guides/how-to-file-ifta/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/how-to-file-ifta/</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <description>IFTA explained for owner-operators: who needs it, what records to keep, quarterly due dates, and how net taxable gallons are calculated by state.</description>
+      <category>Fuel taxes</category>
+    </item>
+    <item>
       <title>Hours of Service Rules Explained: 11, 14 and 70-Hour</title>
-      <link>https://dispatch.texassolutions.co/guides/hours-of-service-rules-explained-11-14-70-hour/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/hours-of-service-rules-explained-11-14-70-hour/</guid>
+      <link>https://dispatch.texassolutions.co/guides/hours-of-service-rules/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/hours-of-service-rules/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>FMCSA hours-of-service rules in plain English: 11-hour driving limit, 14-hour window, 30-minute break, 60/70-hour cycle and the 34-hour restart.</description>
       <category>Compliance</category>
     </item>
     <item>
       <title>Freight Factoring for Owner-Operators: How It Works</title>
-      <link>https://dispatch.texassolutions.co/guides/freight-factoring-for-owner-operators-explained/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/freight-factoring-for-owner-operators-explained/</guid>
+      <link>https://dispatch.texassolutions.co/guides/freight-factoring-explained/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/freight-factoring-explained/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>How freight factoring works for truckers: advances, fees, recourse vs non-recourse, notice of assignment, and how to compare factoring companies.</description>
       <category>Cash flow</category>
     </item>
     <item>
       <title>Dry Van vs Reefer vs Flatbed: Which Trailer Pays Best?</title>
-      <link>https://dispatch.texassolutions.co/guides/dry-van-vs-reefer-vs-flatbed-which-trailer/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/dry-van-vs-reefer-vs-flatbed-which-trailer/</guid>
+      <link>https://dispatch.texassolutions.co/guides/dry-van-vs-reefer-vs-flatbed/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/dry-van-vs-reefer-vs-flatbed/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
       <description>Compare dry van, reefer and flatbed for owner-operators: rates per mile, demand, extra work and costs, so you can choose the trailer that fits your goals.</description>
       <category>Equipment</category>
@@ -809,24 +809,24 @@
     </item>
     <item>
       <title>Hotshot Trucking Rates Per Mile, Fuel and Dispatch (2026)</title>
-      <link>https://dispatch.texassolutions.co/guides/hotshot-trucking-rates-per-mile-fuel-and-dispatch/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/hotshot-trucking-rates-per-mile-fuel-and-dispatch/</guid>
+      <link>https://dispatch.texassolutions.co/guides/hotshot-trucking-rates/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/hotshot-trucking-rates/</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
       <description>Hotshot rates per mile, fuel mileage by load weight, what a hotshot dispatcher does, and what dispatch costs: 7% of weekly gross at Texas Solutions.</description>
       <category>Hotshot</category>
     </item>
     <item>
       <title>Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile</title>
-      <link>https://dispatch.texassolutions.co/guides/diesel-prices-by-state-cut-fuel-cost-per-mile/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/diesel-prices-by-state-cut-fuel-cost-per-mile/</guid>
+      <link>https://dispatch.texassolutions.co/guides/cut-fuel-cost-per-mile/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/cut-fuel-cost-per-mile/</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
       <description>Why diesel prices differ by state, how to work out fuel cost per mile, and 7 ways truckers cut fuel spend. Free fuel calculator and daily state prices.</description>
       <category>Fuel</category>
     </item>
     <item>
       <title>Box Truck Dispatch: How to Find Loads and What It Really Costs</title>
-      <link>https://dispatch.texassolutions.co/guides/box-truck-dispatch-find-loads-and-costs/</link>
-      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/box-truck-dispatch-find-loads-and-costs/</guid>
+      <link>https://dispatch.texassolutions.co/guides/box-truck-loads-and-costs/</link>
+      <guid isPermaLink="true">https://dispatch.texassolutions.co/guides/box-truck-loads-and-costs/</guid>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
       <description>How box truck owner-operators find loads, what they spend on fuel, and what box truck dispatch costs: 8% of weekly gross at Texas Solutions.</description>
       <category>Box truck</category>

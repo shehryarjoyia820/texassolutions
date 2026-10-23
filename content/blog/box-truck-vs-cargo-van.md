@@ -86,7 +86,7 @@ For a box truck in interstate commerce, expect to deal with:
 - Annual vehicle inspection and driver qualification records
 - Drug and alcohol testing only if the vehicle requires a CDL
 
-A for-hire van hauling across state lines generally still needs operating authority. Confirm all of this with FMCSA, since thresholds and exceptions are specific. Our guide on [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) covers the authority side.
+A for-hire van hauling across state lines generally still needs operating authority. Confirm all of this with FMCSA, since thresholds and exceptions are specific. Our guide on [how to get an MC number](/blog/how-to-get-an-mc-number.html) covers the authority side.
 
 ## Which should you choose?
 

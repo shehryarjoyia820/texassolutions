@@ -33,7 +33,7 @@ Because trucks cross many states, FMCSA requires interstate carriers, brokers an
 - **Freight brokers.**
 - **Freight forwarders.**
 
-Owner-operators who lease onto another carrier and run under that carrier's authority generally do not need their own BOC-3. If you later get your own authority, you will. See [how to get your MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) for the whole sequence.
+Owner-operators who lease onto another carrier and run under that carrier's authority generally do not need their own BOC-3. If you later get your own authority, you will. See [how to get your MC number](/blog/how-to-get-an-mc-number.html) for the whole sequence.
 
 ## Blanket agents vs. naming your own agents
 

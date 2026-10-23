@@ -84,7 +84,7 @@ Ask the provider for a full fee schedule in writing. If they cannot give you one
 
 **Prepaid or debit-style cards** use money you load ahead of time. They can be easier to get for a new authority and help prevent overspending, but you need to keep the balance funded.
 
-**Cards through factoring companies** are another option. Some factoring companies let you fuel against your advances. That can be convenient, but read how fuel purchases are deducted and whether the card ties you more tightly to that factor. Our guide to [freight factoring](/blog/freight-factoring-for-owner-operators-explained.html) explains how factoring works.
+**Cards through factoring companies** are another option. Some factoring companies let you fuel against your advances. That can be convenient, but read how fuel purchases are deducted and whether the card ties you more tightly to that factor. Our guide to [freight factoring](/blog/freight-factoring-explained.html) explains how factoring works.
 
 ## Step 6: IFTA reporting and fuel tax data
 
@@ -94,7 +94,7 @@ For an interstate carrier, a good fuel card for truckers is also a record-keepin
 - Downloadable reports by quarter
 - Easy matching between fuel records and your miles by state
 
-Clean fuel data makes filing much smoother. See our guide to [IFTA for owner-operators](/blog/ifta-for-owner-operators-how-to-file.html), or use the [IFTA mileage calculator](/ifta-mileage-calculator.html) to work out miles by state.
+Clean fuel data makes filing much smoother. See our guide to [IFTA for owner-operators](/blog/how-to-file-ifta.html), or use the [IFTA mileage calculator](/ifta-mileage-calculator.html) to work out miles by state.
 
 ## Step 7: Controls and security
 
@@ -136,7 +136,7 @@ Your numbers will differ with mpg, miles, discount and fees. Plug your own figur
 
 ## Fuel savings start with the right loads
 
-A fuel card helps at the pump, but how you plan loads matters even more. Fewer empty miles means fewer gallons bought. Our post on [cutting fuel cost per mile](/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html) covers that side, and the [fuel surcharge calculator](/fuel-surcharge-calculator.html) helps you check whether a rate covers current diesel prices.
+A fuel card helps at the pump, but how you plan loads matters even more. Fewer empty miles means fewer gallons bought. Our post on [cutting fuel cost per mile](/blog/cut-fuel-cost-per-mile.html) covers that side, and the [fuel surcharge calculator](/fuel-surcharge-calculator.html) helps you check whether a rate covers current diesel prices.
 
 Texas Solutions is a nationwide truck dispatch service, not a fuel card provider, and we have no fuel card partnerships. Our 24/7 remote dispatchers plan loads to keep deadhead down, and you approve every load. Our [back office services](/trucking-back-office-services.html) include IFTA filing, factoring setup and invoicing. OTR fees are 5% of weekly gross for semis, 7% for hotshots and 8% for box trucks and straight trucks, with no setup fee and no long-term contract, and your first load is free.
 

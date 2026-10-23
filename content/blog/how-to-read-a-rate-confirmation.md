@@ -27,7 +27,7 @@ A **rate confirmation** (often called a rate con) is the document a broker sends
 
 When you set up with a broker, you sign a broker-carrier agreement that covers the general relationship. The rate con is the load-level agreement on top of that. It is what your factoring company, your bookkeeper and the broker's accounts payable team will look at when your invoice comes in.
 
-That means anything not written on the rate con is at risk. If the broker said "we pay detention after two hours" on the phone but the rate con says nothing, you may end up arguing for money you earned. For a broader look at how broker setup and spot versus contract freight fit together, see our guide on [broker setup and rate confirmations](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+That means anything not written on the rate con is at risk. If the broker said "we pay detention after two hours" on the phone but the rate con says nothing, you may end up arguing for money you earned. For a broader look at how broker setup and spot versus contract freight fit together, see our guide on [broker setup and rate confirmations](/blog/broker-setup-spot-vs-contract.html).
 
 ## The header: who you are dealing with
 
@@ -113,7 +113,7 @@ If any item is wrong or missing, email the broker and ask for a revised rate con
 - Note detention start and stop times and get in-and-out times on the BOL.
 - Build your invoice packet: signed rate con, signed BOL or POD, and receipts for any lumper or accessorial.
 
-Clean paperwork is the fastest route to getting paid, whether you bill brokers yourself or work with a factoring company. Our guide on [freight factoring for owner-operators](/blog/freight-factoring-for-owner-operators-explained.html) explains how that packet moves through funding.
+Clean paperwork is the fastest route to getting paid, whether you bill brokers yourself or work with a factoring company. Our guide on [freight factoring for owner-operators](/blog/freight-factoring-explained.html) explains how that packet moves through funding.
 
 ## How Texas Solutions can help
 

@@ -29,7 +29,7 @@ Self-dispatch looks free apart from the board subscription. It is not. Here is w
 
 - **Time.** Searching boards, calling brokers, sending carrier packets, negotiating and checking rate confirmations easily takes a couple of hours a day. Those hours come out of driving time, sleep or home time.
 - **Rate negotiation.** Brokers negotiate all day. If you take the posted rate because you are tired or in a hurry, you leave money on the table on every load.
-- **Deadhead.** Booking one load at a time often means delivering into a market with no outbound freight and driving empty to the next one. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+- **Deadhead.** Booking one load at a time often means delivering into a market with no outbound freight and driving empty to the next one. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking.html).
 - **Paperwork.** Invoices, detention claims and lumper receipts get missed when you are also the driver.
 
 ## What a dispatcher costs
@@ -69,7 +69,7 @@ In this example the fee is roughly covered by the higher rates and lower fuel co
 
 Whether you self-dispatch or not, the same habits pay:
 
-1. **Judge loads per total mile, including deadhead.** A $3.20 load with 120 empty miles can pay less than a $2.90 load next door. See [best paying loads per mile](/blog/what-is-a-good-rate-per-mile-trucking-2026.html).
+1. **Judge loads per total mile, including deadhead.** A $3.20 load with 120 empty miles can pay less than a $2.90 load next door. See [best paying loads per mile](/blog/what-is-a-good-rate-per-mile.html).
 2. **Plan the reload before you accept the load.** Check outbound freight in the delivery market.
 3. **Negotiate every time.** Ask for more, especially on short-notice and hard-to-cover loads. Our guide on [rate negotiation with brokers](/blog/how-to-negotiate-freight-rates.html) has scripts.
 4. **Build repeat lanes.** Brokers rebook carriers who deliver on time and answer the phone.

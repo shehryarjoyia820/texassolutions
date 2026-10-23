@@ -23,7 +23,7 @@ faq:
 
 Every trailer type has its own freight, its own customers and its own pricing logic. A dispatcher for semi trucks who books good reefer loads needs a different playbook from one who books flatbed. This guide covers how **dry van loads**, **reefer loads**, **flatbed loads**, step deck and **power only loads** are found, and what moves the **rate per mile** for each.
 
-If you are still choosing a trailer, start with [dry van vs reefer vs flatbed: which trailer pays best](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html). This article focuses on finding and pricing the freight once you have the equipment.
+If you are still choosing a trailer, start with [dry van vs reefer vs flatbed: which trailer pays best](/blog/dry-van-vs-reefer-vs-flatbed.html). This article focuses on finding and pricing the freight once you have the equipment.
 
 ## Rough rates by freight type
 
@@ -46,7 +46,7 @@ Some factors apply to all trailers:
 - **Lead time.** A load that needs a truck today may pay more than one booked a week out.
 - **Extra work.** Tarps, temperature control, multiple stops and driver assist all add value.
 
-For context on what a good number looks like against your costs, read [what is a good rate per mile in trucking](/blog/what-is-a-good-rate-per-mile-trucking-2026.html).
+For context on what a good number looks like against your costs, read [what is a good rate per mile in trucking](/blog/what-is-a-good-rate-per-mile.html).
 
 ## Dry van loads
 

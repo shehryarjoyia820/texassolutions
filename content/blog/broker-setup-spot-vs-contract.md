@@ -42,7 +42,7 @@ Brokers must check a carrier before they give it freight. That check is called *
 1. Keep every document as a clean PDF, ready to send from your phone.
 2. Ask your insurance agent how fast they send certificates. Slow COIs slow setups.
 3. Make sure your business name matches on every document.
-4. If you factor, have your notice of assignment ready. See [freight factoring for owner-operators explained](/blog/freight-factoring-for-owner-operators-explained.html).
+4. If you factor, have your notice of assignment ready. See [freight factoring for owner-operators explained](/blog/freight-factoring-explained.html).
 5. Get set up with brokers in your lanes before you need them.
 
 New carriers may find that some brokers have extra requirements for new MC numbers. See [dispatch for new authority](/dispatch-for-new-authority.html).
@@ -107,7 +107,7 @@ Dispatchers use several sources at once:
 - **Load boards** for posted spot freight
 - **Broker networks:** calling brokers who move freight in your lanes
 - **Repeat lanes:** asking brokers for the same load again
-- **Planning ahead:** searching for the next load before the current one delivers, to cut [deadhead](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html)
+- **Planning ahead:** searching for the next load before the current one delivers, to cut [deadhead](/blog/what-is-deadhead-in-trucking.html)
 
 ## How does truck dispatch work?
 

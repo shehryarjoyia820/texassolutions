@@ -43,7 +43,7 @@ Two things to understand:
 | Alcohol and drugs | Any detected alcohol or possession or use of drugs while on duty |
 | Fitness | Driver too ill or fatigued to drive safely |
 
-Hours-of-service OOS orders typically last until the driver has taken enough off-duty time to be legal. Our guide to [hours of service rules](/blog/hours-of-service-rules-explained-11-14-70-hour.html) helps you plan legal days.
+Hours-of-service OOS orders typically last until the driver has taken enough off-duty time to be legal. Our guide to [hours of service rules](/blog/hours-of-service-rules.html) helps you plan legal days.
 
 ## Common vehicle out-of-service conditions
 

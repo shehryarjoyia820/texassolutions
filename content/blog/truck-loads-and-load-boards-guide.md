@@ -93,7 +93,7 @@ Rate per total mile:
 - Load A: $2,400 / (700 + 90) = $2,400 / 790 = **$3.04**
 - Load B: $2,250 / (680 + 15) = $2,250 / 695 = **$3.24**
 
-Load B pays less on paper but more on every mile driven. Then ask where each load leaves you. A slightly lower rate into a strong freight market can beat a high rate into a dead one. Try your own numbers with the [deadhead miles calculator](/deadhead-miles-calculator.html) and the [load profitability calculator](/load-profitability-calculator.html). For more on empty miles, read [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+Load B pays less on paper but more on every mile driven. Then ask where each load leaves you. A slightly lower rate into a strong freight market can beat a high rate into a dead one. Try your own numbers with the [deadhead miles calculator](/deadhead-miles-calculator.html) and the [load profitability calculator](/load-profitability-calculator.html). For more on empty miles, read [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking.html).
 
 ## Load board safety tips
 

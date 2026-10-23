@@ -34,7 +34,7 @@ Your needs depend on how you operate:
 - **Your own authority (MC number):** you are the motor carrier. You need primary liability filed with FMCSA, plus the coverages your brokers and lender require.
 - **Leased onto a carrier:** the carrier usually provides primary liability while you are under dispatch. You may still need non-trucking liability or bobtail, physical damage, and sometimes occupational accident coverage. Read your lease to see exactly what you must buy.
 
-If you are still deciding, our guides on [getting your MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) and [leasing onto an MC](/mc-lease.html) explain both paths.
+If you are still deciding, our guides on [getting your MC number](/blog/how-to-get-an-mc-number.html) and [leasing onto an MC](/mc-lease.html) explain both paths.
 
 ## The main coverages
 

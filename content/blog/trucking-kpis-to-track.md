@@ -42,7 +42,7 @@ All costs (fixed and variable) divided by total miles. Calculate it monthly with
 Revenue per total mile minus cost per mile. If this number is thin or negative, more miles will not fix it.
 
 ### 4. Deadhead percentage
-Empty miles divided by total miles, times 100. Lower is generally better, though a short deadhead into a strong market can pay off. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+Empty miles divided by total miles, times 100. Lower is generally better, though a short deadhead into a strong market can pay off. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking.html).
 
 ### 5. Miles per truck per week
 How much the truck actually works. Low miles may point to long waits, poor load planning or too much home time for your cost structure.

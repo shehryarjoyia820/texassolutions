@@ -27,7 +27,7 @@ faq:
 
 Before looking at listings, decide:
 
-- **What freight will you haul?** Dry van, reefer, flatbed and power only have different needs. See [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html).
+- **What freight will you haul?** Dry van, reefer, flatbed and power only have different needs. See [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed.html).
 - **Where will you run?** Regional, OTR, mountains, or states with strict emissions rules.
 - **What is your total budget?** Price plus taxes, registration, insurance, and a repair reserve.
 - **Sleeper or day cab?** Long-haul work usually requires a sleeper.

@@ -29,7 +29,7 @@ When you get a USDOT number and begin interstate operations, you enter an 18-mon
 
 FMCSA generally aims to audit property carriers within the first 12 months. Some carriers hear nothing for months, then get a notice with a short deadline. FMCSA has also discussed changes to the new entrant process over the years, so check the current requirements on the FMCSA website.
 
-If you are still setting up, our guide to [getting your MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) covers the steps before this one.
+If you are still setting up, our guide to [getting your MC number](/blog/how-to-get-an-mc-number.html) covers the steps before this one.
 
 ## The areas the auditor reviews
 

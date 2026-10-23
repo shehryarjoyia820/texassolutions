@@ -32,7 +32,7 @@ Hotshot loads are usually:
 - **Time-sensitive.** A broken-down machine or a jobsite waiting on material pays for speed.
 - **Open-deck.** Loaded by forklift or crane from the side or top, so securement skills matter.
 
-Rates often run about **$4 to $5 a mile**, depending on lane, urgency and season. See our post on [hotshot rates per mile and fuel](/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html) for more on what moves the number. Rates are never guaranteed.
+Rates often run about **$4 to $5 a mile**, depending on lane, urgency and season. See our post on [hotshot rates per mile and fuel](/blog/hotshot-trucking-rates.html) for more on what moves the number. Rates are never guaranteed.
 
 ## Step 2: Choose your truck and trailer
 
@@ -71,7 +71,7 @@ The paperwork is similar to any for-hire trucking company:
 - Register for **UCR** each year.
 - Check whether **IRP** apportioned plates and **IFTA** apply. Combinations over 26,000 lbs commonly qualify, but confirm with your base state.
 
-Our guides on [getting an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) and [filing IFTA](/blog/ifta-for-owner-operators-how-to-file.html) go deeper. If you want help with the filings, Texas Solutions offers MC authority setup, IFTA filing and DOT compliance help through our [back office services](/trucking-back-office-services.html).
+Our guides on [getting an MC number](/blog/how-to-get-an-mc-number.html) and [filing IFTA](/blog/how-to-file-ifta.html) go deeper. If you want help with the filings, Texas Solutions offers MC authority setup, IFTA filing and DOT compliance help through our [back office services](/trucking-back-office-services.html).
 
 ## Step 5: Get insured
 
@@ -125,7 +125,7 @@ A dispatcher for hotshot trucks is useful when:
 - You want someone to handle broker packets, rate confirmations and invoicing.
 - You want help planning reloads so you are not stuck empty after a delivery.
 
-Before you sign with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+Before you sign with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## Hotshot truck dispatch with Texas Solutions
 

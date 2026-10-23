@@ -990,7 +990,7 @@ Think of your taxes in two groups: taxes on your profit, and taxes on your truck
 **Taxes on the truck and fuel**
 
 - **Heavy Vehicle Use Tax (HVUT)**, filed on IRS Form 2290 for heavy highway vehicles. See our guide on [how to file Form 2290](/blog/how-to-file-form-2290.html).
-- **Fuel tax through IFTA** if you run interstate with a qualifying vehicle. Our [IFTA filing guide](/blog/ifta-for-owner-operators-how-to-file.html) walks through the quarterly return.
+- **Fuel tax through IFTA** if you run interstate with a qualifying vehicle. Our [IFTA filing guide](/blog/how-to-file-ifta.html) walks through the quarterly return.
 - **Registration fees** through your base state and IRP for apportioned plates.
 
 ## Why quarterly estimated taxes matter
@@ -1206,7 +1206,7 @@ All costs (fixed and variable) divided by total miles. Calculate it monthly with
 Revenue per total mile minus cost per mile. If this number is thin or negative, more miles will not fix it.
 
 ### 4. Deadhead percentage
-Empty miles divided by total miles, times 100. Lower is generally better, though a short deadhead into a strong market can pay off. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+Empty miles divided by total miles, times 100. Lower is generally better, though a short deadhead into a strong market can pay off. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking.html).
 
 ### 5. Miles per truck per week
 How much the truck actually works. Low miles may point to long waits, poor load planning or too much home time for your cost structure.
@@ -1300,7 +1300,7 @@ Your needs depend on how you operate:
 - **Your own authority (MC number):** you are the motor carrier. You need primary liability filed with FMCSA, plus the coverages your brokers and lender require.
 - **Leased onto a carrier:** the carrier usually provides primary liability while you are under dispatch. You may still need non-trucking liability or bobtail, physical damage, and sometimes occupational accident coverage. Read your lease to see exactly what you must buy.
 
-If you are still deciding, our guides on [getting your MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) and [leasing onto an MC](/mc-lease.html) explain both paths.
+If you are still deciding, our guides on [getting your MC number](/blog/how-to-get-an-mc-number.html) and [leasing onto an MC](/mc-lease.html) explain both paths.
 
 ## The main coverages
 
@@ -1929,7 +1929,7 @@ Each driver:
 
 ## Hours of service for teams
 
-The same basic limits apply to each team driver as to a solo driver: the 11-hour driving limit, the 14-hour window, the 30-minute break requirement and the 60/70-hour weekly limit. Our [hours of service rules guide](/blog/hours-of-service-rules-explained-11-14-70-hour.html) explains each one.
+The same basic limits apply to each team driver as to a solo driver: the 11-hour driving limit, the 14-hour window, the 30-minute break requirement and the 60/70-hour weekly limit. Our [hours of service rules guide](/blog/hours-of-service-rules.html) explains each one.
 
 What makes teams different is how rest happens:
 
@@ -2174,64 +2174,11 @@ It can hurt when:
 - [ ] Your 60/70-hour cycle has room
 - [ ] Your ELD shows the recalculated clocks you expect
 
-For the bigger picture, read our [hours of service rules explained](/blog/hours-of-service-rules-explained-11-14-70-hour.html) guide, and try your own schedule in the [hours of service calculator](/hours-of-service-calculator.html). Team drivers have their own planning challenges, covered in our [team driving guide](/blog/team-driving-guide.html).
+For the bigger picture, read our [hours of service rules explained](/blog/hours-of-service-rules.html) guide, and try your own schedule in the [hours of service calculator](/hours-of-service-calculator.html). Team drivers have their own planning challenges, covered in our [team driving guide](/blog/team-driving-guide.html).
 
 ## How Texas Solutions can help
 
 Texas Solutions is a dispatch service, not a broker or motor carrier. Our dispatchers find and negotiate loads, handle broker packets and paperwork 24/7, and plan pickups and deliveries around your real available hours, including split breaks, while you approve every load. Learn more about our [dispatch services](/dispatch.html) or [talk to a dispatcher](/contact.html).
-
-### Reefer Loads and Refrigerated Load Dispatch: Rates per Mile, Seasons and Tips
-URL: https://dispatch.texassolutions.co/guides/reefer-loads-refrigerated-dispatch-guide/
-Published: 2026-10-21
-
-Reefer freight pays more than dry van for a reason: it is harder to haul. A missed appointment or a wrong temperature can mean a rejected load and a claim. Good **refrigerated load dispatch** is about the details. This guide covers **reefer rates per mile**, the seasons that drive reefer freight, and what to check before you book.
-
-## Reefer rates per mile in 2026
-
-Our dispatchers plan reefer freight at roughly **$4 to $6 a mile** (October 2026). That is a planning range, not a market index or a quote. Real **reefer rates per mile today** depend on:
-
-- **Lane and direction.** Loads out of produce and food markets in season pay better than loads into them.
-- **Distance.** Short loads often pay more per mile; long runs pay more per load.
-- **Season.** Produce season and the holiday peak lift reefer demand.
-- **Appointment pressure.** Short-notice or hard-to-cover loads leave more room to negotiate.
-
-Always compare loads by rate per total mile, including the empty miles to pick up. The [load profitability calculator](/load-profitability-calculator.html) lets you count reefer fuel too.
-
-## The reefer calendar
-
-| Months | Where reefer freight builds |
-|---|---|
-| March to May | Florida, South Texas and Mexico border crossings (produce) |
-| May to August | California, Arizona, the Northwest |
-| August to October | Midwest and Northeast harvests, Michigan, Wisconsin, upstate New York |
-| November to December | Holiday peak season: grocery, meat, dairy and frozen food distribution nationwide |
-
-Planning lanes around this calendar keeps a reefer loaded both ways. See [peak season trucking loads](/blog/peak-season-trucking-loads-holiday-freight.html) for the Q4 picture.
-
-## What to check before you accept a reefer load
-
-1. **Temperature setting** and whether the unit must run continuous or cycle.
-2. **Pre-cool** requirements before arrival at the shipper.
-3. **Appointments:** pickup and delivery times, and what happens if you are late.
-4. **Pulp temperature** rules for produce, and who checks it.
-5. **Weight**, so you stay legal with fuel in both tanks.
-6. **Temperature download** or seal requirements at delivery.
-7. **Lumper fees** at grocery warehouses, and how they are paid back. The [detention pay calculator](/detention-pay-calculator.html) helps you claim waiting time.
-
-## Reefer fuel: the hidden cost
-
-A reefer unit burns diesel even when the truck is parked, often somewhere around a gallon an hour depending on the unit, setting and outside temperature. On a long load with waiting time, that is real money. Add it to your [truck fuel cost](/truck-fuel-cost-calculator.html) when you price a load.
-
-## How to find better reefer loads
-
-- **Book the reload before you deliver.** Grocery distribution centers often sit in markets with weak outbound freight.
-- **Follow the season.** Position your truck where produce is moving next.
-- **Build broker relationships.** Reefer brokers rebook carriers who hit appointments and keep temperatures right.
-- **Negotiate.** Ask for more on short-notice loads and loads with long waits.
-
-## When a reefer dispatch service helps
-
-A **reefer dispatch service** handles the search, the broker calls and the appointment details while you drive. At Texas Solutions we confirm temperature and appointment rules before a load reaches you, plan lanes around produce and holiday markets, and are available 24/7 for early appointments and overnight reloads. The fee is 5% of weekly gross for OTR reefer semis, no setup fee, no long-term contract, and your first load is dispatched free. Rates and earnings are not guaranteed. See [reefer dispatch](/reefer-dispatch.html) or compare trailer types in [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html).
 
 ### Reefer Loads in Summer Heat: How to Protect the Load
 URL: https://dispatch.texassolutions.co/guides/reefer-loads-in-summer-heat/
@@ -2327,6 +2274,59 @@ The FDA's Sanitary Transportation of Human and Animal Food rule sets duties for 
 ## How Texas Solutions can help
 
 Texas Solutions is a dispatch service, not a broker or a motor carrier. Our [reefer dispatch](/reefer-dispatch.html) team finds and negotiates produce and temperature-controlled loads, confirms set points and instructions with brokers, handles broker packets and paperwork 24/7, and you approve every load. You can also [talk to a dispatcher](/contact.html).
+
+### Reefer Loads and Refrigerated Load Dispatch: Rates per Mile, Seasons and Tips
+URL: https://dispatch.texassolutions.co/guides/reefer-loads-guide/
+Published: 2026-10-21
+
+Reefer freight pays more than dry van for a reason: it is harder to haul. A missed appointment or a wrong temperature can mean a rejected load and a claim. Good **refrigerated load dispatch** is about the details. This guide covers **reefer rates per mile**, the seasons that drive reefer freight, and what to check before you book.
+
+## Reefer rates per mile in 2026
+
+Our dispatchers plan reefer freight at roughly **$4 to $6 a mile** (October 2026). That is a planning range, not a market index or a quote. Real **reefer rates per mile today** depend on:
+
+- **Lane and direction.** Loads out of produce and food markets in season pay better than loads into them.
+- **Distance.** Short loads often pay more per mile; long runs pay more per load.
+- **Season.** Produce season and the holiday peak lift reefer demand.
+- **Appointment pressure.** Short-notice or hard-to-cover loads leave more room to negotiate.
+
+Always compare loads by rate per total mile, including the empty miles to pick up. The [load profitability calculator](/load-profitability-calculator.html) lets you count reefer fuel too.
+
+## The reefer calendar
+
+| Months | Where reefer freight builds |
+|---|---|
+| March to May | Florida, South Texas and Mexico border crossings (produce) |
+| May to August | California, Arizona, the Northwest |
+| August to October | Midwest and Northeast harvests, Michigan, Wisconsin, upstate New York |
+| November to December | Holiday peak season: grocery, meat, dairy and frozen food distribution nationwide |
+
+Planning lanes around this calendar keeps a reefer loaded both ways. See [peak season trucking loads](/blog/peak-season-trucking.html) for the Q4 picture.
+
+## What to check before you accept a reefer load
+
+1. **Temperature setting** and whether the unit must run continuous or cycle.
+2. **Pre-cool** requirements before arrival at the shipper.
+3. **Appointments:** pickup and delivery times, and what happens if you are late.
+4. **Pulp temperature** rules for produce, and who checks it.
+5. **Weight**, so you stay legal with fuel in both tanks.
+6. **Temperature download** or seal requirements at delivery.
+7. **Lumper fees** at grocery warehouses, and how they are paid back. The [detention pay calculator](/detention-pay-calculator.html) helps you claim waiting time.
+
+## Reefer fuel: the hidden cost
+
+A reefer unit burns diesel even when the truck is parked, often somewhere around a gallon an hour depending on the unit, setting and outside temperature. On a long load with waiting time, that is real money. Add it to your [truck fuel cost](/truck-fuel-cost-calculator.html) when you price a load.
+
+## How to find better reefer loads
+
+- **Book the reload before you deliver.** Grocery distribution centers often sit in markets with weak outbound freight.
+- **Follow the season.** Position your truck where produce is moving next.
+- **Build broker relationships.** Reefer brokers rebook carriers who hit appointments and keep temperatures right.
+- **Negotiate.** Ask for more on short-notice loads and loads with long waits.
+
+## When a reefer dispatch service helps
+
+A **reefer dispatch service** handles the search, the broker calls and the appointment details while you drive. At Texas Solutions we confirm temperature and appointment rules before a load reaches you, plan lanes around produce and holiday markets, and are available 24/7 for early appointments and overnight reloads. The fee is 5% of weekly gross for OTR reefer semis, no setup fee, no long-term contract, and your first load is dispatched free. Rates and earnings are not guaranteed. See [reefer dispatch](/reefer-dispatch.html) or compare trailer types in [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed.html).
 
 ### Pre-Trip Inspection Checklist for Truck Drivers
 URL: https://dispatch.texassolutions.co/guides/pre-trip-inspection-checklist/
@@ -2832,14 +2832,14 @@ Your carrier must enable yard moves in the ELD. Some devices end the yard move s
 
 Misused PC is easy to spot in ELD data: long PC segments that end at a shipper, or PC driving right before a pickup. During an inspection or an audit, that can lead to hours of service violations, which affect your CSA scores. Read our guide to [CSA scores explained](/blog/csa-scores-explained.html). If you believe a violation was written in error, you can challenge it through FMCSA's DataQs system.
 
-For the core limits behind all of this, read [hours of service rules explained](/blog/hours-of-service-rules-explained-11-14-70-hour.html), and plan your stops with the [hours of service calculator](/hours-of-service-calculator.html). Good [truck parking and trip planning](/blog/truck-parking-and-trip-planning.html) also reduces how often you need PC in the first place.
+For the core limits behind all of this, read [hours of service rules explained](/blog/hours-of-service-rules.html), and plan your stops with the [hours of service calculator](/hours-of-service-calculator.html). Good [truck parking and trip planning](/blog/truck-parking-and-trip-planning.html) also reduces how often you need PC in the first place.
 
 ## How Texas Solutions can help
 
 Texas Solutions is a dispatch service, not a broker or motor carrier. Our dispatchers find and negotiate loads, handle broker packets and paperwork 24/7, and plan appointments around your available hours and safe parking so you are not forced into a bad choice at the end of the day. You approve every load. See our [dispatch services](/dispatch.html) or [talk to a dispatcher](/contact.html).
 
 ### Peak Season Trucking Loads: How Owner-Operators Can Plan Q4 Holiday Freight
-URL: https://dispatch.texassolutions.co/guides/peak-season-trucking-loads-holiday-freight/
+URL: https://dispatch.texassolutions.co/guides/peak-season-trucking/
 Published: 2026-10-21
 
 The last three months of the year are the busiest stretch for many carriers. **Peak season trucking loads** come from retail restocking, holiday food and grocery, and e-commerce. For an owner-operator, Q4 can be the best quarter of the year or a frustrating one stuck in the wrong market. This guide shows how to plan **holiday freight loads**, which regions to watch, and how to keep deadhead down when everyone is busy.
@@ -2855,7 +2855,7 @@ Then, in the last week or so of December, freight drops off as receivers close. 
 
 ## Reefer rates per mile in peak season
 
-Reefer is usually the first trailer to feel the holiday rush. Our dispatchers plan reefer freight around roughly $4 to $6 a mile (October 2026 planning range, not a market index or quote). **Reefer rates per mile today** on your lane can sit above or below that. Check the board daily, and read our [reefer loads guide](/blog/reefer-loads-refrigerated-dispatch-guide.html) for what to confirm before booking.
+Reefer is usually the first trailer to feel the holiday rush. Our dispatchers plan reefer freight around roughly $4 to $6 a mile (October 2026 planning range, not a market index or quote). **Reefer rates per mile today** on your lane can sit above or below that. Check the board daily, and read our [reefer loads guide](/blog/reefer-loads-guide.html) for what to confirm before booking.
 
 ## Regional picture: Texas, Midwest and California loads
 
@@ -3117,7 +3117,7 @@ Two things to understand:
 | Alcohol and drugs | Any detected alcohol or possession or use of drugs while on duty |
 | Fitness | Driver too ill or fatigued to drive safely |
 
-Hours-of-service OOS orders typically last until the driver has taken enough off-duty time to be legal. Our guide to [hours of service rules](/blog/hours-of-service-rules-explained-11-14-70-hour.html) helps you plan legal days.
+Hours-of-service OOS orders typically last until the driver has taken enough off-duty time to be legal. Our guide to [hours of service rules](/blog/hours-of-service-rules.html) helps you plan legal days.
 
 ## Common vehicle out-of-service conditions
 
@@ -3201,7 +3201,7 @@ When you get a USDOT number and begin interstate operations, you enter an 18-mon
 
 FMCSA generally aims to audit property carriers within the first 12 months. Some carriers hear nothing for months, then get a notice with a short deadline. FMCSA has also discussed changes to the new entrant process over the years, so check the current requirements on the FMCSA website.
 
-If you are still setting up, our guide to [getting your MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) covers the steps before this one.
+If you are still setting up, our guide to [getting your MC number](/blog/how-to-get-an-mc-number.html) covers the steps before this one.
 
 ## The areas the auditor reviews
 
@@ -3731,7 +3731,7 @@ The setup agreement governs every load you haul for that broker. Read it before 
 - **Non-solicitation:** restrictions on working directly with their shippers
 - **Indemnity and dispute terms**
 
-You can ask for changes. Have an attorney review agreements you sign often or that feel one-sided. Our guide on [broker setup and rate confirmations](/blog/broker-setup-rate-confirmation-spot-vs-contract.html) covers the packet process, and [cargo claims](/blog/cargo-claims-guide.html) explains why claim terms matter.
+You can ask for changes. Have an attorney review agreements you sign often or that feel one-sided. Our guide on [broker setup and rate confirmations](/blog/broker-setup-spot-vs-contract.html) covers the packet process, and [cargo claims](/blog/cargo-claims-guide.html) explains why claim terms matter.
 
 ## Step 5: Watch behavior on the first loads
 
@@ -3789,7 +3789,7 @@ A **rate confirmation** (often called a rate con) is the document a broker sends
 
 When you set up with a broker, you sign a broker-carrier agreement that covers the general relationship. The rate con is the load-level agreement on top of that. It is what your factoring company, your bookkeeper and the broker's accounts payable team will look at when your invoice comes in.
 
-That means anything not written on the rate con is at risk. If the broker said "we pay detention after two hours" on the phone but the rate con says nothing, you may end up arguing for money you earned. For a broader look at how broker setup and spot versus contract freight fit together, see our guide on [broker setup and rate confirmations](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+That means anything not written on the rate con is at risk. If the broker said "we pay detention after two hours" on the phone but the rate con says nothing, you may end up arguing for money you earned. For a broader look at how broker setup and spot versus contract freight fit together, see our guide on [broker setup and rate confirmations](/blog/broker-setup-spot-vs-contract.html).
 
 ## The header: who you are dealing with
 
@@ -3875,7 +3875,7 @@ If any item is wrong or missing, email the broker and ask for a revised rate con
 - Note detention start and stop times and get in-and-out times on the BOL.
 - Build your invoice packet: signed rate con, signed BOL or POD, and receipts for any lumper or accessorial.
 
-Clean paperwork is the fastest route to getting paid, whether you bill brokers yourself or work with a factoring company. Our guide on [freight factoring for owner-operators](/blog/freight-factoring-for-owner-operators-explained.html) explains how that packet moves through funding.
+Clean paperwork is the fastest route to getting paid, whether you bill brokers yourself or work with a factoring company. Our guide on [freight factoring for owner-operators](/blog/freight-factoring-explained.html) explains how that packet moves through funding.
 
 ## How Texas Solutions can help
 
@@ -3931,7 +3931,7 @@ For the first months, every load is an audition. Be on time, answer check calls,
 - Waiting until the authority is active to start broker setups.
 - Taking every cheap load to "build history" and running at a loss.
 - Hauling under someone else's MC: it is risky and does not build your own record.
-- Paying a large upfront fee to anyone who promises guaranteed loads. Read [how to avoid truck dispatch scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+- Paying a large upfront fee to anyone who promises guaranteed loads. Read [how to avoid truck dispatch scams](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## When new authority truck dispatch helps
 
@@ -3955,7 +3955,7 @@ Long waits at shippers and receivers burn hours you could be driving and money y
 
 Detention is a charge for time spent at a pickup or delivery beyond the free time allowed. A typical arrangement says something like: "two hours free, then a set hourly rate." The hourly rate, free-time window and any daily cap are negotiated and should appear on the rate confirmation.
 
-Detention matters because your hours of service keep running while you sit at a dock. Under the federal 14-hour rule, on-duty waiting time eats into your driving window, so a long wait can push your next load back by a day. Our guide to [hours of service rules](/blog/hours-of-service-rules-explained-11-14-70-hour.html) explains how that clock works.
+Detention matters because your hours of service keep running while you sit at a dock. Under the federal 14-hour rule, on-duty waiting time eats into your driving window, so a long wait can push your next load back by a day. Our guide to [hours of service rules](/blog/hours-of-service-rules.html) explains how that clock works.
 
 ## Step 1: Get the terms in writing before pickup
 
@@ -4233,7 +4233,7 @@ That means a truck bought late in the period can need two 2290 filings within a 
 - **Not tracking miles** on a suspended truck that ends up working more than expected.
 - **Assuming a leasing carrier filed for you.** Unless your lease clearly says so in writing, the registered owner is usually responsible.
 
-Track your highway miles carefully, too. The same mileage records help with your fuel tax filings; see our guide to [IFTA for owner-operators](/blog/ifta-for-owner-operators-how-to-file.html) and the [IFTA mileage calculator](/ifta-mileage-calculator.html).
+Track your highway miles carefully, too. The same mileage records help with your fuel tax filings; see our guide to [IFTA for owner-operators](/blog/how-to-file-ifta.html) and the [IFTA mileage calculator](/ifta-mileage-calculator.html).
 
 Form 2290 is one of several recurring items for a carrier with its own authority. Others include UCR registration, the MCS-150 biennial update, IFTA returns and IRP renewal. Our guide on how to [keep your MC authority active](/blog/keep-your-mc-authority-active.html) puts these on one calendar, and our [trucking back office services](/trucking-back-office-services.html) page explains the paperwork support we offer.
 
@@ -4426,7 +4426,7 @@ Published: 2026-10-21
 
 Choosing a **factoring company** is one of the most important money decisions an owner-operator makes. The right one keeps cash moving and helps you avoid bad brokers. The wrong one can drain margins with hidden fees and lock you into a contract that is hard to leave. This guide compares factoring by features and gives you the questions to ask.
 
-If you are new to factoring, start with our guide to [freight factoring for owner-operators](/blog/freight-factoring-for-owner-operators-explained.html), then come back here to compare offers.
+If you are new to factoring, start with our guide to [freight factoring for owner-operators](/blog/freight-factoring-explained.html), then come back here to compare offers.
 
 ## Recourse vs non-recourse
 
@@ -5001,7 +5001,7 @@ This table is a general pattern, not a forecast. Your region, trailer type and c
 
 ### Spring: produce and construction
 
-Produce season is one of the biggest seasonal drivers for refrigerated freight. Harvests usually start in the southern states and move north as the weather warms, which pulls reefer capacity toward those growing regions. If you run a reefer, the [reefer loads guide](/blog/reefer-loads-refrigerated-dispatch-guide.html) covers how to work those markets.
+Produce season is one of the biggest seasonal drivers for refrigerated freight. Harvests usually start in the southern states and move north as the weather warms, which pulls reefer capacity toward those growing regions. If you run a reefer, the [reefer loads guide](/blog/reefer-loads-guide.html) covers how to work those markets.
 
 Spring also brings construction back. Flatbed demand for lumber, steel and building materials usually firms up as job sites reopen after winter.
 
@@ -5019,7 +5019,7 @@ Summer heat also matters for reefer operators, since temperature-sensitive loads
 
 ### Fall: peak season
 
-For many dry van and reefer carriers, late summer and fall are the strongest stretch of the year. Retailers stock up for back-to-school and holiday sales, and harvest freight adds to the volume. Read our [peak season guide](/blog/peak-season-trucking-loads-holiday-freight.html) for how to make the most of it.
+For many dry van and reefer carriers, late summer and fall are the strongest stretch of the year. Retailers stock up for back-to-school and holiday sales, and harvest freight adds to the volume. Read our [peak season guide](/blog/peak-season-trucking.html) for how to make the most of it.
 
 Peak season is also when rate confirmations get rushed. Read every rate con carefully, confirm detention and layover terms, and do not let a busy week push you into a load that does not cover your costs.
 
@@ -5335,7 +5335,7 @@ That is still decent, but it is a lot lower than the rate on any single load. Ch
 
 ## Hours of service and team driving
 
-Expedite tempts drivers to push, but hours-of-service rules still apply to vehicles covered by them. A solo driver in a covered vehicle has limits on daily driving and on-duty time, plus weekly limits. When a delivery is too far to reach legally solo, the answer is a team, not a falsified log. Learn the limits in our [hours of service guide](/blog/hours-of-service-rules-explained-11-14-70-hour.html), and if you are thinking of running with a partner, read the [team driving guide](/blog/team-driving-guide.html). Always confirm current rules with FMCSA.
+Expedite tempts drivers to push, but hours-of-service rules still apply to vehicles covered by them. A solo driver in a covered vehicle has limits on daily driving and on-duty time, plus weekly limits. When a delivery is too far to reach legally solo, the answer is a team, not a falsified log. Learn the limits in our [hours of service guide](/blog/hours-of-service-rules.html), and if you are thinking of running with a partner, read the [team driving guide](/blog/team-driving-guide.html). Always confirm current rules with FMCSA.
 
 ## What it takes to succeed in expedite
 
@@ -5541,7 +5541,7 @@ If a quick fix works and the indicator clears, note what happened anyway. If it 
 
 ## How malfunctions affect your trip planning
 
-Paper logs do not change your hours of service limits. You still have the same 11-hour driving limit, 14-hour window and 60/70-hour cycle. They do mean more work at every stop and more scrutiny at inspections, so build in a little extra time. Our [hours of service rules guide](/blog/hours-of-service-rules-explained-11-14-70-hour.html) covers the limits, and the [hours of service calculator](/hours-of-service-calculator.html) helps you plan a day by hand when the ELD is down.
+Paper logs do not change your hours of service limits. You still have the same 11-hour driving limit, 14-hour window and 60/70-hour cycle. They do mean more work at every stop and more scrutiny at inspections, so build in a little extra time. Our [hours of service rules guide](/blog/hours-of-service-rules.html) covers the limits, and the [hours of service calculator](/hours-of-service-calculator.html) helps you plan a day by hand when the ELD is down.
 
 If you keep running into malfunctions, the device itself may be the problem. See [how to choose an ELD](/blog/how-to-choose-an-eld.html) for the features and support questions to ask before you switch.
 
@@ -5801,7 +5801,7 @@ Fast reporting matters. The sooner others know, the less damage a scammer can do
 
 ## Dispatch scams are freight fraud too
 
-Some scammers pose as dispatchers, charge upfront fees and then vanish or book double-brokered loads. A legitimate dispatcher should have a clear written agreement and should not need your login credentials for government portals. See [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+Some scammers pose as dispatchers, charge upfront fees and then vanish or book double-brokered loads. A legitimate dispatcher should have a clear written agreement and should not need your login credentials for government portals. See [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## How Texas Solutions can help
 
@@ -5843,7 +5843,7 @@ For most owner-operators the common ones are Levels I, II and III.
 - **Seat belt use** and signs of fatigue, illness, alcohol or drugs.
 - **Shipping papers,** and hazmat documents and placards if applicable.
 
-See our guide to [hours of service rules](/blog/hours-of-service-rules-explained-11-14-70-hour.html) to understand the limits you will be checked against.
+See our guide to [hours of service rules](/blog/hours-of-service-rules.html) to understand the limits you will be checked against.
 
 ### The vehicle
 
@@ -5927,7 +5927,7 @@ Self-dispatch looks free apart from the board subscription. It is not. Here is w
 
 - **Time.** Searching boards, calling brokers, sending carrier packets, negotiating and checking rate confirmations easily takes a couple of hours a day. Those hours come out of driving time, sleep or home time.
 - **Rate negotiation.** Brokers negotiate all day. If you take the posted rate because you are tired or in a hurry, you leave money on the table on every load.
-- **Deadhead.** Booking one load at a time often means delivering into a market with no outbound freight and driving empty to the next one. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+- **Deadhead.** Booking one load at a time often means delivering into a market with no outbound freight and driving empty to the next one. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking.html).
 - **Paperwork.** Invoices, detention claims and lumper receipts get missed when you are also the driver.
 
 ## What a dispatcher costs
@@ -5967,7 +5967,7 @@ In this example the fee is roughly covered by the higher rates and lower fuel co
 
 Whether you self-dispatch or not, the same habits pay:
 
-1. **Judge loads per total mile, including deadhead.** A $3.20 load with 120 empty miles can pay less than a $2.90 load next door. See [best paying loads per mile](/blog/what-is-a-good-rate-per-mile-trucking-2026.html).
+1. **Judge loads per total mile, including deadhead.** A $3.20 load with 120 empty miles can pay less than a $2.90 load next door. See [best paying loads per mile](/blog/what-is-a-good-rate-per-mile.html).
 2. **Plan the reload before you accept the load.** Check outbound freight in the delivery market.
 3. **Negotiate every time.** Ask for more, especially on short-notice and hard-to-cover loads. Our guide on [rate negotiation with brokers](/blog/how-to-negotiate-freight-rates.html) has scripts.
 4. **Build repeat lanes.** Brokers rebook carriers who deliver on time and answer the phone.
@@ -6063,7 +6063,7 @@ Outside FMCSA, high percentiles can mean brokers decline to set you up, shippers
 
 ### On the road
 
-- Run legal hours and keep ELD logs accurate. Our guide to [hours of service](/blog/hours-of-service-rules-explained-11-14-70-hour.html) covers the 11, 14 and 70-hour rules.
+- Run legal hours and keep ELD logs accurate. Our guide to [hours of service](/blog/hours-of-service-rules.html) covers the 11, 14 and 70-hour rules.
 - Avoid speeding and phone use. Unsafe Driving violations tend to be weighted heavily.
 - Wear a seat belt. It is an easy violation to avoid.
 
@@ -6123,7 +6123,7 @@ Before you haul the first load, your company typically needs:
 | CBSA carrier code | Canada's carrier identifier for advance manifests. |
 | eManifest access | A way to file advance manifests with both countries, either directly or through a service provider. |
 | US import user fee decal | An annual fee paid by commercial trucks entering the US. |
-| IFTA and IRP | Canadian provinces take part in IFTA and IRP, so add the provinces you will run to your IRP account and track miles by jurisdiction. See our [IFTA guide](/blog/ifta-for-owner-operators-how-to-file.html). |
+| IFTA and IRP | Canadian provinces take part in IFTA and IRP, so add the provinces you will run to your IRP account and track miles by jurisdiction. See our [IFTA guide](/blog/how-to-file-ifta.html). |
 | Insurance | Confirm your policy covers Canadian operations. US policies generally do not cover driving in Mexico. Read [trucking insurance explained](/blog/trucking-insurance-explained.html). |
 | Bond (if needed) | Some in-bond moves require a bonded carrier. Ask your customs broker. |
 
@@ -6155,7 +6155,7 @@ Canada restricts foreign carriers from hauling **domestic** freight from one Can
 
 Canada has its own federal hours of service rules, and they differ from US rules. As a general picture, Canada uses a daily limit of 13 hours of driving and 14 hours on duty, a 16-hour elapsed work shift limit, and two cycle options (70 hours in 7 days or 120 hours in 14 days). Canada also requires electronic logging devices certified for Canadian use.
 
-When you are in Canada, you follow Canadian rules; when you return, you follow US rules, and your recent hours carry over. Make sure your ELD supports both rule sets and that you know how to switch. Review the [US hours of service rules](/blog/hours-of-service-rules-explained-11-14-70-hour.html) and confirm Canadian details with Transport Canada.
+When you are in Canada, you follow Canadian rules; when you return, you follow US rules, and your recent hours carry over. Make sure your ELD supports both rule sets and that you know how to switch. Review the [US hours of service rules](/blog/hours-of-service-rules.html) and confirm Canadian details with Transport Canada.
 
 ## Hauling to Mexico: the border handoff
 
@@ -6185,7 +6185,7 @@ Cross-border rules, fees and programs change often. Confirm current requirements
 Texas Solutions is a dispatch service, not a broker or a motor carrier. Our dispatchers find and negotiate loads, plan reloads back to the US, handle broker packets and paperwork 24/7, and you approve every load. See our [dispatch services](/dispatch.html) or [talk to a dispatcher](/contact.html).
 
 ### Cheapest Truck Dispatch Service? How to Compare Dispatch Fees and Their Real Cost
-URL: https://dispatch.texassolutions.co/guides/cheapest-truck-dispatch-service-real-cost/
+URL: https://dispatch.texassolutions.co/guides/cheapest-truck-dispatch-service/
 Published: 2026-10-21
 
 Everyone wants the **cheapest truck dispatch service**. That is fair: the fee comes straight out of your gross. But the lowest number in an ad is often not the lowest cost once the extras are added. This guide shows how **truck dispatch cost** is calculated, how a **dispatch fee percentage** compares with a **flat rate** or **weekly dispatch fee**, and what to check before you sign.
@@ -6267,7 +6267,7 @@ Brokers are responsible for choosing carriers carefully. The packet lets them co
 - They know who to pay and where
 - You have agreed to their terms in writing
 
-Many brokers now use online onboarding systems, but the documents behind them are the same. For how setup fits into booking loads, see [broker setup, rate confirmations, spot vs contract](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+Many brokers now use online onboarding systems, but the documents behind them are the same. For how setup fits into booking loads, see [broker setup, rate confirmations, spot vs contract](/blog/broker-setup-spot-vs-contract.html).
 
 ## The carrier packet checklist
 
@@ -6327,7 +6327,7 @@ If you factor your invoices, the factoring company will send brokers a notice of
 - Your W-9 and remit-to information match what the factor expects
 - You understand how to change factors later, since brokers need a release letter
 
-Paying the wrong party is a common cause of late payments. Our guide to [freight factoring](/blog/freight-factoring-for-owner-operators-explained.html) explains the process.
+Paying the wrong party is a common cause of late payments. Our guide to [freight factoring](/blog/freight-factoring-explained.html) explains the process.
 
 ## Protect yourself while sharing documents
 
@@ -6453,7 +6453,7 @@ Published: 2026-10-21
 
 Before looking at listings, decide:
 
-- **What freight will you haul?** Dry van, reefer, flatbed and power only have different needs. See [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html).
+- **What freight will you haul?** Dry van, reefer, flatbed and power only have different needs. See [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed.html).
 - **Where will you run?** Regional, OTR, mountains, or states with strict emissions rules.
 - **What is your total budget?** Price plus taxes, registration, insurance, and a repair reserve.
 - **Sleeper or day cab?** Long-haul work usually requires a sleeper.
@@ -6616,7 +6616,7 @@ For a box truck in interstate commerce, expect to deal with:
 - Annual vehicle inspection and driver qualification records
 - Drug and alcohol testing only if the vehicle requires a CDL
 
-A for-hire van hauling across state lines generally still needs operating authority. Confirm all of this with FMCSA, since thresholds and exceptions are specific. Our guide on [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) covers the authority side.
+A for-hire van hauling across state lines generally still needs operating authority. Confirm all of this with FMCSA, since thresholds and exceptions are specific. Our guide on [how to get an MC number](/blog/how-to-get-an-mc-number.html) covers the authority side.
 
 ## Which should you choose?
 
@@ -6667,7 +6667,7 @@ Because trucks cross many states, FMCSA requires interstate carriers, brokers an
 - **Freight brokers.**
 - **Freight forwarders.**
 
-Owner-operators who lease onto another carrier and run under that carrier's authority generally do not need their own BOC-3. If you later get your own authority, you will. See [how to get your MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) for the whole sequence.
+Owner-operators who lease onto another carrier and run under that carrier's authority generally do not need their own BOC-3. If you later get your own authority, you will. See [how to get your MC number](/blog/how-to-get-an-mc-number.html) for the whole sequence.
 
 ## Blanket agents vs. naming your own agents
 
@@ -6743,7 +6743,7 @@ This guide is general information, not legal advice. Requirements and procedures
 Texas Solutions is a dispatch service, not a broker or motor carrier. Our dispatchers find and negotiate loads, handle broker packets and paperwork, and are available 24/7, while you approve every load. Once your authority is active, we can help you get set up with brokers and running. See our [dispatch services](/dispatch.html) or [talk to a dispatcher](/contact.html).
 
 ### Best Truck Dispatch Service for Owner-Operators in 2026: How to Compare
-URL: https://dispatch.texassolutions.co/guides/best-truck-dispatch-service-for-owner-operators-2026/
+URL: https://dispatch.texassolutions.co/guides/best-truck-dispatch-service/
 Published: 2026-10-21
 
 Searching for the **best truck dispatch service for owner-operators in 2026** gives you dozens of companies that all say they are the best. None of those claims can be checked. What you can check is how a dispatch service charges, what it puts in writing and how it treats you on the first load. This guide gives you a way to compare truck dispatching services across the USA on the things that actually affect your weekly gross.
@@ -6758,7 +6758,7 @@ A truck dispatch service works for the carrier. Under your own MC authority, a d
 - Plans the next load so you do not deadhead across a state for it.
 - Handles invoicing, detention and lumper paperwork, and factoring documents if you factor.
 
-If a "dispatcher" wants you to haul under their MC or asks for the broker's payment to go to them, that is not dispatch. Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html) before you sign anything.
+If a "dispatcher" wants you to haul under their MC or asks for the broker's payment to go to them, that is not dispatch. Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html) before you sign anything.
 
 ## Seven things to compare
 
@@ -6905,7 +6905,7 @@ Rate per total mile:
 - Load A: $2,400 / (700 + 90) = $2,400 / 790 = **$3.04**
 - Load B: $2,250 / (680 + 15) = $2,250 / 695 = **$3.24**
 
-Load B pays less on paper but more on every mile driven. Then ask where each load leaves you. A slightly lower rate into a strong freight market can beat a high rate into a dead one. Try your own numbers with the [deadhead miles calculator](/deadhead-miles-calculator.html) and the [load profitability calculator](/load-profitability-calculator.html). For more on empty miles, read [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+Load B pays less on paper but more on every mile driven. Then ask where each load leaves you. A slightly lower rate into a strong freight market can beat a high rate into a dead one. Try your own numbers with the [deadhead miles calculator](/deadhead-miles-calculator.html) and the [load profitability calculator](/load-profitability-calculator.html). For more on empty miles, read [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking.html).
 
 ## Load board safety tips
 
@@ -7010,9 +7010,9 @@ Either way, a non-CDL hotshot carries far less than a CDL setup with a heavy-dut
 Skipping the CDL does not skip the rest of the rules. For interstate commercial vehicles over 10,000 lbs, you should expect:
 
 - A **USDOT number**.
-- **Operating authority** (MC number) if you haul regulated freight for hire across state lines. See [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html).
+- **Operating authority** (MC number) if you haul regulated freight for hire across state lines. See [how to get an MC number](/blog/how-to-get-an-mc-number.html).
 - A **DOT medical card**.
-- **Hours-of-service** rules and, in many cases, an ELD. See [hours of service rules explained](/blog/hours-of-service-rules-explained-11-14-70-hour.html).
+- **Hours-of-service** rules and, in many cases, an ELD. See [hours of service rules explained](/blog/hours-of-service-rules.html).
 - Vehicle inspections and maintenance records.
 - Commercial insurance that meets FMCSA minimums and broker requirements.
 
@@ -7054,7 +7054,7 @@ Hotshot loads are usually:
 - **Time-sensitive.** A broken-down machine or a jobsite waiting on material pays for speed.
 - **Open-deck.** Loaded by forklift or crane from the side or top, so securement skills matter.
 
-Rates often run about **$4 to $5 a mile**, depending on lane, urgency and season. See our post on [hotshot rates per mile and fuel](/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html) for more on what moves the number. Rates are never guaranteed.
+Rates often run about **$4 to $5 a mile**, depending on lane, urgency and season. See our post on [hotshot rates per mile and fuel](/blog/hotshot-trucking-rates.html) for more on what moves the number. Rates are never guaranteed.
 
 ## Step 2: Choose your truck and trailer
 
@@ -7093,7 +7093,7 @@ The paperwork is similar to any for-hire trucking company:
 - Register for **UCR** each year.
 - Check whether **IRP** apportioned plates and **IFTA** apply. Combinations over 26,000 lbs commonly qualify, but confirm with your base state.
 
-Our guides on [getting an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) and [filing IFTA](/blog/ifta-for-owner-operators-how-to-file.html) go deeper. If you want help with the filings, Texas Solutions offers MC authority setup, IFTA filing and DOT compliance help through our [back office services](/trucking-back-office-services.html).
+Our guides on [getting an MC number](/blog/how-to-get-an-mc-number.html) and [filing IFTA](/blog/how-to-file-ifta.html) go deeper. If you want help with the filings, Texas Solutions offers MC authority setup, IFTA filing and DOT compliance help through our [back office services](/trucking-back-office-services.html).
 
 ## Step 5: Get insured
 
@@ -7147,7 +7147,7 @@ A dispatcher for hotshot trucks is useful when:
 - You want someone to handle broker packets, rate confirmations and invoicing.
 - You want help planning reloads so you are not stuck empty after a delivery.
 
-Before you sign with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+Before you sign with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## Hotshot truck dispatch with Texas Solutions
 
@@ -7205,7 +7205,7 @@ For interstate for-hire work, you will generally need:
 - **A BOC-3 filing** naming process agents in each state.
 - **Unified Carrier Registration (UCR)**, renewed each year.
 
-FMCSA updates its registration system from time to time, so follow the current instructions on its website. Our post on [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html) covers the process, and Texas Solutions offers [MC authority setup](/trucking-back-office-services.html) as part of its back office services if you would rather not do the filings yourself.
+FMCSA updates its registration system from time to time, so follow the current instructions on its website. Our post on [how to get an MC number](/blog/how-to-get-an-mc-number.html) covers the process, and Texas Solutions offers [MC authority setup](/trucking-back-office-services.html) as part of its back office services if you would rather not do the filings yourself.
 
 Drivers of commercial vehicles over 10,000 lbs in interstate commerce generally need a DOT medical card even without a CDL, and hours-of-service rules apply. Check what applies to your operation.
 
@@ -7239,7 +7239,7 @@ Every business is different, so build your own numbers. Here is a sample way to 
 
 Total in this example: $10,000 + $3,000 + $1,000 + $1,000 + $5,000 = **$20,000**.
 
-The reserve matters more than most people expect. Brokers often pay on 30-day terms or longer unless you use [factoring](/blog/freight-factoring-for-owner-operators-explained.html), so you need cash to cover fuel before the first payments arrive.
+The reserve matters more than most people expect. Brokers often pay on 30-day terms or longer unless you use [factoring](/blog/freight-factoring-explained.html), so you need cash to cover fuel before the first payments arrive.
 
 ## Step 7: Know your cost per mile before you book
 
@@ -7308,7 +7308,7 @@ A contract or dedicated lane is a standing agreement to haul freight on a lane a
 - **Pros:** predictable volume and rate, easier planning
 - **Cons:** the rate is fixed even when the spot market rises, and you may be expected to cover loads even when it is inconvenient
 
-Contracts come from shippers directly, and sometimes from brokers who manage a shipper's freight. For the difference between contract and spot pricing, see [spot vs contract rates](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+Contracts come from shippers directly, and sometimes from brokers who manage a shipper's freight. For the difference between contract and spot pricing, see [spot vs contract rates](/blog/broker-setup-spot-vs-contract.html).
 
 ## Option 3: Amazon Relay and similar platforms
 
@@ -7434,7 +7434,7 @@ Ask the provider for a full fee schedule in writing. If they cannot give you one
 
 **Prepaid or debit-style cards** use money you load ahead of time. They can be easier to get for a new authority and help prevent overspending, but you need to keep the balance funded.
 
-**Cards through factoring companies** are another option. Some factoring companies let you fuel against your advances. That can be convenient, but read how fuel purchases are deducted and whether the card ties you more tightly to that factor. Our guide to [freight factoring](/blog/freight-factoring-for-owner-operators-explained.html) explains how factoring works.
+**Cards through factoring companies** are another option. Some factoring companies let you fuel against your advances. That can be convenient, but read how fuel purchases are deducted and whether the card ties you more tightly to that factor. Our guide to [freight factoring](/blog/freight-factoring-explained.html) explains how factoring works.
 
 ## Step 6: IFTA reporting and fuel tax data
 
@@ -7444,7 +7444,7 @@ For an interstate carrier, a good fuel card for truckers is also a record-keepin
 - Downloadable reports by quarter
 - Easy matching between fuel records and your miles by state
 
-Clean fuel data makes filing much smoother. See our guide to [IFTA for owner-operators](/blog/ifta-for-owner-operators-how-to-file.html), or use the [IFTA mileage calculator](/ifta-mileage-calculator.html) to work out miles by state.
+Clean fuel data makes filing much smoother. See our guide to [IFTA for owner-operators](/blog/how-to-file-ifta.html), or use the [IFTA mileage calculator](/ifta-mileage-calculator.html) to work out miles by state.
 
 ## Step 7: Controls and security
 
@@ -7486,7 +7486,7 @@ Your numbers will differ with mpg, miles, discount and fees. Plug your own figur
 
 ## Fuel savings start with the right loads
 
-A fuel card helps at the pump, but how you plan loads matters even more. Fewer empty miles means fewer gallons bought. Our post on [cutting fuel cost per mile](/blog/diesel-prices-by-state-cut-fuel-cost-per-mile.html) covers that side, and the [fuel surcharge calculator](/fuel-surcharge-calculator.html) helps you check whether a rate covers current diesel prices.
+A fuel card helps at the pump, but how you plan loads matters even more. Fewer empty miles means fewer gallons bought. Our post on [cutting fuel cost per mile](/blog/cut-fuel-cost-per-mile.html) covers that side, and the [fuel surcharge calculator](/fuel-surcharge-calculator.html) helps you check whether a rate covers current diesel prices.
 
 Texas Solutions is a nationwide truck dispatch service, not a fuel card provider, and we have no fuel card partnerships. Our 24/7 remote dispatchers plan loads to keep deadhead down, and you approve every load. Our [back office services](/trucking-back-office-services.html) include IFTA filing, factoring setup and invoicing. OTR fees are 5% of weekly gross for semis, 7% for hotshots and 8% for box trucks and straight trucks, with no setup fee and no long-term contract, and your first load is free.
 
@@ -7541,7 +7541,7 @@ Many people start leased on, learn the business, then get their own authority.
 
 If you choose your own authority, you register with FMCSA for a USDOT number and apply for MC operating authority. You also need a BOC-3 process agent filing and proof of insurance on file before the authority goes active.
 
-We cover each filing in detail in [how to get your MC number and trucking authority](/blog/how-to-get-mc-number-authority-owner-operator.html), and the full business setup (UCR, IRP plates, IFTA, ELD, drug and alcohol consortium) in [how to start a trucking company](/blog/how-to-start-a-trucking-company.html). Texas Solutions also offers MC authority setup help as part of its [back office services](/trucking-back-office-services.html).
+We cover each filing in detail in [how to get your MC number and trucking authority](/blog/how-to-get-an-mc-number.html), and the full business setup (UCR, IRP plates, IFTA, ELD, drug and alcohol consortium) in [how to start a trucking company](/blog/how-to-start-a-trucking-company.html). Texas Solutions also offers MC authority setup help as part of its [back office services](/trucking-back-office-services.html).
 
 Keep in mind that a new carrier enters FMCSA's new entrant program, which includes a safety audit, usually within the first 12 months. Keep your logs, maintenance records and driver files in order from day one.
 
@@ -7557,7 +7557,7 @@ Your equipment decides which freight you can haul and what it pays. Rough planni
 | Dry van / power only | $3 - $5 |
 | Box truck | $1.80 - $3.20 |
 
-Higher rates usually come with higher costs or more work: tarping and securement for flatbed, fuel for the reefer unit, or more expensive equipment. Compare the trade-offs in [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html).
+Higher rates usually come with higher costs or more work: tarping and securement for flatbed, fuel for the reefer unit, or more expensive equipment. Compare the trade-offs in [dry van vs reefer vs flatbed](/blog/dry-van-vs-reefer-vs-flatbed.html).
 
 When you look at a used truck, budget for a pre-purchase inspection. A cheap truck that spends weeks in the shop is not cheap.
 
@@ -7578,7 +7578,7 @@ Your own numbers could be higher or lower. The point is to price each item befor
 
 ## Step 6: Set up how you get paid
 
-Decide early whether you will wait for brokers to pay or use factoring to get paid within a day or two of delivery. Read [freight factoring explained](/blog/freight-factoring-for-owner-operators-explained.html) before you sign anything, and check the fee, recourse terms and contract length.
+Decide early whether you will wait for brokers to pay or use factoring to get paid within a day or two of delivery. Read [freight factoring explained](/blog/freight-factoring-explained.html) before you sign anything, and check the fee, recourse terms and contract length.
 
 ## Step 7: Find your first loads
 
@@ -7626,7 +7626,7 @@ As a rough guide, hotshot loads often pay about **$4 to $5 a mile**. Factors tha
 - **Lane.** Loads into areas with little return freight need to pay for the trip home.
 - **Season and industry.** Construction, agriculture and energy activity swing demand.
 
-For a deeper look see [hotshot trucking rates per mile and fuel](/blog/hotshot-trucking-rates-per-mile-fuel-and-dispatch.html), and compare with other equipment on our [rate per mile guide](/truck-dispatch-rates.html). Rates are never guaranteed.
+For a deeper look see [hotshot trucking rates per mile and fuel](/blog/hotshot-trucking-rates.html), and compare with other equipment on our [rate per mile guide](/truck-dispatch-rates.html). Rates are never guaranteed.
 
 ## Example weekly gross (hypothetical)
 
@@ -7696,7 +7696,7 @@ How you run also changes what you keep:
 - **Own authority.** You book loads under your own MC, keep the full rate and pay all costs, including insurance and compliance. Income has the most upside and the most risk.
 - **Leased to a carrier.** You run under another company's authority and usually receive a percentage of the load. The carrier may cover some costs, such as liability insurance, but takes a share of every load.
 
-Neither is right for everyone. Compare the two with your own numbers before deciding, and if you plan to get your own authority, see [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html).
+Neither is right for everyone. Compare the two with your own numbers before deciding, and if you plan to get your own authority, see [how to get an MC number](/blog/how-to-get-an-mc-number.html).
 
 ## What separates higher-earning hotshot operators
 
@@ -7708,7 +7708,7 @@ If you do not know your break-even, you cannot tell a good load from a bad one. 
 
 ### They plan the reload
 
-A $1,500 load into a dead area that leaves you 250 miles empty may pay less than a $1,200 load into a busy market. See [how to reduce deadhead](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+A $1,500 load into a dead area that leaves you 250 miles empty may pay less than a $1,200 load into a busy market. See [how to reduce deadhead](/blog/what-is-deadhead-in-trucking.html).
 
 ### They watch weight and fuel
 
@@ -7830,7 +7830,7 @@ A 26 ft diesel box truck commonly gets somewhere around 8.5 to 11 mpg, lower whe
 
 ### Empty miles
 
-Every empty mile costs fuel and wear and pays nothing. Planning the next load before you deliver is one of the simplest ways to raise net income. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html).
+Every empty mile costs fuel and wear and pays nothing. Planning the next load before you deliver is one of the simplest ways to raise net income. See [what deadhead is and how to reduce it](/blog/what-is-deadhead-in-trucking.html).
 
 ### Insurance and payments
 
@@ -7893,7 +7893,7 @@ If your authority is brand new, say so. Some brokers will not work with a new MC
 
 Before a broker can tender a load to you, your company has to be set up in that broker's system. That usually means a carrier packet, insurance verification and sometimes an online onboarding portal.
 
-A dispatcher handles the back-and-forth so you are not filling out forms at a truck stop. The more brokers you are set up with, the more freight your dispatcher can offer you. More detail is in our guide to [broker setup and rate confirmations](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+A dispatcher handles the back-and-forth so you are not filling out forms at a truck stop. The more brokers you are set up with, the more freight your dispatcher can offer you. More detail is in our guide to [broker setup and rate confirmations](/blog/broker-setup-spot-vs-contract.html).
 
 ## Step 3: Load search
 
@@ -7975,7 +7975,7 @@ Put together, a typical week runs in a loop:
 - Who handles broker packets, invoicing and detention claims?
 - Do you work with new authority?
 
-For more on spotting bad offers, read [how to choose a truck dispatcher](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+For more on spotting bad offers, read [how to choose a truck dispatcher](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## How Texas Solutions dispatching works
 
@@ -8065,7 +8065,7 @@ Since the title tells you little, look at how the service operates. Ask these qu
 6. **Are you a broker too?** You want someone clearly on the carrier side.
 7. **Who answers at night or on weekends?** Trucks break down and appointments change outside office hours.
 
-Also check the math on your own numbers. Know your cost per mile before you talk to anyone, using the [cost per mile calculator](/cost-per-mile-calculator.html), so you can tell whether the loads being offered actually pay. For more red flags, read [how to choose a truck dispatcher](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+Also check the math on your own numbers. Know your cost per mile before you talk to anyone, using the [cost per mile calculator](/cost-per-mile-calculator.html), so you can tell whether the loads being offered actually pay. For more red flags, read [how to choose a truck dispatcher](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## Matching the service to your equipment
 
@@ -8094,7 +8094,7 @@ Published: 2026-10-13
 
 Every trailer type has its own freight, its own customers and its own pricing logic. A dispatcher for semi trucks who books good reefer loads needs a different playbook from one who books flatbed. This guide covers how **dry van loads**, **reefer loads**, **flatbed loads**, step deck and **power only loads** are found, and what moves the **rate per mile** for each.
 
-If you are still choosing a trailer, start with [dry van vs reefer vs flatbed: which trailer pays best](/blog/dry-van-vs-reefer-vs-flatbed-which-trailer.html). This article focuses on finding and pricing the freight once you have the equipment.
+If you are still choosing a trailer, start with [dry van vs reefer vs flatbed: which trailer pays best](/blog/dry-van-vs-reefer-vs-flatbed.html). This article focuses on finding and pricing the freight once you have the equipment.
 
 ## Rough rates by freight type
 
@@ -8117,7 +8117,7 @@ Some factors apply to all trailers:
 - **Lead time.** A load that needs a truck today may pay more than one booked a week out.
 - **Extra work.** Tarps, temperature control, multiple stops and driver assist all add value.
 
-For context on what a good number looks like against your costs, read [what is a good rate per mile in trucking](/blog/what-is-a-good-rate-per-mile-trucking-2026.html).
+For context on what a good number looks like against your costs, read [what is a good rate per mile in trucking](/blog/what-is-a-good-rate-per-mile.html).
 
 ## Dry van loads
 
@@ -8311,7 +8311,7 @@ A truly affordable dispatch service tells you the full cost up front and puts it
 4. Check contract length and how to cancel
 5. Ask whether you approve every load
 
-For a full checklist of red flags, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html). For the typical cost range by equipment, see [how much a truck dispatcher costs](/blog/how-much-does-a-truck-dispatcher-cost.html).
+For a full checklist of red flags, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html). For the typical cost range by equipment, see [how much a truck dispatcher costs](/blog/how-much-does-a-truck-dispatcher-cost.html).
 
 ## What really decides the value
 
@@ -8339,7 +8339,7 @@ The phrase covers a few different arrangements:
 - **Delivery and final-mile work.** Routes for companies that handle local or regional deliveries.
 - **Load programs run by large shippers.** Amazon Relay is the best-known example.
 
-The difference between spot and contract freight is covered in more detail in our post on [broker setup, rate confirmations and spot vs contract](/blog/broker-setup-rate-confirmation-spot-vs-contract.html).
+The difference between spot and contract freight is covered in more detail in our post on [broker setup, rate confirmations and spot vs contract](/blog/broker-setup-spot-vs-contract.html).
 
 ## Step 1: Be ready before you ask
 
@@ -8386,7 +8386,7 @@ Some box truck freight never reaches a load board. Businesses that commonly ship
 
 Keep the pitch short: your equipment, service area, insurance limits and how to reach you. Be honest about capacity. Promising more than one truck can deliver is a fast way to lose the account.
 
-Direct shippers often pay on their own terms. Understand payment timing before you start, and consider whether [factoring](/blog/freight-factoring-for-owner-operators-explained.html) makes sense for your cash flow.
+Direct shippers often pay on their own terms. Understand payment timing before you start, and consider whether [factoring](/blog/freight-factoring-explained.html) makes sense for your cash flow.
 
 ## Step 5: Price contracts carefully
 
@@ -8425,7 +8425,7 @@ A dispatcher does not hand you a contract, and you should be cautious of anyone 
 - Keep you in front of brokers who have repeat freight.
 - Collect detention and lumper charges and handle invoicing.
 
-Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html) before you sign with anyone. If you are still setting up, start with [how to start a box truck business](/blog/how-to-start-a-box-truck-business.html).
+Read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html) before you sign with anyone. If you are still setting up, start with [how to start a box truck business](/blog/how-to-start-a-box-truck-business.html).
 
 ## Box truck dispatch with Texas Solutions
 
@@ -8537,7 +8537,7 @@ For more options, see [how to find loads for your truck](/blog/how-to-find-loads
 - **A load board** shows you postings. You still search, call, negotiate and handle paperwork.
 - **A dispatcher** does that work and uses boards along with broker contacts.
 
-Many hotshot owner-operators use both at different stages. If you are just getting started, see [how to start a hotshot business](/blog/how-to-start-a-hotshot-business.html), and before signing with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+Many hotshot owner-operators use both at different stages. If you are just getting started, see [how to start a hotshot business](/blog/how-to-start-a-hotshot-business.html), and before signing with anyone, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## Hotshot dispatch with Texas Solutions
 
@@ -8639,7 +8639,7 @@ They solve different problems.
 - **A load board** gives you access to postings. You still do the searching, calling, negotiating and paperwork.
 - **A dispatcher** does that work for you and usually uses boards as one of several tools.
 
-Some owner-operators start on their own with a board, then bring in a dispatcher once they are spending more time on the phone than driving. Others start with a dispatcher because their authority is new and they have no broker contacts yet. Either way, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html) before signing anything.
+Some owner-operators start on their own with a board, then bring in a dispatcher once they are spending more time on the phone than driving. Others start with a dispatcher because their authority is new and they have no broker contacts yet. Either way, read [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html) before signing anything.
 
 ## Box truck dispatch with Texas Solutions
 
@@ -8773,7 +8773,7 @@ Rules change, and some depend on your state, vehicle weight and type of freight.
 
 Most interstate carriers need a **USDOT number**. For-hire carriers moving regulated freight across state lines also need **operating authority**, often called an MC number. Both are applied for through FMCSA.
 
-After you apply, there is a waiting period before your authority becomes active. You cannot haul under your own authority until it is active. See our guide on [how to get an MC number](/blog/how-to-get-mc-number-authority-owner-operator.html).
+After you apply, there is a waiting period before your authority becomes active. You cannot haul under your own authority until it is active. See our guide on [how to get an MC number](/blog/how-to-get-an-mc-number.html).
 
 ## Step 2: BOC-3 filing
 
@@ -8802,7 +8802,7 @@ If you or your drivers need a CDL, you will generally need a **drug and alcohol 
 
 ## Step 8: Factoring and banking
 
-Brokers often pay in 30 days or more. **Freight factoring** pays you sooner for a fee. Set it up before your first load so cash flow does not stop you. Read [freight factoring for owner-operators explained](/blog/freight-factoring-for-owner-operators-explained.html).
+Brokers often pay in 30 days or more. **Freight factoring** pays you sooner for a fee. Set it up before your first load so cash flow does not stop you. Read [freight factoring for owner-operators explained](/blog/freight-factoring-explained.html).
 
 ## Step 9: Broker setup
 
@@ -8927,7 +8927,7 @@ Deadhead quietly lowers your rate per mile. In the example above, 50 empty miles
 4. **Ask brokers about backhauls** in the same lane.
 5. **Build unavoidable deadhead into the rate** and say so when you counter.
 
-Read more in [what is deadhead in trucking](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html), or measure it with the [deadhead miles calculator](/deadhead-miles-calculator.html).
+Read more in [what is deadhead in trucking](/blog/what-is-deadhead-in-trucking.html), or measure it with the [deadhead miles calculator](/deadhead-miles-calculator.html).
 
 ## Mistakes that cost carriers money
 
@@ -9032,7 +9032,7 @@ Texas Solutions Truck Dispatch searches load boards and broker networks, negotia
 The fee is a percentage of weekly gross, OTR: 5% for semis, 7% for hotshots and 8% for box trucks and straight trucks. There is no setup fee, no monthly subscription and no long-term contract, and your first load is dispatched free. See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html).
 
 ### How to Choose a Truck Dispatcher and Avoid Dispatch Scams
-URL: https://dispatch.texassolutions.co/guides/how-to-choose-a-truck-dispatcher-avoid-scams/
+URL: https://dispatch.texassolutions.co/guides/how-to-choose-a-truck-dispatcher/
 Published: 2026-10-03
 
 Knowing **how to choose a truck dispatcher** can save you money, time and stress. Most dispatchers are honest people doing hard work. But truck dispatch scams exist, and new owner-operators are common targets. This guide covers the red flags, the questions to ask a truck dispatcher, how to check reviews, and what belongs in a dispatch service agreement.
@@ -9217,7 +9217,7 @@ Using the example costs:
 
 Anything below that loses money. Anything above it is profit. Most owner-operators want a rate well above break-even to cover their own pay, slow weeks and repairs.
 
-For rough market ranges by equipment, see our [truck dispatch rates guide](/truck-dispatch-rates.html) and [what is a good rate per mile](/blog/what-is-a-good-rate-per-mile-trucking-2026.html). Those ranges are rough and change by lane and season. Check your own floor with the [break-even calculator](/break-even-calculator.html).
+For rough market ranges by equipment, see our [truck dispatch rates guide](/truck-dispatch-rates.html) and [what is a good rate per mile](/blog/what-is-a-good-rate-per-mile.html). Those ranges are rough and change by lane and season. Check your own floor with the [break-even calculator](/break-even-calculator.html).
 
 ## How fees compare by equipment
 
@@ -9257,7 +9257,7 @@ Texas Solutions Truck Dispatch negotiates rates against your cost per mile, plan
 There is no flat rate, setup fee or long-term contract, and your first load is dispatched free. See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html).
 
 ### Broker Setup, Rate Confirmations and Spot vs Contract Rates
-URL: https://dispatch.texassolutions.co/guides/broker-setup-rate-confirmation-spot-vs-contract/
+URL: https://dispatch.texassolutions.co/guides/broker-setup-spot-vs-contract/
 Published: 2026-10-03
 
 Before you haul a single brokered load, you need to know **how to get set up with brokers**. You also need to read a rate confirmation, understand spot rates vs contract rates, and know how truck dispatch works from start to finish. This guide covers all four in plain terms.
@@ -9280,7 +9280,7 @@ Brokers must check a carrier before they give it freight. That check is called *
 1. Keep every document as a clean PDF, ready to send from your phone.
 2. Ask your insurance agent how fast they send certificates. Slow COIs slow setups.
 3. Make sure your business name matches on every document.
-4. If you factor, have your notice of assignment ready. See [freight factoring for owner-operators explained](/blog/freight-factoring-for-owner-operators-explained.html).
+4. If you factor, have your notice of assignment ready. See [freight factoring for owner-operators explained](/blog/freight-factoring-explained.html).
 5. Get set up with brokers in your lanes before you need them.
 
 New carriers may find that some brokers have extra requirements for new MC numbers. See [dispatch for new authority](/dispatch-for-new-authority.html).
@@ -9345,7 +9345,7 @@ Dispatchers use several sources at once:
 - **Load boards** for posted spot freight
 - **Broker networks:** calling brokers who move freight in your lanes
 - **Repeat lanes:** asking brokers for the same load again
-- **Planning ahead:** searching for the next load before the current one delivers, to cut [deadhead](/blog/what-is-deadhead-in-trucking-how-to-reduce-it.html)
+- **Planning ahead:** searching for the next load before the current one delivers, to cut [deadhead](/blog/what-is-deadhead-in-trucking.html)
 
 ## How does truck dispatch work?
 
@@ -9369,7 +9369,7 @@ Texas Solutions Truck Dispatch handles broker carrier packets and setups, load s
 The fee is a percentage of weekly gross, OTR, with no setup fee or contract, and your first load is dispatched free. [Get a free estimate](/estimate.html) or [contact us](/contact.html).
 
 ### What Is Deadhead in Trucking and How to Reduce It
-URL: https://dispatch.texassolutions.co/guides/what-is-deadhead-in-trucking-how-to-reduce-it/
+URL: https://dispatch.texassolutions.co/guides/what-is-deadhead-in-trucking/
 Published: 2026-09-23
 
 **Deadhead** means moving your truck without paid freight: driving empty to a pickup, or heading home after a delivery with no return load. It is one of the biggest silent drains on an owner-operator's income.
@@ -9401,7 +9401,7 @@ Sometimes a longer empty run to a strong market pays off. Test it: compare the p
 We negotiate every rate against your real cost per mile and plan the next load before the current one delivers. Dispatch is 5% of weekly gross for semis, 7% for hotshots and 8% for box trucks, OTR, with no flat rate. See our [owner-operator dispatch service](/owner-operator-dispatch.html) or [get a free estimate](/estimate.html). To weigh a load with deadhead and a return trip, use the [load profitability calculator](/load-profitability-calculator.html).
 
 ### What Is a Good Rate Per Mile in Trucking in 2026?
-URL: https://dispatch.texassolutions.co/guides/what-is-a-good-rate-per-mile-trucking-2026/
+URL: https://dispatch.texassolutions.co/guides/what-is-a-good-rate-per-mile/
 Published: 2026-09-23
 
 There is no single "good" rate. A rate is good if it **covers your cost per mile with profit after deadhead.** But you still need a sense of the market, so here are rough figures and a way to calculate your own line.
@@ -9435,7 +9435,7 @@ Dry van varies the most: short local and regional loads often pay more per mile 
 - **Fuel surcharge:** included in the rate or paid separately?
 - **Detention and layover:** are they paid, and after how many hours?
 - **Lumper and tolls:** who covers them?
-- **Payment terms:** a higher rate paid in 45 days may be worse than a lower one paid quickly. See [freight factoring](/blog/freight-factoring-for-owner-operators-explained.html).
+- **Payment terms:** a higher rate paid in 45 days may be worse than a lower one paid quickly. See [freight factoring](/blog/freight-factoring-explained.html).
 - **Return freight:** a great rate into a dead market can cost more in deadhead than it earns.
 
 ## Spot vs contract
@@ -9492,65 +9492,8 @@ Look for a **clear percentage of weekly gross**, no forced dispatch, no long con
 
 Read more about [what a truck dispatcher does](/what-does-a-truck-dispatcher-do.html) or see [how much dispatch costs](/blog/how-much-does-a-truck-dispatcher-cost.html).
 
-### IFTA for Owner-Operators: How to File Quarterly Returns
-URL: https://dispatch.texassolutions.co/guides/ifta-for-owner-operators-how-to-file/
-Published: 2026-09-23
-
-If your truck crosses state lines, you deal with fuel tax in every state you drive through, not just where you fill up. **IFTA** simplifies that into one return per quarter. Here is how it works in practice. Rules are set by IFTA and your base jurisdiction, so verify details with them.
-
-## Who needs IFTA
-
-Carriers running **qualified motor vehicles** across IFTA jurisdictions, usually meaning:
-
-- Two axles and a gross vehicle weight over 26,000 lbs, or
-- Three or more axles regardless of weight, or
-- A combination vehicle over 26,000 lbs
-
-Many hotshots and box trucks under 26,001 lbs with two axles fall **below** the threshold. Semis clearly qualify.
-
-## Quarterly due dates
-
-| Quarter | Months | Return due |
-|---|---|---|
-| Q1 | Jan-Mar | April 30 |
-| Q2 | Apr-Jun | July 31 |
-| Q3 | Jul-Sep | October 31 |
-| Q4 | Oct-Dec | January 31 |
-
-## What to record
-
-For each truck, keep:
-
-1. **Miles driven in each jurisdiction**, from your ELD or trip records
-2. **Fuel purchased**: date, seller name and location, gallons, fuel type, price per gallon, and which vehicle
-3. **Total miles and total gallons** for the quarter
-
-Keep receipts and records for **about four years**. Also display your IFTA decals on the truck as required.
-
-## How the math works
-
-1. **Fleet MPG** = total miles divided by total gallons purchased
-2. **Gallons used in a state** = miles driven in that state divided by fleet MPG
-3. **Net taxable gallons** = gallons used minus gallons purchased there
-4. Multiply net taxable gallons by that state's **current tax rate**; positive means you owe, negative is a credit
-
-Tax rates change by jurisdiction, usually each quarter, so use the current rate table from your base jurisdiction.
-
-Use the [IFTA mileage calculator](/ifta-mileage-calculator.html) to organize miles and gallons by state. It does not include tax rates, so you can plug in the current rate for each state. It is a planning aid, not a substitute for your official return.
-
-## Tips to make filing painless
-
-- Log fuel receipts the day you buy, or use a fuel card that exports IFTA data
-- Reconcile miles from your ELD each month, not at quarter end
-- Watch for **fuel bought outside your route** and cash purchases without receipts
-- File on time even if you owe nothing; late filings carry penalties
-
-## Fuel planning saves money too
-
-Because tax is due where you burn fuel, buying in a cheaper state does not always mean a cheaper gallon after tax. Compare pump prices with the [diesel price in each state](/truck-fuel-cost-calculator.html#diesel-prices), and estimate trip fuel with the [fuel cost calculator](/truck-fuel-cost-calculator.html).
-
 ### How to Get Your MC Number and Trucking Authority
-URL: https://dispatch.texassolutions.co/guides/how-to-get-mc-number-authority-owner-operator/
+URL: https://dispatch.texassolutions.co/guides/how-to-get-an-mc-number/
 Published: 2026-09-23
 
 Almost every owner-operator hauling freight for other companies across state lines needs **their own operating authority**. Here is the process in the order that saves the most time, and what each piece is for. Rules and fees change, so confirm current requirements on the FMCSA website before you file.
@@ -9629,8 +9572,65 @@ New authorities face a **new entrant safety period** and a safety audit within a
 
 A dispatcher can take load searching, rate negotiation and broker paperwork off your plate once you are active. At Texas Solutions, dispatch is **5% of weekly gross for semis, 7% for hotshots and 8% for box trucks**, OTR, with no flat rate. [Get a free estimate](/estimate.html).
 
+### IFTA for Owner-Operators: How to File Quarterly Returns
+URL: https://dispatch.texassolutions.co/guides/how-to-file-ifta/
+Published: 2026-09-23
+
+If your truck crosses state lines, you deal with fuel tax in every state you drive through, not just where you fill up. **IFTA** simplifies that into one return per quarter. Here is how it works in practice. Rules are set by IFTA and your base jurisdiction, so verify details with them.
+
+## Who needs IFTA
+
+Carriers running **qualified motor vehicles** across IFTA jurisdictions, usually meaning:
+
+- Two axles and a gross vehicle weight over 26,000 lbs, or
+- Three or more axles regardless of weight, or
+- A combination vehicle over 26,000 lbs
+
+Many hotshots and box trucks under 26,001 lbs with two axles fall **below** the threshold. Semis clearly qualify.
+
+## Quarterly due dates
+
+| Quarter | Months | Return due |
+|---|---|---|
+| Q1 | Jan-Mar | April 30 |
+| Q2 | Apr-Jun | July 31 |
+| Q3 | Jul-Sep | October 31 |
+| Q4 | Oct-Dec | January 31 |
+
+## What to record
+
+For each truck, keep:
+
+1. **Miles driven in each jurisdiction**, from your ELD or trip records
+2. **Fuel purchased**: date, seller name and location, gallons, fuel type, price per gallon, and which vehicle
+3. **Total miles and total gallons** for the quarter
+
+Keep receipts and records for **about four years**. Also display your IFTA decals on the truck as required.
+
+## How the math works
+
+1. **Fleet MPG** = total miles divided by total gallons purchased
+2. **Gallons used in a state** = miles driven in that state divided by fleet MPG
+3. **Net taxable gallons** = gallons used minus gallons purchased there
+4. Multiply net taxable gallons by that state's **current tax rate**; positive means you owe, negative is a credit
+
+Tax rates change by jurisdiction, usually each quarter, so use the current rate table from your base jurisdiction.
+
+Use the [IFTA mileage calculator](/ifta-mileage-calculator.html) to organize miles and gallons by state. It does not include tax rates, so you can plug in the current rate for each state. It is a planning aid, not a substitute for your official return.
+
+## Tips to make filing painless
+
+- Log fuel receipts the day you buy, or use a fuel card that exports IFTA data
+- Reconcile miles from your ELD each month, not at quarter end
+- Watch for **fuel bought outside your route** and cash purchases without receipts
+- File on time even if you owe nothing; late filings carry penalties
+
+## Fuel planning saves money too
+
+Because tax is due where you burn fuel, buying in a cheaper state does not always mean a cheaper gallon after tax. Compare pump prices with the [diesel price in each state](/truck-fuel-cost-calculator.html#diesel-prices), and estimate trip fuel with the [fuel cost calculator](/truck-fuel-cost-calculator.html).
+
 ### Hours of Service Rules Explained: 11, 14 and 70-Hour
-URL: https://dispatch.texassolutions.co/guides/hours-of-service-rules-explained-11-14-70-hour/
+URL: https://dispatch.texassolutions.co/guides/hours-of-service-rules/
 Published: 2026-09-23
 
 Hours-of-service (HOS) rules keep tired drivers off the road, and they also set how many miles a truck can legally run in a day and week. Here is a plain-English summary for **property-carrying drivers** under FMCSA rules (49 CFR Part 395). Always confirm current rules and your own exemptions with FMCSA and your ELD provider.
@@ -9668,7 +9668,7 @@ A good dispatcher plans loads so your delivery windows fit your remaining hours 
 *The [HOS calculator](/hours-of-service-calculator.html) is a planning aid, not a legal record. Your ELD is your official log.*
 
 ### Freight Factoring for Owner-Operators: How It Works
-URL: https://dispatch.texassolutions.co/guides/freight-factoring-for-owner-operators-explained/
+URL: https://dispatch.texassolutions.co/guides/freight-factoring-explained/
 Published: 2026-09-23
 
 Brokers commonly pay carriers **30 days or more after delivery**, while diesel, insurance and truck payments are due now. **Freight factoring** bridges that gap.
@@ -9715,7 +9715,7 @@ A dispatcher can build your factoring company's notice of assignment into every 
 Include factoring costs in your numbers with the [cost per mile calculator](/cost-per-mile-calculator.html) and check the impact on a load with the [load profitability calculator](/load-profitability-calculator.html).
 
 ### Dry Van vs Reefer vs Flatbed: Which Trailer Pays Best?
-URL: https://dispatch.texassolutions.co/guides/dry-van-vs-reefer-vs-flatbed-which-trailer/
+URL: https://dispatch.texassolutions.co/guides/dry-van-vs-reefer-vs-flatbed/
 Published: 2026-09-23
 
 Choosing a trailer is one of the biggest decisions an owner-operator makes. It sets your rate range, your workload, your startup cost and the lanes you can run. Here is how the three most common truckload trailers compare.
@@ -9917,7 +9917,7 @@ See how our [owner-operator dispatch service](/owner-operator-dispatch.html) wor
 Ready to see your number? [Get a free estimate](/estimate.html) or message a dispatcher on WhatsApp.
 
 ### Hotshot Trucking Rates Per Mile, Fuel and Dispatch (2026)
-URL: https://dispatch.texassolutions.co/guides/hotshot-trucking-rates-per-mile-fuel-and-dispatch/
+URL: https://dispatch.texassolutions.co/guides/hotshot-trucking-rates/
 Published: 2026-09-22
 
 Hotshot trucking moves time-sensitive and partial loads with a heavy-duty pickup and a flatbed or gooseneck trailer. It is fast, flexible, and popular in Texas and the Permian Basin, where equipment and oilfield freight cannot wait for a full truckload.
@@ -9969,7 +9969,7 @@ You approve every load before it is booked.
 Texas Solutions charges **7% of weekly gross** for OTR hotshot dispatch, with no flat rate and no setup fee. On a hypothetical weekly gross of $7,000-$9,000, that is about **$490-$630 a week**. [Calculate your fee](/estimate.html?truck=hotshot) or read more about our [hotshot dispatch service](/hotshot-dispatch.html).
 
 ### Diesel Prices by State: How Truckers Cut Fuel Cost Per Mile
-URL: https://dispatch.texassolutions.co/guides/diesel-prices-by-state-cut-fuel-cost-per-mile/
+URL: https://dispatch.texassolutions.co/guides/cut-fuel-cost-per-mile/
 Published: 2026-09-22
 
 Fuel is one of the biggest bills an owner-operator pays, and it changes every day. Two numbers decide what it costs you: **the price per gallon** and **your miles per gallon**. You control more of both than you might think.
@@ -10014,7 +10014,7 @@ See [today's diesel prices for all 50 states](/truck-fuel-cost-calculator.html#d
 A good dispatcher plans lanes to reduce empty miles and negotiates rates that leave room after fuel. At Texas Solutions, semi truck dispatch is 5% of weekly gross, hotshot dispatch 7% and box truck dispatch 8%. Read about our [owner-operator dispatch service](/owner-operator-dispatch.html) or [see what it would cost you](/estimate.html).
 
 ### Box Truck Dispatch: How to Find Loads and What It Really Costs
-URL: https://dispatch.texassolutions.co/guides/box-truck-dispatch-find-loads-and-costs/
+URL: https://dispatch.texassolutions.co/guides/box-truck-loads-and-costs/
 Published: 2026-09-22
 
 Box trucks are one of the easiest ways into owner-operator trucking, but the freight works differently from semi loads: smaller, more frequent, and often with tighter delivery windows. Here is how to keep a box truck loaded and what it costs to run.

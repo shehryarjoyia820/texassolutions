@@ -815,7 +815,7 @@ def build_home():
       <li><a href="semi-truck-dispatch.html"><b>Semi truck dispatch services</b></a> and <a href="small-fleet-dispatch.html"><b>dispatch for small fleets</b></a> and small trucking companies.</li>
       <li><a href="truck-dispatch-by-state.html"><b>Truck dispatch services in every state</b></a>: <a href="texas-truck-dispatch.html">Texas</a>, <a href="truck-dispatch/california.html">California</a>, <a href="truck-dispatch/florida.html">Florida</a>, <a href="truck-dispatch/georgia.html">Georgia</a>, <a href="truck-dispatch/illinois.html">Illinois</a>, <a href="truck-dispatch/ohio.html">Ohio</a>, <a href="truck-dispatch/new-jersey.html">New Jersey</a>, <a href="truck-dispatch/pennsylvania.html">Pennsylvania</a>, <a href="truck-dispatch/tennessee.html">Tennessee</a>, <a href="truck-dispatch/north-carolina.html">North Carolina</a> and every other state.</li>
     </ul>
-    <p>Affordable truck dispatch services with no catches: a percentage of weekly gross, no long-term contract, no upfront fee, and your first load free. Read <a href="blog/how-to-choose-a-truck-dispatcher-avoid-scams.html">how to choose a truck dispatcher</a> or <a href="blog/is-a-truck-dispatcher-worth-it.html">whether a dispatcher is worth it</a>.</p>
+    <p>Affordable truck dispatch services with no catches: a percentage of weekly gross, no long-term contract, no upfront fee, and your first load free. Read <a href="blog/how-to-choose-a-truck-dispatcher.html">how to choose a truck dispatcher</a> or <a href="blog/is-a-truck-dispatcher-worth-it.html">whether a dispatcher is worth it</a>.</p>
   </div>
   <div class="aside">{answer("Can I hire a truck dispatcher today?", f"Yes. Call, text or WhatsApp {C.PHONE} any time, 24/7. Tell us your truck, authority and lanes; we send a short agreement and start searching loads. Your first load is dispatched free, and new MC numbers are welcome.", "Truck dispatcher for hire")}</div>
 </div></section>
@@ -1000,7 +1000,7 @@ def build_rates():
     <h2>Low fee dispatch without the catches</h2>
     <p>Cheap truck dispatch services can cost more if the low rate comes with a setup fee, a long contract, forced loads or extra charges for paperwork. Ours: a 5 percent dispatch service for semis, no upfront fee, no long-term contract, no forced dispatch, and a free trial: your first load is dispatched free. Broker packets, rate confirmations and invoicing are included.</p>
     <h2>Dispatch fee percentage vs weekly dispatch fee</h2>
-    <p>A weekly dispatch fee is the same dollar amount every week, so it costs most in the weeks you earn least. A dispatch fee percentage moves with your gross. Before you pick the cheapest truck dispatch service, add up the real cost: percentage or weekly fee, plus any setup fee, minimum, contract term or paperwork charge. See <a href="blog/cheapest-truck-dispatch-service-real-cost.html">the real cost of the cheapest truck dispatch service</a>.</p>
+    <p>A weekly dispatch fee is the same dollar amount every week, so it costs most in the weeks you earn least. A dispatch fee percentage moves with your gross. Before you pick the cheapest truck dispatch service, add up the real cost: percentage or weekly fee, plus any setup fee, minimum, contract term or paperwork charge. See <a href="blog/cheapest-truck-dispatch-service.html">the real cost of the cheapest truck dispatch service</a>.</p>
     <h2>Dispatcher vs self-dispatch</h2>
     <p>Self-dispatch saves the fee but costs hours on load boards and broker calls. A dispatcher earns the fee when better rates, fewer deadhead miles and the hours you get back add up to more than the percentage. Compare both in <a href="blog/dispatcher-vs-self-dispatch-load-board.html">load board vs dispatcher</a>.</p>
   <div class="aside">{contact_side()}</div>
@@ -1124,13 +1124,13 @@ def build_new_mc():
         ("Set up the business", "Form your LLC or corporation, get an EIN and open a business bank account, so the authority is in the right legal name.",
          [("How to start a trucking company", "blog/how-to-start-a-trucking-company.html")]),
         ("Apply for USDOT and MC authority", "Register with FMCSA for a USDOT number and for-hire operating authority (your MC number). Check every answer before you submit; mistakes cost weeks.",
-         [("MC number and authority setup", "trucking-authority-setup.html"), ("How to get your MC number", "blog/how-to-get-mc-number-authority-owner-operator.html")]),
+         [("MC number and authority setup", "trucking-authority-setup.html"), ("How to get your MC number", "blog/how-to-get-an-mc-number.html")]),
         ("File insurance and BOC-3", "Your insurance agent files proof of liability coverage with FMCSA, and a process agent files your BOC-3. Authority cannot go active without both.",
          [("Partner referrals for insurance", "trucking-business-services.html")]),
         ("Wait out the protest period", "FMCSA posts your application for a protest period. Use the time to prepare your broker packet, choose a factoring company and set up your ELD.",
-         [("Freight factoring explained", "blog/freight-factoring-for-owner-operators-explained.html")]),
+         [("Freight factoring explained", "blog/freight-factoring-explained.html")]),
         ("Register UCR, IRP, IFTA and drug testing", "Interstate carriers register for UCR, IRP plates and an IFTA account in their base state, and join a drug and alcohol consortium before the first load.",
-         [("IFTA for owner-operators", "blog/ifta-for-owner-operators-how-to-file.html"), ("Compliance and permits", "trucking-business-services.html")]),
+         [("IFTA for owner-operators", "blog/how-to-file-ifta.html"), ("Compliance and permits", "trucking-business-services.html")]),
         ("Get set up with brokers and book the first load", "Send one complete carrier packet to brokers that accept new authority, then book loads that leave you in a good market for the next one.",
          [("How to get loads with a new MC", "blog/how-to-get-loads-with-new-mc-number.html"), ("Dispatch for new authority", "dispatch-for-new-authority.html")]),
     ]
@@ -1154,7 +1154,7 @@ def build_new_mc():
             ("Deliver perfectly", "On-time pickups, quick check calls and clean paperwork are how brokers decide to rebook you.")]
     tip_html = "\n".join(f'    <div class="card rv"><div class="icon">{ICONS["check"]}</div><h3>{esc(t)}</h3><p>{esc(d)}</p></div>' for t, d in tips)
     by_slug = {po["slug"]: po for po in POSTS}
-    guide_slugs = ["how-to-get-mc-number-authority-owner-operator", "how-to-get-loads-with-new-mc-number", "how-to-start-a-trucking-company",
+    guide_slugs = ["how-to-get-an-mc-number", "how-to-get-loads-with-new-mc-number", "how-to-start-a-trucking-company",
                    "how-to-become-an-owner-operator", "how-to-start-a-box-truck-business", "how-to-start-a-hotshot-business"]
     guides = "\n".join(post_card(by_slug[s]) for s in guide_slugs if s in by_slug)
     tool_links = [("Cost per mile calculator", "cost-per-mile-calculator.html"), ("Break-even calculator", "break-even-calculator.html"),
@@ -1313,7 +1313,7 @@ def build_contract():
     title = "Sign Your Truck Dispatch Agreement Online | Texas Solutions"
     desc = "Read the Texas Solutions Dispatch agreement, fill in your carrier details and e-sign online. Your signed PDF downloads instantly."
     schemas = [crumbs_ld([("Sign Contract", path)])]
-    write("sign-contract.html", page(path, title, desc, "truck dispatch agreement, dispatch contract, sign dispatch agreement online, dispatch services agreement", schemas, body, current="sign-contract.html"))
+    write("sign-contract.html", page(path, title, desc, "truck dispatch agreement, dispatch contract, sign dispatch agreement online, dispatch services agreement", schemas, body, current="sign-contract.html", robots="noindex, follow"))
 
 
 def build_services():
@@ -1788,7 +1788,7 @@ def build_fuel():
 
 def abs_links(shell):
     """Pages in sub-folders: make relative links root-absolute."""
-    return re.sub(r'(href|src)="(?!https?:|/|#|tel:|mailto:|data:)', r'\1="/', shell)
+    return re.sub(r'(href|src)="(?!https?:|/|#|tel:|mailto:|sms:|data:|javascript:)', r'\1="/', shell)
 
 
 def slugify(s):
@@ -3194,7 +3194,7 @@ def build_404():
 {''.join(f'<a class="chip" href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING if not p.get("hide_nav"))}
 </div></div></section>"""
     shell = page("/404.html", "Page Not Found | " + C.BRAND, "Page not found.", "truck dispatch", [], body)
-    shell = re.sub(r'(href|src)="(?!https?:|/|#|tel:|mailto:|data:)', r'\1="/', shell)
+    shell = abs_links(shell)
     write("404.html", shell)
 
 
@@ -3257,8 +3257,10 @@ def build_site_files():
         f = "index.html" if path == "/" else path.lstrip("/")
         return {"loc": url(path), "lastmod": lm.get(f, TODAY)}
 
-    core = ["/", "/estimate.html", "/truck-dispatch-rates.html", "/truck-fuel-cost-calculator.html"] + ["/" + p["file"] for p in C.LANDING] + \
-           ["/dispatch.html", "/new-mc.html", "/sign-contract.html", "/trucking-business-services.html", "/faq.html", "/about.html", "/contact.html", "/privacy.html", "/terms.html"]
+    # Texas is listed once, in sitemap-locations.xml; the contract-signing form is noindex and not listed.
+    core = ["/", "/estimate.html", "/truck-dispatch-rates.html", "/truck-fuel-cost-calculator.html"] + \
+           ["/" + p["file"] for p in C.LANDING if p["file"] != "texas-truck-dispatch.html"] + \
+           ["/dispatch.html", "/new-mc.html", "/trucking-business-services.html", "/faq.html", "/about.html", "/contact.html", "/privacy.html", "/terms.html"]
     tool_paths = ["/tools.html"] + ["/" + tl["slug"] + ".html" for tl in TOOLS]
     blog_entries = [entry("/blog.html")] + [dict(entry(f"/blog/{po['slug']}.html"), image=po["cover_abs"], title=po["title"]) for po in POSTS]
     groups = {

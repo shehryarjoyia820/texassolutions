@@ -94,7 +94,7 @@ Fast reporting matters. The sooner others know, the less damage a scammer can do
 
 ## Dispatch scams are freight fraud too
 
-Some scammers pose as dispatchers, charge upfront fees and then vanish or book double-brokered loads. A legitimate dispatcher should have a clear written agreement and should not need your login credentials for government portals. See [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher-avoid-scams.html).
+Some scammers pose as dispatchers, charge upfront fees and then vanish or book double-brokered loads. A legitimate dispatcher should have a clear written agreement and should not need your login credentials for government portals. See [how to choose a truck dispatcher and avoid scams](/blog/how-to-choose-a-truck-dispatcher.html).
 
 ## How Texas Solutions can help
 
