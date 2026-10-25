@@ -341,6 +341,14 @@
     var busy = false;
     function show(msg, ok, htmlMsg) { if (htmlMsg) status.innerHTML = msg; else status.textContent = msg; status.className = 'form-status ' + (ok ? 'ok' : 'err'); }
     function val(n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
+    /* MC number is required unless the carrier ticks "No MC yet" */
+    var noMc = form.querySelector('[data-nomc]');
+    if (noMc) noMc.addEventListener('change', function () {
+      var mc = document.getElementById(noMc.getAttribute('data-nomc'));
+      mc.required = !noMc.checked; mc.disabled = noMc.checked;
+      if (noMc.checked) mc.value = '';
+      mc.placeholder = noMc.checked ? 'No MC yet' : 'e.g. MC 1234567';
+    });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (busy) return;
@@ -370,6 +378,7 @@
       data.set('sms_consent', agreed ? 'Yes - agreed to SMS' : 'No');
       if (!agreed) { data.set('sms_consent_text', 'not given'); data.set('sms_consent_version', 'not given'); }
       data.delete('botcheck');
+      if (noMc) { data.delete('no_mc'); if (noMc.checked) data.set('mc_dot', 'No MC yet'); }
       busy = true;
       var label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending...';
       fetch(ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } })

@@ -652,8 +652,15 @@ def form_tail(button):
   <p class="fine">{esc(C.FORM_DISCLAIMER)}</p>"""
 
 
+def mc_field(fid, cls="full"):
+    """MC number, required unless the carrier ticks "No MC yet" (js/site.js turns the requirement off)."""
+    return f"""<div class="{cls} mc-field"><div class="mc-top"><label class="fl" for="{fid}-mcnum">MC or USDOT number <i>*</i></label>
+      <label class="mc-none"><input type="checkbox" name="no_mc" value="yes" data-nomc="{fid}-mcnum"> No MC yet</label></div>
+      <input type="text" id="{fid}-mcnum" name="mc_dot" inputmode="numeric" autocomplete="off" required pattern=".*[0-9]{{4,}}.*" placeholder="e.g. MC 1234567" title="Enter your MC or USDOT number, or tick No MC yet"></div>"""
+
+
 def lead_form(fid, subject, button, extra=""):
-    """Short first-contact form: name, phone or email, and equipment are required; the rest is optional.
+    """Short first-contact form: name, phone or email, equipment and MC number (or "No MC yet") are required; the rest is optional.
     Documents (MC, W-9, insurance) are collected after the first call."""
     return f"""<form class="form rv" id="{fid}" data-web3 data-kind="lead" data-subject="{esc(subject)}" novalidate>
   <input type="hidden" name="intent" value="talk_to_dispatcher">
@@ -663,13 +670,14 @@ def lead_form(fid, subject, button, extra=""):
     <div><label class="fl" for="{fid}-email">Email</label><input type="email" id="{fid}-email" name="email" autocomplete="email" data-oneof="contact"></div>
     <p class="full hint oneof-hint">Phone or email, at least one. <i>*</i></p>
     <div class="full"><label class="fl" for="{fid}-eq">Equipment <i>*</i></label><select id="{fid}-eq" name="equipment" required>{opts(C.EQUIPMENT, "Select equipment")}</select></div>
+    {mc_field(fid)}
     <p class="full hint">Optional, but it helps us prepare:</p>
-    <div><label class="fl" for="{fid}-mc">MC number or authority status</label><select id="{fid}-mc" name="mc_status">{opts(C.MC_STATUS, "Select status")}</select></div>
+    <div><label class="fl" for="{fid}-mc">Authority status</label><select id="{fid}-mc" name="mc_status">{opts(C.MC_STATUS, "Select status")}</select></div>
     <div><label class="fl" for="{fid}-trucks">Number of trucks</label><input type="number" id="{fid}-trucks" name="trucks" min="1" max="500" placeholder="1"></div>
     <div><label class="fl" for="{fid}-state">Home state</label><select id="{fid}-state" name="home_state">{state_opts()}</select></div>
     <div><label class="fl" for="{fid}-lanes">Preferred lanes</label><input type="text" id="{fid}-lanes" name="lanes" placeholder="e.g. Midwest to Southeast"></div>
     <div class="full"><label class="fl" for="{fid}-method">Preferred contact method</label><select id="{fid}-method" name="contact_method">{opts(C.CONTACT_METHODS, "Any")}</select></div>{extra}
-    <div class="full"><label class="fl" for="{fid}-msg">Message</label><textarea id="{fid}-msg" name="message" rows="3" placeholder="MC number, home time, questions. We collect documents after the first call."></textarea></div>
+    <div class="full"><label class="fl" for="{fid}-msg">Message</label><textarea id="{fid}-msg" name="message" rows="3" placeholder="Home time, lanes you avoid, questions. We collect documents after the first call."></textarea></div>
     {consent_box(fid)}
   </div>
   {form_tail(button)}
@@ -775,8 +783,8 @@ def build_home():
           <div><label class="fl" for="hc-name">Full name</label><input type="text" id="hc-name" name="name" autocomplete="name" required></div>
           <div><label class="fl" for="hc-phone">Phone</label><input type="tel" id="hc-phone" name="phone" autocomplete="tel" required></div>
           <div><label class="fl" for="hc-email">Email</label><input type="email" id="hc-email" name="email" autocomplete="email" required></div>
-          <div><label class="fl" for="hc-mc">MC or DOT # (optional)</label><input type="text" id="hc-mc" name="mc_dot" inputmode="numeric"></div>
-          <div class="full"><label class="fl" for="hc-eq">Equipment</label><select id="hc-eq" name="equipment" required>{opts(C.EQUIPMENT, "Select equipment")}</select></div>
+          <div><label class="fl" for="hc-eq">Equipment</label><select id="hc-eq" name="equipment" required>{opts(C.EQUIPMENT, "Select equipment")}</select></div>
+          {mc_field("hc")}
           {consent_box("hc")}
         </div>
         {form_tail("Claim My Free Load")}
