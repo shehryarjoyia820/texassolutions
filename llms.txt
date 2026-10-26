@@ -164,7 +164,7 @@
 - [Truck dispatch services by state (all 50)](https://dispatch.texassolutions.co/dispatch/states/)
 
 ## Diesel prices
-- AAA daily state averages as of 2026-10-25; EIA U.S. weekly average $6.276/gal (week of 2026-10-19): Texas $5.738, California $8.455, Florida $6.142, Georgia $5.713, Illinois $6.700, New York $6.497, Ohio $6.474, Pennsylvania $6.605, Oklahoma $5.931, Tennessee $5.963
+- AAA daily state averages as of 2026-10-26; EIA U.S. weekly average $6.276/gal (week of 2026-10-19): Texas $5.734, California $8.444, Florida $6.139, Georgia $5.694, Illinois $6.701, New York $6.494, Ohio $6.510, Pennsylvania $6.607, Oklahoma $5.931, Tennessee $5.959
 - Daily prices for all 50 states and DC: https://dispatch.texassolutions.co/calculators/truck-fuel-cost-calculator/#diesel-prices; one page per state at https://dispatch.texassolutions.co/diesel-prices/texas/ (replace texas with the state name)
 
 ## Company
