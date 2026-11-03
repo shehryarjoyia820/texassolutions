@@ -3,81 +3,81 @@
   "diesel": {
    "regions": {
     "CA": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "California",
-     "observed": "2026-10-26",
-     "prev": 8.242,
-     "price": 8.155
+     "observed": "2026-11-02",
+     "prev": 8.155,
+     "price": 8.076
     },
     "P1": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "East Coast",
-     "observed": "2026-10-26",
-     "prev": 5.984,
-     "price": 6.079
+     "observed": "2026-11-02",
+     "prev": 6.079,
+     "price": 6.025
     },
     "P1A": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "New England",
-     "observed": "2026-10-26",
-     "prev": 6.47,
-     "price": 6.421
+     "observed": "2026-11-02",
+     "prev": 6.421,
+     "price": 6.416
     },
     "P1B": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "Central Atlantic",
-     "observed": "2026-10-26",
-     "prev": 6.508,
-     "price": 6.496
+     "observed": "2026-11-02",
+     "prev": 6.496,
+     "price": 6.486
     },
     "P1C": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "Lower Atlantic",
-     "observed": "2026-10-26",
-     "prev": 5.74,
-     "price": 5.89
+     "observed": "2026-11-02",
+     "prev": 5.89,
+     "price": 5.814
     },
     "P2": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "Midwest",
-     "observed": "2026-10-26",
-     "prev": 6.352,
-     "price": 6.48
+     "observed": "2026-11-02",
+     "prev": 6.48,
+     "price": 6.402
     },
     "P3": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "Gulf Coast",
-     "observed": "2026-10-26",
-     "prev": 5.903,
-     "price": 5.951
+     "observed": "2026-11-02",
+     "prev": 5.951,
+     "price": 5.912
     },
     "P4": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "Rocky Mountain",
-     "observed": "2026-10-26",
-     "prev": 6.422,
-     "price": 6.521
+     "observed": "2026-11-02",
+     "prev": 6.521,
+     "price": 6.445
     },
     "P5": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "West Coast",
-     "observed": "2026-10-26",
-     "prev": 7.394,
-     "price": 7.329
+     "observed": "2026-11-02",
+     "prev": 7.329,
+     "price": 7.272
     },
     "P5X": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "West Coast (excl. California)",
-     "observed": "2026-10-26",
-     "prev": 6.659,
-     "price": 6.614
+     "observed": "2026-11-02",
+     "prev": 6.614,
+     "price": 6.575
     },
     "US": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "U.S. average",
-     "observed": "2026-10-26",
-     "prev": 6.276,
-     "price": 6.352
+     "observed": "2026-11-02",
+     "prev": 6.352,
+     "price": 6.292
     }
    },
    "sources": {
@@ -94,340 +94,340 @@
    },
    "states": {
     "AK": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.441
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.451
     },
     "AL": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.854
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.859
     },
     "AR": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.873
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.869
     },
     "AZ": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.292
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.302
     },
     "CA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 8.342
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 8.338
     },
     "CO": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.382
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.375
     },
     "CT": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.414
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.419
     },
     "DC": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.516
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.473
     },
     "DE": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.309
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.292
     },
     "FL": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.979
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.975
     },
     "GA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.657
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.67
     },
     "HI": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 7.217
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 7.245
     },
     "IA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.056
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.045
     },
     "ID": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.529
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.516
     },
     "IL": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
      "price": 6.624
     },
     "IN": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.755
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.749
     },
     "KS": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.997
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.987
     },
     "KY": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.109
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.105
     },
     "LA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.754
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.76
     },
     "MA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.314
-    },
-    "MD": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
      "price": 6.32
     },
+    "MD": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.316
+    },
     "ME": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.4
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.412
     },
     "MI": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.658
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.651
     },
     "MN": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.158
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.149
     },
     "MO": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.053
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.032
     },
     "MS": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.819
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.824
     },
     "MT": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.157
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.139
     },
     "NC": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.491
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.501
     },
     "ND": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.063
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.071
     },
     "NE": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.114
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.101
     },
     "NH": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.337
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.326
     },
     "NJ": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.373
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.363
     },
     "NM": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.014
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.999
     },
     "NV": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.821
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.826
     },
     "NY": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.489
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.486
     },
     "OH": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.439
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.429
     },
     "OK": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.854
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.847
     },
     "OR": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.71
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.709
     },
     "PA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.592
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.591
     },
     "RI": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.301
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.295
     },
     "SC": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.731
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.74
     },
     "SD": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.009
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.008
     },
     "TN": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.921
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.92
     },
     "TX": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.739
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.728
     },
     "UT": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.474
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.478
     },
     "VA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.223
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.218
     },
     "VT": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.356
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.361
     },
     "WA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 7.251
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 7.258
     },
     "WI": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.312
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.299
     },
     "WV": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.373
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.374
     },
     "WY": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 6.348
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 6.359
     }
    }
   },
   "gasoline": {
    "regions": {
     "CA": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "California",
-     "observed": "2026-10-26",
-     "prev": 6.031,
-     "price": 5.888
+     "observed": "2026-11-02",
+     "prev": 5.888,
+     "price": 5.748
     },
     "P1": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "East Coast",
-     "observed": "2026-10-26",
-     "prev": 4.064,
-     "price": 4.022
+     "observed": "2026-11-02",
+     "prev": 4.022,
+     "price": 3.936
     },
     "P1A": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "New England",
-     "observed": "2026-10-26",
-     "prev": 4.249,
-     "price": 4.199
+     "observed": "2026-11-02",
+     "prev": 4.199,
+     "price": 4.145
     },
     "P1B": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "Central Atlantic",
-     "observed": "2026-10-26",
-     "prev": 4.312,
-     "price": 4.251
+     "observed": "2026-11-02",
+     "prev": 4.251,
+     "price": 4.232
     },
     "P1C": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "Lower Atlantic",
-     "observed": "2026-10-26",
-     "prev": 3.86,
-     "price": 3.832
+     "observed": "2026-11-02",
+     "prev": 3.832,
+     "price": 3.695
     },
     "P2": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "Midwest",
-     "observed": "2026-10-26",
-     "prev": 4.145,
-     "price": 4.269
+     "observed": "2026-11-02",
+     "prev": 4.269,
+     "price": 4.102
     },
     "P3": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "Gulf Coast",
-     "observed": "2026-10-26",
-     "prev": 3.784,
-     "price": 3.702
+     "observed": "2026-11-02",
+     "prev": 3.702,
+     "price": 3.636
     },
     "P4": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "Rocky Mountain",
-     "observed": "2026-10-26",
-     "prev": 4.468,
-     "price": 4.458
+     "observed": "2026-11-02",
+     "prev": 4.458,
+     "price": 4.213
     },
     "P5": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "West Coast",
-     "observed": "2026-10-26",
-     "prev": 5.557,
-     "price": 5.417
+     "observed": "2026-11-02",
+     "prev": 5.417,
+     "price": 5.296
     },
     "P5X": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "West Coast (excl. California)",
-     "observed": "2026-10-26",
-     "prev": 5.007,
-     "price": 4.868
+     "observed": "2026-11-02",
+     "prev": 4.868,
+     "price": 4.771
     },
     "US": {
-     "fetched": "2026-10-27T16:34:55Z",
+     "fetched": "2026-11-03T18:24:26Z",
      "name": "U.S. average",
-     "observed": "2026-10-26",
-     "prev": 4.284,
-     "price": 4.269
+     "observed": "2026-11-02",
+     "prev": 4.269,
+     "price": 4.153
     }
    },
    "sources": {
@@ -444,259 +444,259 @@
    },
    "states": {
     "AK": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.76
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.755
     },
     "AL": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.73
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.726
     },
     "AR": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.761
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.752
     },
     "AZ": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.416
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.407
     },
     "CA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.906
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.889
     },
     "CO": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.195
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.157
     },
     "CT": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.245
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.241
     },
     "DC": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.291
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.295
     },
     "DE": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.947
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.943
     },
     "FL": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.859
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.864
     },
     "GA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.575
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.569
     },
     "HI": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.657
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.671
     },
     "IA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.008
-    },
-    "ID": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.525
-    },
-    "IL": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.706
-    },
-    "IN": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.808
-    },
-    "KS": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.883
-    },
-    "KY": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.894
-    },
-    "LA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.704
-    },
-    "MA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.179
-    },
-    "MD": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
      "price": 3.989
     },
+    "ID": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.502
+    },
+    "IL": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.679
+    },
+    "IN": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.779
+    },
+    "KS": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.871
+    },
+    "KY": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.879
+    },
+    "LA": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.698
+    },
+    "MA": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.171
+    },
+    "MD": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.979
+    },
     "ME": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.253
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.249
     },
     "MI": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.522
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.47
     },
     "MN": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.074
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.056
     },
     "MO": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.833
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.817
     },
     "MS": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.769
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.764
     },
     "MT": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.304
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.28
     },
     "NC": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.381
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.383
     },
     "ND": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.023
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.005
     },
     "NE": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.164
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.154
     },
     "NH": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.163
-    },
-    "NJ": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.13
-    },
-    "NM": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.094
-    },
-    "NV": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.237
-    },
-    "NY": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.341
-    },
-    "OH": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.126
-    },
-    "OK": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.797
-    },
-    "OR": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.788
-    },
-    "PA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.431
-    },
-    "RI": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.12
-    },
-    "SC": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.654
-    },
-    "SD": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.095
-    },
-    "TN": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.712
-    },
-    "TX": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.645
-    },
-    "UT": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.535
-    },
-    "VA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 3.959
-    },
-    "VT": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.319
-    },
-    "WA": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 5.192
-    },
-    "WI": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.229
-    },
-    "WV": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
      "price": 4.159
     },
+    "NJ": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.123
+    },
+    "NM": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.054
+    },
+    "NV": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.22
+    },
+    "NY": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.335
+    },
+    "OH": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.079
+    },
+    "OK": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.785
+    },
+    "OR": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.775
+    },
+    "PA": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.426
+    },
+    "RI": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.119
+    },
+    "SC": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.655
+    },
+    "SD": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.09
+    },
+    "TN": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.705
+    },
+    "TX": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.627
+    },
+    "UT": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.541
+    },
+    "VA": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 3.951
+    },
+    "VT": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.312
+    },
+    "WA": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 5.177
+    },
+    "WI": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.193
+    },
+    "WV": {
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.154
+    },
     "WY": {
-     "fetched": "2026-11-02T20:45:03Z",
-     "observed": "2026-11-02",
-     "price": 4.304
+     "fetched": "2026-11-03T18:24:26Z",
+     "observed": "2026-11-03",
+     "price": 4.318
     }
    }
   }
