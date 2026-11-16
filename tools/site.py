@@ -532,7 +532,7 @@ def rate_board(equip=None):
 {rows}
       </tbody>
     </table></div>
-    <p class="board-foot">Illustrative lane examples&mdash;not available loads or current rate quotes. They show how {"these" if equip else ""} loads are priced per mile across different regions. Texas Solutions does not guarantee any load volume, rate, revenue or earnings.</p>
+    <p class="board-foot">Illustrative lane examples, not available loads or current rate quotes. They show how {"these" if equip else ""} loads are priced per mile across different regions. Texas Solutions does not guarantee any load volume, rate, revenue or earnings.</p>
   </div>"""
     names = " and ".join(equip) if equip else "common equipment"
     return f"""<div class="grid board-grid{' board-solo' if not board else ''}" id="board">
@@ -3255,6 +3255,10 @@ def llms_facts():
         f"- Phone: {C.PHONE} | WhatsApp: +1 838 910 3147 (https://wa.me/{C.WHATSAPP}) | Email: {C.EMAIL}",
         f"- Address: {C.STREET}, {C.CITY}, {C.REGION} {C.POSTAL}",
         "- Owner and CEO: Shehryar Joyia",
+        f"- How to start: sign the dispatch agreement online at {url('/sign-contract.html')} (e-signature, signed PDF downloads instantly). Required documents: MC authority letter, certificate of insurance (COI) and W-9. Optional: notice of assignment if you factor, CDL, voided check",
+        f"- MC lease (lease-on) for owner-operators without their own authority: 18-20% of gross with dispatch included ({url('/mc-lease.html')})",
+        f"- Starting a new MC authority: step-by-step guide at {url('/new-mc.html')}",
+        f"- Last updated: {TODAY}",
     ]
 
 
@@ -3334,6 +3338,8 @@ def build_site_files():
             "## Diesel prices", *diesel_short, "",
             "## Company",
             f"- [Home]({url('/')})", f"- [About]({url('/about.html')})", f"- [Contact]({url('/contact.html')})", f"- [FAQ]({url('/faq.html')})",
+            f"- [Sign the dispatch agreement online]({url('/sign-contract.html')})", f"- [New MC authority guide]({url('/new-mc.html')})",
+            f"- [Trucking business services and prices]({url('/trucking-business-services.html')})",
             f"- [Privacy]({url('/privacy.html')})", f"- [Terms]({url('/terms.html')})", "",
             "## Optional",
             f"- [Full text of this site for LLMs]({url('/llms-full.txt')}): guides, tool explanations, FAQs and diesel prices in one file",

@@ -19,6 +19,10 @@
 - Phone: (838) 910-3147 | WhatsApp: +1 838 910 3147 (https://wa.me/18389103147) | Email: dispatch@texassolutions.co
 - Address: 401 W Kentucky Ave, Midland, TX 79701
 - Owner and CEO: Shehryar Joyia
+- How to start: sign the dispatch agreement online at https://dispatch.texassolutions.co/sign-contract/ (e-signature, signed PDF downloads instantly). Required documents: MC authority letter, certificate of insurance (COI) and W-9. Optional: notice of assignment if you factor, CDL, voided check
+- MC lease (lease-on) for owner-operators without their own authority: 18-20% of gross with dispatch included (https://dispatch.texassolutions.co/services/mc-lease/)
+- Starting a new MC authority: step-by-step guide at https://dispatch.texassolutions.co/new-mc/
+- Last updated: 2026-11-16
 
 ## Frequently asked questions
 ### How much does a truck dispatcher cost?
@@ -49,10 +53,13 @@ No. Freight volume, rates, operating costs and market conditions vary. Texas Sol
 No long-term contract. A signed dispatch agreement is still required: it sets your percentage, what is included and the notice period for ending service.
 
 ### What do I need to get started?
-Your MC and DOT numbers, equipment type and preferred lanes. After the first call we collect your W-9, certificate of insurance and, if you factor, a notice of assignment.
+Your MC or USDOT number, equipment type and preferred lanes for the first call. To start, you sign the dispatch agreement online and upload your MC authority letter, certificate of insurance and W-9; a notice of assignment (if you factor), CDL and voided check are optional.
 
 ### How fast can I start dispatching?
 Most carriers start soon after the first call: we review your authority and lanes, sign the agreement, collect documents, and begin searching loads for your truck.
+
+### How do I sign the dispatch agreement?
+Online, on the Sign Contract page: fill in your company details, check the fee for your equipment, sign with your finger, mouse or typed name, and upload your documents. Your signed PDF downloads right away and a copy goes to our dispatch team.
 
 ### Can I talk to a dispatcher on WhatsApp?
 Yes. Tap the WhatsApp button on any page or message +1 (838) 910-3147 on WhatsApp.
@@ -136,7 +143,7 @@ Yes, if you run under your own MC authority. A non-CDL setup has a lower combine
 Load boards list hotshot freight by pickup area, and brokers who move expedited freight post it there first. A dispatcher searches those boards and calls brokers near your location, so you hear about nearby loads without watching the screen yourself.
 
 ### Can I get a hotshot dispatcher without a contract?
-Yes. There is no long-term contract, no setup fee and no forced dispatch, and your first load is dispatched free. You approve every load.
+There is no long-term contract. You sign a short dispatch agreement online that sets your percentage and the notice period to end service. No setup fee, no forced dispatch, your first load is dispatched free, and you approve every load.
 
 ### How much do flatbed loads pay per mile?
 As a rough guide, flatbed and step deck loads often pay about $5-7 a mile, depending on lane, tarping and season. Rates are not guaranteed.
