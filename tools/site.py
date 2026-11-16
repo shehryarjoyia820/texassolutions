@@ -35,6 +35,13 @@ TODAY = date.today().isoformat()
 OG_IMAGE = f"{C.BASE}/assets/og-image.png?v=2"  # bump ?v when the image changes so social apps refetch it
 LOGO = f"{C.BASE}/assets/logo/texas-solutions-logo.png"
 BUSINESS_ID = f"{C.BASE}/#business"
+FOUNDER_ID = f"{C.BASE}/#founder"
+
+
+def founder():
+    """Shehryar Joyia, CEO and Founder of Texas Solutions."""
+    return {"@type": "Person", "@id": FOUNDER_ID, "name": "Shehryar Joyia", "jobTitle": "CEO and Founder",
+            "worksFor": {"@id": BUSINESS_ID}, "url": url("/about.html")}
 INDEXNOW_KEY = "7c1f4e2a9b8d4c6e8f0a1b2c3d4e5f60"
 esc = html.escape
 S, M = C.PRICING["small"], C.PRICING["semi"]
@@ -134,7 +141,7 @@ def business():
                     "addressRegion": C.REGION, "postalCode": C.POSTAL, "addressCountry": C.COUNTRY},
         "geo": {"@type": "GeoCoordinates", "latitude": 31.9973, "longitude": -102.0779},
         "areaServed": {"@type": "Country", "name": "United States"},
-        "founder": {"@type": "Person", "name": "Shehryar Joyia", "jobTitle": "Owner and CEO"},
+        "founder": founder(),
         "contactPoint": [
             {"@type": "ContactPoint", "telephone": C.PHONE_E164, "contactType": "sales", "areaServed": "US", "availableLanguage": "English"},
             {"@type": "ContactPoint", "url": f"https://wa.me/{C.WHATSAPP}", "contactType": "customer support", "areaServed": "US", "availableLanguage": "English"},
@@ -456,7 +463,7 @@ def lead_ctas(home=False, dark=False, calc=False):
 def trust_box():
     """Verified business facts only. Reviews, photos and case studies are added when the owner supplies them with permission."""
     facts = [
-        ("Who we are", f"{C.NAME} LLC, a truck dispatch service. Owner and CEO: Shehryar Joyia."),
+        ("Who we are", f"{C.NAME} LLC, a truck dispatch service. CEO and Founder: Shehryar Joyia."),
         ("Office and coverage", C.OFFICE_VS_COVERAGE),
         ("How we work", "We work for the carrier, not brokers. Loads are booked under your own MC authority, and you approve every load."),
         ("Agreement", C.AGREEMENT_NOTE),
@@ -3254,7 +3261,7 @@ def llms_facts():
         "- Texas Solutions is a dispatch service. It is not a motor carrier or freight broker and does not guarantee loads, rates or earnings",
         f"- Phone: {C.PHONE} | WhatsApp: +1 838 910 3147 (https://wa.me/{C.WHATSAPP}) | Email: {C.EMAIL}",
         f"- Address: {C.STREET}, {C.CITY}, {C.REGION} {C.POSTAL}",
-        "- Owner and CEO: Shehryar Joyia",
+        "- CEO and Founder: Shehryar Joyia",
         f"- How to start: sign the dispatch agreement online at {url('/sign-contract.html')} (e-signature, signed PDF downloads instantly). Required documents: MC authority letter, certificate of insurance (COI) and W-9. Optional: notice of assignment if you factor, CDL, voided check",
         f"- MC lease (lease-on) for owner-operators without their own authority: 18-20% of gross with dispatch included ({url('/mc-lease.html')})",
         f"- Starting a new MC authority: step-by-step guide at {url('/new-mc.html')}",
