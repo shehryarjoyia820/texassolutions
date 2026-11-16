@@ -431,7 +431,6 @@ def page(path, title, description, keywords, schemas, body, current=None, og_typ
 # ------------------------------------------------------------------ blocks
 def answer(q, a, label="Quick answer"):
     return f"""<div class="answer rv" data-speakable>
-  <span class="label">{label}</span>
   <h2>{esc(q)}</h2>
   <p>{esc(a)}</p>
 </div>"""
@@ -527,7 +526,7 @@ def rate_board(equip=None):
         f'      <tr><td>{o} &rarr; {d}</td><td><span class="eq-badge">{e}</span></td><td class="hide-sm">{mi:,} mi</td><td class="rate">{r}/mi</td></tr>'
         for o, d, e, mi, r in lanes)
     guide = chr(10).join(
-        f'    <div class="rg{" hi" if eq in ("Flatbed", "Step Deck", "Reefer") else ""}"><b>{eq}</b><span class="v">{rate}/mi</span><small>{note}</small></div>'
+        f'    <div class="rg"><b>{eq}</b><span class="v">{rate}/mi</span><small>{note}</small></div>'
         for eq, rate, note in guide_rows)
     board = ""
     if len(lanes) >= 3:
@@ -620,7 +619,7 @@ def marquee():
 
 def features():
     return '<div class="grid g3">\n' + "\n".join(
-        f'  <div class="card rv"><div class="icon">{ICONS[FEATURE_ICONS[i]]}</div><h3>{esc(t)}</h3><p>{esc(d)}</p></div>'
+        f'  <div class="card rv"><h3>{esc(t)}</h3><p>{esc(d)}</p></div>'
         for i, (t, d) in enumerate(C.FEATURES)) + "\n</div>"
 
 
@@ -778,15 +777,8 @@ def build_home():
       <p class="lede">We find loads, negotiate rates and book freight for owner-operators and small fleets with their own MC authority. Dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load. Our office is in Midland, Texas, and we dispatch trucks across the USA.</p>
       {lead_ctas(home=True, calc=True)}
       <p class="hero-tools">Free tools, no signup: <a href="truck-fuel-cost-calculator.html">Fuel cost</a> <a href="cost-per-mile-calculator.html">Cost per mile</a> <a href="load-profitability-calculator.html">Load profit</a> <a href="tools.html">All tools &rarr;</a></p>
-      <div class="hero-stats">
-        <div><b>24/7</b><span>Dispatchers by call, text or WhatsApp</span></div>
-        <div><b>1st load</b><span>Dispatched free</span></div>
-        <div><b>$0</b><span>Setup fee, no flat rate</span></div>
-        <div><b data-count="50">50</b><span>States served</span></div>
-      </div>
     </div>
     <aside class="hero-card hero-form" id="claim" aria-label="Claim your free first load">
-      <span class="hf-tag">First load free</span>
       <h2>Claim your free first load</h2>
       <p class="hf-sub">No dispatch fee on your first load. No setup fee, no long-term contract, and you approve every load.</p>
       <form class="form" id="heroClaimForm" data-web3 data-kind="lead" data-subject="Free first load claim (home hero)" data-success="Claim received. A Texas Solutions dispatcher will call you shortly to set up your free first load." novalidate>
@@ -805,7 +797,6 @@ def build_home():
   </div>
 </section>"""
     body = f"""{hero}
-{marquee()}
 <section class="sec sec-ink"><div class="wrap">
   <div class="sec-head rv"><h2>One dispatcher for whatever you haul</h2><p>Semi trailers, hotshots, box trucks and the back office behind every load.</p></div>
   {equip_cards()}
@@ -840,7 +831,6 @@ def build_home():
 </div></section>
 <section class="sec sec-ink"><div class="wrap">
   <div class="sec-head rv"><h2>Start dispatching in four steps</h2></div>
-  <div class="steps-line" aria-hidden="true"><span></span></div>
   {steps()}
 </div></section>
 <section class="sec sec-soft" id="contact"><div class="wrap two">
@@ -853,12 +843,12 @@ def build_home():
 <section class="sec sec-dark tools-sec"><div class="wrap">
   <div class="sec-head rv"><h2>Know your numbers before you book</h2><p>Free calculators built for owner-operators, with daily diesel prices for all 50 states. No signup; calculations run in your browser.</p></div>
   <div class="grid g3">
-    <a class="tool-card rv" href="truck-fuel-cost-calculator.html"><div class="icon">{ICONS['truck']}</div><h3>Truck fuel cost calculator</h3><p>MPG by truck type and load weight, trip fuel cost and cost per mile, with today's diesel price for your state.</p><span class="more">Calculate fuel cost &rarr;</span></a>
-    <a class="tool-card rv" href="estimate.html"><div class="icon">{ICONS['calc']}</div><h3>Dispatch fee calculator</h3><p>See your weekly and monthly dispatch fee for your truck type and weekly gross.</p><span class="more">Estimate my fee &rarr;</span></a>
-    <a class="tool-card rv" href="cost-per-mile-calculator.html"><div class="icon">{ICONS['cash']}</div><h3>Cost per mile calculator</h3><p>Fixed and variable costs, your own labor shown separately, and cost per total and per loaded mile.</p><span class="more">Find my CPM &rarr;</span></a>
-    <a class="tool-card rv" href="load-profitability-calculator.html"><div class="icon">{ICONS['route']}</div><h3>Load profitability calculator</h3><p>Dispatch and factoring fees, deadhead and return miles, estimated profit and the rate you need.</p><span class="more">Check a load &rarr;</span></a>
-    <a class="tool-card rv" href="fuel-surcharge-calculator.html"><div class="icon">{ICONS['truck']}</div><h3>Fuel surcharge calculator</h3><p>Surcharge per mile and per trip by your contract's method: per-mile, percentage or step table.</p><span class="more">Work out my FSC &rarr;</span></a>
-    <a class="tool-card rv" href="detention-pay-calculator.html"><div class="icon">{ICONS['clock']}</div><h3>Detention pay calculator</h3><p>Eligible detention hours and estimated pay from arrival, release, free time and your agreed rate.</p><span class="more">Calculate detention &rarr;</span></a>
+    <a class="tool-card rv" href="truck-fuel-cost-calculator.html"><h3>Truck fuel cost calculator</h3><p>MPG by truck type and load weight, trip fuel cost and cost per mile, with today's diesel price for your state.</p><span class="more">Calculate fuel cost &rarr;</span></a>
+    <a class="tool-card rv" href="estimate.html"><h3>Dispatch fee calculator</h3><p>See your weekly and monthly dispatch fee for your truck type and weekly gross.</p><span class="more">Estimate my fee &rarr;</span></a>
+    <a class="tool-card rv" href="cost-per-mile-calculator.html"><h3>Cost per mile calculator</h3><p>Fixed and variable costs, your own labor shown separately, and cost per total and per loaded mile.</p><span class="more">Find my CPM &rarr;</span></a>
+    <a class="tool-card rv" href="load-profitability-calculator.html"><h3>Load profitability calculator</h3><p>Dispatch and factoring fees, deadhead and return miles, estimated profit and the rate you need.</p><span class="more">Check a load &rarr;</span></a>
+    <a class="tool-card rv" href="fuel-surcharge-calculator.html"><h3>Fuel surcharge calculator</h3><p>Surcharge per mile and per trip by your contract's method: per-mile, percentage or step table.</p><span class="more">Work out my FSC &rarr;</span></a>
+    <a class="tool-card rv" href="detention-pay-calculator.html"><h3>Detention pay calculator</h3><p>Eligible detention hours and estimated pay from arrival, release, free time and your agreed rate.</p><span class="more">Calculate detention &rarr;</span></a>
   </div>
   <p class="mt-l center"><a class="btn btn-line" href="tools.html">See all free tools</a></p>
 </div></section>
@@ -1154,7 +1144,7 @@ def build_new_mc():
          [("How to get loads with a new MC", "blog/how-to-get-loads-with-new-mc-number.html"), ("Dispatch for new authority", "dispatch-for-new-authority.html")]),
     ]
     step_html = "\n".join(
-        f'''    <li class="mc-step rv"><span class="mc-num">{i:02d}</span><div><h3>{esc(t)}</h3><p>{esc(d)}</p>
+        f'''    <li class="mc-step rv"><span class="mc-num">Step {i}</span><div><h3>{esc(t)}</h3><p>{esc(d)}</p>
       <p class="mc-links">{" ".join(f'<a href="{h}">{esc(n)} &rarr;</a>' for n, h in links)}</p></div></li>'''
         for i, (t, d, links) in enumerate(steps, 1))
     costs = [("FMCSA registration", "FMCSA", "Paid when you apply. FMCSA lists the current fee on its website."),
@@ -1489,7 +1479,7 @@ def tool_minis(keys, truck_q=""):
         name, href, icon, desc = TOOL_MINI[k]
         if k == "fuel":
             href += f"?{truck_q}#fuelCalc" if truck_q.startswith("truck=") else "#fuelCalc"
-        out.append(f'<a class="card tool-mini" href="{href}"><div class="icon">{ICONS[icon]}</div><div><b>{esc(name)}</b><p>{esc(desc)}</p></div></a>')
+        out.append(f'<a class="card tool-mini" href="{href}"><div><b>{esc(name)}</b><p>{esc(desc)}</p></div></a>')
     return "\n    ".join(out)
 
 
@@ -2113,7 +2103,7 @@ def related_tools(current):
         else:
             t = next(x for x in TOOLS if x["slug"] == slug)
             name, desc, icon, file = t["hub_title"], t["hub_desc"], TOOL_ICONS[t["prefix"]], t["slug"] + ".html"
-        cards.append(f"""  <a class="card tool-mini rv" href="{file}"><div class="icon">{ICONS[icon]}</div><div><b>{esc(name)}</b><p>{esc(desc)}</p></div></a>""")
+        cards.append(f"""  <a class="card tool-mini rv" href="{file}"><div><b>{esc(name)}</b><p>{esc(desc)}</p></div></a>""")
     return "\n".join(cards)
 
 
@@ -2194,10 +2184,10 @@ def build_tools_hub():
     cards = []
     n = 1
     for file, name, desc, icon in existing:
-        cards.append(f"""  <a class="tool-num-card rv" href="{file}"><span class="tool-num">TOOL.{n:02d}</span><div class="icon">{ICONS[icon]}</div><h3>{esc(name)}</h3><p>{esc(desc)}</p><span class="more">Open tool &rarr;</span></a>""")
+        cards.append(f"""  <a class="tool-num-card rv" href="{file}"><h3>{esc(name)}</h3><p>{esc(desc)}</p><span class="more">Open tool &rarr;</span></a>""")
         n += 1
     for t in TOOLS:
-        cards.append(f"""  <a class="tool-num-card rv" href="{t['slug']}.html"><span class="tool-num">TOOL.{n:02d}</span><div class="icon">{ICONS[TOOL_ICONS[t['prefix']]]}</div><h3>{esc(t['hub_title'])}</h3><p>{esc(t['hub_desc'])}</p><span class="more">Open tool &rarr;</span></a>""")
+        cards.append(f"""  <a class="tool-num-card rv" href="{t['slug']}.html"><h3>{esc(t['hub_title'])}</h3><p>{esc(t['hub_desc'])}</p><span class="more">Open tool &rarr;</span></a>""")
         n += 1
     by_slug = {re.search(r'href="([a-z0-9-]+)\.html"', c).group(1): c for c in cards}
     assert sorted(by_slug) == sorted(x for _, _, ss in groups for x in ss), "every tool must sit in one group"
@@ -2207,8 +2197,6 @@ def build_tools_hub():
 {chr(10).join(by_slug[x] for x in ss)}
   </div>
 </div></section>""" for gi, (h, sub, ss) in enumerate(groups))
-    counter = iter(range(1, len(cards) + 1))  # number the tools in the order they now appear
-    grouped = re.sub(r"TOOL\.\d\d", lambda _: f"TOOL.{next(counter):02d}", grouped)
     title = "Free Trucking Calculators: Dispatch, Fuel, CPM, IFTA, HOS & More | Texas Solutions"
     n_tools = len(existing) + len(TOOLS)
     desc = "Free calculators for owner-operators and small fleets: dispatch fee, fuel cost, fuel surcharge, detention pay, cost per mile, load profitability, break-even, deadhead miles, driver pay, IFTA mileage, per diem, truck loan, maintenance budget, HOS and freight class."

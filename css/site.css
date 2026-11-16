@@ -1295,3 +1295,16 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 
 /* plain tag, no status dot */
 .hero-form .hf-tag::before { display: none; }
+
+/* ---------------------------------------------------------------- plain look: no glows, spotlights or label styling */
+.hero::before { background: linear-gradient(180deg, rgba(10,10,10,.84), rgba(10,10,10,.92)) !important; }
+.hero::after, .phero::before, .sec-ink::before { display: none !important; }
+a.card::after, .tool-card::after, .price::after { display: none !important; }
+.tools-sec { background: var(--ink) !important; }
+.board-ad .ad-top { background: #111 !important; }
+.step { padding-top: 0 !important; }
+.step::before { content: 'Step ' counter(s) !important; position: static !important; display: block; font-size: 14px !important; font-weight: 700 !important; margin-bottom: 6px; }
+.board-head span, .footer h4, .toc b, .example .label, .st-group h3, .mnav-label { text-transform: none !important; letter-spacing: 0 !important; }
+.st-head h2 { text-transform: none !important; font-stretch: 100% !important; letter-spacing: 0 !important; line-height: 1.1 !important; font-size: clamp(30px, 3.6vw, 44px) !important; }
+.band::after { display: none !important; }
+.mc-num { font-size: 14px !important; font-weight: 700 !important; line-height: 1.4 !important; white-space: nowrap; min-width: 52px; }
