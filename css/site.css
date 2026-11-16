@@ -1056,7 +1056,7 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .hero-form { padding: 26px; scroll-margin-top: 110px; }
 .hero-form h2 { font-size: 24px; letter-spacing: -.02em; margin-top: 10px; }
 .hero-form .hf-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--green-brand-50); color: var(--green-brand-700); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; }
-.hero-form .hf-tag::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green-brand); animation: pulse 2s infinite; }
+.hero-form .hf-tag::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green-brand); }
 .hero-form .hf-sub { font-size: 14px; color: var(--muted); margin-top: 6px; }
 .hero-form .form { padding: 0; margin-top: 16px; background: transparent; border: 0; box-shadow: none; }
 .hero-form .hf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -1292,3 +1292,6 @@ a.card:hover .icon, .tool-card:hover .icon { transform: translateY(-3px) rotate(
 .mc-field .mc-none { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--muted, #6b7280); cursor: pointer; white-space: nowrap; }
 .mc-field .mc-none input { width: 16px; height: 16px; margin: 0; accent-color: var(--red); }
 .mc-field input[type=text]:disabled { opacity: .55; cursor: not-allowed; }
+
+/* plain tag, no status dot */
+.hero-form .hf-tag::before { display: none; }

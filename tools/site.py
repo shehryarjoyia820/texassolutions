@@ -568,7 +568,7 @@ def board_ad():
     return f"""<aside class="board-ad" aria-label="Sponsored: Diesel Dynamix">
       <div class="ad-top">
         <span class="ad-tag">Sponsored</span>
-        <div class="ad-brand"><img src="https://dieseldynamix.com/icon.svg" alt="" width="40" height="40" loading="lazy"><span><b>Diesel Dynamix</b><small>Mobile CARB testing</small></span></div>
+        <div class="ad-brand"><img src="assets/ads/diesel-dynamix.png" alt="" width="40" height="40" loading="lazy"><span><b>Diesel Dynamix</b><small>Mobile CARB testing</small></span></div>
         <h3>Clean Truck Check? <em>They come to your yard.</em></h3>
         <p>California emissions testing for heavy-duty trucks, done on-site so your driver keeps working.</p>
         <span class="ad-badge">{AD_IC["check"]}California Clean Truck Check</span>
@@ -595,12 +595,18 @@ def no_pct(text):
 
 
 def equip_cards():
-    icons = "truck"
     def summary(p):
         t = no_pct(p["description"])
-        return t if len(t) <= 150 else t[:150].rsplit(" ", 1)[0] + "..."
+        if len(t) <= 160:
+            return t
+        out = ""
+        for sent in re.split(r"(?<=\.)\s+", t):
+            if out and len(out) + len(sent) > 160:
+                break
+            out = (out + " " + sent).strip()
+        return out
     return '<div class="grid g3">\n' + "\n".join(
-        f"""  <a class="card rv" href="{p['file']}"><div class="icon">{ICONS[icons]}</div><h3>{esc(p['nav'])}</h3><p>{esc(summary(p))}</p><span class="more">Learn more &rarr;</span></a>"""
+        f"""  <a class="card rv" href="{p['file']}"><h3>{esc(p['nav'])}</h3><p>{esc(summary(p))}</p><span class="more">Learn more &rarr;</span></a>"""
         for p in C.LANDING if not p.get("guide")) + "\n</div>"
 
 
@@ -733,7 +739,7 @@ def blog_teaser():
         return ""
     cards = "\n".join(post_card(po) for po in POSTS[:3])
     return f"""<section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Guides</span><h2>Guides for owner-operators</h2></div>
+  <div class="sec-head rv"><h2>Guides for owner-operators</h2></div>
   <div class="grid g3">
 {cards}
   </div>
@@ -749,8 +755,8 @@ def states_section():
     codes = sorted((c for _, cs in REGIONS_US for c in cs if c not in ("AK", "HI")), key=lambda c: C.STATE_REGION[c][0])
     links = "".join(f'<a href="{state_dispatch_path(c).lstrip("/")}">{esc(C.STATE_REGION[c][0])}</a>' for c in codes)
     return f"""<section class="sec st-sec" id="states"><div class="wrap">
-  <div class="st-head rv"><span class="eyebrow">We offer dispatch</span><h2>Local lanes, state rules, one dispatcher</h2>
-  <p>We book loads in every state. These guides cover the main freight markets, corridors and state rules where you run.</p></div>
+  <div class="st-head rv"><h2>We dispatch in every state</h2>
+  <p>Pick your home state to see the main freight markets, busy corridors and state rules our dispatchers plan around.</p></div>
   <div class="st-links rv">{links}<a class="st-all" href="truck-dispatch-by-state.html">All states &rarr;</a></div>
 </div></section>"""
 
@@ -768,9 +774,8 @@ def build_home():
   <video muted loop playsinline preload="none" aria-hidden="true" data-src="assets/video/hero-background.mp4"></video>
   <div class="wrap">
     <div>
-      <span class="eyebrow"><span class="dot"></span>{esc(C.COVERAGE)}</span>
-      <h1 class="split">USA Truck Dispatch Service that keeps your <em class="hl">truck loaded.</em></h1>
-      <p class="lede">We find, negotiate and book freight for owner-operators and small fleets running under their own MC authority: dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load. Office in Midland, Texas; service across the USA.</p>
+      <h1 class="split">USA Truck Dispatch Service that keeps your <em>truck loaded.</em></h1>
+      <p class="lede">We find loads, negotiate rates and book freight for owner-operators and small fleets with their own MC authority. Dry van, reefer, flatbed, step deck, power only, hotshot and box truck. You approve every load. Our office is in Midland, Texas, and we dispatch trucks across the USA.</p>
       {lead_ctas(home=True, calc=True)}
       <p class="hero-tools">Free tools, no signup: <a href="truck-fuel-cost-calculator.html">Fuel cost</a> <a href="cost-per-mile-calculator.html">Cost per mile</a> <a href="load-profitability-calculator.html">Load profit</a> <a href="tools.html">All tools &rarr;</a></p>
       <div class="hero-stats">
@@ -802,25 +807,24 @@ def build_home():
     body = f"""{hero}
 {marquee()}
 <section class="sec sec-ink"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Dispatch services</span><h2>One dispatcher for whatever you haul</h2><p>Semi trailers, hotshots, box trucks and the back office behind every load.</p></div>
+  <div class="sec-head rv"><h2>One dispatcher for whatever you haul</h2><p>Semi trailers, hotshots, box trucks and the back office behind every load.</p></div>
   {equip_cards()}
   <p class="mt-l center"><a class="btn btn-line" href="trucking-business-services.html">All trucking services &rarr;</a></p>
 </div></section>
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>
 {states_section()}
 <section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Illustrative lanes across the country</h2><p>Example lanes from different regions and the planning ranges our dispatchers use. These are not available loads or current rate quotes.</p></div>
+  <div class="sec-head rv"><h2>Illustrative lanes across the country</h2><p>Example lanes from different regions and the planning ranges our dispatchers use. These are not available loads or current rate quotes.</p></div>
   {rate_board()}
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Why carriers choose us</span><h2>A dispatch team that works for the carrier</h2><p>Load boards, broker calls, rate negotiation and paperwork, handled by real dispatchers while you drive.</p></div>
+  <div class="sec-head rv"><h2>A dispatch team that works for the carrier</h2><p>Load boards, broker calls, rate negotiation and paperwork, handled by real dispatchers while you drive.</p></div>
   {features()}
 </div></section>
 <section class="sec sec-soft"><div class="wrap two">
   <div class="prose rv">
-    <span class="eyebrow">Truck dispatch USA</span>
-    <h2 style="margin-top:8px">Truck dispatch for every kind of carrier</h2>
-    <p>{esc(C.COVERAGE)} Texas Solutions is a truck dispatch company serving carriers across the USA: an independent dispatch team that works for you, not for brokers. Our truck dispatch covers semis, hotshots and box trucks, for one owner-operator or a whole fleet. The best truck dispatch company for you is the one that is clear about its fee, so ours is on every service page. Hire a truck dispatcher for one truck or a whole fleet, with dispatchers available 24/7 across US time zones.</p>
+    <h2>Truck dispatch for every kind of carrier</h2>
+    <p>Texas Solutions is an independent truck dispatch company. We work for the carrier, not for brokers. We dispatch semis, hotshots and box trucks, whether you run one truck or a small fleet, and our fee for each truck type is printed on its service page. Dispatchers are on call 24/7 across US time zones.</p>
     <ul>
       <li><a href="owner-operator-dispatch.html"><b>Dispatch services for owner-operators</b></a> and small trucking companies: one truck or a small fleet.</li>
       <li><a href="dispatch-for-new-authority.html"><b>Dispatch for new authority</b></a>: brand-new MC numbers from day one.</li>
@@ -830,24 +834,24 @@ def build_home():
       <li><a href="semi-truck-dispatch.html"><b>Semi truck dispatch services</b></a> and <a href="small-fleet-dispatch.html"><b>dispatch for small fleets</b></a> and small trucking companies.</li>
       <li><a href="truck-dispatch-by-state.html"><b>Truck dispatch services in every state</b></a>: <a href="texas-truck-dispatch.html">Texas</a>, <a href="truck-dispatch/california.html">California</a>, <a href="truck-dispatch/florida.html">Florida</a>, <a href="truck-dispatch/georgia.html">Georgia</a>, <a href="truck-dispatch/illinois.html">Illinois</a>, <a href="truck-dispatch/ohio.html">Ohio</a>, <a href="truck-dispatch/new-jersey.html">New Jersey</a>, <a href="truck-dispatch/pennsylvania.html">Pennsylvania</a>, <a href="truck-dispatch/tennessee.html">Tennessee</a>, <a href="truck-dispatch/north-carolina.html">North Carolina</a> and every other state.</li>
     </ul>
-    <p>Affordable truck dispatch services with no catches: a percentage of weekly gross, no long-term contract, no upfront fee, and your first load free. Read <a href="blog/how-to-choose-a-truck-dispatcher.html">how to choose a truck dispatcher</a> or <a href="blog/is-a-truck-dispatcher-worth-it.html">whether a dispatcher is worth it</a>.</p>
+    <p>You pay a percentage of weekly gross. There is no long-term contract and no upfront fee, and your first load is free. Before you choose, read <a href="blog/how-to-choose-a-truck-dispatcher.html">how to choose a truck dispatcher</a> or <a href="blog/is-a-truck-dispatcher-worth-it.html">whether a dispatcher is worth it</a>.</p>
   </div>
-  <div class="aside">{answer("Can I hire a truck dispatcher today?", f"Yes. Call, text or WhatsApp {C.PHONE} any time, 24/7. Tell us your truck, authority and lanes; we send a short agreement and start searching loads. Your first load is dispatched free, and new MC numbers are welcome.", "Truck dispatcher for hire")}</div>
+  <div class="aside">{answer("Can I hire a truck dispatcher today?", f"Yes. Call, text or WhatsApp {C.PHONE} any time, 24/7. Tell us your truck, authority and lanes. We send a short agreement and start searching loads. Your first load is dispatched free, and new MC numbers are welcome.", "Truck dispatcher for hire")}</div>
 </div></section>
 <section class="sec sec-ink"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">How it works</span><h2>Start dispatching in four steps</h2></div>
+  <div class="sec-head rv"><h2>Start dispatching in four steps</h2></div>
   <div class="steps-line" aria-hidden="true"><span></span></div>
   {steps()}
 </div></section>
 <section class="sec sec-soft" id="contact"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Contact us</span><h2>Talk to a dispatcher</h2><p>Three details are enough: your name, a phone number or email, and your equipment. Everything else is optional. A dispatcher replies by the method you choose.</p></div>
+    <div class="sec-head rv"><h2>Talk to a dispatcher</h2><p>We need your name, a phone number or email, your equipment and your MC number. Everything else is optional, and a dispatcher replies the way you prefer.</p></div>
     {lead_form("homeForm", "New dispatch inquiry (home page)", "Send My Details")}
   </div>
   <div class="aside">{trust_box()}{contact_side()}</div>
 </div></section>
 <section class="sec sec-dark tools-sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Free trucking tools</span><h2>Know your numbers before you book</h2><p>Free calculators built for owner-operators, with daily diesel prices for all 50 states. No signup; calculations run in your browser.</p></div>
+  <div class="sec-head rv"><h2>Know your numbers before you book</h2><p>Free calculators built for owner-operators, with daily diesel prices for all 50 states. No signup; calculations run in your browser.</p></div>
   <div class="grid g3">
     <a class="tool-card rv" href="truck-fuel-cost-calculator.html"><div class="icon">{ICONS['truck']}</div><h3>Truck fuel cost calculator</h3><p>MPG by truck type and load weight, trip fuel cost and cost per mile, with today's diesel price for your state.</p><span class="more">Calculate fuel cost &rarr;</span></a>
     <a class="tool-card rv" href="estimate.html"><div class="icon">{ICONS['calc']}</div><h3>Dispatch fee calculator</h3><p>See your weekly and monthly dispatch fee for your truck type and weekly gross.</p><span class="more">Estimate my fee &rarr;</span></a>
@@ -859,7 +863,7 @@ def build_home():
   <p class="mt-l center"><a class="btn btn-line" href="tools.html">See all free tools</a></p>
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Truck dispatch FAQ</span><h2>Questions owner-operators ask</h2></div>
+  <div class="sec-head rv"><h2>Questions owner-operators ask</h2></div>
   {faq_html(HOME_FAQS[:4])}
   <div class="faq faq-more" id="moreFaqs" hidden>
 {chr(10).join(f'    <details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in HOME_FAQS[4:])}
@@ -938,12 +942,12 @@ def build_estimate():
   {calc}
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head center rv"><span class="eyebrow">Pricing at a glance</span><h2>OTR dispatch rates</h2></div>
+  <div class="sec-head center rv"><h2>OTR dispatch rates</h2></div>
   {pricing_cards(cta=False)}
 </div></section>
 <section class="sec" id="quote"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Talk to a dispatcher</span><h2>Send your details to a dispatcher</h2><p>Your inquiry is sent straight to our dispatch team; a dispatcher replies by the method you choose. Name, a phone number or email, and your equipment are enough. WhatsApp stays available if you prefer to chat.</p></div>
+    <div class="sec-head rv"><h2>Send your details to a dispatcher</h2><p>Your inquiry is sent straight to our dispatch team; a dispatcher replies by the method you choose. Name, a phone number or email, and your equipment are enough. WhatsApp stays available if you prefer to chat.</p></div>
     {quote}
   </div>
   <div class="aside">
@@ -952,11 +956,11 @@ def build_estimate():
   </div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">FAQ</span><h2>Dispatch fee questions</h2></div>
+  <div class="sec-head rv"><h2>Dispatch fee questions</h2></div>
   {faq_html([C.FAQS[0], C.FAQS[2], C.FAQS[3]])}
 </div></section>
 <section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Rough rates per mile</h2></div>
+  <div class="sec-head rv"><h2>Rough rates per mile</h2></div>
   {rate_board()}
 </div></section>"""
     items = [qa] + [C.FAQS[0], C.FAQS[2], C.FAQS[3]]
@@ -986,11 +990,11 @@ def build_rates():
     body = f"""{phero("Dispatch Rates", "Truck Dispatch Rates &amp; Rate-per-Mile Guide", "Clear percentage pricing for OTR carriers, plus a rough guide to what loads are paying by equipment type.")}
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head center rv"><span class="eyebrow">Dispatch fee</span><h2>Percentage of weekly gross. No flat rate.</h2></div>
+  <div class="sec-head center rv"><h2>Percentage of weekly gross. No flat rate.</h2></div>
   {pricing_cards()}
 </div></section>
 <section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Rough freight rates per mile</h2><p>Rates move with lane, season, fuel and market. These are rough estimates, not offers of freight.</p></div>
+  <div class="sec-head rv"><h2>Rough freight rates per mile</h2><p>Rates move with lane, season, fuel and market. These are rough estimates, not offers of freight.</p></div>
   {rate_board()}
 </div></section>
 <section class="sec"><div class="wrap two">
@@ -1021,7 +1025,7 @@ def build_rates():
   <div class="aside">{contact_side()}</div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">FAQ</span><h2>Dispatch rate questions</h2></div>
+  <div class="sec-head rv"><h2>Dispatch rate questions</h2></div>
   {faq_html([C.FAQS[0], C.FAQS[3], C.FAQS[2], C.FAQS[7]] + PRICING_FAQS)}
 </div></section>
 {band()}"""
@@ -1038,7 +1042,7 @@ def build_contact():
     body = f"""{phero("Contact", "Talk to a Truck Dispatcher", "Tell us about your truck, authority and lanes. Send the short form below, call, text, WhatsApp or request a callback.", ctas=False)}
 <section class="sec" style="padding-top:56px"><div class="wrap two">
   <div>
-    <div class="sec-head rv" id="inquiry"><span class="eyebrow">Carrier inquiry</span><h2>Tell us about your truck</h2><p>Name, a phone number or email, and your equipment are all we need. Everything else is optional, and we collect documents after the first conversation, not before.</p></div>
+    <div class="sec-head rv" id="inquiry"><h2>Tell us about your truck</h2><p>Name, a phone number or email, and your equipment are all we need. Everything else is optional, and we collect documents after the first conversation, not before.</p></div>
     {lead_form("contactForm", "New dispatch inquiry", "Send My Details")}
   </div>
   <div class="aside">{trust_box()}{contact_side()}
@@ -1047,7 +1051,7 @@ def build_contact():
 </div></section>
 <section class="sec sec-soft" id="callback"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Request a callback</span><h2>Rather we call you?</h2><p>Leave your name and number and the best time to reach you. A dispatcher calls you back.</p></div>
+    <div class="sec-head rv"><h2>Rather we call you?</h2><p>Leave your name and number and the best time to reach you. A dispatcher calls you back.</p></div>
     {callback_form()}
   </div>
   <div class="aside">{answer("What happens after I send my details?", "A dispatcher contacts you by the method you chose to talk through your truck, authority and lanes. If you decide to start, we then collect your MC authority, W-9, insurance certificate and, if you factor, a notice of assignment.", "Next steps")}</div>
@@ -1069,7 +1073,7 @@ def build_dispatch_hub():
             p = by_file[f]
             t = no_pct(p["description"])
             t = t if len(t) <= 150 else t[:150].rsplit(" ", 1)[0] + "..."
-            out.append(f'    <a class="card rv" href="{f}"><div class="icon">{ICONS["truck"]}</div><h3>{esc(p["nav"])}</h3><p>{esc(t)}</p><span class="more">Learn more &rarr;</span></a>')
+            out.append(f'    <a class="card rv" href="{f}"><h3>{esc(p["nav"])}</h3><p>{esc(t)}</p><span class="more">Learn more &rarr;</span></a>')
         return "\n".join(out)
 
     covers = ["Load search and rate negotiation", "Lane and deadhead planning", "Broker credit and authority checks before you book",
@@ -1090,19 +1094,19 @@ def build_dispatch_hub():
           "their own authority can use the MC lease program.")
     body = f"""{phero("Dispatch", "Truck dispatch", "Dispatch for every truck. Pick your equipment to see what we handle, the loads we look for and what brokers will ask you for.")}
 <section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Semi trucks</span><h2>Tractor-trailer dispatch</h2><p>One dispatcher for your tractor, whatever trailer is behind it.</p></div>
+  <div class="sec-head rv"><h2>Tractor-trailer dispatch</h2><p>One dispatcher for your tractor, whatever trailer is behind it.</p></div>
   <div class="grid g3">
 {cards(["semi-truck-dispatch.html", "dry-van-dispatch.html", "reefer-dispatch.html", "flatbed-dispatch.html", "power-only-dispatch.html"])}
   </div>
 </div></section>
 <section class="sec sec-ink"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Smaller trucks</span><h2>Box truck and hotshot dispatch</h2><p>Smaller loads, more broker calls, more paperwork. We handle all three.</p></div>
+  <div class="sec-head rv"><h2>Box truck and hotshot dispatch</h2><p>Smaller loads, more broker calls, more paperwork. We handle all three.</p></div>
   <div class="grid g3">
 {cards(["box-truck-dispatch.html", "hotshot-dispatch.html"])}
   </div>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Who we work with</span><h2>One truck or a whole fleet</h2></div>
+  <div class="sec-head rv"><h2>One truck or a whole fleet</h2></div>
   <div class="grid g3">
 {cards(["owner-operator-dispatch.html", "small-fleet-dispatch.html", "dispatch-for-new-authority.html", "mc-lease.html", "trucking-back-office-services.html", "trucking-authority-setup.html"])}
   </div>
@@ -1110,7 +1114,7 @@ def build_dispatch_hub():
 {states_section()}
 <section class="sec"><div class="wrap two">
   <div class="rv">
-    <div class="sec-head"><span class="eyebrow">Percentage vs flat fee</span><h2>Which pricing fits your truck?</h2><p>Both models are fair; they suit different trucks. We only charge a percentage, so a week the truck sits costs you nothing.</p></div>
+    <div class="sec-head"><h2>Which pricing fits your truck?</h2><p>Both models are fair; they suit different trucks. We only charge a percentage, so a week the truck sits costs you nothing.</p></div>
     <div class="tbl"><table>
       <thead><tr><th></th><th>Percentage of gross</th><th>Flat weekly fee</th></tr></thead>
       <tbody>
@@ -1122,7 +1126,7 @@ def build_dispatch_hub():
   <div class="aside">{answer(*qa)}</div>
 </div></section>
 <section class="sec sec-ink"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Included</span><h2>What dispatch covers</h2></div>
+  <div class="sec-head rv"><h2>What dispatch covers</h2></div>
   <ul class="cover-list rv">
 {chr(10).join(f"    <li>{esc(x)}</li>" for x in covers)}
   </ul>
@@ -1167,7 +1171,7 @@ def build_new_mc():
             ("Keep the packet ready", "One clean PDF with authority, W-9, COI and notice of assignment gets you set up in minutes."),
             ("Do not chase every cheap load", "Know your cost per mile and walk away from loads that do not cover it."),
             ("Deliver perfectly", "On-time pickups, quick check calls and clean paperwork are how brokers decide to rebook you.")]
-    tip_html = "\n".join(f'    <div class="card rv"><div class="icon">{ICONS["check"]}</div><h3>{esc(t)}</h3><p>{esc(d)}</p></div>' for t, d in tips)
+    tip_html = "\n".join(f'    <div class="card rv"><h3>{esc(t)}</h3><p>{esc(d)}</p></div>' for t, d in tips)
     by_slug = {po["slug"]: po for po in POSTS}
     guide_slugs = ["how-to-get-an-mc-number", "how-to-get-loads-with-new-mc-number", "how-to-start-a-trucking-company",
                    "how-to-become-an-owner-operator", "how-to-start-a-box-truck-business", "how-to-start-a-hotshot-business"]
@@ -1185,14 +1189,14 @@ def build_new_mc():
     body = f"""{phero("New MC", "New MC? Start here", "The full guide from your USDOT number to your first load: every step, what it costs, the checklist, and the guides and tools that help.")}
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Step by step</span><h2>From USDOT number to first load</h2></div>
+  <div class="sec-head rv"><h2>From USDOT number to first load</h2></div>
   <ol class="mc-steps">
 {step_html}
   </ol>
 </div></section>
 <section class="sec sec-soft"><div class="wrap two">
   <div class="rv">
-    <div class="sec-head"><span class="eyebrow">What it costs</span><h2>Who you pay, and for what</h2><p>Government fees, insurance and taxes are paid directly by you. Our help is optional.</p></div>
+    <div class="sec-head"><h2>Who you pay, and for what</h2><p>Government fees, insurance and taxes are paid directly by you. Our help is optional.</p></div>
     <div class="tbl"><table>
       <thead><tr><th>Item</th><th>Paid to</th><th>Notes</th></tr></thead>
       <tbody>
@@ -1206,24 +1210,24 @@ def build_new_mc():
   </div>
 </div></section>
 <section class="sec sec-ink"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">No authority yet?</span><h2>Haul now with an MC lease</h2><p>Lease on to an established partner carrier's authority, with dispatch included, while your own MC is processed.</p></div>
+  <div class="sec-head rv"><h2>Haul now with an MC lease</h2><p>Lease on to an established partner carrier's authority, with dispatch included, while your own MC is processed.</p></div>
   <p class="rv"><a class="btn btn-red" href="mc-lease.html">See MC lease</a> <a class="btn btn-line" href="dispatch-for-new-authority.html">Dispatch for new authority</a></p>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">The first 90 days</span><h2>How new MCs keep the truck loaded</h2></div>
+  <div class="sec-head rv"><h2>How new MCs keep the truck loaded</h2></div>
   <div class="grid g4">
 {tip_html}
   </div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Guides</span><h2>Read next</h2></div>
+  <div class="sec-head rv"><h2>Read next</h2></div>
   <div class="grid g3">
 {guides}
   </div>
   <div class="chip-row mt-l rv" style="justify-content:flex-start">{"".join(f'<a class="chip" href="{h}">{esc(n)}</a>' for n, h in tool_links)}</div>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">FAQ</span><h2>New MC questions</h2></div>
+  <div class="sec-head rv"><h2>New MC questions</h2></div>
   {faq_html(faqs)}
 </div></section>
 {band("Ready for your first load?", "We work with new MC numbers from day one, and your first load is dispatched free.")}"""
@@ -1342,13 +1346,13 @@ def build_services():
         def price(pr, note):
             return f'<div class="svc-price"><b>{esc(pr)}</b>{f"<span>{esc(note)}</span>" if note else ""}</div>'
         cards = "\n".join(
-            (f'    <a class="card svc-card rv" href="{href}"><div class="icon">{ICONS["check"]}</div><h3>{esc(n)}</h3>{price(pr, note)}<p>{esc(d)}</p><span class="more">Learn more &rarr;</span></a>'
+            (f'    <a class="card svc-card rv" href="{href}"><h3>{esc(n)}</h3>{price(pr, note)}<p>{esc(d)}</p><span class="more">Learn more &rarr;</span></a>'
              if href else
-             f'    <a class="card svc-card rv" href="{INQUIRY}" data-cta="service_quote"><div class="icon">{ICONS["check"]}</div><h3>{esc(n)}</h3>{price(pr, note)}<p>{esc(d)}</p><span class="more">Get started &rarr;</span></a>')
+             f'    <a class="card svc-card rv" href="{INQUIRY}" data-cta="service_quote"><h3>{esc(n)}</h3>{price(pr, note)}<p>{esc(d)}</p><span class="more">Get started &rarr;</span></a>')
             for n, d, href, pr, note in items)
         groups += f"""
 <section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">{esc(head)}</span><h2>{esc(head)}</h2></div>
+  <div class="sec-head rv"><h2>{esc(head)}</h2></div>
   <div class="grid g3">
 {cards}
   </div>
@@ -1361,7 +1365,7 @@ def build_services():
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa)}</div></section>{groups}
 <section class="sec sec-soft"><div class="wrap two">
   <div>
-    <div class="sec-head rv"><span class="eyebrow">Get a quote</span><h2>Tell us what you need</h2><p>Pick the services you want in the message box. Prices are our service fees; government filing fees, insurance premiums and taxes are paid directly by you.</p></div>
+    <div class="sec-head rv"><h2>Tell us what you need</h2><p>Pick the services you want in the message box. Prices are our service fees; government filing fees, insurance premiums and taxes are paid directly by you.</p></div>
     {lead_form("servicesForm", "Trucking services inquiry", "Send My Request")}
   </div>
   <div class="aside">{contact_side()}</div>
@@ -1381,7 +1385,7 @@ def build_about():
              ("Plain pricing", f"{pl(M)} of weekly gross for OTR semis, 7% for hotshots, 8% for box trucks. No setup charge, no flat rate, no monthly subscription."),
              ("No promises on rates", "Markets move. We commit to the search, the comparison and the negotiation, never to a number."),
              ("Your data stays here", "Applications are for our own dispatch service. We do not sell or transfer your inquiry to lead buyers.")]
-    cards = "\n".join(f'  <div class="card rv"><div class="icon">{ICONS["check"]}</div><h3>{esc(t)}</h3><p>{esc(d)}</p></div>' for t, d in holds)
+    cards = "\n".join(f'  <div class="card rv"><h3>{esc(t)}</h3><p>{esc(d)}</p></div>' for t, d in holds)
     chips = "".join(f'<a class="chip" href="{p["file"]}">{esc(p["nav"])}</a>' for p in C.LANDING if not p.get("guide"))
     body = f"""{phero("About", "A dispatch team, not a lead broker.", "Texas Solutions provides dispatch services directly to the carriers who sign our agreement. Your application is never sold to outside lead buyers, and the people searching your lanes are the people you speak to on the phone.")}
 <section class="sec"><div class="wrap two">
@@ -1395,7 +1399,7 @@ def build_about():
   <div class="aside">{contact_side()}</div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">How we operate</span><h2>Four things we hold to</h2></div>
+  <div class="sec-head rv"><h2>Four things we hold to</h2></div>
   <div class="grid g2">
 {cards}
   </div>
@@ -1539,7 +1543,7 @@ def build_landing(p):
         card += f'<a class="btn btn-red" href="{INQUIRY}" data-cta="talk">Talk to a Dispatcher</a><a class="price-link" href="estimate.html?{truck_q}">Calculate my fee</a></div>'
         tools = tool_minis(["fuel", "cpm", "profit"], truck_q)
         board = f"""<section class="sec sec-dark"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Rate guide</span><h2>Rough rates per mile{f" for {esc(p['nav'].replace(' Dispatch', '').lower())}" if p["file"] in C.BOARD_EQUIPMENT else ""}</h2></div>
+  <div class="sec-head rv"><h2>Rough rates per mile{f" for {esc(p['nav'].replace(' Dispatch', '').lower())}" if p["file"] in C.BOARD_EQUIPMENT else ""}</h2></div>
   {rate_board(C.BOARD_EQUIPMENT.get(p["file"]))}
 </div></section>
 """
@@ -1556,7 +1560,7 @@ def build_landing(p):
   </div>
 </div></section>
 {board}<section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">FAQ</span><h2>{esc(p['nav'])} questions</h2></div>
+  <div class="sec-head rv"><h2>{esc(p['nav'])} questions</h2></div>
   {faq_html(faqs)}
   <div class="chip-row mt-l" style="justify-content:flex-start">{others}</div>
 </div></section>
@@ -1717,7 +1721,7 @@ def build_fuel():
   {calc_cta()}
 </div></section>
 <section class="sec sec-dark" id="diesel-prices"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Fuel prices {F.today}</span><h2>Diesel prices by state {F.today}</h2><p>Average retail diesel price per gallon in all 50 states and Washington, DC{f", {day_h}" if day_h else ""} (AAA daily state averages), compared with the EIA U.S. weekly average of ${us:.3f} (week of {week_h}). Checked twice a day.{"" if F.fresh else " The daily source has not updated recently, so these are the last values received."}</p></div>
+  <div class="sec-head rv"><h2>Diesel prices by state {F.today}</h2><p>Average retail diesel price per gallon in all 50 states and Washington, DC{f", {day_h}" if day_h else ""} (AAA daily state averages), compared with the EIA U.S. weekly average of ${us:.3f} (week of {week_h}). Checked twice a day.{"" if F.fresh else " The daily source has not updated recently, so these are the last values received."}</p></div>
   <div class="board rv"><div style="overflow-x:auto"><table class="board-table diesel-table" id="dieselTable">
     <thead><tr><th>State</th><th>Diesel $/gal</th><th>vs U.S. avg</th></tr></thead>
     <tbody>
@@ -1726,7 +1730,7 @@ def build_fuel():
   <p class="board-foot">Daily state averages: <a href="https://gasprices.aaa.com/state-gas-price-averages/" rel="noopener" style="color:var(--red-600)">AAA</a>, as of <span id="dieselDay">{day_h or "-"}</span>. U.S. average, and the weekly regional average used only for a state marked &ldquo;EIA weekly regional&rdquo;: <a href="https://www.eia.gov/petroleum/gasdiesel/" rel="noopener" style="color:var(--red-600)">U.S. Energy Information Administration</a>, week of <span id="dieselWeek">{week_h}</span>. A state marked &ldquo;stale&rdquo; shows its last value because the source has not updated since.</p></div>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Fuel calculator by truck type</span><h2>Fuel price calculator for every truck</h2><p>Fuel cost for dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, based on published fuel economy data and the latest daily diesel prices.</p></div>
+  <div class="sec-head rv"><h2>Fuel price calculator for every truck</h2><p>Fuel cost for dry van, reefer, flatbed, step deck, power only, hotshot, box truck and straight truck, based on published fuel economy data and the latest daily diesel prices.</p></div>
   <div class="grid g4">
 {truck_secs}  </div>
 </div></section>
@@ -1772,7 +1776,7 @@ def build_fuel():
   <div class="aside">{answer(*qa)}{contact_side()}</div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Fuel cost FAQ</span><h2>Diesel and fuel mileage questions</h2></div>
+  <div class="sec-head rv"><h2>Diesel and fuel mileage questions</h2></div>
   {faq_html(faqs)}
 </div></section>
 {band("Fuel is your biggest cost. Better loads cover it.", "Our dispatchers negotiate every rate and plan lanes to cut deadhead miles, the fuel you burn without getting paid.")}"""
@@ -1959,7 +1963,7 @@ def build_blog():
   </div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Keep reading</span><h2>More from the blog</h2></div>
+  <div class="sec-head rv"><h2>More from the blog</h2></div>
   <div class="grid g3">
 {rel}
   </div>
@@ -2032,10 +2036,10 @@ def build_state_pages():
 <section class="sec" style="padding-bottom:0"><div class="wrap">{answer(*qa, label=f"Diesel price in {name}")}</div></section>
 <section class="sec"><div class="wrap">
   <div class="grid g4 stat-row">
-    <div class="card"><span class="eyebrow">{name} diesel</span><div class="stat">${price:.3f}</div><p>per gallon, {day_h}</p></div>
-    <div class="card"><span class="eyebrow">vs U.S. average</span><div class="stat {'up' if diff > 0 else 'down'}">{'+' if diff >= 0 else '-'}${abs(diff):.3f}</div><p>U.S. average ${us:.3f}</p></div>
-    <div class="card"><span class="eyebrow">Rank</span><div class="stat">#{rank}</div><p>of 51 (1 = cheapest)</p></div>
-    <div class="card"><span class="eyebrow">150-gallon fill</span><div class="stat">${150 * price:,.0f}</div><p>semi truck, {today} price</p></div>
+    <div class="card"><div class="stat">${price:.3f}</div><p>per gallon, {day_h}</p></div>
+    <div class="card"><div class="stat {'up' if diff > 0 else 'down'}">{'+' if diff >= 0 else '-'}${abs(diff):.3f}</div><p>U.S. average ${us:.3f}</p></div>
+    <div class="card"><div class="stat">#{rank}</div><p>of 51 (1 = cheapest)</p></div>
+    <div class="card"><div class="stat">${150 * price:,.0f}</div><p>semi truck, {today} price</p></div>
   </div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap two">
@@ -2158,7 +2162,7 @@ def tool_wrap(t):
   <div class="aside">{contact_side()}</div>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">More free tools</span><h2>Related calculators</h2></div>
+  <div class="sec-head rv"><h2>Related calculators</h2></div>
   <div class="grid g3">
 {related_tools(t["slug"])}
   </div>
@@ -2198,7 +2202,7 @@ def build_tools_hub():
     by_slug = {re.search(r'href="([a-z0-9-]+)\.html"', c).group(1): c for c in cards}
     assert sorted(by_slug) == sorted(x for _, _, ss in groups for x in ss), "every tool must sit in one group"
     grouped = "\n".join(f"""<section class="sec{' sec-soft' if gi % 2 else ''}"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">{esc(h)}</span><h2>{esc(h)}</h2><p>{esc(sub)}</p></div>
+  <div class="sec-head rv"><h2>{esc(h)}</h2><p>{esc(sub)}</p></div>
   <div class="grid g3">
 {chr(10).join(by_slug[x] for x in ss)}
   </div>
@@ -3060,7 +3064,7 @@ def build_state_dispatch():
   </div>
 </div></section>
 <section class="sec sec-soft"><div class="wrap">
-  <div class="sec-head rv"><span class="eyebrow">Nearby states</span><h2>Truck dispatch near {esc(name)}</h2></div>
+  <div class="sec-head rv"><h2>Truck dispatch near {esc(name)}</h2></div>
   <div class="chip-row" style="justify-content:flex-start">{nbs}<a class="chip" href="truck-dispatch-by-state.html">All 50 states</a></div>
 </div></section>
 {band(f"Running freight in {name}?", "Semi trucks 5%, hotshots 7%, box trucks 8% of weekly gross. First load free, 24/7 dispatchers, new MC welcome.")}"""
