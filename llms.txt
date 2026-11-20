@@ -22,7 +22,7 @@
 - How to start: sign the dispatch agreement online at https://dispatch.texassolutions.co/sign-contract/ (e-signature, signed PDF downloads instantly). Required documents: MC authority letter, certificate of insurance (COI) and W-9. Optional: notice of assignment if you factor, CDL, voided check
 - MC lease (lease-on) for owner-operators without their own authority: 18-20% of gross with dispatch included (https://dispatch.texassolutions.co/services/mc-lease/)
 - Starting a new MC authority: step-by-step guide at https://dispatch.texassolutions.co/new-mc/
-- Last updated: 2026-11-19
+- Last updated: 2026-11-20
 
 ## Free trucking calculators
 - [Tools hub](https://dispatch.texassolutions.co/calculators/): all calculators in one place
@@ -168,7 +168,7 @@
 - [Truck dispatch services by state (all 50)](https://dispatch.texassolutions.co/dispatch/states/)
 
 ## Diesel prices
-- AAA daily state averages as of 2026-11-19; EIA U.S. weekly average $5.937/gal (week of 2026-11-16): Texas $5.346, California $7.861, Florida $5.647, Georgia $5.446, Illinois $6.126, New York $6.298, Ohio $5.955, Pennsylvania $6.422, Oklahoma $5.333, Tennessee $5.648
+- AAA daily state averages as of 2026-11-20; EIA U.S. weekly average $5.937/gal (week of 2026-11-16): Texas $5.311, California $7.831, Florida $5.627, Georgia $5.424, Illinois $6.085, New York $6.278, Ohio $5.910, Pennsylvania $6.399, Oklahoma $5.285, Tennessee $5.621
 - Daily prices for all 50 states and DC: https://dispatch.texassolutions.co/calculators/truck-fuel-cost-calculator/#diesel-prices; one page per state at https://dispatch.texassolutions.co/diesel-prices/texas/ (replace texas with the state name)
 
 ## Company
